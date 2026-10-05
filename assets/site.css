@@ -664,3 +664,14 @@ body.proj{--bg:#fff}
 }
 @media (max-width:860px){.intro .ph{overflow:hidden}}
 @media (min-width:861px){.intro .ph img{object-position:28% 100%}}
+
+/* Films block (5 Oct): no baked black bars, title under the picture, one lead film and a justified row */
+.films .fgrid{display:flex;flex-wrap:wrap;gap:clamp(28px,3vw,44px) clamp(16px,2vw,28px)}
+.films .film{background:none;flex:var(--n,1.778) 1 0%;min-width:0;overflow:visible}
+.films .film.lead{flex:0 0 100%}
+.films .fpic{position:relative;display:block;aspect-ratio:var(--ar,16/9);overflow:hidden;background:#000}
+.films .fpic video{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;object-fit:cover}
+.films .film .fcap{position:static;display:flex;align-items:center;gap:14px;background:none;padding:16px 0 0}
+.films .film .fcap span{margin-top:4px}
+@media (max-width:760px){.films .film{flex:0 0 100%}}
+.film .fcap .pl{display:grid!important;place-items:center;margin-top:0!important}
