@@ -143,3 +143,35 @@
     });
   }
 })();
+
+/* ---- brand layer (Oct 2026): mark in black or white only, energy-line dividers ---- */
+(function () {
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function rgb(s) { var m = (s || '').match(/rgba?\(([^)]+)\)/); if (!m) return null; var p = m[1].split(',').map(parseFloat); return p.length > 3 && p[3] < 0.5 ? null : p; }
+  function bgOf(el) { while (el && el !== document.documentElement) { var c = rgb(getComputedStyle(el).backgroundColor); if (c) return c; el = el.parentElement; } return [247, 245, 241]; }
+  function lum(c) { return (0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]) / 255; }
+  function fixMarks() {
+    document.querySelectorAll('svg.mk, svg.h3mk, svg.bnr-mk').forEach(function (m) {
+      m.style.color = lum(bgOf(m.parentElement)) > 0.45 ? '#0B0C10' : '#FFFFFF';
+    });
+  }
+  fixMarks(); addEventListener('load', fixMarks);
+  var tk = false; addEventListener('scroll', function () { if (!tk) { tk = true; setTimeout(function () { tk = false; fixMarks(); }, 180); } }, { passive: true });
+
+  /* energy lines: two clean lines, cyan leads, orange supports; each one different; draw in on view */
+  var V = { 1: [0.4, 0.9, 1.35], 2: [1.4, 0.2, 1.1], 3: [2.6, 1.7, 1.6], 4: [0.9, 2.4, 1.25], 5: [3.3, 0.6, 1.45] };
+  function path(W, H, ph, amp, f) {
+    var d = '', n = 160;
+    for (var i = 0; i <= n; i++) { var t = i / n, e = Math.min(1, Math.max(0, (t - 0.08) / 0.34)); e = e * e * (3 - 2 * e);
+      var y = H / 2 + amp * e * Math.sin(6.2832 * f * t + ph) * (1 - 0.25 * t); d += (i ? ' L' : 'M') + (t * W).toFixed(1) + ',' + y.toFixed(2); }
+    return d;
+  }
+  document.querySelectorAll('.eline').forEach(function (el) {
+    var v = V[el.getAttribute('data-v')] || V[1], W = 1600, H = 56;
+    el.innerHTML = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none" aria-hidden="true">' +
+      '<path d="' + path(W, H, v[1], -15, v[2]) + '" fill="none" stroke="#FF6B2C" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round" pathLength="1"/>' +
+      '<path d="' + path(W, H, v[0], 19, v[2]) + '" fill="none" stroke="#00C8D7" stroke-width="2.2" vector-effect="non-scaling-stroke" stroke-linecap="round" pathLength="1"/></svg>';
+    if (reduce || !('IntersectionObserver' in window)) { el.classList.add('in'); return; }
+    new IntersectionObserver(function (es, io) { if (es[0].isIntersecting) { el.classList.add('in'); io.disconnect(); } }, { threshold: 0.4 }).observe(el);
+  });
+})();
