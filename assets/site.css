@@ -450,3 +450,11 @@ body.proj{--bg:#fff}
 .ncards.armed .nc{opacity:0;transform:translateY(18px) scale(.98);transition:opacity .7s var(--ease-out),transform .9s var(--ease-out)}
 .ncards.armed .nc.on{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.ncards.armed .nc{opacity:1;transform:none}}
+/* no cropped artwork: every image keeps its own shape */
+.door .pic,.door.hero .pic,.short .pic,.pnext .pic{aspect-ratio:auto!important;background:transparent}
+.door .pic img{position:static;width:100%;height:auto;display:block}
+.short .pic img,.pnext .pic img{width:100%;height:auto;display:block}
+.fig .m:has(>img),.triple .m:has(>img){aspect-ratio:auto!important;background:transparent}
+.fig .m>img,.triple .m>img{width:100%;height:auto;display:block;object-fit:contain}
+.hoverpic{aspect-ratio:auto}.hoverpic img{height:auto;object-fit:contain}
+.windex .th img{object-fit:contain!important}
