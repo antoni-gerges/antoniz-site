@@ -153,7 +153,7 @@ figcaption, .cap, .note { font-size: var(--fs-cap); line-height: 1.45; margin-to
 .live .inspired .b img { box-shadow: none; }
 .live .readings { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: clamp(10px, 1.4vw, 22px); left: 50vw; top: 12vh; bottom: 12vh; aspect-ratio: 1; right: auto; height: auto; max-width: 46vw; }
 .live .readings figure { overflow: hidden; }
-.live .readings figure img { width: 100%; height: 100%; object-fit: cover; box-shadow: none; }
+.live .readings figure img { width: 100%; height: 100%; object-fit: contain; box-shadow: none; }
 .live .readings .q-ul { border-radius: 0 0 0 0; transform-origin: 100% 100%; border-top-left-radius: 46%; }
 .live .readings .q-ur { transform-origin: 0 100%; border-top-right-radius: 46%; }
 .live .readings .q-lr { transform-origin: 0 0; border-bottom-right-radius: 46%; }
@@ -189,7 +189,7 @@ figcaption, .cap, .note { font-size: var(--fs-cap); line-height: 1.45; margin-to
 .live .ads .ad:nth-child(2) { margin-top: -7vh; }
 .live .ads .ad:nth-child(3) { margin-top: -14vh; }
 .live .ads .ad img { display: block; width: 100%; height: auto; }
-.live .ads.reveal .over { position: absolute; inset: 0; height: 100%; object-fit: cover; --w: clamp(0, calc(var(--q) * 3.2 - var(--i) * .7 - .15), 1); clip-path: inset(calc((1 - var(--w)) * 100%) 0 0 0); }
+.live .ads.reveal .over { position: absolute; inset: 0; height: 100%; object-fit: contain; --w: clamp(0, calc(var(--q) * 3.2 - var(--i) * .7 - .15), 1); clip-path: inset(calc((1 - var(--w)) * 100%) 0 0 0); }
 .live .ads.reveal .ad::after { content: ""; position: absolute; left: 0; right: 0; height: 2px; background: var(--dha-green); --w: clamp(0, calc(var(--q) * 3.2 - var(--i) * .7 - .15), 1); top: calc((1 - var(--w)) * 100%); opacity: calc(min(var(--w) * 20, (1 - var(--w)) * 20)); }
 
 .live .strip-holder { right: 0; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 5%); mask-image: linear-gradient(90deg, transparent 0, #000 5%); }

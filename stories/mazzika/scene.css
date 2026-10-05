@@ -98,7 +98,7 @@ html:not([data-motion="full"]) .stage { display: none; }
 
 /* chapter 3 and 4 · frames and tiles */
 .ch-acts .post, .ch-campaign .post, .ch-campaign .tile, .ch-campaign .art { position: absolute; left: 0; top: 0; transform-origin: 0 0; will-change: transform, opacity; opacity: 0; max-width: none; }
-.ch-acts video.post { object-fit: cover; }
+.ch-acts video.post { object-fit: contain; }
 .fmt { position: absolute; z-index: 6; margin: 0; font-size: var(--fs-cap); font-weight: 600; letter-spacing: .07em; text-transform: uppercase; opacity: 0; color: var(--on-gold); }
 .bill { position: absolute; z-index: 6; margin: 0; padding: 0; list-style: none; font-weight: 600; font-size: clamp(1rem, 1.3vw, 1.25rem); letter-spacing: .01em; }
 .bill li { opacity: .34; transition: opacity .15s linear; padding: 3px 0; }

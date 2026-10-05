@@ -516,3 +516,4 @@ body.proj{--bg:#fff}
 @media (prefers-reduced-motion:reduce){.amk .mb,.amk .md,.brand:hover .mk{animation:none}.eline path{transition:none;stroke-dashoffset:0}}
 /* no hover zoom on artwork (zoom crops the edges) */
 .door>a:hover .pic img,.door>a:hover .pic video,.short:hover .pic img,.pnext a:hover .pic img{transform:none}
+.fig .m video{object-fit:contain!important;background:#000}

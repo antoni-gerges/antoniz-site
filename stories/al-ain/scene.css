@@ -173,7 +173,7 @@ html:not(.js) .play-film { display: none; }
 .frame.wide { width: min(62vw, calc(80svh * 2.05)); }
 .frame.wide .pics { aspect-ratio: 1600 / 780; }
 .me-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 22px; }
-.me-row img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; }
+.me-row img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; border-radius: 4px; }
 .morning .inner { align-items: center; }
 .before { background: var(--paper); color: var(--ink); padding: clamp(56px, 10vh, 130px) var(--gutter); }
 .before .inner { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(24px, 4vw, 64px); align-items: center; }

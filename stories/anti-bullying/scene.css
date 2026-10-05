@@ -81,7 +81,7 @@ figcaption, .cap, .note { font-size: var(--fs-cap); line-height: 1.45; margin-to
 .day .when b { display: block; font-size: clamp(1.5rem, 2vw, 2rem); font-weight: 500; letter-spacing: -.01em; }
 .day .plain { font-size: var(--fs-body); line-height: 1.45; max-width: 22em; }
 .phone { position: relative; max-width: 240px; border-radius: 22px; overflow: hidden; background: #0d0620; aspect-ratio: 563 / 1000; }
-.phone img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.phone img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .phone .under { filter: saturate(.9) brightness(.92); }
 .counts { display: grid; gap: .1em; font-size: clamp(1.15rem, 1.4vw + .5rem, 1.7rem); line-height: 1.25; }
 .counts b { display: inline-block; min-width: 4.3em; font-weight: 500; color: var(--c); font-variant-numeric: tabular-nums; }
@@ -162,7 +162,7 @@ figcaption, .cap, .note { font-size: var(--fs-cap); line-height: 1.45; margin-to
 .live .still.film .screen { background: none; box-shadow: none; }
 .live .kv { display: flex; align-items: center; justify-content: center; }
 .live .kv-window { position: relative; height: 100%; max-width: 100%; aspect-ratio: 2600 / 1260; overflow: hidden; border-radius: 3px; box-shadow: 0 30px 80px -30px rgba(0, 40, 34, .7); transform-origin: 50% 100%; transform: translateY(calc((1 - var(--n)) * 60px)) scale(calc(.9 + var(--n) * .1)); }
-.live .kv-window img { width: 100%; height: 100%; object-fit: cover; transform-origin: 27% 58%; transform: scale(calc(2.5 - var(--e2, 0) * 1.5)); will-change: transform; }
+.live .kv-window img { width: 100%; height: 100%; object-fit: contain; transform-origin: 27% 58%; transform: scale(calc(2.5 - var(--e2, 0) * 1.5)); will-change: transform; }
 .live .kv > figcaption { left: auto; right: 0; color: rgba(255, 255, 255, .85); }
 
 /* the posts turn about one base point, as the leaves sit about the hands */
