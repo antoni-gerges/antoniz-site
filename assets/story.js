@@ -57,7 +57,7 @@ if (story && !reduce) {
   const set = (i) => { if (i === cur) return; cur = i;
     steps.forEach((s, k) => s.classList.toggle('on', k === i));
     media.forEach((m, k) => { m.classList.toggle('on', k === i); m.classList.toggle('past', k < i);
-      const v = m.querySelector('video'); if (v) { if (k === i) { if (!v.getAttribute('src')) v.src = v.getAttribute('data-src'); v.muted = true; const p = v.play(); if (p && p.catch) p.catch(() => {}); } else { v.pause(); if (v.getAttribute('src')) { v.removeAttribute('src'); v.load(); } } } });
+      const v = m.querySelector('video'); if (v) { if (k === i) { { const ds = v.getAttribute('data-src'), tm = ds.match(/#t=([\d.]+)/); if (tm && !v._t) { v._t = parseFloat(tm[1]); v.loop = false; v.addEventListener('loadedmetadata', () => { try { if (v.currentTime < v._t - 1) v.currentTime = v._t; } catch (e) {} }); v.addEventListener('ended', () => { try { v.currentTime = v._t; v.play(); } catch (e) {} }); } if (!v.getAttribute('src')) v.src = ds; } v.muted = true; const p = v.play(); if (p && p.catch) p.catch(() => {}); } else { v.pause(); if (v.getAttribute('src')) { v.removeAttribute('src'); v.load(); } } } });
     ticks.forEach((t, k) => { t.classList.toggle('on', k === i); t.classList.toggle('done', k < i); });
     if (i >= 0) countUp(steps[i]); };
   const onScroll = () => { const r = story.getBoundingClientRect(); const total = r.height - innerHeight; const p = Math.min(0.9999, Math.max(0, -r.top / total));

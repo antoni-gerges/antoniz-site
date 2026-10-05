@@ -675,3 +675,26 @@ body.proj{--bg:#fff}
 .films .film .fcap span{margin-top:4px}
 @media (max-width:760px){.films .film{flex:0 0 100%}}
 .film .fcap .pl{display:grid!important;place-items:center;margin-top:0!important}
+
+/* Numbers (5 Oct): shorter scroll, one 16:9 frame for every number, readable text */
+.nstory{height:calc(var(--n)*46vh + 100vh)}
+.nlabel{font-size:15px;margin-bottom:clamp(14px,2.4vh,30px)}
+.nstage{height:clamp(300px,43vh,400px)}
+.ncap{font-size:clamp(24px,2.5vw,38px);margin-top:clamp(14px,2.2vh,26px)}
+.ntxt{font-size:clamp(17px,1.45vw,22px);line-height:1.45;color:#0B0C10;max-width:22em;margin-top:10px}
+.nbig span{color:#0B0C10}
+.nright{height:auto;aspect-ratio:16/9;width:100%;background:#0B0C10;overflow:hidden}
+.nmedia{background:var(--c,#0B0C10)}
+.nmedia>img{object-fit:contain;background:transparent}
+.nmedia>video{object-fit:cover;background:#000;transform:scale(var(--z,1))}
+.nmedia.card{place-items:center start;padding:0 clamp(24px,4vw,64px);color:#F7F5F1}
+.nmedia.card .ntime{max-width:none}
+.nmedia.card .ntime li{padding-top:clamp(5px,.9vh,10px);padding-bottom:clamp(5px,.9vh,10px)}
+.nmedia.card .ntime b{font-size:clamp(22px,2.1vw,32px)}.nmedia.card .ntime span{font-size:clamp(16px,1.35vw,20px)}
+.nmedia.card .ntime li::before{background:#F7F5F1}.nmedia.card .ntime li:last-child::before{background:#00C8D7}
+.nmedia.card .ntime i{color:rgba(247,245,241,.72);font-size:15px}
+.mosaic{display:block;position:absolute;inset:0}
+.mosaic img{position:absolute;width:50%;height:50%;object-fit:contain;background:var(--c,#0B0C10)}
+.mosaic img:nth-child(1){left:0;top:0}.mosaic img:nth-child(2){left:50%;top:0}.mosaic img:nth-child(3){left:0;top:50%}.mosaic img:nth-child(4){left:50%;top:50%}
+.mosaic img.ph{object-fit:cover}
+@media (max-width:860px){.nstory{height:calc(var(--n)*52vh + 100vh)}.nright{height:auto;order:-1}.nstage{height:250px}.ntxt{font-size:17px}.nmedia.card{padding:0 18px}.nmedia.card .ntime b{font-size:18px}.nmedia.card .ntime span{font-size:14px}.nmedia.card .ntime i{display:none}.nmedia.card .ntime li{padding-top:3px;padding-bottom:3px;grid-template-columns:56px 1fr;gap:10px}.nmedia.card .ntime li::before{height:20px;width:calc(20px*var(--dash-r));margin-top:-10px}}
