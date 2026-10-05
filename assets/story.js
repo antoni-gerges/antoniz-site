@@ -1,4 +1,4 @@
-// Scrollytelling: WebGL energy line (bloom + core, cyan leads, orange supports) and number unveil.
+// Scrollytelling: WebGL energy line (clean lines, no glow; cyan leads, orange supports) and number unveil.
 import * as THREE from '../vendor/three.module.min.js';
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -25,10 +25,10 @@ if (host && !reduce) {
           float b=-.24*e*sin(6.2832*1.35*x+uT*.55+1.0)+.03*sin(6.2832*2.4*x+uT*.6)*e;
           float cy=.5+a*.82, oy=.5+b*.82;
           vec3 cyan=vec3(0.,.784,.843), orng=vec3(1.,.42,.17);
-          float cc=line(y,cy,1.6), cb=line(y,cy,9.)*.18, oc=line(y,oy,1.2), ob=line(y,oy,7.)*.14;
+          float cc=line(y,cy,1.7), oc=line(y,oy,1.3);
           float draw=smoothstep(x-.02,x,uP*1.25+.15);
-          vec3 col=orng*(oc+ob); col=mix(col,cyan,clamp((cc+cb)*1.2,0.,1.));
-          float al=clamp(cc+cb+oc+ob,0.,1.)*draw;
+          vec3 col=mix(orng,cyan,clamp(cc*1.5,0.,1.));
+          float al=clamp(cc+oc,0.,1.)*draw;
           gl_FragColor=vec4(col,al);
         }` });
     scene.add(new THREE.Mesh(new THREE.PlaneGeometry(2, 2), mat));
