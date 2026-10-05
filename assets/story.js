@@ -46,20 +46,21 @@ if (host && !reduce) {
   }
 }
 
-/* 2. Number unveil: cards rise in sequence and count up */
-const cards = [...document.querySelectorAll('.nc')];
-const fmt = (el) => { const b = el.querySelector('b'); const unit = b.querySelector('span'); const txt = b.childNodes[0].textContent; return { b, unit, txt }; };
-const count = (c) => {
-  const { b, unit, txt } = fmt(c); const m = txt.match(/^(\D*)([\d.]+)(\D*)$/); if (!m || reduce) return;
-  const end = parseFloat(m[2]); const dur = 1100; const t0 = performance.now();
-  const node = b.childNodes[0];
-  (function step(n) { const k = Math.min(1, (n - t0) / dur); const e = 1 - Math.pow(1 - k, 3);
-    node.textContent = m[1] + (Number.isInteger(end) ? Math.round(end * e) : (end * e).toFixed(1)) + m[3];
-    if (k < 1) requestAnimationFrame(step); })(t0);
-};
-if (cards.length) {
-  const box = document.querySelector('.ncards'); box.classList.add('armed');
-  new IntersectionObserver((es, io) => { es.forEach(en => { if (!en.isIntersecting) return;
-    cards.forEach((c, i) => setTimeout(() => { c.classList.add('on'); count(c); }, reduce ? 0 : i * 140));
-    io.disconnect(); }); }, { threshold: .35 }).observe(box);
+/* 2. Numbers told by scrolling: one number on stage at a time, with its work beside it */
+const story = document.querySelector('.nstory');
+if (story && !reduce) {
+  const steps = [...story.querySelectorAll('.nstep')], media = [...story.querySelectorAll('.nmedia')], ticks = [...story.querySelectorAll('.nticks li')];
+  let cur = -1;
+  const countUp = (el) => { const b = el.querySelector('.nbig b'); const txt = b.getAttribute('data-n'); const m = txt.match(/^(\D*)([\d.]+)(\D*)$/); if (!m) return;
+    const end = parseFloat(m[2]), t0 = performance.now(), dur = 900;
+    (function f(n) { const k = Math.min(1, (n - t0) / dur), e = 1 - Math.pow(1 - k, 3); b.textContent = m[1] + Math.round(end * e) + m[3]; if (k < 1) requestAnimationFrame(f); })(t0); };
+  const set = (i) => { if (i === cur) return; cur = i;
+    steps.forEach((s, k) => s.classList.toggle('on', k === i));
+    media.forEach((m, k) => { m.classList.toggle('on', k === i); m.classList.toggle('past', k < i);
+      const v = m.querySelector('video'); if (v) { if (k === i) { if (!v.getAttribute('src')) v.src = v.getAttribute('data-src'); v.muted = true; const p = v.play(); if (p && p.catch) p.catch(() => {}); } else { v.pause(); if (v.getAttribute('src')) { v.removeAttribute('src'); v.load(); } } } });
+    ticks.forEach((t, k) => { t.classList.toggle('on', k === i); t.classList.toggle('done', k < i); });
+    if (i >= 0) countUp(steps[i]); };
+  const onScroll = () => { const r = story.getBoundingClientRect(); const total = r.height - innerHeight; const p = Math.min(0.9999, Math.max(0, -r.top / total));
+    set(r.top > innerHeight * 0.6 ? -1 : Math.floor(p * steps.length)); };
+  addEventListener('scroll', onScroll, { passive: true }); addEventListener('resize', onScroll); onScroll();
 }

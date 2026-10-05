@@ -30,6 +30,17 @@
   }
   var intro = document.querySelector('.intro');
   if (intro) requestAnimationFrame(function () { setTimeout(function () { intro.classList.add('in'); }, 80); });
+  // intro in layers: after the entrance settles, the plate, the name and the cut-out follow the scroll at different speeds
+  if (intro) {
+    var tick = false;
+    var setP = function () {
+      tick = false;
+      var h = intro.offsetHeight || 1, p = Math.min(1, Math.max(0, window.scrollY / h));
+      intro.style.setProperty('--p', p.toFixed(4));
+    };
+    setTimeout(function () { intro.classList.add('live'); setP(); }, 3400);
+    window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(setP); } }, { passive: true });
+  }
 
   /* header colours follow the section under it (data-hdr="#bg,#fg") */
   var zones = document.querySelectorAll('[data-hdr]');
@@ -59,7 +70,7 @@
         if (e.isIntersecting) {
           if (!v.getAttribute('src')) { v.src = srcFor(v); }
           if (!reduce) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
-        } else if (!v.paused) { v.pause(); }
+        } else { if (!v.paused) v.pause(); if (v.getAttribute('src')) { v.removeAttribute('src'); v.load(); } }
       });
     }, { rootMargin: '200px 0px', threshold: 0.2 }) : null;
     clips.forEach(function (v) {
@@ -151,7 +162,8 @@
   function bgOf(el) { while (el && el !== document.documentElement) { var c = rgb(getComputedStyle(el).backgroundColor); if (c) return c; el = el.parentElement; } return [247, 245, 241]; }
   function lum(c) { return (0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]) / 255; }
   function fixMarks() {
-    document.querySelectorAll('svg.mk, svg.h3mk, svg.bnr-mk').forEach(function (m) {
+    document.querySelectorAll('svg.mk, svg.h3mk, svg.h4mk, svg.bnr-mk').forEach(function (m) {
+      if (m.closest('.hdr')) { m.style.color = ''; return; }
       m.style.color = lum(bgOf(m.parentElement)) > 0.45 ? '#0B0C10' : '#FFFFFF';
     });
   }
