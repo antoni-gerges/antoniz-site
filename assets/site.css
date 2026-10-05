@@ -445,3 +445,8 @@ body.proj{--bg:#fff}
 .nc em{display:block;font-style:normal;margin-top:10px;font-size:13px;line-height:1.35;color:var(--mute)}
 @media (max-width:980px){.ncards{grid-template-columns:repeat(4,1fr)}.ncards .n1{grid-column:1/-1}.ncards .n2{grid-column:1/-1;order:3}.ncards .nc:nth-of-type(n+3){order:4}}
 @media (max-width:560px){.ncards{grid-template-columns:1fr 1fr}}
+.h3gl{width:100%;height:clamp(90px,11vw,170px);margin:clamp(20px,3vw,48px) 0 clamp(28px,4vw,56px)}
+.h3gl canvas{display:block;width:100%;height:100%}
+.ncards.armed .nc{opacity:0;transform:translateY(18px) scale(.98);transition:opacity .7s var(--ease-out),transform .9s var(--ease-out)}
+.ncards.armed .nc.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.ncards.armed .nc{opacity:1;transform:none}}
