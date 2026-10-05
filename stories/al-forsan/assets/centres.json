@@ -1,0 +1,27 @@
+[
+ {
+  "name": "Equestrian",
+  "colour": "#005596",
+  "page": 121
+ },
+ {
+  "name": "Motor sports",
+  "colour": "#ef3e42",
+  "page": 124
+ },
+ {
+  "name": "Shooting",
+  "colour": "#008a5f",
+  "page": 127
+ },
+ {
+  "name": "Paintball",
+  "colour": "#fcb568",
+  "page": 130
+ },
+ {
+  "name": "Water sports",
+  "colour": "#13b5ea",
+  "page": 133
+ }
+]

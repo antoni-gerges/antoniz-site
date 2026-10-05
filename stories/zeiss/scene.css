@@ -1,0 +1,180 @@
+/* ZEISS ClearView & PhotoFusion X launch, Dubai 2022 — project story.
+   The rule comes from the artwork: the four corner brackets, heavy at the top left. They hold whatever the story is
+   looking at: first as objects in depth, then as a frame that travels from picture to picture.
+   Default (no JavaScript, reduced motion, Motion off): seven chapters in reading order, whole pictures.
+   With motion: html.live pins the stage; scroll drives --t (progress inside a beat) and --o (its presence). */
+*, *::before, *::after { box-sizing: border-box; }
+html { background: #F3F6FA; color: var(--ink); font-family: var(--font); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body { margin: 0; font-size: var(--fs-body); line-height: 1.45; }
+img, video, canvas { display: block; max-width: 100%; }
+a { color: inherit; }
+:root {
+  --field: #F3F6FA;            /* a cool paper: the artwork sits on white */
+  --navy: #0F3D91;             /* the brackets and the dots, from the board */
+  --blue: #1E8CFF;             /* the lens's rim */
+  --night: #080B12;
+  --line: rgba(11, 12, 16, .14);
+  --fs-h: clamp(2rem, 3.5vw + .6rem, 4.2rem);
+  --fs-eyebrow: clamp(.72rem, .4vw + .58rem, .86rem);
+}
+
+/* ---------- chrome ---------- */
+.skip { position: absolute; left: -999px; top: 8px; z-index: 60; padding: 10px 14px; background: var(--ink); color: #fff; }
+.skip:focus { left: 8px; }
+.nav { position: fixed; inset: 0 0 auto 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: clamp(14px, 2vw, 26px) var(--gutter); pointer-events: none; color: var(--ink); transition: color .3s; }
+.nav > * { pointer-events: auto; }
+.nav .mark { width: clamp(24px, 2.2vw, 32px); height: auto; display: block; }
+.nav ul { display: flex; align-items: center; gap: clamp(12px, 2vw, 30px); margin: 0; padding: 0; list-style: none; font-size: var(--fs-eyebrow); letter-spacing: .14em; text-transform: uppercase; }
+.nav a { text-decoration: none; }
+.nav button { font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; background: none; border: 1px solid currentColor; border-radius: 99px; padding: 5px 12px; cursor: pointer; opacity: .8; }
+.on-dark .nav { color: #F3F6FA; }
+
+/* ---------- type ---------- */
+.eyebrow { margin: 0 0 1.1em; font-size: var(--fs-eyebrow); font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--navy); }
+.beat h1, .beat h2 { margin: 0; font-size: var(--fs-h); font-weight: 600; line-height: 1.02; letter-spacing: -.02em; text-wrap: balance; }
+.beat .say { margin: 1.1em 0 0; max-width: 34ch; color: var(--mute); }
+.tag { display: inline-block; margin-top: 1.4em; padding: .35em .8em; border: 1px solid var(--line); border-radius: 99px; font-size: var(--fs-eyebrow); letter-spacing: .06em; color: var(--mute); }
+figure { margin: 0; }
+figcaption { margin-top: .7em; font-size: var(--fs-cap); line-height: 1.35; color: var(--mute); max-width: 62ch; }
+figcaption b { font-weight: 500; color: var(--ink); }
+
+/* ---------- static story ---------- */
+.story, .stage { position: relative; }
+.field, .gl, .finder, .ticks, .scene-index, .plate-live { display: none; }
+.beat { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(24px, 5vw, 80px); align-items: center; padding: clamp(56px, 9vh, 120px) var(--gutter); border-top: 1px solid var(--line); }
+.beat:first-of-type { border-top: 0; padding-top: clamp(96px, 14vh, 160px); }
+.beat .art { display: grid; gap: 18px; }
+.beat .art img { width: 100%; height: auto; }
+.shadow { box-shadow: 0 1px 0 var(--line), 0 18px 50px -24px rgba(11, 12, 16, .35); }
+.b-travel .wall { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 16px; align-items: end; }
+.b-travel .wall figcaption { font-size: .78rem; }
+.b-wall .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: start; }
+.b-wall .steps figcaption { font-size: .78rem; }
+.b-night { background: var(--night); color: #F3F6FA; border-top: 0; }
+.b-night .say, .b-night figcaption { color: rgba(243, 246, 250, .66); }
+.b-night .eyebrow { color: #7DB9FF; }
+.b-night .shots { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.b-night .me { max-width: 420px; }
+.film { position: relative; background: #000; }
+.film video { position: absolute; inset: 0; width: 100%; height: 100%; display: none; background: #000; }
+.film.playing video { display: block; }
+.play { font: inherit; font-size: var(--fs-eyebrow); letter-spacing: .14em; text-transform: uppercase; color: inherit; background: none; border: 1px solid currentColor; border-radius: 99px; padding: .8em 1.3em; margin-top: 1.4em; cursor: pointer; }
+.play:hover, .play:focus-visible { background: #F3F6FA; color: var(--ink); }
+html:not(.js) .play { display: none; }
+
+/* ---------- the record ---------- */
+.record { background: #E6ECF4; padding: clamp(64px, 10vh, 130px) var(--gutter); }
+.record h2 { margin: 0 0 1.2em; font-size: clamp(1.5rem, 2vw + .6rem, 2.4rem); font-weight: 600; letter-spacing: -.01em; }
+.record dl { display: grid; grid-template-columns: minmax(120px, 1fr) minmax(0, 4fr); margin: 0; max-width: 1100px; }
+.record dt, .record dd { margin: 0; padding: .9em 0; border-top: 1px solid var(--line); }
+.record dt { font-size: var(--fs-eyebrow); letter-spacing: .14em; text-transform: uppercase; color: var(--navy); padding-top: 1.15em; }
+.record dd small { display: block; margin-top: .25em; font-size: var(--fs-cap); color: var(--mute); }
+.record .next { display: inline-block; margin-top: 2.4em; font-size: var(--fs-eyebrow); letter-spacing: .16em; text-transform: uppercase; text-decoration: none; padding-bottom: 6px; border-bottom: 1px solid currentColor; }
+
+@media (max-width: 767px) {
+  .beat { grid-template-columns: 1fr; gap: 28px; }
+  .b-travel .wall { grid-template-columns: repeat(2, 1fr); }
+  .b-wall .steps { grid-template-columns: 1fr; }
+  .record dl { grid-template-columns: 1fr; }
+  .record dd { border-top: 0; padding-top: .3em; }
+  .nav ul li.opt { display: none; }
+}
+
+/* =====================================================================
+   LIVE — the pinned stage
+   ===================================================================== */
+.live .story { height: calc(var(--travel) * 1vh + 100vh); }
+.live .stage { position: sticky; top: 0; height: 100vh; min-height: 480px; overflow: hidden; --cx: 38vw; --ax: 38vw; --ar: calc(var(--gutter) + 22px); }
+.live .field { display: block; position: absolute; inset: 0; background: var(--field); }
+.live .field::before { content: ""; position: absolute; inset: 0; opacity: var(--light, 0); background: radial-gradient(90vmax 70vmax at 78% 8%, #fff 0, #fff 22%, rgba(255, 255, 255, 0) 70%), #fbfdff; }
+.live .field::after { content: ""; position: absolute; inset: 0; background: var(--night); opacity: var(--dark, 0); }
+.live .gl { display: block; position: absolute; inset: 0; width: 100%; height: 100%; opacity: var(--gl, 0); filter: blur(calc(var(--soft, 0) * 7px)); }
+.live .no-gl .gl { display: none; }
+.live .scene-index { display: block; position: absolute; z-index: 6; left: var(--gutter); bottom: clamp(18px, 3vh, 34px); margin: 0; font-size: var(--fs-eyebrow); letter-spacing: .16em; text-transform: uppercase; color: var(--mute); }
+.live .ticks { display: flex; flex-direction: column; gap: 9px; position: absolute; z-index: 6; right: calc(var(--gutter) * .45); top: 50%; transform: translateY(-50%); margin: 0; padding: 0; list-style: none; }
+.live .ticks li { width: 2px; height: 20px; background: rgba(11, 12, 16, .2); }
+.live .ticks li.on { background: var(--navy); }
+.live .stage.dark .ticks li { background: rgba(243, 246, 250, .25); }
+.live .stage.dark .ticks li.on { background: #7DB9FF; }
+.live .stage.dark .scene-index { color: rgba(243, 246, 250, .66); }
+
+/* the resolved picture, original, standing exactly where the 3D composition ends */
+.live .plate-live { display: block; position: absolute; z-index: 2; left: 0; top: 0; width: 100px; height: auto; max-width: none; opacity: var(--plate, 0); filter: blur(calc((1 - var(--plate, 0)) * 7px)); transform-origin: 0 0; will-change: transform, opacity; }
+.live .no-gl .plate-live { display: none; }
+
+/* the finder: four brackets, heavy at the top left, holding whatever the story looks at */
+.live .finder { display: block; position: absolute; z-index: 5; left: 0; top: 0; width: 100px; height: 100px; pointer-events: none; opacity: var(--f, 0); color: var(--navy); will-change: transform, width, height; }
+.live .stage.dark .finder { color: #7DB9FF; }
+.live .finder i { position: absolute; width: clamp(22px, 2.6vw, 40px); height: clamp(22px, 2.6vw, 40px); border: 0 solid currentColor; }
+.live .finder .tl { left: -14px; top: -14px; border-left-width: clamp(7px, .8vw, 12px); border-top-width: clamp(7px, .8vw, 12px); width: clamp(28px, 3.2vw, 50px); height: clamp(28px, 3.2vw, 50px); left: -20px; top: -20px; }
+.live .finder .tr { right: -14px; top: -14px; border-right-width: 3px; border-top-width: 3px; }
+.live .finder .bl { left: -14px; bottom: -14px; border-left-width: 3px; border-bottom-width: 3px; }
+.live .finder .br { right: -14px; bottom: -14px; border-right-width: 3px; border-bottom-width: 3px; }
+
+.live .beat { position: absolute; z-index: 3; inset: 0; display: block; padding: 0; border: 0; background: none; opacity: var(--o, 0); visibility: hidden; pointer-events: none; --t: 0; }
+.live .beat.on { visibility: visible; }
+.live .beat.on.here { pointer-events: auto; }
+.live .beat .copy { position: absolute; left: var(--gutter); top: 50%; width: min(30vw, 470px); transform: translateY(calc(-50% + (1 - var(--o, 0)) * 16px)); }
+.live .beat .art { position: absolute; display: block; }
+.live .art figcaption { position: absolute; left: 0; top: calc(100% + 18px); width: 100%; margin: 0; }
+
+/* 1–4 · the model; without WebGL the complete original board stands in */
+.live .b-three .art, .live .b-clear .art, .live .b-light .art, .live .b-one .art { display: none; }
+.live .no-gl .b-three .art, .live .no-gl .b-clear .art, .live .no-gl .b-light .art, .live .no-gl .b-one .art { display: block; left: var(--ax); right: var(--ar); top: 50%; transform: translateY(-52%); }
+.live .no-gl .art img { max-height: 72vh; width: auto; margin: 0 auto; }
+
+/* 5 · the bracket travels over a wall of applications */
+.live .b-travel .art { left: var(--ax); right: var(--ar); top: 15vh; bottom: 15vh; }
+.live .b-travel .wall { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr 1fr; gap: 5vh 2.4vw; }
+.live .b-travel .wall figure { position: relative; display: flex; align-items: center; justify-content: center; min-height: 0; opacity: .38; transition: opacity .25s; }
+.live .b-travel .wall figure.on { opacity: 1; }
+.live .b-travel .wall img { width: auto; height: auto; max-width: 100%; max-height: 100%; }
+.live .b-travel .wall figcaption { top: calc(100% + 22px); font-size: .78rem; opacity: 0; transition: opacity .25s; }
+.live .b-travel .wall figure.on figcaption { opacity: 1; }
+
+/* 6 · one wall, three dates: measured, drawn, built */
+.live .b-wall .art { left: var(--ax); right: var(--ar); top: 12vh; bottom: 17vh; }
+.live .b-wall .steps { position: absolute; inset: 0; display: block; }
+.live .b-wall .steps figure { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: var(--s, 0); }
+.live .b-wall .steps img { width: auto; height: auto; max-width: 100%; max-height: 100%; }
+.live .b-wall .steps figcaption { top: calc(100% + 24px); font-size: var(--fs-cap); }
+
+/* 7 · the night */
+.live .b-night { color: #F3F6FA; }
+.live .b-night .art.shots { left: 44%; top: 10vh; width: min(calc(100vw - 2 * var(--gutter) - 60px), calc(64vh * 3 / 2)); height: 64vh; transform: translateX(-50%); display: block; }
+.live .b-night .shots > * { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: var(--s, 0); }
+.live .b-night .shots img { width: auto; height: auto; max-width: 100%; max-height: 100%; }
+.live .b-night .shots .film { background: none; }
+.live .b-night .shots .film video { object-fit: contain; }
+.live .b-night .shots figcaption { display: none; }
+.live .b-night .copy { top: auto; bottom: 6vh; left: 44%; width: min(calc(100vw - 2 * var(--gutter) - 60px), calc(64vh * 3 / 2)); transform: translateX(-50%); display: grid; grid-template-columns: 1fr auto; column-gap: 32px; align-items: end; }
+.live .b-night .copy .eyebrow { grid-column: 1 / -1; margin-bottom: .6em; }
+.live .b-night .copy h2 { font-size: clamp(1.6rem, 2.4vw + .4rem, 3rem); }
+.live .b-night .copy .say { grid-column: 1; margin-top: .5em; max-width: 64ch; font-size: var(--fs-cap); }
+.live .b-night .copy .play { grid-column: 2; grid-row: 2 / span 2; margin: 0; align-self: end; opacity: var(--pl, 0); }
+.live .b-night .me { right: calc(var(--gutter) + 12px); top: 10vh; width: min(17vw, 270px); z-index: 4; opacity: var(--m, 0); transform: translateY(calc((1 - var(--m, 0)) * 18px)); }
+.live .b-night .me img { box-shadow: 0 24px 60px -20px rgba(0, 0, 0, .8); }
+.live .b-night .me figcaption { position: static; margin-top: .6em; font-size: .78rem; }
+
+/* ---------- live, tall ---------- */
+@media (max-width: 767px), (max-aspect-ratio: 21/20) {
+  .live .stage { --ax: var(--gutter); --ar: var(--gutter); }
+  .live .beat .copy { top: 84px; width: calc(100vw - 2 * var(--gutter) - 20px); transform: translateY(calc((1 - var(--o, 0)) * 12px)); }
+  .live .beat .say { font-size: 1rem; }
+  .live .no-gl .b-three .art, .live .no-gl .b-clear .art, .live .no-gl .b-light .art, .live .no-gl .b-one .art { top: auto; bottom: 12vh; transform: none; }
+  .live .b-travel .art { top: 42vh; bottom: 9vh; }
+  .live .b-travel .wall { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr); gap: 5.4vh 8vw; }
+  .live .b-travel .wall figcaption { font-size: .68rem; top: calc(100% + 16px); }
+  .live .b-wall .art { top: 40vh; bottom: 20vh; }
+  .live .b-night .art.shots { left: 50%; top: 84px; width: calc(100vw - 2 * var(--gutter)); height: calc((100vw - 2 * var(--gutter)) * 2 / 3); }
+  .live .b-night .copy { left: var(--gutter); top: calc(84px + (100vw - 2 * var(--gutter)) * 2 / 3 + 30px); bottom: auto; width: calc(100vw - 2 * var(--gutter)); display: block; }
+  .live .b-night .copy .play { margin-top: 1.2em; }
+  .live .b-night .me { right: var(--gutter); top: auto; bottom: 5vh; width: 44vw; }
+  .live .ticks, .live .scene-index { display: none; }
+  .live .finder .tl { left: -13px; top: -13px; }
+  .live .finder .tr { right: -9px; top: -9px; } .live .finder .bl { left: -9px; bottom: -9px; } .live .finder .br { right: -9px; bottom: -9px; }
+}
+
+/* static: the board is shown once; the two beats that only turn it in 3D keep their words */
+html:not(.live) .b-clear .art, html:not(.live) .b-light .art { display: none; }
+html:not(.live) .b-clear, html:not(.live) .b-light { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); padding-block: clamp(36px, 6vh, 72px); }

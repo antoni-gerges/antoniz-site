@@ -1,0 +1,160 @@
+/* Capacity Middle East, Etisalat gala dinners, Dubai — 2018 and 2019, kept apart.
+   The rule comes from the 2018 screens: one thin line of the city, drawn on a night sky. It draws the year numerals,
+   the rule between the editions, and it is what travels across the three screens.
+   Default (no JavaScript, reduced motion, Motion off): the chapters in reading order, whole pictures, 2018 then 2019.
+   With motion: html.live pins the stage; scroll drives --t (progress inside a beat) and --o (its presence). */
+*, *::before, *::after { box-sizing: border-box; }
+html { background: #070A12; color: #EEF1F6; font-family: var(--font); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body { margin: 0; font-size: var(--fs-body); line-height: 1.45; }
+img, video, canvas { display: block; max-width: 100%; }
+a { color: inherit; }
+:root {
+  --night: #070A12;
+  --lime: #C8E632;          /* the title lettering on the 2018 screens */
+  --line: rgba(238, 241, 246, .16);
+  --mute-n: rgba(238, 241, 246, .66);
+  --beach: #6E2BC8;         /* the 2019 lighting */
+  --fs-h: clamp(2rem, 3.3vw + .6rem, 4rem);
+  --fs-eyebrow: clamp(.72rem, .4vw + .58rem, .86rem);
+}
+
+.skip { position: absolute; left: -999px; top: 8px; z-index: 60; padding: 10px 14px; background: #fff; color: #000; }
+.skip:focus { left: 8px; }
+.nav { position: fixed; inset: 0 0 auto 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: clamp(14px, 2vw, 26px) var(--gutter); pointer-events: none; color: #EEF1F6; }
+.nav > * { pointer-events: auto; }
+.nav .mark { width: clamp(24px, 2.2vw, 32px); height: auto; display: block; }
+.nav ul { display: flex; align-items: center; gap: clamp(12px, 2vw, 30px); margin: 0; padding: 0; list-style: none; font-size: var(--fs-eyebrow); letter-spacing: .14em; text-transform: uppercase; }
+.nav a { text-decoration: none; }
+.nav button { font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; background: none; border: 1px solid currentColor; border-radius: 99px; padding: 5px 12px; cursor: pointer; opacity: .8; }
+
+.eyebrow { margin: 0 0 1.1em; font-size: var(--fs-eyebrow); font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--lime); }
+.y19 .eyebrow { color: #C9A6FF; }
+.beat h1, .beat h2 { margin: 0; font-size: var(--fs-h); font-weight: 600; line-height: 1.03; letter-spacing: -.02em; text-wrap: balance; }
+.beat .say { margin: 1.1em 0 0; max-width: 36ch; color: var(--mute-n); }
+.tag { display: inline-block; margin-top: 1.4em; padding: .35em .8em; border: 1px solid var(--line); border-radius: 99px; font-size: var(--fs-eyebrow); letter-spacing: .06em; color: var(--mute-n); }
+figure { margin: 0; }
+figcaption { margin-top: .7em; font-size: var(--fs-cap); line-height: 1.35; color: var(--mute-n); max-width: 62ch; }
+
+/* the year numerals: drawn in the screens' thin line */
+.year { font-size: clamp(5rem, 16vw, 15rem); font-weight: 200; line-height: .9; letter-spacing: -.02em; color: transparent; -webkit-text-stroke: 1.2px rgba(238, 241, 246, .55); margin: 0; }
+
+/* ---------- static story ---------- */
+.story, .stage { position: relative; }
+.field, .gl, .ticks, .scene-index, .yearmark { display: none; }
+.beat { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(24px, 5vw, 80px); align-items: center; padding: clamp(56px, 9vh, 120px) var(--gutter); border-top: 1px solid var(--line); }
+.beat:first-of-type { border-top: 0; padding-top: clamp(96px, 14vh, 160px); }
+.beat .art { display: grid; gap: 18px; }
+.beat .art img { width: 100%; height: auto; }
+.divider { padding: clamp(56px, 10vh, 120px) var(--gutter) 0; border-top: 1px solid var(--line); }
+.b-directions .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.b-screens .tri { display: grid; grid-template-columns: 1fr 1.78fr 1fr; gap: 10px; align-items: center; }
+.b-run .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-items: center; }
+.b-beach .seq { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+.film { position: relative; background: #000; }
+.film video { position: absolute; inset: 0; width: 100%; height: 100%; display: none; background: #000; }
+.film.playing video { display: block; }
+.play { font: inherit; font-size: var(--fs-eyebrow); letter-spacing: .14em; text-transform: uppercase; color: inherit; background: none; border: 1px solid currentColor; border-radius: 99px; padding: .8em 1.3em; margin-top: 1.4em; cursor: pointer; }
+.play:hover, .play:focus-visible { background: #fff; color: #000; }
+html:not(.js) .play { display: none; }
+
+.record { background: #0E1320; padding: clamp(64px, 10vh, 130px) var(--gutter); }
+.record h2 { margin: 0 0 1.2em; font-size: clamp(1.5rem, 2vw + .6rem, 2.4rem); font-weight: 600; }
+.record h3 { margin: 2em 0 .6em; font-size: var(--fs-eyebrow); letter-spacing: .16em; text-transform: uppercase; color: var(--lime); font-weight: 500; }
+.record h3.y19 { color: #C9A6FF; }
+.record dl { display: grid; grid-template-columns: minmax(120px, 1fr) minmax(0, 4fr); margin: 0; max-width: 1100px; }
+.record dt, .record dd { margin: 0; padding: .9em 0; border-top: 1px solid var(--line); }
+.record dt { font-size: var(--fs-eyebrow); letter-spacing: .14em; text-transform: uppercase; color: var(--mute-n); padding-top: 1.15em; }
+.record dd small { display: block; margin-top: .25em; font-size: var(--fs-cap); color: var(--mute-n); }
+.record .next { display: inline-block; margin-top: 2.4em; font-size: var(--fs-eyebrow); letter-spacing: .16em; text-transform: uppercase; text-decoration: none; padding-bottom: 6px; border-bottom: 1px solid currentColor; }
+
+@media (max-width: 767px) {
+  .beat { grid-template-columns: 1fr; gap: 28px; }
+  .b-beach .seq, .b-run .grid { grid-template-columns: 1fr 1fr; }
+  .record dl { grid-template-columns: 1fr; }
+  .record dd { border-top: 0; padding-top: .3em; }
+  .nav ul li.opt { display: none; }
+}
+
+/* =====================================================================
+   LIVE
+   ===================================================================== */
+.live .story { height: calc(var(--travel) * 1vh + 100vh); }
+.live .stage { position: sticky; top: 0; height: 100vh; min-height: 480px; overflow: hidden; --ax: 39vw; --ar: calc(var(--gutter) + 22px); }
+.live .field { display: block; position: absolute; inset: 0; background: var(--night); }
+.live .field::after { content: ""; position: absolute; inset: 0; opacity: var(--y19, 0);
+  background: radial-gradient(80vmax 60vmax at 70% 110%, rgba(110, 43, 200, .45), rgba(110, 43, 200, 0) 70%), radial-gradient(60vmax 40vmax at 10% -10%, rgba(40, 20, 90, .6), rgba(0, 0, 0, 0) 70%); }
+.live .gl { display: block; position: absolute; inset: 0; width: 100%; height: 100%; opacity: var(--gl, 0); }
+.live .no-gl .gl { display: none; }
+.live .scene-index { display: block; position: absolute; z-index: 6; left: var(--gutter); bottom: clamp(18px, 3vh, 34px); margin: 0; font-size: var(--fs-eyebrow); letter-spacing: .16em; text-transform: uppercase; color: var(--mute-n); }
+.live .ticks { display: flex; flex-direction: column; gap: 9px; position: absolute; z-index: 6; right: calc(var(--gutter) * .45); top: 50%; transform: translateY(-50%); margin: 0; padding: 0; list-style: none; }
+.live .ticks li { width: 2px; height: 20px; background: rgba(238, 241, 246, .22); }
+.live .ticks li.on { background: var(--lime); }
+.live .ticks li.y19.on { background: #C9A6FF; }
+
+/* the edition in the corner, always: the two years never mix */
+.live .yearmark { opacity: var(--ym, 1); display: block; position: absolute; z-index: 5; right: calc(var(--gutter) + 22px); bottom: clamp(10px, 2vh, 24px); margin: 0; pointer-events: none; }
+.live .yearmark span { position: absolute; right: 0; bottom: 0; font-size: clamp(3rem, 7vw, 6.5rem); font-weight: 200; line-height: 1; color: transparent; -webkit-text-stroke: 1px rgba(238, 241, 246, .42); }
+.live .yearmark .a { opacity: var(--ya, 1); clip-path: inset(0 0 0 calc(var(--wipe, 0) * 100%)); }
+.live .yearmark .b { opacity: var(--yb, 0); clip-path: inset(0 calc((1 - var(--wipe, 0)) * 100%) 0 0); }
+
+.live .beat { position: absolute; z-index: 3; inset: 0; display: block; padding: 0; border: 0; opacity: var(--o, 0); visibility: hidden; pointer-events: none; --t: 0; }
+.live .beat.on { visibility: visible; }
+.live .beat.on.here { pointer-events: auto; }
+.live .beat .copy { position: absolute; left: var(--gutter); top: 50%; width: min(30vw, 470px); transform: translateY(calc(-50% + (1 - var(--o, 0)) * 16px)); }
+.live .beat .art { position: absolute; display: block; left: var(--ax); right: var(--ar); top: 12vh; bottom: 15vh; }
+.live .art figcaption { position: absolute; left: 0; top: calc(100% + 14px); width: 100%; margin: 0; }
+.live .one { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: var(--s, 1); }
+.live .one > img, .live .one > .film { width: auto; height: auto; max-width: 100%; max-height: 100%; }
+.live .one > .film > img { max-height: 100%; width: auto; }
+.live .one figcaption { top: auto; bottom: -34px; }
+
+/* 1 · the terrace */
+.live .b-site .art img { box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .9); }
+/* 2 · two directions, then one placed on site */
+.live .b-directions .pair { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1.4vw; align-items: center; opacity: calc(1 - var(--s2, 0)); transform: scale(calc(1 - .06 * var(--s2, 0))); }
+.live .b-directions .pair figure { position: relative; }
+.live .b-directions .pair figcaption { top: calc(100% + 10px); }
+.live .b-directions .site { --s: var(--s2, 0); }
+.live .b-directions .art { left: calc(var(--ax) - 3vw); }
+/* 3 · the screens (WebGL); without it, the three screens as files */
+.live .b-screens .art { display: none; }
+.live .no-gl .b-screens .art { display: block; }
+.live .no-gl .b-screens .tri { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1.78fr 1fr; gap: 1vw; align-items: center; }
+.live .b-screens .copy { top: auto; bottom: 7vh; transform: translateY(calc((1 - var(--o, 0)) * 16px)); width: min(34vw, 520px); }
+/* 4 · the run of the evening */
+.live .b-run .grid { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); gap: 2.4vh 1.2vw; align-items: center; }
+.live .b-run .grid figure { position: relative; opacity: var(--g, 0); transform: translateY(calc((1 - var(--g, 0)) * 18px)); }
+.live .b-run .grid img { width: 100%; height: auto; }
+.live .b-run .grid figcaption { position: static; font-size: .74rem; margin-top: .4em; }
+/* 5 · 2019 */
+.live .divider { display: block; position: absolute; z-index: 3; inset: 0; padding: 0; border: 0; pointer-events: none; opacity: var(--o, 0); visibility: hidden; }
+.live .divider.on { visibility: visible; }
+.live .divider .year { position: absolute; left: var(--gutter); bottom: 8vh; -webkit-text-stroke-color: rgba(201, 166, 255, .8); clip-path: inset(0 calc((1 - var(--t, 0) * 1.6) * 100%) 0 0); }
+/* 6 · on the beach: one picture at a time */
+.live .b-beach .seq { position: absolute; inset: 0; display: block; }
+/* 7 · the floor */
+.live .b-floor .art { top: 11vh; bottom: 30vh; }
+.live .b-floor .copy { top: auto; bottom: 6vh; transform: translateY(calc((1 - var(--o, 0)) * 16px)); left: var(--ax); width: auto; right: var(--ar); display: grid; grid-template-columns: 1fr auto; column-gap: 28px; align-items: end; }
+.live .b-floor .copy .eyebrow { grid-column: 1 / -1; margin-bottom: .6em; }
+.live .b-floor .copy h2 { font-size: clamp(1.6rem, 2.3vw + .4rem, 2.9rem); }
+.live .b-floor .copy .say { grid-column: 1; margin-top: .4em; font-size: var(--fs-cap); max-width: 60ch; }
+.live .b-floor .copy .play { grid-column: 2; grid-row: 2 / span 2; margin: 0; }
+.live .b-floor .aside { position: absolute; left: var(--gutter); top: 50%; transform: translateY(-50%); width: min(26vw, 380px); }
+
+@media (max-width: 767px), (max-aspect-ratio: 21/20) {
+  .live .stage { --ax: var(--gutter); --ar: var(--gutter); }
+  .live .beat .copy { top: 84px; width: calc(100vw - 2 * var(--gutter)); transform: translateY(calc((1 - var(--o, 0)) * 12px)); }
+  .live .beat .say { font-size: 1rem; }
+  .live .beat .art { top: 46vh; bottom: 12vh; }
+  .live .b-directions .pair { grid-template-columns: 1fr; gap: 3vh; }
+  .live .b-screens .copy { top: 84px; bottom: auto; width: calc(100vw - 2 * var(--gutter)); }
+  .live .b-run .art { top: 40vh; bottom: 6vh; }
+  .live .b-run .grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr); }
+  .live .b-floor .aside { display: none; }
+  .live .b-floor .art { top: 84px; bottom: auto; height: calc((100vw - 2 * var(--gutter)) * 9 / 16); }
+  .live .b-floor .copy { left: var(--gutter); right: var(--gutter); top: calc(84px + (100vw - 2 * var(--gutter)) * 9 / 16 + 40px); bottom: auto; display: block; }
+  .live .b-floor .copy .play { margin-top: 1.2em; }
+  .live .ticks, .live .scene-index { display: none; }
+  .live .yearmark { display: none; }
+  .live .divider .year { bottom: 14vh; }
+}

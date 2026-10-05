@@ -1,0 +1,1012 @@
+{
+ "index-desktop": {
+  "url": "http://127.0.0.1:8796/",
+  "screens": 15,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/#reel",
+   "http://127.0.0.1:8796/work/zeiss/",
+   "http://127.0.0.1:8796/work/dha/",
+   "http://127.0.0.1:8796/work/anti-bullying/",
+   "http://127.0.0.1:8796/work/aiaasc/",
+   "http://127.0.0.1:8796/work/al-forsan/",
+   "http://127.0.0.1:8796/work/cityscape/",
+   "http://127.0.0.1:8796/work/big-grill/",
+   "http://127.0.0.1:8796/work/mazzika/",
+   "http://127.0.0.1:8796/work/liwa/",
+   "http://127.0.0.1:8796/work/al-ain/",
+   "http://127.0.0.1:8796/work/pyramids-2021/",
+   "http://127.0.0.1:8796/work/capacity/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [
+   {
+    "src": "http://127.0.0.1:8796/media/loop-1080.mp4",
+    "ok": true,
+    "t": 2.379414
+   },
+   {
+    "src": "http://127.0.0.1:8796/media/reel-1080.mp4",
+    "ok": true,
+    "t": 0.560044
+   }
+  ],
+  "imgsBroken": []
+ },
+ "index-phone": {
+  "url": "http://127.0.0.1:8796/",
+  "screens": 14,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/#reel",
+   "http://127.0.0.1:8796/work/zeiss/",
+   "http://127.0.0.1:8796/work/dha/",
+   "http://127.0.0.1:8796/work/anti-bullying/",
+   "http://127.0.0.1:8796/work/aiaasc/",
+   "http://127.0.0.1:8796/work/al-forsan/",
+   "http://127.0.0.1:8796/work/cityscape/",
+   "http://127.0.0.1:8796/work/big-grill/",
+   "http://127.0.0.1:8796/work/mazzika/",
+   "http://127.0.0.1:8796/work/liwa/",
+   "http://127.0.0.1:8796/work/al-ain/",
+   "http://127.0.0.1:8796/work/pyramids-2021/",
+   "http://127.0.0.1:8796/work/capacity/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [
+   {
+    "src": "http://127.0.0.1:8796/media/loop-720.mp4",
+    "ok": true,
+    "t": 2.377953
+   },
+   {
+    "src": "http://127.0.0.1:8796/media/reel-1080.mp4",
+    "ok": true,
+    "t": 0.55838
+   }
+  ],
+  "imgsBroken": []
+ },
+ "work-desktop": {
+  "url": "http://127.0.0.1:8796/work/",
+  "screens": 3,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/work/zeiss/",
+   "http://127.0.0.1:8796/work/dha/",
+   "http://127.0.0.1:8796/work/anti-bullying/",
+   "http://127.0.0.1:8796/work/aiaasc/",
+   "http://127.0.0.1:8796/work/al-forsan/",
+   "http://127.0.0.1:8796/work/cityscape/",
+   "http://127.0.0.1:8796/work/big-grill/",
+   "http://127.0.0.1:8796/work/mazzika/",
+   "http://127.0.0.1:8796/work/liwa/",
+   "http://127.0.0.1:8796/work/al-ain/",
+   "http://127.0.0.1:8796/work/pyramids-2021/",
+   "http://127.0.0.1:8796/work/capacity/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [],
+  "imgsBroken": []
+ },
+ "work-phone": {
+  "url": "http://127.0.0.1:8796/work/",
+  "screens": 4,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/work/zeiss/",
+   "http://127.0.0.1:8796/work/dha/",
+   "http://127.0.0.1:8796/work/anti-bullying/",
+   "http://127.0.0.1:8796/work/aiaasc/",
+   "http://127.0.0.1:8796/work/al-forsan/",
+   "http://127.0.0.1:8796/work/cityscape/",
+   "http://127.0.0.1:8796/work/big-grill/",
+   "http://127.0.0.1:8796/work/mazzika/",
+   "http://127.0.0.1:8796/work/liwa/",
+   "http://127.0.0.1:8796/work/al-ain/",
+   "http://127.0.0.1:8796/work/pyramids-2021/",
+   "http://127.0.0.1:8796/work/capacity/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [],
+  "imgsBroken": []
+ },
+ "zeiss-desktop": {
+  "url": "http://127.0.0.1:8796/work/zeiss/",
+  "screens": 10,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/zeiss/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/zeiss/",
+   "http://127.0.0.1:8796/work/dha/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [
+   {
+    "src": "http://127.0.0.1:8796/media/clips/zeiss-clip-wall-1080.mp4",
+    "ok": true,
+    "t": 1.811472
+   },
+   {
+    "src": "http://127.0.0.1:8796/media/clips/zeiss-clip-keynote-1080.mp4",
+    "ok": true,
+    "t": 0.095582
+   }
+  ],
+  "imgsBroken": []
+ },
+ "zeiss-phone": {
+  "url": "http://127.0.0.1:8796/work/zeiss/",
+  "screens": 8,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/zeiss/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/zeiss/",
+   "http://127.0.0.1:8796/work/dha/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [
+   {
+    "src": "http://127.0.0.1:8796/media/clips/zeiss-clip-wall-720.mp4",
+    "ok": true,
+    "t": 1.882928
+   },
+   {
+    "src": "http://127.0.0.1:8796/media/clips/zeiss-clip-keynote-720.mp4",
+    "ok": true,
+    "t": 0.346017
+   }
+  ],
+  "imgsBroken": []
+ },
+ "dha-desktop": {
+  "url": "http://127.0.0.1:8796/work/dha/",
+  "screens": 8,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/dha/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/dha/",
+   "http://127.0.0.1:8796/work/anti-bullying/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [],
+  "imgsBroken": []
+ },
+ "dha-phone": {
+  "url": "http://127.0.0.1:8796/work/dha/",
+  "screens": 10,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/dha/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/dha/",
+   "http://127.0.0.1:8796/work/anti-bullying/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [],
+  "imgsBroken": []
+ },
+ "anti-bullying-desktop": {
+  "url": "http://127.0.0.1:8796/work/anti-bullying/",
+  "screens": 7,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/anti-bullying/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/anti-bullying/",
+   "http://127.0.0.1:8796/work/aiaasc/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [
+   {
+    "src": "http://127.0.0.1:8796/media/clips/anti-bullying-clip-walk-1080.mp4",
+    "ok": true,
+    "t": 4.335727
+   }
+  ],
+  "imgsBroken": []
+ },
+ "anti-bullying-phone": {
+  "url": "http://127.0.0.1:8796/work/anti-bullying/",
+  "screens": 7,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/anti-bullying/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/anti-bullying/",
+   "http://127.0.0.1:8796/work/aiaasc/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [
+   {
+    "src": "http://127.0.0.1:8796/media/clips/anti-bullying-clip-walk-720.mp4",
+    "ok": true,
+    "t": 2.53546
+   }
+  ],
+  "imgsBroken": []
+ },
+ "aiaasc-desktop": {
+  "url": "http://127.0.0.1:8796/work/aiaasc/",
+  "screens": 8,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/aiaasc/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/aiaasc/",
+   "http://127.0.0.1:8796/work/al-forsan/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [
+   {
+    "src": "http://127.0.0.1:8796/media/clips/aiaasc-clip-k12-1080.mp4",
+    "ok": true,
+    "t": 4.225431
+   },
+   {
+    "src": "http://127.0.0.1:8796/media/clips/aiaasc-clip-school-1080.mp4",
+    "ok": true,
+    "t": 4.226283
+   }
+  ],
+  "imgsBroken": []
+ },
+ "aiaasc-phone": {
+  "url": "http://127.0.0.1:8796/work/aiaasc/",
+  "screens": 8,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/aiaasc/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/aiaasc/",
+   "http://127.0.0.1:8796/work/al-forsan/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [
+   {
+    "src": "http://127.0.0.1:8796/media/clips/aiaasc-clip-k12-720.mp4",
+    "ok": true,
+    "t": 4.223658
+   },
+   {
+    "src": "http://127.0.0.1:8796/media/clips/aiaasc-clip-school-720.mp4",
+    "ok": true,
+    "t": 4.223556
+   }
+  ],
+  "imgsBroken": []
+ },
+ "al-forsan-desktop": {
+  "url": "http://127.0.0.1:8796/work/al-forsan/",
+  "screens": 10,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/al-forsan/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/al-forsan/",
+   "http://127.0.0.1:8796/work/cityscape/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [],
+  "imgsBroken": []
+ },
+ "al-forsan-phone": {
+  "url": "http://127.0.0.1:8796/work/al-forsan/",
+  "screens": 9,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/al-forsan/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/al-forsan/",
+   "http://127.0.0.1:8796/work/cityscape/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [],
+  "imgsBroken": []
+ },
+ "cityscape-desktop": {
+  "url": "http://127.0.0.1:8796/work/cityscape/",
+  "screens": 7,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/cityscape/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/cityscape/",
+   "http://127.0.0.1:8796/work/big-grill/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [
+   {
+    "src": "http://127.0.0.1:8796/media/clips/cityscape-clip-tilt-1080.mp4",
+    "ok": true,
+    "t": 1.519902
+   },
+   {
+    "src": "http://127.0.0.1:8796/media/clips/cityscape-clip-flag-1080.mp4",
+    "ok": true,
+    "t": 1.541912
+   }
+  ],
+  "imgsBroken": []
+ },
+ "cityscape-phone": {
+  "url": "http://127.0.0.1:8796/work/cityscape/",
+  "screens": 6,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/cityscape/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/cityscape/",
+   "http://127.0.0.1:8796/work/big-grill/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [
+   {
+    "src": "http://127.0.0.1:8796/media/clips/cityscape-clip-tilt-720.mp4",
+    "ok": true,
+    "t": 1.700051
+   },
+   {
+    "src": "http://127.0.0.1:8796/media/clips/cityscape-clip-flag-720.mp4",
+    "ok": true,
+    "t": 2.536747
+   }
+  ],
+  "imgsBroken": []
+ },
+ "big-grill-desktop": {
+  "url": "http://127.0.0.1:8796/work/big-grill/",
+  "screens": 7,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/big-grill/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/big-grill/",
+   "http://127.0.0.1:8796/work/mazzika/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [
+   {
+    "src": "http://127.0.0.1:8796/media/clips/big-grill-clip-stage-1080.mp4",
+    "ok": true,
+    "t": 4.426539
+   },
+   {
+    "src": "http://127.0.0.1:8796/media/clips/big-grill-clip-band-1080.mp4",
+    "ok": true,
+    "t": 0.096271
+   }
+  ],
+  "imgsBroken": []
+ },
+ "big-grill-phone": {
+  "url": "http://127.0.0.1:8796/work/big-grill/",
+  "screens": 7,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/big-grill/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/big-grill/",
+   "http://127.0.0.1:8796/work/mazzika/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [
+   {
+    "src": "http://127.0.0.1:8796/media/clips/big-grill-clip-stage-720.mp4",
+    "ok": true,
+    "t": 4.462924
+   },
+   {
+    "src": "http://127.0.0.1:8796/media/clips/big-grill-clip-band-720.mp4",
+    "ok": true,
+    "t": 0.346756
+   }
+  ],
+  "imgsBroken": []
+ },
+ "mazzika-desktop": {
+  "url": "http://127.0.0.1:8796/work/mazzika/",
+  "screens": 9,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/mazzika/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/concerts/",
+   "http://127.0.0.1:8796/stories/mazzika/",
+   "http://127.0.0.1:8796/work/liwa/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [
+   {
+    "src": "http://127.0.0.1:8796/media/clips/mazzika-clip-box-1080.mp4",
+    "ok": true,
+    "t": 2.332451
+   },
+   {
+    "src": "http://127.0.0.1:8796/media/clips/mazzika-clip-arena-1080.mp4",
+    "ok": true,
+    "t": 0.345762
+   },
+   {
+    "src": "http://127.0.0.1:8796/media/clips/mazzika-clip-amr-title-1080.mp4",
+    "ok": true,
+    "t": 4.260448
+   }
+  ],
+  "imgsBroken": []
+ },
+ "mazzika-phone": {
+  "url": "http://127.0.0.1:8796/work/mazzika/",
+  "screens": 7,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/mazzika/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/concerts/",
+   "http://127.0.0.1:8796/stories/mazzika/",
+   "http://127.0.0.1:8796/work/liwa/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [
+   {
+    "src": "http://127.0.0.1:8796/media/clips/mazzika-clip-box-720.mp4",
+    "ok": true,
+    "t": 2.530824
+   },
+   {
+    "src": "http://127.0.0.1:8796/media/clips/mazzika-clip-arena-720.mp4",
+    "ok": true,
+    "t": 2.463642
+   },
+   {
+    "src": "http://127.0.0.1:8796/media/clips/mazzika-clip-amr-title-720.mp4",
+    "ok": true,
+    "t": 4.298164
+   }
+  ],
+  "imgsBroken": []
+ },
+ "liwa-desktop": {
+  "url": "http://127.0.0.1:8796/work/liwa/",
+  "screens": 6,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/liwa/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/liwa/",
+   "http://127.0.0.1:8796/work/al-ain/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [
+   {
+    "src": "http://127.0.0.1:8796/media/clips/liwa-clip-helmet-1080.mp4",
+    "ok": true,
+    "t": 1.698093
+   },
+   {
+    "src": "http://127.0.0.1:8796/media/clips/liwa-clip-souq-1080.mp4",
+    "ok": true,
+    "t": 4.456581
+   }
+  ],
+  "imgsBroken": []
+ },
+ "liwa-phone": {
+  "url": "http://127.0.0.1:8796/work/liwa/",
+  "screens": 6,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/liwa/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/liwa/",
+   "http://127.0.0.1:8796/work/al-ain/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [
+   {
+    "src": "http://127.0.0.1:8796/media/clips/liwa-clip-helmet-720.mp4",
+    "ok": true,
+    "t": 2.492938
+   },
+   {
+    "src": "http://127.0.0.1:8796/media/clips/liwa-clip-souq-720.mp4",
+    "ok": true,
+    "t": 4.429154
+   }
+  ],
+  "imgsBroken": []
+ },
+ "al-ain-desktop": {
+  "url": "http://127.0.0.1:8796/work/al-ain/",
+  "screens": 5,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/al-ain/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/al-ain/",
+   "http://127.0.0.1:8796/work/pyramids-2021/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [],
+  "imgsBroken": []
+ },
+ "al-ain-phone": {
+  "url": "http://127.0.0.1:8796/work/al-ain/",
+  "screens": 6,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/al-ain/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/al-ain/",
+   "http://127.0.0.1:8796/work/pyramids-2021/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [],
+  "imgsBroken": []
+ },
+ "pyramids-2021-desktop": {
+  "url": "http://127.0.0.1:8796/work/pyramids-2021/",
+  "screens": 6,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/pyramids-2021/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/pyramids-2021/",
+   "http://127.0.0.1:8796/work/capacity/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [],
+  "imgsBroken": []
+ },
+ "pyramids-2021-phone": {
+  "url": "http://127.0.0.1:8796/work/pyramids-2021/",
+  "screens": 5,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/pyramids-2021/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/pyramids-2021/",
+   "http://127.0.0.1:8796/work/capacity/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [],
+  "imgsBroken": []
+ },
+ "capacity-desktop": {
+  "url": "http://127.0.0.1:8796/work/capacity/",
+  "screens": 6,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/capacity/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/capacity/",
+   "http://127.0.0.1:8796/work/zeiss/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [
+   {
+    "src": "http://127.0.0.1:8796/media/clips/capacity-clip-city-1080.mp4",
+    "ok": true,
+    "t": 7.621715
+   }
+  ],
+  "imgsBroken": []
+ },
+ "capacity-phone": {
+  "url": "http://127.0.0.1:8796/work/capacity/",
+  "screens": 6,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/work/capacity/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/stories/capacity/",
+   "http://127.0.0.1:8796/work/zeiss/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [
+   {
+    "src": "http://127.0.0.1:8796/media/clips/capacity-clip-city-720.mp4",
+    "ok": true,
+    "t": 7.67431
+   }
+  ],
+  "imgsBroken": []
+ },
+ "how-i-work-desktop": {
+  "url": "http://127.0.0.1:8796/how-i-work/",
+  "screens": 6,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/how-i-work/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [],
+  "imgsBroken": []
+ },
+ "how-i-work-phone": {
+  "url": "http://127.0.0.1:8796/how-i-work/",
+  "screens": 6,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/how-i-work/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [],
+  "imgsBroken": []
+ },
+ "about-desktop": {
+  "url": "http://127.0.0.1:8796/about/",
+  "screens": 3,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/about/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [],
+  "imgsBroken": []
+ },
+ "about-phone": {
+  "url": "http://127.0.0.1:8796/about/",
+  "screens": 4,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/about/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [],
+  "imgsBroken": []
+ },
+ "contact-desktop": {
+  "url": "http://127.0.0.1:8796/contact/",
+  "screens": 2,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/contact/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [],
+  "imgsBroken": []
+ },
+ "contact-phone": {
+  "url": "http://127.0.0.1:8796/contact/",
+  "screens": 2,
+  "errors": [],
+  "failed": [],
+  "overflowX": 0,
+  "links": [
+   "http://127.0.0.1:8796/contact/#main",
+   "http://127.0.0.1:8796/index.html",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/",
+   "http://127.0.0.1:8796/work/",
+   "http://127.0.0.1:8796/how-i-work/",
+   "http://127.0.0.1:8796/about/",
+   "http://127.0.0.1:8796/contact/"
+  ],
+  "videos": [],
+  "imgsBroken": []
+ },
+ "_links": {
+  "checked": 48,
+  "broken": []
+ }
+}

@@ -1,0 +1,186 @@
+/* Cityscape Abu Dhabi 2017 — project story.
+   The rule comes from the plan: a square grid crossed by one 45° maroon line. Type and plates sit on the grid;
+   whatever moves, moves along the diagonal.
+   Default (no JavaScript, reduced motion, Motion off): seven chapters in reading order, whole pictures.
+   With motion: html.live pins the stage and scroll drives --t (progress inside a beat) and --o (its presence). */
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--paper); color: var(--ink); font-family: var(--font); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body { margin: 0; font-size: var(--fs-body); line-height: 1.45; }
+img, video, canvas { display: block; max-width: 100%; }
+a { color: inherit; }
+:root {
+  --maroon: #80242A;          /* the project names, from the artwork */
+  --maroon-deep: #4C1314;     /* the carpet in the design render */
+  --sphere: #1BD5F1;          /* the spheres in the design render */
+  --hall: #0B0C10;
+  --line: rgba(11, 12, 16, .16);
+  --fs-h: clamp(2rem, 3.5vw + .6rem, 4.2rem);
+  --fs-eyebrow: clamp(.72rem, .4vw + .58rem, .86rem);
+}
+
+/* ---------- chrome ---------- */
+.skip { position: absolute; left: -999px; top: 8px; z-index: 60; padding: 10px 14px; background: var(--ink); color: var(--paper); }
+.skip:focus { left: 8px; }
+.nav { position: fixed; inset: 0 0 auto 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: clamp(14px, 2vw, 26px) var(--gutter); pointer-events: none; color: var(--ink); transition: color .3s; }
+.nav > * { pointer-events: auto; }
+.nav .mark { width: clamp(24px, 2.2vw, 32px); height: auto; display: block; }
+.nav ul { display: flex; align-items: center; gap: clamp(12px, 2vw, 30px); margin: 0; padding: 0; list-style: none; font-size: var(--fs-eyebrow); letter-spacing: .14em; text-transform: uppercase; }
+.nav a { text-decoration: none; }
+.nav button { font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; background: none; border: 1px solid currentColor; border-radius: 99px; padding: 5px 12px; cursor: pointer; opacity: .8; }
+.on-dark .nav { color: var(--paper); }
+
+/* ---------- type ---------- */
+.eyebrow { margin: 0 0 1.1em; font-size: var(--fs-eyebrow); font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--maroon); }
+.beat h1, .beat h2 { margin: 0; font-size: var(--fs-h); font-weight: 600; line-height: 1.02; letter-spacing: -.02em; text-wrap: balance; }
+.beat .say { margin: 1.1em 0 0; max-width: 34ch; color: var(--mute); }
+.tag { display: inline-block; margin-top: 1.4em; padding: .35em .8em; border: 1px solid var(--line); border-radius: 99px; font-size: var(--fs-eyebrow); letter-spacing: .06em; color: var(--mute); }
+figure { margin: 0; }
+figcaption { margin-top: .7em; font-size: var(--fs-cap); line-height: 1.35; color: var(--mute); max-width: 62ch; }
+figcaption b { font-weight: 500; color: var(--ink); }
+
+/* ---------- static story: chapters in reading order ---------- */
+.story { position: relative; }
+.stage { position: relative; }
+.field, .gl, .rule, .ticks, .scene-index { display: none; }
+.beat { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(24px, 5vw, 80px); align-items: center; padding: clamp(56px, 9vh, 120px) var(--gutter); border-top: 1px solid var(--line); }
+.beat:first-of-type { border-top: 0; padding-top: clamp(96px, 14vh, 160px); }
+.beat .art { display: grid; gap: 18px; }
+.beat .art img { width: 100%; height: auto; }
+.plate { background: #fff; box-shadow: 0 1px 0 var(--line), 0 18px 50px -24px rgba(11, 12, 16, .35); }
+.b-names .names { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 28px; align-items: center; }
+.b-names .names img { width: 100%; }
+.b-names .rosette { display: none; }
+.b-light .options { grid-column: 2; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: -40px; }
+.b-build .me { grid-column: 2; }
+.b-build .cad { position: relative; background: #fff; }
+.b-build .cad img + img { position: absolute; inset: 0; }
+.b-build .me { max-width: 480px; }
+.b-doors, .b-doors .say, .b-doors figcaption { color: var(--paper); }
+.b-doors { background: var(--hall); border-top: 0; }
+.b-doors .say, .b-doors figcaption { color: var(--mute-on-ink); }
+.b-doors .eyebrow { color: var(--sphere); }
+.b-doors canvas.frames { display: none; }
+.film { position: relative; background: #000; }
+.film video { position: absolute; inset: 0; width: 100%; height: 100%; display: none; background: #000; }
+.film.playing video { display: block; }
+.play { font: inherit; font-size: var(--fs-eyebrow); letter-spacing: .14em; text-transform: uppercase; color: inherit; background: none; border: 1px solid currentColor; border-radius: 99px; padding: .8em 1.3em; margin-top: 1.4em; cursor: pointer; }
+.play:hover, .play:focus-visible { background: var(--paper); color: var(--ink); }
+html:not(.js) .play { display: none; }
+
+/* ---------- the record, after the story ---------- */
+.record { background: var(--paper-2); padding: clamp(64px, 10vh, 130px) var(--gutter); }
+.record h2 { margin: 0 0 1.2em; font-size: clamp(1.5rem, 2vw + .6rem, 2.4rem); font-weight: 600; letter-spacing: -.01em; }
+.record dl { display: grid; grid-template-columns: minmax(120px, 1fr) minmax(0, 4fr); gap: 0; margin: 0; max-width: 1100px; }
+.record dt, .record dd { margin: 0; padding: .9em 0; border-top: 1px solid var(--line); }
+.record dt { font-size: var(--fs-eyebrow); letter-spacing: .14em; text-transform: uppercase; color: var(--maroon); padding-top: 1.15em; }
+.record dd small { display: block; margin-top: .25em; font-size: var(--fs-cap); color: var(--mute); }
+.record .next { display: inline-block; margin-top: 2.4em; font-size: var(--fs-eyebrow); letter-spacing: .16em; text-transform: uppercase; text-decoration: none; padding-bottom: 6px; border-bottom: 1px solid currentColor; }
+
+@media (max-width: 767px) {
+  .beat { grid-template-columns: 1fr; gap: 28px; }
+  .record dl { grid-template-columns: 1fr; }
+  .record dt { border-top: 1px solid var(--line); padding-bottom: 0; }
+  .record dd { border-top: 0; padding-top: .3em; }
+  .nav ul li.opt { display: none; }
+}
+
+/* =====================================================================
+   LIVE — the pinned stage
+   ===================================================================== */
+.live .story { height: calc(var(--travel) * 1vh + 100vh); }
+.live .stage { position: sticky; top: 0; height: 100vh; min-height: 480px; overflow: hidden; --cx: 38vw; }
+.live .field { display: block; position: absolute; inset: 0; background: var(--paper); }
+.live .field::after { content: ""; position: absolute; inset: 0; background: var(--hall); opacity: var(--dark, 0); }
+.live .gl { display: block; position: absolute; inset: 0; width: 100%; height: 100%; opacity: var(--gl, 0); }
+.live .no-gl .gl { display: none; }
+.live .rule { display: block; position: absolute; z-index: 2; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.live .rule line { stroke: var(--maroon); stroke-width: 3.2; vector-effect: non-scaling-stroke; }
+.live .scene-index { display: block; position: absolute; z-index: 6; left: var(--gutter); bottom: clamp(18px, 3vh, 34px); margin: 0; font-size: var(--fs-eyebrow); letter-spacing: .16em; text-transform: uppercase; color: var(--mute); }
+.live .ticks { display: flex; flex-direction: column; gap: 9px; position: absolute; z-index: 6; right: calc(var(--gutter) * .45); top: 50%; transform: translateY(-50%); margin: 0; padding: 0; list-style: none; }
+.live .ticks li { width: 2px; height: 20px; background: rgba(11, 12, 16, .2); }
+.live .ticks li.on { background: var(--maroon); }
+.live .stage.dark .ticks li { background: rgba(244, 241, 234, .25); }
+.live .stage.dark .ticks li.on { background: var(--sphere); }
+.live .stage.dark .scene-index { color: var(--mute-on-ink); }
+
+.live .beat { position: absolute; z-index: 3; inset: 0; display: block; padding: 0; border: 0; background: none; opacity: var(--o, 0); visibility: hidden; pointer-events: none; --t: 0; }
+.live .beat.on { visibility: visible; }
+.live .beat.on.here { pointer-events: auto; }
+.live .beat .copy { position: absolute; left: var(--gutter); top: 50%; width: min(30vw, 470px); transform: translateY(calc(-50% + (1 - var(--o, 0)) * 16px)); }
+.live .beat .art { position: absolute; display: block; }
+.live .art figcaption { position: absolute; left: 0; top: 100%; width: 100%; }
+
+/* 1 · the brief: the client's boxes, and one line through them */
+.live .b-brief { z-index: 1; }
+.live .b-brief .art { left: var(--cx); right: calc(var(--gutter) + 22px); top: 50%; transform: translateY(-52%) perspective(1600px) rotateX(calc((1 - var(--t)) * 16deg)) rotateZ(calc((1 - var(--t)) * -2.5deg)) scale(calc(.94 + .06 * var(--t))); transform-origin: 50% 80%; }
+
+/* 2 · the names: fourteen layers at different depths settle into two columns */
+.live .b-names .art { left: var(--cx); right: calc(var(--gutter) + 22px); top: 12vh; bottom: 12vh; perspective: 1200px; perspective-origin: 30% 60%; }
+.live .b-names .names { position: absolute; inset: 0; display: block; transform-style: preserve-3d; }
+.live .b-names .names img { position: absolute; left: 0; top: 0; width: auto; background: var(--paper); box-shadow: 0 0 0 8px var(--paper); height: calc(var(--h) * 1px); will-change: transform, opacity;
+  --k: clamp(0, (var(--t) - var(--d)) / .55, 1); --e: calc(var(--k) * var(--k) * (3 - 2 * var(--k)));
+  opacity: calc(.25 + .75 * var(--e) + (1 - var(--e)) * var(--near));
+  transform: translate3d(calc(var(--x1) * 1px + (1 - var(--e)) * var(--dx) * 1px), calc(var(--y1) * 1px + (1 - var(--e)) * var(--dy) * 1px), calc((1 - var(--e)) * var(--dz) * 1px)); }
+.live .b-names .rosette { display: block; position: absolute; right: -6vw; bottom: -4vh; width: min(58vw, 900px); opacity: calc(.10 * var(--o)); transform: rotate(calc(-45deg + var(--t) * 10deg)); transform-origin: 50% 0; }
+
+/* 3, 4, 7 · the model (WebGL); without WebGL the complete original artwork stands in */
+.live .b-floor .art, .live .b-light .art.fallback, .live .b-strike .art { display: none; }
+.live .no-gl .b-floor .art, .live .no-gl .b-strike .art { display: block; left: var(--cx); right: calc(var(--gutter) + 22px); top: 50%; transform: translateY(-52%); }
+.live .no-gl .b-floor .art img, .live .no-gl .b-strike .art img { max-height: 70vh; width: auto; margin: 0 auto; }
+
+/* 4 · the design render arrives along the diagonal; three earlier options under it */
+.live .b-light .render { left: var(--cx); right: calc(var(--gutter) + 22px); top: 47%; --w: clamp(0, (var(--t) - .62) / .22, 1);
+  transform: translateY(-50%); clip-path: polygon(0 0, calc(var(--w) * 200%) 0, 0 calc(var(--w) * 200%)); }
+.live .no-gl .b-light .render { --w: 1; }
+.live .b-light .options { margin-top: 0; left: var(--cx); right: calc(var(--gutter) + 22px); bottom: 5vh; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: min(34vw, 520px); --w: clamp(0, (var(--t) - .8) / .15, 1); opacity: var(--w); transform: translateY(calc((1 - var(--w)) * 14px)); }
+.live .b-light .options figcaption { font-size: .72rem; }
+.live .b-light .options figure { position: relative; }
+.live .b-light .options figure figcaption { position: static; }
+
+/* 5 · the contractor's plan draws on, layer by layer, wiped along the diagonal */
+.live .b-build .cad { left: calc(var(--cx) + 2vw); top: 50%; width: min(52vw, 88vh); transform: translateY(-54%); background: none; }
+.live .b-build .cad figcaption { width: 56%; }
+.live .b-build .cad img { width: 100%; clip-path: polygon(0 0, calc(var(--w) * 200%) 0, 0 calc(var(--w) * 200%)); }
+.live .b-build .cad .l-grid { --w: clamp(0, var(--t) / .3, 1); opacity: .55; }
+.live .b-build .cad .l-line { --w: clamp(0, (var(--t) - .14) / .3, 1); }
+.live .b-build .cad .l-dims { --w: clamp(0, (var(--t) - .3) / .3, 1); }
+.live .b-build .me { right: calc(var(--gutter) + 22px); bottom: 9vh; width: min(30vw, 480px); --w: clamp(0, (var(--t) - .5) / .3, 1); --e: calc(var(--w) * var(--w) * (3 - 2 * var(--w)));
+  opacity: var(--e); transform: translate(calc((1 - var(--e)) * 60px), calc((1 - var(--e)) * -60px)); }
+.live .b-build .me img { box-shadow: 0 24px 60px -28px rgba(11, 12, 16, .55); }
+
+/* 6 · the doors open: the real frames, whole, in the dark hall */
+.live .b-doors { color: var(--paper); }
+.live .b-doors .art { left: 50%; top: 9vh; width: min(calc(100vw - 2 * var(--gutter) - 44px), calc(66vh * 16 / 9)); transform: translateX(-50%); }
+.live .b-doors canvas.frames { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; }
+.live .b-doors .film > img { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; }
+.live .b-doors .copy { top: auto; bottom: 6.5vh; left: 50%; width: min(calc(100vw - 2 * var(--gutter) - 44px), calc(66vh * 16 / 9)); transform: translateX(-50%); display: grid; grid-template-columns: 1fr auto; column-gap: 32px; align-items: end; }
+.live .b-doors .copy .eyebrow { grid-column: 1 / -1; margin-bottom: .6em; }
+.live .b-doors .copy h2 { font-size: clamp(1.6rem, 2.4vw + .4rem, 3rem); }
+.live .b-doors .copy .say { grid-column: 1; margin-top: .5em; max-width: 60ch; font-size: var(--fs-cap); }
+.live .b-doors .copy .play { grid-column: 2; grid-row: 2 / span 2; margin: 0; align-self: end; --w: clamp(0, (var(--t) - .66) / .1, 1); opacity: var(--w); }
+.live .b-doors figcaption { display: none; }
+
+/* 7 · strike */
+.live .b-strike .copy .say small { display: block; margin-top: .8em; font-size: var(--fs-cap); }
+
+/* ---------- live, tall (phones and portrait windows) ---------- */
+@media (max-width: 767px), (max-aspect-ratio: 21/20) {
+  .live .stage { --cx: var(--gutter); }
+  .live .beat .copy { top: 84px; width: calc(100vw - 2 * var(--gutter) - 20px); transform: translateY(calc((1 - var(--o, 0)) * 12px)); }
+  .live .beat .say { font-size: 1rem; }
+  .live .b-brief .art { left: var(--gutter); right: var(--gutter); top: 46vh; bottom: auto; transform: perspective(1200px) rotateX(calc((1 - var(--t)) * 16deg)) scale(calc(.94 + .06 * var(--t))); }
+  .live .b-names .art { left: var(--gutter); right: var(--gutter); top: 37vh; bottom: 5vh; }
+  .live .b-names .rosette { width: 120vw; right: -40vw; }
+  .live .b-light .render { left: var(--gutter); right: var(--gutter); top: auto; bottom: 26vh; transform: none; }
+  .live .b-light .options { left: var(--gutter); right: var(--gutter); bottom: 9vh; width: auto; }
+  .live .b-build .cad { left: var(--gutter); top: auto; bottom: 25vh; width: calc(100vw - 2 * var(--gutter)); transform: none; }
+  .live .b-build .me { right: var(--gutter); bottom: 5vh; width: 44vw; }
+  .live .b-build .cad figcaption { width: 50%; }
+  .live .b-build .me figcaption { display: none; }
+  .live .b-doors .art { top: 84px; width: calc(100vw - 2 * var(--gutter)); }
+  .live .b-doors .copy { top: calc(84px + (100vw - 2 * var(--gutter)) * 9 / 16 + 28px); bottom: auto; width: calc(100vw - 2 * var(--gutter)); display: block; transform: translateX(-50%); }
+  .live .b-doors .copy .play { margin-top: 1.2em; }
+  .live .no-gl .b-floor .art, .live .no-gl .b-strike .art { left: var(--gutter); right: var(--gutter); top: auto; bottom: 12vh; transform: none; }
+  .live .ticks { display: none; }
+  .live .scene-index { display: none; }
+}

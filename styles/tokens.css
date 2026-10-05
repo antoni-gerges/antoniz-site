@@ -1,0 +1,24 @@
+/* Antoni Gerges — shared build · design tokens
+   Working identity (FACT-STATUS): ink / paper / one cyan, Jost, the T mark. Reconcile with the Antoni Z Brand system when it arrives. */
+@font-face {
+  font-family: "Jost";
+  src: url("../assets/brand/jost-var.woff2") format("woff2-variations"), url("../assets/brand/jost-var.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  --ink: #0B0C10;
+  --ink-2: #1A1C22;
+  --paper: #F4F1EA;
+  --paper-2: #E9E5DC;
+  --cream: #F3ECDD;          /* the poster name: warmer than paper, reads on lake, sky and rock */
+  --cyan: #00E1F1;
+  --mute: rgba(11, 12, 16, .62);
+  --mute-on-ink: rgba(244, 241, 234, .66);
+
+  --font: "Jost", "Futura", "Avenir Next", system-ui, sans-serif;
+  --fs-body: clamp(1.0625rem, 1.05vw + .6rem, 1.25rem);
+  --fs-cap: clamp(.8rem, .55vw + .55rem, .95rem);
+  --gutter: clamp(18px, 4vw, 64px);
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
