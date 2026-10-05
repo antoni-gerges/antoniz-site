@@ -517,3 +517,6 @@ body.proj{--bg:#fff}
 /* no hover zoom on artwork (zoom crops the edges) */
 .door>a:hover .pic img,.door>a:hover .pic video,.short:hover .pic img,.pnext a:hover .pic img{transform:none}
 .fig .m video{object-fit:contain!important;background:#000}
+/* More work: even grid, whole artwork inside each frame */
+.shorts .short .pic{aspect-ratio:4/3!important;display:grid;place-items:center;background:#fff;margin-bottom:16px}
+.shorts .short .pic img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain}
