@@ -716,7 +716,7 @@ body.proj{--bg:#fff}
 .idents{background:var(--paper);padding:clamp(64px,8vw,120px) 0}
 .idents .fh{display:flex;justify-content:space-between;align-items:baseline;gap:24px}
 .idents h2{font-size:clamp(28px,3vw,44px);margin:0}.idents .fh p{margin:0;color:rgba(11,12,16,.7);font-size:15px}
-.idgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,24px);margin-top:clamp(24px,3vw,40px)}
+.idgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.6vw,24px);margin-top:clamp(24px,3vw,40px)}
 .idt{margin:0;display:block;text-decoration:none;color:inherit}
 .idt img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;background:#fff}
 .idt span{display:block;font-size:15px;margin-top:10px;color:rgba(11,12,16,.78)}
