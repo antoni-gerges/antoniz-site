@@ -703,3 +703,11 @@ body.proj{--bg:#fff}
 /* header hides on scroll down, returns on scroll up (5 Oct) */
 .hdr{transition:transform .35s cubic-bezier(.2,.8,.2,1),background-color .3s,color .3s}
 .hdr.hide:not(.open){transform:translateY(-110%)}
+
+/* project-page films (5 Oct): picture fills its true ratio, no black bars, title under */
+.pfilm .film{background:none;overflow:visible}
+.pfilm .fpic{position:relative;display:block;aspect-ratio:var(--ar,16/9);overflow:hidden;background:#000}
+.pfilm .fpic video{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;object-fit:cover}
+.pfilm .fcap.fcap-under{position:static;display:flex;align-items:center;gap:14px;background:none;padding:16px 0 0;color:inherit}
+.pfilm .fcap.fcap-under span span{color:inherit;opacity:.72}
+.pfilm{color:var(--fg,#0B0C10)}.pfilm .film,.pfilm .film b,.pfilm .fcap.fcap-under span{color:inherit!important}.pfilm .fcap.fcap-under span span{opacity:.7}
