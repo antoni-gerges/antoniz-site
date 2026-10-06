@@ -6,6 +6,15 @@
 
   /* phone menu */
   var hdr = document.querySelector('.hdr');
+  if (hdr) {
+    var lastY = window.scrollY, acc = 0;
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY, d = y - lastY; lastY = y;
+      if (y < 80) { hdr.classList.remove('hide'); acc = 0; return; }
+      acc = (d > 0) === (acc > 0) ? acc + d : d;
+      if (acc > 24) hdr.classList.add('hide'); else if (acc < -12) hdr.classList.remove('hide');
+    }, { passive: true });
+  }
   var mb = document.querySelector('.menu-btn');
   if (hdr && mb) {
     mb.addEventListener('click', function () {

@@ -699,3 +699,7 @@ body.proj{--bg:#fff}
 .mosaic img.ph{object-fit:cover}
 @media (max-width:860px){.nstory{height:calc(var(--n)*52vh + 100vh)}.nright{height:auto;order:-1}.nstage{height:250px}.ntxt{font-size:17px}.nmedia.card{padding:0 18px}.nmedia.card .ntime b{font-size:18px}.nmedia.card .ntime span{font-size:14px}.nmedia.card .ntime i{display:none}.nmedia.card .ntime li{padding-top:3px;padding-bottom:3px;grid-template-columns:56px 1fr;gap:10px}.nmedia.card .ntime li::before{height:20px;width:calc(20px*var(--dash-r));margin-top:-10px}}
 .nmedia>img.fill{object-fit:cover}
+
+/* header hides on scroll down, returns on scroll up (5 Oct) */
+.hdr{transition:transform .35s cubic-bezier(.2,.8,.2,1),background-color .3s,color .3s}
+.hdr.hide:not(.open){transform:translateY(-110%)}
