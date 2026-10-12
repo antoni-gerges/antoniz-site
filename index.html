@@ -22,6 +22,7 @@
 <link rel="preload" href="assets/jost-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css?v=afd4c1e0">
 
+<link rel="stylesheet" href="assets/signal.css">
 <link rel="stylesheet" href="assets/home2.css">
 <noscript><style>
 .hdr{--hdr-bg:#0B0C10;--hdr-fg:#F7F5F1;--hdr-mk:#F7F5F1}
@@ -314,13 +315,16 @@ document.fonts.ready.then(()=>{ layout(); measure(); TS=sampleT(); MS=sampleMark
     <div><p class="h2-k">Selected work</p><h2 id="sw-h">Three, then nine.</h2></div>
     <a class="sg-all" href="projects/">All twelve projects →</a>
   </div>
-  <div class="sg-row">
+  <div class="sg3">
     <div class="sweep-w" aria-hidden="true"><img class="sweep" src="assets/energy-wide.svg" alt="" aria-hidden="true"></div>
-    <a class="sg" href="work/zeiss/"><span class="sg-c"><img src="img/zeiss/dinner-1600.webp" alt="The ZEISS launch dinner: long tables beside the cars under a wall of screens" loading="lazy" decoding="async"></span><span class="sg-cap"><span class="sg-n"><span class="mvt" aria-hidden="true"><i class="on"></i><i></i><i></i></span><b>ZEISS Vision Care</b></span><span class="sg-l">Live six days after confirmation.</span></span></a>
-    <a class="sg" href="work/liwa/"><span class="sg-c"><img src="img/liwa/souq-1600.webp" alt="The souq at Liwa: barasti stalls on open sand" loading="lazy" decoding="async"></span><span class="sg-cap"><span class="sg-n"><span class="mvt" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span><b>Liwa International Festival</b></span><span class="sg-l">Six zones on open sand, for 16 days.</span></span></a>
-    <a class="sg" href="work/cityscape/"><span class="sg-c"><img src="img/cityscape/spheres-1600.webp" alt="A column of lit spheres at Cityscape Abu Dhabi" loading="lazy" decoding="async"></span><span class="sg-cap"><span class="sg-n"><span class="mvt" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span><b>Cityscape Abu Dhabi</b></span><span class="sg-l">7,200 sq ft, built in three days.</span></span></a>
+    <div class="sg3-trio"><a class="sgw" href="work/zeiss/" tabindex="-1"><span class="sgw-in"><img class="sgw-fill" src="img/zeiss/dinner-1600.webp" alt="The ZEISS launch dinner: long tables beside the cars under a wall of screens" loading="lazy" decoding="async"></span></a><a class="sgw" href="work/liwa/" tabindex="-1"><span class="sgw-in"><img class="sgw-fill" src="img/liwa/souq-1600.webp" alt="The souq at Liwa: barasti stalls on open sand" loading="lazy" decoding="async"></span></a><a class="sgw" href="work/cityscape/" tabindex="-1"><span class="sgw-in"><img class="sgw-fill" src="img/cityscape/spheres-1600.webp" alt="A column of lit spheres at Cityscape Abu Dhabi" loading="lazy" decoding="async"></span></a></div>
+    <ul class="sg3-list">
+      <li><a href="work/zeiss/"><span class="sg-n"><span class="mvt" aria-hidden="true"><i class="on"></i><i></i><i></i></span><b>ZEISS Vision Care</b></span><span class="sg-l">Live six days after confirmation.</span></a></li>
+      <li><a href="work/liwa/"><span class="sg-n"><span class="mvt" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span><b>Liwa International Festival</b></span><span class="sg-l">Six zones on open sand, for 16 days.</span></a></li>
+      <li><a href="work/cityscape/"><span class="sg-n"><span class="mvt" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span><b>Cityscape Abu Dhabi</b></span><span class="sg-l">7,200 sq ft, built in three days.</span></a></li>
+    </ul>
   </div>
-  <button class="sg wide" type="button" data-film="work/zeiss/a/led3-2816.mp4" data-film-sm="work/zeiss/a/led3-1408.mp4" data-film-title="ZEISS · the 74-ft wall film" aria-label="Play the ZEISS wall film, 35 seconds, silent"><span class="sg-c"><img src="work/zeiss/a/led3-poster.webp" alt="" loading="lazy" decoding="async"><svg class="play" viewBox="0 0 44 44" aria-hidden="true" focusable="false"><circle cx="22" cy="22" r="22" fill="#F7F5F1"/><path d="M18 14.5 L30.5 22 L18 29.5 Z" fill="#0B0C10"/></svg></span></button>
+  <button class="sg-film" type="button" data-film="work/zeiss/a/led3-2816.mp4" data-film-sm="work/zeiss/a/led3-1408.mp4" data-film-title="ZEISS · the 74-ft wall film" aria-label="Play the ZEISS wall film, 35 seconds, silent"><img src="work/zeiss/a/led3-poster.webp" alt="" loading="lazy" decoding="async"><svg class="play" viewBox="0 0 44 44" aria-hidden="true" focusable="false"><circle cx="22" cy="22" r="22" fill="#F7F5F1"/><path d="M18 14.5 L30.5 22 L18 29.5 Z" fill="#0B0C10"/></svg></button>
   <p class="sg-wcap"><b>ZEISS · the 74-ft wall film, whole</b><span>Screen film by AntBrush · 0:35 · silent</span></p>
   <p class="sg-nine"><a href="work/dha/">Dubai Health Authority</a> · <a href="work/mazzika/">Why Not! Mazzika</a> · <a href="work/anti-bullying/">National Bullying Prevention Week</a> · <a href="work/aiaasc/">AIAASC</a> · <a href="work/al-forsan/">Al Forsan</a> · <a href="work/al-ain/">Innovation Month</a> · <a href="work/pyramids-2021/">GS is One</a> · <a href="work/capacity/">Capacity Middle East</a> · <a href="work/big-grill/">The Big Grill</a></p>
 </div></section>
@@ -383,7 +387,6 @@ document.fonts.ready.then(()=>{ layout(); measure(); TS=sampleT(); MS=sampleMark
 
 <script src="assets/site.js?v=afd4c1e0" defer></script>
 <script src="assets/films.js?v=afd4c1e0" defer></script>
-<script src="assets/signal.js" defer></script>
 <script src="assets/brand.js" defer></script>
 </body>
 </html>

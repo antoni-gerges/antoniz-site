@@ -12,37 +12,40 @@ body.home2{background:#0B0C10}
 .h2 a{color:inherit}
 .h2 .arrow{font:500 clamp(17px,1.4vw,21px)/1.2 "Jost",system-ui,sans-serif;border-bottom-color:rgba(247,245,241,.5)}
 
-/* Selected work in the Signal system, design 2B (Tony, 12 Oct; reference design/v2b.html, sheet SIGNAL-FRAME-2-REFINED row 2B).
-   Three tall signal containers (360 × 520 at desktop, the row 1200 wide as in the reference), the sweep behind them crossing once in the
-   first gap at 60% of their height, the ZEISS wall film in the wide band (row width × 280), the other nine in one quiet line.
-   assets/signal.js clips each .sg-c box to the signal from its rendered size; without it the boxes stay rectangles.
-   The section is a size container so the sweep can run edge to edge of the screen and keep its crossing in the first gap at any width. */
+/* Selected work: the three signals of the mark (Tony, 12 Oct evening, on the 2B containers: "ratio isn't the same as my brand signal";
+   his pick: layout 2 on sheets/SELECTED-WORK-EXACT-SIGNAL.jpg; reference design/sel-2.html).
+   Three windows, each the mark's first signal at its own ratio (assets/signal.css), one every 0.36647 of their height, as the three
+   signals sit in the mark. The names stand beside them, the sweep runs behind, and the ZEISS wall film is whole in a straight frame:
+   no signal is stretched to hold it. The section is a size container so the sweep can run edge to edge of the screen. */
 .h2-sig{padding-top:clamp(56px,7vw,110px);container-type:inline-size;overflow-x:clip}
-.h2-sig .wrap{--sgap:clamp(24px,4.2vw,60px);--wl:calc((100cqw - min(100cqw, var(--max,1680px))) / 2);
-  --sgw:min(calc(min(100cqw, var(--max,1680px)) - 2 * var(--g,40px)), calc(1080px + 2 * var(--sgap)));--colw:calc((var(--sgw) - 2 * var(--sgap)) / 3)}
+.h2-sig .wrap{--wl:calc((100cqw - min(100cqw, var(--max,1680px))) / 2);--sgw:min(calc(min(100cqw, var(--max,1680px)) - 2 * var(--g,40px)), 1200px);--th:clamp(360px,41.67cqw,600px)}
 .sg-hrow{display:flex;align-items:flex-end;justify-content:space-between;gap:16px 40px;max-width:var(--sgw);margin:0 0 32px}
 .h2-sig .h2-k{margin:0 0 14px}
 .h2-sig h2{font-size:clamp(44px,4.45vw,64px);line-height:1.05}
 .sg-all{font:400 15px/1 "Inter",system-ui,sans-serif;color:#F7F5F1;text-decoration:none;padding-bottom:14px;white-space:nowrap}
 .sg-all:hover{text-decoration:underline;text-underline-offset:4px}
-.sg-row{position:relative;display:grid;grid-template-columns:repeat(3,var(--colw));column-gap:var(--sgap);align-items:start}
-.sweep-w{position:absolute;z-index:0;left:calc(-1 * (var(--wl) + var(--g,40px)));width:100cqw;top:calc(var(--colw) * .58889);height:calc(var(--colw) * .55556);overflow:hidden;pointer-events:none}
-/* the SVG strands cross at x 948 of 1600: that point sits in the middle of the first gap; scale 4267 px for 360 px containers, as in the reference */
-.sweep{position:absolute;top:0;left:calc(var(--wl) + var(--g,40px) + var(--colw) + var(--sgap) / 2 - var(--colw) * 7.0229);width:calc(var(--colw) * 11.853);height:100%;max-width:none;opacity:.9;display:block;pointer-events:none}
-.sg{position:relative;z-index:1;display:block;color:#F7F5F1;text-decoration:none}
-.sg-c{position:relative;display:block;overflow:hidden;background:#15161B}
-.sg-c img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
-.sg:hover .sg-c img{transform:scale(1.025)}
-.sg:focus-visible{outline:2px solid #F7F5F1;outline-offset:6px}
-.sg-row .sg-c{height:calc(var(--colw) * 520 / 360)}
-.sg-cap{display:block;margin-top:18px}
+.sg3{position:relative;display:flex;align-items:flex-start;gap:clamp(40px,5.55cqw,80px);max-width:var(--sgw)}
+.sg3-trio{position:relative;z-index:1;flex:none;height:var(--th);width:calc(var(--th) * 1.23223)}   /* 2 x 0.36647 + 0.49928 of the height */
+.sg3-trio .sgw{--sgw-h:var(--th);position:absolute;top:0;left:0;pointer-events:none}                /* only the slash itself takes the pointer */
+.sg3-trio .sgw:nth-child(2){left:calc(var(--th) * .36647)}
+.sg3-trio .sgw:nth-child(3){left:calc(var(--th) * .73294)}
+.sg3-trio .sgw-in{pointer-events:auto;background:#15161B}
+.sg3-trio .sgw-fill{transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.sg3-trio .sgw-in:hover .sgw-fill{transform:scale(1.03)}
+.sg3-trio .sgw:nth-child(1) .sgw-fill{object-position:40% 50%}
+.sweep-w{position:absolute;z-index:0;left:calc(-1 * (var(--wl) + var(--g,40px)));width:100cqw;top:calc(var(--th) * .55);height:calc(var(--th) * .3333);overflow:hidden;pointer-events:none}
+.sweep{position:absolute;top:0;left:-141.2%;width:296.3%;height:100%;max-width:none;opacity:.9;display:block;pointer-events:none}
+.sg3-list{position:relative;z-index:1;list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:clamp(30px,3.9cqw,56px);min-width:0}
+.sg3-list a{display:block;color:#F7F5F1;text-decoration:none}
+.sg3-list a:hover b{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.sg3-list a:focus-visible,.sg-film:focus-visible{outline:2px solid #F7F5F1;outline-offset:6px}
 .sg-n{display:flex;align-items:center;gap:12px}
 .sg-n .mvt{font-size:18px;flex:none}
 .sg-n b{font:500 20px/1.2 "Jost",system-ui,sans-serif;color:#F7F5F1}
 .sg-l{display:block;margin-top:6px;font:400 15px/1.45 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
-.sg.wide{width:var(--sgw);margin:36px 0 0;padding:0;border:0;background:none;cursor:pointer;text-align:left;-webkit-appearance:none;appearance:none}
-.sg.wide .sg-c{height:clamp(120px, var(--sgw) * .23333, 280px)}
-.sg.wide .play{position:absolute;left:36px;bottom:22px;width:44px;height:44px;display:block;z-index:1}
+.sg-film{display:block;position:relative;width:var(--sgw);max-width:100%;margin:clamp(48px,6.25cqw,90px) 0 0;padding:0;border:0;background:none;cursor:pointer;text-align:left;-webkit-appearance:none;appearance:none}
+.sg-film img{display:block;width:100%;height:auto}
+.sg-film .play{position:absolute;left:24px;bottom:18px;width:44px;height:44px;display:block;z-index:1}
 .sg-wcap{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;margin:16px 0 0;max-width:var(--sgw)}
 .sg-wcap b{font:500 18px/1.2 "Jost",system-ui,sans-serif;color:#F7F5F1}
 .sg-wcap span{font:400 15px/1.45 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
@@ -51,22 +54,19 @@ body.home2{background:#0B0C10}
 .sg-nine a:hover{color:#F7F5F1;text-decoration:underline;text-underline-offset:3px}
 .sg-nine a:focus-visible,.sg-all:focus-visible{outline:2px solid #F7F5F1;outline-offset:3px}
 @media (max-width:760px){
-  .h2-sig .wrap{--sgap:40px}
+  .h2-sig .wrap{--th:min(280px,72cqw)}
   .sg-hrow{display:block;margin:0}
   .h2-sig .h2-k{margin-bottom:12px}
   .h2-sig h2{font-size:44px}
   .sg-all{display:inline-block;margin-top:14px;padding:0}
-  .sg-row{display:flex;flex-direction:column;align-items:stretch;gap:40px}
-  .sweep-w{position:relative;left:auto;top:auto;width:auto;height:56px;margin:24px calc(-1 * var(--g,16px)) -26px}
-  .sweep{left:-125.6%;width:296.3%;top:-12px;height:88px}   /* source x 678-1218: the crossing at mid-screen */
-  .sg-row .sg-c{height:300px}
-  .sg-cap{margin-top:14px}
-  .sg.wide{width:100%;margin-top:40px}
-  .sg.wide .sg-c{height:120px}
-  .sg.wide .play{left:24px;bottom:14px}
+  .sg3{display:block;margin-top:30px}
+  .sweep-w{display:none}
+  .sg3-list{margin-top:30px;gap:26px}
+  .sg-film{width:100%;margin-top:44px}
+  .sg-film .play{left:10px;bottom:8px;transform:scale(.8);transform-origin:0 100%}
   .sg-wcap{flex-direction:column;gap:4px;margin-top:14px}
 }
-@media (prefers-reduced-motion:reduce){.sg-c img{transition:none}}
+@media (prefers-reduced-motion:reduce){.sg3-trio .sgw-fill{transition:none}}
 
 /* proof */
 .h2-nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(24px,3vw,56px);border-top:1px solid rgba(247,245,241,.2);padding-top:clamp(30px,3.4vw,54px)}
