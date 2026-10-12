@@ -65,3 +65,9 @@ body.lock .where,.hdr.open~.where{display:none}
 
 /* phones: leave room at the foot of the page so the bar never covers the last line */
 @media (max-width:760px){body.has-where{padding-bottom:calc(50px + env(safe-area-inset-bottom,0px))}body.has-where.home2,body.has-where.shell2{background:#0B0C10}}
+
+/* 7 header (Tony, 12 Oct): the mark and the name only ink or paper, nothing behind them (no pill, strip or box);
+   the open phone menu is the dark sheet on every page, so the name, the mark and Close read in paper */
+.hdr .pill,.hdr .brand,.hdr .menu-btn{background:none!important;box-shadow:none!important;border:0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+@media (max-width:760px){.hdr.open .nav{background:#0B0C10!important;color:#F7F5F1!important}
+  .hdr.open .brand,.hdr.open .brand span,.hdr.open .brand .mk,.hdr.open .menu-btn{color:#F7F5F1!important}}
