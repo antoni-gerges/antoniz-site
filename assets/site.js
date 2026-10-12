@@ -196,3 +196,14 @@
     new IntersectionObserver(function (es, io) { if (es[0].isIntersecting) { el.classList.add('in'); io.disconnect(); } }, { threshold: 0.4 }).observe(el);
   });
 })();
+
+/* clip windows: data-src="file.mp4#t=a,b" plays and loops only seconds a to b */
+(function () {
+  document.querySelectorAll('video[data-clip]').forEach(function (v) {
+    var m = (v.getAttribute('data-src') || '').match(/#t=([\d.]+)(?:,([\d.]+))?/); if (!m) return;
+    var a = parseFloat(m[1]), b = m[2] ? parseFloat(m[2]) : null;
+    v.addEventListener('loadedmetadata', function () { if (v.currentTime < a - 0.5 || (b && v.currentTime > b)) v.currentTime = a; });
+    v.addEventListener('timeupdate', function () { if (b && v.currentTime >= b) { v.currentTime = a; if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } } });
+    v.addEventListener('pause', function () { if (b && v.currentTime >= b - 0.1 && v.getAttribute('src')) { v.currentTime = a; var p = v.play(); if (p && p.catch) p.catch(function () {}); } });
+  });
+})();

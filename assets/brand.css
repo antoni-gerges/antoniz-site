@@ -1,0 +1,67 @@
+/* brand.css — the mark across the site (plan: website-review/brand-system, Astra 90).
+   One show (the home entrance). Everywhere else the mark does quiet jobs:
+   where you are · meaning (three moves) · key onward links · signing off.
+   Grammar: the mark and signals are only ink or paper; signals always at the logo's exact shape and slant;
+   they sit LEFT of what they mark; one use per section at most; nothing here animates except the where-chip sliding in. */
+:root{--sig:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25.68 51.46'%3E%3Cpath d='M25.68 0C19.1 0 13.35 4.36 11.55 10.69L0 51.46c6.58 0 12.34-4.35 14.13-10.69Z'/%3E%3C/svg%3E")}
+
+/* 1 where you are: a small chip, bottom left, that names the section, its place and the next stop */
+.where{position:fixed;left:max(16px,env(safe-area-inset-left));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:12px;
+  background:#0B0C10;color:#F7F5F1;font:500 15.5px/1 "Jost",system-ui,sans-serif;padding:0 18px 0 15px;min-height:46px;border-radius:14px 0 14px 0;
+  transform:translateY(calc(100% + 28px));transition:transform .45s cubic-bezier(.2,.8,.2,1);box-shadow:0 0 0 1px rgba(247,245,241,.16)}
+.where.on{transform:none}
+.where .tk{display:flex;gap:1.5px;align-items:flex-end}
+.where .tk i{display:block;width:6.2px;height:12.5px;background:currentColor;-webkit-mask:var(--sig) center/contain no-repeat;mask:var(--sig) center/contain no-repeat;margin-left:-2.2px}
+.where .tk i:first-child{margin-left:0}
+.where b{font-weight:500;letter-spacing:.005em;white-space:nowrap;max-width:38vw;overflow:hidden;text-overflow:ellipsis}
+  .where .of{font:400 13px/1 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.66);font-variant-numeric:tabular-nums;white-space:nowrap}
+.where a{font:500 14px/1 "Inter",system-ui,sans-serif;color:#F7F5F1;text-decoration:none;border-left:1px solid rgba(247,245,241,.22);padding:15px 0 15px 14px;margin:-1px 0;white-space:nowrap;max-width:34vw;overflow:hidden;text-overflow:ellipsis}
+.where a:hover{text-decoration:underline;text-underline-offset:3px}
+.where a:focus-visible{outline:2px solid #F7F5F1;outline-offset:3px}
+/* phones: a full-width bar at the foot of the screen, like an app's own bar, so it never sits on top of a line of copy */
+@media (max-width:760px){.where{left:0;right:0;bottom:0;border-radius:0;font-size:15px;padding:0 16px calc(env(safe-area-inset-bottom,0px)) 14px;gap:10px;min-height:calc(50px + env(safe-area-inset-bottom,0px));box-shadow:0 -1px 0 rgba(247,245,241,.16)}
+  .where b{max-width:34vw}.where .of{margin-right:auto}.where a{max-width:46vw;padding-left:12px;font-size:14px}}
+@media (prefers-reduced-motion:reduce){.where{transition:none}}
+body.lock .where,.hdr.open~.where{display:none}
+
+/* 2 meaning: the three moves counted in signals (1 of 3 lit, 2 of 3, 3 of 3) */
+.mvt{display:inline-flex;align-items:flex-end;vertical-align:middle}
+.mvt i{display:block;width:.5em;height:1em;background:currentColor;opacity:.22;-webkit-mask:var(--sig) center/contain no-repeat;mask:var(--sig) center/contain no-repeat;margin-left:-.17em}
+.mvt i:first-child{margin-left:0}
+.mvt i.on{opacity:1}
+.moveslist li>span.mvt{font-size:22px;width:auto}
+.move .num .mvt{font-size:30px}
+.move .num>svg.mk{display:none}
+/* the fourth beat, after the three moves: the bird is the built work */
+.built4{display:flex;align-items:flex-end;gap:clamp(10px,1.4vw,20px);margin:0 0 30px;color:var(--ink,#0B0C10)}
+.built4 .b4s{display:flex;align-items:flex-end}
+.built4 .b4s i{display:block;width:clamp(13px,1.5vw,21px);aspect-ratio:25.68/51.46;-webkit-mask:var(--sig) center/contain no-repeat;mask:var(--sig) center/contain no-repeat;background:currentColor;margin-left:calc(clamp(13px,1.5vw,21px) * -.27)}
+.built4 .b4s i:first-child{margin-left:0}
+.built4 svg{height:clamp(46px,5.4vw,78px);width:auto;display:block}
+.built4 .b4w{font:400 clamp(15px,1.3vw,18px)/1.4 "Inter",system-ui,sans-serif;color:var(--sub,#55544f);max-width:260px;padding-bottom:6px}
+.built4 .b4w b{display:block;font:500 clamp(20px,1.9vw,26px)/1.1 "Jost",system-ui,sans-serif;color:var(--ink,#0B0C10)}
+
+/* 3 key onward links: one small signal before the words (the arrow stays) */
+.sigl::before{content:"";display:inline-block;width:.42em;height:.84em;background:currentColor;-webkit-mask:var(--sig) center/contain no-repeat;mask:var(--sig) center/contain no-repeat;margin-right:.5em;vertical-align:-.06em;flex:none}
+
+/* 4 signing off: the mark with the name at the foot of every page */
+.foot .sign{display:inline-flex;align-items:center;gap:10px}
+.foot .sign svg{width:20px;height:22px;flex:none}
+
+/* 5 About: the mark traces the route once */
+.route{margin:38px 0 10px;max-width:980px;color:var(--ink,#0B0C10)}
+.route svg{display:block;width:100%;height:auto;overflow:visible}
+.route text{font:500 21px "Jost",system-ui,sans-serif;fill:currentColor}
+.route .yr{font:400 15px "Inter",system-ui,sans-serif;opacity:.75}
+@media (max-width:760px){.route{margin-top:26px}.route text{font-size:25px}.route .yr{font-size:18px;opacity:.85}}
+
+/* 6 films: three signals only while a film is loading; the player keeps its normal controls */
+.fplayer .fload{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:none;align-items:flex-end;color:#F7F5F1;pointer-events:none}
+.fplayer.wait .fload{display:flex}
+.fplayer .fload i{display:block;width:17px;height:34px;background:currentColor;-webkit-mask:var(--sig) center/contain no-repeat;mask:var(--sig) center/contain no-repeat;margin-left:-5px;transform-origin:50% 100%;animation:fload 1.2s infinite}
+.fplayer .fload i:nth-child(2){animation-delay:.2s}.fplayer .fload i:nth-child(3){animation-delay:.4s}
+@keyframes fload{0%,60%,100%{transform:scaleY(1)}20%{transform:scaleY(.42)}}
+@media (prefers-reduced-motion:reduce){.fplayer .fload i{animation:none}}
+
+/* phones: leave room at the foot of the page so the bar never covers the last line */
+@media (max-width:760px){body.has-where{padding-bottom:calc(50px + env(safe-area-inset-bottom,0px))}body.has-where.home2,body.has-where.shell2{background:#0B0C10}}

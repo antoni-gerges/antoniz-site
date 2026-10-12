@@ -1,0 +1,126 @@
+/* shell2.css — the inner pages in the home page's dark shell (Astra 11 Oct: inner pages scored 64–69 for continuity).
+   The site's own tokens are flipped, so every component follows; sections that were built dark keep their own tokens.
+   Light grounds remain only inside framed work (the white "sheets"). */
+body.shell2{--paper:#0B0C10;--ink:#F7F5F1;--sub:rgba(247,245,241,.72);--line:rgba(247,245,241,.18);--mute:rgba(247,245,241,.66);background:#0B0C10;color:#F7F5F1}
+/* built-dark sections: restore their tokens so they stay dark with light text */
+.shell2 .reel,.shell2 .end,.shell2 .foot,.shell2 .films,.shell2 .fourcs,.shell2 .intro,.shell2 .chero,.shell2 .chap,.shell2 .fplayer,.shell2 .player{--paper:#F4F1EA;--ink:#0B0C10;--sub:rgba(244,241,234,.7);--line:rgba(244,241,234,.18)}
+/* framed work stays on its own light sheet, with dark text inside */
+.shell2 .sheet,.shell2 .idt,.shell2 .nc{--paper:#F4F1EA;--ink:#0B0C10;--sub:rgba(11,12,16,.62);--line:rgba(11,12,16,.14);color:#0B0C10}
+/* header: always the dark shell's header */
+.shell2 .hdr{--hdr-bg:#0B0C10!important;--hdr-fg:#F7F5F1!important;--hdr-mk:#F7F5F1!important}
+.shell2 .mk{color:#F7F5F1}
+.shell2 .sheet .mk,.shell2 .idt .mk{color:#0B0C10}
+.shell2 .where{box-shadow:0 0 0 1px rgba(247,245,241,.22)}
+.shell2 .route,.shell2 .built4,.shell2 .built4 .b4w b{color:#F7F5F1}
+
+/* the firm's logo: its black script cannot sit on the dark ground, so it is shown reversed to white (one colour, shape untouched) */
+.shell2 img[src*="antbrush-logo"]{filter:brightness(0) invert(1)}
+
+/* ---- Projects: one image scale, one text grid, the result leads ---- */
+.shell2 .phead{padding-bottom:clamp(40px,5vw,72px)}
+.shell2 .plist{gap:clamp(56px,7vw,110px)}
+.shell2 .pcard{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:center;gap:20px clamp(32px,4.4vw,72px)}
+.shell2 .pcard .ppic{aspect-ratio:16/10;background:#14151A;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.shell2 .pcard .ppic img{width:100%;height:100%;object-fit:contain;background:transparent}
+.shell2 .pcard .ppic img.ph{object-fit:cover}
+.shell2 .pn{color:rgba(247,245,241,.6);font-family:"Inter",system-ui,sans-serif;font-size:13px}
+.shell2 .ptxt{gap:0}
+.shell2 .pclient{font-size:14px;margin:10px 0 12px;color:rgba(247,245,241,.78)}
+.shell2 .ptxt h2{font-weight:300;font-size:clamp(34px,3.5vw,58px);letter-spacing:-.03em;line-height:1.02}
+.shell2 .ptxt h2 a:hover{color:inherit;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
+.shell2 .prole{margin-top:22px;font-size:clamp(16px,1.2vw,18px);color:rgba(247,245,241,.88)}
+.shell2 .prole::before,.shell2 .pres::before{display:block;font:500 11.5px/1 "Inter",system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,245,241,.58);margin-bottom:9px}
+.shell2 .prole::before{content:"Role"}
+.shell2 .pres::before{content:"Result"}
+.shell2 .pwhere{font-size:14.5px;margin-top:6px}
+.shell2 .pres{margin-top:22px;padding-top:18px;border-top:1px solid rgba(247,245,241,.22);font:400 clamp(21px,1.75vw,27px)/1.25 "Jost",system-ui,sans-serif}
+.shell2 .popen{margin-top:26px;border-bottom-color:rgba(247,245,241,.5);font:500 17px/1.2 "Jost",system-ui,sans-serif;padding-bottom:4px}
+@media (max-width:860px){.shell2 .pcard{grid-template-columns:1fr}.shell2 .ptxt{padding-top:6px}}
+
+/* ---- How I work: the three moves, legible at once ---- */
+.shell2 .phead.wrap+.mv-strip{margin-top:0}
+.mv-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.4vw,40px);padding-bottom:clamp(56px,7vw,110px)}
+.mv-strip a,.mv-strip .mv-b{display:block;border-top:1px solid rgba(247,245,241,.22);padding-top:18px;text-decoration:none;color:#F7F5F1}
+.mv-strip .mvt{font-size:30px;display:flex;margin-bottom:16px}
+.mv-strip b{display:block;font:400 clamp(21px,1.9vw,30px)/1.12 "Jost",system-ui,sans-serif;letter-spacing:-.015em}
+.mv-strip a:hover b{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+.mv-strip .mv-b svg{height:30px;width:auto;display:block;margin-bottom:16px}
+.mv-strip small{display:block;font:400 14.5px/1.45 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.7);margin-top:8px}
+.shell2 .move{padding:clamp(64px,8vw,120px) 0}
+.shell2 .move h2{font-size:clamp(46px,5.4vw,96px);font-weight:300}
+.shell2 .move .num .mk{color:#F7F5F1}
+.mv-lead{max-width:44ch;font:400 clamp(21px,1.9vw,30px)/1.35 "Jost",system-ui,sans-serif;letter-spacing:-.01em;margin:0 0 clamp(36px,4vw,60px);color:#F7F5F1}
+@media (max-width:860px){.mv-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ---- Contact: one primary action ---- */
+.shell2 .contact{justify-content:flex-end;padding-bottom:clamp(64px,8vw,120px)}
+.cgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(32px,6vw,120px);align-items:end}
+.cgrid h1{margin-bottom:28px!important;font-weight:300}
+.cgrid .cfor{font:400 clamp(21px,1.9vw,30px)/1.3 "Jost",system-ui,sans-serif;letter-spacing:-.01em;margin:0 0 18px;max-width:22ch}
+.cgrid .csay{font:400 clamp(16px,1.2vw,18px)/1.55 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.76);max-width:38ch;margin:0}
+.cgrid .ck{font:500 12px/1 "Inter",system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,245,241,.6);margin:0 0 16px}
+.shell2 .contact .cr a.mail{display:inline-block}
+.shell2 .contact .cr a.cmain{font-size:clamp(30px,4vw,68px);font-weight:300;border-bottom:2px solid var(--cyan);padding-bottom:8px;letter-spacing:-.02em}
+.shell2 .contact .cr .cmore{display:flex;flex-wrap:wrap;gap:12px 30px;margin:clamp(30px,3.4vw,50px) 0 0;padding-top:22px;border-top:1px solid rgba(247,245,241,.2)}
+.shell2 .contact .cr .cmore a{font:400 clamp(17px,1.4vw,21px)/1.2 "Inter",system-ui,sans-serif;text-decoration:none;border-bottom:1px solid rgba(247,245,241,.4);padding-bottom:3px;color:#F7F5F1}
+.shell2 .contact .cr .cmore a:hover{border-bottom-color:#F7F5F1}
+.cgrid .cplace{font:400 15px/1.5 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.62);margin:22px 0 0}
+@media (max-width:860px){.cgrid{grid-template-columns:1fr;align-items:start}.shell2 .contact{justify-content:center}}
+
+/* ---- About: the route carries the roles ---- */
+.shell2 .route{max-width:none;margin:clamp(34px,4vw,60px) 0 clamp(30px,4vw,56px)}
+.route .rl{font:400 14px "Inter",system-ui,sans-serif;opacity:.78}
+@media (max-width:760px){.route .rl{font-size:17px}}
+
+/* ---- Work: the Identities chapter joins the dark ground; each mark keeps its own white sheet ---- */
+.shell2 .ident{background:#0B0C10;color:#F7F5F1}
+.shell2 .ident .csub{color:rgba(247,245,241,.74)}
+.shell2 .istep figcaption span{color:rgba(247,245,241,.7)}
+.shell2 .istep figcaption a{color:#F7F5F1}
+.shell2 .ident .mk{color:#F7F5F1}
+.shell2 .ticks li:not(.on){background-color:rgba(247,245,241,.24)}
+.shell2 .ticks li.done{background-color:#F7F5F1}
+
+/* Work: the step ticks beside Identities must read on the dark ground */
+.shell2 .ticks li:not(.on){background-color:rgba(247,245,241,.26)}
+.shell2 .ticks li.done{background-color:#F7F5F1}
+/* shorter openings: the work arrives sooner */
+.shell2 .phead{padding-top:clamp(104px,10vw,150px)}
+.shell2 .phead h1{font-size:clamp(52px,7.6vw,132px)}
+.shell2 .phead .lede{margin-top:26px}
+.shell2 .intro .cue .play.down svg{width:12px;height:12px}
+/* Work hero: the decorative energy line must never sit on top of the chapter links (it blocked clicks at 1280×720) */
+.shell2 .cline{pointer-events:none}
+.shell2 .cnav{position:relative;z-index:2}
+/* Work hero: a shorter opening, and room kept under the chapter links so the energy line never runs through them */
+.shell2 .chero{padding:110px 0 clamp(120px,19vh,210px)}
+.shell2 .ch1{font-size:clamp(52px,8.4vw,140px)}
+.shell2 .clead{margin-top:26px}
+.shell2 .cnav{margin-top:34px}
+.shell2 .cline{bottom:2.5vh}
+/* Work, the first sheets: each card opens its project. One link per card; its target covers the whole card. */
+.shell2 #ideas-reel .ccard{position:relative}
+.shell2 .clink{color:inherit;text-decoration:none}
+.shell2 .clink::after{content:"";position:absolute;inset:0}
+.shell2 .clink .cgo{font-style:normal;display:inline-block;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.shell2 .ccard:hover .clink b{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.shell2 .ccard:hover .clink .cgo{transform:translateX(5px)}
+.shell2 .clink:focus-visible{outline:0}
+.shell2 .clink:focus-visible::after{outline:2px solid #F7F5F1;outline-offset:-2px}
+/* Work reels on desktop: keep the captions clear of the "where you are" chip at the foot of the screen */
+@media (min-width:861px){.shell2 .rpin{padding-bottom:84px;box-sizing:border-box}.shell2 .reel .ccard{max-width:calc(50vh*var(--ar,1.5))}}
+
+/* ---- 12 Oct: Codex's reading pass ---- */
+/* How I work: the strip lands on the chapter section (builder); a direct jump to a heading still clears the header and its 28 px reveal offset */
+.shell2 h2[id^="mv-"]{scroll-margin-top:130px}
+/* Work on phones: a strip card is never wider than the screen, so every artwork is seen whole, with the next card showing at the edge.
+   Very wide art (the gate, the five steps) sits at full card width instead of 1,400 px behind a 390 px window; no zoom state. */
+@media (max-width:860px){
+  .shell2 .track .ccard,.shell2 .track.static .ccard{max-width:calc(100vw - 2*var(--g,24px) - 30px)}
+  .shell2 .track .cm,.shell2 .track.static .cm{height:auto;aspect-ratio:var(--ar,1.5);width:min(calc(56vh*var(--ar,1.5)),calc(100vw - 2*var(--g,24px) - 30px))}
+  .shell2 .track .cm img{width:100%;height:100%;object-fit:contain;transform:none}
+  .shell2 .track{scroll-padding-left:var(--g,24px)}   /* a snapped card keeps the page's left margin */
+}
+/* About on phones: the route is drawn at phone size (brand.js), so its type is set in real pixels and the roles sit on two lines */
+@media (max-width:760px){.route text{font-size:19px}.route .yr{font-size:13.5px}.route .rl{font-size:13.5px;opacity:.82}}
+
