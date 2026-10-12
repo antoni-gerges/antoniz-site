@@ -36,6 +36,12 @@ body.shell2{--paper:#0B0C10;--ink:#F7F5F1;--sub:rgba(247,245,241,.72);--line:rgb
 .shell2 .pres{margin-top:22px;padding-top:18px;border-top:1px solid rgba(247,245,241,.22);font:400 clamp(21px,1.75vw,27px)/1.25 "Jost",system-ui,sans-serif}
 .shell2 .popen{margin-top:26px;border-bottom-color:rgba(247,245,241,.5);font:500 17px/1.2 "Jost",system-ui,sans-serif;padding-bottom:4px}
 @media (max-width:860px){.shell2 .pcard{grid-template-columns:1fr}.shell2 .ptxt{padding-top:6px}}
+/* round 3 (12 Oct): the twelve in one compact index under the lede; a jump leaves the card clear of the header */
+.pindex{display:flex;flex-wrap:wrap;gap:6px 22px;margin:28px 0 10px;font:400 15px/1.4 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.78)}
+.pindex a{color:rgba(247,245,241,.78);text-decoration:none}
+.pindex a:hover{text-decoration:underline;text-underline-offset:4px}
+.pindex b{font-family:"Jost",system-ui,sans-serif;font-weight:500;color:rgba(247,245,241,.5);margin-right:8px}
+.pcard{scroll-margin-top:110px}
 
 /* ---- How I work: the three moves, legible at once ---- */
 .shell2 .phead.wrap+.mv-strip{margin-top:0}

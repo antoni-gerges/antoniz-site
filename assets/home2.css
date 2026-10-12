@@ -115,3 +115,11 @@ body.home2{background:#0B0C10}
 .h2-venue p.tl{font-size:clamp(16px,1.3vw,20px);color:rgba(247,245,241,.78)}
 @media (max-width:760px){.home2 .films .fh{display:block}.home2 .films .fh p{margin-top:12px}}
 .h2-six .h2-card .h2-ct b{font:500 16px/1.25 "Jost",system-ui,sans-serif;color:#F7F5F1}
+/* round 3 (12 Oct): desktop selected work in three beats — four columns, Liwa and DHA span two, the other four one each; same gap */
+@media (min-width:901px){
+  .h2-six{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .h2-card{grid-column:span 1}
+  .h2-card:nth-child(-n+2){grid-column:span 2}
+  .h2-six .h2-card:nth-child(-n+2) .h2-ct b{font-size:22px;font-weight:500;color:#fff}
+  .h2-six .h2-card:nth-child(-n+2) .h2-ct i{font-size:17px}
+}
