@@ -76,7 +76,9 @@ function build() {
     /* the master plan, lit like a drawing on a table */
     const pt = tex('plan.webp'), slab = new T.Mesh(new T.BoxGeometry(24, .16, 24 * 1443 / 2048), [dark, dark, std({ map: pt, emissive: 0xffffff, emissiveMap: pt, emissiveIntensity: .5, roughness: .7 }), dark, dark, dark]);
     slab.position.set(0, .09, 18.5); slab.castShadow = slab.receiveShadow = true; s.g.add(slab);
-    s.dims.push({ a: [17, 0, 6.5], b: [17, 15, 6.5], t: '984 ft · 300 m', k: .6, huge: true }, { a: [-12, .3, 27.4], b: [12, .3, 27.4], t: 'The master plan', k: .3 });
+    s.dims.push({ a: [17, 0, 6.5], b: [17, 15, 6.5], t: '984 ft · 300 m', k: .6, huge: true });
+    const PZ = (u, v, t) => { const x = -12 + 24 * u, z = 18.5 - 8.455 + 16.91 * v; s.dims.push({ a: [x, .2, z], b: [x, 1.7, z], t, k: .14 }); };
+    PZ(.80, .52, 'Race arenas'); PZ(.40, .63, 'Heritage Village · Moreeb Walk · theatre'); PZ(.80, .70, 'Camping'); PZ(.40, .44, 'Paraglider strip');
   }
   /* 5 · the big screen: the TV commercial, playing */
   {

@@ -1,5 +1,5 @@
 /* home2.css — the home page below the entrance, in the entrance's own shell (Astra review 11 Oct: old page scored 64 for continuity).
-   One dark ground. Project colour lives only inside the pictures. One flagship, six supporting, one proof block, one method block. */
+   One dark ground. Project colour lives only inside the pictures. Selected work in the Signal system (2B), one proof block, one method block. */
 /* the page's own ground. On desktop it was still the light paper tone, which showed for a moment when arriving from a dark page
    and whenever the page is pulled past its top or bottom. */
 body.home2{background:#0B0C10}
@@ -12,43 +12,61 @@ body.home2{background:#0B0C10}
 .h2 a{color:inherit}
 .h2 .arrow{font:500 clamp(17px,1.4vw,21px)/1.2 "Jost",system-ui,sans-serif;border-bottom-color:rgba(247,245,241,.5)}
 
-/* flagship */
-.h2-flag{padding-top:clamp(56px,7vw,110px)}
-.h2-flagrid{display:grid;grid-template-columns:minmax(0,1.62fr) minmax(0,1fr);gap:clamp(28px,4vw,72px);align-items:end}
-.h2-pic{display:block;position:relative;background:#000;overflow:hidden}
-.h2-pic video,.h2-pic img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
-.h2-pic:hover img{transform:scale(1.02)}
-.h2-ft .lab{font:500 13px/1 "Inter",system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,245,241,.72);margin:0 0 18px}
-.h2-ft h2{font-size:clamp(54px,6.6vw,118px)}
-.h2-ft .cl{font:500 clamp(20px,1.7vw,26px)/1.2 "Jost",system-ui,sans-serif;margin:22px 0 6px}
-.h2-ft .ro{font:400 17.5px/1.5 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.74);margin:0;max-width:40ch}
-.h2-ft .res{font:400 clamp(22px,2vw,30px)/1.2 "Jost",system-ui,sans-serif;margin:26px 0 0;padding-top:20px;border-top:1px solid rgba(247,245,241,.2)}
-.h2-ft .res small{display:block;font:500 12px/1 "Inter",system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,245,241,.6);margin-bottom:10px}
-.h2-act{display:flex;flex-wrap:wrap;align-items:center;gap:18px 30px;margin-top:30px}
-.h2-play{display:inline-flex;align-items:center;gap:12px;background:none;border:0;padding:0;color:inherit;font:500 clamp(16px,1.3vw,19px)/1 "Jost",system-ui,sans-serif;cursor:pointer}
-.h2-play .pl{width:46px;height:46px;border-radius:50%;background:#F7F5F1;position:relative;flex:none}
-.h2-play .pl::after{content:"";position:absolute;left:19px;top:15px;border-left:12px solid #0B0C10;border-top:8px solid transparent;border-bottom:8px solid transparent}
-.h2-play:hover .pl{background:#fff}
-.h2-play:focus-visible{outline:2px solid #F7F5F1;outline-offset:6px}
-
-/* six supporting projects */
-.h2-six{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(34px,4vw,64px) clamp(18px,2.2vw,36px);margin-top:clamp(64px,8vw,130px);counter-reset:pj 1}
-.h2-card{grid-column:span 3;counter-increment:pj}
-.h2-card:nth-child(-n+2){grid-column:span 6}
-.h2-card:nth-child(-n+2) .h2-ci{aspect-ratio:16/9}
-.h2-card:nth-child(-n+2) .h2-ct b{font-size:clamp(24px,2.1vw,32px)}
-.h2-ct::before{content:"0" counter(pj);display:block;font:500 12px/1 "Inter",system-ui,sans-serif;letter-spacing:.16em;color:rgba(247,245,241,.55);margin-bottom:10px;font-variant-numeric:tabular-nums}
-.h2-card{display:block;text-decoration:none}
-.h2-ci{display:block;aspect-ratio:4/3;background:var(--mat,#15161B);overflow:hidden;position:relative}
-.h2-ci img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
-.h2-ci img.art{object-fit:contain;inset:9% 8%;width:84%;height:82%}
-.h2-card:hover .h2-ci img{transform:scale(1.025)}
-.h2-ct{display:block;padding-top:16px}
-.h2-ct b{display:block;font:500 clamp(19px,1.55vw,24px)/1.2 "Jost",system-ui,sans-serif}
-.h2-ct i{display:block;font:400 17px/1.45 "Inter",system-ui,sans-serif;font-style:normal;color:rgba(247,245,241,.9);margin-top:6px}
-.h2-ct .wh{display:block;font:400 14.5px/1.45 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.7);margin-top:7px}
-.h2-all{display:flex;flex-wrap:wrap;gap:18px 40px;align-items:center;margin:clamp(44px,5vw,80px) 0 0}
-.h2-all .lnk{font:400 16px/1.2 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.78);text-underline-offset:4px}
+/* Selected work in the Signal system, design 2B (Tony, 12 Oct; reference design/v2b.html, sheet SIGNAL-FRAME-2-REFINED row 2B).
+   Three tall signal containers (360 × 520 at desktop, the row 1200 wide as in the reference), the sweep behind them crossing once in the
+   first gap at 60% of their height, the ZEISS wall film in the wide band (row width × 280), the other nine in one quiet line.
+   assets/signal.js clips each .sg-c box to the signal from its rendered size; without it the boxes stay rectangles.
+   The section is a size container so the sweep can run edge to edge of the screen and keep its crossing in the first gap at any width. */
+.h2-sig{padding-top:clamp(56px,7vw,110px);container-type:inline-size;overflow-x:clip}
+.h2-sig .wrap{--sgap:clamp(24px,4.2vw,60px);--wl:calc((100cqw - min(100cqw, var(--max,1680px))) / 2);
+  --sgw:min(calc(min(100cqw, var(--max,1680px)) - 2 * var(--g,40px)), calc(1080px + 2 * var(--sgap)));--colw:calc((var(--sgw) - 2 * var(--sgap)) / 3)}
+.sg-hrow{display:flex;align-items:flex-end;justify-content:space-between;gap:16px 40px;max-width:var(--sgw);margin:0 0 32px}
+.h2-sig .h2-k{margin:0 0 14px}
+.h2-sig h2{font-size:clamp(44px,4.45vw,64px);line-height:1.05}
+.sg-all{font:400 15px/1 "Inter",system-ui,sans-serif;color:#F7F5F1;text-decoration:none;padding-bottom:14px;white-space:nowrap}
+.sg-all:hover{text-decoration:underline;text-underline-offset:4px}
+.sg-row{position:relative;display:grid;grid-template-columns:repeat(3,var(--colw));column-gap:var(--sgap);align-items:start}
+.sweep-w{position:absolute;z-index:0;left:calc(-1 * (var(--wl) + var(--g,40px)));width:100cqw;top:calc(var(--colw) * .58889);height:calc(var(--colw) * .55556);overflow:hidden;pointer-events:none}
+/* the SVG strands cross at x 948 of 1600: that point sits in the middle of the first gap; scale 4267 px for 360 px containers, as in the reference */
+.sweep{position:absolute;top:0;left:calc(var(--wl) + var(--g,40px) + var(--colw) + var(--sgap) / 2 - var(--colw) * 7.0229);width:calc(var(--colw) * 11.853);height:100%;max-width:none;opacity:.9;display:block;pointer-events:none}
+.sg{position:relative;z-index:1;display:block;color:#F7F5F1;text-decoration:none}
+.sg-c{position:relative;display:block;overflow:hidden;background:#15161B}
+.sg-c img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.sg:hover .sg-c img{transform:scale(1.025)}
+.sg:focus-visible{outline:2px solid #F7F5F1;outline-offset:6px}
+.sg-row .sg-c{height:calc(var(--colw) * 520 / 360)}
+.sg-cap{display:block;margin-top:18px}
+.sg-n{display:flex;align-items:center;gap:12px}
+.sg-n .mvt{font-size:18px;flex:none}
+.sg-n b{font:500 20px/1.2 "Jost",system-ui,sans-serif;color:#F7F5F1}
+.sg-l{display:block;margin-top:6px;font:400 15px/1.45 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
+.sg.wide{width:var(--sgw);margin:36px 0 0;padding:0;border:0;background:none;cursor:pointer;text-align:left;-webkit-appearance:none;appearance:none}
+.sg.wide .sg-c{height:clamp(120px, var(--sgw) * .23333, 280px)}
+.sg.wide .play{position:absolute;left:36px;bottom:22px;width:44px;height:44px;display:block;z-index:1}
+.sg-wcap{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;margin:16px 0 0;max-width:var(--sgw)}
+.sg-wcap b{font:500 18px/1.2 "Jost",system-ui,sans-serif;color:#F7F5F1}
+.sg-wcap span{font:400 15px/1.45 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
+.sg-nine{margin:clamp(40px,4vw,56px) 0 0;max-width:var(--sgw);font:400 15px/1.75 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
+.sg-nine a{color:inherit;text-decoration:none}
+.sg-nine a:hover{color:#F7F5F1;text-decoration:underline;text-underline-offset:3px}
+.sg-nine a:focus-visible,.sg-all:focus-visible{outline:2px solid #F7F5F1;outline-offset:3px}
+@media (max-width:760px){
+  .h2-sig .wrap{--sgap:40px}
+  .sg-hrow{display:block;margin:0}
+  .h2-sig .h2-k{margin-bottom:12px}
+  .h2-sig h2{font-size:44px}
+  .sg-all{display:inline-block;margin-top:14px;padding:0}
+  .sg-row{display:flex;flex-direction:column;align-items:stretch;gap:40px}
+  .sweep-w{position:relative;left:auto;top:auto;width:auto;height:56px;margin:24px calc(-1 * var(--g,16px)) -26px}
+  .sweep{left:-125.6%;width:296.3%;top:-12px;height:88px}   /* source x 678-1218: the crossing at mid-screen */
+  .sg-row .sg-c{height:300px}
+  .sg-cap{margin-top:14px}
+  .sg.wide{width:100%;margin-top:40px}
+  .sg.wide .sg-c{height:120px}
+  .sg.wide .play{left:24px;bottom:14px}
+  .sg-wcap{flex-direction:column;gap:4px;margin-top:14px}
+}
+@media (prefers-reduced-motion:reduce){.sg-c img{transition:none}}
 
 /* proof */
 .h2-nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(24px,3vw,56px);border-top:1px solid rgba(247,245,241,.2);padding-top:clamp(30px,3.4vw,54px)}
@@ -81,22 +99,17 @@ body.home2{background:#0B0C10}
 .h2-lead .arrow{margin-top:30px}
 
 @media (max-width:900px){
-  .h2-flagrid{grid-template-columns:1fr;align-items:start}
-  .h2-six{grid-template-columns:repeat(2,minmax(0,1fr))}.h2-card,.h2-card:nth-child(-n+2){grid-column:span 1}
   .h2-nums{grid-template-columns:repeat(2,minmax(0,1fr))}
   .h2-time{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:34px}
   .h2-trust{grid-template-columns:1fr}
   .h2-lead .g{grid-template-columns:1fr}
 }
 @media (max-width:560px){
-  .h2-six{grid-template-columns:1fr}.h2-card:nth-child(-n+2) .h2-ci{aspect-ratio:4/3}
   .h2-num b{font-size:64px}
 }
-@media (prefers-reduced-motion:reduce){.h2-ci img{transition:none}}
 
 /* films on the home page: four equal films, art-directed covers */
 .home2 .films .film.lead{grid-column:auto}
-.h2-ft .lab::before{content:"01  ";color:rgba(247,245,241,.55)}
 
 .home2 .films .fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
 .home2 .films .film,.home2 .films .film.lead{flex:none}
@@ -114,12 +127,3 @@ body.home2{background:#0B0C10}
 .h2-venue{margin-top:clamp(20px,2.4vw,34px)}
 .h2-venue p.tl{font-size:clamp(16px,1.3vw,20px);color:rgba(247,245,241,.78)}
 @media (max-width:760px){.home2 .films .fh{display:block}.home2 .films .fh p{margin-top:12px}}
-.h2-six .h2-card .h2-ct b{font:500 16px/1.25 "Jost",system-ui,sans-serif;color:#F7F5F1}
-/* round 3 (12 Oct): desktop selected work in three beats — four columns, Liwa and DHA span two, the other four one each; same gap */
-@media (min-width:901px){
-  .h2-six{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .h2-card{grid-column:span 1}
-  .h2-card:nth-child(-n+2){grid-column:span 2}
-  .h2-six .h2-card:nth-child(-n+2) .h2-ct b{font-size:22px;font-weight:500;color:#fff}
-  .h2-six .h2-card:nth-child(-n+2) .h2-ct i{font-size:17px}
-}
