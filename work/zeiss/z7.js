@@ -24,7 +24,8 @@ function build() {
   {
     const s = wayIn, flags = [];
     const mask = (img, cv) => { const c = cv.getContext('2d'); cv.width = 256; cv.height = 1024; c.clearRect(0, 0, 256, 1024);
-      c.beginPath(); c.moveTo(0, 1004); c.lineTo(0, 110); c.bezierCurveTo(4, 30, 60, 0, 150, 6); c.bezierCurveTo(215, 12, 250, 40, 256, 78); c.lineTo(256, 900); c.bezierCurveTo(200, 930, 90, 962, 0, 1004); c.closePath(); c.fillStyle = '#fff'; c.fill();
+      /* the sail shape of the production drawing (Flags, 2 m x 0.85 m): straight up the pole, the top sweeps out to a tip at the far corner, the foot is cut on a rising curve */
+      c.beginPath(); c.moveTo(0, 1024); c.lineTo(0, 277); c.bezierCurveTo(8, 120, 110, 22, 256, 0); c.lineTo(256, 823); c.bezierCurveTo(176, 872, 62, 952, 0, 1024); c.closePath(); c.fillStyle = '#fff'; c.fill();
       c.globalCompositeOperation = 'source-in'; c.drawImage(img, 0, 0, 256, 1024); c.globalCompositeOperation = 'source-over'; };
     const arts = ['flag-cv.webp', 'flag-z.webp', 'flag-pfx.webp'].map(f => { const cv = document.createElement('canvas'); cv.width = 4; cv.height = 4; const t = new T.CanvasTexture(cv); t.colorSpace = T.SRGBColorSpace; t.anisotropy = 8;
       const im = new Image(); im.onload = () => { mask(im, cv); t.needsUpdate = true; }; im.src = A + f; return t; });
@@ -34,7 +35,10 @@ function build() {
       const side = i % 2 ? 1 : -1, row = Math.floor(i / 2), f = new T.Group(); f.position.set(side * 2.9, 0, 12.9 - row * 2.2); f.rotation.y = side * -.5;
       const geo = new T.PlaneGeometry(.82, 3.4, 8, 40); geo.translate(.41, 2.35, 0);
       const m = new T.Mesh(geo, std({ map: arts[order[i]], alphaTest: .5, side: T.DoubleSide, roughness: .95 })); m.castShadow = true; f.add(m);
-      const p = new T.Mesh(new T.CylinderGeometry(.018, .022, 4.0, 10), pole); p.position.set(-.01, 2.0, 0); p.castShadow = true; f.add(p);
+      const p = new T.Mesh(new T.CylinderGeometry(.018, .022, 3.13, 10), pole); p.position.set(-.01, 1.565, 0); p.castShadow = true; f.add(p);
+      { const bz = (t, a, b, c, d) => { const u = 1 - t; return u * u * u * a + 3 * u * u * t * b + 3 * u * t * t * c + t * t * t * d; }, pts = [];
+        for (let k = 0; k <= 12; k++) { const t = k / 12, cx = bz(t, 0, 8, 110, 256), cy = bz(t, 277, 120, 22, 0); pts.push(new T.Vector3(cx / 256 * .82 - .01, 4.05 - cy / 1024 * 3.4, 0)); }
+        const tip = new T.Mesh(new T.TubeGeometry(new T.CatmullRomCurve3(pts), 24, .014, 8, false), pole); tip.castShadow = true; f.add(tip); }
       const b = new T.Mesh(new T.CylinderGeometry(.26, .28, .05, 28), std({ color: 0x4a4d53, roughness: .4, metalness: .6 })); b.position.y = .025; b.castShadow = true; f.add(b);
       s.g.add(f); S.blob(s.g, f.position.x, f.position.z, 1.3, 1.3, .8); flags.push({ geo, base: geo.attributes.position.array.slice(), ph: i * 1.7 });
     }

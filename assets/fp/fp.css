@@ -428,3 +428,37 @@ a.fp-play{text-decoration:none}
 .fp-more .tx .fp-lab{display:block;margin-bottom:12px}
 .fp-more .tx p{margin:0 0 12px;font-size:clamp(15px,1.1vw,17px);line-height:1.6;color:rgba(255,255,255,.82);max-width:34em}
 @media (max-width:760px){.fp-more .tx{grid-template-columns:1fr}}
+
+/* ---------- type system, as on the main pages (assets/type.css; Tony, 12 Oct: "all of them are very thin") ----------
+   Two families, five styles: Jost Light 300 the quiet part of a big title (40 px and up) · Jost Semibold 600 the point of a
+   title, names, numbers, calls to action · Jost Medium 500 titles of lists · Inter Regular 400 reading · Inter Semibold 600 labels.
+   A title is light with its last phrase bold (b.tw); a one-phrase title is bold whole. */
+.fp{font-kerning:normal;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.fp h1,.fp h2,.fp h3{text-wrap:balance}
+.fp p,.fp figcaption{text-wrap:pretty}
+/* names lead */
+.fp-hero h1{font-weight:600}
+/* section titles: light, the last phrase bold */
+.fp-plates .lead h2,.fp-model .intro h2{font-weight:300}
+.fp b.tw{font-weight:600;letter-spacing:-.05em}
+.fp-hero.band h2,.fp-rel .hd h2,.fp-res .hd h2{font-weight:600}
+/* the statement: what it was, light; what I did, bold */
+.fp-say h2{font-weight:300}
+.fp-say h2 em{font-weight:600;color:#fff}
+@media (max-width:889px){.fp-say h2{font-weight:400}}
+/* the name of each piece, each night, each call */
+.fp-model .st h3,.fp-reel .cap h3,.fp-end .film .t>b,.fp-next b,.fp-play{font-weight:600}
+/* numbers: Semibold, lining and tabular */
+.fp-res .nums b,.fp-model .st .spec b,.fp-say .facts b,.fp-dim.big,.fp-dim.huge{font-weight:600;font-variant-numeric:lining-nums tabular-nums}
+/* small labels: Inter Semibold */
+.fp-lab,.fp-hero .src,.fp-play small,.fp-model .st .spec span,.fp-more summary,.fp-player button{font-weight:600}
+/* titles of lists: Medium */
+.fp-plates figcaption b,.fp-hero .what strong{font-weight:500}
+/* more of the same record, in the same place, closed until asked for */
+.fp-res .fp-more{max-width:none}
+.fp-res .fp-more .nums{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(22px,4vh,40px)}
+.fp-res .fp-more .nums b{font-size:clamp(34px,4vw,72px)}
+@media (max-width:760px){.fp-res .fp-more .nums{grid-template-columns:1fr 1fr}}
+.fp-res .fp-more .nums div:first-child{grid-column:auto}
+/* a film layer shown whole: never a slice of it */
+.fp-reel .ly video.whole{object-fit:contain;background:#000}
