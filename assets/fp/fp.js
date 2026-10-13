@@ -32,14 +32,14 @@
   [].forEach.call(D.querySelectorAll('.fp-hero'), function (h) {
     var v = h.querySelector('video'), lab = h.querySelector('.src b'), marks = [];
     try { marks = JSON.parse(h.dataset.marks || '[]'); } catch (e) {}
-    arm(v); play(v);
+    arm(v); if (h.getBoundingClientRect().top < W.innerHeight) play(v);
     if (lab && marks.length) v.addEventListener('timeupdate', function () {
       var t = v.currentTime, s = marks[0][1];
       for (var i = 0; i < marks.length; i++) if (t >= marks[i][0]) s = marks[i][1];
       if (lab.textContent !== s) lab.textContent = s;
     });
     FP.on(function (H) {
-      var band = h.classList.contains('band') || (h.classList.contains('whole') && phone()), r = (band ? v : h).getBoundingClientRect(); if (r.bottom < 0) { stop(v); return; }
+      var band = h.classList.contains('band') || (h.classList.contains('whole') && phone()), r = (band ? v : h).getBoundingClientRect(); if (r.bottom < 0 || r.top > H) { stop(v); return; }
       if (v.paused && r.bottom > (band ? 0 : H * .2)) play(v);
       var p = clamp(-r.top / r.height, 0, 1);
       if (h.classList.contains('band') || RM || (h.classList.contains('whole') && phone())) return;
