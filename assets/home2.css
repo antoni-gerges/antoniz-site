@@ -1,9 +1,13 @@
-/* home2.css — Home below the opening: four screens on one dark ground (rebuilt overnight 12 to 13 Oct on Tony's words:
+/* home2.css — Home below the opening, on one dark ground (rebuilt overnight 12 to 13 Oct on Tony's words:
    "too many text", "the structure is still a lot", "things coming out of the / containers", "I want some bold text").
+   13 Oct, morning: three sections came back in the new look ("You cut it a lot of other sections"; cut words, never showcase).
      2 Three projects   .stg      the stage: the mark's three signals as windows, one project at a time coming out
      3 All twelve       .h2-all   the names only
-     4 In numbers       .h2-proof four figures
-     5 Say hello        .h2-hi    one line and his email (the page's footer)
+     2b The wall film   .h2-wall  the ZEISS 74-ft wall film, whole, in a straight frame; it plays                          [came back]
+     4 In numbers       .h2-proof four figures, their sentences in Read more; then his years (.h2-time) and Trusted by, Venues (.h2-trust)      [4b and 4c came back]
+     5 How I work       .h2-lead  the title, the three moves, his system in one line, the link; the rest in Read more   [came back]
+     6 Films            .films    four films, covers whole, each plays in the site's player                             [came back]
+     7 Say hello        .h2-hi    one line and his email (the page's footer)
    Type, the five styles only: Jost Light 300 (quiet part of a big title, 40 px and up), Jost Semibold 600 (the point, names, numbers,
    calls to action), Jost Medium 500 (list names), Inter Regular 400 (reading), Inter Semibold 600 (labels, the fact).
    Colour: ground #0B0C10, paper #F7F5F1, quiet 72 % paper, lines 18 % paper; the energy line's cyan and warm only in the line itself. */
@@ -193,6 +197,38 @@ html.no-js:not(.js) .stg{height:auto}        /* .js is set in the head before th
 html.no-js:not(.js) .stg-pin{position:relative}
 
 /* ============================================================================================================================
+   2b · THE ZEISS 74-FT WALL FILM (came back 13 Oct, the second fixing pass). Straight after the stage: the film WHOLE in a straight frame
+   at its own ratio (2816 x 648, the wall's), as wide as the page allows; on a phone from edge to edge. It runs silently in the frame while
+   it is on screen (assets/site.js, video[data-clip]); the whole frame is the button that opens it large. Above it, a drawn measure
+   that says the caption's one fact, 74 ft. No box, no glow, nothing over the picture.
+   ============================================================================================================================ */
+.home2 .h2-wall{padding-top:clamp(56px,6.4vw,104px)}
+.wl{display:block;width:100%;margin:0;padding:0;border:0;border-radius:0;background:none;color:#F7F5F1;font:inherit;text-align:left;cursor:pointer;-webkit-appearance:none;appearance:none}
+.wl-dim{display:flex;align-items:center;gap:16px;margin:0 0 14px;font:600 12px/1 "Inter",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,245,241,.72);white-space:nowrap}
+.wl-dim::before,.wl-dim::after{content:"";flex:none;width:1px;height:13px;background:rgba(247,245,241,.6)}
+.wl-dim i{flex:1;height:1px;background:rgba(247,245,241,.3)}
+.wl-dim::before{margin-right:-16px}.wl-dim::after{margin-left:-16px}
+.wl-dim b{font:inherit;letter-spacing:inherit}
+.wl-pic{display:block;aspect-ratio:var(--ar,2816/648);background:#0B0C10}
+.wl-pic video{display:block;width:100%;height:100%;object-fit:contain}
+.wl-cap{display:flex;align-items:center;gap:16px;padding-top:clamp(14px,1.4vw,20px)}
+.wl-cap>span{display:block;min-width:0}
+.wl-cap b{display:block;font:600 clamp(20px,1.75vw,27px)/1.14 "Jost",system-ui,sans-serif;letter-spacing:-.018em}
+.wl-cap span span{display:block;margin-top:6px;font:400 15px/1.4 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
+.wl-pl{flex:none;width:48px;height:48px;display:block;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.wl:hover .wl-pl,.wl:focus-visible .wl-pl{transform:scale(1.1)}
+.home2 .wl:focus-visible{outline:2px solid #F7F5F1;outline-offset:6px}
+.wl-nojs{margin:10px 0 0;font:600 17px/1.3 "Jost",system-ui,sans-serif}
+@media (prefers-reduced-motion:reduce){.wl-pl{transition:none}}
+@media (max-width:760px){
+  .wl-dim{display:none}                                                   /* the film runs from edge to edge: the measure would be shorter than the wall */
+  .wl-pic{width:100vw;margin-left:calc(50% - 50vw)}
+  .wl-cap{gap:14px}
+  .wl-pl{width:44px;height:44px}
+  .wl-cap span span{font-size:14px;text-wrap:balance}
+}
+
+/* ============================================================================================================================
    3 · ALL TWELVE: the names only, one row that wraps. Each is a link to its project; the mark's signal stands between them.
    ============================================================================================================================ */
 .all12{--s:.9em;list-style:none;margin:0 0 0 calc(var(--s) * -1);padding:0;font:600 clamp(26px,3.6vw,60px)/1.2 "Jost",system-ui,sans-serif;letter-spacing:-.024em;
@@ -214,6 +250,16 @@ html.no-js:not(.js) .stg-pin{position:relative}
 .h2-num b .un{width:min-content;margin:0 0 .04em .34em;font:500 clamp(15px,.2em,24px)/1.08 "Jost",system-ui,sans-serif;letter-spacing:0;color:#F7F5F1}
 .h2-num b .pre{position:absolute;left:.06em;bottom:calc(100% + .16em);font:600 13px/1 "Inter",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,245,241,.72)}
 .h2-num .cp{margin:clamp(16px,1.6vw,24px) 0 0;font:400 17px/1.4 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
+/* 4 (the second fixing pass, 13 Oct): the sentence under each figure and what he did, behind ONE closed Read more under the four figures. Opened, it is
+   four short columns in the order of the figures, each headed by its figure; what he did is the Semibold line. */
+.h2-nrm{margin-top:clamp(8px,1vw,14px)}
+.home2 .h2-nrm .rm-b{max-width:none;padding:10px 0 4px}
+.h2-nmore{margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px clamp(24px,3vw,56px)}
+.h2-nmore>div{border-top:1px solid rgba(247,245,241,.18);padding-top:14px}
+.h2-nmore dt{margin:0 0 10px;font:600 12px/1.4 "Inter",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,245,241,.72)}
+.h2-nmore dd{margin:0;max-width:34ch;font:400 16px/1.56 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.86)}
+.h2-nmore dd.rl{margin-top:8px;font-weight:600;color:#F7F5F1}
+@media (max-width:900px){.h2-nrm{margin-top:22px}.h2-nmore{grid-template-columns:1fr;gap:0}.h2-nmore>div{padding:14px 0 16px}.h2-nmore dd{max-width:none}}
 @media (max-width:900px){
   .h2-nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:44px 20px}
   .h2-num b{display:block;font-size:clamp(46px,13.4vw,96px);line-height:.8}        /* 13.4vw: "$10M+" keeps inside its column on a phone */
@@ -224,7 +270,126 @@ html.no-js:not(.js) .stg-pin{position:relative}
 }
 
 /* ============================================================================================================================
-   5 · SAY HELLO: one line and his email, big; the other ways to reach him, small. Then the sign-off.
+   4b · HIS YEARS (came back 13 Oct): one line from Cairo to Tampa. The mark's signal stands on the line at each stop.
+   The name is the point (Jost Semibold); the year is quiet above it and the role quiet under it (Inter Regular). No paragraphs.
+   4c · TRUSTED BY and VENUES: the label as small capitals in the first column of the years, the names in Semibold from the second.
+   ============================================================================================================================ */
+.h2-proof{--yg:clamp(16px,2.2vw,36px)}
+.h2-yrs{margin-top:clamp(40px,4.6vw,72px)}        /* 13 Oct, the second fixing pass: the section stood 910 px tall on a 900 px screen, so Venues sat on the fold under the guide. The inner gaps are
+                                                     tighter (the years 130 to 66 px under the Read more line, Trusted by 107 to 66, Venues 34 to 26) and the section starts 39 px higher: at 1440 x 900 Venues ends clear above the guide. */
+@media (min-width:901px){.h2.h2-proof{padding-top:clamp(72px,7.8vw,124px)}}
+.h2-time{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0 var(--yg);border-top:1px solid rgba(247,245,241,.18)}
+.h2-time li{position:relative;padding-top:clamp(26px,2.5vw,38px);font-family:inherit}
+.h2-time li::before{content:"";position:absolute;left:0;top:-14px;width:14px;height:28px;background:#F7F5F1;-webkit-mask:var(--sig) center/contain no-repeat;mask:var(--sig) center/contain no-repeat}
+.h2-time b{display:block;font:400 15px/1 "Inter",system-ui,sans-serif;font-variant-numeric:lining-nums tabular-nums;letter-spacing:.02em;color:rgba(247,245,241,.72)}
+.h2-time span{display:block;margin-top:12px;font:600 clamp(19px,2.02vw,33px)/1.06 "Jost",system-ui,sans-serif;letter-spacing:-.022em;white-space:nowrap}        /* 2.02vw: "Mission Control X" keeps to one line in its fifth of the row */
+.h2-time i{display:block;max-width:23ch;margin-top:9px;font:400 15px/1.42 "Inter",system-ui,sans-serif;font-style:normal;color:rgba(247,245,241,.72)}
+.h2-trust{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px var(--yg);align-items:baseline;margin-top:clamp(44px,4.6vw,72px)}
+.h2-trust.h2-venue{margin-top:clamp(16px,1.8vw,28px)}
+.h2-trust .h2-k{grid-column:1;margin:0}
+.h2-trust .tl{grid-column:2/-1;list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.34em 1.5em;font:600 clamp(20px,1.95vw,30px)/1.2 "Jost",system-ui,sans-serif;letter-spacing:-.016em}
+.h2-trust .tl li{font-family:inherit;max-width:100%}        /* site.css sets every li in Inter */
+@media (max-width:900px){
+  /* a phone: the line of years runs down the page; each stop is the year, then the name with its role under it */
+  .h2-time{display:block;border-top:0}
+  .h2-time li{display:grid;grid-template-columns:3.6em minmax(0,1fr);align-items:baseline;padding:20px 0 22px;border-top:1px solid rgba(247,245,241,.18)}
+  .h2-time li::before{top:-11px;width:11px;height:22px}
+  .h2-time b{grid-area:1/1/3/2}
+  .h2-time span{grid-area:1/2;margin:0;font-size:24px}
+  .h2-time i{grid-area:2/2;max-width:none;margin-top:6px}
+  .h2-trust{display:block;margin-top:56px}
+  .h2-trust.h2-venue{margin-top:36px}
+  .h2-trust .h2-k{margin-bottom:16px}
+  .h2-trust .tl{display:block;font-size:21px;line-height:1.22}
+  .h2-trust .tl li{padding:5px 0}
+}
+
+/* ============================================================================================================================
+   5 · HOW I WORK (came back 13 Oct): the idea, and the three moves as three strong lines, each counted in the mark's signals
+   (one lit, two lit, three lit). His system is one line of four names; the link leads on. The paragraphs are behind Read more.
+   ============================================================================================================================ */
+.h2-lead .hw{display:grid;grid-template-columns:minmax(0,1.16fr) minmax(0,1fr);gap:clamp(40px,4.8vw,80px) clamp(32px,5vw,96px);align-items:end}
+.h2-lead h2{grid-area:1/1;margin:0 0 -.08em -.04em;font:300 clamp(52px,7.3vw,124px)/.98 "Jost",system-ui,sans-serif;letter-spacing:-.02em}
+.h2-lead h2 b{display:block;font-weight:600;letter-spacing:-.035em;white-space:nowrap}
+.hw-moves{grid-area:1/2;list-style:none;margin:0;padding:0;display:grid;gap:clamp(16px,1.9vw,30px)}
+.hw-moves li{display:flex;align-items:center;gap:.52em;font:600 clamp(25px,3vw,50px)/1.04 "Jost",system-ui,sans-serif;letter-spacing:-.026em}
+.hw-moves li b{font:inherit;letter-spacing:inherit;white-space:nowrap}
+.hw-moves .mvt{flex:none;font-size:.8em}
+.hw-more{grid-area:2/1;align-self:start}
+.hw-on{grid-area:2/2;align-self:start;padding-top:8px}
+.hw-sys{margin:0}
+.hw-sys .h2-k{margin:0 0 14px}
+.hw-sys b{display:block;font:600 clamp(20px,1.95vw,30px)/1.2 "Jost",system-ui,sans-serif;letter-spacing:-.016em;white-space:nowrap}
+.hw-sys b i{font-style:normal;color:rgba(247,245,241,.38)}
+.hw-go{display:inline-block;margin-top:clamp(20px,2.2vw,34px);padding:11px 0;font:600 clamp(17px,1.3vw,19px)/1.3 "Jost",system-ui,sans-serif;color:#F7F5F1;text-decoration:none;white-space:nowrap}
+.hw-go i{font-style:normal;display:inline-block;margin-left:.2em;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.hw-go:hover i{transform:translateX(5px)}
+@media (prefers-reduced-motion:reduce){.hw-go i{transition:none}}
+@media (max-width:900px){
+  .h2-lead .hw{display:flex;flex-direction:column;align-items:stretch;gap:0}
+  .h2-lead h2{margin:0 0 0 -.03em;font-size:clamp(46px,13.4vw,96px)}
+  .hw-moves{margin-top:clamp(40px,10vw,64px);gap:16px}
+  .hw-moves li{font-size:clamp(23px,6.5vw,44px)}
+  .hw-on{order:3;padding-top:clamp(40px,10vw,64px)}
+  .hw-sys b{font-size:clamp(19px,5.4vw,28px)}
+  .hw-more{order:4;margin-top:10px}
+}
+
+/* Read more: the closed line the inner pages use (assets/shell2.css; the same markup and the same values, copied because Home does not load that sheet).
+   A quiet line with the mark's single signal as its sign. Closed by default; never a box. */
+.sg1{display:inline-block;flex:none;height:1em;aspect-ratio:25.68/51.46;background:currentColor;-webkit-mask:var(--sig) center/contain no-repeat;mask:var(--sig) center/contain no-repeat}
+.home2 .rm>summary{list-style:none;cursor:pointer}
+.home2 .rm>summary::-webkit-details-marker{display:none}
+.home2 .rm>summary{display:inline-flex;align-items:center;gap:10px;min-height:44px;font:600 12px/1 "Inter",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,245,241,.72);white-space:nowrap}
+.home2 .rm>summary .sg1{font-size:15px;color:#F7F5F1}
+.home2 .rm>summary::after{content:"";width:clamp(28px,3.4vw,52px);height:1px;background:currentColor;opacity:.5;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.home2 .rm>summary:hover{color:#F7F5F1}
+.home2 .rm>summary:hover::after,.home2 .rm[open]>summary::after{width:clamp(48px,6vw,96px)}
+.home2 .rm-c,.home2 .rm[open]>summary .rm-o{display:none}
+.home2 .rm[open]>summary .rm-c{display:inline}
+.home2 .rm>summary:focus-visible{outline:2px solid #F7F5F1;outline-offset:4px}
+.home2 .rm-b{padding:6px 0 12px;max-width:62ch}
+.home2 .rm-b p{margin:0 0 14px;font:400 clamp(16px,1.15vw,17.5px)/1.62 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.86)}
+@media (prefers-reduced-motion:reduce){.home2 .rm>summary::after{transition:none}}
+
+/* ============================================================================================================================
+   6 · THE FILMS (came back 13 Oct): four films, each plays in the site's film player (assets/films.js reads data-film).
+   Every cover is WHOLE, at its own ratio: the frame of a film (--ar, written on the button) is the ratio of its cover, and the two
+   films of a row share one height, so each is as wide as its own picture (--n). Nothing here is fitted with object-fit:cover.
+   The covers are stills (see build_home_next.py for why the muted previews of 12 October did not come back with them).
+   ============================================================================================================================ */
+.home2 .films{padding:clamp(84px,10.5vw,168px) 0 0;background:#0B0C10;color:#F7F5F1}
+.home2 .films .fh{display:flex;justify-content:space-between;align-items:flex-end;gap:20px 48px;margin:0 0 clamp(30px,3.4vw,54px)}
+.home2 .films .fh .h2-k{margin-bottom:clamp(16px,1.7vw,26px)}
+.home2 .films h2{margin:0;font:300 clamp(34px,4.45vw,64px)/1 "Jost",system-ui,sans-serif;letter-spacing:-.012em}
+.home2 .films h2::before{content:none}        /* the three signals stand in the label above, once */
+.home2 .films h2 b{font-weight:600;letter-spacing:-.024em}
+@media (max-width:899px){body.home2 .films h2{font-weight:400!important}}        /* under 40 px the quiet part of a title is Regular, never Light (assets/type.css, part 1); 4.45vw crosses 40 px at 899 px */
+.home2 .films .fh>p{max-width:31ch;margin:0 0 .2em;text-align:right;font:400 17px/1.42 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
+.home2 .films .fgrid{display:flex;flex-wrap:wrap;gap:clamp(36px,3.6vw,58px) clamp(16px,2vw,28px)}
+.home2 .films .film{flex:var(--n,1.778) 1 calc(var(--n,1.778) * 18%);min-width:0;padding:0;border:0;border-radius:0;background:none;overflow:visible;color:#F7F5F1;text-align:left;cursor:pointer}        /* 18 % a unit of ratio: two films to a row, each as wide as its own picture */
+.home2 .films .fpic{display:block;aspect-ratio:var(--ar,16/9);background:#0B0C10}
+.home2 .films .fpic img{display:block;width:100%;height:100%;aspect-ratio:auto;object-fit:contain;background:none}
+.home2 .films .film .fcap{position:static;display:flex;align-items:center;gap:16px;padding:clamp(14px,1.4vw,20px) 0 0;background:none}
+.home2 .films .film .fcap>span:not(.pl){display:block;min-width:0;margin:0;font-size:inherit;color:inherit}
+.home2 .films .film b{display:block;font:600 clamp(20px,1.75vw,27px)/1.14 "Jost",system-ui,sans-serif;letter-spacing:-.018em}
+.home2 .films .film .fcap span span{display:block;margin-top:6px;font:400 15px/1.4 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
+.home2 .films .film .pl{width:48px;height:48px;background:#F7F5F1;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.home2 .films .film:hover .pl,.home2 .films .film:focus-visible .pl{background:#F7F5F1;transform:scale(1.1)}        /* paper only: the line's cyan stays in the line */
+.home2 .films .film:focus-visible{outline:2px solid #F7F5F1;outline-offset:6px}
+@media (prefers-reduced-motion:reduce){.home2 .films .film .pl{transition:none}}
+@media (max-width:760px){
+  .home2 .films .fh{display:block}
+  .home2 .films .fh>p{max-width:none;margin:16px 0 0;text-align:left;font-size:16px}
+  .home2 .films .fgrid{gap:36px 0}
+  .home2 .films .film{flex:0 0 100%}
+  .home2 .films .film .fcap{gap:14px}
+  .home2 .films .film .pl{width:44px;height:44px}
+  .home2 .films .film .fcap span span{font-size:14px;text-wrap:balance}        /* 14 px: "Dubai · 2022 · 2:34 · with Mission Control X" keeps to one line at 390 px; a longer line breaks in two even halves */
+}
+
+/* ============================================================================================================================
+   7 · SAY HELLO: one line and his email, big; the other ways to reach him, small. Then the sign-off.
    ============================================================================================================================ */
 .home2 .end.h2-hi{background:#0B0C10;color:#F7F5F1;padding:clamp(96px,12vw,190px) 0 44px}
 .home2 .end.h2-hi h2{max-width:none;margin:0 0 clamp(26px,3.2vw,52px);font:300 clamp(40px,4.45vw,64px)/1.05 "Jost",system-ui,sans-serif;letter-spacing:-.012em}

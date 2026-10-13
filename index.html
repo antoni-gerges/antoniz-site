@@ -35,8 +35,15 @@
   .nav a{font-size:15px;padding:13px 10px}
   .nav a:focus-visible,.brand:focus-visible{outline:2px solid #F7F5F1;outline-offset:2px}
   /* the header now takes its own room, so the pages do not need the tall top padding they keep for a floating header */
-  .phead{padding-top:44px!important}.en-nojs{padding-top:44px!important}.pj-head{padding-top:40px!important}.ct{padding-top:40px!important;min-height:0!important}
+  .phead{padding-top:44px!important}.chero{padding-top:36px!important;min-height:0!important}.en-nojs{padding-top:44px!important}.pj-head{padding-top:40px!important}.ct{padding-top:40px!important;min-height:0!important}
 }
+/* Craft without script: nothing pins and nothing slides, so nothing is out of reach. Each reel is a strip that scrolls sideways by hand,
+   and the four identities stand as a grid (creative.js sets the reels' height and moves their tracks; without it only the first screen of each showed). */
+.reel{height:auto!important}.rpin{position:static!important;height:auto!important;padding:40px 0!important}.rbar{display:none}
+.track:not(.static){overflow-x:auto;transform:none!important;padding-bottom:6px}
+.ident{height:auto!important;padding:80px 0 0}.ipin{position:static!important;height:auto!important;display:block!important}.igridwrap{display:block!important}.istage,.ticks{display:none!important}
+.igrid{display:grid!important;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}.igcell{margin:0}.igcell img{display:block;width:100%;height:auto}
+@media (max-width:860px){.igrid{grid-template-columns:1fr 1fr}}
 </style></noscript>
 <link rel="stylesheet" href="assets/brand.css">
 <link rel="stylesheet" href="assets/type.css">
@@ -46,13 +53,13 @@
 <header class="hdr">
   <a class="pill brand" href="./" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
   <div class="pill">
-    <nav class="nav" id="nav" aria-label="Site"><a href="projects/">Projects</a><a href="about/">About</a><a href="contact/">Contact</a><a href="assets/Antoni-Gerges-CV.pdf" class="navcv" target="_blank" rel="noopener">CV</a></nav>
+    <nav class="nav" id="nav" aria-label="Site"><a href="projects/">Projects</a><a href="work/">Craft</a><a href="about/">About</a><a href="contact/">Contact</a><a href="assets/Antoni-Gerges-CV.pdf" class="navcv" target="_blank" rel="noopener">CV</a></nav>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
   </div>
 </header>
 <main id="main">
 
-<section id="entrance" data-hdr="#0B0C10,#F7F5F1,#FFFFFF" aria-label="Antoni Gerges, Executive Creative Director">
+<section id="entrance" data-hdr="#0B0C10,#F7F5F1,#FFFFFF" data-stop="Opening" data-stop-quiet aria-label="Antoni Gerges, Executive Creative Director">
   <h1 class="en-sr">Antoni Gerges, Executive Creative Director. Big ideas, built.</h1>
   <div id="en-host"></div>
   <noscript><div class="en-nojs">
@@ -313,7 +320,7 @@ document.fonts.ready.then(()=>{ layout(); measure(); TS=sampleT(); MS=sampleMark
 </script>
 
 
-<section class="stg h2-sig" id="work" data-hdr="#0B0C10,#F7F5F1,#FFFFFF" data-state="1" aria-labelledby="sw-h">
+<section class="stg h2-sig" id="work" data-hdr="#0B0C10,#F7F5F1,#FFFFFF" data-stop="Selected work" data-stop-quiet data-state="1" aria-labelledby="sw-h">
   <div class="stg-pin"><div class="stg-bd">
     <div class="stg-hd"><p class="h2-k">Selected work</p><h2 id="sw-h">Three, <b class="tw">then nine.</b></h2></div>
     <div class="stg-sweep" aria-hidden="true"><img src="assets/energy-wide.svg" alt=""></div>
@@ -369,21 +376,75 @@ document.fonts.ready.then(()=>{ layout(); measure(); TS=sampleT(); MS=sampleMark
   </div></div>
 </section>
 
-<section class="h2 h2-all" data-hdr="#0B0C10,#F7F5F1,#FFFFFF" aria-labelledby="al-h"><div class="wrap">
+<section class="h2 h2-wall" data-hdr="#0B0C10,#F7F5F1,#FFFFFF" aria-label="ZEISS: the 74-ft wall film">
+  <div class="wrap">
+    <!-- stage: the wall film, whole. Room for a scroll-driven moment later, for example the wall measured out as the page scrolls (data-stage="zeiss-wall"). -->
+    <button class="wl" type="button" data-stage="zeiss-wall" data-film="work/zeiss/a/led3-2816.mp4" data-film-sm="work/zeiss/a/led3-1408.mp4" data-film-title="ZEISS · the 74-ft wall film" aria-label="Play the ZEISS wall film, 35 seconds, silent">
+      <span class="wl-dim" aria-hidden="true"><i></i><b>74 ft</b><i></i></span>
+      <span class="wl-pic" style="--ar:2816/648"><video data-clip data-src="work/zeiss/a/led3-2816.mp4" data-src-sm="work/zeiss/a/led3-1408.mp4" poster="work/zeiss/a/led3-poster.webp" width="2816" height="648" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></span>
+      <span class="wl-cap"><svg class="wl-pl" viewBox="0 0 44 44" aria-hidden="true" focusable="false"><circle cx="22" cy="22" r="22" fill="#F7F5F1"/><path d="M18 14.5 L30.5 22 L18 29.5 Z" fill="#0B0C10"/></svg><span><b>ZEISS · the 74-ft wall film, whole</b><span>Screen film by AntBrush&nbsp;· 0:35&nbsp;· silent</span></span></span>
+    </button>
+    <noscript><p class="wl-nojs"><a href="work/zeiss/a/led3-2816.mp4">Play the film</a></p></noscript>
+  </div>
+</section>
+
+<section class="h2 h2-all" data-hdr="#0B0C10,#F7F5F1,#FFFFFF" data-stop="All twelve" aria-labelledby="al-h"><div class="wrap">
   <h2 id="al-h" class="en-sr">All twelve projects</h2><p class="h2-k"><span class="mvt" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>All twelve</p>
   <!-- stage: the twelve names. Room for a scroll-driven 3D or WebGL moment later (data-stage="all-twelve"). -->
   <div data-stage="all-twelve"><ul class="all12"><li><a href="work/dha/">Dubai Health Authority</a></li><li><a href="work/zeiss/">ZEISS Vision Care</a></li><li><a href="work/liwa/">Liwa International Festival</a></li><li><a href="work/aiaasc/">AIAASC</a></li><li><a href="work/mazzika/">Why Not! Mazzika</a></li><li><a href="work/anti-bullying/">National Bullying Prevention Week</a></li><li><a href="work/al-forsan/">Al Forsan</a></li><li><a href="work/cityscape/">Cityscape Abu Dhabi</a></li><li><a href="work/big-grill/">The Big Grill</a></li><li><a href="work/al-ain/">Innovation Month</a></li><li><a href="work/pyramids-2021/">Majid Al Futtaim</a></li><li><a href="work/capacity/">Capacity Middle East</a></li></ul></div>
 </div></section>
 
-<section class="h2 h2-proof" data-hdr="#0B0C10,#F7F5F1,#FFFFFF" aria-labelledby="pr-h"><div class="wrap">
+<section class="h2 h2-proof" data-hdr="#0B0C10,#F7F5F1,#FFFFFF" data-stop="In numbers" aria-labelledby="pr-h"><div class="wrap">
   <h2 id="pr-h" class="en-sr">In numbers</h2><p class="h2-k"><span class="mvt" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>In numbers</p>
   <!-- stage: the four figures. Room for a scroll-driven 3D or WebGL moment later (data-stage="numbers"). -->
   <div class="h2-nums" data-stage="numbers"><div class="h2-num"><b>23<span class="un">yrs</span></b><p class="cp">Idea to delivery</p></div><div class="h2-num"><b>$10M+</b><p class="cp">Combined project value, US$</p></div><div class="h2-num"><b><span class="pre">almost</span>1,000<span class="un un-w">staff votes</span></b><p class="cp">Dubai Health Authority, 2008</p></div><div class="h2-num"><b>40M<span class="un un-w">hashtag views</span></b><p class="cp">Bullying Prevention Week, 2018</p></div></div>
+  <div class="h2-nrm"><details class="rm"><summary><i class="sg1" aria-hidden="true"></i><span class="rm-o">Read more</span><span class="rm-c">Close</span></summary><div class="rm-b"><dl class="h2-nmore"><div><dt>23 yrs</dt><dd>From a first job in Cairo in 2003 to leading the whole assignment in Dubai, Abu Dhabi and now Tampa.</dd><dd class="rl">Executive Creative Director.</dd></div><div><dt>$10M+</dt><dd>Combined value of the projects led through AntBrush and Mission Control X.</dd><dd class="rl">Founder and creative lead at AntBrush; partner at Mission Control X.</dd></div><div><dt>almost 1,000 staff votes</dt><dd>Its staff chose our star from four options, as Gulf News and Khaleej Times reported.</dd><dd class="rl">I led the pitch and the identity.</dd></div><div><dt>40M hashtag views</dt><dd>Hashtag views in two days for the national campaign, across seven emirates.</dd><dd class="rl">I led the campaign brand and its content.</dd></div></dl></div></details></div>
+  <!-- stage: his years, one line from Cairo to Tampa. Room for a scroll-driven moment later, for example the mark flying the line (data-stage="years"). -->
+  <div class="h2-yrs" data-stage="years">
+    <ol class="h2-time" aria-label="The years: from Cairo in 2003 to Tampa in 2024">
+      <li><b>2003</b><span>Cairo</span><i>Graphic designer</i></li>
+      <li><b>2006</b><span>Dubai</span><i>Junior art director</i></li>
+      <li><b>2007</b><span>AntBrush</span><i>Founded in Abu Dhabi; Dubai and Cairo followed</i></li>
+      <li><b>2017</b><span>Mission Control X</span><i>Live shows, festivals and launches, Dubai</i></li>
+      <li><b>2024</b><span>Tampa, Florida</span><i>One creative director, with AI as the studio</i></li>
+    </ol>
+  </div>
+  <div class="h2-trust"><p class="h2-k" id="tr-h">Trusted by</p><ul class="tl" aria-labelledby="tr-h"><li>Dubai Health Authority</li><li>Department of Municipal Affairs and Transport, Abu Dhabi</li><li>UAE Ministry of Education</li><li>Al Ain City Municipality</li><li>Abu Dhabi Sports Council</li><li>ZEISS</li><li>Etisalat</li><li>Unilever</li><li>Majid Al Futtaim</li></ul></div>
+  <div class="h2-trust h2-venue"><p class="h2-k" id="vn-h">Venues</p><ul class="tl" aria-labelledby="vn-h"><li>Coca-Cola Arena, Dubai</li><li>Marriott Mena House, Giza</li><li>ADNEC, Abu Dhabi</li></ul></div>
+</div></section>
+
+<section class="h2 h2-lead" id="ai" data-hdr="#0B0C10,#F7F5F1,#FFFFFF" data-stop="How I work" aria-labelledby="ai-h"><div class="wrap">
+  <p class="h2-k"><span class="mvt" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>How I work</p>
+  <!-- stage: the idea and the three moves. Room for a scroll-driven 3D or WebGL moment later (data-stage="how-i-work"). -->
+  <div class="hw" data-stage="how-i-work">
+    <h2 id="ai-h">The idea is <b class="tw">still the job.</b></h2>
+    <ol class="hw-moves">
+      <li><span class="mvt" aria-hidden="true"><i class="on"></i><i></i><i></i></span><b>Find the one idea.</b></li>
+      <li><span class="mvt" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span><b>Draw many. Choose one.</b></li>
+      <li><span class="mvt" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span><b>Stay until it stands.</b></li>
+    </ol>
+    <div class="hw-more"><details class="rm"><summary><i class="sg1" aria-hidden="true"></i><span class="rm-o">Read more</span><span class="rm-c">Close</span></summary><div class="rm-b"><p>For seventeen years I led AntBrush, my studio in Abu Dhabi: identities, national campaigns, launches, pavilions and festivals, for government bodies and for brands such as ZEISS and Etisalat.</p><p>I lead the idea and the build. Today I run the production with AI tools, and this site is the proof: I designed, wrote and built it myself, films and animation included.</p><p>My system, four Cs: Creative · Connect · Code · CRM. Most businesses run these in four places. I run them as one system.</p></div></details></div>
+    <div class="hw-on">
+      <p class="hw-sys"><span class="h2-k">My system, four Cs</span><b>Creative<i aria-hidden="true"> · </i>Connect<i aria-hidden="true"> · </i>Code<i aria-hidden="true"> · </i>CRM</b></p>
+      <a class="hw-go sigl" href="how-i-work/">See how, with the work <i aria-hidden="true">→</i></a>
+    </div>
+  </div>
+</div></section>
+
+<section class="films h2 h2-films" data-stop="Films" data-hdr="#0B0C10,#F7F5F1,#FFFFFF" aria-labelledby="films-h"><div class="wrap">
+  <div class="fh"><div><p class="h2-k"><span class="mvt" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>Films</p><h2 id="films-h">The work, <b class="tw">built and open</b></h2></div><p>Four nights and one desert, on film. Click any film to watch it with sound.</p></div>
+  <!-- stage: the four films. Room for a scroll-driven 3D or WebGL moment later (data-stage="films"). -->
+  <div class="fgrid" data-stage="films">
+    <button class="film rv" type="button" style="--ar:1600/1064;--n:1.504" data-film="media/films/zeiss-1080.mp4" data-film-sm="media/films/zeiss-720.mp4" data-film-title="ZEISS Vision Care launch"><span class="fpic"><img src="img/zeiss/wall-built-1600.webp" srcset="img/zeiss/wall-built-800.webp 800w, img/zeiss/wall-built-1600.webp 1600w" sizes="(max-width:760px) 92vw, 40vw" width="1600" height="1064" alt="" loading="lazy" decoding="async"></span><span class="fcap"><span class="pl" aria-hidden="true"></span><span><b>ZEISS Vision Care launch</b><span>Dubai&nbsp;· 2022&nbsp;· 2:34&nbsp;· with Mission Control X</span></span></span></button>
+    <button class="film rv" type="button" style="--ar:1600/680;--n:2.353" data-film="media/films/liwa-tvc-1080.mp4" data-film-sm="media/films/liwa-tvc-720.mp4" data-film-title="Liwa International Festival TVC"><span class="fpic"><img src="media/films/liwa-tvc-cover.jpg" width="1600" height="680" alt="" loading="lazy" decoding="async"></span><span class="fcap"><span class="pl" aria-hidden="true"></span><span><b>Liwa International Festival TVC</b><span>Tal Moreeb&nbsp;· 2020&nbsp;· 1:01&nbsp;· AntBrush</span></span></span></button>
+    <button class="film rv" type="button" style="--ar:1920/840;--n:2.286" data-film="media/films/mazzika-1080.mp4" data-film-sm="media/films/mazzika-720.mp4" data-film-title="Why Not! Mazzika festival"><span class="fpic"><img src="media/films/mazzika-cover.jpg" width="1920" height="840" alt="" loading="lazy" decoding="async"></span><span class="fcap"><span class="pl" aria-hidden="true"></span><span><b>Why Not! Mazzika festival</b><span>Coca-Cola Arena, Dubai&nbsp;· 2019&nbsp;· 2:53&nbsp;· with Mission Control X</span></span></span></button>
+    <button class="film rv" type="button" style="--ar:1280/532;--n:2.406" data-film="media/films/big-grill-720.mp4" data-film-sm="media/films/big-grill-720.mp4" data-film-title="The Big Grill festival"><span class="fpic"><img src="media/films/big-grill-cover.jpg" width="1280" height="532" alt="" loading="lazy" decoding="async"></span><span class="fcap"><span class="pl" aria-hidden="true"></span><span><b>The Big Grill festival</b><span>Abu Dhabi&nbsp;· 2018&nbsp;· 3:04&nbsp;· with Mission Control X</span></span></span></button>
+  </div>
 </div></section>
 
 </main>
 
-<footer class="end h2-hi" data-hdr="#0B0C10,#F7F5F1,#FFFFFF" aria-labelledby="hi-h">
+<footer class="end h2-hi" data-hdr="#0B0C10,#F7F5F1,#FFFFFF" data-stop="Say hello" data-stop-quiet aria-labelledby="hi-h">
   <div class="wrap">
     <p class="h2-k"><span class="mvt" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>Say hello</p>
     <h2 id="hi-h">For the idea. <b class="tw">And everything after.</b></h2>
@@ -392,7 +453,7 @@ document.fonts.ready.then(()=>{ layout(); measure(); TS=sampleT(); MS=sampleMark
     <p class="hi-links"><a href="tel:+15712788950">+1 (571) 278-8950</a><a href="https://wa.me/15712788950" rel="noopener">WhatsApp ↗</a><a href="https://www.linkedin.com/in/antoni-gerges/" rel="me noopener">LinkedIn ↗</a><a href="https://www.instagram.com/antoni.gerges/" rel="me noopener">Instagram ↗</a><a href="assets/Antoni-Gerges-CV.pdf" target="_blank" rel="noopener">Download CV ↓</a></p>
     <div class="row">
       <span><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg> Antoni Gerges · Executive Creative Director · Dubai, Abu Dhabi, Cairo. Now Tampa.</span>
-      <nav aria-label="Footer"><a href="projects/">Projects</a><a href="about/">About</a><a href="contact/">Contact</a></nav>
+      <nav aria-label="Footer"><a href="projects/">Projects</a><a href="work/">Craft</a><a href="about/">About</a><a href="contact/">Contact</a></nav>
     </div>
   </div>
 </footer>

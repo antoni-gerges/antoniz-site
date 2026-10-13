@@ -74,7 +74,8 @@
   var hdrM = $('.hdr'), menuB = $('.menu-btn');
   if (hdrM && menuB) { var wasOpen = false;
     new MutationObserver(function () { var open = hdrM.classList.contains('open'); if (open === wasOpen) return; wasOpen = open; setInert(open, hdrM);
-      if (open) { if (!hdrM.contains(doc.activeElement)) menuB.focus({ preventScroll: true }); } else menuB.focus({ preventScroll: true }); }).observe(hdrM, { attributes: true, attributeFilter: ['class'] });
+      var back = menuB.getClientRects().length ? menuB : ($('.brand', hdrM) || menuB);   /* beyond the first screen the Menu button is not shown: the mark opened the menu, so the mark takes the focus back */
+      if (open) { if (!hdrM.contains(doc.activeElement)) menuB.focus({ preventScroll: true }); } else back.focus({ preventScroll: true }); }).observe(hdrM, { attributes: true, attributeFilter: ['class'] });
     doc.addEventListener('keydown', function (e) { if (!hdrM.classList.contains('open')) return;
       if (e.key === 'Escape') { e.preventDefault(); e.stopImmediatePropagation(); menuB.click(); } else trap(e, hdrM); }, true); }
   var filmB = $('.fplayer');
@@ -127,7 +128,9 @@
     addEventListener('resize', read); read();
   })();
 
-  /* 1 where you are */
+  /* 1 where you are. The guide reads data-stop. 13 Oct: Home has it again, for seven screens (Opening, Selected work, All twelve, In numbers, How I work,
+        Films, Say hello). A stop that also carries data-stop-quiet is counted, so "3 of 7" is true, but the guide is not shown on it: the opening and
+        the stage fill the screen (the stage has its own "Next"), and Say hello is the foot of the page, where the guide would cover the sign-off. */
   var groups = [
     { name: 'Page', sel: '[data-stop]', label: function (el) { return el.getAttribute('data-stop'); } },
     { name: 'Selected projects', sel: '.doors .door', label: function (el) { return txt($('.proj', el)).split(' · ')[0]; } },
@@ -138,19 +141,22 @@
   var SHORT = { 'ZEISS Vision Care': 'ZEISS', 'Liwa International Festival': 'Liwa', 'Dubai Health Authority': 'DHA', 'Cityscape Abu Dhabi': 'Cityscape', 'National Bullying Prevention Week': 'Bullying Week', 'Why Not! Mazzika': 'Mazzika', 'Why Not! Mazzika Festival': 'Mazzika', 'Majid Al Futtaim Global Solutions': 'Pyramids', 'Capacity Middle East': 'Capacity', 'Innovation Month': 'Innovation Month', 'The Big Grill': 'Big Grill', 'Al Forsan International Sports Resort': 'Al Forsan', 'Innovation Month, Al Ain': 'Innovation Month', 'Find the one idea.': 'Find', 'Draw many. Choose one.': 'Draw', 'Stay until it stands.': 'Stay', 'Designed, then built': 'Designed, built' };
   function short(n) { return SHORT[n] || (n.length > 16 ? n.slice(0, 15).replace(/\s+\S*$/, '') + '…' : n); }
   var stops = [];
-  groups.forEach(function (g) { var els = g.els || $$(g.sel); els.forEach(function (el, i) { stops.push({ el: el, g: g, i: i, n: els.length, name: g.label(el), end: els[i + 1] || null }); /* an item lasts until the next one starts, so the chip never blinks off in the gaps */ }); });
+  groups.forEach(function (g) { var els = g.els || $$(g.sel); els.forEach(function (el, i) { stops.push({ el: el, g: g, i: i, n: els.length, name: g.label(el), end: els[i + 1] || null, quiet: el.hasAttribute('data-stop-quiet') }); /* an item lasts until the next one starts, so the chip never blinks off in the gaps */ }); });
   if (stops.length > 1) {
     var chip = doc.createElement('div'); chip.className = 'where'; chip.setAttribute('role', 'status'); chip.setAttribute('aria-live', 'off');
     chip.innerHTML = '<span class="tk" aria-hidden="true"><i></i><i></i><i></i></span><b></b><span class="of"></span><a href="#"></a>';
     doc.body.appendChild(chip); doc.body.classList.add('has-where');
     var cb = $('b', chip), co = $('.of', chip), ca = $('a', chip), cur = -1;
     ca.addEventListener('click', function (e) { e.preventDefault(); var nx = stops[cur + 1]; if (nx && nx.g === stops[cur].g) nx.el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); });
+    var foot = $('body > footer.foot'), atEnd = false;
     var upd = function () { var mid = innerHeight * .5, k = -1;
+      /* at the foot of a page the guide steps down, so it never sits on the sign-off (desktop; on a phone it is a bar under the page) */
+      var e = !!foot && innerWidth > 760 && foot.getBoundingClientRect().top < innerHeight - 6; if (e !== atEnd) { atEnd = e; chip.classList.toggle('end', e); }
       stops.forEach(function (s, i) { var top = s.el.getBoundingClientRect().top, bot = s.end ? s.end.getBoundingClientRect().top : s.el.getBoundingClientRect().bottom;
         if (s.g.span && !s.end) { var mn = $('main'); bot = mn ? mn.getBoundingClientRect().bottom : bot; }
         if (top <= mid && bot > mid) k = i; });
       if (k !== cur) { cur = k;
-        if (k < 0) { chip.classList.remove('on'); return; }
+        if (k < 0 || stops[k].quiet) { chip.classList.remove('on'); return; }   /* a quiet stop (data-stop-quiet: Home's opening, its stage, Say hello) is counted, but the guide stays down while it is on */
         var s = stops[k], nx = stops[k + 1], ph = innerWidth <= 760; cb.textContent = ph ? short(s.name) : s.name; co.textContent = (s.i + 1) + ' of ' + s.n;
         if (nx && nx.g === s.g) { ca.textContent = 'Next: ' + short(nx.name) + ' ↓'; ca.hidden = false; ca.setAttribute('aria-label', 'Go to the next one: ' + nx.name); } else ca.hidden = true;
         chip.classList.add('on'); } };

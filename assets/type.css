@@ -2,18 +2,25 @@
    Tony, 12 Oct: "All of them are like very thin, and that's not how it should be ... make the rules as per the professional rules
    with a design taste for the typography." The rules, in words, are in reviews/2026-10-12-release/TYPE-SYSTEM.md.
 
-   Two families, five styles, nothing else:
+   Two families, five styles, and one stand-in:
      Jost Light 300      the quiet part of a big title (40 px and up only; never small, it breaks up on a dark ground)
      Jost Semibold 600   the point of a title, names, numbers, calls to action
      Jost Medium 500     titles of cards and lists, navigation, results
      Inter Regular 400   everything that is read
      Inter Semibold 600  small labels and the few words that must be found first
+     Jost Regular 400    the stand-in: the quiet part of a title where it falls under 40 px (phones and narrow windows; part 1 lists each
+                         place and the width at which it changes). Light breaks up at that size on a dark ground, so Regular takes its
+                         part there and nowhere else; the point of the title beside it stays Semibold. It is never used at 40 px or above.
    Weight steps always skip one (300 against 600, 400 against 600): a neighbouring weight reads as a mistake, not as emphasis.
 
    13 Oct (overnight): rewritten for the structure of that night (Home in five screens, Projects with Craft folded in, About in four
    screens, Contact in one). The rules that named blocks which no longer exist are gone (the copy before is type.css.before-overnight).
    The page stylesheets (home2.css, shell2.css) already set most pieces in one of the five styles; this sheet states the rule once
-   for every family of elements and closes the gaps. The home opening lives in its own shadow root and is not touched from here. */
+   for every family of elements and closes the gaps. The home opening lives in its own shadow root and is not touched from here.
+
+   13 Oct (morning): the sections came back (Home: his years, Trusted by, Venues, How I work, the films; Craft, its own page with all
+   six chapters; About: the studio). Part 8 below names every returned family of elements in one of the five styles (the copy before is
+   type.css.before-restore-13oct). */
 
 /* ---------- 0 · rendering ---------- */
 body{font-kerning:normal;font-optical-sizing:auto;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
@@ -31,7 +38,15 @@ body b.tw{font-weight:600!important;letter-spacing:-.024em}
 @media (max-width:1340px){body .pj-line{font-weight:400!important}}         /* a card's line: Light at 40 px and up (shell2.css sets it smaller, in Regular, under 1341 px) */
 @media (max-width:1025px){.shell2 .mv h3{font-weight:400!important}}        /* .mv h3  clamp(32px,3.9vw,62px)  */
 @media (max-width:1333px){body .ab-years b{font-weight:400!important}}      /* years   clamp(30px,3vw,44px)    */
-@media (max-width:760px){body .end.h2-hi h2{font-weight:400!important}}     /* Home, Say hello, on a phone: 8.9vw, so each phrase keeps to one line */
+@media (max-width:449px){body .end.h2-hi h2{font-weight:400!important}}     /* Home, Say hello, on a phone: 8.9vw, under 40 px below 450 px wide (the rule said 760 px: between 450 and 760 the title was Regular at 40 to 68 px, a sixth style) */
+@media (max-width:899px){body.home2 .films h2{font-weight:400!important}}   /* Home, the films: clamp(34px,4.45vw,64px) */
+/* Home's stage title is sized from the screen's height as well as its width (home2.css: 4.9 units, a unit the smaller of 1 % of the height
+   and 0.625 % of the width; on a phone 4.74 units of min(1 % of the height, 2.164vw)). It is under 40 px in every window shorter than 816 px
+   or narrower than 1306 px, and on a phone shorter than 844 px or narrower than 390 px: Regular there. The second half of a project's name
+   on a phone (min(10.9vw, 5.8 % of the height)) follows the same rule. */
+@media (min-width:761px) and (min-aspect-ratio:11/10) and (max-height:816px),(min-width:761px) and (min-aspect-ratio:11/10) and (max-width:1306px){body .stg-hd h2{font-weight:400!important}}
+@media (max-width:760px) and (max-height:843px),(max-width:389px),(max-aspect-ratio:11/10) and (max-height:843px){body .stg-hd h2{font-weight:400!important}}
+@media (max-width:366px),(max-width:760px) and (max-height:689px),(max-aspect-ratio:11/10) and (max-height:689px){body .stg .stg-nm span{font-weight:400!important}}   /* .stg: stronger than the Light of part 3 */
 
 /* ---------- 2 · titles of cards and lists, and the line of a group: Medium ---------- */
 body .mv-line,body .pg-line,body .stg-nx span,body .hi-links a,body .where b{font-weight:500!important}
@@ -68,3 +83,30 @@ body .ct-more .ct-place{font-family:"Inter",system-ui,sans-serif!important;font-
 body .rm-b p,body .mv-more{max-width:62ch}
 /* the fact of a screen is one of "the few words that must be found first": Semibold in its own family */
 body .pj-fact,body .stg-ft,body .h2-num .cp{font-weight:600!important}
+
+/* ---------- 8 · the sections that came back (13 Oct, morning): each family named once, in one of the five styles ---------- */
+/* titles of cards and lists, and the line of a chapter: Jost Medium */
+body .cln,body .ab-st-l,body .rhead h3,body .artists h3,body .cnav a{font-weight:500!important}
+/* names: the place and the studio in his years, the clients and the venues, a move, the four Cs, a film, a piece, an artist: Jost Semibold */
+body .h2-time span,body .tl li,body .hw-moves b,body .hw-sys b,body .fcap b,body .cc b,body .ab-mcx-c b,body .igcell figcaption,
+body .istep figcaption a,body .more13>summary{font-weight:600!important}
+/* numbers: a chapter's and a piece's number, Semibold, lining and tabular */
+body .cnum,body .rnum,body .cnav a i{font-weight:600!important;font-variant-numeric:lining-nums tabular-nums}
+/* labels: Inter Semibold */
+body .rclient,body .chip,body .pr2-i em{font-weight:600!important}
+/* calls to action */
+body .hw-go,body .rlink,body .cgo,body .btn2 span{font-weight:600!important}
+/* reading text: Inter Regular (a year and a role in the line of years are read; the name between them is announced) */
+body .h2-time b,body .h2-time i,body.home2 .films .fh>p,body .fcap span span,body .cfact,body .ridea,body .cc,body .csub,body .cshows,
+body .idsmall figcaption,body .istep figcaption span,body .pr2 figcaption,body .ab-mcx-c small,body .ab-mcx-l,body .foot nav a{font-weight:400!important}
+
+/* ---------- 9 · the second fixing pass (13 Oct): what came back after the critic's list, each in one of the five styles ---------- */
+/* the line of a screen: Jost Medium (Contact: "For the idea. And everything after.") */
+body .ct-for{font-weight:500!important}
+/* names and the words that are his record: Jost Semibold (the wall film's name, his title at Mission Control X, the fourth beat, a card's line of 12 October) */
+body .wl-cap b,body .ab-mcx-l b,body .rm-b p.mv-4th b,body .rm-b p.pj-was{font-weight:600!important}
+/* labels: Inter Semibold (the measure over the wall film, the figure that heads each column of the figures' Read more) */
+body .wl-dim,body .wl-dim b,body .h2-nmore dt{font-weight:600!important}
+/* reading text: Inter Regular; what he did, under each figure, is one of "the few words that must be found first": Inter Semibold */
+body .wl-cap span span,body .h2-nmore dd,body .rm-b p.mv-4th{font-weight:400!important}
+body .h2-nmore dd.rl{font-weight:600!important}
