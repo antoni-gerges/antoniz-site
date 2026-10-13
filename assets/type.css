@@ -1,0 +1,70 @@
+/* type.css: the type system of antoniz.com's main pages. Linked last; the one authority for weight, tracking and wrapping.
+   Tony, 12 Oct: "All of them are like very thin, and that's not how it should be ... make the rules as per the professional rules
+   with a design taste for the typography." The rules, in words, are in reviews/2026-10-12-release/TYPE-SYSTEM.md.
+
+   Two families, five styles, nothing else:
+     Jost Light 300      the quiet part of a big title (40 px and up only; never small, it breaks up on a dark ground)
+     Jost Semibold 600   the point of a title, names, numbers, calls to action
+     Jost Medium 500     titles of cards and lists, navigation, results
+     Inter Regular 400   everything that is read
+     Inter Semibold 600  small labels and the few words that must be found first
+   Weight steps always skip one (300 against 600, 400 against 600): a neighbouring weight reads as a mistake, not as emphasis.
+
+   13 Oct (overnight): rewritten for the structure of that night (Home in five screens, Projects with Craft folded in, About in four
+   screens, Contact in one). The rules that named blocks which no longer exist are gone (the copy before is type.css.before-overnight).
+   The page stylesheets (home2.css, shell2.css) already set most pieces in one of the five styles; this sheet states the rule once
+   for every family of elements and closes the gaps. The home opening lives in its own shadow root and is not touched from here. */
+
+/* ---------- 0 · rendering ---------- */
+body{font-kerning:normal;font-optical-sizing:auto;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3{text-wrap:balance}
+p,li,dd,figcaption{text-wrap:pretty}
+
+/* ---------- 1 · display: page and section titles ---------- */
+/* light, with the last phrase bold (b.tw, marked by the generators); large type is set tight, bold tighter than light.
+   A one-word title is b.tw whole. The big sentences that are set as titles (About's three lines, the three moves) follow the same rule. */
+body h1,body h2{font-weight:300!important;letter-spacing:-.012em}
+body b.tw{font-weight:600!important;letter-spacing:-.024em}
+/* Light is for 40 px and up. Where a title's quiet part falls under 40 px (narrow screens), it is Regular: still one step skipped
+   against the Semibold beside it, and it holds together on the dark ground. The breakpoints are where each clamp() crosses 40 px. */
+@media (max-width:929px){body .ab-l{font-weight:400!important}}             /* .ab-l   clamp(30px,4.3vw,70px)  */
+@media (max-width:1340px){body .pj-line{font-weight:400!important}}         /* a card's line: Light at 40 px and up (shell2.css sets it smaller, in Regular, under 1341 px) */
+@media (max-width:1025px){.shell2 .mv h3{font-weight:400!important}}        /* .mv h3  clamp(32px,3.9vw,62px)  */
+@media (max-width:1333px){body .ab-years b{font-weight:400!important}}      /* years   clamp(30px,3vw,44px)    */
+@media (max-width:760px){body .end.h2-hi h2{font-weight:400!important}}     /* Home, Say hello, on a phone: 8.9vw, so each phrase keeps to one line */
+
+/* ---------- 2 · titles of cards and lists, and the line of a group: Medium ---------- */
+body .mv-line,body .pg-line,body .stg-nx span,body .hi-links a,body .where b{font-weight:500!important}
+
+/* ---------- 3 · names: the client, the project, the place, the artist. Big names lead: Semibold ---------- */
+body .pclient,body .pclient a,body .stg-nm b,body .all12 a,body .awall li,body .ab-firm b,body .ab-years span,
+body .ab-places b,body .hi-mail,body .ct-mail,body .brand span,body .pill.brand span,body figcaption b{font-weight:600!important}
+body .awall li{font-family:"Jost",system-ui,sans-serif!important;letter-spacing:-.02em}
+body .awall li i{font-weight:400!important;letter-spacing:0}                 /* the note after an artist's name is read, not announced */
+/* a name's second half on Home's stage is the quiet part of that title (Light, never under 40 px: home2.css holds it at max(40px, …)) */
+body .stg-nm span{font-weight:300!important}
+
+/* ---------- 4 · numbers: Semibold, lining and tabular, set tight; the unit one step lighter ---------- */
+body .h2-num>b{font-weight:600!important;letter-spacing:-.035em;font-variant-numeric:lining-nums tabular-nums}
+body .h2-num>b span{font-weight:500!important;letter-spacing:0}
+body .h2-num>b span.pre{font-weight:600!important;letter-spacing:.16em}
+body .pj-k b{font-weight:600!important;font-variant-numeric:lining-nums tabular-nums}
+body .pj-play small,body .pj-pick small,body .where .of{font-variant-numeric:lining-nums tabular-nums}
+
+/* ---------- 5 · labels: small capitals in Inter Semibold, tracked out ---------- */
+body .label,body .h2-k,body .pj-k,body .ab-facts dt,body .ab-for dt,body .rm-o,body .rm-c{font-weight:600!important}
+body .label{font-family:"Inter",system-ui,sans-serif;letter-spacing:.16em}   /* the page label was the one label still in Jost */
+body .h2-k{letter-spacing:.16em}
+
+/* ---------- 6 · navigation and calls to action ---------- */
+body .nav a,body .menu-btn{font-weight:500!important}
+body .sigl,body .stg-go,body .stg-all,body .pj-open,body .pj-play,body .ab-cv,body .ct-more a{font-weight:600!important}
+body .where a{font-weight:600!important}                                     /* "Next: …" is a call, not a caption (was Inter 500, a sixth style) */
+
+/* ---------- 7 · reading text: Regular, never Light; a comfortable measure ---------- */
+body .abh-sub,body .ct-line,body .pj-lede,body .stg-ln,body .rm-b p,body .mv-more,body .pg-cap,body .pg-note,body .pg-fact,
+body .ab-years small,body .ab-facts dd,body .sign{font-weight:400!important}
+body .ct-more .ct-place{font-family:"Inter",system-ui,sans-serif!important;font-weight:400!important}   /* shell2.css asks for Inter; a later family rule had overridden it */
+body .rm-b p,body .mv-more{max-width:62ch}
+/* the fact of a screen is one of "the few words that must be found first": Semibold in its own family */
+body .pj-fact,body .stg-ft,body .h2-num .cp{font-weight:600!important}

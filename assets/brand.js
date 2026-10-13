@@ -48,6 +48,7 @@
       '<g id="rm"><g transform="scale(' + (ph ? .1 : .19) + ') translate(-62 -141)" fill="currentColor"><path d="' + BIRD + '"/><path d="' + SIGS + '"/></g></g></svg></div>');
     var rt = $('#rt'), rm = $('#rm'), L = rt.getTotalLength(), sec = $('.places');
     var mid = rt.getPointAtLength(L * .5); $('#rmid').setAttribute('cx', mid.x); $('#rmid').setAttribute('cy', mid.y);
+    if (!ph) { dy += 8; dy2 += 8; dy3 += 8; }   /* the middle stop only (Cairo and Tampa are already written): on a desktop the dots ran into the top of "The Gulf" (13 Oct) */
     $('#rmt').setAttribute('x', mid.x); $('#rmt').setAttribute('y', mid.y + dy); $('#rmy').setAttribute('x', mid.x); $('#rmy').setAttribute('y', mid.y + dy2); $('#rml').setAttribute('x', mid.x); $('#rml').setAttribute('y', mid.y + dy3); $$('#rml tspan').forEach(function (t) { t.setAttribute('x', mid.x); });
     // the mark's tail sits on the line and its body leads: it flies along the route and stops just short of Tampa
     var setR = function () { var r = sec.getBoundingClientRect(), h = innerHeight, p = Math.min(1, Math.max(0, (h * .85 - r.top) / (h * .75)));
@@ -82,6 +83,49 @@
     new MutationObserver(function () { var open = filmB.classList.contains('open'); if (open === filmOpen) return; filmOpen = open; setInert(open, filmB);
       if (!open && filmFrom) { filmFrom.focus({ preventScroll: true }); filmFrom = null; } }).observe(filmB, { attributes: true, attributeFilter: ['class'] });   /* films.js tries to return focus while the page is still inert, so it is returned here */
     doc.addEventListener('keydown', function (e) { if (filmB.classList.contains('open')) trap(e, filmB); }, true); }
+
+  /* 8 Home, "Three projects": the stage (assets/home2.css holds every rule; this only says which project is on and how far the scroll is).
+        data-state = 1, 2 or 3 on .stg, and --p from 0 to 3 over the screen's whole passage (0 to 1 the first project, and so on).
+        Scroll drives both while the stage is pinned; a tap on a waiting window or on a name under "Next" does the same and moves the
+        scroll to match. Under prefers-reduced-motion --p is never written (everything stands fully out) and nothing travels. */
+  var stg = $('.stg');
+  if (stg) (function () {
+    var pin = $('.stg-pin', stg), says = $$('.stg-s', stg), rm = matchMedia('(prefers-reduced-motion: reduce)');
+    var state = +stg.getAttribute('data-state') || 1, lockY = null, lockT = 0, tick = false;
+    function geo() { var r = stg.getBoundingClientRect(), v = pin.offsetHeight, vh = innerHeight, tr = r.height - v; return { r: r, v: v, vh: vh, tr: tr, pinned: tr > vh * .3 }; }
+    var ol = $('.stg-q ol', stg);
+    function set(n) { if (n === state) return; state = n; if (!rm.matches) stg.classList.add('stg-live'); stg.setAttribute('data-state', n);
+      /* the names under "Next" stand in the order of the line, in the page too, so Tab meets them as the eye does */
+      var act = doc.activeElement, had = ol && ol.contains(act);
+      if (ol) [1, 2, 0].forEach(function (k) { var li = $('li[data-p="' + ((n - 1 + k) % 3 + 1) + '"]', ol); if (li) ol.appendChild(li); });
+      if (had && act.offsetParent) act.focus({ preventScroll: true }); }
+    function read() { tick = false; var g = geo(), d = g.vh - g.r.top, a = g.vh + g.tr * .25, b = g.vh + g.tr * .625, e = g.vh + g.r.height;
+      if (!g.pinned) { stg.style.removeProperty('--p'); return; }                      /* a screen too low to pin the stage: taps only */
+      var p = d <= 0 ? 0 : d < a ? d / a : d < b ? 1 + (d - a) / (b - a) : Math.min(3, 2 + (d - b) / (e - b));
+      if (rm.matches) stg.style.removeProperty('--p'); else stg.style.setProperty('--p', p.toFixed(3));
+      if (lockY !== null && Math.abs(scrollY - lockY) < 3) unlock();
+      if (lockY === null) set(p < 1 ? 1 : p < 2 ? 2 : 3); }
+    function unlock() { lockY = null; clearTimeout(lockT); }
+    function go(n, focus) { if (n === state) return; var g = geo(); set(n);
+      if (g.pinned) { lockY = Math.round(scrollY + g.r.top + g.tr * [.1, .44, .82][n - 1]);     /* the middle of that project's share of the scroll */
+        scrollTo({ top: lockY, behavior: (g.r.top <= 1 && g.r.bottom >= g.v - 1) || rm.matches ? 'auto' : 'smooth' });
+        clearTimeout(lockT); lockT = setTimeout(function () { unlock(); read(); }, 1600); }
+      if (focus && says[n - 1]) says[n - 1].focus({ preventScroll: true }); }
+    /* Tab into the stage: the browser scrolls the focused link into view, that scroll could step the stage to the next project, the link was then hidden
+       and the focus fell back to the page. The stage now holds the project whose link has the keyboard's focus (13 Oct). */
+    says.forEach(function (a, i) { a.addEventListener('focus', function () { if (lockY !== null || !a.matches(':focus-visible')) return; var g = geo(); if (!g.pinned) return;
+      set(i + 1); lockY = Math.round(scrollY + g.r.top + g.tr * [.1, .44, .82][i]); scrollTo({ top: lockY, behavior: 'auto' });
+      requestAnimationFrame(function () { if (lockY !== null) scrollTo({ top: lockY, behavior: 'auto' }); });   /* after the browser's own scroll-into-view, whichever came first */
+      clearTimeout(lockT); lockT = setTimeout(function () { unlock(); read(); }, 1600); }); });
+    ['wheel', 'touchmove', 'keydown'].forEach(function (ev) { addEventListener(ev, function (e) { if (lockY !== null && (ev !== 'keydown' || /^(Arrow|Page|Home|End| )/.test(e.key))) unlock(); }, { passive: true }); });
+    $$('.stg-nx', stg).forEach(function (a) { a.setAttribute('role', 'button'); a.setAttribute('aria-label', 'Show ' + txt(a));          /* without script it stays a plain link to the project */
+      a.addEventListener('keydown', function (e) { if (e.key === ' ') { e.preventDefault(); a.click(); } }); });
+    stg.addEventListener('click', function (e) { var t = e.target.closest ? e.target : e.target.parentNode, b = t.closest('.stg-nx'), w = t.closest('.stg-w');
+      if (b) { e.preventDefault(); go(+b.getAttribute('data-p'), true); }
+      else if (w) { var n = +w.getAttribute('data-p'); if (n === state) says[n - 1].click(); else go(n, false); } });   /* the head window opens its project; a waiting one takes the stage */
+    addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(read); } }, { passive: true });
+    addEventListener('resize', read); read();
+  })();
 
   /* 1 where you are */
   var groups = [

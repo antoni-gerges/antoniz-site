@@ -1,129 +1,245 @@
-/* home2.css — the home page below the entrance, in the entrance's own shell (Astra review 11 Oct: old page scored 64 for continuity).
-   One dark ground. Project colour lives only inside the pictures. Selected work in the Signal system (2B), one proof block, one method block. */
-/* the page's own ground. On desktop it was still the light paper tone, which showed for a moment when arriving from a dark page
-   and whenever the page is pulled past its top or bottom. */
+/* home2.css — Home below the opening: four screens on one dark ground (rebuilt overnight 12 to 13 Oct on Tony's words:
+   "too many text", "the structure is still a lot", "things coming out of the / containers", "I want some bold text").
+     2 Three projects   .stg      the stage: the mark's three signals as windows, one project at a time coming out
+     3 All twelve       .h2-all   the names only
+     4 In numbers       .h2-proof four figures
+     5 Say hello        .h2-hi    one line and his email (the page's footer)
+   Type, the five styles only: Jost Light 300 (quiet part of a big title, 40 px and up), Jost Semibold 600 (the point, names, numbers,
+   calls to action), Jost Medium 500 (list names), Inter Regular 400 (reading), Inter Semibold 600 (labels, the fact).
+   Colour: ground #0B0C10, paper #F7F5F1, quiet 72 % paper, lines 18 % paper; the energy line's cyan and warm only in the line itself. */
 body.home2{background:#0B0C10}
-.h2{background:#0B0C10;color:#F7F5F1;padding:clamp(72px,9vw,150px) 0}
-.h2+.h2{padding-top:0}
+.h2{background:#0B0C10;color:#F7F5F1;padding:clamp(84px,10.5vw,168px) 0 0}
 .h2 .wrap{position:relative}
-.h2-k{display:flex;align-items:center;gap:12px;font:500 14px/1 "Inter",system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,245,241,.72);margin:0 0 clamp(28px,3.4vw,52px)}
+.h2 a,.stg a{color:inherit}
+.h2-k{display:flex;align-items:center;gap:12px;font:600 13px/1 "Inter",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,245,241,.72);margin:0 0 clamp(26px,3vw,44px)}
 .h2-k .mvt{font-size:17px}
-.h2 h2{font-family:"Jost",system-ui,sans-serif;font-weight:300;letter-spacing:-.035em;line-height:.98;margin:0}
-.h2 a{color:inherit}
-.h2 .arrow{font:500 clamp(17px,1.4vw,21px)/1.2 "Jost",system-ui,sans-serif;border-bottom-color:rgba(247,245,241,.5)}
+.home2 :is(.stg,.h2,.end) a:focus-visible{outline:2px solid #F7F5F1;outline-offset:6px;border-radius:2px}
 
-/* Selected work: the three signals of the mark (Tony, 12 Oct evening, on the 2B containers: "ratio isn't the same as my brand signal";
-   his pick: layout 2 on sheets/SELECTED-WORK-EXACT-SIGNAL.jpg; reference design/sel-2.html).
-   Three windows, each the mark's first signal at its own ratio (assets/signal.css), one every 0.36647 of their height, as the three
-   signals sit in the mark. The names stand beside them, the sweep runs behind, and the ZEISS wall film is whole in a straight frame:
-   no signal is stretched to hold it. The section is a size container so the sweep can run edge to edge of the screen. */
-.h2-sig{padding-top:clamp(56px,7vw,110px);container-type:inline-size;overflow-x:clip}
-.h2-sig .wrap{--wl:calc((100cqw - min(100cqw, var(--max,1680px))) / 2);--sgw:min(calc(min(100cqw, var(--max,1680px)) - 2 * var(--g,40px)), 1200px);--th:clamp(360px,41.67cqw,600px)}
-.sg-hrow{display:flex;align-items:flex-end;justify-content:space-between;gap:16px 40px;max-width:var(--sgw);margin:0 0 32px}
-.h2-sig .h2-k{margin:0 0 14px}
-.h2-sig h2{font-size:clamp(44px,4.45vw,64px);line-height:1.05}
-.sg-all{font:400 15px/1 "Inter",system-ui,sans-serif;color:#F7F5F1;text-decoration:none;padding-bottom:14px;white-space:nowrap}
-.sg-all:hover{text-decoration:underline;text-underline-offset:4px}
-.sg3{position:relative;display:flex;align-items:flex-start;gap:clamp(40px,5.55cqw,80px);max-width:var(--sgw)}
-.sg3-trio{position:relative;z-index:1;flex:none;height:var(--th);width:calc(var(--th) * 1.23223)}   /* 2 x 0.36647 + 0.49928 of the height */
-.sg3-trio .sgw{--sgw-h:var(--th);position:absolute;top:0;left:0;pointer-events:none}                /* only the slash itself takes the pointer */
-.sg3-trio .sgw:nth-child(2){left:calc(var(--th) * .36647)}
-.sg3-trio .sgw:nth-child(3){left:calc(var(--th) * .73294)}
-.sg3-trio .sgw-in{pointer-events:auto;background:#15161B}
-.sg3-trio .sgw-fill{transition:transform .9s cubic-bezier(.2,.8,.2,1)}
-.sg3-trio .sgw-in:hover .sgw-fill{transform:scale(1.03)}
-.sg3-trio .sgw:nth-child(1) .sgw-fill{object-position:40% 50%}
-.sweep-w{position:absolute;z-index:0;left:calc(-1 * (var(--wl) + var(--g,40px)));width:100cqw;top:calc(var(--th) * .55);height:calc(var(--th) * .3333);overflow:hidden;pointer-events:none}
-.sweep{position:absolute;top:0;left:-141.2%;width:296.3%;height:100%;max-width:none;opacity:.9;display:block;pointer-events:none}
-.sg3-list{position:relative;z-index:1;list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:clamp(30px,3.9cqw,56px);min-width:0}
-.sg3-list a{display:block;color:#F7F5F1;text-decoration:none}
-.sg3-list a:hover b{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
-.sg3-list a:focus-visible,.sg-film:focus-visible{outline:2px solid #F7F5F1;outline-offset:6px}
-.sg-n{display:flex;align-items:center;gap:12px}
-.sg-n .mvt{font-size:18px;flex:none}
-.sg-n b{font:500 20px/1.2 "Jost",system-ui,sans-serif;color:#F7F5F1}
-.sg-l{display:block;margin-top:6px;font:400 15px/1.45 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
-.sg-film{display:block;position:relative;width:var(--sgw);max-width:100%;margin:clamp(48px,6.25cqw,90px) 0 0;padding:0;border:0;background:none;cursor:pointer;text-align:left;-webkit-appearance:none;appearance:none}
-.sg-film img{display:block;width:100%;height:auto}
-.sg-film .play{position:absolute;left:24px;bottom:18px;width:44px;height:44px;display:block;z-index:1}
-.sg-wcap{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;margin:16px 0 0;max-width:var(--sgw)}
-.sg-wcap b{font:500 18px/1.2 "Jost",system-ui,sans-serif;color:#F7F5F1}
-.sg-wcap span{font:400 15px/1.45 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
-.sg-nine{margin:clamp(40px,4vw,56px) 0 0;max-width:var(--sgw);font:400 15px/1.75 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
-.sg-nine a{color:inherit;text-decoration:none}
-.sg-nine a:hover{color:#F7F5F1;text-decoration:underline;text-underline-offset:3px}
-.sg-nine a:focus-visible,.sg-all:focus-visible{outline:2px solid #F7F5F1;outline-offset:3px}
-@media (max-width:760px){
-  .h2-sig .wrap{--th:min(280px,72cqw)}
-  .sg-hrow{display:block;margin:0}
-  .h2-sig .h2-k{margin-bottom:12px}
-  .h2-sig h2{font-size:44px}
-  .sg-all{display:inline-block;margin-top:14px;padding:0}
-  .sg3{display:block;margin-top:30px}
-  .sweep-w{display:none}
-  .sg3-list{margin-top:30px;gap:26px}
-  .sg-film{width:100%;margin-top:44px}
-  .sg-film .play{left:10px;bottom:8px;transform:scale(.8);transform-origin:0 100%}
-  .sg-wcap{flex-direction:column;gap:4px;margin-top:14px}
+/* ============================================================================================================================
+   2 · THREE PROJECTS: THE STAGE
+   One screen, pinned for three screens of scroll (one for each project), three states (data-state on .stg; assets/brand.js writes it, and --p).
+   The three signals stand together at the right as in the mark: each the mark's first signal at its own ratio (assets/signal.css),
+   one every 0.36646 of their height. Slot 0, the head of the line, is ON: its window's subject comes far out to the left over open
+   ground, above the project's name, the biggest thing on the screen. Next state: the subject goes back into its window, the head
+   slides to the back of the line, the other two step one place left, and the new head's subject comes out.
+   ONE variable sizes everything: --u, a hundredth of the screen's height, held back by the width (the frame is drawn 160 x 100 u).
+   ============================================================================================================================ */
+.stg{--vh:100vh;--p:3;position:relative;height:calc(var(--vh) * 4);background:#0B0C10;color:#F7F5F1;padding:0}        /* 4: one screen of scroll for each project (it was 2.2, and one ordinary flick passed Liwa and Cityscape before they had come out) */
+@supports (height:100svh){.stg{--vh:100svh}}
+.stg-pin{position:sticky;top:0;height:var(--vh);overflow:hidden}
+.stg-bd{--cw:min(100vw,var(--max,1680px));--u:min(calc(var(--vh) / 100),calc(var(--cw) * .00625));
+  --h:calc(var(--u) * 67);--w:calc(var(--h) * .49928);--pitch:calc(var(--h) * .36646);
+  --gx:max(var(--g,40px),calc((100vw - var(--max,1680px)) / 2 + var(--g,40px)));--cap:calc(var(--u) * 78.8);
+  --t:clamp(15px,calc(var(--u) * 1.9),19px);
+  position:absolute;left:0;right:0;top:calc((var(--vh) - var(--u) * 100) / 2);height:calc(var(--u) * 100)}
+
+/* which project is on, and where each stands in the line */
+.stg[data-state="1"] [data-p="1"],.stg[data-state="2"] [data-p="2"],.stg[data-state="3"] [data-p="3"]{--on:1;--slot:0}
+.stg[data-state="1"] [data-p="2"],.stg[data-state="2"] [data-p="3"],.stg[data-state="3"] [data-p="1"]{--on:0;--slot:1}
+.stg[data-state="1"] [data-p="3"],.stg[data-state="2"] [data-p="1"],.stg[data-state="3"] [data-p="2"]{--on:0;--slot:2}
+/* --p runs 0 to 3 over the screen's whole passage: 0 to 1 while the first project is on (it starts when the top of the screen enters,
+   so the first subject is already travelling out as the stage arrives), 1 to 2 the second, 2 to 3 the third. Each project reads its own share. */
+.stg .p1{--pp:clamp(0,var(--p),1)}
+.stg .p2{--pp:clamp(0,var(--p) - 1,1)}
+.stg .p3{--pp:clamp(0,var(--p) - 2,1)}
+
+/* the head: the small label and the short title */
+.stg-hd{position:absolute;left:var(--gx);top:calc(var(--u) * 7.4);z-index:4}
+.stg-hd .h2-k{margin:0 0 calc(var(--u) * 1.5)}
+.stg-hd h2{margin:0;font:300 clamp(34px,calc(var(--u) * 4.9),58px)/1 "Jost",system-ui,sans-serif;letter-spacing:-.012em}
+.stg-hd h2 b{font-weight:600;letter-spacing:-.024em}
+
+/* the energy line: once, behind the stage and the windows, never behind a word */
+.stg-sweep{position:absolute;left:0;top:calc(var(--u) * 50);width:100%;height:calc(var(--u) * 22.2);overflow:hidden;z-index:1;pointer-events:none}
+.stg-sweep img{position:absolute;top:0;left:calc(50% - var(--u) * 306);width:calc(var(--u) * 474);height:100%;max-width:none;opacity:.9;display:block;
+  transform:translate3d(calc((3 - var(--p)) * var(--u) * -5),0,0)}        /* the line runs a little with the scroll (it stands still at --p:3, the value without script or with reduced motion) */
+
+/* the three signals */
+.stg-trio{position:absolute;right:var(--gx);top:calc(var(--u) * 6.4);width:calc(var(--pitch) * 2 + var(--w));height:var(--h);z-index:3}
+.stg-w{--sgw-h:var(--h);position:absolute;left:0;top:0;z-index:calc(3 - var(--slot));transform:translate3d(calc(var(--slot) * var(--pitch)),0,0);pointer-events:none}
+.stg-w .sgw-in{background:#0B0C10;pointer-events:auto;cursor:pointer}       /* only the slash itself takes the pointer; never see-through, so the energy line stays behind it */
+.stg-su{will-change:transform}
+/* the scene inside: drifts a little one way while its subject goes out the other way (depth) */
+.stg-sc{transform:translate3d(calc((1 - var(--on,0) * var(--pp)) * var(--drift,0px)),0,0)}        /* a waiting window stands still, at its starting place */
+/* the subject: .stg-3d is the named slot (see the comment in the page); it carries the change of state, the picture inside carries the scroll */
+.stg-3d{position:absolute;inset:0;translate:calc((1 - var(--on,0)) * var(--back,150%)) 0}
+.stg-su{transform:translate3d(calc((1 - var(--on,0) * var(--pp)) * var(--reach,0px)),0,0)}
+.stg-w .sgw-out{opacity:var(--on,0)}
+.stg-twin{opacity:calc(1 - var(--on,0))}
+
+/* 1 · ZEISS Vision Care. Inside: the launch wall as built, the great eye, placed so the iris fills the upper half of the window (13 Oct: it was the
+   launch-night dinner photograph, the same one that stands in the opening's first slash one screen above; the wall is also what the fact speaks of).
+   Out, at the top of the window: the campaign athlete (mirrored file, see build_home_next.py). His raised shoe is whole inside the window;
+   his leg crosses the near edge. While ZEISS waits he is out of sight: the hall is alive enough. */
+.p1{--reach:calc(var(--h) * .1);--drift:calc(var(--h) * -.024);--back:150%}
+.p1 .stg-sc{left:-60%;top:-1%;width:330%;height:auto}
+.p1 .stg-su{left:-150%;top:5%;width:236%;height:auto}
+/* 2 · Liwa International Festival. Inside: the dunes. Out, low at the foot of the window: the rally car of the key visual. The rear of the car is INSIDE
+   the window and its dust lies over the sand (--in: how far it stands in; 13 Oct, it used to stand wholly outside, only touching the edge: the slash law
+   and the kit want the subject inside and past one edge). While Liwa waits the car's nose shows inside the window (.stg-twin), where it always did. */
+.p2{--cw2:min(calc(var(--w) * 2.9),900px);--in:calc(var(--w) * .6);--reach:calc(var(--h) * .09);--drift:calc(var(--h) * -.024);--back:calc(var(--cw2) * .37 - var(--in))}
+.p2 .stg-sc{left:-96%;top:-2%;width:auto;height:104%}
+.p2 .stg-su{left:calc(var(--w) * .2 + var(--in) - var(--cw2) * .64);top:auto;bottom:1.5%;width:var(--cw2);height:auto}
+/* 3 · Cityscape Abu Dhabi. One photograph, in register: the rig stays inside, the lit spheres float out, in the middle of the window's
+   height. Scene and cut-out share one box and move together; the spheres appear from the window outwards (a wipe, not a slide). */
+.p3{--reach:calc(var(--h) * .04);--back:0%}
+.p3 .stg-sc,.p3 .stg-su{left:-170%;top:-9%;width:400%;height:auto}
+.p3 .stg-sc{transform:translate3d(calc((1 - var(--on,0) * var(--pp)) * var(--reach)),0,0)}
+.p3 .stg-3d{translate:none;clip-path:inset(-60% -60% -60% calc(46% - var(--on,0) * 110%))}        /* 46 %: nothing past the window; -64 %: the whole cluster */
+
+/* the words of the project that is on: the name lock-up. The famous word in Semibold, line-height .7 so its box is the capitals;
+   the rest of the name in Light, hung from the cap line; one line and one fact standing on the baseline; the link under the fact. */
+.stg-say{position:absolute;left:var(--gx);top:var(--cap);z-index:4}
+.stg-s{position:absolute;left:0;top:0;display:grid;grid-template-columns:auto auto;grid-template-rows:auto 1fr auto auto auto;column-gap:calc(var(--u) * 3.3);justify-content:start;
+  white-space:nowrap;text-decoration:none;color:#F7F5F1;opacity:0;visibility:hidden}
+.stg[data-state="1"] .stg-s[data-p="1"],.stg[data-state="2"] .stg-s[data-p="2"],.stg[data-state="3"] .stg-s[data-p="3"]{opacity:1;visibility:visible}
+.stg-s>.mvt{position:absolute;left:0;top:calc(var(--u) * -3.6);font-size:clamp(15px,calc(var(--u) * 2),20px)}
+.stg-nm{display:contents;margin:0;font:inherit}
+.stg-nm b{grid-area:1/1/5/2;font:600 calc(var(--u) * 17.8)/.7 "Jost",system-ui,sans-serif;letter-spacing:-.03em}
+.stg-nm span{grid-area:1/2;margin-top:-.036em;font:300 max(40px,calc(var(--u) * 6))/.7 "Jost",system-ui,sans-serif;letter-spacing:-.012em}        /* -.036em: the Light capitals meet the Semibold cap line exactly (measured) */
+.stg-ln{grid-area:3/2;margin:0;font:400 var(--t)/1.36 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
+.stg-ft{grid-area:4/2;margin:0 0 -.24em;font:600 var(--t)/1.36 "Inter",system-ui,sans-serif}        /* -.24em: the fact's baseline is the big word's baseline (measured) */
+.stg-go{grid-area:5/2;margin-top:calc(var(--u) * 2.2);font:600 var(--t)/1.3 "Jost",system-ui,sans-serif}
+/* optical left edge: each capital is pulled out by its own side bearing, so Z, L and C all stand on the gutter (measured in Jost) */
+.stg-s[data-p="1"] .stg-nm b{margin-left:-.011em}
+.stg-s[data-p="2"] .stg-nm b{margin-left:-.076em}
+.stg-s[data-p="3"] .stg-nm b{margin-left:-.036em}
+.stg-s[data-p="2"] .stg-nm span{margin-left:-.082em}
+.stg-nm b,.stg-nm span,.stg-ln,.stg-ft,.stg-go,.stg-nx,.stg-all{white-space:nowrap}        /* said on each piece, so a later text-wrap rule (assets/type.css) cannot fold the lock-up */
+.stg-go i,.stg-all i{font-style:normal;display:inline-block;margin-left:.2em;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.stg-s:hover .stg-go i,.stg-all:hover i{transform:translateX(5px)}
+
+/* the line of those who wait: names only, and the way to all twelve */
+.stg-q{position:absolute;left:calc(100% - var(--gx) - var(--w));top:calc(var(--cap) - var(--u) * .22 - 2px);z-index:4;white-space:nowrap}        /* its label's capitals on the name's cap line; its left edge is the foot of the last window */
+.stg-q .h2-k{margin:0 0 calc(var(--u) * 1.7)}
+.stg-q ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;align-items:flex-start;gap:calc(var(--u) * .8)}
+.stg-q li{order:var(--slot);font-family:inherit}
+.stg[data-state="1"] .stg-q li[data-p="1"],.stg[data-state="2"] .stg-q li[data-p="2"],.stg[data-state="3"] .stg-q li[data-p="3"]{display:none}
+.stg-nx{display:inline-flex;align-items:center;gap:12px;font:500 clamp(16px,calc(var(--u) * 2),21px)/1.3 "Jost",system-ui,sans-serif;color:rgba(247,245,241,.72);text-decoration:none;cursor:pointer;transition:color .25s}
+.stg-nx .mvt{font-size:.82em;flex:none;color:#F7F5F1}
+.stg-nx:hover{color:#F7F5F1}
+.stg-all{position:absolute;left:0;top:calc(var(--u) * 14.88 + 2px);font:600 var(--t)/1.3 "Jost",system-ui,sans-serif;text-decoration:none;color:#F7F5F1}
+
+/* ---------- movement. Only after the first change of state (.stg-live), and never under reduced motion. ----------
+   0 s the subject goes back into its own window · .05 s the line steps · .2 s the next subject comes out · .12 s the name arrives.
+   (13 Oct: the waits were .2, .62 and .5 s; a change needed 1.2 to 1.5 s and a steady scroll gave it 0.5 s.)
+   The picture inside each slot follows --p with a short ease, so the scroll reads as weight, not as a jump. */
+@media (prefers-reduced-motion:no-preference){
+  .stg-sc,.stg-su,.stg-sweep img{transition:transform .28s cubic-bezier(.2,.7,.3,1)}
+  .stg-w .sgw-in .stg-sc{transition:transform .28s cubic-bezier(.2,.7,.3,1),scale .9s cubic-bezier(.2,.8,.2,1)}
+  .stg-live .stg-w{transition:transform .5s cubic-bezier(.3,.76,.2,1) .05s}
+  .stg-live .stg-3d{transition:translate calc(.34s + var(--on,0) * .56s) cubic-bezier(.3,.1,.3,1) calc(var(--on,0) * .2s),clip-path calc(.34s + var(--on,0) * .7s) cubic-bezier(.3,.1,.3,1) calc(var(--on,0) * .2s)}
+  .stg[data-state="1"] .p1 .stg-3d,.stg[data-state="2"] .p2 .stg-3d,.stg[data-state="3"] .p3 .stg-3d{transition-timing-function:cubic-bezier(.16,.84,.24,1)}
+  .stg-live .stg-w .sgw-out,.stg-live .stg-twin{transition:opacity 0s linear calc(.34s - var(--on,0) * .14s)}
+  .stg-live .stg-s{transition:opacity .2s ease-in,transform .2s ease-in,visibility 0s .2s;transform:translate3d(7px,-24px,0)}
+  .stg-live[data-state="1"] .stg-s[data-p="1"],.stg-live[data-state="2"] .stg-s[data-p="2"],.stg-live[data-state="3"] .stg-s[data-p="3"]{transform:none;transition:none;animation:stg-in .45s cubic-bezier(.16,.84,.24,1) .12s backwards}
+  .stg-live[data-state="1"] .stg-q ol{animation:stg-q1 .9s ease-out}        /* the names under "Next" change with the state: three names for one fade, so it plays again each time */
+  .stg-live[data-state="2"] .stg-q ol{animation:stg-q2 .9s ease-out}
+  .stg-live[data-state="3"] .stg-q ol{animation:stg-q3 .9s ease-out}
+  @media (hover:hover){.stg-w .sgw-in:hover .stg-sc{scale:1.03}}
 }
-@media (prefers-reduced-motion:reduce){.sg3-trio .sgw-fill{transition:none}}
+@keyframes stg-in{from{opacity:0;transform:translate3d(-7px,24px,0)}}
+@keyframes stg-q1{0%,40%{opacity:0}}@keyframes stg-q2{0%,40%{opacity:0}}@keyframes stg-q3{0%,40%{opacity:0}}
 
-/* proof */
-.h2-nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(24px,3vw,56px);border-top:1px solid rgba(247,245,241,.2);padding-top:clamp(30px,3.4vw,54px)}
-.h2-num b{display:block;font:300 clamp(60px,6.8vw,120px)/.95 "Jost",system-ui,sans-serif;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
-.h2-num b span{font-size:.3em;letter-spacing:0;margin-left:.2em;font-weight:400}
-.h2-num .cp{font:500 clamp(17px,1.35vw,21px)/1.25 "Jost",system-ui,sans-serif;margin:16px 0 8px}
-.h2-num p{font:400 17px/1.5 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.78);margin:0;max-width:32ch}
-.h2-num p.rl{color:#F7F5F1;margin-top:10px;padding-top:10px;border-top:1px solid rgba(247,245,241,.16)}
-.h2-time{list-style:none;margin:clamp(56px,7vw,110px) 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(14px,2vw,32px)}
-.h2-time li{border-top:1px solid rgba(247,245,241,.2);padding-top:16px;position:relative}
-.h2-time li::before{content:"";position:absolute;left:0;top:-13px;width:11px;height:22px;background:#F7F5F1;-webkit-mask:var(--sig) center/contain no-repeat;mask:var(--sig) center/contain no-repeat}
-.h2-time b{display:block;font:400 clamp(24px,2.2vw,34px)/1 "Jost",system-ui,sans-serif;font-variant-numeric:tabular-nums}
-.h2-time span{display:block;font:500 18px/1.3 "Jost",system-ui,sans-serif;margin-top:10px}
-.h2-time i{display:block;font:400 15px/1.45 "Inter",system-ui,sans-serif;font-style:normal;color:rgba(247,245,241,.68);margin-top:4px}
-.h2-trust{margin:clamp(48px,6vw,96px) 0 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3.2fr);gap:24px;align-items:baseline}
-.h2-trust .h2-k{margin:0}
-.h2-trust p.tl{font:400 clamp(19px,1.7vw,27px)/1.45 "Jost",system-ui,sans-serif;margin:0;color:rgba(247,245,241,.92)}
+/* ---------- phones and upright tablets: the same stage, stacked. The trio stays at the right with open ground at its left;
+   the name is set in the screen's width (the famous word about a fifth of it); the reading text is 17 px from 400 px wide and never
+   under 15 px, so the line and the fact each keep to one line. ---------- */
+@media (max-width:760px),(max-aspect-ratio:11/10){
+  .stg-bd{--u:min(calc(var(--vh) / 100),2.164vw);--gx:var(--g,16px);--h:min(calc(var(--vh) * .255),calc((100vw - 2 * var(--gx)) * .6));--t:clamp(15px,4.26vw,17px);
+    top:0;height:100%;display:flex;flex-direction:column;padding:calc(var(--u) * 7.6) var(--gx) calc(var(--u) * 3.4)}
+  .stg-hd,.stg-trio,.stg-say,.stg-q{position:relative;left:auto;right:auto;top:auto}
+  .stg-hd .h2-k{margin-bottom:calc(var(--u) * 1.4)}
+  .stg-hd h2{font-size:clamp(34px,calc(var(--u) * 4.74),48px)}
+  .stg-trio{align-self:flex-end;flex:none;margin-top:auto}        /* the room a tall screen leaves is shared out above the trio, the name and "Next": no single empty band */
+  .stg-hd{padding-bottom:calc(var(--u) * 2.2)}
+  .stg-sweep{top:calc(var(--u) * 28.4);height:calc(var(--u) * 10.4)}
+  .stg-sweep img{left:-152%;width:296.3%}
+  .p1 .stg-su{left:-87%;top:5%;width:180%}
+  .p2{--cw2:calc(var(--w) * 2.3);--in:calc(var(--w) * .46);--back:calc(var(--cw2) * .4 - var(--in))}
+  .p2 .stg-su{left:calc(var(--w) * .34 + var(--in) - var(--cw2) * .64);bottom:3%}
+  .p3 .stg-sc,.p3 .stg-su{left:-150%;top:-6%;width:370%}
+  .stg-say{display:grid;margin-top:auto;padding-top:calc(var(--u) * 4.6)}
+  .stg-s{position:relative;grid-area:1/1;display:block;white-space:normal}
+  .stg-nm span,.stg-ln,.stg-ft{white-space:normal}
+  .stg-s>.mvt{position:static;display:flex;font-size:17px;margin-bottom:calc(var(--u) * 1.7)}
+  .stg-nm{display:block}
+  .stg-nm b{display:block;font-size:min(21.2vw,calc(var(--vh) * .112));line-height:.7}
+  .stg-nm span{display:block;margin-top:calc(min(21.2vw,calc(var(--vh) * .112)) * .27);font-size:min(10.9vw,calc(var(--vh) * .058));line-height:.86}       /* room for the y and the p of Cityscape */
+  .stg-ln{margin-top:calc(var(--u) * 1.9)}
+  .stg-ft{margin:1px 0 0}
+  .stg-go{display:inline-block;margin-top:calc(var(--u) * 1.6);font-size:17px}
+  .stg-q{margin-top:auto;padding-top:calc(var(--u) * 2.6);white-space:normal}
+  .stg-q .h2-k{margin-bottom:calc(var(--u) * 1.3)}
+  .stg-q ol{gap:0}
+  .stg-nx{font-size:17px;min-height:44px}        /* 44 px for a finger (they were 30 and 24) */
+  .stg-all{position:absolute;left:auto;right:0;top:calc(var(--u) * 2.6 - 16px);font-size:15px;line-height:44px}
+}
+/* an upright tablet: the same stack with a bigger trio */
+@media (min-width:600px) and (max-aspect-ratio:11/10){
+  .stg-bd{--h:min(calc(var(--vh) * .29),60vw);--t:clamp(17px,calc(var(--u) * 1.9),20px)}
+  .stg-nx,.stg-go{font-size:var(--t)}
+  .stg-all{font-size:var(--t)}
+}
+/* a short phone (under about 700 px tall): the label gives its room to the pictures */
+@media (max-width:760px) and (max-height:700px){
+  .stg-hd .h2-k{display:none}
+}
+/* a screen too low to hold the frame (a phone on its side): no pinning; the frame takes the room it needs and the three change by tap */
+@media (min-width:761px) and (max-height:520px){
+  .stg{--vh:560px;height:auto}
+  .stg-pin{position:relative}
+}
+html.no-js:not(.js) .stg{height:auto}        /* .js is set in the head before the first paint (build_home_next.py), so the stage has its pinned height from the start */
+html.no-js:not(.js) .stg-pin{position:relative}
 
-/* how I work */
-.h2-lead .g{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(36px,6vw,110px);align-items:start}
-.h2-lead h2{font-size:clamp(46px,5.4vw,96px)}
-.h2-lead .say{margin-top:clamp(24px,2.6vw,40px);max-width:46ch}
-.h2-lead .say p{font:400 clamp(18px,1.5vw,22px)/1.55 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.86);margin:0 0 14px}
-.h2-lead .moveslist{list-style:none;margin:0;padding:0;border-top:1px solid rgba(247,245,241,.2)}
-.h2-lead .moveslist li{display:flex;align-items:center;gap:18px;padding:20px 0;border-bottom:1px solid rgba(247,245,241,.2);font:400 clamp(24px,2.3vw,36px)/1.15 "Jost",system-ui,sans-serif;letter-spacing:-.015em}
-.h2-lead .moveslist li b{font-weight:400;font-size:inherit;font-family:inherit;letter-spacing:inherit}
-.h2-lead .moveslist li>span.mvt{font-size:28px;color:#F7F5F1;flex:none}
-.h2-lead .sys{font:400 17px/1.55 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.74);margin:26px 0 0}
-.h2-lead .sys b{color:#F7F5F1;font-weight:500}
-.h2-lead .arrow{margin-top:30px}
+/* ============================================================================================================================
+   3 · ALL TWELVE: the names only, one row that wraps. Each is a link to its project; the mark's signal stands between them.
+   ============================================================================================================================ */
+.all12{--s:.9em;list-style:none;margin:0 0 0 calc(var(--s) * -1);padding:0;font:600 clamp(26px,3.6vw,60px)/1.2 "Jost",system-ui,sans-serif;letter-spacing:-.024em;
+  clip-path:inset(-.5em -2em -.5em calc(var(--s) - 5px))}        /* each name carries the signal in a slot at its LEFT; the slot of the first name on a line falls in the clipped margin, so no line starts or ends with a hanging slash (13 Oct) */
+.all12 li{position:relative;display:inline-block;box-sizing:border-box;max-width:100%;padding-left:var(--s);font-family:inherit}        /* a name goes to the next line whole; site.css sets every li in Inter */
+.all12 li::before{content:"";position:absolute;left:.3em;top:.36em;width:.26em;height:.52em;background:rgba(247,245,241,.3);-webkit-mask:var(--sig) center/contain no-repeat;mask:var(--sig) center/contain no-repeat}
+.all12 a{color:#F7F5F1;text-decoration:none;transition:color .3s}
+@media (min-width:761px){.all12 a{white-space:nowrap}}
+.home2 .all12 a:focus-visible{outline-offset:2px}        /* the ring stays inside the 5 px of margin the clip leaves */
+@media (max-width:760px){.all12{font-size:6vw;line-height:1.32}}        /* 6vw: "National Bullying Prevention Week" keeps to one line (at 7.2vw it left "Week" alone) */
+@media (hover:hover){.all12:hover a{color:rgba(247,245,241,.38)}.all12 a:hover{color:#F7F5F1}}
+@media (prefers-reduced-motion:reduce){.all12 a{transition:none}}
 
+/* ============================================================================================================================
+   4 · IN NUMBERS: four figures, each with a label of a few words. No paragraphs.
+   ============================================================================================================================ */
+.h2-nums{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:clamp(36px,4vw,64px) clamp(24px,3vw,56px)}
+.h2-num b{display:flex;align-items:flex-end;position:relative;font:600 clamp(60px,7.6vw,132px)/.74 "Jost",system-ui,sans-serif;letter-spacing:-.035em;font-variant-numeric:lining-nums}
+.h2-num b .un{width:min-content;margin:0 0 .04em .34em;font:500 clamp(15px,.2em,24px)/1.08 "Jost",system-ui,sans-serif;letter-spacing:0;color:#F7F5F1}
+.h2-num b .pre{position:absolute;left:.06em;bottom:calc(100% + .16em);font:600 13px/1 "Inter",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,245,241,.72)}
+.h2-num .cp{margin:clamp(16px,1.6vw,24px) 0 0;font:400 17px/1.4 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
 @media (max-width:900px){
-  .h2-nums{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .h2-time{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:34px}
-  .h2-trust{grid-template-columns:1fr}
-  .h2-lead .g{grid-template-columns:1fr}
+  .h2-nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:44px 20px}
+  .h2-num b{display:block;font-size:clamp(46px,13.4vw,96px);line-height:.8}        /* 13.4vw: "$10M+" keeps inside its column on a phone */
+  .h2-num b .un{width:auto;margin:0 0 0 .22em;font-size:18px}
+  .h2-num b .un-w{display:block;margin:12px 0 0;font-size:17px}
+  .h2-num .cp{margin-top:4px;font-size:16px}
+  .h2-num b .pre{font-size:12px}
 }
-@media (max-width:560px){
-  .h2-num b{font-size:64px}
-}
 
-/* films on the home page: four equal films, art-directed covers */
-.home2 .films .film.lead{grid-column:auto}
-
-.home2 .films .fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
-.home2 .films .film,.home2 .films .film.lead{flex:none}
-.home2 .films .fpic{aspect-ratio:16/9}
-.home2 .films .fpic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-@media (max-width:760px){.home2 .films .fgrid{grid-template-columns:1fr}}
-/* a tighter close: the invitation leads, the line supports */
-.home2 .end{padding-top:clamp(80px,9vw,150px)}
-.home2 .end h2{font-size:clamp(44px,6vw,104px);margin-bottom:34px;max-width:16ch}
-.home2 .end .mail{font-size:clamp(28px,3.6vw,60px)}
-.home2 .end .row{margin-top:clamp(56px,6vw,100px)}
-
-.h2-num b .pre{display:block;font:500 13px/1 "Inter",system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;margin:0 0 10px;color:rgba(247,245,241,.7)}
-.h2-num b:not(:has(.pre))::before{content:"";display:block;height:23px}
-.h2-venue{margin-top:clamp(20px,2.4vw,34px)}
-.h2-venue p.tl{font-size:clamp(16px,1.3vw,20px);color:rgba(247,245,241,.78)}
-@media (max-width:760px){.home2 .films .fh{display:block}.home2 .films .fh p{margin-top:12px}}
+/* ============================================================================================================================
+   5 · SAY HELLO: one line and his email, big; the other ways to reach him, small. Then the sign-off.
+   ============================================================================================================================ */
+.home2 .end.h2-hi{background:#0B0C10;color:#F7F5F1;padding:clamp(96px,12vw,190px) 0 44px}
+.home2 .end.h2-hi h2{max-width:none;margin:0 0 clamp(26px,3.2vw,52px);font:300 clamp(40px,4.45vw,64px)/1.05 "Jost",system-ui,sans-serif;letter-spacing:-.012em}
+.home2 .end.h2-hi h2 b{font-weight:600;letter-spacing:-.024em}
+.hi-mail{display:inline-block;margin-left:-.026em;font:600 min(9.6vw,148px)/1 "Jost",system-ui,sans-serif;letter-spacing:-.04em;white-space:nowrap;color:#F7F5F1;text-decoration:none}
+.home2 .end.h2-hi .eline{margin:clamp(8px,1.2vw,18px) 0 clamp(16px,2vw,30px)}
+.home2 .end.h2-hi .eline path:first-child{stroke:#FF8A5C}        /* the warm strand in the brand's own warm, as in the stage's line (site.js draws it a shade redder) */
+.hi-links{display:flex;flex-wrap:wrap;gap:0 30px;margin:0;font:500 17px/1.4 "Jost",system-ui,sans-serif}
+.hi-links a{--ul:rgba(247,245,241,.18);color:#F7F5F1;text-decoration:none;padding:11px 0;background:linear-gradient(var(--ul),var(--ul)) 0 calc(100% - 7px)/100% 1px no-repeat}        /* 46 px tall for a finger; the line stays 3 px under the words */
+.hi-links a:hover{--ul:#F7F5F1}
+.home2 .end .row nav a{padding:10px 0}
+/* a phone: "For the idea." / "And everything after.", one phrase to a line. At 40 px the bold phrase is wider than the column, so the title is set at
+   8.9vw (the quiet part is then Regular, by the rule for a title under 40 px: assets/type.css, part 1) */
+@media (max-width:760px){.home2 .end.h2-hi h2{font-size:8.9vw;line-height:1.1}.home2 .end.h2-hi h2 b{display:block}}
+@media (max-width:760px){.hi-mail{padding:5px 0;margin-top:-5px;margin-bottom:-5px}}        /* 44 px for a finger; nothing moves */
+.home2 .end .row{margin-top:clamp(72px,9vw,140px);border-top-color:rgba(247,245,241,.18);color:rgba(247,245,241,.72)}
+.home2 .end .row>span{display:inline-flex;align-items:center;gap:10px}
+.home2 .end .mk{color:#F7F5F1;flex:none}                                 /* his mark is black or white only */

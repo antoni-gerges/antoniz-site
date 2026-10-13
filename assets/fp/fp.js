@@ -151,6 +151,8 @@
   function frame() { tick = false; var H = W.innerHeight, Wd = D.documentElement.clientWidth; for (var i = 0; i < FP.parts.length; i++) FP.parts[i](H, Wd); }
   function ask() { if (!tick) { tick = true; requestAnimationFrame(frame); } }
   FP.ask = ask;
+  /* opening or closing the story moves everything below it: measure again */
+  [].forEach.call(D.querySelectorAll('.fp-more'), function (d) { d.addEventListener('toggle', function () { W.dispatchEvent(new Event('resize')); }); });
   W.addEventListener('scroll', ask, { passive: true }); W.addEventListener('resize', ask); W.addEventListener('load', ask);
   D.addEventListener('DOMContentLoaded', ask); ask();
 })();

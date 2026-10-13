@@ -180,20 +180,19 @@ function build() {
     station(0, Object.assign({}, none, { c: [0, 6.9, -4], rx: 22.5, ry: 8, yaw: 0, pitch: -.13, fx: .92, fy: .9, ox: 0, oy: 0, oxp: 0, oyp: 0, fxp: 1.1, fyp: .4, yawp: 0, drift: .06, rxp: 11 }))
   ];
   ST[1].dims.push({ a: [-8.5, DECK_H, 5.6], b: [-8.5, DECK_H + 1.83, 5.6], t: 'A person · 6 ft' });
-  ST[2].dims.push({ a: [-CW / 2, CY + CH / 2 + 1.5, CZ + .1], b: [CW / 2, CY + CH / 2 + 1.5, CZ + .1], t: '2080 × 1144 px · about 33 ft', big: true });
-  ST[6].dims.push({ a: [-VX - VW / 2 * .99, VY - VH / 2 - .5, VZ - .5], b: [-VX + VW / 2 * .99, VY - VH / 2 - .5, VZ + .6], t: '1152 × 672 px', big: true });
+  ST[2].dims.push({ a: [-CW / 2, CY + CH / 2 + 3.2, CZ + .1], b: [CW / 2, CY + CH / 2 + 3.2, CZ + .1], t: 'Centre screen · about 33 ft · 10 m', big: true });
 
   /* ---------- names in the model: plain text on a short line, placed from the 3D point each frame ---------- */
   const NAMES = [
-    [0, [0, CY + CH / 2, CZ], 'LED wall'], [0, [0, DECK_H, 4.5], 'Stage'], [0, [-VX, VY + VH / 2, VZ], 'Side screen'], [0, [VX, VY + VH / 2, VZ], 'Side screen'],
-    [0, [11.8, 16.8, 6.4], 'Sound'], [0, [0, 1.4, FOHZ], 'Front of house'], [0, [0, .1, PZ(137)], 'Fan pit'], [0, [0, .1, PZ(280)], 'Standing floor'],
-    [0, [0, 1.2, PZ(545)], 'Bar'], [0, [-HALL - 9, 7.2, 40], 'Seats · blocks 101 to 105'], [0, [HALL + 9, 7.2, 40], 'Seats · blocks 112 to 116'], [0, [8.2, 4.6, 4.1], 'Camera crane', 1],
-    [0, [HALL - .5, 2.2, 57.6], 'A stand · seen in the film', 1], [0, [-HALL + .5, 2.4, 60], 'A backdrop · seen in the film', 1],
-    [1, [0, GY, 5.6], 'Grid, flown from the roof'], [1, [9.6, 13.2, 5.6], 'Front truss'], [1, [-(DECK_W / 2 + 2.3), DECK_H, -1], 'Wing'], [1, [-12, 1.2, 10.1], 'Barrier', 1],
-    [2, [0, CY + CH / 2, CZ], 'Centre screen', 1], [2, [-(CW / 2 + CGAP + 1.5 * SW + SGAP), CY + CH / 2, CZ], 'Six pillars'], [2, [VX, VY + VH / 2, VZ], 'Side screen'],
-    [3, [0, 13.2, 5.6], 'Five rows of truss'], [3, [11.6, 9, 3.2], 'Side row', 1], [3, [-16.8, .6, 8.2], 'Floor lights'],
+    [0, [0, CY + CH / 2, CZ], 'LED wall'], [0, [0, DECK_H, 4.5], 'Stage'], 
+    [0, [0, 1.4, FOHZ], 'Front of house'], [0, [0, .1, PZ(280)], 'Standing floor'],
+    [0, [0, 1.2, PZ(545)], 'Bar'], [0, [-HALL - 9, 7.2, 40], 'Seats'], [0, [HALL + 9, 7.2, 40], 'Seats'],
+    
+    [1, [0, GY, 5.6], 'Grid, flown from the roof'], [1, [9.6, 13.2, 5.6], 'Front truss'],
+    [2, [-(CW / 2 + CGAP + 1.5 * SW + SGAP), CY + CH / 2, CZ], 'Six pillars'], [2, [VX, VY + VH / 2, VZ], 'Side screen'],
+    [3, [0, 13.2, 5.6], 'Five rows of truss'], [3, [-16.8, .6, 8.2], 'Floor lights'],
     [4, [-11.8, 16.8, 6.4], 'Left hang'], [4, [11.8, 16.8, 6.4], 'Right hang'], [4, [1.3, DECK_H + .4, 5.5], 'Monitors'],
-    [5, [0, 1.9, FOHZ - 1.4], 'Sound, light and screen desks'], [5, [3.6, 2.5, FOHZ + 1.3], 'Camera', 1]
+    [5, [0, 1.9, FOHZ - 1.4], 'Sound, light and screen desks']
   ].map(n => { const el = document.createElement('span'); el.className = 'mzl' + (n[3] ? ' more' : ''); el.innerHTML = '<i></i><b></b>'; el.lastChild.textContent = n[2]; stick.appendChild(el); return { st: n[0], p: new T.Vector3(...n[1]), el, on: false }; });
 
   /* ---------- the layers: each station switches on what it is about ---------- */

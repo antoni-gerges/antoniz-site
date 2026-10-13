@@ -1,132 +1,315 @@
-/* shell2.css — the inner pages in the home page's dark shell (Astra 11 Oct: inner pages scored 64–69 for continuity).
-   The site's own tokens are flipped, so every component follows; sections that were built dark keep their own tokens.
-   Light grounds remain only inside framed work (the white "sheets"). */
+/* shell2.css — the inner pages (Projects, About, Contact) in the home page's dark shell.
+   The site's own tokens are flipped, so every component follows. 13 Oct: the pages were rebuilt to the structure Tony agreed to
+   (one line and one fact per screen, the rest behind a closed Read more), so the rules of the older page parts are gone from here;
+   the file before that night is antoniz-tools/shell2.before-overnight.css.
+   Type follows the type system (assets/type.css) whether that sheet is switched on or not: Jost Light 300 for the quiet part of a big
+   title, Jost Semibold 600 for the point of a title, names, numbers and calls to action, Jost Medium 500 for list titles,
+   Inter Regular 400 for reading, Inter Semibold 600 for small labels. */
 body.shell2{--paper:#0B0C10;--ink:#F7F5F1;--sub:rgba(247,245,241,.72);--line:rgba(247,245,241,.18);--mute:rgba(247,245,241,.66);background:#0B0C10;color:#F7F5F1}
 /* built-dark sections: restore their tokens so they stay dark with light text */
-.shell2 .reel,.shell2 .end,.shell2 .foot,.shell2 .films,.shell2 .fourcs,.shell2 .intro,.shell2 .chero,.shell2 .chap,.shell2 .fplayer,.shell2 .player{--paper:#F4F1EA;--ink:#0B0C10;--sub:rgba(244,241,234,.7);--line:rgba(244,241,234,.18)}
-/* framed work stays on its own light sheet, with dark text inside */
-.shell2 .sheet,.shell2 .idt,.shell2 .nc{--paper:#F4F1EA;--ink:#0B0C10;--sub:rgba(11,12,16,.62);--line:rgba(11,12,16,.14);color:#0B0C10}
-/* header: always the dark shell's header */
-.shell2 .hdr{--hdr-bg:#0B0C10!important;--hdr-fg:#F7F5F1!important;--hdr-mk:#F7F5F1!important}
+.shell2 .end,.shell2 .foot,.shell2 .intro,.shell2 .fplayer,.shell2 .player{--paper:#F4F1EA;--ink:#0B0C10;--sub:rgba(244,241,234,.7);--line:rgba(244,241,234,.18)}
+/* header: always the dark shell's header. On Projects one band is paper (the identities), so there the header may follow the band under it
+   (site.js reads data-hdr); everywhere else it is fixed. */
+.shell2 .hdr{--hdr-bg:#0B0C10;--hdr-fg:#F7F5F1;--hdr-mk:#F7F5F1}
+.shell2:not(.projects-page) .hdr{--hdr-bg:#0B0C10!important;--hdr-fg:#F7F5F1!important;--hdr-mk:#F7F5F1!important}
 .shell2 .mk{color:#F7F5F1}
-.shell2 .sheet .mk,.shell2 .idt .mk{color:#0B0C10}
 .shell2 .where{box-shadow:0 0 0 1px rgba(247,245,241,.22)}
-.shell2 .route,.shell2 .built4,.shell2 .built4 .b4w b{color:#F7F5F1}
-
+.shell2 .route{color:#F7F5F1}
+.shell2 .intro .cue .play.down svg{width:12px;height:12px}
 /* the firm's logo: its black script cannot sit on the dark ground, so it is shown reversed to white (one colour, shape untouched) */
 .shell2 img[src*="antbrush-logo"]{filter:brightness(0) invert(1)}
 
-/* ---- Projects: one image scale, one text grid, the result leads ---- */
-.shell2 .phead{padding-bottom:clamp(40px,5vw,72px)}
-.shell2 .plist{gap:clamp(56px,7vw,110px)}
-.shell2 .pcard{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:center;gap:20px clamp(32px,4.4vw,72px)}
-.shell2 .pcard .ppic{aspect-ratio:16/10;background:#14151A;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.shell2 .pcard .ppic img{width:100%;height:100%;object-fit:contain;background:transparent}
-.shell2 .pcard .ppic img.ph{object-fit:cover}
-.shell2 .pn{color:rgba(247,245,241,.6);font-family:"Inter",system-ui,sans-serif;font-size:13px}
-.shell2 .ptxt{gap:0}
-.shell2 .pclient{font-size:14px;margin:10px 0 12px;color:rgba(247,245,241,.78)}
-.shell2 .ptxt h2{font-weight:300;font-size:clamp(34px,3.5vw,58px);letter-spacing:-.03em;line-height:1.02}
-.shell2 .ptxt h2 a:hover{color:inherit;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
-.shell2 .prole{margin-top:22px;font-size:clamp(16px,1.2vw,18px);color:rgba(247,245,241,.88)}
-.shell2 .prole::before,.shell2 .pres::before{display:block;font:500 11.5px/1 "Inter",system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,245,241,.58);margin-bottom:9px}
-.shell2 .prole::before{content:"Role"}
-.shell2 .pres::before{content:"Result"}
-.shell2 .pwhere{font-size:14.5px;margin-top:6px}
-.shell2 .pres{margin-top:22px;padding-top:18px;border-top:1px solid rgba(247,245,241,.22);font:400 clamp(21px,1.75vw,27px)/1.25 "Jost",system-ui,sans-serif}
-.shell2 .popen{margin-top:26px;border-bottom-color:rgba(247,245,241,.5);font:500 17px/1.2 "Jost",system-ui,sans-serif;padding-bottom:4px}
-@media (max-width:860px){.shell2 .pcard{grid-template-columns:1fr}.shell2 .ptxt{padding-top:6px}}
-/* round 3 (12 Oct): the twelve in one compact index under the lede; a jump leaves the card clear of the header */
-.pindex{display:flex;flex-wrap:wrap;gap:6px 22px;margin:28px 0 10px;font:400 15px/1.4 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.78)}
-.pindex a{color:rgba(247,245,241,.78);text-decoration:none}
-.pindex a:hover{text-decoration:underline;text-underline-offset:4px}
-.pindex b{font-family:"Jost",system-ui,sans-serif;font-weight:500;color:rgba(247,245,241,.5);margin-right:8px}
-.pcard{scroll-margin-top:110px}
+/* ---------- shared pieces ---------- */
+.shell2 b.tw{font-weight:600;letter-spacing:-.024em}                      /* the point of a title */
+.shell2 :is(.pj-head,.pg-top,.ab2,.ct) .label{display:flex;gap:12px;align-items:center;margin:0;color:rgba(247,245,241,.72);font-weight:600;letter-spacing:.16em}
+.shell2 :is(.pj-head,.ct) .label .mk{width:20px;height:20px}
+/* the mark's single signal, as a sign: its own shape, only paper or ink */
+.sg1{display:inline-block;flex:none;height:1em;aspect-ratio:25.68/51.46;background:currentColor;-webkit-mask:var(--sig) center/contain no-repeat;mask:var(--sig) center/contain no-repeat}
+.ply{display:inline-block;flex:none;width:0;height:0;border-left:.74em solid currentColor;border-top:.46em solid transparent;border-bottom:.46em solid transparent}
+/* Read more: a quiet line with the single signal as its sign. Closed by default; never a box. */
+.rm>summary,.mv>summary{list-style:none;cursor:pointer}
+.rm>summary::-webkit-details-marker,.mv>summary::-webkit-details-marker{display:none}
+.rm>summary,.mv-rm{display:inline-flex;align-items:center;gap:10px;min-height:44px;font:600 12px/1 "Inter",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,245,241,.72);white-space:nowrap}
+.rm>summary .sg1,.mv-rm .sg1{font-size:15px;color:#F7F5F1}
+.rm>summary::after,.mv-rm::after{content:"";width:clamp(28px,3.4vw,52px);height:1px;background:currentColor;opacity:.5;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.rm>summary:hover,.mv>summary:hover .mv-rm{color:#F7F5F1}
+.rm>summary:hover::after,.mv>summary:hover .mv-rm::after,.rm[open]>summary::after,.mv[open] .mv-rm::after{width:clamp(48px,6vw,96px)}
+.rm-c,.rm[open]>summary .rm-o,.mv[open]>summary .rm-o{display:none}
+.rm[open]>summary .rm-c,.mv[open]>summary .rm-c{display:inline}
+.rm>summary:focus-visible,.mv>summary:focus-visible{outline:2px solid #F7F5F1;outline-offset:4px}
+.shell2 :is(.ab-names,.ab-years,.ct-more,.awall) li{font-family:inherit}
+.rm-b{padding:6px 0 12px;max-width:62ch}
+.rm-b p{margin:0 0 14px;font:400 clamp(16px,1.15vw,17.5px)/1.62 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.86)}
+@media (prefers-reduced-motion:reduce){.rm>summary::after,.mv-rm::after{transition:none}}
 
-/* ---- How I work: the three moves, legible at once ---- */
-.shell2 .phead.wrap+.mv-strip{margin-top:0}
-.mv-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.4vw,40px);padding-bottom:clamp(56px,7vw,110px)}
-.mv-strip a,.mv-strip .mv-b{display:block;border-top:1px solid rgba(247,245,241,.22);padding-top:18px;text-decoration:none;color:#F7F5F1}
-.mv-strip .mvt{font-size:30px;display:flex;margin-bottom:16px}
-.mv-strip b{display:block;font:400 clamp(21px,1.9vw,30px)/1.12 "Jost",system-ui,sans-serif;letter-spacing:-.015em}
-.mv-strip a:hover b{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
-.mv-strip .mv-b svg{height:30px;width:auto;display:block;margin-bottom:16px}
-.mv-strip small{display:block;font:400 14.5px/1.45 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.7);margin-top:8px}
-.shell2 .move{padding:clamp(64px,8vw,120px) 0}
-.shell2 .move h2{font-size:clamp(46px,5.4vw,96px);font-weight:300}
-.shell2 .move .num .mk{color:#F7F5F1}
-.mv-lead{max-width:44ch;font:400 clamp(21px,1.9vw,30px)/1.35 "Jost",system-ui,sans-serif;letter-spacing:-.01em;margin:0 0 clamp(36px,4vw,60px);color:#F7F5F1}
-@media (max-width:860px){.mv-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* ======================================================= Projects ======================================================= */
+.pj-main{overflow-x:clip}                                                   /* what comes out of a slash may pass the page margin, never start a sideways scroll */
+.shell2 .pj-head{padding-top:clamp(108px,10.5vw,164px);padding-bottom:clamp(30px,3.6vw,56px)}
+.pj-head h1{margin:20px 0 0;font:300 clamp(40px,4.7vw,76px)/1.02 "Jost",system-ui,sans-serif;letter-spacing:-.012em}
+.pj-bar{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 40px;margin-top:clamp(20px,2.4vw,34px)}
+.pj-lede{margin:0;font:400 clamp(17px,1.35vw,20px)/1.4 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
+/* choose by kind: radio buttons, so it works without script. A choice shows the cards of that kind and nothing else (13 Oct, the fixing pass) */
+.pj-pick{border:0;margin:0 -12px 0 0;padding:0;min-width:0;display:flex;flex-wrap:wrap;gap:0 2px}
+.pj-pick legend{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.pj-pick label{position:relative;display:inline-flex;align-items:baseline;gap:7px;padding:14px 12px;cursor:pointer;font:500 17px/1 "Jost",system-ui,sans-serif;color:rgba(247,245,241,.72)}
+.pj-pick input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.pj-pick span{display:inline-flex;align-items:baseline;gap:7px}
+.pj-pick span::before{content:"";align-self:center;height:.82em;aspect-ratio:25.68/51.46;background:currentColor;opacity:0;-webkit-mask:var(--sig) center/contain no-repeat;mask:var(--sig) center/contain no-repeat}
+.pj-pick small{font:400 12px/1 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72);font-variant-numeric:tabular-nums}
+.pj-pick label:hover{color:#F7F5F1}
+.pj-pick input:checked+span{color:#F7F5F1;font-weight:600}
+.pj-pick input:checked+span::before{opacity:1}
+.pj-pick input:focus-visible+span{outline:2px solid #F7F5F1;outline-offset:6px}
 
-/* ---- Contact: one primary action ---- */
-.shell2 .contact{justify-content:flex-end;padding-bottom:clamp(64px,8vw,120px)}
-.cgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(32px,6vw,120px);align-items:end}
-.cgrid h1{margin-bottom:28px!important;font-weight:300}
-.cgrid .cfor{font:400 clamp(21px,1.9vw,30px)/1.3 "Jost",system-ui,sans-serif;letter-spacing:-.01em;margin:0 0 18px;max-width:22ch}
-.cgrid .csay{font:400 clamp(16px,1.2vw,18px)/1.55 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.76);max-width:38ch;margin:0}
-.cgrid .ck{font:500 12px/1 "Inter",system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,245,241,.6);margin:0 0 16px}
-.shell2 .contact .cr a.mail{display:inline-block}
-.shell2 .contact .cr a.cmain{font-size:clamp(30px,4vw,68px);font-weight:300;border-bottom:2px solid var(--cyan);padding-bottom:8px;letter-spacing:-.02em}
-.shell2 .contact .cr .cmore{display:flex;flex-wrap:wrap;gap:12px 30px;margin:clamp(30px,3.4vw,50px) 0 0;padding-top:22px;border-top:1px solid rgba(247,245,241,.2)}
-.shell2 .contact .cr .cmore a{font:400 clamp(17px,1.4vw,21px)/1.2 "Inter",system-ui,sans-serif;text-decoration:none;border-bottom:1px solid rgba(247,245,241,.4);padding-bottom:3px;color:#F7F5F1}
-.shell2 .contact .cr .cmore a:hover{border-bottom-color:#F7F5F1}
-.cgrid .cplace{font:400 15px/1.5 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.62);margin:22px 0 0}
-@media (max-width:860px){.cgrid{grid-template-columns:1fr;align-items:start}.shell2 .contact{justify-content:center}}
-
-/* ---- About: the route carries the roles ---- */
-.shell2 .route{max-width:none;margin:clamp(34px,4vw,60px) 0 clamp(30px,4vw,56px)}
-.route .rl{font:400 14px "Inter",system-ui,sans-serif;opacity:.78}
-@media (max-width:760px){.route .rl{font-size:17px}}
-
-/* ---- Work: the Identities chapter joins the dark ground; each mark keeps its own white sheet ---- */
-.shell2 .ident{background:#0B0C10;color:#F7F5F1}
-.shell2 .ident .csub{color:rgba(247,245,241,.74)}
-.shell2 .istep figcaption span{color:rgba(247,245,241,.7)}
-.shell2 .istep figcaption a{color:#F7F5F1}
-.shell2 .ident .mk{color:#F7F5F1}
-.shell2 .ticks li:not(.on){background-color:rgba(247,245,241,.24)}
-.shell2 .ticks li.done{background-color:#F7F5F1}
-
-/* Work: the step ticks beside Identities must read on the dark ground */
-.shell2 .ticks li:not(.on){background-color:rgba(247,245,241,.26)}
-.shell2 .ticks li.done{background-color:#F7F5F1}
-/* shorter openings: the work arrives sooner */
-.shell2 .phead{padding-top:clamp(104px,10vw,150px)}
-.shell2 .phead h1{font-size:clamp(52px,7.6vw,132px)}
-.shell2 .phead .lede{margin-top:26px}
-.shell2 .intro .cue .play.down svg{width:12px;height:12px}
-/* Work hero: the decorative energy line must never sit on top of the chapter links (it blocked clicks at 1280×720) */
-.shell2 .cline{pointer-events:none}
-.shell2 .cnav{position:relative;z-index:2}
-/* Work hero: a shorter opening, and room kept under the chapter links so the energy line never runs through them */
-.shell2 .chero{padding:110px 0 clamp(120px,19vh,210px)}
-.shell2 .ch1{font-size:clamp(52px,8.4vw,140px)}
-.shell2 .clead{margin-top:26px}
-.shell2 .cnav{margin-top:34px}
-.shell2 .cline{bottom:2.5vh}
-/* Work, the first sheets: each card opens its project. One link per card; its target covers the whole card. */
-.shell2 #ideas-reel .ccard{position:relative}
-.shell2 .clink{color:inherit;text-decoration:none}
-.shell2 .clink::after{content:"";position:absolute;inset:0}
-.shell2 .clink .cgo{font-style:normal;display:inline-block;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-.shell2 .ccard:hover .clink b{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
-.shell2 .ccard:hover .clink .cgo{transform:translateX(5px)}
-.shell2 .clink:focus-visible{outline:0}
-.shell2 .clink:focus-visible::after{outline:2px solid #F7F5F1;outline-offset:-2px}
-/* Work reels on desktop: keep the captions clear of the "where you are" chip at the foot of the screen */
-@media (min-width:861px){.shell2 .rpin{padding-bottom:84px;box-sizing:border-box}.shell2 .reel .ccard{max-width:calc(50vh*var(--ar,1.5))}}
-
-/* ---- 12 Oct: Codex's reading pass ---- */
-/* How I work: the strip lands on the chapter section (builder); a direct jump to a heading still clears the header and its 28 px reveal offset */
-.shell2 h2[id^="mv-"]{scroll-margin-top:130px}
-/* Work on phones: a strip card is never wider than the screen, so every artwork is seen whole, with the next card showing at the edge.
-   Very wide art (the gate, the five steps) sits at full card width instead of 1,400 px behind a 390 px window; no zoom state. */
-@media (max-width:860px){
-  .shell2 .track .ccard,.shell2 .track.static .ccard{max-width:calc(100vw - 2*var(--g,24px) - 30px)}
-  .shell2 .track .cm,.shell2 .track.static .cm{height:auto;aspect-ratio:var(--ar,1.5);width:min(calc(56vh*var(--ar,1.5)),calc(100vw - 2*var(--g,24px) - 30px))}
-  .shell2 .track .cm img{width:100%;height:100%;object-fit:contain;transform:none}
-  .shell2 .track{scroll-padding-left:var(--g,24px)}   /* a snapped card keeps the page's left margin */
+.shell2 .plist{display:block;padding-bottom:0}
+.shell2 .pj{display:block;position:relative;padding:clamp(16px,1.5vw,22px) 0 clamp(80px,10vw,150px);border-top:1px solid rgba(247,245,241,.18);scroll-margin-top:84px}
+.pj-k{display:flex;align-items:baseline;gap:14px;margin:0;font:600 12px/1.4 "Inter",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,245,241,.72)}
+.pj-k b{font:600 15px/1 "Jost",system-ui,sans-serif;letter-spacing:.04em;color:#F7F5F1;font-variant-numeric:lining-nums tabular-nums}
+.pj-k .pj-where{margin-left:auto;text-align:right}
+/* the big name leads */
+.shell2 .pj-name{margin:clamp(22px,2.8vw,44px) 0 0;font:600 clamp(36px,5.6vw,92px)/.98 "Jost",system-ui,sans-serif!important;letter-spacing:-.03em;text-transform:none;color:#F7F5F1;text-wrap:balance}
+.pj-name a{color:inherit;text-decoration:none}
+.pj-name a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.12em}
+.pj-name a:focus-visible,.pj-open:focus-visible,.pj-pic:focus-visible,.pg-wall a:focus-visible,.ab2 a:focus-visible,.ct a:focus-visible{outline:2px solid #F7F5F1;outline-offset:5px}
+.pj-row{display:grid;grid-template-columns:minmax(0,34fr) minmax(0,66fr);gap:clamp(28px,4.4vw,72px);align-items:stretch;margin-top:clamp(26px,3.2vw,48px)}
+.pj-txt{display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+.pj-line{margin:0;font:300 clamp(40px,2.8vw,46px)/1.1 "Jost",system-ui,sans-serif;letter-spacing:-.012em;color:#F7F5F1;text-wrap:balance}
+.pj-fact{margin:clamp(14px,1.5vw,22px) 0 0;font:600 clamp(16px,1.3vw,19px)/1.35 "Jost",system-ui,sans-serif;letter-spacing:.005em;color:#F7F5F1}
+.pj-go{margin:auto 0 0;padding-top:calc(clamp(22px,2.6vw,40px) - 12px)}
+/* an underlined call: the line is drawn as a background, so the link itself can be 44 px tall for a finger while the line stays 5 px under the words */
+.pj-open,.ab-cv,.ct-more a{--ul:rgba(247,245,241,.5);background:linear-gradient(var(--ul),var(--ul)) 0 calc(100% - var(--ul-y,6px))/100% 1px no-repeat}
+.pj-open:hover,.ab-cv:hover{--ul:#F7F5F1}
+.pj-open{display:inline-flex;gap:10px;font:600 17px/1.2 "Jost",system-ui,sans-serif;color:#F7F5F1;text-decoration:none;padding:12px 0}
+.pj-open i,.pg-cap i{font-style:normal;display:inline-block;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.pj-open:hover i,.pg-link:hover .pg-cap i{transform:translateX(6px)}
+.pj-txt .rm{margin-top:2px}
+/* the plate: the lead picture whole, at its own ratio. Only its width is set; its height follows. */
+.pj-stage{position:relative;min-width:0;display:flex;justify-content:flex-end;align-items:flex-start}
+.pj-pic{display:block;color:inherit;text-decoration:none;width:min(100%,calc(max(280px,100svh - 330px)*var(--ar,1.6)))}        /* 330 px: the header, the label, the name and "Play the film" (13 Oct: on a 1366 x 657 laptop nine cards ran past the screen) */
+.pj-pic img{display:block;width:100%;height:auto}
+.pj-tall .pj-pic{width:min(100%,calc(64svh*var(--ar,1)))}
+/* a card whose picture is an upright poster and has no window: the poster stands beside the NAME and takes the card's whole height, so it carries
+   the screen and the words sit against it (13 Oct: it was a small sheet at the far right, under the name, with open ground on both sides) */
+@media (min-width:861px){
+  .shell2 .pj.pj-tall:not(.pj-win){display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto 1fr;gap:0 clamp(28px,4.4vw,72px);align-items:stretch}
+  .pj-tall:not(.pj-win)>.pj-k{grid-column:1/-1}
+  .pj-tall:not(.pj-win)>.pj-name{grid-column:1;grid-row:2}
+  .pj-tall:not(.pj-win)>.pj-row{display:contents}
+  .pj-tall:not(.pj-win) .pj-txt{grid-column:1;grid-row:3;margin-top:clamp(26px,3.2vw,48px)}
+  .pj-tall:not(.pj-win) .pj-stage{grid-column:2;grid-row:2/4;margin-top:clamp(22px,2.8vw,44px);align-self:start}
+  .pj-tall:not(.pj-win) .pj-pic{width:calc(max(320px,min(78svh,100svh - 200px))*var(--ar,1))}
 }
+.pj-play{display:flex;align-items:center;gap:10px;margin-top:14px;font:600 17px/1 "Jost",system-ui,sans-serif;color:#F7F5F1;transition:color .3s}
+.pj-play small{font:400 13px/1 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72);font-variant-numeric:tabular-nums}
+.pj-film:hover .pj-play,.pg-film:hover .pg-cap,.ab-mcx a:hover{color:#00C8D7}
+/* a card with a window: the slash stands on its floor at the edge of the stage, the work comes out of it, and the plate sits with the words */
+.pj-win .pj-txt .pj-pic{width:min(100%,calc(clamp(130px,100svh - 600px,30svh)*var(--ar,1.6)));margin-top:clamp(22px,2.4vw,36px)}
+.pj-win.pj-tall .pj-txt .pj-pic{width:min(62%,calc(38svh*var(--ar,1)))}
+.pj-win{--sgw-h:clamp(300px,min(62svh,40vw),660px)}
+.pj-win .pj-stage{align-items:flex-end;min-height:var(--sgw-h)}
+.pj-win .pj-stage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(247,245,241,.18)}   /* the floor */
+.pj-out-right .pj-stage{justify-content:flex-start;padding-left:16%}
+/* a window whose card has a film: the whole window, and what comes out of it, plays the film (the pointer's second way in; the keyboard meets the film once, at its cover) */
+.pj-winplay{display:block;flex:none;color:inherit;text-decoration:none;cursor:pointer}
+.pj-winplay .sgw-out img{pointer-events:auto}
+.pj-winplay:focus-visible{outline:2px solid #F7F5F1;outline-offset:6px}
+/* tonight's movement: what comes out of a slash moves a little further out as the card scrolls through the screen. CSS only; still without support, still under reduced motion. */
+@media (prefers-reduced-motion:no-preference){@supports (animation-timeline:view()){
+  .pj-sgw .sgw-out img,.pj-sgw.pj-reg .sgw-in img{animation:pj-out-l linear both;animation-timeline:view();animation-range:cover 5% cover 95%}
+  .pj-sgw[data-out="right"] .sgw-out img{animation-name:pj-out-r}
+  @keyframes pj-out-l{from{transform:translateX(7%)}to{transform:translateX(-8%)}}
+  @keyframes pj-out-r{from{transform:translateX(-7%)}to{transform:translateX(8%)}}
+}}
+/* chosen by kind: only the cards of that kind stay, so the first screen after a choice is what was chosen (13 Oct: the others used to fold to
+   a grey row each and filled that screen). "All" brings every card back. The guide at the foot counts all twelve, so it rests while a kind is chosen. */
+:is(.pj-main:has(#k-identity:checked) .pj:not([data-k~="identity"]),.pj-main:has(#k-campaign:checked) .pj:not([data-k~="campaign"]),.pj-main:has(#k-exhibition:checked) .pj:not([data-k~="exhibition"]),.pj-main:has(#k-live:checked) .pj:not([data-k~="live"]),.pj-main:has(#k-film:checked) .pj:not([data-k~="film"])){display:none}
+body:has(.pj-pick input:not(#k-all):checked) .where{display:none}
+:is(.pj-main:has(#k-identity:checked) .pg:not([data-k~="identity"]),.pj-main:has(#k-campaign:checked) .pg:not([data-k~="campaign"]),.pj-main:has(#k-exhibition:checked) .pg:not([data-k~="exhibition"]),.pj-main:has(#k-live:checked) .pg:not([data-k~="live"]),.pj-main:has(#k-film:checked) .pg:not([data-k~="film"])){display:none}
+
+/* ---- beyond the twelve: the rest of the Craft page, lighter. Compact groups by kind; every picture whole. ---- */
+.pg-top{padding-top:0;padding-bottom:clamp(6px,1vw,16px)}
+.pg-top::before{content:"";display:block;height:1px;background:rgba(247,245,241,.18);margin-bottom:clamp(64px,8vw,128px)}
+.pg-top h2{margin:20px 0 0;font:300 clamp(40px,4.7vw,76px)/1.02 "Jost",system-ui,sans-serif;letter-spacing:-.012em}
+.pg{padding:clamp(44px,5.6vw,88px) 0}
+.pg-h{display:grid;grid-template-columns:minmax(0,34fr) minmax(0,66fr);gap:6px clamp(28px,4.4vw,72px);align-items:baseline;margin-bottom:clamp(26px,3vw,44px)}
+.pg-h h3{grid-row:1/span 3;margin:0;font:600 clamp(34px,3.6vw,58px)/1 "Jost",system-ui,sans-serif;letter-spacing:-.024em}
+.pg-h>:not(h3){grid-column:2}
+.pg-line{margin:0;font:500 clamp(20px,1.7vw,26px)/1.25 "Jost",system-ui,sans-serif;color:#F7F5F1}
+.pg-fact{margin:0;font:400 17px/1.5 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
+/* a wall of whole pictures: each row shares one height, each picture keeps its own ratio (width and grow follow the ratio) */
+.pg-wall{--h:clamp(120px,14.5vw,224px);list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:clamp(22px,2.4vw,34px) clamp(10px,1.2vw,18px)}
+.pg-wall li{flex:var(--ar,1.5) 1 calc(var(--h)*var(--ar,1.5));min-width:0;max-width:calc(var(--h)*var(--ar,1.5)*1.45)}
+.pg-wall::after{content:"";flex:1000 1 0}
+.pg-wall li.brk{flex:0 0 100%;max-width:none;height:0;margin-top:calc(-1*clamp(22px,2.4vw,34px))}
+.pg-wall li.fil{flex:1000 1 0;max-width:none;height:0}
+#g-campaign .pg-wall{--h:clamp(130px,16.5vw,256px)}
+.pg-wall img{display:block;width:100%;height:auto}
+.pg-wall a{display:block;color:inherit;text-decoration:none}
+.pg-cap{display:block;margin-top:9px;font:400 13px/1.4 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72);transition:color .3s}
+.pg-cap .ply{font-size:11px;margin-right:8px;color:#F7F5F1}
+.pg-link:hover .pg-cap{color:#F7F5F1}
+/* the identities stand on paper: a mark needs its own ground, and nothing is put behind it (the white of each file melts into the paper) */
+.pg-paper{background:#F7F5F1;color:#0B0C10;margin:clamp(20px,2.4vw,40px) 0}
+.pg-paper .pg-line{color:#0B0C10}
+.pg-paper .pg-cap{color:rgba(11,12,16,.7)}
+.pg-paper .pg-wall{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,3.4vw,56px) clamp(20px,3vw,48px)}        /* three to a row, each mark about 380 px (they were six small ones) */
+.pg-paper .pg-wall li{display:flex;flex-direction:column}
+.pg-paper .pg-wall img{width:min(100%,400px);margin:0 auto}
+.pg-paper .pg-cap{text-align:center;font-size:15px}
+.pg-paper .pg-wall::after{display:none}
+.pg-paper .pg-wall li{max-width:none}
+.pg-paper .pg-wall img{mix-blend-mode:multiply}
+/* the artists: names only */
+.pg-names{margin-top:clamp(44px,5.6vw,88px)}
+.shell2 .pg-names .awall{margin-top:16px;font-weight:600;font-size:clamp(26px,3.5vw,56px);letter-spacing:-.024em}
+.pg-note{margin:18px 0 0;font:400 15px/1.5 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
+.shell2 .awall li i{font-size:max(12px,.28em)}                              /* the note after a name was 7 px on a phone */
+/* Projects on a desktop: the guide stands at the right, clear of the column where every card keeps "Open the project" and "Read more" */
+@media (min-width:761px){.projects-page .where{left:auto;right:max(16px,env(safe-area-inset-right))}}
+.pj-main>.pg:last-child{padding-bottom:clamp(80px,10vw,150px)}
+
+/* ======================================================= About ======================================================= */
+.shell2 .route{max-width:none;margin:clamp(26px,3.2vw,48px) 0 clamp(4px,1vw,14px)}
+.route .rl{font:400 14px "Inter",system-ui,sans-serif;opacity:.78}
+.ab2{position:relative;padding:clamp(80px,10vw,150px) 0;border-top:1px solid rgba(247,245,241,.18);scroll-margin-top:0}
+.ab2 h2{margin:18px 0 0;font:300 clamp(40px,4.7vw,76px)/1.02 "Jost",system-ui,sans-serif;letter-spacing:-.012em}
+/* screen 2: three lines */
+.ab-me{border-top:0}
+/* the three lines take the whole width (13 Oct: the portrait that stood beside them is inside the Read more, with the story) */
+.ab-l{margin:0 0 clamp(22px,2.6vw,42px);max-width:22em;font:300 clamp(30px,4.3vw,70px)/1.06 "Jost",system-ui,sans-serif;letter-spacing:-.014em;color:#F7F5F1;text-wrap:balance}
+.ab-say .rm{margin-top:clamp(8px,1.2vw,18px)}
+.ab-bio{display:grid;grid-template-columns:minmax(0,26fr) minmax(0,74fr);gap:clamp(28px,3.4vw,56px);align-items:start}
+.ab-por{margin:0}
+.ab-por img{display:block;width:100%;height:auto}
+.ab-story{columns:2;column-gap:clamp(28px,3.4vw,56px)}
+.ab-story p{break-inside:avoid}
+.rm-wide .rm-b{max-width:none}
+.ab-for .rm-b p{max-width:72ch}
+.ab-say .rm-b{padding-top:18px}
+.ab-facts{margin:22px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(28px,3.4vw,56px)}
+.ab-facts div{display:grid;grid-template-columns:minmax(96px,30%) 1fr;gap:14px;padding:13px 0;border-top:1px solid rgba(247,245,241,.18)}
+.ab-facts dt{font:600 12px/1.5 "Inter",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,245,241,.72)}
+.ab-facts dd{margin:0;font:400 15px/1.55 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.86)}
+/* screen 3: how I work. Three moves, one line each; a whole row opens its longer text and its proof. */
+.ab-how{scroll-margin-top:0}
+.ab-moves{list-style:none;margin:clamp(34px,4.2vw,68px) 0 0;padding:0}
+.ab-moves>li{border-top:1px solid rgba(247,245,241,.18);scroll-margin-top:84px}
+.ab-moves>li:last-child{border-bottom:1px solid rgba(247,245,241,.18)}
+.mv>summary{display:grid;grid-template-columns:clamp(44px,5vw,72px) minmax(0,1.45fr) minmax(0,1fr) auto;gap:8px clamp(18px,2.6vw,44px);align-items:center;padding:clamp(22px,2.7vw,42px) 0}
+.mv .mvt{font-size:clamp(24px,2.2vw,32px)}
+.shell2 .mv h3{margin:0;font:300 clamp(32px,3.9vw,62px)/1.04 "Jost",system-ui,sans-serif!important;letter-spacing:-.012em}
+.mv h3 b{white-space:nowrap}
+.mv-line{font:500 clamp(18px,1.55vw,24px)/1.3 "Jost",system-ui,sans-serif;color:#F7F5F1}
+.mv .rm-b{max-width:none;padding:0 0 clamp(30px,3.4vw,52px) calc(clamp(44px,5vw,72px) + clamp(18px,2.6vw,44px))}
+.mv-more{max-width:56ch}
+.mv-proof{margin:clamp(22px,2.6vw,40px) 0 0}
+.mv-proof .pg-wall{--h:clamp(120px,16vw,250px)}
+.mv-proof .pg-wall.one li{flex:none;width:min(100%,920px);max-width:none}
+.mv-proof .pg-wall.one::after{display:none}
+.mv-proof figcaption{margin-top:14px;max-width:72ch;font:400 15px/1.55 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
+/* screen 4: where and for whom */
+.shell2 .ab-where{padding:clamp(80px,10vw,150px) 0}
+.shell2 .ab-where ul{display:flex;flex-wrap:wrap;gap:0;margin:0;padding:0;list-style:none}
+.shell2 .ab-where li{display:block;border:0;padding:0;font-size:inherit}
+.shell2 .ab-where li span{color:inherit;text-align:left}
+.ab-years{list-style:none;margin:clamp(30px,3.6vw,56px) 0 6px;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:22px clamp(14px,2vw,32px)}
+.shell2 .ab-where .ab-years li{border-top:1px solid rgba(247,245,241,.18);padding-top:14px}
+.ab-years b{display:block;font:300 clamp(30px,3vw,44px)/1 "Jost",system-ui,sans-serif;font-variant-numeric:lining-nums tabular-nums}
+.ab-years span{display:block;margin-top:10px;font:600 clamp(17px,1.4vw,21px)/1.2 "Jost",system-ui,sans-serif}
+.ab-years small{display:block;margin-top:5px;font:400 13px/1.45 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
+.ab-where:has(.route) .ab-years{display:none}                               /* with script the route is drawn in its place */
+.shell2 .ab-where .ab-places{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(24px,3vw,48px);padding-top:8px}
+.shell2 .ab-where .ab-places li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid rgba(247,245,241,.18);font:400 15px/1.5 "Inter",system-ui,sans-serif}
+.shell2 .ab-where .ab-places b{font-weight:600;white-space:nowrap}
+.shell2 .ab-where .ab-places span{color:rgba(247,245,241,.72);text-align:right}
+.ab-where>.rm .rm-b{max-width:none}
+.ab-for{margin:clamp(30px,3.6vw,56px) 0 0}
+.ab-for>div{display:grid;grid-template-columns:minmax(96px,13%) minmax(0,1fr);gap:8px clamp(20px,2.6vw,44px);align-items:baseline;padding:clamp(16px,1.8vw,26px) 0;border-top:1px solid rgba(247,245,241,.18)}
+.ab-for dt{font:600 12px/1.5 "Inter",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,245,241,.72)}
+.ab-for dd{margin:0;min-width:0}
+.shell2 .ab-where .ab-names{font:600 clamp(20px,1.95vw,30px)/1.2 "Jost",system-ui,sans-serif;letter-spacing:-.016em;gap:.3em 1.5em}
+.shell2 .ab-where .ab-for>div:nth-child(2) .ab-names{font-weight:500;letter-spacing:-.01em;color:rgba(247,245,241,.9)}
+.ab-firm{display:flex;flex-wrap:wrap;align-items:center;gap:14px clamp(18px,2vw,30px);margin:0;font:500 clamp(20px,1.95vw,30px)/1.25 "Jost",system-ui,sans-serif;letter-spacing:-.012em;color:#F7F5F1}
+.ab-firm b{font-weight:600}
+.ab-logo{display:block;height:clamp(40px,3.6vw,56px);width:auto}
+.ab-mcx{margin:12px 0 0}
+.ab-mcx a{display:inline-flex;align-items:center;gap:10px;min-height:44px;font:400 15px/1.4 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.86);text-decoration:none;transition:color .3s}
+.ab-mcx .ply{font-size:11px;color:#F7F5F1}
+.ab-cv{--ul-y:3px;display:inline-flex;gap:12px;font:600 clamp(20px,1.95vw,30px)/1.2 "Jost",system-ui,sans-serif;letter-spacing:-.018em;color:#F7F5F1;text-decoration:none;padding:10px 0;margin:-10px 0 -3px}
+.ab-cv i,.ct-more i{font-style:normal}
+
+/* ======================================================= Contact: one screen ======================================================= */
+.ct-main{overflow-x:clip}
+.ct{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;gap:clamp(40px,8vh,96px);padding-top:clamp(108px,10.5vw,164px);padding-bottom:clamp(40px,6.5vh,80px)}
+.ct h1{margin:20px 0 0;font:300 clamp(48px,6.1vw,104px)/1 "Jost",system-ui,sans-serif;letter-spacing:-.012em}
+.ct-line{margin:clamp(18px,2vw,26px) 0 0;font:400 clamp(16px,1.25vw,20px)/1.6 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
+.ct-stage{position:relative}
+.ct-mail{position:relative;z-index:2;display:block;width:max-content;max-width:100%;font:600 min(calc((100vw - 2*var(--g,64px))*.1092),170px)/1.04 "Jost",system-ui,sans-serif;letter-spacing:-.034em;margin-left:-.03em;color:#F7F5F1;text-decoration:none;white-space:nowrap}
+.ct-sweep{position:relative;z-index:1;display:block;width:100vw;margin-left:calc(50% - 50vw);height:clamp(44px,6vw,96px);margin-top:clamp(-18px,-1.2vw,-8px);pointer-events:none;overflow:hidden}
+.ct-sweep img{position:absolute;top:0;left:-100%;width:220%;height:100%;max-width:none;display:block;opacity:.9}        /* -100 %: the part on screen is 45 to 91 % of the path, its smooth run; at -60 % the path's one corner (x 672 of 1600) stood a third of the way across */
+.ct-more{list-style:none;margin:clamp(14px,1.6vw,24px) 0 0;padding:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:10px clamp(28px,3.6vw,60px);font:600 clamp(18px,1.5vw,23px)/1.2 "Jost",system-ui,sans-serif}
+.ct-more li{padding:0}
+.ct-more a{--ul-y:7px;display:inline-flex;gap:8px;align-items:baseline;color:#F7F5F1;text-decoration:none;padding:12px 0}
+.ct-more a:hover,.ct-mail:hover{color:#00C8D7}
+.ct-more a:hover{--ul:currentColor}
+.ct-more .ct-place{margin-left:auto;padding:12px 0;font:400 clamp(16px,1.25vw,20px)/1.2 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
+
+/* ======================================================= narrower screens ======================================================= */
+/* Jost Light only from 40 px up: where the column is too narrow for that size the line is set in Medium, smaller */
+@media (max-width:1340px){
+  .pj-line{font:400 clamp(22px,2.2vw,29px)/1.2 "Jost",system-ui,sans-serif;letter-spacing:-.008em}        /* Regular with its point in Semibold: one weight skipped, as in the titles under 40 px (type.css, part 1) */
+}
+@media (max-width:860px){
+  .shell2 .pj-head{padding-top:104px}
+  .pj-bar{display:block}
+  .pj-pick{margin:14px 0 0 -12px}
+  .pj-pick label{padding:14px 10px}
+  .pj{padding-bottom:72px}
+  .pj-k{flex-wrap:wrap;gap:4px 12px}
+  .shell2 .pj-name{font-size:clamp(34px,9.6vw,56px)!important;margin-top:18px}
+  .pj-row{display:flex;flex-direction:column;gap:0;margin-top:22px}
+  .pj-stage{order:-1;margin-bottom:24px;justify-content:flex-start}
+  .pj-pic,.pj-tall .pj-pic{width:100%}
+  .pj-tall .pj-stage .pj-pic{width:min(100%,calc(64svh*var(--ar,1)))}
+  .pj-win .pj-txt .pj-pic,.pj-win.pj-tall .pj-txt .pj-pic{width:100%;margin-top:22px}
+  .pj-win.pj-tall .pj-txt .pj-pic{width:min(74%,calc(52svh*var(--ar,1)))}
+  .pj-win{--sgw-h:min(66vw,420px)}
+  .pj-out-left .pj-stage{justify-content:flex-end}
+  .pj-out-right .pj-stage{padding-left:0}
+  .pj-go{padding-top:10px}
+  .pg-h{display:block}
+  .pg-h h3{margin-bottom:12px}
+  .pg-wall{--h:clamp(118px,36vw,170px)}
+  .pg-paper .pg-wall{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pg-paper .pg-cap{text-align:left;font-size:13px}
+  .ab-bio{display:block}
+  .ab-por{width:min(62%,260px);margin-bottom:26px}
+  .ab-story{columns:1}
+  .ab-facts{grid-template-columns:1fr}
+  .mv>summary{grid-template-columns:auto 1fr;gap:10px 14px;padding:22px 0}
+  .mv h3{grid-column:1/-1;grid-row:2}
+  .mv .mvt{grid-row:1}
+  .mv-rm{grid-row:1;justify-self:end;min-height:32px}
+  .mv-line{grid-column:1/-1}
+  .mv .rm-b{padding-left:0}
+  .ab-years{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .shell2 .ab-where .ab-places{grid-template-columns:1fr}
+  .ab-for>div{display:block}
+  .ab-for dt{margin-bottom:10px}
+  .ct{padding-top:104px}
+  .ct-more{display:grid;gap:0;justify-items:start}
+  .ct-more .ct-place{margin:6px 0 0}
+  .ct-mail{padding:3px 0;margin-top:-3px;margin-bottom:-3px}                /* 44 px for a finger; nothing moves */
+  /* the sign-off: the name and the title on their own lines, the email under them (they broke into three short lines with a dot left hanging) */
+  .shell2 .foot .row{display:block}
+  .shell2 .foot .sign{display:block}
+  .shell2 .foot .sign svg{display:inline-block;vertical-align:-5px;margin-right:8px}
+  .shell2 .foot .row p a{display:block;padding:11px 0;margin-top:2px}
+  .shell2 .foot .ft-d{display:none}
+  .shell2 .foot .row nav{margin-top:2px}
+}
+.shell2 .foot .row{align-items:center}
+.shell2 .foot nav a{padding:10px 0}                                         /* a taller target for a finger */
 /* About on phones: the route is drawn at phone size (brand.js), so its type is set in real pixels and the roles sit on two lines */
 @media (max-width:760px){.route text{font-size:19px}.route .yr{font-size:13.5px}.route .rl{font-size:13.5px;opacity:.82}}
 
@@ -145,7 +328,12 @@ body.shell2{--paper:#0B0C10;--ink:#F7F5F1;--sub:rgba(247,245,241,.72);--line:rgb
 .shell2 .abh-fig .sgw-out img{clip-path:polygon(0 0,100% 0,100% 100%,-1.6% 100%,5.06% 68.67%,0 68.67%)}   /* the bull's end, cut at the signal's slant */
 .shell2 .abh-sweep{position:absolute;left:0;right:0;top:52.2%;height:22.2%;overflow:hidden;z-index:1;pointer-events:none}
 .shell2 .abh-sweep img{position:absolute;top:0;left:-133.3%;width:296.3%;height:100%;max-width:none;opacity:.9;display:block}
-.shell2 .abh+.about{padding-top:clamp(64px,8vw,120px)}
+/* The line never crosses the words (the design system: "never behind body text"). The words hang from the top of the screen and grow with its WIDTH;
+   the line was placed by the screen's HEIGHT alone, so in a browser window under about 830 px tall (every laptop) the cyan strand ran through
+   "From Cairo to Dubai and Abu Dhabi, now in Tampa." Now it is the lower of its own place and the foot of the words: 16 % + 86 px + the two title
+   lines + the sub-lines (two; three under 1080 px wide, where the sentence folds). At 1440 x 900, the approved picture, nothing moves. (13 Oct) */
+@media (min-width:761px){.shell2 .abh-sweep{top:max(52.2%,calc(16% + 86px + 2*clamp(48px,6.1vw,104px) + 3.2*clamp(16px,1.25vw,20px)))}}
+@media (min-width:761px) and (max-width:1079px){.shell2 .abh-sweep{top:max(52.2%,calc(16% + 86px + 2*clamp(48px,6.1vw,104px) + 4.8*clamp(16px,1.25vw,20px)))}}
 @media (max-width:760px){
   .shell2 .abh{height:auto;padding:98px 0 0}
   .shell2 .abh-say{position:relative;left:auto;top:auto;max-width:none;padding:0 16px}
