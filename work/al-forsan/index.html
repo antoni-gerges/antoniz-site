@@ -1,93 +1,215 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Al Forsan International Sports Resort · Antoni Gerges</title>
-<meta name="description" content="The gate was already there. I made it a mark. Creative direction · Al Forsan International Sports Resort. AntBrush · Abu Dhabi · 2009–13.">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Antoni Gerges">
-<meta property="og:title" content="Al Forsan International Sports Resort · Antoni Gerges">
-<meta property="og:description" content="The gate was already there. I made it a mark. Creative direction · Al Forsan International Sports Resort. AntBrush · Abu Dhabi · 2009–13.">
-<meta property="og:url" content="https://antoniz.com/work/al-forsan/">
-<meta property="og:image" content="https://antoniz.com/assets/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Antoni Gerges, Executive Creative Director, above Lake Brienz in Interlaken">
-<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://antoniz.com/work/al-forsan/">
+<meta name="description" content="Al Forsan International Sports Resort, Abu Dhabi: the mark, the identity system and the campaigns, 2008 to 2013. A gate, a knight, the dunes. Antoni Gerges, Executive Creative Director. AntBrush.">
 <link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..800;1,14..32,300..800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
 <link rel="preload" href="../../assets/jost-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../assets/site.css?v=afd4c1e0">
-<link rel="stylesheet" href="../../assets/oldcase.css">
+<link rel="stylesheet" href="../../assets/fp/fp.css?v=34">
+<style>
+/* Al Forsan: this page's own rules. The engine files are used unchanged. Nothing on this page is cropped.
+   The brand's room (T-40): his frame stays his (the header, his mark, the menu, the footer). Inside the page the Al Forsan identity leads:
+   its gold and its black, from the identity manual's colour pages (pp. 34–35); the five centres' colours as accents only; the wave of the
+   dunes, drawn from the mark, under each heading. Optima, the brand's English typeface, is not a web font here: Jost and Inter carry the type. */
+body.fp.alforsan{
+  --af-gold:#b59748;        /* Al Forsan gold · C20 M30 Y80 K15 · R181 G151 B72 · manual p.35, "primary anchor highlight" */
+  --af-ink:#140f06;         /* Al Forsan black · PANTONE Black U · R20 G15 B6 · manual p.35, "primary anchor lowlight" */
+  --af-equestrian:#005596;  /* the centres, manual pp.121–133: accents only, never a field */
+  --af-paintball:#fcb568;
+  --af-motor:#ef3e42;
+  --af-water:#13b5ea;
+  --af-shooting:#008a5f;
+  --room-ground:var(--af-ink);
+  --room-accent:var(--af-gold);
+}
+body.fp.alforsan main,.alforsan .fp-stick,.alforsan .fp-hero,.alforsan .fp-built,.alforsan .fp-built .fr,.alforsan .fp-built .fr img,.alforsan .fp-end,.alforsan .fp-res,.alforsan .fp-say,.alforsan .af-set{background:var(--room-ground)}
+.alforsan main .fp-lab b{color:var(--af-gold)}
+.alforsan .fp-more summary{border-bottom-color:var(--af-gold)}.alforsan .fp-more summary::after{color:var(--af-gold)}
+.alforsan .fp-ticks i.on{background:var(--af-gold)}
+.alforsan .fp-res .nums{border-top-color:var(--af-gold)}
+.alforsan .fp-play:hover,.alforsan .fp-play:focus-visible{background:var(--af-gold);border-color:var(--af-gold);color:var(--af-ink)}
+.alforsan .fp-model .veil{background:linear-gradient(90deg,rgba(20,15,6,.78) 0,rgba(20,15,6,0) 46%),linear-gradient(0deg,rgba(20,15,6,.66) 0,rgba(20,15,6,0) 30%)}
+@media (max-width:760px){.alforsan .fp-model .veil{background:linear-gradient(0deg,var(--af-ink) 0,rgba(20,15,6,.92) 24%,rgba(20,15,6,0) 44%)!important}}
+.af-wave{display:block;width:clamp(64px,6vw,96px);height:auto;fill:var(--af-gold);margin:14px 0 12px}
+/* 1 · the opening: the film plays clean and whole; the line, the source and Play sit under it, never on it. The page's name is for screen readers. */
+.fp-hero h1{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.fp-hero.whole.af-open{height:auto;min-height:0;display:flex;flex-direction:column;align-items:center;padding:70px 0 clamp(18px,3vh,30px)}
+.fp-hero.whole.af-open::after{display:none}
+.fp-hero.whole.af-open .v{position:relative;inset:auto;top:auto;left:auto;display:block;width:min(100%,calc((100svh - 200px) * 16 / 9));height:auto;aspect-ratio:16/9;object-fit:contain;transform:none!important;background:var(--af-ink)}
+.fp-hero.whole.af-open .top{position:relative;top:auto;left:auto;right:auto;width:100%;padding:14px var(--g) 0;z-index:2}
+.fp-hero.whole.af-open .in{position:relative;inset:auto;width:100%;padding:10px var(--g) 0;opacity:1!important;display:block}
+.fp-hero.whole.af-open .row{animation:none;justify-content:space-between;align-items:flex-end;gap:clamp(18px,3vw,48px)}
+.fp-hero.af-open .fp-cue{display:none}
+@media (max-width:760px){.fp-hero.whole.af-open{padding-top:73px}.fp-hero.whole.af-open .v{width:100%}.fp-hero.whole.af-open .row{flex-direction:column;align-items:flex-start;gap:16px}}
+.fp-end .film{aspect-ratio:16/9}.fp-end .film:hover img{transform:none}.fp-end .film img{object-fit:contain;background:var(--af-ink)}
+/* 2 · the composed screens: each set shown whole at once, in rows of one height, fitted to one screen (af.js sets the widths) */
+.af-set{padding:clamp(88px,11vh,112px) var(--g) clamp(24px,4vh,40px);min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+.af-set .hd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px var(--g);align-items:end;margin-bottom:clamp(16px,2.6vh,28px)}
+.af-set .hd h2{font-size:clamp(36px,4.4vw,76px);line-height:.92;letter-spacing:-.04em;font-weight:300;margin:0}
+.af-set .hd p{font-size:clamp(15px,1.1vw,17px);line-height:1.45;color:var(--dim);max-width:30em;justify-self:end}
+.af-set .grid{width:100%}
+.af-set .af-row{display:flex;justify-content:center;align-items:flex-start}
+.af-set figure{margin:0;flex:none}
+.af-set img{width:100%;height:auto;display:block}
+.af-set figcaption{margin-top:8px;font-size:13.5px;line-height:1.35;color:var(--dim)}
+.af-set figcaption b{color:#fff;font:500 15px/1.2 "Jost",system-ui,sans-serif;margin-right:8px}
+@media (max-width:760px){.af-set{min-height:0;padding-top:72px;padding-bottom:28px}.af-set .hd{grid-template-columns:1fr}.af-set .hd p{justify-self:start}}
+/* 3 · the five centres, each named in its own colour. On a phone the chapter is longer: the five logos pass one by one */
+@media (max-width:760px){.fp-pin.fp-model{--n:11.5!important}}
+.fp-model .st .spec.af-c{gap:8px 20px}
+.fp-model .st .spec.af-c span{display:inline-flex;align-items:center;gap:8px;color:#fff;letter-spacing:.06em}
+.fp-model .st .spec.af-c i{width:10px;height:10px;border-radius:50%;background:var(--c);flex:none}
+/* 4 · the result's photograph, whole */
+.fp-res .shot{margin:clamp(26px,5vh,48px) 0 0;max-width:1100px}.fp-res .shot img{width:100%;height:auto;display:block}.fp-res .shot figcaption{margin-top:10px}
+</style>
+<noscript><style>.fp-pin{height:auto!important}.fp-stick{position:static;height:auto;overflow:visible}.fp-reel .ly{position:relative;height:70vh}.fp-plates .trk{position:static;flex-wrap:wrap;padding:40px var(--g);height:auto}.fp-model canvas,.fp-model .veil,.fp-ticks,.fp-cue,.fp-bar{display:none}.fp-model .intro{position:static;transform:none;padding:60px var(--g) 20px}.fp-model .st{position:static;opacity:1;transform:none;width:auto;padding:24px var(--g) 8px}.fp-built{position:static;opacity:1;transform:none;width:auto;max-width:720px;margin:0 var(--g) 24px}.fp-model .chap{position:static;display:block;padding:0 var(--g)}.fp-hero h1,.fp-hero .row{animation:none}.fp-built{visibility:visible;height:auto;background:none}.fp-built .fr{position:relative;inset:auto;aspect-ratio:16/9}.fp-built .fr::after{display:none}.fp-built .fp-lab,.fp-model .kind{position:static;text-align:left;margin-top:8px}.fp-hero.band{min-height:0}.fp-plates.stack .trk{display:block}.fp-plates.stack figure{margin-bottom:40px}@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{font-size:14px;padding:6px 8px}}button[data-film].fp-play{display:none}button[data-film]{pointer-events:none;cursor:default}button[data-film] .go{display:none}.fp-nojs{display:block;margin-top:14px}.mzl{display:none}.fp-built .fr{aspect-ratio:auto}.fp-built .fr video{position:static;width:100%;height:auto;transform:none}</style></noscript>
 </head>
-<body class="proj p-al-forsan" style="--bg:#140F06;--fg:#F3EBDD;--sub:rgba(243,235,221,.66);--acc:#B59748;--sheet:#FFFFFF;--hdr-bg:#140F06;--hdr-fg:#F3EBDD;--hdr-mk:#B59748">
+<body class="fp alforsan">
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr">
-  <a class="pill brand" href="../../" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
+  <a class="pill brand" href="../../index.html" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
   <div class="pill">
     <nav class="nav" id="nav" aria-label="Site"><a href="../../work/" aria-current="page">Work</a><a href="../../about/">About</a><a href="../../contact/">Contact</a><a href="../../assets/Antoni-Gerges-CV.pdf" class="navcv" target="_blank" rel="noopener">CV</a></nav>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
   </div>
 </header>
 <main id="main">
-<section class="p-hero wrap">
-  <p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Al Forsan International Sports Resort · Abu Dhabi · 2009</span></p>
-  <h1 class="rv d1">The gate was already there. I made it a mark.</h1>
-  <div class="cap rv d2">
-    <p class="role"><b>Creative direction · Al Forsan International Sports Resort</b><span>AntBrush · Abu Dhabi · 2009–13</span></p>
-    <p class="sum">A resort for riding, motor sport, shooting, paintball and water sport, named for the knights. The architect’s gate of Al Forsan Village was already standing. I took its arch, set a rider inside it over the dunes, and made it the mark. One arch then carried five sports, a campaign and the signs on site.</p>
-  </div>
-</section>
-<section class="stage wrap" aria-label="The work"><div class="rowg c1"><figure class="fig contain rv"><div class="m pad" style="aspect-ratio:21/9;"><img src="../../img/al-forsan/mark.svg" alt="The mark, 2009. An arch, a dome, the dunes and a rider coming through." loading="lazy" decoding="async" class="svgmark"></div><figcaption><span class="t"><b>The mark, 2009.</b> An arch, a dome, the dunes and a rider coming through.</span></figcaption></figure></div></section>
-<section class="chapter wrap" aria-labelledby="ch-0">
-  <div class="ch-h">
-    <div><p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>The idea</span></p><h2 id="ch-0" class="rv d1">The arch came from the gate.</h2></div>
-    <p class="rv d2">The architect’s entrance gate of Al Forsan Village was already standing. I took its arch and the peak of a Bedouin tent, set a rider inside, and made it the mark. One arch then held five sport centres, each in its own colour.</p>
-  </div>
-  <div class="rowg c1"><figure class="fig contain rv"><div class="m" style="aspect-ratio:16/9;"><img src="../../img/al-forsan/knights-place-1600.webp" srcset="../../img/al-forsan/knights-place-800.webp 800w, ../../img/al-forsan/knights-place-1600.webp 1600w, ../../img/al-forsan/knights-place-2001.webp 2001w" sizes="(max-width:760px) 100vw, 92vw" width="1600" height="849" alt="Getting inspired: the knight’s place. The brand manual’s own page: the village gate, the tent and the arch drawn from them." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Getting inspired: the knight’s place.</b> The brand manual’s own page: the village gate, the tent and the arch drawn from them.</span></figcaption></figure></div>
-  <div class="rowg c1"><figure class="fig contain rv"><div class="m" style="aspect-ratio:21/8;background:#F9F6EF;"><img src="../../img/al-forsan/centres-1600.webp" srcset="../../img/al-forsan/centres-800.webp 800w, ../../img/al-forsan/centres-1600.webp 1600w, ../../img/al-forsan/centres-1628.webp 1628w" sizes="(max-width:760px) 100vw, 92vw" width="1600" height="575" alt="One arch, five sports, a colour each. From the manual’s palette pages." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>One arch, five sports, a colour each.</b> From the manual’s palette pages.</span></figcaption></figure></div>
-  
-</section>
-<section class="chapter wrap" aria-labelledby="ch-1">
-  <div class="ch-h">
-    <div><p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>The campaign</span></p><h2 id="ch-1" class="rv d1">Your gateway to awesomeness.</h2></div>
-    <p class="rv d2">Every sport, out of one gate: a rider, a shooter, a paintballer, a kart and a wakeboarder, moving at once. Then one advertisement for each centre.</p>
-  </div>
-  <div class="rowg c2"><figure class="fig rv"><div class="m settle" style="aspect-ratio:3/4;"><img src="../../img/al-forsan/kv-1600.webp" srcset="../../img/al-forsan/kv-800.webp 800w, ../../img/al-forsan/kv-1600.webp 1600w, ../../img/al-forsan/kv-1689.webp 1689w" sizes="(max-width:760px) 100vw, 46vw" width="1600" height="2209" alt="The master key visual." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>The master key visual.</b> </span></figcaption></figure><figure class="fig contain rv"><div class="m" style="aspect-ratio:3/4;"><img src="../../img/al-forsan/press-master-1600.webp" srcset="../../img/al-forsan/press-master-800.webp 800w, ../../img/al-forsan/press-master-1600.webp 1600w, ../../img/al-forsan/press-master-2189.webp 2189w" sizes="(max-width:760px) 100vw, 46vw" width="1600" height="1900" alt="The master advertisement." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>The master advertisement.</b> </span></figcaption></figure></div>
-  <div class="rowg c3"><figure class="fig contain rv"><div class="m" style="aspect-ratio:4/5;"><img src="../../img/al-forsan/press-equestrian-1600.webp" srcset="../../img/al-forsan/press-equestrian-800.webp 800w, ../../img/al-forsan/press-equestrian-1600.webp 1600w, ../../img/al-forsan/press-equestrian-2189.webp 2189w" sizes="(max-width:760px) 100vw, 31vw" width="1600" height="1900" alt="Equestrian." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Equestrian.</b> </span></figcaption></figure><figure class="fig contain rv"><div class="m" style="aspect-ratio:4/5;"><img src="../../img/al-forsan/press-motor-1600.webp" srcset="../../img/al-forsan/press-motor-800.webp 800w, ../../img/al-forsan/press-motor-1600.webp 1600w, ../../img/al-forsan/press-motor-2189.webp 2189w" sizes="(max-width:760px) 100vw, 31vw" width="1600" height="1900" alt="Motor sports." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Motor sports.</b> </span></figcaption></figure><figure class="fig rv"><div class="m settle" style="aspect-ratio:4/5;"><img src="../../img/al-forsan/karting-1600.webp" srcset="../../img/al-forsan/karting-800.webp 800w, ../../img/al-forsan/karting-1600.webp 1600w, ../../img/al-forsan/karting-1601.webp 1601w" sizes="(max-width:760px) 100vw, 31vw" width="1600" height="1015" alt="Where knights rise." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Where knights rise.</b> </span></figcaption></figure></div>
-  
-</section>
-<section class="chapter wrap" aria-labelledby="ch-2">
-  <div class="ch-h">
-    <div><p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>In the desert</span></p><h2 id="ch-2" class="rv d1">Along the road, as the resort was built.</h2></div>
-    <p class="rv d2">Hoardings ran for hundreds of metres around the site. The signs took each centre’s colour.</p>
-  </div>
-  <div class="rowg c75"><figure class="fig rv"><div class="m settle" style="aspect-ratio:4/3;"><img src="../../img/al-forsan/hoarding-1600.webp" srcset="../../img/al-forsan/hoarding-800.webp 800w, ../../img/al-forsan/hoarding-1600.webp 1600w, ../../img/al-forsan/hoarding-2400.webp 2400w" sizes="(max-width:760px) 100vw, 55vw" width="1600" height="1200" alt="The site hoardings, photographed on site." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>The site hoardings,</b> photographed on site.</span></figcaption></figure><figure class="fig rv"><div class="m settle" style="aspect-ratio:3/4;"><img src="../../img/al-forsan/hoarding-palms-1600.webp" srcset="../../img/al-forsan/hoarding-palms-800.webp 800w, ../../img/al-forsan/hoarding-palms-1600.webp 1600w, ../../img/al-forsan/hoarding-palms-1921.webp 1921w" sizes="(max-width:760px) 100vw, 55vw" width="1600" height="1936" alt="Past the palms." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Past the palms.</b> </span></figcaption></figure></div>
-  <div class="rowg c1"><figure class="fig rv"><div class="m settle" style="aspect-ratio:21/9;"><img src="../../img/al-forsan/sign-1600.webp" srcset="../../img/al-forsan/sign-800.webp 800w, ../../img/al-forsan/sign-1600.webp 1600w, ../../img/al-forsan/sign-1601.webp 1601w" sizes="(max-width:760px) 100vw, 92vw" width="1600" height="1025" alt="To the sport resort. Signage from the manual." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>To the sport resort.</b> Signage from the manual.</span></figcaption></figure></div>
-  
-</section>
-<section class="storylink">
-  <div class="wrap in">
-    <div><p class="label rv" style="color:var(--sub);margin-bottom:20px">The full story</p><h2 class="rv d1">Every step, in order.</h2></div>
-    <div class="rv d2">
-      <p>For PPM, the owner group; the resort is the brand. Identity approved in March 2009; the resort’s agency from 2009 to 2013.</p>
-      <a class="big-btn" href="../../stories/al-forsan/">See the full story <span aria-hidden="true">→</span></a>
+
+<!-- 1 · the opening: a film made for this portfolio from the logo's own vectors, in one take; it plays clean, with its line under it -->
+<section class="fp-hero whole af-open" data-marks='[[0,"3D film · made for this portfolio"]]' aria-label="Al Forsan International Sports Resort: the gate at dawn becomes the mark">
+  <video class="v" muted playsinline loop preload="auto" poster="a/hero-poster.webp" data-src="a/hero-1600.mp4" data-src-p="a/hero-p.mp4" data-poster="a/hero-poster.webp" data-poster-p="a/hero-poster-p.webp"></video>
+  <div class="top"><span class="src"><i></i><b>3D film · made for this portfolio</b></span><span class="fp-lab r">Al Forsan International Sports Resort · Abu Dhabi · identity, 2009</span></div>
+  <div class="in">
+    <h1>Al Forsan International Sports Resort</h1>
+    <div class="row">
+      <p class="what"><strong>A gate, a knight, the dunes.</strong><small>Antoni Gerges, Executive Creative Director · AntBrush</small></p>
+      <span class="btns"><button class="fp-play" type="button" data-film="a/hero-1600.mp4" data-film-p="a/hero-p.mp4" data-title="The mark · 3D film made for this portfolio · silent">Play the film <small>0:15 · silent</small></button><noscript><span class="fp-nojs"><a class="fp-play" href="a/hero-1600.mp4">Open the film <small>0:15 · video file</small></a></span></noscript></span>
     </div>
   </div>
 </section>
+
+<!-- 2 · what it was -->
+<section class="fp-say">
+  <span class="fp-lab"><b>The project</b></span>
+  <div>
+    <h2>A resort in Abu Dhabi for five sports, named for the knights. <em>I gave it its mark, its system and its campaigns.</em></h2>
+    <div class="facts"><div><b>2008 to 2013</b>Al Forsan International Sports Resort, Abu Dhabi</div></div>
+    <details class="fp-more"><summary>Read more</summary><div class="tx"><div><span class="fp-lab"><b>The resort</b></span><p>Al Forsan means the knights. Al Forsan International Sports Resort put riding, motor sport, shooting, paintball and water sport on one site in Abu Dhabi.</p><p>It belongs to PPM, Private Property Management. The identity was approved between December 2008 and March 2009. I led it through AntBrush, my agency.</p></div><div><span class="fp-lab"><b>The idea</b></span><p>The manual names three parts. The arch: classic Arab architecture and the peak of a tent; the white space inside it is a knight’s helmet. The wave: the dunes. The knight: a rider with his head cloth and his rifle, coming through the arch.</p><p>The line under it all: Where knights rise.</p></div><div><span class="fp-lab"><b>The choice</b></span><p>The first manual, of December 2008, carried an earlier logo without the arch. In March 2009 we presented six arches around the same knight; the mark took the gate.</p></div><div><span class="fp-lab"><b>The system</b></span><p>The identity manual has 136 pages: the mark and its grid, colours and type, stationery, advertising and signs. Its colours are one gold and one black.</p><p>Five sport centres carry the same mark, each with a line in its own colour: Equestrian, Paintball, Motor Sports, Water Sports, Shooting.</p></div><div><span class="fp-lab"><b>The campaigns</b></span><p>The soft launch put every sport in one picture. The launch campaign, Your gateway to awesomeness, built the arch of the mark as a gate with every sport coming through it.</p><p>Hoardings stood around the site while the resort was being built, and the brand stood at an exhibition. The work for the resort ran from 2008 to 2013. PPM came back for its own logo, and for the names and signs of the Conrad Dubai.</p></div><div><span class="fp-lab"><b>This page</b></span><p>The film and the 3D models are made for this portfolio, from the manual’s own drawing of the logo. On this dark ground the logo is in the manual’s version for a black ground: gold.</p></div></div></details>
+  </div>
+</section>
+
+<!-- 3 · the identity as real-time 3D: the manual opens at the idea, the mark from its parts, five centres, the gateway -->
+<section class="fp-pin fp-model" style="--n:10.4" aria-label="The identity, in 3D: the manual opens at the idea, the mark from its parts, the five centres and the gateway">
+  <div class="fp-stick">
+    <canvas aria-hidden="true"></canvas>
+    <div class="veil"></div>
+    <span class="fp-lab chap"><b>01</b> · The identity<span class="x"> · the manual, the mark, five centres, the gateway</span></span>
+    <span class="fp-lab kind"><b>3D model</b><span class="x"> · made for this portfolio</span></span>
+    <div class="intro"><span class="fp-lab"><b>01</b> · The identity</span><h2>One mark,<br><b class="tw">for five sports.</b></h2><p>Built here from the identity manual’s own pages and drawing.</p></div>
+    <div class="st" data-s="0"><span class="fp-lab"><b>01</b> / 04</span><h3>The manual</h3><p>The book of the brand opens where the idea began: the knight, and his place, a gateway and a tent drawn into one arch.</p></div>
+    <div class="st" data-s="1"><span class="fp-lab"><b>02</b> / 04</span><h3>The mark</h3><p>The wave of the dunes, the arch, and the knight. From the front, they are the logo.</p></div>
+    <div class="st" data-s="2"><span class="fp-lab"><b>03</b> / 04</span><h3>Five centres</h3><p>The same mark for every sport, with a line in its own colour.</p><div class="spec af-c"><span style="--c:var(--af-equestrian)"><i></i>Equestrian</span><span style="--c:var(--af-paintball)"><i></i>Paintball</span><span style="--c:var(--af-motor)"><i></i>Motor sports</span><span style="--c:var(--af-water)"><i></i>Water sports</span><span style="--c:var(--af-shooting)"><i></i>Shooting</span></div></div>
+    <div class="st" data-s="3"><span class="fp-lab"><b>04</b> / 04</span><h3>The gateway</h3><p>In the launch campaign the arch took depth and became a gate. Every sport comes through it.</p></div>
+    <div class="fp-built whole" data-b="0"><div class="fr"><img src="a/manual-book.webp" width="1920" height="1280" alt="Photograph: the printed identity manual, one copy standing with its gold cover and spine, one copy open at the page of logo versions" loading="lazy" decoding="async"></div><div class="fp-lab"><span><b>Printed · the identity manual</b></span><span>Photograph</span></div></div>
+    <div class="fp-built whole" data-b="2"><div class="fr"><img src="a/stand-centres.webp" width="1920" height="1285" alt="Photograph: the exhibition stand, a row of tall banners, one for each sport centre, each named in its own colour, beside a wall with the two names of the resort" loading="lazy" decoding="async"></div><div class="fp-lab"><span><b>Built · a banner for each centre</b></span><span>Photograph of the exhibition stand</span></div></div>
+    <div class="fp-built whole" data-b="3"><div class="fr"><img src="a/ad-master.webp" width="1240" height="1753" alt="Press advertisement, “Al Forsan, your gateway to awesomeness”: a rider, a chef, a wakeboarder, a shooter, a paintballer and a kart come through the gate of the mark, with the logo and the text below" loading="lazy" decoding="async"></div><div class="fp-lab"><span><b>Launch campaign · press advertisement</b></span><span>Your gateway to awesomeness</span></div></div>
+  </div>
+</section>
+
+<!-- 4 · the choice, the soft launch, the launch, the site: each set whole, at once, on one dark screen -->
+<section class="af-set" data-rows='[[0, 1, 2, 3, 4, 5]]' data-rows-p='[[0, 1, 2], [3, 4, 5]]' aria-label="The choice: six logo options, March 2009">
+  <div class="hd"><div><span class="fp-lab"><b>02</b> · The choice</span><svg class="af-wave" viewBox="815 220 226 48" aria-hidden="true" focusable="false"><path d="M1037.99 238.72C1037.99 238.72 996.69 221.66 944.26 239.02C891.81 256.38 861.73 247.56 849.93 243.21C842.77 240.56 879.53 265.39 956.95 242.13C993.64 231.10 1023.43 236.66 1037.99 238.72"/><path d="M939.15 227.68C939.15 227.68 918.64 238.19 887.93 232.94C856.35 227.55 841.52 228.19 817.05 239.20C817.05 239.20 839.31 231.23 876.19 237.87C913.07 244.52 935.95 229.45 939.15 227.68"/><path d="M850.82 241.44C850.82 241.44 886.45 251.06 916.34 243.75C945.81 236.54 955.81 231.25 955.81 231.25C955.81 231.25 906.03 249.74 850.82 241.44"/></svg><h2>Six arches,<br><b class="tw">one knight.</b></h2></div><p>The first manual, of December 2008, carried an earlier logo without the arch. In March 2009 we presented six arches around the same knight; the mark took the gate of option E.</p></div>
+  <div class="grid">
+      <figure data-r="0.6631"><img src="a/opt-a.webp" width="563" height="849" alt="Logo option A of March 2009: a pale arch with a peaked roof around the knight, above the two names" loading="lazy" decoding="async"><figcaption><b>Option A</b>A peaked arch.</figcaption></figure>
+      <figure data-r="0.7333"><img src="a/opt-b.webp" width="591" height="806" alt="Logo option B of March 2009: a slimmer pale arch on a stepped base around the knight" loading="lazy" decoding="async"><figcaption><b>Option B</b>A stepped base.</figcaption></figure>
+      <figure data-r="0.6891"><img src="a/opt-c.webp" width="563" height="817" alt="Logo option C of March 2009: a pale tent-shaped arch around the knight" loading="lazy" decoding="async"><figcaption><b>Option C</b>The arch as a tent.</figcaption></figure>
+      <figure data-r="0.7218"><img src="a/opt-e.webp" width="646" height="895" alt="Logo option E of March 2009: a pale gate with piers and a domed roof around the knight" loading="lazy" decoding="async"><figcaption><b>Option E</b>A gate with a dome.</figcaption></figure>
+      <figure data-r="0.6911"><img src="a/opt-f.webp" width="595" height="861" alt="Logo option F of March 2009: a domed roof floating over the knight" loading="lazy" decoding="async"><figcaption><b>Option F</b>The roof alone.</figcaption></figure>
+      <figure data-r="0.6172"><img src="a/opt-g.webp" width="524" height="849" alt="Logo option G of March 2009: a tall pale pointed arch around the knight" loading="lazy" decoding="async"><figcaption><b>Option G</b>A tall pointed arch.</figcaption></figure>
+  </div>
+</section>
+
+<section class="af-set" data-rows='[[0, 1]]' data-rows-p='[[0], [1]]' aria-label="The line: Where knights rise">
+  <div class="hd"><div><span class="fp-lab"><b>03</b> · The line</span><svg class="af-wave" viewBox="815 220 226 48" aria-hidden="true" focusable="false"><path d="M1037.99 238.72C1037.99 238.72 996.69 221.66 944.26 239.02C891.81 256.38 861.73 247.56 849.93 243.21C842.77 240.56 879.53 265.39 956.95 242.13C993.64 231.10 1023.43 236.66 1037.99 238.72"/><path d="M939.15 227.68C939.15 227.68 918.64 238.19 887.93 232.94C856.35 227.55 841.52 228.19 817.05 239.20C817.05 239.20 839.31 231.23 876.19 237.87C913.07 244.52 935.95 229.45 939.15 227.68"/><path d="M850.82 241.44C850.82 241.44 886.45 251.06 916.34 243.75C945.81 236.54 955.81 231.25 955.81 231.25C955.81 231.25 906.03 249.74 850.82 241.44"/></svg><h2>Where<br><b class="tw">knights rise.</b></h2></div><p>The slogan, and the mark at work, in two pages of the identity manual: an advertising layout, and a signage sample.</p></div>
+  <div class="grid">
+      <figure data-r="1.4138"><img src="a/m-knights-rise.webp" width="1500" height="1061" alt="A page of the identity manual, “Miscellaneous devices and grids”: a landscape advertisement with a kart driver in the desert under the line Where knights rise, the logo at the left and the sand dunes device below" loading="lazy" decoding="async"><figcaption><b>Advertising</b>The line over a kart, the dunes below. Manual, p. 97.</figcaption></figure>
+      <figure data-r="1.4138"><img src="a/m-sign.webp" width="1500" height="1061" alt="A page of the identity manual, “Internal signage sample”: a gold and black blade sign with the mark in white and the words To the sport resort" loading="lazy" decoding="async"><figcaption><b>Signage</b>A sample: To the sport resort. Manual, p. 116.</figcaption></figure>
+  </div>
+</section>
+
+<section class="af-set" data-rows='[[0, 1], [2, 3]]' data-rows-p='[[0], [1], [2], [3]]' aria-label="The soft launch">
+  <div class="hd"><div><span class="fp-lab"><b>04</b> · The soft launch</span><svg class="af-wave" viewBox="815 220 226 48" aria-hidden="true" focusable="false"><path d="M1037.99 238.72C1037.99 238.72 996.69 221.66 944.26 239.02C891.81 256.38 861.73 247.56 849.93 243.21C842.77 240.56 879.53 265.39 956.95 242.13C993.64 231.10 1023.43 236.66 1037.99 238.72"/><path d="M939.15 227.68C939.15 227.68 918.64 238.19 887.93 232.94C856.35 227.55 841.52 228.19 817.05 239.20C817.05 239.20 839.31 231.23 876.19 237.87C913.07 244.52 935.95 229.45 939.15 227.68"/><path d="M850.82 241.44C850.82 241.44 886.45 251.06 916.34 243.75C945.81 236.54 955.81 231.25 955.81 231.25C955.81 231.25 906.03 249.74 850.82 241.44"/></svg><h2>Every sport,<br><b class="tw">at once.</b></h2></div><p>The first campaign put every sport in one picture, then into a brochure, a roll-up for each sport and a drawn map of the resort.</p></div>
+  <div class="grid">
+      <figure data-r="0.8000"><img src="a/kv.webp" width="1280" height="1600" alt="The key visual: a show-jumper on a horse, a wakeboarder, a clay shooter, a paintballer and a kart driver, with the logo at the top right" loading="lazy" decoding="async"><figcaption><b>The key visual</b>Rider, wakeboarder, shooter, paintballer, kart.</figcaption></figure>
+      <figure data-r="1.8328"><img src="a/sl-brochure.webp" width="1600" height="873" alt="Two spreads of the soft-launch brochure: a man with open arms under a sky, “Inside each of us beats the heart of a champion”; and the Equestrian spread with polo players" loading="lazy" decoding="async"><figcaption><b>The brochure</b>The resort, and riding.</figcaption></figure>
+      <figure data-r="2.5197"><img src="a/sl-rollups.webp" width="1600" height="635" alt="Five roll-up banners side by side: Equestrian, Watersports, Shooting, Paintball, Motor Sports, each with its athlete" loading="lazy" decoding="async"><figcaption><b>Five roll-ups</b>One for each sport.</figcaption></figure>
+      <figure data-r="1.6985"><img src="a/sl-map.webp" width="1600" height="942" alt="The illustrated map of the resort: clay shooting, shooting ranges, skeet and trap, off-road and go-kart tracks, watersports, paintball, recreation and the equestrian stables, with the logo and a legend" loading="lazy" decoding="async"><figcaption><b>The map</b>Every sport in its place.</figcaption></figure>
+  </div>
+</section>
+
+<section class="af-set" data-rows='[[0, 1, 2]]' data-rows-p='[[0], [1, 2]]' aria-label="The launch campaign">
+  <div class="hd"><div><span class="fp-lab"><b>05</b> · The launch</span><svg class="af-wave" viewBox="815 220 226 48" aria-hidden="true" focusable="false"><path d="M1037.99 238.72C1037.99 238.72 996.69 221.66 944.26 239.02C891.81 256.38 861.73 247.56 849.93 243.21C842.77 240.56 879.53 265.39 956.95 242.13C993.64 231.10 1023.43 236.66 1037.99 238.72"/><path d="M939.15 227.68C939.15 227.68 918.64 238.19 887.93 232.94C856.35 227.55 841.52 228.19 817.05 239.20C817.05 239.20 839.31 231.23 876.19 237.87C913.07 244.52 935.95 229.45 939.15 227.68"/><path d="M850.82 241.44C850.82 241.44 886.45 251.06 916.34 243.75C945.81 236.54 955.81 231.25 955.81 231.25C955.81 231.25 906.03 249.74 850.82 241.44"/></svg><h2>Your gateway<br><b class="tw">to awesomeness.</b></h2></div><p>The launch campaign built the arch of the mark as a gold gate: one advertisement for the resort, then one for a centre at a time.</p></div>
+  <div class="grid">
+      <figure data-r="0.7074"><img src="a/ad-master-2.webp" width="1240" height="1753" alt="Press advertisement, “Al Forsan, your gateway to awesomeness”: a polo player, a wakeboarder, a shooter, a paintballer and a kart in front of the gate" loading="lazy" decoding="async"><figcaption><b>The resort</b>Every sport, through the gate.</figcaption></figure>
+      <figure data-r="0.7074"><img src="a/ad-equestrian.webp" width="1240" height="1753" alt="Press advertisement, Al Forsan Equestrian, “Your gateway to awesomeness”: a show-jumper clears a fence through the golden gate" loading="lazy" decoding="async"><figcaption><b>Equestrian</b>A show-jumper clears the gate.</figcaption></figure>
+      <figure data-r="0.7074"><img src="a/ad-motor.webp" width="1240" height="1753" alt="Press advertisement, Al Forsan Motor Sports, “Your gateway to awesomeness”: a kart comes through the golden gate" loading="lazy" decoding="async"><figcaption><b>Motor sports</b>A kart comes through.</figcaption></figure>
+  </div>
+</section>
+
+<section class="af-set" data-rows='[[0, 1, 2], [3, 4]]' data-rows-p='[[0, 1], [2, 3], [4]]' aria-label="On the site, as built">
+  <div class="hd"><div><span class="fp-lab"><b>06</b> · Built</span><svg class="af-wave" viewBox="815 220 226 48" aria-hidden="true" focusable="false"><path d="M1037.99 238.72C1037.99 238.72 996.69 221.66 944.26 239.02C891.81 256.38 861.73 247.56 849.93 243.21C842.77 240.56 879.53 265.39 956.95 242.13C993.64 231.10 1023.43 236.66 1037.99 238.72"/><path d="M939.15 227.68C939.15 227.68 918.64 238.19 887.93 232.94C856.35 227.55 841.52 228.19 817.05 239.20C817.05 239.20 839.31 231.23 876.19 237.87C913.07 244.52 935.95 229.45 939.15 227.68"/><path d="M850.82 241.44C850.82 241.44 886.45 251.06 916.34 243.75C945.81 236.54 955.81 231.25 955.81 231.25C955.81 231.25 906.03 249.74 850.82 241.44"/></svg><h2>On the road,<br><b class="tw">at the show.</b></h2></div><p>Hoardings ran around the site while the resort was being built, each sport on its own stretch; then the resort’s stand at an exhibition.</p></div>
+  <div class="grid">
+      <figure data-r="1.3333"><img src="a/h-road.webp" width="1920" height="1440" alt="Photograph: a long hoarding following a curved road in the sand, with the two names of the resort on its first panel" loading="lazy" decoding="async"><figcaption><b>Along the road</b>The name, then the sports.</figcaption></figure>
+      <figure data-r="1.3333"><img src="a/h-equestrian.webp" width="1920" height="1440" alt="Photograph: the hoarding along the road, a black panel with the two names, then riders on a blue wave marked Equestrian" loading="lazy" decoding="async"><figcaption><b>Sport by sport</b>Equestrian on its blue.</figcaption></figure>
+      <figure data-r="1.3333"><img src="a/h-palms.webp" width="1920" height="1440" alt="Photograph: the hoarding behind a palm tree, a show-jumper and polo players on a blue wave" loading="lazy" decoding="async"><figcaption><b>Past the palms</b>The same wall, from the garden.</figcaption></figure>
+      <figure data-r="1.4942"><img src="a/stand-wide.webp" width="1920" height="1285" alt="Photograph: the Al Forsan exhibition stand on a blue carpet, white walls with the sports, tables and chairs in front" loading="lazy" decoding="async"><figcaption><b>At the show</b>The resort’s stand.</figcaption></figure>
+      <figure data-r="1.4942"><img src="a/stand-wall.webp" width="1920" height="1285" alt="Photograph: a white wall of the stand with the two names of the resort and the five sports drawn in green and gold strokes" loading="lazy" decoding="async"><figcaption><b>Drawn large</b>The five sports as one drawing.</figcaption></figure>
+  </div>
+</section>
+
+<!-- 5 · the result: the brand on the site, as built -->
+<section class="fp-res" aria-label="The result">
+  <div class="hd"><h2>The result.</h2><span class="fp-lab"><b>07</b> · The result</span></div>
+  <div class="nums"><div><b>2008 to 2013</b><span>one resort: its mark, its system, its campaigns, and the hoardings around it as it was built</span></div></div>
+  <figure class="shot"><img src="a/h-kv.webp" width="1920" height="1440" alt="Photograph: a hoarding on the building site showing the rider, the wakeboarder, the kart driver, the shooter and the paintballer above a brown wave" loading="lazy" decoding="async"><figcaption class="fp-lab">The key visual on a hoarding, with the wave of the mark at its foot · photograph, as built</figcaption></figure>
+  <details class="fp-more"><summary>More figures</summary>
+    <div class="nums">
+      <div><b>5</b><span>sport centres under one mark, each with its own colour</span></div>
+      <div><b>6</b><span>arches presented in March 2009, around the same knight</span></div>
+      <div><b>3</b><span>brands for one group: PPM’s own logo, Al Forsan, and the names and signs of the Conrad Dubai</span></div>
+    </div>
+    <p class="src fp-lab">Centres: the identity manual, section 13. Arches: the logo options deck of 4 March 2009. Years and brands: the agency’s own records.</p>
+  </details>
+</section>
+
+<!-- 6 · the film, the credits, on -->
+<section class="fp-end fin">
+  <button class="film" type="button" data-film="a/hero-1600.mp4" data-film-p="a/hero-p.mp4" data-title="The mark · 3D film made for this portfolio · silent" aria-label="Play the 3D film of the mark, made for this portfolio, silent">
+    <img src="a/hero-poster.webp" width="1600" height="900" alt="" loading="lazy" decoding="async">
+    <span class="t"><span class="fp-lab"><b>3D film</b> · 0:15 · silent</span><b>Play the film.</b></span><span class="go" aria-hidden="true"></span>
+  </button>
+  <noscript><span class="fp-nojs"><a class="fp-play" href="a/hero-1600.mp4">Open the film <small>0:15 · video file</small></a></span></noscript>
+  <div class="fp-cred">
+    <div><span class="fp-lab">Role</span>Antoni Gerges<br>Executive Creative Director</div>
+    <div><span class="fp-lab">Made by</span>AntBrush.</div>
+    <div><span class="fp-lab">For</span>Al Forsan International Sports Resort, Abu Dhabi. A resort of PPM, Private Property Management.</div>
+    <div><span class="fp-lab">The film and the models</span>Made for this portfolio from the identity manual. The gate is the mark’s own outline, given depth.</div>
+  </div>
+  <a class="fp-next" href="../../work/"><span class="fp-lab">More work</span><b>All work</b><span aria-hidden="true">→</span></a>
+</section>
 </main>
-<nav class="pnext" style="--nbg:#F2F1ED;--nfg:#17161A" aria-label="Next project">
-  <a href="../cityscape/">
-    <div><p class="label">Next</p><h2>From floor plan to full scale.</h2><p style="opacity:.72;margin-top:16px">Cityscape Abu Dhabi</p></div>
-    <div class="pic"><img src="../../img/cityscape/spheres-1600.webp" srcset="../../img/cityscape/spheres-800.webp 800w, ../../img/cityscape/spheres-1600.webp 1600w, ../../img/cityscape/spheres-1920.webp 1920w" sizes="(max-width:760px) 100vw, 46vw" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
-  </a>
-</nav>
+
+<div class="fp-player" role="dialog" aria-label="Film player"><video playsinline preload="none"></video><div class="bar"><span class="ti"></span><button class="x" type="button">Close</button></div></div>
+
 <footer class="foot"><div class="wrap row">
   <p style="margin:0">Antoni Gerges · Executive Creative Director · <a href="mailto:antoni@antbrush.com">antoni@antbrush.com</a></p>
   <nav aria-label="Footer"><a href="../../work/">Work</a><a href="../../about/">About</a><a href="../../contact/">Contact</a></nav>
 </div></footer>
-<script src="../../assets/site.js?v=afd4c1e0" defer></script>
+<script src="../../assets/fp/fp.js?v=18" defer></script>
+<script type="module" src="af.js?v=6"></script>
 </body>
 </html>

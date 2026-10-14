@@ -462,3 +462,10 @@ a.fp-play{text-decoration:none}
 .fp-res .fp-more .nums div:first-child{grid-column:auto}
 /* a film layer shown whole: never a slice of it */
 .fp-reel .ly video.whole{object-fit:contain;background:#000}
+/* a film layer shown whole is never pushed past the frame by the wipe (it was scaled 6% and lost its edges) */
+.fp-reel .ly video.whole{transform:none!important}
+/* a whole picture in a reel is never scaled or slid past its frame (it was scaled 1.06 and lost its edges) */
+.fp-reel .ly img.ps.whole{transform:none!important}
+/* T-16: every film and picture is shown whole at every window shape; nothing is cover-cropped by the page */
+.fp-hero .v,.fp-built .fr video,.fp-built .fr img,.fp-reel .ly video,.fp-reel .ly img.ps,.fp-end .film video,.fp-end .film img,.fp-cred figure img{object-fit:contain!important;background:#000}
+.fp-end .film{aspect-ratio:16/9}

@@ -1,91 +1,311 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>National Bullying Prevention Week · Antoni Gerges</title>
-<meta name="description" content="Give growth a language. Creative direction · National Bullying Prevention Week. AntBrush · UAE · 2018 · for the Ministry of Education.">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Antoni Gerges">
-<meta property="og:title" content="National Bullying Prevention Week · Antoni Gerges">
-<meta property="og:description" content="Give growth a language. Creative direction · National Bullying Prevention Week. AntBrush · UAE · 2018 · for the Ministry of Education.">
-<meta property="og:url" content="https://antoniz.com/work/anti-bullying/">
-<meta property="og:image" content="https://antoniz.com/assets/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Antoni Gerges, Executive Creative Director, above Lake Brienz in Interlaken">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>National Bullying Prevention Week · UAE · Antoni Gerges</title>
+<link rel="canonical" href="https://antoniz.com/work/anti-bullying/">
+<meta name="description" content="The UAE’s first National Bullying Prevention Week, for the Ministry of Education, 22 to 28 April 2018. Identity and campaign led by Antoni Gerges, Executive Creative Director. AntBrush.">
 <link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..800;1,14..32,300..800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
 <link rel="preload" href="../../assets/jost-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../assets/site.css?v=afd4c1e0">
-<link rel="stylesheet" href="../../assets/oldcase.css">
+<link rel="stylesheet" href="../../assets/fp/fp.css?v=34">
+<style>
+/* National Bullying Prevention Week: this page's own rules. The engine files are used unchanged. Nothing on this page is cropped. */
+/* 0 · the week's own colours (T-40). The mark's five colours, read from the delivered logo file (archive 004, a/3d/mark-paths.json),
+   and the five-colour bar that runs along the foot of every brochure page and every phone frame (archive 006, 042 to 045).
+   The purple is the campaign's own ground (the film's line card, the brochure's back page); it is a full field in two places only
+   (everything that was made, the end card). Everywhere else the ground stays black and the colours are accents. */
+body.bullying{--ab-purple:#562e91;--ab-magenta:#cb3794;--ab-yellow:#fecd02;--ab-teal:#3ab3c2;--ab-green:#7dbe42;--ab-night:#0d0a14;
+  --ab-bar:linear-gradient(90deg,var(--ab-purple) 0 20%,var(--ab-magenta) 20% 40%,var(--ab-yellow) 40% 60%,var(--ab-green) 60% 80%,var(--ab-teal) 80% 100%)}
+.ab-bar{display:block;width:clamp(96px,9vw,150px);height:4px;background:var(--ab-bar);margin:16px 0 0}
+.ab-dots{display:flex;gap:8px;margin-top:16px}.ab-dots i{width:14px;height:14px;border-radius:50%;background:var(--c)}
+
+/* 1 · the 3D chapter opens on the formation: full strength from the first frame; the line comes after the high five */
+.bullying .fp-model canvas{opacity:1!important}
+.bullying .fp-model .intro{top:auto;right:auto;bottom:clamp(40px,8vh,84px);transform:none;width:min(27vw,400px);opacity:0;transition:none}
+.bullying .fp-model .intro h2{font-size:clamp(40px,5vw,92px);line-height:.9}
+.bullying .fp-model .intro p{margin-top:16px;font-size:clamp(15px,1.15vw,18px)}
+.bullying .fp-model .intro .ab-bar{margin:0 0 16px}
+.bullying .fp-model .st:not(.on){transition:none}
+.bullying .fp-model .st .zm{pointer-events:auto;margin-top:18px}
+/* the board's built proof is a small film frame: shown at its own size, never enlarged */
+.fp-built.own .fr img{inset:auto;left:50%;top:44%;transform:translate(-50%,-50%);width:min(640px,90vw);height:auto;object-fit:contain}
+.fp-built.own.big .fr img{top:50%;width:min(900px,62vw)}
+@media (max-width:760px){
+  .bullying .fp-model .intro{left:var(--g);right:var(--g);width:auto;bottom:18px}
+  .bullying .fp-model .intro h2{font-size:clamp(40px,12vw,58px)}
+  .bullying .fp-model .fp-ticks{top:108px}
+  .fp-built.own .fr img{top:34%}
+}
+
+/* 2 · the campaign film, square, whole, from its purple card; the name beside it, never over it */
+.fp-hero.band.sq{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:var(--g);align-items:center;padding:clamp(86px,12vh,120px) var(--g) clamp(28px,5vh,56px)}
+.fp-hero.sq h1{font-size:clamp(44px,5.7vw,108px);line-height:.9;letter-spacing:-.04em;margin:16px 0 0 -.03em;animation:none}
+.fp-hero.sq .big{font:500 clamp(19px,1.7vw,28px)/1.2 "Jost",system-ui,sans-serif;letter-spacing:-.015em;margin:clamp(18px,3vh,30px) 0 12px;max-width:20em}
+.fp-hero.sq .btns{display:block;margin-top:clamp(20px,4vh,40px)}
+.fp-hero.sq .film{position:relative;aspect-ratio:1;width:min(100%,calc(100svh - 190px));justify-self:end;margin:0;background:var(--ab-purple);overflow:hidden}
+.fp-hero.sq .film .v{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+@media (max-width:760px){
+  .fp-hero.band.sq{grid-template-columns:1fr;gap:22px;padding:78px 0 30px;align-items:start}
+  .fp-hero.sq .film{order:-1;width:100%}
+  .fp-hero.sq .tx{padding:0 var(--g)}
+  .fp-hero.sq h1{font-size:clamp(40px,11.6vw,64px)}
+}
+.fp-more .tx figure.in{margin:14px 0 0}.fp-more .tx figure.in img{width:100%;max-width:520px;height:auto;display:block}.fp-more .tx figure.in figcaption{margin-top:8px;font-size:14px;color:var(--dim)}.fp-more .tx figure.in figcaption b{color:#fff;font-weight:600;margin-right:8px}
+
+/* 3 · the composed screens: each shows a set whole at once, on black, with the week's colours as accents */
+.ab-sec{padding:clamp(80px,13vh,150px) var(--g) clamp(40px,7vh,80px)}
+.ab-sec .hd .fp-lab b{color:var(--c,#fff)}
+.ab-sec h2{font-size:clamp(34px,4.3vw,74px);line-height:.98;letter-spacing:-.035em;font-weight:300;margin-top:22px;max-width:15em}
+.ab-sec figure{margin:0}
+.ab-sec figcaption{margin-top:10px;font-size:14px;line-height:1.4;color:var(--dim)}
+.ab-sec figcaption b{display:block;font:500 17px/1.2 "Jost",system-ui,sans-serif;color:#fff;margin-bottom:2px}
+.zm{appearance:none;display:block;border:0;padding:0;margin:0;background:none;cursor:zoom-in;width:100%}
+.zm img{width:100%;height:auto;display:block}
+.zm:focus-visible{outline:2px solid #fff;outline-offset:4px}
+button.zm.tx{width:auto;display:inline-flex;align-items:center;gap:10px;border:1px solid #fff;color:#fff;padding:12px 18px;font:600 12px/1 Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+button.zm.tx:hover{background:#fff;color:#000}
+.ab-sec .play{margin-top:clamp(26px,4vh,40px)}
+/* 3a · the world: the key visual and the keyhole, side by side, whole */
+.ab-world{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--g);align-items:end}
+.ab-world .set{display:flex;gap:clamp(18px,2vw,32px);align-items:flex-end}
+.ab-world h2{font-size:clamp(30px,3vw,54px)}.ab-world .set figure{width:auto}.ab-world .set .zm{width:auto}.ab-world .set .zm img{height:min(70vh,640px);width:auto;max-width:none}
+/* 3b · the stand as drawn, then as built */
+.ab-stand .rows{display:grid;grid-template-columns:auto repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,26px);margin-top:clamp(28px,5vh,52px);align-items:start}
+.ab-stand .rows .rl{writing-mode:vertical-rl;transform:rotate(180deg);align-self:center;white-space:nowrap}
+.ab-stand .rows .zm img{aspect-ratio:16/9;object-fit:contain;background:#000}
+.ab-stand .built .zm img{max-width:640px}
+/* 3c · the week, one line a day, with two of its frames */
+.ab-week .wk{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,4vw,72px);margin-top:clamp(28px,5vh,52px);align-items:start}
+.ab-week ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.ab-week li{display:grid;grid-template-columns:5.6em 9.5em minmax(0,1fr);gap:14px;padding:13px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.ab-week li b{font:600 18px/1.2 "Jost",system-ui,sans-serif;color:var(--c,#fff)}
+.ab-week li span{font:600 12px/1.3 Inter,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.ab-week li p{font-size:16px;line-height:1.4;color:rgba(255,255,255,.88)}
+.ab-week .pics{display:grid;gap:clamp(16px,2.4vh,26px)}
+.ab-week .pics .zm img{max-width:640px}
+/* 3d · the closing walk, six of his frames at once */
+.ab-walk .g6{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.4vw,22px);margin-top:clamp(28px,5vh,52px);max-width:calc(3 * 640px + 2 * 22px)}
+/* 3e · everything that was made: the one full field of the project purple */
+.ab-made{background:var(--ab-purple);margin:0}
+.ab-made .fp-lab,.ab-made .fp-lab b{color:#fff}
+.ab-made .in{display:grid;grid-template-columns:minmax(0,2.3fr) minmax(0,1fr);gap:clamp(28px,4vw,72px);margin-top:clamp(28px,5vh,52px);align-items:start}
+.ab-made .nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(20px,3.4vh,34px) clamp(16px,2vw,32px);border-top:1px solid rgba(255,255,255,.35);padding-top:clamp(20px,3.4vh,32px)}
+.ab-made .nums b{display:block;font:600 clamp(32px,3.6vw,64px)/.95 "Jost",system-ui,sans-serif;letter-spacing:-.035em}
+.ab-made .nums span{display:block;margin-top:8px;font-size:clamp(14px,1.05vw,16px);line-height:1.35;color:rgba(255,255,255,.9)}
+.ab-made .nums div{border-top:4px solid var(--c);padding-top:12px}
+.ab-made .ph{display:flex;gap:16px;align-items:flex-end}
+.ab-made .ph figure:first-child{flex:0 1 536px}.ab-made .ph figure:last-child{flex:0 1 190px}
+.ab-made .ph figcaption{color:rgba(255,255,255,.88)}
+.ab-made .src{margin-top:clamp(26px,4vh,40px);color:rgba(255,255,255,.88)}
+/* 3f · the result, and the line that stayed */
+.ab-after{margin-top:clamp(26px,4vh,40px);max-width:44em;font-size:clamp(16px,1.25vw,19px);line-height:1.5;color:rgba(255,255,255,.88)}
+.ab-after b{color:#fff;font-weight:600}
+@media (max-width:1100px){.ab-made .nums{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:760px){
+  .ab-world{grid-template-columns:1fr}.ab-world .set{flex-direction:column;align-items:stretch}.ab-world .set .zm img{height:auto;width:100%}
+  .ab-stand .rows{grid-template-columns:repeat(2,minmax(0,1fr))}.ab-stand .rows .rl{writing-mode:horizontal-tb;transform:none;grid-column:1 / -1;align-self:start;margin-top:8px}
+  .ab-stand .rows figure:nth-of-type(3),.ab-stand .rows figure:nth-of-type(6){grid-column:1 / -1}
+  .ab-week .wk{grid-template-columns:1fr}.ab-week li{grid-template-columns:4.6em minmax(0,1fr);gap:4px 12px}.ab-week li p{grid-column:2}.ab-week li span{grid-column:2;grid-row:1}
+  .ab-week li b{grid-row:1 / span 2}
+  .ab-walk .g6{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ab-made .in{grid-template-columns:1fr}.ab-made .nums{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ab-sec figcaption{font-size:13px}.ab-sec figcaption b{font-size:15px}
+}
+
+/* 4 · films of 640 px play at their own size in the player; a picture or a spread opens whole */
+.fp-player.own video{flex:none;width:min(640px,100vw);height:auto;aspect-ratio:16/9;margin:auto}
+.ab-zoom{position:fixed;inset:0;z-index:210;background:#000;display:none;flex-direction:column}
+.ab-zoom.open{display:flex}
+.ab-zoom .sc{flex:1;min-height:0;overflow:auto;display:flex;flex-direction:column;align-items:center;gap:24px;padding:24px var(--g)}
+.ab-zoom .sc img{max-width:100%;max-height:calc(100svh - 110px);width:auto;height:auto;margin:auto 0}
+.ab-zoom.read .sc{display:block}
+.ab-zoom.read .sc img{max-height:none;max-width:min(100%,1500px);margin:0 auto 24px}
+@media (max-width:760px){.ab-zoom.read .sc img{max-width:none;width:1500px}}
+.ab-zoom .bar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px var(--g)}
+.ab-zoom .x{appearance:none;background:none;border:1px solid #fff;color:#fff;padding:9px 16px;font:600 13px/1 Inter,system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.ab-zoom .x:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+/* 5 · the end card is the film's own purple frame, whole, on its own colour */
+.fp-end .film{background:var(--ab-purple)}.fp-end .film img{object-fit:contain}.fp-end .film:hover img{transform:none}
+.fp-end .film::after{background:linear-gradient(0deg,rgba(20,8,40,.55),rgba(0,0,0,0) 45%)}
+</style>
+<noscript><style>.bullying .fp-model .intro{opacity:1!important;width:auto}.ab-zoom{display:none}.fp-pin{height:auto!important}.fp-stick{position:static;height:auto;overflow:visible}.fp-reel .ly{position:relative;height:70vh}.fp-plates .trk{position:static;flex-wrap:wrap;padding:40px var(--g);height:auto}.fp-model canvas,.fp-model .veil,.fp-ticks,.fp-cue,.fp-bar{display:none}.fp-model .intro{position:static;transform:none;padding:60px var(--g) 20px}.fp-model .st{position:static;opacity:1;transform:none;width:auto;padding:24px var(--g) 8px}.fp-built{position:static;opacity:1;transform:none;width:auto;max-width:720px;margin:0 var(--g) 24px}.fp-model .chap{position:static;display:block;padding:0 var(--g)}.fp-hero h1,.fp-hero .row{animation:none}.fp-built{visibility:visible;height:auto;background:none}.fp-built .fr{position:relative;inset:auto;aspect-ratio:16/9}.fp-built .fr::after{display:none}.fp-built .fp-lab,.fp-model .kind{position:static;text-align:left;margin-top:8px}.fp-hero.band{min-height:0}.fp-plates.stack .trk{display:block}.fp-plates.stack figure{margin-bottom:40px}@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{font-size:14px;padding:6px 8px}}button[data-film].fp-play{display:none}button[data-film]{pointer-events:none;cursor:default}button[data-film] .go{display:none}.fp-nojs{display:block;margin-top:14px}.mzl{display:none}.fp-built .fr{aspect-ratio:auto}.fp-built .fr video{position:static;width:100%;height:auto;transform:none}</style></noscript>
 </head>
-<body class="proj p-anti-bullying" style="--bg:#F6F0E2;--fg:#3B1E5A;--sub:rgba(59,30,90,.66);--acc:#7A3FB0;--sheet:#FFFFFF;--hdr-bg:#F6F0E2;--hdr-fg:#3B1E5A;--hdr-mk:#7A3FB0">
+<body class="fp bullying">
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr">
-  <a class="pill brand" href="../../" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
+  <a class="pill brand" href="../../index.html" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
   <div class="pill">
     <nav class="nav" id="nav" aria-label="Site"><a href="../../work/" aria-current="page">Work</a><a href="../../about/">About</a><a href="../../contact/">Contact</a><a href="../../assets/Antoni-Gerges-CV.pdf" class="navcv" target="_blank" rel="noopener">CV</a></nav>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
   </div>
 </header>
 <main id="main">
-<section class="p-hero wrap">
-  <p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>National Bullying Prevention Week · UAE · 2018</span></p>
-  <h1 class="rv d1">Give growth a language.</h1>
-  <div class="cap rv d2">
-    <p class="role"><b>Creative direction · National Bullying Prevention Week</b><span>AntBrush · UAE · 2018 · for the Ministry of Education</span></p>
-    <p class="sum">A national week for schools. The mark is two figures with their arms raised and seven leaves growing from their hands. From it grew a line, a world drawn as a hill rising out of a book, a system of posts and things to hold, two stands, and seven days across the country.</p>
+
+<!-- 1 · the opening is the mark forming in 3D, as Tony asked: two students come in from left and right, high five, the leaves flourish. It plays by itself on the first screen; the line comes after it. Then what the mark became. -->
+<section class="fp-pin fp-model" style="--n:8.6" aria-label="National Bullying Prevention Week, in 3D: the mark forms, the board, the campaign, the brochure, the stand">
+  <div class="fp-stick">
+    <canvas aria-hidden="true"></canvas>
+    <div class="veil"></div>
+    <span class="fp-lab chap"><b>National Bullying Prevention Week</b><span class="x"> · UAE Ministry of Education · April 2018</span></span>
+    <span class="fp-lab kind"><b>3D model</b><span class="x"> · made for this portfolio</span></span>
+    <div class="intro"><i class="ab-bar"></i><h2>Flourish<br><b class="tw">together.</b></h2><p>Two students meet with a high five, and seven leaves flourish from their hands.</p></div>
+    <div class="st" data-s="0"><span class="fp-lab"><b>01</b> / 05</span><h3>Two students, seven leaves</h3><p>Together is the two students. Flourish is the leaves. Five colours, one mark.</p><div class="ab-dots" aria-hidden="true"><i style="--c:#562e91"></i><i style="--c:#cb3794"></i><i style="--c:#fecd02"></i><i style="--c:#7dbe42"></i><i style="--c:#3ab3c2"></i></div></div>
+    <div class="st" data-s="1"><span class="fp-lab"><b>02</b> / 05</span><h3>A mark you can stand inside</h3><p>A child steps behind the board and becomes the figure.</p><div class="spec"><span>Boards made<b>14</b></span></div></div>
+    <div class="st" data-s="2"><span class="fp-lab"><b>03</b> / 05</span><h3>Everywhere a student looks</h3><p>A brochure for every school, four phone frames, the film on screens, the keyhole on cash machines, a gift and an award.</p><div class="spec"><span>Brochures printed<b>10,000</b></span></div></div>
+    <div class="st" data-s="3"><span class="fp-lab"><b>04</b> / 05</span><h3>What the week taught</h3><p>Seven things a school can do. What bullying is. The line on the back. The brochure’s English pages.</p><button class="zm tx" type="button" data-read data-zoom="a/3d/bro-p6.webp,a/3d/bro-p7.webp,a/3d/bro-p8.webp" data-title="The brochure · English pages · April 2018">Open the pages</button></div>
+    <div class="st" data-s="4"><span class="fp-lab"><b>05</b> / 05</span><h3>The stand</h3><p>The mark as a room you sit inside. Drawn for two malls.</p></div>
+    <div class="fp-built whole" data-b="1"><div class="fr"><img src="a/p-school.webp" width="1920" height="1080" alt="The board as built, standing at a school door" loading="lazy" decoding="async"></div><div class="fp-lab"><span><b>Built · 23 April 2018</b></span><span>A boys’ secondary school, Dubai · our film of the day, in HD</span></div></div>
+    <div class="fp-built own big" data-b="4"><div class="fr"><img src="a/b-dalma.webp" width="960" height="540" alt="The stand as built at Dalma Mall: the round wall with the mark, the stools and the screens" loading="lazy" decoding="async"></div><div class="fp-lab"><span><b>Built · 24 April 2018</b></span><span>Dalma Mall, Abu Dhabi · a frame of our film</span></div></div>
   </div>
 </section>
-<section class="stage wrap" aria-label="The work"><div class="rowg c1"><figure class="fig rv"><div class="m settle" style="aspect-ratio:2/1;"><img src="../../img/anti-bullying/kv-1600.webp" srcset="../../img/anti-bullying/kv-800.webp 800w, ../../img/anti-bullying/kv-1600.webp 1600w, ../../img/anti-bullying/kv-2400.webp 2400w" sizes="(max-width:760px) 100vw, 92vw" width="1600" height="775" alt="The key visual. A hill growing out of an open book." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>The key visual.</b> A hill growing out of an open book.</span></figcaption></figure></div></section>
-<section class="chapter wrap" aria-labelledby="ch-0">
-  <div class="ch-h">
-    <div><p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>The idea</span></p><h2 id="ch-0" class="rv d1">Two figures, seven leaves.</h2></div>
-    <p class="rv d2">Everything grows from the hands. The mark is two children with their arms up and seven leaves rising from them, in five colours. It began as a hand and became a tree.</p>
+
+<!-- 2 · the campaign's own film, whole; the name beside it. Its poster is the film's purple card; the silent loop runs through the wheel of seven actions. -->
+<section class="fp-hero band sq" aria-label="National Bullying Prevention Week: the campaign film">
+  <div class="tx">
+    <span class="fp-lab"><b>For the UAE Ministry of Education</b> · 22 to 28 April 2018</span>
+    <h1>National Bullying Prevention Week</h1>
+    <p class="big">The UAE’s first national week against bullying. I led the identity and the campaign.</p>
+    <span class="fp-lab">Antoni Gerges, Executive Creative Director · AntBrush</span>
+    <span class="btns"><button class="fp-play" type="button" data-film="a/film-59.mp4" data-title="The campaign film · AntBrush · 0:59">Play the campaign film <small>0:59 · sound</small></button><noscript><span class="fp-nojs"><a class="fp-play" href="a/film-59.mp4">Open the campaign film <small>0:59 · video file</small></a></span></noscript></span>
   </div>
-  <div class="rowg c2"><figure class="fig contain rv"><div class="m pad" style="aspect-ratio:1/1;"><img src="../../img/anti-bullying/mark.svg" alt="The mark, 2018. From the delivered vectors." loading="lazy" decoding="async" class="svgmark"></div><figcaption><span class="t"><b>The mark, 2018.</b> From the delivered vectors.</span></figcaption></figure><figure class="fig contain rv"><div class="m" style="aspect-ratio:1/1;"><img src="../../img/anti-bullying/route-hand-900.webp" srcset="../../img/anti-bullying/route-hand-800.webp 800w, ../../img/anti-bullying/route-hand-900.webp 900w" sizes="(max-width:760px) 100vw, 46vw" width="900" height="607" alt="The earlier route. A hand, before it became a tree." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>The earlier route.</b> A hand, before it became a tree.</span></figcaption></figure></div>
-  
+  <div class="film"><video class="v" muted playsinline loop preload="auto" poster="a/film-poster.webp" data-src="a/film-59.mp4" data-poster="a/film-poster.webp"></video></div>
 </section>
-<section class="chapter wrap" aria-labelledby="ch-1">
-  <div class="ch-h">
-    <div><p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>The system</span></p><h2 id="ch-1" class="rv d1">Then a line, and a world.</h2></div>
-    <p class="rv d2">We gave the week a line, Flourish together, and a picture to live in. The film named seven things a school can do.</p>
+
+<!-- what it was -->
+<section class="fp-say">
+  <span class="fp-lab"><b>The week</b></span>
+  <div>
+    <h2>One week, seven emirates, one mark. <em>It taught seven things a school can do.</em></h2>
+    <div class="facts"><div><b>22 to 28 April 2018</b>UAE Ministry of Education</div><div><b>Confirmed 18 April</b>Opened four days later</div></div>
+    <details class="fp-more"><summary>Read more</summary><div class="tx"><div><span class="fp-lab"><b>The week</b></span><p>The UAE’s first National Bullying Prevention Week ran from 22 to 28 April 2018, for the Ministry of Education with the Supreme Council for Motherhood and Childhood, under the patronage of H.H. Sheikha Fatima bint Mubarak.</p><p>The work was confirmed on Wednesday 18 April. The week opened on Sunday 22 April. I led the identity and the campaign, through AntBrush.</p><p>It was the first: the Ministry launched its second national week in November 2018 (Al Bayan, 17 November 2018).</p></div><div><span class="fp-lab"><b>The idea</b></span><p>Two students come together with a high five, and seven leaves flourish from their hands. The line is #Flourish_together.</p><p>The brochure taught seven things a school can do, from tolerance in the curriculum to partnerships with the community, and what bullying is: verbal, social, physical and cyber.</p><figure class="in"><img src="a/w-route-hand.webp" width="1000" height="769" alt="The first route: a hand with two figures, and the week’s first name" loading="lazy" decoding="async"><figcaption><b>The first route, a proposal</b>A hand, with the week’s first name. It became the tree.</figcaption></figure></div><div><span class="fp-lab"><b>What was made</b></span><p>The mark, the line, the key visual and the keyhole artwork; a brochure in Arabic and English; 45 social posts; four phone frames, live from 9 am to 9 pm, Monday to Saturday; the campaign film and a film of every day; posters, T-shirts, pins, wristbands and scarves; fourteen boards and three stands; a Youth Circle set; the signs and flags for the closing walk; a gift box, and an award designed in clear acrylic.</p></div><div><span class="fp-lab"><b>Where it stood</b></span><p>Schools in Ajman and Dubai, Dalma Mall in Abu Dhabi, RAK Mall in Ras Al Khaimah, and La Mer in Dubai for the closing walk on Saturday 28 April.</p><p>Posters went to six emirates and the stand to Abu Dhabi: seven emirates, one national week.</p></div></div></details>
   </div>
-  <div class="rowg c2"><figure class="fig rv"><div class="m settle" style="aspect-ratio:16/9;"><img src="../../img/anti-bullying/line-900.webp" srcset="../../img/anti-bullying/line-800.webp 800w, ../../img/anti-bullying/line-900.webp 900w" sizes="(max-width:760px) 100vw, 46vw" width="900" height="450" alt="Flourish together. The line, on the week’s own purple." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Flourish together.</b> The line, on the week’s own purple.</span></figcaption></figure><figure class="fig contain rv"><div class="m" style="aspect-ratio:16/9;"><img src="../../img/anti-bullying/wheel-900.webp" srcset="../../img/anti-bullying/wheel-800.webp 800w, ../../img/anti-bullying/wheel-900.webp 900w" sizes="(max-width:760px) 100vw, 46vw" width="900" height="810" alt="Seven actions for a school. The wheel from the campaign film." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Seven actions for a school.</b> The wheel from the campaign film.</span></figcaption></figure></div>
-  <div class="rowg c1"><figure class="fig contain rv"><div class="m" style="aspect-ratio:21/9;background:#E2E2E2;"><img src="../../img/anti-bullying/cutout-1008.webp" srcset="../../img/anti-bullying/cutout-800.webp 800w, ../../img/anti-bullying/cutout-1008.webp 1008w" sizes="(max-width:760px) 100vw, 92vw" width="1008" height="936" alt="Then we made it stand up. The mark as a cut-out you stand behind." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Then we made it stand up.</b> The mark as a cut-out you stand behind.</span></figcaption></figure></div>
-  
 </section>
-<section class="chapter wrap" aria-labelledby="ch-2">
-  <div class="ch-h">
-    <div><p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>The week</span></p><h2 id="ch-2" class="rv d1">Then we walked.</h2></div>
-    <p class="rv d2">Seven days across the country, 22 to 28 April 2018, closing with a walk at La Mer, Dubai.</p>
+
+<!-- 01 · the campaign's world: the key visual and the keyhole, whole, on one screen -->
+<section class="ab-sec ab-world" aria-label="The key visual and the keyhole artwork">
+  <div class="hd" style="--c:var(--ab-magenta)"><span class="fp-lab"><b>01</b> · The campaign’s world</span><i class="ab-bar"></i><h2>A hill that grows out of a book. <b class="tw">A city seen through a keyhole.</b></h2></div>
+  <div class="set">
+    <figure><button class="zm" type="button" data-zoom="a/w-kv.webp" data-title="The key visual · April 2018"><img src="a/w-kv.webp" width="1300" height="1834" alt="The key visual: a family on a hill that grows out of an open book, under the mark" loading="lazy" decoding="async"></button><figcaption><b>The key visual</b>The poster: 1,000 printed, sent to six emirates.</figcaption></figure>
+    <figure><button class="zm" type="button" data-zoom="a/3d/key-full.webp" data-title="Anti Bullying City · the keyhole artwork · April 2018"><img src="a/3d/key-full.webp" width="880" height="1056" alt="Anti Bullying City: children on a path, seen through a keyhole cut in a hedge of roses" loading="lazy" decoding="async"></button><figcaption><b>Anti Bullying City</b>The keyhole artwork, for screens and cash machines.</figcaption></figure>
   </div>
-  <div class="rowg c2"><figure class="fig rv"><div class="m settle" style="aspect-ratio:16/10;"><img src="../../img/anti-bullying/walk-640.webp" srcset="../../img/anti-bullying/walk-640.webp 640w" sizes="(max-width:760px) 100vw, 46vw" width="640" height="360" alt="The walk at La Mer. Coverage film, 2018." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>The walk at La Mer.</b> Coverage film, 2018.</span></figcaption></figure><figure class="fig rv"><div class="m settle" style="aspect-ratio:16/10;"><video data-clip data-src="../../media/clips/anti-bullying-clip-walk-1080.mp4" data-src-sm="../../media/clips/anti-bullying-clip-walk-720.mp4" poster="../../img/anti-bullying/clip-walk-poster.webp" muted loop playsinline preload="none" width="640" height="360" aria-label="The walk, as filmed. Shown small: the coverage was made at 640 pixels."></video></div><figcaption><span class="t"><b>The walk, as filmed.</b> Shown small: the coverage was made at 640 pixels.</span></figcaption></figure></div>
-  
 </section>
-<section class="storylink">
-  <div class="wrap in">
-    <div><p class="label rv" style="color:var(--sub);margin-bottom:20px">The full story</p><h2 class="rv d1">Every step, in order.</h2></div>
-    <div class="rv d2">
-      <p>For the Ministry of Education, UAE, with the Supreme Council for Motherhood and Childhood. Pictures with Arabic lettering are left out.</p>
-      <a class="big-btn" href="../../stories/anti-bullying/">See the full story <span aria-hidden="true">→</span></a>
+
+<!-- 02 · the stand: as drawn, then as built -->
+<section class="ab-sec ab-stand" aria-label="The stand, as drawn and as built">
+  <div class="hd" style="--c:var(--ab-yellow)"><span class="fp-lab"><b>02</b> · The stand</span><i class="ab-bar"></i><h2>Drawn in April, <b class="tw">built in two malls.</b></h2></div>
+  <div class="rows">
+    <span class="fp-lab rl">As drawn · 3D renders · AntBrush</span>
+    <figure><button class="zm" type="button" data-zoom="a/s-front.webp" data-title="The stand, from the front · 3D render · AntBrush · April 2018"><img src="a/s-front.webp" width="1600" height="900" alt="The stand from the front: a half-round wall with the mark, purple header, bean bags" loading="lazy" decoding="async"></button><figcaption><b>From the front</b></figcaption></figure>
+    <figure><button class="zm" type="button" data-zoom="a/s-chosen.webp" data-title="The stand, three-quarter · 3D render · AntBrush · April 2018"><img src="a/s-chosen.webp" width="1920" height="1080" alt="The stand, three-quarter view, with the paper leaves on lines and the screen totem" loading="lazy" decoding="async"></button><figcaption><b>Three-quarter</b></figcaption></figure>
+    <figure><button class="zm" type="button" data-zoom="a/s-close.webp" data-title="Inside the stand · 3D render · AntBrush · April 2018"><img src="a/s-close.webp" width="1920" height="1080" alt="Inside the stand: bean bags, cushions and a glass table with roses before the mark" loading="lazy" decoding="async"></button><figcaption><b>Inside</b></figcaption></figure>
+    <span class="fp-lab rl">As built · our films</span>
+    <figure class="built"><button class="zm" type="button" data-zoom="a/f16.webp" data-title="Dalma Mall, Abu Dhabi · 24 April 2018 · our film"><img src="a/f16.webp" width="640" height="360" alt="The stand and the board, built, at Dalma Mall" loading="lazy" decoding="async"></button><figcaption><b>Dalma Mall, Abu Dhabi</b>24 April 2018</figcaption></figure>
+    <figure class="built"><button class="zm" type="button" data-zoom="a/f18.webp" data-title="RAK Mall, Ras Al Khaimah · 25 April 2018 · our film"><img src="a/f18.webp" width="640" height="360" alt="The stand at RAK Mall, with the children’s tables before the mark" loading="lazy" decoding="async"></button><figcaption><b>RAK Mall, Ras Al Khaimah</b>25 April 2018</figcaption></figure>
+    <figure class="built"><button class="zm" type="button" data-zoom="a/f17.webp" data-title="The leaves, as built · RAK Mall · our film"><img src="a/f17.webp" width="640" height="360" alt="The leaves of the mark, built, close" loading="lazy" decoding="async"></button><figcaption><b>The leaves, as built</b>RAK Mall</figcaption></figure>
+  </div>
+</section>
+
+<!-- 03 · the week, one line a day -->
+<section class="ab-sec ab-week" aria-label="The week, day by day">
+  <div class="hd" style="--c:var(--ab-teal)"><span class="fp-lab"><b>03</b> · 22 to 28 April 2018</span><i class="ab-bar"></i><h2>One week, <b class="tw">day by day.</b></h2></div>
+  <div class="wk">
+    <ol>
+      <li style="--c:var(--ab-magenta)"><b>Sun 22</b><span>Ajman</span><p>The week opens in a school: workshops and drawing.</p></li>
+      <li style="--c:var(--ab-yellow)"><b>Mon 23</b><span>Dubai</span><p>Youth Circles: students talk it through, at a boys’ secondary school.</p></li>
+      <li style="--c:var(--ab-teal)"><b>Tue 24</b><span>Abu Dhabi</span><p>The stand opens at Dalma Mall.</p></li>
+      <li style="--c:var(--ab-green)"><b>Wed 25</b><span>Ras Al Khaimah, Dubai</span><p>The stand at RAK Mall, a walk with 500 balloons, two school visits.</p></li>
+      <li style="--c:var(--ab-magenta)"><b>Thu 26</b><span>Abu Dhabi</span><p>A walk at Dalma Mall, and two more schools.</p></li>
+      <li style="--c:var(--ab-yellow)"><b>Fri 27</b><span>Dubai</span><p>Through the night, La Mer is set: 30 flags, six signs, three water stations.</p></li>
+      <li style="--c:var(--ab-teal)"><b>Sat 28</b><span>Dubai</span><p>The closing walk at La Mer.</p></li>
+    </ol>
+    <div class="pics">
+      <figure><button class="zm" type="button" data-zoom="a/f19.webp" data-title="Wednesday · two girls inside the board · RAK Mall · our film · 25 April 2018"><img src="a/f19.webp" width="640" height="360" alt="Two girls inside the board, their faces in its two holes, at RAK Mall" loading="lazy" decoding="async"></button><figcaption><b>Wednesday · two girls inside the board</b>RAK Mall · our film of the day</figcaption></figure>
+      <figure><button class="zm" type="button" data-zoom="a/f14.webp" data-title="Sunday · the workshop · our film · 22 April 2018"><img src="a/f14.webp" width="640" height="360" alt="A child drawing at the first day’s workshop" loading="lazy" decoding="async"></button><figcaption><b>Sunday · the workshop</b>Our film of the day</figcaption></figure>
+    </div>
+  </div>
+  <div class="play"><button class="fp-play" type="button" data-own data-film="a/week-640.mp4" data-title="The week on film · schools, malls, the closing walk · April 2018 · silent">The week on film <small>0:25 · silent</small></button></div>
+</section>
+
+<!-- 04 · the closing walk, told with six of his own frames -->
+<section class="ab-sec ab-walk" aria-label="The closing walk at La Mer">
+  <div class="hd" style="--c:var(--ab-green)"><span class="fp-lab"><b>04</b> · La Mer, Dubai · 28 April 2018</span><i class="ab-bar"></i><h2>Then <b class="tw">we walked.</b></h2></div>
+  <div class="g6">
+    <figure><button class="zm" type="button" data-zoom="a/f21.webp" data-title="The walk’s sign · La Mer · our film"><img src="a/f21.webp" width="640" height="360" alt="The walk’s sign with the mark, at La Mer" loading="lazy" decoding="async"></button><figcaption><b>The sign</b></figcaption></figure>
+    <figure><button class="zm" type="button" data-zoom="a/f22.webp" data-title="The flags · La Mer · our film"><img src="a/f22.webp" width="640" height="360" alt="Feather flags reading #Flourish_together" loading="lazy" decoding="async"></button><figcaption><b>Thirty flags</b></figcaption></figure>
+    <figure><button class="zm" type="button" data-zoom="a/f25.webp" data-title="Mounted police · La Mer · our film"><img src="a/f25.webp" width="640" height="360" alt="Mounted police on white horses, with flags, in the sun" loading="lazy" decoding="async"></button><figcaption><b>Mounted police</b></figcaption></figure>
+    <figure><button class="zm" type="button" data-zoom="a/f23.webp" data-title="The walk · La Mer · our film"><img src="a/f23.webp" width="640" height="360" alt="Students and families walking with balloons along the waterfront" loading="lazy" decoding="async"></button><figcaption><b>The walk</b></figcaption></figure>
+    <figure><button class="zm" type="button" data-zoom="a/f24.webp" data-title="Walkers with balloons · La Mer · our film"><img src="a/f24.webp" width="640" height="360" alt="A large group of walkers with balloons" loading="lazy" decoding="async"></button><figcaption><b>Everyone together</b></figcaption></figure>
+    <figure><button class="zm" type="button" data-zoom="a/f26.webp" data-title="Balloons · La Mer · our film"><img src="a/f26.webp" width="640" height="360" alt="Balloons in the mark’s colours against the sky" loading="lazy" decoding="async"></button><figcaption><b>Balloons</b></figcaption></figure>
+  </div>
+  <div class="play"><button class="fp-play" type="button" data-own data-film="a/walk-640.mp4" data-title="The closing walk · La Mer, Dubai · 28 April 2018 · our film, whole">The closing walk <small>1:33 · whole</small></button></div>
+</section>
+
+<!-- 05 · everything that was made, with the counts from the final report -->
+<section class="ab-sec ab-made" aria-label="Everything that was made">
+  <div class="hd"><span class="fp-lab"><b>05</b> · In one week</span><i class="ab-bar"></i><h2>Everything <b class="tw">that was made.</b></h2></div>
+  <div class="in">
+    <div>
+      <div class="nums">
+        <div style="--c:var(--ab-magenta)"><b>10,000</b><span>brochures</span></div>
+        <div style="--c:var(--ab-yellow)"><b>1,000</b><span>posters, to six emirates</span></div>
+        <div style="--c:var(--ab-green)"><b>45</b><span>social posts</span></div>
+        <div style="--c:var(--ab-teal)"><b>4</b><span>phone frames</span></div>
+        <div style="--c:var(--ab-magenta)"><b>14</b><span>boards</span></div>
+        <div style="--c:var(--ab-yellow)"><b>3</b><span>stands</span></div>
+        <div style="--c:var(--ab-green)"><b>1,000</b><span>T-shirts</span></div>
+        <div style="--c:var(--ab-teal)"><b>3,000</b><span>pins</span></div>
+        <div style="--c:var(--ab-magenta)"><b>5,000</b><span>wristbands</span></div>
+        <div style="--c:var(--ab-yellow)"><b>200</b><span>scarves</span></div>
+        <div style="--c:var(--ab-green)"><b>900</b><span>balloons</span></div>
+        <div style="--c:var(--ab-teal)"><b>30</b><span>flags</span></div>
+      </div>
+      <p class="src fp-lab">Source: our final report to the Ministry, 16 July 2018.</p>
+    </div>
+    <div class="ph">
+      <figure><button class="zm" type="button" data-zoom="a/t-shirts.webp" data-title="The T-shirts, on the walk · our photograph"><img src="a/t-shirts.webp" width="536" height="357" alt="Three boys from behind, the mark on the backs of their T-shirts, balloons ahead" loading="lazy" decoding="async"></button><figcaption><b>The T-shirts</b>On the walk</figcaption></figure>
+      <figure><button class="zm" type="button" data-zoom="a/t-pins.webp" data-title="The pins · our photograph"><img src="a/t-pins.webp" width="533" height="948" alt="A bag of the week’s pins" loading="lazy" decoding="async"></button><figcaption><b>The pins</b></figcaption></figure>
     </div>
   </div>
 </section>
+
+<!-- 06 · the result -->
+<section class="fp-res" aria-label="The result">
+  <div class="hd"><h2>The result.</h2><span class="fp-lab"><b>06</b> · As reported in the press</span></div>
+  <div class="nums">
+    <div><b>40 million</b><span>hashtag views in the first two days</span></div>
+  </div>
+  <p class="src fp-lab">Source: Al Ain News, 24 April 2018, citing Trend UAE.</p>
+  <p class="ab-after"><b>The line stayed.</b> The second national week followed in November 2018; the third, in November 2019, ran as “Together we flourish with tolerance”. <span class="fp-lab">Sources: Al Bayan, 17 November 2018 · WAM, 18 November 2019</span></p>
+</section>
+
+<!-- the film, the credits, on -->
+<section class="fp-end fin">
+  <button class="film" type="button" data-film="a/film-59.mp4" data-title="The campaign film · AntBrush · 0:59" aria-label="Play the campaign film, 59 seconds, with sound">
+    <img src="a/film-poster.webp" alt="" loading="lazy" decoding="async">
+    <span class="t"><span class="fp-lab"><b>The campaign film</b> · 0:59 · sound</span><b>Play the film.</b></span><span class="go" aria-hidden="true"></span>
+  </button>
+  <noscript><span class="fp-nojs"><a class="fp-play" href="a/film-59.mp4">Open the campaign film <small>0:59 · video file</small></a></span></noscript>
+  <div class="more"><button class="fp-play" type="button" data-own data-film="a/week-640.mp4" data-title="The week on film · schools, malls, the closing walk · April 2018 · silent">The week on film <small>0:25 · silent</small></button><button class="fp-play" type="button" data-own data-film="a/walk-640.mp4" data-title="The closing walk · La Mer, Dubai · 28 April 2018 · our film, whole">The closing walk <small>1:33 · whole</small></button></div>
+  <div class="fp-cred">
+    <div><span class="fp-lab">Role</span>Antoni Gerges<br>Executive Creative Director</div>
+    <div><span class="fp-lab">Made by</span>AntBrush.</div>
+    <div><span class="fp-lab">For</span>The UAE Ministry of Education, with the Supreme Council for Motherhood and Childhood.</div>
+    <div><span class="fp-lab">The model</span>Made for this portfolio, from the mark, the board design and the stand renders of April 2018.</div>
+  </div>
+  <a class="fp-next" href="../../work/"><span class="fp-lab">More work</span><b>All work</b><span aria-hidden="true">→</span></a>
+</section>
 </main>
-<nav class="pnext" style="--nbg:#0E1C4A;--nfg:#F4F2EC" aria-label="Next project">
-  <a href="../aiaasc/">
-    <div><p class="label">Next</p><h2>Make standards clear.</h2><p style="opacity:.72;margin-top:16px">AIAASC</p></div>
-    <div class="pic"><img src="../../img/aiaasc/end-frame-1280.webp" srcset="../../img/aiaasc/end-frame-800.webp 800w, ../../img/aiaasc/end-frame-1280.webp 1280w" sizes="(max-width:760px) 100vw, 46vw" width="1280" height="720" alt="The AIAASC mark on navy" loading="lazy" decoding="async"></div>
-  </a>
-</nav>
+
+<div class="fp-player" role="dialog" aria-label="Film player"><video playsinline preload="none"></video><div class="bar"><span class="ti"></span><button class="x" type="button">Close</button></div></div>
+
 <footer class="foot"><div class="wrap row">
   <p style="margin:0">Antoni Gerges · Executive Creative Director · <a href="mailto:antoni@antbrush.com">antoni@antbrush.com</a></p>
   <nav aria-label="Footer"><a href="../../work/">Work</a><a href="../../about/">About</a><a href="../../contact/">Contact</a></nav>
 </div></footer>
-<script src="../../assets/site.js?v=afd4c1e0" defer></script>
+<script src="../../assets/fp/fp.js?v=18" defer></script>
+<script type="module" src="ab.js?v=17"></script>
 </body>
 </html>

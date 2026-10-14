@@ -1,85 +1,238 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Dubai Health Authority · Antoni Gerges</title>
-<meta name="description" content="A shape with something to say. Creative direction · Dubai Health Authority identity and launch. AntBrush · Dubai · 2008.">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Antoni Gerges">
-<meta property="og:title" content="Dubai Health Authority · Antoni Gerges">
-<meta property="og:description" content="A shape with something to say. Creative direction · Dubai Health Authority identity and launch. AntBrush · Dubai · 2008.">
-<meta property="og:url" content="https://antoniz.com/work/dha/">
-<meta property="og:image" content="https://antoniz.com/assets/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Antoni Gerges, Executive Creative Director, above Lake Brienz in Interlaken">
-<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://antoniz.com/work/dha/">
+<meta name="description" content="Dubai Health Authority, brand identity and launch, 2008. A star with one corner left open; the name completes it. Antoni Gerges, Executive Creative Director. AntBrush.">
 <link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..800;1,14..32,300..800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
 <link rel="preload" href="../../assets/jost-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../assets/site.css?v=afd4c1e0">
-<link rel="stylesheet" href="../../assets/oldcase.css">
+<link rel="stylesheet" href="../../assets/fp/fp.css?v=34">
+<style>
+/* Dubai Health Authority: the brand's own palette, from its manual, section 4.1 "Our Colour Palette Rationale" (page 26):
+   turquoise for knowledge and wisdom, green for growth, black for solidity. Inside the page these lead; the header, mark, menu and footer stay his.
+   Green and turquoise are poor as big fields, so they are accents on the brand's near-black turquoise ground. */
+:root{
+  --dha-teal:#008799;     /* the manual's turquoise, as printed on its pages */
+  --dha-green:#8CC63F;    /* the mark's green */
+  --dha-ink:#231F20;      /* the manual's black */
+  --dha-deep:#04181c;     /* the ground of every screen: turquoise, almost black */
+  --dha-deep-2:#072a30;   /* a step lighter, for rules and frames */
+  --dha-paper:#f2f6f5;    /* off-white, for type only */
+  --dha-teal-line:rgba(0,135,153,.55);
+}
+/* the brand's ground under every screen of the page (the header, menu and footer keep his black) */
+body.fp.dha main,.dha .fp-hero,.dha .fp-stick,.dha .fp-built,.dha .fp-built .fr,.dha .fp-built .fr img{background:var(--dha-deep)}
+.dha .fp b.tw,.dha b.tw{color:var(--dha-green)}
+.dha .fp-lab b{color:var(--dha-paper)}
+.dha .fp-lab .n,.dha .fp-model .st .fp-lab b,.dha .fp-res .hd .fp-lab b{color:var(--dha-green)}
+.dha .fp-ticks i{background:rgba(0,135,153,.35)}.dha .fp-ticks i.on{background:var(--dha-green)}
+.dha .fp-model .st .spec b{color:var(--dha-green)}
+.dha .fp-say .facts b{color:var(--dha-paper)}
+.dha .fp-say .facts div{border-top:3px solid var(--dha-teal);padding-top:12px}
+.dha .fp-say h2 em{color:var(--dha-paper)}
+.dha .fp-more summary{color:var(--dha-paper)}
+.dha .fp-res .nums{border-top-color:var(--dha-teal-line)}
+.dha .fp-res .nums b{color:var(--dha-paper)}
+.dha .fp-res>.nums>div:first-child b{color:var(--dha-green)}
+/* 1 · the opening is a film of the logo itself: no title of ours lies over it. The page's name stays for screen readers. */
+.fp-hero h1{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.fp-hero.whole .row{justify-content:flex-start;gap:clamp(24px,4vw,64px)}
+.dha .fp-hero .src{font-size:13px;letter-spacing:.12em}
+.dha .fp-hero .src i{background:var(--dha-green)}
+@media (min-width:761px){.fp-hero.whole .v{object-fit:contain}}
+@media (max-width:760px){
+  .fp-hero.whole .v{aspect-ratio:1/1}
+  .fp-hero.whole .in{padding-top:calc(104px + 100vw + 22px)}
+  .dha .fp-hero .src{font-size:12px}
+}
+@media (min-width:761px) and (max-aspect-ratio:5/4){
+  .fp-hero.whole .v{inset:auto;left:0;top:96px;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;transform:none!important}
+  .fp-hero.whole::after{background:none}.fp-hero.whole .fp-cue{display:none}
+  .fp-hero.whole .in{justify-content:flex-start;padding-top:calc(96px + 56.25vw + 10px);opacity:1!important}
+  .fp-hero.whole .row{animation:none}
+}
+.fp-end .film{aspect-ratio:16/9;background:var(--dha-deep)}.fp-end .film:hover img{transform:none}
+.dha .fp-end .film img{object-fit:contain}
+@media (max-width:760px){.fp-end .film{aspect-ratio:1/1}}
+/* the opening: the page's own shading stays off the logo, so the name keeps one brightness from end to end */
+.dha .fp-hero:not(.band)::after{background:linear-gradient(180deg,rgba(4,24,28,.6) 0,rgba(4,24,28,0) 15%,rgba(4,24,28,0) 74%,rgba(4,24,28,.72) 100%)}
+/* the model: the page's shading stays in the corner behind the caption, off the pages, the logo and the boxes */
+@media (min-width:761px){.dha .fp-model .veil{background:radial-gradient(ellipse 58% 58% at 0% 100%,rgba(2,12,14,.9) 0,rgba(2,12,14,.62) 46%,rgba(2,12,14,0) 100%)}}
+@media (max-width:760px){.dha .fp-model .veil{background:linear-gradient(0deg,var(--dha-deep) 0,var(--dha-deep) 30%,rgba(4,24,28,0) 50%)}}
+/* the photographs of the road, two at a time: the same picture without the name, then with it. Each whole */
+.dha .fp-built.pair .fr{display:flex;align-items:center;justify-content:center;gap:clamp(12px,1.8vw,28px);padding:0;inset:calc(clamp(78px,11vh,112px) + 86px) var(--g) 33vh var(--g)}
+.dha .fp-built.pair .fr::after{display:none}
+.dha .fp-built.pair figure{margin:0;flex:1 1 0;min-width:0;max-width:calc((67vh - clamp(78px,11vh,112px) - 86px - 40px) * var(--r));display:flex;flex-direction:column;gap:8px}
+.dha .fp-built.pair .fr img{position:static;inset:auto;width:100%;height:auto;object-fit:contain}
+.dha .fp-built.pair figcaption{font:500 12.5px/1.3 Inter,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,246,245,.8);border-top:3px solid var(--dha-teal);padding-top:8px}
+.dha .fp-built.pair figcaption b{color:var(--dha-paper);font-weight:600}
+@media (max-width:760px){
+  .dha .fp-built.pair .fr{flex-direction:column;justify-content:flex-start;inset:132px 16px 33svh 16px;gap:10px}
+  .dha .fp-built.pair figure{flex:0 0 auto;width:100%;max-width:calc(((67svh - 142px) / 2 - 30px) * var(--r))}
+  .dha .fp-built.pair figcaption{font-size:11.5px;padding-top:6px}
+}
+/* 3 · in use: every piece at once, whole, on one screen */
+.dh-use{padding:clamp(84px,13vh,140px) var(--g) clamp(56px,9vh,100px);min-height:100svh;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:clamp(18px,3vh,30px)}
+.dh-use .lead{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px 40px}
+.dh-use .lead h2{margin:8px 0 0;font:300 clamp(30px,3.6vw,58px)/1.02 "Jost",system-ui,sans-serif;letter-spacing:-.03em}
+.dh-use .lead p{margin:0;max-width:30em;color:rgba(242,246,245,.78);font-size:clamp(14px,1.05vw,16px);line-height:1.45}
+.dh-use .rows{display:flex;flex-direction:column;gap:clamp(14px,2.4vh,24px)}
+.dh-use .row{display:flex;gap:clamp(12px,1.6vw,24px);align-items:flex-start;max-width:calc(var(--sum) * min(27svh,300px) + var(--gaps))}
+.dh-use figure{margin:0;flex:var(--ar) 1 0;min-width:0}
+.dh-use img{display:block;width:100%;height:auto}
+.dh-use figcaption{margin-top:8px;font:500 11.5px/1.3 Inter,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,246,245,.72);border-top:3px solid var(--dha-teal);padding-top:7px}
+.dh-use figcaption b{display:block;color:var(--dha-paper);font-weight:600;margin-bottom:2px}
+@media (max-width:760px){
+  .dh-use{min-height:0;padding:72px 16px 56px}
+  .dh-use .row{flex-wrap:wrap;max-width:none}
+  .dh-use .row figure{flex:1 1 calc(50% - 12px)}
+  .dh-use .row figure.w{flex-basis:100%}
+}
+/* 4 · the result: one number, and the vote drawn as points that become the star */
+.dha .fp-res>.top{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:var(--g);align-items:center;border-top:1px solid var(--dha-teal-line);padding-top:clamp(22px,4vh,40px)}
+.dha .fp-res>.top .nums{border:0;padding:0;grid-template-columns:1fr}
+.dha .fp-res>.top .nums b{font-size:clamp(52px,8.4vw,150px);white-space:nowrap;color:var(--dha-green)}
+.dha .fp-res>.top .nums span{max-width:24em;font-size:clamp(16px,1.35vw,21px)}
+.dh-vote{position:relative;margin:0;aspect-ratio:1/1;width:100%;max-width:min(520px,56svh);justify-self:end}
+.dh-vote canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.dh-vote figcaption{position:absolute;left:0;right:0;bottom:-4px;transform:translateY(100%);padding-top:8px;text-align:right}
+.dh-news{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:1180px;gap:var(--g);margin-top:clamp(40px,8vh,80px);align-items:start}
+.dh-news .print{margin:0;width:min(300px,24vw)}.dh-news .print img{display:block;width:100%;height:auto}.dh-news .print figcaption{margin-top:10px;border-top:3px solid var(--dha-teal);padding-top:8px}
+.dh-news a{display:block;color:var(--dha-paper);text-decoration:none;border-top:3px solid var(--dha-teal);padding-top:14px}
+.dh-news a .hl{display:block;margin:10px 0 8px;font:500 clamp(22px,2.3vw,36px)/1.12 "Jost",system-ui,sans-serif;letter-spacing:-.02em}
+.dh-news a .say{display:block;color:rgba(242,246,245,.78);font-size:clamp(14px,1.1vw,17px);line-height:1.45;max-width:28em}
+.dh-news a:hover .hl,.dh-news a:focus-visible .hl{text-decoration:underline;text-decoration-color:var(--dha-green);text-underline-offset:6px}
+@media (max-width:760px){.dha .fp-res>.top{grid-template-columns:1fr}.dh-vote{justify-self:center;max-width:340px;margin-bottom:34px}.dh-news{grid-template-columns:1fr}.dh-news .print{width:min(300px,100%)}}
+/* the full story */
+.dh-story{display:flex;align-items:baseline;gap:18px;margin-top:22px;color:var(--dha-paper);text-decoration:none;border-bottom:1px solid var(--dha-teal-line);padding-bottom:14px;max-width:560px}
+.dh-story b{font:600 clamp(22px,2vw,32px)/1.1 "Jost",system-ui,sans-serif;letter-spacing:-.02em}
+.dh-story:hover b,.dh-story:focus-visible b{text-decoration:underline;text-decoration-color:var(--dha-green);text-underline-offset:6px}
+</style>
+<noscript><style>.fp-pin{height:auto!important}.fp-stick{position:static;height:auto;overflow:visible}.fp-reel .ly{position:relative;height:70vh}.fp-plates .trk{position:static;flex-wrap:wrap;padding:40px var(--g);height:auto}.fp-model canvas,.fp-model .veil,.fp-ticks,.fp-cue,.fp-bar{display:none}.fp-model .intro{position:static;transform:none;padding:60px var(--g) 20px}.fp-model .st{position:static;opacity:1;transform:none;width:auto;padding:24px var(--g) 8px}.fp-built{position:static;opacity:1;transform:none;width:auto;max-width:720px;margin:0 var(--g) 24px}.fp-model .chap{position:static;display:block;padding:0 var(--g)}.fp-hero h1,.fp-hero .row{animation:none}.fp-built{visibility:visible;height:auto;background:none}.fp-built .fr{position:relative;inset:auto;aspect-ratio:16/9}.fp-built .fr::after{display:none}.fp-built .fp-lab,.fp-model .kind{position:static;text-align:left;margin-top:8px}.fp-hero.band{min-height:0}.fp-plates.stack .trk{display:block}.fp-plates.stack figure{margin-bottom:40px}@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{font-size:14px;padding:6px 8px}}button[data-film].fp-play{display:none}button[data-film]{pointer-events:none;cursor:default}button[data-film] .go{display:none}.fp-nojs{display:block;margin-top:14px}.mzl{display:none}.fp-built .fr{aspect-ratio:auto}.fp-built .fr video{position:static;width:100%;height:auto;transform:none}</style></noscript>
 </head>
-<body class="proj p-dha" style="--bg:#FFFFFF;--fg:#0E2A2B;--sub:rgba(14,42,43,.62);--acc:#008B99;--sheet:#FFFFFF;--hdr-bg:#FFFFFF;--hdr-fg:#0E2A2B;--hdr-mk:#008B99">
+<body class="fp dha">
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr">
-  <a class="pill brand" href="../../" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
+  <a class="pill brand" href="../../index.html" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
   <div class="pill">
     <nav class="nav" id="nav" aria-label="Site"><a href="../../work/" aria-current="page">Work</a><a href="../../about/">About</a><a href="../../contact/">Contact</a><a href="../../assets/Antoni-Gerges-CV.pdf" class="navcv" target="_blank" rel="noopener">CV</a></nav>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
   </div>
 </header>
 <main id="main">
-<section class="p-hero wrap">
-  <p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Dubai Health Authority · Dubai · 2008</span></p>
-  <h1 class="rv d1">A shape with something to say.</h1>
-  <div class="cap rv d2">
-    <p class="role"><b>Creative direction · Dubai Health Authority identity and launch</b><span>AntBrush · Dubai · 2008</span></p>
-    <p class="sum">A new health authority for Dubai. Eight agencies pitched; four were shortlisted. We drew a star with one corner left open, so the authority’s own name completes it. Almost a thousand of its staff voted, and they chose it. Then the launch: first the shape alone, then the colour and the name, across the city.</p>
+
+<!-- 1 · the opening: no film of 2008 exists. A 3D film made for this portfolio from the project's own artwork: the mark forms, then the launch on a road at dusk, then the real road in a photograph of April 2008, whole. -->
+<section class="fp-hero whole" data-marks='[[0,"3D film · made for this portfolio from the 2008 artwork"],[16,"Photograph · Jumeirah Beach Road, April 2008 · the media agency’s outdoor report"]]' aria-label="Dubai Health Authority: the mark forms, then its launch on the road, then a photograph of the real road">
+  <video class="v" muted playsinline loop preload="auto" poster="a/hero-poster.webp" data-src="a/hero-1600.mp4" data-src-p="a/hero-p.mp4" data-poster="a/hero-poster.webp" data-poster-p="a/hero-poster-p.webp" data-still="a/hero-logo.webp" data-still-p="a/hero-logo-p.webp"></video>
+  <div class="top"><span class="src"><i></i><b>3D film · made for this portfolio from the 2008 artwork</b></span><span class="fp-lab r">Dubai Health Authority · identity and launch · 2008</span></div>
+  <div class="in">
+    <h1>Dubai Health Authority</h1>
+    <div class="row">
+      <p class="what"><strong>A star with one corner left open. The name completes it.</strong><small>Antoni Gerges, Executive Creative Director · AntBrush</small></p>
+      <span class="btns"><button class="fp-play" type="button" data-film="a/hero-1600.mp4" data-film-p="a/hero-p.mp4" data-title="The mark and its launch · 3D film made for this portfolio · silent">Play the film <small>0:21 · silent</small></button><noscript><span class="fp-nojs"><a class="fp-play" href="a/hero-1600.mp4">Open the film <small>0:21 · video file</small></a></span></noscript></span>
+    </div>
+  </div>
+  <i class="fp-cue" aria-hidden="true"></i>
+</section>
+
+<!-- 2 · what it was -->
+<section class="fp-say">
+  <span class="fp-lab"><b>The project</b></span>
+  <div>
+    <h2>Dubai’s new health authority asked its own staff to choose its mark. They chose ours. <em>I led the identity and its launch across the city.</em></h2>
+    <div class="facts"><div><b>Almost 1,000 staff voted</b>Gulf News, 13 April 2008</div><div><b>Four presentations in three weeks</b>30 December 2007 to 20 January 2008</div></div>
+    <details class="fp-more"><summary>Read more</summary><div class="tx"><div><span class="fp-lab"><b>The pitch</b></span><p>Eight agencies were invited and four were shortlisted. Each of the four presented its logo and its meaning in a film. That part is my own account; the pitch film has not been found.</p><p>Our side of it: four presentations in three weeks. Nine routes on 30 December 2007, a second round on 2 January, a third on 10 January 2008, where the star first appears, on its ninth page; then a final deck of four routes on 20 January. The line “Your Health… Our Future” was already in the first.</p><p>On record: the staff chose from a short-list of four logos by electronic vote (Khaleej Times, 14 April 2008), and almost 1,000 voted for the star (Gulf News, 13 April 2008).</p></div><div><span class="fp-lab"><b>The idea</b></span><p>The mark began as a bright light. Our manual says it: “For a brighter and healthier future, DHA is clear as light.” Its pieces are clear wings, for transparency. People read it as sun rays, a flower, wings, a butterfly.</p><p>Three pieces, and one corner left open. “An incomplete shape. DHA will complete the picture.” The name sits in the open corner.</p></div><div><span class="fp-lab"><b>The voice</b></span><p>One word for the whole brand: future. One line: “Your Health… Our Future”. “You” and “our” were chosen on purpose; the manual puts it simply: “We are all in this together.”</p><p>Turquoise for knowledge and wisdom, green for growth, black for solidity: the manual’s colours, and the colours of this page.</p></div><div><span class="fp-lab"><b>The launch</b></span><p>Tease, then reveal. From 1 April 2008 the roads carried three pictures in black and white, with only the outline of the star and one line: Your Health… Our Future.</p><p>On 13 April the logo was unveiled, and the same three pictures came back in colour, with the name. It ran on back-lit lamp-post boxes and unipoles on Dubai’s roads, and in five national newspapers and eight magazines, in Arabic and English.</p><p>It became my agency’s biggest project.</p><p>We also wrote and storyboarded a 40-second television commercial, on 3 April 2008. It was not made.</p></div><div><span class="fp-lab"><b>On this page</b></span><p>No film from 2008 has been found. The opening film and the 3D models are made now, for this portfolio, from the artwork itself: our presentation pages and the manual’s pages (its edition of 12 May 2009), whole; the mark from the manual’s own outlines; the light boxes from the press artwork.</p><p>The outdoor print files have not been found, so the boxes carry the press artwork. The road at dusk is a model. The photographs are the record: they come from the media agency’s outdoor report, shown whole, with a mild correction for haze.</p></div></div></details>
   </div>
 </section>
-<section class="stage wrap" aria-label="The work"><div class="rowg c1"><figure class="fig contain rv"><div class="m pad" style="aspect-ratio:21/9;"><img src="../../img/dha/mark.svg" alt="The mark, 2008. Three pieces and one open corner. The name completes it." loading="lazy" decoding="async" class="svgmark"></div><figcaption><span class="t"><b>The mark, 2008.</b> Three pieces and one open corner. The name completes it.</span></figcaption></figure></div></section>
-<section class="chapter wrap" aria-labelledby="ch-0">
-  <div class="ch-h">
-    <div><p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>The idea</span></p><h2 id="ch-0" class="rv d1">An incomplete shape.</h2></div>
-    <p class="rv d2">Eight agencies pitched; four were shortlisted. We drew twelve routes and made four presentations in three weeks. The star with its open corner went to a vote, and almost a thousand of the authority’s staff chose it.</p>
+
+<!-- 3 · real-time 3D: our presentations on the floor, the mark in its own five steps, seven pages of the manual, the three pictures on their light boxes, the road before and after the name -->
+<section class="fp-pin fp-model" style="--n:12" aria-label="The identity and its launch, in 3D: our four presentations laid out by date, the mark built in five steps, seven pages of the manual, the three pictures, the road with no name, the road with the name">
+  <div class="fp-stick">
+    <canvas aria-hidden="true"></canvas>
+    <div class="veil"></div>
+    <span class="fp-lab chap"><b>01</b> · The identity and its launch<span class="x"> · the pitch, the mark, the manual, the road</span></span>
+    <span class="fp-lab kind"><b>3D model</b><span class="x"> · made for this portfolio</span></span>
+    <div class="intro"><span class="fp-lab"><b>01</b> · The identity and its launch</span><h2>Draw many.<br><b class="tw">Choose one.</b></h2><p>Our own presentation pages of 2007 and 2008, laid out by date. Then the mark, built again from the manual’s drawing, and how the city met it.</p></div>
+    <div class="st" data-s="0"><span class="fp-lab"><b>01</b> / 06</span><h3>Four presentations, three weeks</h3><p>Nine routes, then a second round, then a third, where the star first appears. Then our final deck of four routes.</p><div class="spec"><span>From 30 December 2007<b>to 20 January 2008</b></span></div></div>
+    <div class="st" data-s="1"><span class="fp-lab"><b>02</b> / 06</span><h3>An open star</h3><p>A square. A leaf cut from it. Three wings, and one corner left open for the name.</p></div>
+    <div class="st" data-s="2"><span class="fp-lab"><b>03</b> / 06</span><h3>The manual</h3><p>Seven of its pages: the cover, the idea, the five steps, the kit of parts, the colours, the folder, the ads.</p><div class="spec"><span>Created by AntBrush · first edition<b>8 March 2008</b></span></div></div>
+    <div class="st" data-s="3"><span class="fp-lab"><b>04</b> / 06</span><h3>Tease, then reveal</h3><p>Three pictures with only the outline of the star. Then the same three in colour, with the logo.</p></div>
+    <div class="st" data-s="4"><span class="fp-lab"><b>05</b> / 06</span><h3>First, no name</h3><p>From 1 April 2008 the roads showed only the shape, in black and white.</p></div>
+    <div class="st" data-s="5"><span class="fp-lab"><b>06</b> / 06</span><h3>Then colour, and the name</h3><p>On 13 April the logo was unveiled. The same pictures came back in colour, with the name.</p></div>
+    <div class="fp-built whole pair" data-b="4"><div class="fr"><figure style="--r:1.3333"><img src="a/ph-168.webp" width="1024" height="768" alt="Al Garhoud Road, Dubai, 12 April 2008: a lamp-post light box with the teaser of the two boys, in black and white, no logo" loading="lazy" decoding="async"><figcaption><b>The two boys</b> · no name</figcaption></figure><figure style="--r:1.3333"><img src="a/ph-166.webp" width="1024" height="768" alt="Al Garhoud Road, Dubai, 12 April 2008: a lamp-post light box with the butterfly teaser in black and white, no logo" loading="lazy" decoding="async"><figcaption><b>The butterfly</b> · no name</figcaption></figure></div><div class="fp-lab"><span><b>Al Garhoud Road · 12 April 2008</b></span><span>Photographs · the media agency’s outdoor report</span></div></div>
+    <div class="fp-built whole pair" data-b="5"><div class="fr"><figure style="--r:1.4506"><img src="a/ph-163.webp" width="1600" height="1103" alt="Jumeirah Beach Road, Dubai, April 2008: a lamp-post light box with the two boys in colour and the Dubai Health Authority logo" loading="lazy" decoding="async"><figcaption><b>The two boys</b> · the name</figcaption></figure><figure style="--r:1.4585"><img src="a/ph-162.webp" width="1600" height="1097" alt="Jumeirah Beach Road, Dubai, April 2008: a lamp-post light box with the butterfly in colour and the Dubai Health Authority logo" loading="lazy" decoding="async"><figcaption><b>The butterfly</b> · the name</figcaption></figure></div><div class="fp-lab"><span><b>Jumeirah Beach Road · from 13 April 2008</b></span><span>Photographs · the media agency’s outdoor report</span></div></div>
   </div>
-  <div class="rowg c1"><figure class="fig contain rv"><div class="m" style="aspect-ratio:16/5;"><img src="../../img/dha/steps-1600.webp" srcset="../../img/dha/steps-800.webp 800w, ../../img/dha/steps-1600.webp 1600w, ../../img/dha/steps-2400.webp 2400w" sizes="(max-width:760px) 100vw, 92vw" width="1600" height="396" alt="The mark in five steps, as we set it out in the brand manual." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>The mark in five steps,</b> as we set it out in the brand manual.</span></figcaption></figure></div>
-  <div class="rowg c57"><figure class="fig contain rv"><div class="m" style="aspect-ratio:1/1;"><img src="../../img/dha/colours-1600.webp" srcset="../../img/dha/colours-800.webp 800w, ../../img/dha/colours-1600.webp 1600w, ../../img/dha/colours-1801.webp 1801w" sizes="(max-width:760px) 100vw, 55vw" width="1600" height="817" alt="Growth. Purity. Health. The colours, from the manual." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Growth. Purity. Health.</b> The colours, from the manual.</span></figcaption></figure><figure class="fig rv"><div class="m settle" style="aspect-ratio:4/3;"><img src="../../img/dha/wings-1401.webp" srcset="../../img/dha/wings-800.webp 800w, ../../img/dha/wings-1401.webp 1401w" sizes="(max-width:760px) 100vw, 55vw" width="1401" height="1056" alt="Light, and a pair of wings. The manual’s own picture of where the shape began." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Light, and a pair of wings.</b> The manual’s own picture of where the shape began.</span></figcaption></figure></div>
-  
 </section>
-<section class="chapter wrap" aria-labelledby="ch-1">
-  <div class="ch-h">
-    <div><p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>The launch</span></p><h2 id="ch-1" class="rv d1">First the shape. Then the colour and the name.</h2></div>
-    <p class="rv d2">The campaign opened with no name at all: only the star, drawn in the picture, in black and white. Then each teaser turned into its revealer.</p>
-  </div>
-  <div class="rowg c3"><figure class="fig contain rv"><div class="m" style="aspect-ratio:900/1421;"><img src="../../img/dha/tease-care-full.webp" sizes="(max-width:760px) 100vw, 31vw" width="900" height="1421" alt="Teaser. The butterfly." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Teaser.</b> The butterfly.</span></figcaption></figure><figure class="fig contain rv"><div class="m" style="aspect-ratio:900/1431;"><img src="../../img/dha/tease-future-full.webp" sizes="(max-width:760px) 100vw, 31vw" width="900" height="1431" alt="Teaser. The reach." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Teaser.</b> The reach.</span></figcaption></figure><figure class="fig contain rv"><div class="m" style="aspect-ratio:900/1432;"><img src="../../img/dha/tease-smile-full.webp" sizes="(max-width:760px) 100vw, 31vw" width="900" height="1432" alt="Teaser. The wings." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Teaser.</b> The wings.</span></figcaption></figure></div>
-  <div class="rowg c3"><figure class="fig contain rv"><div class="m" style="aspect-ratio:900/1539;"><img src="../../img/dha/ad-care-full.webp" sizes="(max-width:760px) 100vw, 31vw" width="900" height="1539" alt="Your Health... Our Care." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Your Health... Our Care.</b> </span></figcaption></figure><figure class="fig contain rv"><div class="m" style="aspect-ratio:900/1498;"><img src="../../img/dha/ad-future-full.webp" sizes="(max-width:760px) 100vw, 31vw" width="900" height="1498" alt="Your Health... Our Future." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Your Health... Our Future.</b> </span></figcaption></figure><figure class="fig contain rv"><div class="m" style="aspect-ratio:900/1524;"><img src="../../img/dha/ad-smile-full.webp" sizes="(max-width:760px) 100vw, 31vw" width="900" height="1524" alt="Your Health... Our Smile." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Your Health... Our Smile.</b> </span></figcaption></figure></div>
-  <div class="rowg c2"><figure class="fig contain rv"><div class="m" style="aspect-ratio:4/5;"><img src="../../img/dha/print-teaser-496.webp" srcset="../../img/dha/print-teaser-496.webp 496w" sizes="(max-width:760px) 100vw, 46vw" width="496" height="512" alt="In print: the teaser. A full page, as it ran." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>In print: the teaser.</b> A full page, as it ran.</span></figcaption></figure><figure class="fig contain rv"><div class="m" style="aspect-ratio:4/5;"><img src="../../img/dha/print-kid-942.webp" srcset="../../img/dha/print-kid-800.webp 800w, ../../img/dha/print-kid-942.webp 942w" sizes="(max-width:760px) 100vw, 46vw" width="942" height="1089" alt="Then the revealer. A full page, as it ran." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Then the revealer.</b> A full page, as it ran.</span></figcaption></figure></div>
-  
-</section>
-<section class="storylink">
-  <div class="wrap in">
-    <div><p class="label rv" style="color:var(--sub);margin-bottom:20px">The full story</p><h2 class="rv d1">Every step, in order.</h2></div>
-    <div class="rv d2">
-      <p><b>In the press.</b> Gulf News, 13 April 2008: <a href="https://gulfnews.com/uae/health/dubai-health-authority-unveils-new-logo-2-1.97701" target="_blank" rel="noopener">“Dubai Health Authority unveils new logo”</a>, after almost 1,000 staff voted for it, out of four options. Khaleej Times, 14 April 2008: <a href="https://www.khaleejtimes.com/uae/dubai-health-authority-unveils-logo" target="_blank" rel="noopener">“Dubai Health Authority unveils logo”</a>.</p>
-      <a class="big-btn" href="../../stories/dha/">See the full story <span aria-hidden="true">→</span></a>
+
+<!-- 4 · in use, and what followed: every piece at once, whole, on one screen -->
+<section class="dh-use" aria-label="In use, and what followed">
+  <div class="lead"><div><span class="fp-lab"><b>02</b> · In use</span><h2>The mark at work, <b class="tw">and what followed.</b></h2></div><p>The logo on its cards, the stationery and the website as we rendered them, the launch leaflet, and a later campaign for the authority.</p></div>
+  <div class="rows">
+    <div class="row" style="--sum:4.2426;--gaps:48px">
+      <figure style="--ar:1.4139"><img src="a/r-card.webp" width="1920" height="1358" alt="The logo in two colours on a white card, and in white on a turquoise card" loading="lazy" decoding="async"><figcaption><b>The mark, chosen</b>Two colours on white, white on turquoise · render, 2010</figcaption></figure>
+      <figure style="--ar:1.4139"><img src="a/r-stationery.webp" width="1920" height="1358" alt="Letterhead, folder, envelope, card and disc" loading="lazy" decoding="async"><figcaption><b>Stationery</b>Letterhead, folder, envelope, card, disc · render, 2010</figcaption></figure>
+      <figure class="w" style="--ar:1.4139"><img src="a/r-website.webp" width="1920" height="1358" alt="The website design on a screen" loading="lazy" decoding="async"><figcaption><b>The website</b>The screen design · render, 2010</figcaption></figure>
+    </div>
+    <div class="row" style="--sum:3.7906;--gaps:48px">
+      <figure class="w" style="--ar:2.3781"><img src="a/leaflet.webp" width="2000" height="841" alt="The launch leaflet, opened flat: the butterfly cover, the text, a father lifting his child" loading="lazy" decoding="async"><figcaption><b>The launch leaflet</b>Opened flat · print file, 28 May 2008</figcaption></figure>
+      <figure style="--ar:.7051"><img src="a/btf-1.webp" width="1100" height="1560" alt="Breathe The Freedom: a couple lift a baby under an open sky" loading="lazy" decoding="async"><figcaption><b>Breathe the freedom</b>A later campaign for the authority · 2008</figcaption></figure>
+      <figure style="--ar:.7074"><img src="a/btf-2.webp" width="1100" height="1555" alt="Breathe The Freedom: a father carries his daughter on his shoulders" loading="lazy" decoding="async"><figcaption><b>Its second picture</b>Quit smoking · 2008</figcaption></figure>
     </div>
   </div>
 </section>
+
+<!-- 5 · the result, from the newspapers of April 2008 -->
+<section class="fp-res" aria-label="The result">
+  <div class="hd"><h2>The result.</h2><span class="fp-lab"><b>03</b> · In the newspapers of April 2008</span></div>
+  <div class="top">
+    <div class="nums"><div><b>Almost 1,000</b><span>of the authority’s staff voted for the mark, out of four options</span></div></div>
+    <figure class="dh-vote"><canvas aria-hidden="true"></canvas><figcaption class="fp-lab"><b>Drawing</b> · a point for each vote · made for this portfolio</figcaption></figure>
+  </div>
+  <p class="src fp-lab">Source: Gulf News, 13 April 2008, “Dubai Health Authority unveils new logo”.</p>
+  <div class="dh-news">
+    <a href="https://gulfnews.com/uae/health/dubai-health-authority-unveils-new-logo-2-1.97701" target="_blank" rel="noopener"><span class="fp-lab"><b>Gulf News</b> · 13 April 2008</span><span class="hl">“Dubai Health Authority unveils new logo”</span><span class="say">Almost 1,000 of the authority’s staff voted for the new mark.</span></a>
+    <a href="https://www.khaleejtimes.com/uae/dubai-health-authority-unveils-logo" target="_blank" rel="noopener"><span class="fp-lab"><b>Khaleej Times</b> · 14 April 2008</span><span class="hl">“Dubai Health Authority unveils logo”</span><span class="say">The staff chose from a short-list of four logos, by electronic vote.</span></a>
+  </div>
+  <details class="fp-more"><summary>More figures</summary>
+    <div class="nums">
+      <div><b>4</b><span>logos on the short-list, put to an electronic vote of the staff</span></div>
+      <div><b>84%</b><span>of expatriates aged 25 and over saw the print campaign at least once; 83% of locals and Arabs</span></div>
+      <div><b>47</b><span>lamp-post poles on three roads in the media plan, all back-lit. Planned</span></div>
+      <div><b>US$2.3M</b><span>launch campaign, the media buy included</span></div>
+      <div><b>13</b><span>titles carried it: five national newspapers and eight magazines, Arabic and English</span></div>
+    </div>
+    <p class="src fp-lab">Short-list and vote: Khaleej Times, 14 April 2008. Reach: the media agency’s performance report for UAE print media, 1 March to 22 May 2008; it does not cover outdoor. Poles: the media plan of 8 April 2008, which is unsigned, so its counts are plans. Campaign: a US$2.3 million launch campaign, the media buy included, from our own records. Titles: the media agency’s evaluation report, June 2008. The media agency was MediaEdge:CIA.</p>
+  </details>
+</section>
+
+<!-- 7 · the film, the credits, on -->
+<section class="fp-end fin">
+  <button class="film" type="button" data-film="a/hero-1600.mp4" data-film-p="a/hero-p.mp4" data-title="The mark and its launch · 3D film made for this portfolio · silent" aria-label="Play the 3D film of the mark and its launch, made for this portfolio, silent">
+    <picture><source media="(max-width:760px)" srcset="a/hero-logo-p.webp"><img src="a/hero-logo.webp" width="1600" height="900" alt="" loading="lazy" decoding="async"></picture>
+    <span class="t"><span class="fp-lab"><b>3D film</b> · made for this portfolio · 0:21 · silent</span><b>Play the film.</b></span><span class="go" aria-hidden="true"></span>
+  </button>
+  <noscript><span class="fp-nojs"><a class="fp-play" href="a/hero-1600.mp4">Open the film <small>0:21 · video file</small></a></span></noscript>
+  <a class="dh-story" href="../../stories/dha/"><span class="fp-lab">Every step, in order</span><b>The full story</b><span aria-hidden="true">→</span></a>
+  <div class="fp-cred">
+    <div><span class="fp-lab">Role</span>Antoni Gerges<br>Executive Creative Director</div>
+    <div><span class="fp-lab">Made by</span>AntBrush.</div>
+    <div><span class="fp-lab">For</span>Dubai Health Authority, Government of Dubai.</div>
+    <div><span class="fp-lab">The film and the models</span>Made for this portfolio from the 2008 artwork. No film from 2008 has been found.</div>
+  </div>
+  <a class="fp-next" href="../../work/"><span class="fp-lab">More work</span><b>All work</b><span aria-hidden="true">→</span></a>
+</section>
 </main>
-<nav class="pnext" style="--nbg:#F6F0E2;--nfg:#3B1E5A" aria-label="Next project">
-  <a href="../anti-bullying/">
-    <div><p class="label">Next</p><h2>Give growth a language.</h2><p style="opacity:.72;margin-top:16px">National Bullying Prevention Week</p></div>
-    <div class="pic"><img src="../../img/anti-bullying/kv-1600.webp" srcset="../../img/anti-bullying/kv-800.webp 800w, ../../img/anti-bullying/kv-1600.webp 1600w, ../../img/anti-bullying/kv-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="1600" height="775" alt="The National Bullying Prevention Week key visual: children on a green hill that grows out of an open book" loading="lazy" decoding="async"></div>
-  </a>
-</nav>
+
+<div class="fp-player" role="dialog" aria-label="Film player"><video playsinline preload="none"></video><div class="bar"><span class="ti"></span><button class="x" type="button">Close</button></div></div>
+
 <footer class="foot"><div class="wrap row">
   <p style="margin:0">Antoni Gerges · Executive Creative Director · <a href="mailto:antoni@antbrush.com">antoni@antbrush.com</a></p>
   <nav aria-label="Footer"><a href="../../work/">Work</a><a href="../../about/">About</a><a href="../../contact/">Contact</a></nav>
 </div></footer>
-<script src="../../assets/site.js?v=afd4c1e0" defer></script>
+<script src="../../assets/fp/fp.js?v=18" defer></script>
+<script type="module" src="dh.js?v=15"></script>
 </body>
 </html>

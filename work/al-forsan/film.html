@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Al Forsan · the opening film, frame by frame</title>
+<link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
+<!-- This page is not part of the site. It draws the opening film of lab/al-forsan one frame at a time (window.renderAt(seconds)), from the same
+     vectors and the same builders as the page's 3D chapter (af.js). ?p=1 frames it for a phone. The film was recorded from it with Playwright.
+     One take, no cut inside it: the gate stands on sand at dawn; the knight rides out of the light; the gate draws back into the mark and rises
+     to its place; the knight, in the gold of the mark from the start, takes his place in it; the dunes sweep in; the English name stands up beside it (the
+     manual's own English lockup, page 24). The camera never cuts. -->
+<style>html,body{margin:0;height:100%;background:#140f06;overflow:hidden}canvas{display:block;width:100vw;height:100vh}</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script type="module">
+import { T, loadKit, mats, Rig, buildMark, buildGate, U, Y_FOOT, Y_HOOF, LX, LDY } from './af.js';
+const { ease, seg, L } = U, PH = /[?&]p=1/.test(location.search), DUR = 15;
+const canvas = document.getElementById('c'), renderer = new T.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1); renderer.setSize(innerWidth, innerHeight, false); renderer.setClearColor(0x140f06, 1);   /* Al Forsan black, PANTONE Black U (manual p.35): the page's ground */
+renderer.toneMapping = T.ACESFilmicToneMapping; renderer.toneMappingExposure = 1; renderer.shadowMap.enabled = true; renderer.shadowMap.type = T.PCFShadowMap;
+const scene = new T.Scene(); scene.fog = new T.Fog(0x140f06, 30, 80);
+const cam = new T.PerspectiveCamera(30, innerWidth / innerHeight, .1, 300);
+/* the same studio as the page's 3D chapter: a dark room with three soft boxes, a dark floor that mirrors a little */
+{ const pm = new T.PMREMGenerator(renderer), env = new T.Scene(); env.add(new T.Mesh(new T.BoxGeometry(40, 40, 40), new T.MeshBasicMaterial({ color: 0x050505, side: T.BackSide })));
+  [[0, 14, 6, 16, 5], [-16, 6, 4, 4, 9], [14, 5, -6, 5, 8]].forEach(b => { const m = new T.Mesh(new T.PlaneGeometry(b[3], b[4]), new T.MeshBasicMaterial({ color: 0xffffff, side: T.DoubleSide })); m.position.set(b[0], b[1], b[2]); m.lookAt(0, 1, 0); env.add(m); });
+  scene.environment = pm.fromScene(env, .04).texture; scene.environmentIntensity = .55; }
+scene.add(new T.HemisphereLight(0xffffff, 0x101014, .5));
+const floor = new T.Mesh(new T.PlaneGeometry(900, 400), new T.MeshStandardMaterial({ color: 0x17110a, roughness: .7, metalness: 0, transparent: true, opacity: .74 })); floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; floor.renderOrder = 2; scene.add(floor);
+const key = new T.SpotLight(0xffffff, 0, 70, .7, .95, 1.6); key.position.set(5, 13, 12); key.target.position.set(0, 2.8, 0); key.castShadow = true; key.shadow.mapSize.set(2048, 2048); key.shadow.bias = -.0004; key.shadow.radius = 5; scene.add(key, key.target);
+const rim = new T.DirectionalLight(0xffe6c0, .35); rim.position.set(-8, 6, -10); rim.target.position.set(0, 3, 0); scene.add(rim, rim.target);
+const kit = await loadKit('a/3d/mark.svg'), M = mats(), rig = Rig(scene), g = new T.Group(); scene.add(g);
+/* the mark is the manual's English lockup (icon, then AL FORSAN over INTERNATIONAL SPORTS RESORT): it stands with its foot just above the floor */
+const mg = new T.Group(); mg.position.y = -LDY; g.add(mg);
+const gate = buildGate(kit, rig, g, M, { z1: 2.6, sun: 2300, twins: true }), mark = buildMark(kit, rig, mg, M);
+/* the knight is the mark's own knight from the first frame: his outline from the manual given depth, in gold. He rides out of the gate
+   and takes his place in the mark himself, so the mark's second knight is never shown */
+mark.P.rider.visible = false;
+const v = new T.Vector3(), cA = new T.Vector3(), cB = new T.Vector3(), tA = new T.Vector3(), tB = new T.Vector3();
+window.DUR = DUR;
+window.renderAt = t => {
+  const m = ease(seg(t, 4.9, 8.7)), s = L(1.5, 1, m), lift = ease(seg(m, .38, 1));   /* the gate leaves the ground only once the sand and the dawn are gone */
+  /* the gate at dawn: the light is already rising at the first frame; the knight rides out of it */
+  const a = L(.14, 1, seg(t, 0, 4.8)); gate.set(a, t);
+  /* one move, no cut: the gate draws back into the mark and rises to its place, the sand and the dawn go, the front light comes up */
+  gate.gg.scale.set(s, s, s * L(1, .5 / gate.D, m)); gate.gg.position.y = (Y_FOOT - LDY) * lift - Y_FOOT * s;
+  gate.sky.material.color.multiplyScalar(1 - ease(seg(m, 0, .55))); gate.sun.intensity *= 1 - ease(seg(m, 0, .4));
+  gate.sand.material.opacity = 1 - ease(seg(m, .02, .42));
+  gate.rg.scale.setScalar(s); gate.rg.position.y = (Y_HOOF - LDY) * lift - Y_HOOF * s;
+  if (m > 0) { gate.rider.position.set(gate.rider.position.x * (1 - m), gate.rider.position.y * (1 - m), L(gate.Z1, .14, m) / s); }
+  mark.set(0, { arch: 1, dome: 1, close: 1, rider: 1, dunes: seg(t, 6.7, 9.2), names: seg(t, 9.1, 11.8) });
+  mark.P.arch.visible = mark.P.dome.visible = mark.P.rider.visible = false;
+  key.intensity = L(330 * ease(seg(t, 0, 2.6)) + 90, 430, m); floor.material.opacity = L(.74, .87, m);
+  rig.sync();
+  /* the camera: low on the sand, pushing in; then it draws back and up as the gate becomes the mark; then a slow push */
+  cA.set(L(-3.4, -1.6, ease(seg(t, 0, 4.9))), L(1.05, 1.4, ease(seg(t, 0, 4.9))), L(15.5, 11.2, ease(seg(t, 0, 4.9)))); tA.set(L(.5, 0, seg(t, 0, 4.9)), L(2.0, 1.85, seg(t, 0, 4.9)), 0);
+  /* the last move: as the name stands up beside the mark, the camera glides right to hold the whole English lockup, then pushes in slowly */
+  const e = ease(seg(t, 9.0, DUR)), gx = LX * ease(seg(t, 8.6, 12.2)), D = PH ? L(12.6, 11.7, e) : L(14.6, 13.6, e), yc = 2.0; cB.set(gx + L(-.6, 0, e), yc + .05, D); tB.set(gx, yc, 0);
+  const k = ease(seg(t, 4.9, 9.0)); cam.position.lerpVectors(cA, cB, k); v.lerpVectors(tA, tB, k); cam.lookAt(v); cam.fov = L(PH ? 27 : 31, 30, k); cam.updateProjectionMatrix();
+  renderer.render(scene, cam);
+};
+window.renderAt(0); window.ready = true;
+</script>
+</body>
+</html>

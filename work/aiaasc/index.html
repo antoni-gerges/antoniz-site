@@ -1,87 +1,285 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>AIAASC · Antoni Gerges</title>
-<meta name="description" content="Make standards clear. Creative direction · AIAASC repositioning, identity and campaigns. AntBrush · from Dubai · 2020–22.">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Antoni Gerges">
-<meta property="og:title" content="AIAASC · Antoni Gerges">
-<meta property="og:description" content="Make standards clear. Creative direction · AIAASC repositioning, identity and campaigns. AntBrush · from Dubai · 2020–22.">
-<meta property="og:url" content="https://antoniz.com/work/aiaasc/">
-<meta property="og:image" content="https://antoniz.com/assets/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Antoni Gerges, Executive Creative Director, above Lake Brienz in Interlaken">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AIAASC · the plan, the identity, the campaigns · Antoni Gerges</title>
+<link rel="canonical" href="https://antoniz.com/work/aiaasc/">
+<meta name="description" content="AIAASC, the American International Accreditation Association of Schools and Colleges: a plan to take an American standard for schools to the world, a new identity from the American flag, and its campaigns, 2020 to 2022. Antoni Gerges, Executive Creative Director. AntBrush.">
 <link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..800;1,14..32,300..800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
 <link rel="preload" href="../../assets/jost-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../assets/site.css?v=afd4c1e0">
-<link rel="stylesheet" href="../../assets/oldcase.css">
+<link rel="stylesheet" href="../../assets/fp/fp.css?v=34">
+<style>
+/* ===== THE BRAND ROOM (T-40) · copy this block to every project page and change only the values =====
+   His frame stays his: the header, his mark, the menu and the footer keep his system. Inside the page, AIAASC's own palette leads,
+   every value taken from its brand toolkit (AC/01-WORK/018-brand-guidelines.pdf, 18 Aug 2021; page numbers as printed, PDF page in brackets).
+   Type: the toolkit's fonts are Ivy Mode (headlines) and Gotham (body). Neither is on this Mac or on the site as a web font, so the page keeps
+   Jost and Inter. */
+body.fp.aiaasc{
+  --brand-navy:#283473;            /* Dark Blue, Pantone 2757 C · primary palette, p. 26 (27) */
+  --brand-red:#dc2034;             /* Red, Pantone 1795 C · primary palette, p. 26 (27) */
+  --brand-white:#ffffff;           /* the mark reversed out of navy · logo colour variations, p. 25 (26) */
+  --brand-ink:#302c3a;             /* the toolkit's own dark pages (every section opener, e.g. p. 3 (4)) */
+  --brand-paper:#f5f4f5;           /* the toolkit's own light pages (e.g. p. 60 (61)) */
+  --brand-blue:#4c75ba;            /* Light Blue, Pantone 7683 C · secondary palette, p. 27 (28): accents only, never a field */
+  /* where each one goes */
+  --room-ground:var(--brand-ink);  /* dark sections, the 3D room, the films */
+  --room-field:var(--brand-navy);  /* the statement, online, the programmes, the end card: navy holds a large field in its own work */
+  --room-light:var(--brand-paper); /* the result: the mark in its own colours */
+  --room-accent:var(--brand-red);  /* markers, rules that point, the Read more line */
+  --line:rgba(255,255,255,.2);
+}
+body.fp.aiaasc main,body.fp.aiaasc .fp-stick,body.fp.aiaasc .fp-hero{background:var(--room-ground)}
+/* the toolkit marks every heading with a small red square: the page's labels do the same */
+.aiaasc main .fp-lab>b:first-child::before,.aiaasc .aa-prog .tl>li>.fp-lab::before{content:"";display:inline-block;width:.62em;height:.62em;background:var(--room-accent);margin-right:.6em;vertical-align:.02em}
+.aiaasc .fp-more summary{border-bottom-color:var(--room-accent)}
+/* fields: navy and paper, as the toolkit uses them */
+.aiaasc .fp-say,.aiaasc .aa-web,.aiaasc .aa-prog,.aiaasc .fp-end{background:var(--room-field)}
+.aiaasc .fp-say h2,.aiaasc .aa-web h2,.aiaasc .aa-prog h2{color:var(--brand-white)}
+.aiaasc .fp-res{background:var(--room-light);color:var(--brand-navy)}
+.aiaasc .fp-res .hd h2,.aiaasc .fp-res .nums b{color:var(--brand-navy)}
+.aiaasc .fp-res .nums{border-top-color:rgba(40,52,115,.22)}.aiaasc .fp-res .nums span{color:rgba(40,52,115,.8)}
+.aiaasc .fp-res .fp-lab{color:rgba(40,52,115,.78)}.aiaasc .fp-res .fp-lab b{color:var(--brand-navy)}
+.aiaasc .fp-res .aa-q{border-top-color:rgba(40,52,115,.22)}.aiaasc .fp-res .aa-q p{color:var(--brand-navy)}
+/* the 3D room and the cut to the film sit on the brand's dark, not on black */
+.aiaasc .fp-built,.aiaasc .fp-built .fr,.aiaasc .fp-reel .ly{background:var(--room-ground)!important}
+.aiaasc .fp-model .veil{background:linear-gradient(90deg,rgba(48,44,58,.78) 0,rgba(48,44,58,0) 46%),linear-gradient(0deg,rgba(48,44,58,.7) 0,rgba(48,44,58,0) 30%)}
+@media (max-width:760px){.aiaasc .fp-model .veil{background:linear-gradient(0deg,var(--brand-ink) 0,rgba(48,44,58,.92) 15%,rgba(48,44,58,0) 25%)!important}}
+body.fp.aiaasc .fp-hero .v,body.fp.aiaasc .fp-reel .ly video,body.fp.aiaasc .fp-built .fr video{background:transparent}
+/* ===== end of the brand room ===== */
+
+/* AIAASC: this page's own rules. The engine files are used unchanged. Nothing on this page is cropped. */
+/* 1 · the opening: the flag becomes the mark, a film made from this page's own 3D model. Whole, and nothing of ours lies over it:
+   the line, the source and Play sit under the film. The page's name stays for screen readers. */
+.fp-hero h1{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.fp-hero.whole.aa-open{height:auto;min-height:0;display:flex;flex-direction:column;align-items:center;padding:70px 0 clamp(18px,3vh,30px)}
+.fp-hero.whole.aa-open::after{display:none}
+.fp-hero.whole.aa-open .v{position:relative;inset:auto;top:auto;left:auto;display:block;width:min(100%,calc((100svh - 190px) * 16 / 9));height:auto;aspect-ratio:16/9;object-fit:contain;transform:none!important}
+.fp-hero.whole.aa-open .in{position:relative;inset:auto;width:100%;padding:clamp(14px,2.2vh,22px) var(--g) 0;opacity:1!important;display:block}
+.fp-hero.whole.aa-open .row{animation:none;justify-content:space-between;align-items:flex-end;gap:clamp(18px,3vw,48px)}
+.fp-hero.aa-open .what strong{font-weight:300}.fp-hero.aa-open .what strong b{font-weight:600}
+.fp-hero.aa-open .fp-cue{display:none}
+@media (max-width:760px){
+  .fp-hero.whole.aa-open{padding-top:73px}
+  .fp-hero.whole.aa-open .v{width:100%;aspect-ratio:4/5;top:auto}
+  .fp-hero.whole.aa-open .in{padding:18px var(--g) 0}
+}
+/* 2 · composed screens: one set of a presentation's pages, whole, seen at once (no gallery, no stack) */
+.aa-set{padding:clamp(64px,10vh,120px) var(--g) clamp(30px,6vh,64px)}
+.aa-set .hd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:14px var(--g);align-items:end;margin-bottom:clamp(20px,3.6vh,36px)}
+.aa-set .hd>.fp-lab{grid-column:1 / -1}
+.aa-set h2{font-size:clamp(36px,4.4vw,74px);line-height:.95;letter-spacing:-.035em;font-weight:300}
+.aa-set .hd p{font-size:clamp(15px,1.15vw,18px);line-height:1.45;color:rgba(255,255,255,.8);max-width:32em}
+.aa-set .nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px clamp(16px,2vw,30px)}
+.aa-set .nums div{font-size:14px;line-height:1.38;color:rgba(255,255,255,.76)}
+.aa-set .nums b{display:block;font:600 clamp(34px,3.4vw,58px)/1 "Jost",system-ui,sans-serif;letter-spacing:-.03em;color:#fff;margin-bottom:6px;font-variant-numeric:lining-nums}
+.aa-set .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.8vw,26px);max-width:min(1180px,calc((100svh - 330px) * 1.78 * 1.5 + 60px))}
+.aa-set figure{margin:0;min-width:0}
+.aa-set img{width:100%;height:auto;display:block;outline:1px solid rgba(255,255,255,.14)}
+.aa-set figcaption{margin-top:9px;font-size:14px;line-height:1.38;color:rgba(255,255,255,.74)}
+.aa-set figcaption b{display:block;font:500 16.5px/1.2 "Jost",system-ui,sans-serif;color:#fff;margin-bottom:2px}
+@media (max-width:760px){
+  .aa-set{padding-top:64px}
+  .aa-set .hd{grid-template-columns:1fr}
+  .aa-set .nums b{font-size:40px}
+  .aa-set .grid{grid-template-columns:1fr 1fr;gap:16px 12px;max-width:none}
+  /* the page that carries the point is read at full width first; the last one closes the set at full width */
+  .aa-set .grid .ph1{grid-column:1 / -1;order:-1}.aa-set .grid .ph9{grid-column:1 / -1;order:9}
+  .aa-set figcaption{font-size:13px}.aa-set figcaption b{font-size:15px}
+}
+/* 3 · online: the teaser at its own size, and the home page design whole */
+.aa-web{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:clamp(24px,4vw,64px);align-items:center;padding:clamp(64px,10vh,120px) var(--g) clamp(30px,6vh,64px)}
+.aa-web h2{font-size:clamp(40px,5.4vw,96px);line-height:.92;letter-spacing:-.04em;font-weight:300;margin:14px 0 16px}
+.aa-web .tx>p{font-size:clamp(15px,1.15vw,18px);line-height:1.45;color:rgba(255,255,255,.8);max-width:28em}
+.aa-web figure{margin:0}
+.aa-web .tz{margin:0}
+.aa-web .tz video{width:min(400px,32vw,44svh);aspect-ratio:1;height:auto;object-fit:contain;display:block;background:#000;outline:1px solid rgba(255,255,255,.14)}
+.aa-web .web img{height:min(80svh,760px);width:auto;max-width:100%;display:block}
+.aa-web figcaption{margin-top:10px}
+@media (max-width:760px){
+  .aa-web{grid-template-columns:1fr;padding-top:64px}
+  .aa-web .tz video{width:min(100%,360px)}
+  .aa-web .tz{margin-top:6px}
+  .aa-web .web{justify-self:stretch}
+  .aa-web .web img{height:auto;width:min(66vw,300px);margin:0 auto}
+  .aa-web .web figcaption{text-align:center}
+}
+/* 4 · for teachers and children: the programmes, by date (no artwork of them is on file) */
+.aa-prog{padding:clamp(70px,11vh,130px) var(--g) clamp(30px,6vh,64px)}
+.aa-prog h2{font-size:clamp(36px,4.6vw,80px);line-height:.95;letter-spacing:-.035em;font-weight:300;margin:14px 0 clamp(24px,4.5vh,44px)}
+.aa-prog .tl{list-style:none;margin:0;padding:24px 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(22px,4vh,40px) var(--g)}
+.aa-prog .tl li{font-size:clamp(15px,1.1vw,17px);line-height:1.45;color:rgba(255,255,255,.8)}
+.aa-prog .tl b{display:block;font:600 clamp(22px,2vw,32px)/1.08 "Jost",system-ui,sans-serif;letter-spacing:-.02em;color:#fff;margin:8px 0 8px}
+.aa-prog .where{margin-top:clamp(30px,6vh,60px);border-top:1px solid var(--line);padding-top:22px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3.2fr);gap:var(--g)}
+.aa-prog .where p{font-size:clamp(16px,1.25vw,20px);line-height:1.5;color:rgba(255,255,255,.86);max-width:52em}
+.aa-prog .where p b{color:#fff;font-weight:600}
+.aa-prog .src{display:block;margin-top:20px}
+@media (max-width:1000px){.aa-prog .tl{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.aa-prog .tl{grid-template-columns:1fr}.aa-prog .where{grid-template-columns:1fr;gap:10px}}
+/* 5 · the rest */
+.fp-more .tx figure.in{margin:14px 0 0}.fp-more .tx figure.in img{width:100%;height:auto;display:block}.fp-more .tx figure.in figcaption{margin-top:8px}
+/* the released films play clean: the picture sits whole in the upper part of the screen; its title and line sit under it, never on it */
+.aiaasc .fp-reel .ly::after{display:none}
+.aiaasc .fp-reel .ly video.whole{inset:auto;left:0;right:0;top:clamp(104px,14vh,128px);width:100%;height:calc(100svh - clamp(104px,14vh,128px) - clamp(150px,20vh,190px))}
+.aiaasc .fp-reel .cap{bottom:clamp(22px,4vh,40px)}.aiaasc .fp-reel .cap h3{font-size:clamp(40px,5.4vw,90px)}
+@media (max-width:760px){.aiaasc .fp-reel .ly video.whole{top:96px;height:40svh}.aiaasc .fp-reel .cap h3{font-size:clamp(40px,12vw,56px)}}
+.fp-res .shot{margin:clamp(26px,5vh,48px) 0 0;max-width:1100px}.fp-res .shot.mk{max-width:min(520px,80vw)}.fp-res .shot img{width:100%;height:auto;display:block}.fp-res .shot figcaption{margin-top:10px}
+.fp-end .film{aspect-ratio:16/9}.fp-end .film:hover video{transform:none}
+.aa-q{margin:clamp(36px,7vh,72px) 0 0;padding-top:clamp(22px,4vh,36px);border-top:1px solid var(--line);max-width:62em}
+.aa-q p{font:300 clamp(22px,2.3vw,38px)/1.22 "Jost",system-ui,sans-serif;letter-spacing:-.015em;color:#fff;margin:0 0 14px}
+/* the back-to-school film is square and small: it plays at its own size */
+.fp-built.native.sqf .fr video{width:min(600px,84vw,54vh);aspect-ratio:1;top:52%}
+</style>
+<noscript><style>.fp-pin{height:auto!important}.fp-stick{position:static;height:auto;overflow:visible}.fp-reel .ly{position:relative;height:70vh}.fp-model canvas,.fp-model .veil,.fp-ticks,.fp-cue,.fp-bar{display:none}.fp-model .intro{position:static;transform:none;padding:60px var(--g) 20px}.fp-model .st{position:static;opacity:1;transform:none;width:auto;padding:24px var(--g) 8px}.fp-built{position:static;opacity:1;transform:none;width:auto;max-width:720px;margin:0 var(--g) 24px}.fp-model .chap{position:static;display:block;padding:0 var(--g)}.fp-hero h1,.fp-hero .row{animation:none}.fp-built{visibility:visible;height:auto;background:none}.fp-built .fr{position:relative;inset:auto;aspect-ratio:16/9}.fp-built .fr::after{display:none}.fp-built .fp-lab,.fp-model .kind{position:static;text-align:left;margin-top:8px}@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{font-size:14px;padding:6px 8px}}button[data-film].fp-play{display:none}button[data-film]{pointer-events:none;cursor:default}button[data-film] .go{display:none}.fp-nojs{display:block;margin-top:14px}.fp-built .fr{aspect-ratio:auto}.fp-built .fr video{position:static;width:100%;height:auto;transform:none}</style></noscript>
 </head>
-<body class="proj p-aiaasc" style="--bg:#0E1C4A;--fg:#F4F2EC;--sub:rgba(244,242,236,.68);--acc:#E3262F;--sheet:#0E1C4A;--hdr-bg:#0E1C4A;--hdr-fg:#F4F2EC;--hdr-mk:#E3262F">
+<body class="fp aiaasc">
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr">
-  <a class="pill brand" href="../../" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
+  <a class="pill brand" href="../../index.html" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
   <div class="pill">
     <nav class="nav" id="nav" aria-label="Site"><a href="../../work/" aria-current="page">Work</a><a href="../../about/">About</a><a href="../../contact/">Contact</a><a href="../../assets/Antoni-Gerges-CV.pdf" class="navcv" target="_blank" rel="noopener">CV</a></nav>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
   </div>
 </header>
 <main id="main">
-<section class="p-hero wrap">
-  <p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>AIAASC · from Dubai · 2020–22</span></p>
-  <h1 class="rv d1">Make standards clear.</h1>
-  <div class="cap rv d2">
-    <p class="role"><b>Creative direction · AIAASC repositioning, identity and campaigns</b><span>AntBrush · from Dubai · 2020–22</span></p>
-    <p class="sum">An American accreditation association for schools, taking its standard to the world. We began with a plan, not a logo: who it serves, where, and in what order. The mark came from its own flag: a red line rising through the A to a star. Then a year of work under it, led from Dubai.</p>
-  </div>
-</section>
-<section class="pfilm wrap" aria-label="The films"><div class="fgrid three"><button class="film rv" type="button" data-film="../../media/films/aiaasc-school-720.mp4" data-film-sm="../../media/films/aiaasc-school-720.mp4" data-film-title="Back to school"><img src="../../media/films/aiaasc-school-poster.jpg" alt="" loading="lazy" decoding="async"><span class="fcap"><span class="pl" aria-hidden="true"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z" fill="currentColor"/></svg></span><span><b>Back to school</b><span>0:55</span></span></span></button><button class="film rv" type="button" data-film="../../media/films/aiaasc-k12-720.mp4" data-film-sm="../../media/films/aiaasc-k12-720.mp4" data-film-title="Accreditation: K-12"><img src="../../media/films/aiaasc-k12-poster.jpg" alt="" loading="lazy" decoding="async"><span class="fcap"><span class="pl" aria-hidden="true"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z" fill="currentColor"/></svg></span><span><b>Accreditation: K-12</b><span>0:49</span></span></span></button><button class="film rv" type="button" data-film="../../media/films/aiaasc-higher-720.mp4" data-film-sm="../../media/films/aiaasc-higher-720.mp4" data-film-title="Accreditation: higher education"><img src="../../media/films/aiaasc-higher-poster.jpg" alt="" loading="lazy" decoding="async"><span class="fcap"><span class="pl" aria-hidden="true"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z" fill="currentColor"/></svg></span><span><b>Accreditation: higher education</b><span>0:45</span></span></span></button></div></section>
-<section class="stage wrap" aria-label="The work"><div class="rowg c1"><figure class="fig rv"><div class="m settle" style="aspect-ratio:21/9;"><img src="../../img/aiaasc/hero-960.webp" srcset="../../img/aiaasc/hero-800.webp 800w, ../../img/aiaasc/hero-960.webp 960w" sizes="(max-width:760px) 100vw, 92vw" width="960" height="679" alt="A is for Alpha. The concept plate: a star through the letter." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>A is for Alpha.</b> The concept plate: a star through the letter.</span></figcaption></figure></div></section>
-<section class="chapter wrap" aria-labelledby="ch-0">
-  <div class="ch-h">
-    <div><p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>The idea</span></p><h2 id="ch-0" class="rv d1">A star through the A.</h2></div>
-    <p class="rv d2">A is for Alpha, the first. We sent a star through it. Blue and red come from the American flag. The two letters the mark leaves out, S and C, turn red in the name.</p>
-  </div>
-  <div class="rowg c2"><figure class="fig contain rv"><div class="m" style="aspect-ratio:1/1;background:#F4F4F4;"><img src="../../img/aiaasc/build-1501.webp" srcset="../../img/aiaasc/build-800.webp 800w, ../../img/aiaasc/build-1501.webp 1501w" sizes="(max-width:760px) 100vw, 46vw" width="1501" height="1544" alt="The mark, and how it is built. A star, a triangle, a shooting line and an arrow of growth." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>The mark, and how it is built.</b> A star, a triangle, a shooting line and an arrow of growth.</span></figcaption></figure><figure class="fig contain rv"><div class="m" style="aspect-ratio:1/1;background:#F4F4F4;"><img src="../../img/aiaasc/flag-964.webp" srcset="../../img/aiaasc/flag-800.webp 800w, ../../img/aiaasc/flag-964.webp 964w" sizes="(max-width:760px) 100vw, 46vw" width="964" height="459" alt="Blue and red, from the American flag." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Blue and red,</b> from the American flag.</span></figcaption></figure></div>
-  <div class="rowg c1"><figure class="fig contain rv"><div class="m" style="aspect-ratio:16/9;background:#FFFFFF;"><img src="../../img/aiaasc/plan-1500.webp" srcset="../../img/aiaasc/plan-800.webp 800w, ../../img/aiaasc/plan-1500.webp 1500w" sizes="(max-width:760px) 100vw, 92vw" width="1500" height="843" alt="We began with a plan, not a logo. Three phases, from our proposal of November 2020." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>We began with a plan, not a logo.</b> Three phases, from our proposal of November 2020.</span></figcaption></figure></div>
-  
-</section>
-<section class="chapter wrap" aria-labelledby="ch-1">
-  <div class="ch-h">
-    <div><p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>In use</span></p><h2 id="ch-1" class="rv d1">A year under one mark.</h2></div>
-    <p class="rv d2">Campaigns for the new school year, films on what accreditation gives a school, programmes for teachers and children. Every film ends on the mark.</p>
-  </div>
-  <div class="rowg c3"><figure class="fig rv"><div class="m settle" style="aspect-ratio:1/1;"><img src="../../img/aiaasc/world-1199.webp" srcset="../../img/aiaasc/world-800.webp 800w, ../../img/aiaasc/world-1199.webp 1199w" sizes="(max-width:760px) 100vw, 31vw" width="1199" height="1200" alt="It’s time to impact the world." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>It’s time to impact the world.</b> </span></figcaption></figure><figure class="fig rv"><div class="m settle" style="aspect-ratio:1/1;"><img src="../../img/aiaasc/strategy-1200.webp" srcset="../../img/aiaasc/strategy-800.webp 800w, ../../img/aiaasc/strategy-1200.webp 1200w" sizes="(max-width:760px) 100vw, 31vw" width="1200" height="1200" alt="It’s time to start your strategy." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>It’s time to start your strategy.</b> </span></figcaption></figure><figure class="fig rv"><div class="m settle" style="aspect-ratio:1/1;"><img src="../../img/aiaasc/you-are-1199.webp" srcset="../../img/aiaasc/you-are-800.webp 800w, ../../img/aiaasc/you-are-1199.webp 1199w" sizes="(max-width:760px) 100vw, 31vw" width="1199" height="1200" alt="It’s time to be who you are." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>It’s time to be who you are.</b> </span></figcaption></figure></div>
-  <div class="rowg c75"><figure class="fig rv"><div class="m settle" style="aspect-ratio:16/9;"><video data-clip data-src="../../media/clips/aiaasc-clip-k12-1080.mp4" data-src-sm="../../media/clips/aiaasc-clip-k12-720.mp4" poster="../../img/aiaasc/clip-k12-poster.webp" muted loop playsinline preload="none" width="960" height="540" aria-label="K-12 accreditation. From the film."></video></div><figcaption><span class="t"><b>K-12 accreditation.</b> From the film.</span></figcaption></figure><figure class="fig rv"><div class="m settle" style="aspect-ratio:1/1;"><video data-clip data-src="../../media/clips/aiaasc-clip-school-1080.mp4" data-src-sm="../../media/clips/aiaasc-clip-school-720.mp4" poster="../../img/aiaasc/clip-school-poster.webp" muted loop playsinline preload="none" width="630" height="640" aria-label="Back to school. From the film."></video></div><figcaption><span class="t"><b>Back to school.</b> From the film.</span></figcaption></figure></div>
-  <div class="rowg c1"><figure class="fig contain rv"><div class="m" style="aspect-ratio:21/9;"><img src="../../img/aiaasc/end-frame-1280.webp" srcset="../../img/aiaasc/end-frame-800.webp 800w, ../../img/aiaasc/end-frame-1280.webp 1280w" sizes="(max-width:760px) 100vw, 92vw" width="1280" height="720" alt="Every film ends on the mark." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Every film ends on the mark.</b> </span></figcaption></figure></div>
-  
-</section>
-<section class="storylink">
-  <div class="wrap in">
-    <div><p class="label rv" style="color:var(--sub);margin-bottom:20px">The full story</p><h2 class="rv d1">Every step, in order.</h2></div>
-    <div class="rv d2">
-      <p>American International Accreditation Association of Schools and Colleges. Led from Dubai. Design with Nevin Nawar.</p>
-      <a class="big-btn" href="../../stories/aiaasc/">See the full story <span aria-hidden="true">→</span></a>
+
+<!-- 1 · the opening: the American flag lets go of a star and a stripe, and the mark stands. A film of this page's own 3D model, whole. -->
+<section class="fp-hero whole aa-open" aria-label="AIAASC: from the American flag to the mark">
+  <video class="v" muted playsinline loop preload="auto" data-src="a/open.mp4" data-src-p="a/open-p.mp4" data-poster="a/open-poster.webp" data-poster-p="a/open-poster-p.webp" aria-label="The American flag lets go of a star and a red stripe; they become the star and the line of the AIAASC mark, which stands with its full name"></video>
+  <div class="in">
+    <h1>AIAASC</h1>
+    <div class="row">
+      <p class="what"><strong>From the American flag, <b>to the mark.</b></strong><small>3D model, made for this portfolio from the delivered logo</small></p>
+      <span class="btns"><button class="fp-play" type="button" data-film="../../media/films/aiaasc-higher-720.mp4" data-title="AIAASC · the film for colleges · 0:45">Play the released film <small>0:45 · sound</small></button><noscript><span class="fp-nojs"><a class="fp-play" href="../../media/films/aiaasc-higher-720.mp4">Open the released film <small>0:45 · video file</small></a></span></noscript></span>
     </div>
   </div>
 </section>
+
+<!-- 2 · what it was -->
+<section class="fp-say">
+  <span class="fp-lab"><b>The project</b></span>
+  <div>
+    <h2>A plan to take an American standard for schools to the world. <em>I rebranded the association and ran its brand from Dubai.</em></h2>
+    <div class="facts"><div><b>2020 to 2022</b>The plan, the identity, the campaigns</div><div><b>AIAA → AIAASC</b>Four letters on the mark became six</div></div>
+    <details class="fp-more"><summary>Read more</summary><div class="tx"><div><span class="fp-lab"><b>The association</b></span><p>AIAASC is the American International Accreditation Association of Schools and Colleges, in New York. It accredits schools and colleges outside the United States. Its mission in our proposal: “To promote improvement for international schools through American accreditation system.”</p><p>I rebranded it and ran its brand with full responsibility from Dubai, through AntBrush.</p></div><div><span class="fp-lab"><b>The plan</b></span><p>Our strategic marketing proposal of 14 November 2020 set the vision, “a global landmark for quality education and accreditation”, and found the brand weak: “dated, needs an uplift”, “followers rather than leaders”.</p><p>It named seven markets first (the UAE, Saudi Arabia, Kuwait, Oman, Bahrain, Qatar, Egypt and North Africa), four audiences (ministries of education, teachers and their associations, students and parents, partners) and three phases: rebrand and position, from January 2021; outreach, from April 2021; loyalty, from the new academic year in September 2021.</p><figure class="in"><img src="a/p/mp-16.webp" width="1000" height="562" alt="What makes AiAA different: solutions rather than products, workshops, teacher and student campaigns" loading="lazy" decoding="async"><figcaption class="fp-lab">What sets it apart · from the proposal, 14 November 2020</figcaption></figure><figure class="in"><img src="a/p/mp-25.webp" width="1000" height="562" alt="Timeline: phase 1 from January 2021, phase 2 April 2021, phase 3 September 2021" loading="lazy" decoding="async"><figcaption class="fp-lab">The timeline · from the proposal</figcaption></figure></div><div><span class="fp-lab"><b>The idea of the mark</b></span><p>From our presentation of 26 March 2021: A is for Alpha, the first. The star is excellence. The red line is a shooting star, “reaching the stars”. And blue and red, “the colors of the American flag to capture the reputation and quality of the American Education.”</p><p>The mark that read AIAA now reads AIAASC, S and C in red.</p></div><div><span class="fp-lab"><b>The system and the campaigns</b></span><p>The brand toolkit of 18 August 2021 sets out the mark and its icon, colours and type (Ivy Mode and Gotham), stationery, print and advertising formats, roll-ups, banners, signs and gifts.</p><p>Back to school, August and September 2021: eight posts and a film, each beginning “It’s time”. Two films on what accreditation gives, for colleges and for schools. A film for World Teachers’ Day, October 2021.</p><p>The 3D models are made for this portfolio from the delivered logo, the toolkit and the campaign artwork; the flag is drawn for the model.</p></div></div></details>
+  </div>
+</section>
+
+<!-- 3 · the plan, as we presented it: six pages of the proposal, whole, at once -->
+<section class="aa-set" aria-label="The plan, November 2020">
+  <div class="hd">
+    <span class="fp-lab"><b>01</b> · The plan · our strategic marketing proposal, 14 November 2020</span>
+    <h2>We began with a plan, <b class="tw">not a logo.</b></h2>
+    <div class="nums"><div><b>7</b>markets first, from the UAE to Egypt and North Africa</div><div><b>4</b>audiences: ministries, teachers, students and parents, partners</div><div><b>3</b>phases: rebrand and position, reach out, keep</div></div>
+  </div>
+  <div class="grid">
+    <figure class="ph1"><img src="a/p/mp-1.webp" width="1000" height="562" alt="The cover of our proposal: AiAA strategic marketing proposal 2021/2022, AntBrush" loading="lazy" decoding="async"><figcaption><b>The proposal</b>Our plan for them, before any drawing.</figcaption></figure>
+    <figure><img src="a/p/mp-8.webp" width="1000" height="562" alt="Communication: a barcode whose bars read merchandise, brand, advertise, promotion, analysis, product and symbol" loading="lazy" decoding="async"><figcaption><b>One code</b>Brand, advertising, promotion and product, read as one.</figcaption></figure>
+    <figure><img src="a/p/mp-10.webp" width="1000" height="562" alt="Strengths, weaknesses, opportunities and tactics" loading="lazy" decoding="async"><figcaption><b>Where it stood</b>“Followers rather than leaders.”</figcaption></figure>
+    <figure><img src="a/p/mp-12.webp" width="1000" height="562" alt="Target: seven markets and the audiences" loading="lazy" decoding="async"><figcaption><b>Who and where</b>Seven markets first; four audiences.</figcaption></figure>
+    <figure><img src="a/p/mp-6.webp" width="1000" height="562" alt="Our audit of the association's old brand, AiAA: branding dated, website, search, social media, market approach" loading="lazy" decoding="async"><figcaption><b>Before</b>Their mark read AiAA. Our audit: “dated, needs an uplift”.</figcaption></figure>
+  </div>
+</section>
+
+<!-- 4 · the idea, as we presented it: six pages of the rebranding presentation, whole, at once -->
+<section class="aa-set" aria-label="The idea, 26 March 2021">
+  <div class="hd">
+    <span class="fp-lab"><b>02</b> · The idea · our rebranding presentation, 26 March 2021</span>
+    <h2>Alpha, a star, <b class="tw">the flag.</b></h2>
+    <p>Blue and red, in our own words: “the colors of the American flag to capture the reputation and quality of the American Education.”</p>
+  </div>
+  <div class="grid">
+    <figure><img src="a/p/d-1.webp" width="1000" height="558" alt="AIAASC rebranding: the cover, a shooting star in a night sky" loading="lazy" decoding="async"><figcaption><b>The presentation</b>The rebranding, the round that was approved.</figcaption></figure>
+    <figure><img src="a/p/d-3.webp" width="1000" height="558" alt="A, Alpha: a tunnel of A-shaped frames with a star of light" loading="lazy" decoding="async"><figcaption><b>A for Alpha</b>The first letter: the first in its field.</figcaption></figure>
+    <figure><img src="a/p/d-4.webp" width="1000" height="558" alt="A star, drawn in a night sky" loading="lazy" decoding="async"><figcaption><b>A star</b>Excellence in educational standards.</figcaption></figure>
+    <figure><img src="a/p/d-5.webp" width="1000" height="558" alt="A shooting star crossing the night sky" loading="lazy" decoding="async"><figcaption><b>A shooting star</b>The line that rises, reaching for it.</figcaption></figure>
+    <figure class="ph1"><img src="a/p/d-6.webp" width="1000" height="558" alt="Two stars, red and blue, the colours of the American flag, with the reasons" loading="lazy" decoding="async"><figcaption><b>Blue and red</b>From the American flag.</figcaption></figure>
+    <figure class="ph9"><img src="a/p/d-9.webp" width="1000" height="558" alt="How the mark is built: a star, a triangle, a shooting target and an arrow of growth make the A" loading="lazy" decoding="async"><figcaption><b>How the mark is built</b>A star, a triangle, a shooting target, an arrow of growth.</figcaption></figure>
+  </div>
+</section>
+
+<!-- 5 · the idea as real-time 3D: Alpha, the flag, the world, the system, the event set, the campaign -->
+<section class="fp-pin fp-model" style="--n:12.2" aria-label="The identity, in 3D: Alpha, the flag, the world, the system, the event set, the campaign">
+  <div class="fp-stick">
+    <canvas aria-hidden="true"></canvas>
+    <div class="veil"></div>
+    <span class="fp-lab chap"><b>03</b> · The identity<span class="x"> · Alpha, the flag, the world, the system, the campaign</span></span>
+    <span class="fp-lab kind"><b>3D model</b><span class="x"> · made for this portfolio</span></span>
+    <div class="intro"><span class="fp-lab"><b>03</b> · The identity</span><h2>From the first letter,<br><b class="tw">to the world.</b></h2><p>The idea and the plan, in 3D.</p></div>
+    <div class="st" data-s="0"><span class="fp-lab"><b>01</b> / 06</span><h3>Alpha</h3><p>A is the first letter. The idea: the association as the first in its field.</p></div>
+    <div class="st" data-s="1"><span class="fp-lab"><b>02</b> / 06</span><h3>From the flag</h3><p>A star leaves the blue field and a red stripe peels off the cloth: together they make the mark. Its four letters became six.</p></div>
+    <div class="st" data-s="2"><span class="fp-lab"><b>03</b> / 06</span><h3>To the world</h3><p>The plan: an American standard for schools, from the United States to seven markets first.</p><div class="spec"><span>Markets in the plan<b>7</b></span></div></div>
+    <div class="st" data-s="3"><span class="fp-lab"><b>04</b> / 06</span><h3>The system</h3><p>One book of rules for everything the association prints, hangs and gives. The pages turn.</p></div>
+    <div class="st" data-s="4"><span class="fp-lab"><b>05</b> / 06</span><h3>At every event</h3><p>Its banner, roll-ups and ring banner, from the same book.</p></div>
+    <div class="st" data-s="5"><span class="fp-lab"><b>06</b> / 06</span><h3>It’s time</h3><p>Back to school: eight posts, one line. Then the film.</p></div>
+    <div class="fp-built native sqf" data-b="5"><div class="fr"><video muted playsinline loop preload="none" poster="../../media/films/aiaasc-school-poster.jpg" data-src="../../media/films/aiaasc-school-720.mp4" data-poster="../../media/films/aiaasc-school-poster.jpg"></video></div><div class="fp-lab"><span><b>Released · back to school, 2021</b></span><span>Our film, at its own size</span></div></div>
+  </div>
+</section>
+
+<!-- 6 · online: the teaser for the launch, and the home page design -->
+<section class="aa-web" aria-label="Online: the launch teaser and the website design">
+  <div class="tx">
+    <span class="fp-lab"><b>04</b> · Online · 2021</span>
+    <h2>Shooting <b class="tw">soon.</b></h2>
+    <p>Our teaser for the launch: the red line rises over the earth to its star. And our design for the website’s home page.</p>
+  </div>
+  <figure class="tz"><video muted playsinline loop preload="none" data-auto data-src="a/teaser.mp4" data-poster="a/teaser-poster.webp" poster="a/teaser-poster.webp" aria-label="The teaser: a red line rises over the curve of the earth to a star; Shooting soon"></video><figcaption class="fp-lab"><b>The teaser</b> · June 2021 · at its own size</figcaption></figure>
+  <figure class="web"><img src="a/p/web.webp" width="720" height="1596" alt="Our design for the AIAASC home page: the logo in a night sky, then Build future, Right now, Right here" loading="lazy" decoding="async"><figcaption class="fp-lab"><b>The home page</b> · our design, 4 May 2021</figcaption></figure>
+</section>
+
+<!-- 7 · released: the films, each once -->
+<section class="fp-pin fp-reel" aria-label="Released: the films">
+  <div class="fp-stick">
+    <div class="ly"><video class="whole" muted playsinline loop preload="none" data-src="../../media/films/aiaasc-higher-720.mp4" poster="../../media/films/aiaasc-higher-poster.jpg" data-poster="../../media/films/aiaasc-higher-poster.jpg"></video><span class="fp-lab n"><b>Released</b> · 01 / 03</span><div class="cap"><h3>For colleges.</h3><p>What accreditation gives a college. It opens and ends on the logo.<small class="fp-lab">Our film · September 2021</small></p></div></div>
+    <div class="ly"><video class="whole" muted playsinline loop preload="none" data-src="../../media/films/aiaasc-k12-720.mp4" poster="../../media/films/aiaasc-k12-poster.jpg" data-poster="../../media/films/aiaasc-k12-poster.jpg"></video><span class="fp-lab n"><b>Released</b> · 02 / 03</span><div class="cap"><h3>For schools.</h3><p>What accreditation gives a school.<small class="fp-lab">Our film · September 2021</small></p></div></div>
+    <div class="ly"><video class="whole" muted playsinline loop preload="none" data-src="a/teachers.mp4" poster="a/teachers-poster.webp" data-poster="a/teachers-poster.webp"></video><span class="fp-lab n"><b>Released</b> · 03 / 03</span><div class="cap"><h3>For teachers.</h3><p>World Teachers’ Day: a thank-you to every teacher.<small class="fp-lab">Our film · October 2021 · its words and its ending</small></p></div></div>
+  </div>
+</section>
+
+<!-- 8 · for teachers and children: the programmes, by date -->
+<section class="aa-prog" aria-label="For teachers and children">
+  <span class="fp-lab"><b>05</b> · For teachers and children</span>
+  <h2>Not only a brand. <b class="tw">Work for the people in the school.</b></h2>
+  <ol class="tl">
+    <li><span class="fp-lab">April 2021</span><b>Child protection</b>A training programme, proposed to the UAE Ministry of Education.</li>
+    <li><span class="fp-lab">June 2021</span><b>A responsibility strategy</b>Written for the association: child protection, anti-bullying, acceptance, anti-harassment.</li>
+    <li><span class="fp-lab">August and September 2021</span><b>Back to school</b>Eight posts and a film, each beginning “It’s time”.</li>
+    <li><span class="fp-lab">October 2021</span><b>World Teachers’ Day</b>A film to thank every teacher.</li>
+    <li><span class="fp-lab">October and November 2021</span><b>The Social Emotional Teacher</b>Online training for school leaders and teachers. We designed its logo and flyers.</li>
+    <li><span class="fp-lab">15 to 19 November 2021</span><b>Anti-bullying week</b>A call to its schools around the world to share what they did that week.</li>
+  </ol>
+  <div class="where"><span class="fp-lab"><b>Where the work went</b></span><p><b>New York</b>, the association · <b>Dubai</b>, where I led the work · <b>the Gulf, Egypt and North Africa</b>, the plan’s first markets · <b>the UAE</b>, a proposal to the Ministry of Education, April 2021 · <b>Chennai</b>, the mark for the signs of a new office, September 2021 · <b>Delhi</b>, a brochure and folder for a visit to the ministry, November 2021.</p></div>
+</section>
+
+<!-- 9 · the result: still in use -->
+<section class="fp-res" aria-label="The result">
+  <div class="hd"><h2>Still theirs.</h2><span class="fp-lab"><b>06</b> · The result</span></div>
+  <div class="nums"><div><b>5 years on</b><span>the association still signs with this mark</span></div></div>
+  <figure class="shot mk"><img src="a/3d/mark.svg" alt="The AIAASC mark" loading="lazy" decoding="async"><figcaption class="fp-lab">On aiaasc.org today</figcaption></figure>
+  <blockquote class="aa-q"><p>“This collaboration was made possible by the efforts of AntBrush Founder, Antoni Zaki, another one of our preferred partners.”</p><span class="fp-lab"><b>In their words</b> · the association’s announcement of a new partnership, July 2021</span></blockquote>
+</section>
+
+<!-- 10 · the films, the credits, on -->
+<section class="fp-end fin">
+  <div class="more"><button class="fp-play" type="button" data-film="../../media/films/aiaasc-higher-720.mp4" data-title="AIAASC · the film for colleges · 0:45">The film for colleges <small>0:45 · sound</small></button><button class="fp-play" type="button" data-film="../../media/films/aiaasc-k12-720.mp4" data-title="AIAASC · the film for schools · 0:49">The film for schools <small>0:49 · sound</small></button><button class="fp-play" type="button" data-film="../../media/films/aiaasc-school-720.mp4" data-title="AIAASC · back to school · 0:55">Back to school <small>0:55 · sound</small></button><button class="fp-play" type="button" data-film="a/teachers.mp4" data-title="AIAASC · World Teachers’ Day · 0:36">Teachers’ Day <small>0:36 · sound</small></button></div>
+  <div class="fp-cred">
+    <div><span class="fp-lab">Role</span>Antoni Gerges<br>Executive Creative Director</div>
+    <div><span class="fp-lab">Made by</span>AntBrush.</div>
+    <div><span class="fp-lab">For</span>American International Accreditation Association of Schools and Colleges.</div>
+    <div><span class="fp-lab">The model</span>Made for this portfolio from the delivered logo, the toolkit and the campaign artwork. No sign was built.</div>
+  </div>
+  <a class="fp-next" href="../../work/"><span class="fp-lab">More work</span><b>All work</b><span aria-hidden="true">→</span></a>
+</section>
 </main>
-<nav class="pnext" style="--nbg:#140F06;--nfg:#F3EBDD" aria-label="Next project">
-  <a href="../al-forsan/">
-    <div><p class="label">Next</p><h2>The gate was already there. I made it a mark.</h2><p style="opacity:.72;margin-top:16px">Al Forsan International Sports Resort</p></div>
-    <div class="pic"><img src="../../img/al-forsan/press-master-1600.webp" srcset="../../img/al-forsan/press-master-800.webp 800w, ../../img/al-forsan/press-master-1600.webp 1600w, ../../img/al-forsan/press-master-2189.webp 2189w" sizes="(max-width:760px) 100vw, 46vw" width="1600" height="1900" alt="Al Forsan press advertisement, whole: riders, a kart and a shooter coming through a golden arch" loading="lazy" decoding="async"></div>
-  </a>
-</nav>
+
+<div class="fp-player" role="dialog" aria-label="Film player"><video playsinline preload="none"></video><div class="bar"><span class="ti"></span><button class="x" type="button">Close</button></div></div>
+
 <footer class="foot"><div class="wrap row">
   <p style="margin:0">Antoni Gerges · Executive Creative Director · <a href="mailto:antoni@antbrush.com">antoni@antbrush.com</a></p>
   <nav aria-label="Footer"><a href="../../work/">Work</a><a href="../../about/">About</a><a href="../../contact/">Contact</a></nav>
 </div></footer>
-<script src="../../assets/site.js?v=afd4c1e0" defer></script>
-<script src="../../assets/films.js?v=afd4c1e0" defer></script>
+<script src="../../assets/fp/fp.js?v=18" defer></script>
+<script type="module" src="aa.js?v=20"></script>
 </body>
 </html>

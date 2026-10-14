@@ -1,84 +1,241 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Cityscape Abu Dhabi · Antoni Gerges</title>
-<meta name="description" content="From floor plan to full scale. Creative direction · Cityscape Abu Dhabi pavilion. Abu Dhabi · 2017.">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Antoni Gerges">
-<meta property="og:title" content="Cityscape Abu Dhabi · Antoni Gerges">
-<meta property="og:description" content="From floor plan to full scale. Creative direction · Cityscape Abu Dhabi pavilion. Abu Dhabi · 2017.">
-<meta property="og:url" content="https://antoniz.com/work/cityscape/">
-<meta property="og:image" content="https://antoniz.com/assets/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Antoni Gerges, Executive Creative Director, above Lake Brienz in Interlaken">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cityscape Abu Dhabi 2017 · Antoni Gerges</title>
+<link rel="canonical" href="https://antoniz.com/work/cityscape/">
+<meta name="description" content="Cityscape Abu Dhabi, 18 to 20 April 2017: the pavilion of Abu Dhabi’s municipal government. One line across the floor, and a ceiling of light. Antoni Gerges, Executive Creative Director. AntBrush.">
 <link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..800;1,14..32,300..800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
 <link rel="preload" href="../../assets/jost-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../assets/site.css?v=afd4c1e0">
-<link rel="stylesheet" href="../../assets/oldcase.css">
+<link rel="stylesheet" href="../../assets/fp/fp.css?v=34">
+<style>
+/* the client's room (T-40): the stand's own colours, from our presentation of 28 March 2017 and the stand's artwork. Every screen stays dark;
+   the maroon is a line and an accent on the black, never a big field (as on the stand: maroon stripes and one maroon line on white and black) */
+body.fp.cityscape{
+  --cs-maroon:#88261a;   /* the rosette, Pattern.ai (archive 01-WORK/017): the stand's own line colour */
+  --cs-carpet:#5e1419;   /* the carpet and the wing stripes, render p.6, in shade */
+  --cs-red:#dc5a48;      /* the same maroon, lifted for small words on black */
+  --cs-sand:#c9b68f;     /* the court's carpet, render p.25 */
+  --cs-white:#f2f1ed;    /* the stand's white */
+  --cs-ink:#000;         /* the hall at night: every screen dark */
+}
+/* Cityscape Abu Dhabi 2017: this page's own rules. The engine files are used unchanged. Nothing on this page is cropped. */
+/* the opening is the show film's own shots of the stand, whole. Nothing of ours lies over it: the name stands under the film. */
+.fp-hero.whole{height:auto;min-height:0;overflow:visible;display:flex;flex-direction:column;align-items:center}
+.fp-hero.whole::after{display:none}
+.fp-hero.whole{--hh:calc(clamp(46px,5.8vw,116px)*.88)}
+.fp-hero.whole .v{position:relative;inset:auto;flex:none;width:min(calc(100vw - 2*var(--g)),calc((100svh - var(--hh) - 98px)*16/9));height:auto;aspect-ratio:16/9;object-fit:contain;transform:none!important;background:#000}
+.fp-hero.whole .in{position:relative;inset:auto;align-self:stretch;opacity:1!important;display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);align-items:end;gap:8px var(--g);padding:14px var(--g) 20px;justify-content:normal}
+.fp-hero.whole .src{grid-column:1 / -1}
+.fp-hero.whole h1{font-size:clamp(46px,5.8vw,116px);line-height:.88;margin:0 0 0 -.04em;animation:none;white-space:nowrap}
+.fp-hero.whole .row{animation:none;justify-content:flex-end;align-items:flex-end;gap:14px 26px;flex-wrap:nowrap}
+.fp-hero.whole .what{flex:0 1 310px;min-width:250px;max-width:310px;font-size:14px}
+.fp-hero.whole .btns{flex:none}
+.fp-hero.whole .what strong{font-size:clamp(17px,1.45vw,24px);margin-bottom:0}
+.fp-hero.whole .what small{margin-top:6px;font-size:11.5px}
+.fp-hero.whole .fp-play{white-space:nowrap;padding:13px 22px 13px 18px}
+@media (max-width:1180px){.fp-hero.whole .in{grid-template-columns:1fr}.fp-hero.whole .row{justify-content:space-between}.fp-hero.whole .v{width:min(calc(100vw - 2*var(--g)),calc((100svh - 250px)*16/9))}}
+@media (max-width:760px){
+  .fp-hero.whole .v{width:100%;margin-top:73px;top:auto;left:auto}
+  .fp-hero.whole .in{padding:14px var(--g) 30px;gap:12px}
+  .fp-hero.whole h1{font-size:clamp(40px,11.6vw,64px);white-space:normal;line-height:.92}
+  .fp-hero.whole .row{flex-direction:column;align-items:flex-start;flex-wrap:wrap;gap:16px}
+  .fp-hero.whole .what{font-size:15px;flex:none;min-width:0;max-width:none}.fp-hero.whole .what strong{font-size:20px;margin-bottom:2px}
+}
+/* built results and the end card keep the whole 16:9 frame at every window shape */
+.fp-built .fr video{object-fit:contain}
+.fp-end .film{aspect-ratio:16/9}
+.fp-end .film:hover video{transform:none}
+/* pictures inside the story */
+.fp-more .tx figure.in{margin:14px 0 0}.fp-more .tx figure.in img{width:100%;height:auto;display:block}.fp-more .tx figure.in figcaption{margin-top:8px}
+/* no shadow behind words */
+.fp-model .st{text-shadow:none}
+/* a set of pieces, whole and at once, on one dark screen */
+.cs-set{padding:clamp(56px,8vh,96px) var(--g) clamp(34px,6vh,64px);min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+.cs-set .hd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px var(--g);align-items:end;margin:0 auto clamp(16px,2.6vh,28px);width:100%;max-width:var(--gw)}
+.cs-set .hd>.fp-lab{grid-column:1 / -1}
+.cs-set h2{font-size:clamp(34px,4vw,68px);line-height:.95;letter-spacing:-.035em;font-weight:300}
+.cs-set .hd p{font-size:clamp(15px,1.12vw,18px);line-height:1.45;color:rgba(242,241,237,.8);max-width:30em}
+.cs-set .grid{display:grid;gap:clamp(12px,1.4vw,20px);margin:0 auto;width:100%;max-width:var(--gw)}
+.cs-set figure{margin:0;min-width:0}
+.cs-set figure .im{position:relative;aspect-ratio:16/9}
+.cs-set figure img,.cs-set figure video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
+.cs-set figcaption{margin-top:7px;font-size:13.5px;line-height:1.35;color:rgba(242,241,237,.74)}
+.cs-set figcaption b{display:block;font:500 16px/1.2 "Jost",system-ui,sans-serif;color:var(--cs-white);margin-bottom:1px}
+.cs-set figure.no figcaption b::after{content:"Not built";margin-left:8px;padding:2px 6px;border:1px solid var(--cs-red);color:var(--cs-red);font:600 10.5px/1 Inter,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;vertical-align:2px}
+.cs-set .note{align-self:end;font-size:15px;line-height:1.45;color:rgba(242,241,237,.8);border-top:2px solid var(--cs-maroon);padding-top:12px}
+.cs-set .note b{display:block;font:600 clamp(22px,2vw,32px)/1.05 "Jost",system-ui,sans-serif;color:var(--cs-white);margin-bottom:6px;letter-spacing:-.02em}
+/* the design: the option not built on the left, the design that was built large in the middle */
+.cs-design{--gw:calc((100svh - 330px) / 1.70 * 4 + 60px)}
+.cs-design .grid{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-areas:"o1 big big p1" "o2 big big p2" "w c m t"}
+.cs-design .o1{grid-area:o1}.cs-design .o2{grid-area:o2}.cs-design .big{grid-area:big}.cs-design .p1{grid-area:p1}.cs-design .p2{grid-area:p2}.cs-design .w{grid-area:w}.cs-design .c{grid-area:c}.cs-design .m{grid-area:m}.cs-design .t{grid-area:t}
+.cs-design .big .im{aspect-ratio:auto;height:calc(100% - 46px);min-height:200px}
+/* the build: two photographs and two of my own films, at once */
+.cs-build{--gw:calc((100svh - 330px) / 2 / .5625 * 2 + 40px)}
+.cs-build .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+/* the client's colours as accents on the black */
+.cityscape main .fp-lab b{color:var(--cs-red)}
+.cityscape .fp-more summary{border-bottom-color:var(--cs-maroon)}
+.cityscape .fp-more summary::after{color:var(--cs-red)}
+.cityscape .fp-ticks i.on{background:var(--cs-red)}
+.cityscape .fp-play:hover,.cityscape .fp-play:focus-visible{background:var(--cs-maroon);border-color:var(--cs-maroon);color:#fff}
+.cityscape .fp-res .nums{border-top-color:var(--cs-maroon)}
+.cityscape .fp-say,.cityscape .cs-set .hd{position:relative}
+.cityscape .fp-say::before,.cityscape .cs-set .hd::before{content:"";position:absolute;width:64px;height:2px;background:var(--cs-maroon);transform:rotate(-45deg);transform-origin:left center;left:var(--g);top:-26px}
+.cityscape .cs-set .hd::before{left:0;top:-14px}
+.cityscape .fp-say::before{top:56px}
+/* while a built cut plays, his footage stays clean (T-04): the stop's words step off it, and the film sits whole between two black bands that hold the labels */
+.cityscape .fp-model .st{transition:opacity .35s}
+@media (min-width:761px){.cityscape .fp-stick.is-cut .st,.cityscape .fp-stick.is-cut .veil{opacity:0!important}}   /* on a phone the words already sit under the film */
+.cityscape .fp-built .fr{inset:clamp(150px,19vh,176px) var(--g) clamp(70px,10vh,100px)}
+.cityscape .fp-built .fr::after{display:none}
+@media (max-width:760px){.cityscape .fp-built .fr{inset:140px 0 auto;height:56.25vw}}
+/* the 3D chapter: its labels always on the dark; the opening words leave before the first stop speaks */
+.cityscape .fp-model .fp-stick::before{content:"";position:absolute;left:0;right:0;top:0;height:clamp(150px,22vh,230px);background:linear-gradient(180deg,rgba(0,0,0,.74),rgba(0,0,0,0));z-index:3;pointer-events:none}
+.cityscape .fp-model.cs-pre .st{opacity:0!important;transition:none!important}
+@media (max-width:760px){
+  .cs-set{min-height:0;padding-top:64px}
+  .cs-set .hd{grid-template-columns:1fr}
+  .cs-set .grid{max-width:none}
+  .cs-design .grid{grid-template-columns:1fr 1fr;grid-template-areas:"big big" "p1 p2" "o1 o2" "w c" "m t"}
+  .cs-design .big .im{aspect-ratio:16/9;height:auto;min-height:0}
+  .cs-build .grid{grid-template-columns:1fr;grid-template-areas:none}
+  .cs-set figcaption{font-size:12.5px}.cs-set figcaption b{font-size:14.5px}
+}
+</style>
+<noscript><style>.fp-pin{height:auto!important}.fp-stick{position:static;height:auto;overflow:visible}.fp-reel .ly{position:relative;height:70vh}.fp-plates .trk{position:static;flex-wrap:wrap;padding:40px var(--g);height:auto}.fp-model canvas,.fp-model .veil,.fp-ticks,.fp-cue,.fp-bar{display:none}.fp-model .intro{position:static;transform:none;padding:60px var(--g) 20px}.fp-model .st{position:static;opacity:1;transform:none;width:auto;padding:24px var(--g) 8px}.fp-built{position:static;opacity:1;transform:none;width:auto;max-width:720px;margin:0 var(--g) 24px}.fp-model .chap{position:static;display:block;padding:0 var(--g)}.fp-hero h1,.fp-hero .row{animation:none}.fp-built{visibility:visible;height:auto;background:none}.fp-built .fr{position:relative;inset:auto;aspect-ratio:16/9}.fp-built .fr::after{display:none}.fp-built .fp-lab,.fp-model .kind{position:static;text-align:left;margin-top:8px}.fp-hero.band{min-height:0}.fp-plates.stack .trk{display:block}.fp-plates.stack figure{margin-bottom:40px}@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{font-size:14px;padding:6px 8px}}button[data-film].fp-play{display:none}button[data-film]{pointer-events:none;cursor:default}button[data-film] .go{display:none}.fp-nojs{display:block;margin-top:14px}.mzl{display:none}.fp-built .fr{aspect-ratio:auto}.fp-built .fr video{position:static;width:100%;height:auto;transform:none}</style></noscript>
 </head>
-<body class="proj p-cityscape" style="--bg:#F2F1ED;--fg:#17161A;--sub:rgba(23,22,26,.62);--acc:#8C1D2C;--sheet:#FFFFFF;--hdr-bg:#F2F1ED;--hdr-fg:#17161A;--hdr-mk:#8C1D2C">
+<body class="fp cityscape">
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr">
-  <a class="pill brand" href="../../" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
+  <a class="pill brand" href="../../index.html" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
   <div class="pill">
     <nav class="nav" id="nav" aria-label="Site"><a href="../../work/" aria-current="page">Work</a><a href="../../about/">About</a><a href="../../contact/">Contact</a><a href="../../assets/Antoni-Gerges-CV.pdf" class="navcv" target="_blank" rel="noopener">CV</a></nav>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
   </div>
 </header>
 <main id="main">
-<section class="p-hero wrap">
-  <p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Cityscape Abu Dhabi · Abu Dhabi · 2017</span></p>
-  <h1 class="rv d1">From floor plan to full scale.</h1>
-  <div class="cap rv d2">
-    <p class="role"><b>Creative direction · Cityscape Abu Dhabi pavilion</b><span>Abu Dhabi · 2017</span></p>
-    <p class="sum">A pavilion of 672 square metres for four public bodies and fourteen projects. The brief came as boxes. I answered with one line across the floor: it became the carpet, the route, and a ceiling of light above it.</p>
-  </div>
-</section>
-<section class="stage wrap" aria-label="The work"><div class="rowg c1"><figure class="fig rv"><div class="m settle" style="aspect-ratio:16/9;"><video data-clip data-src="../../media/clips/cityscape-clip-tilt-1080.mp4" data-src-sm="../../media/clips/cityscape-clip-tilt-720.mp4" poster="../../img/cityscape/clip-tilt-poster.webp" muted loop playsinline preload="none" width="1600" height="900" aria-label="From the carpet to the ceiling. The show film, 2017."></video></div><figcaption><span class="t"><b>From the carpet to the ceiling.</b> The show film, 2017.</span></figcaption></figure></div></section>
-<section class="chapter wrap" aria-labelledby="ch-0">
-  <div class="ch-h">
-    <div><p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>The idea</span></p><h2 id="ch-0" class="rv d1">The brief came as boxes. I gave it one line.</h2></div>
-    <p class="rv d2">Four public bodies and fourteen projects on one floor of 672 square metres. One maroon line across the floor would lead to all of them, and become the carpet.</p>
-  </div>
-  <div class="rowg c2"><figure class="fig contain rv"><div class="m" style="aspect-ratio:1/1;"><img src="../../img/cityscape/plan-1048.webp" srcset="../../img/cityscape/plan-800.webp 800w, ../../img/cityscape/plan-1048.webp 1048w" sizes="(max-width:760px) 100vw, 46vw" width="1048" height="866" alt="The design plan, 28 March 2017." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>The design plan,</b> 28 March 2017.</span></figcaption></figure><figure class="fig contain rv"><div class="m" style="aspect-ratio:1/1;"><img src="../../img/cityscape/fabrication-1600.webp" srcset="../../img/cityscape/fabrication-800.webp 800w, ../../img/cityscape/fabrication-1600.webp 1600w, ../../img/cityscape/fabrication-1680.webp 1680w" sizes="(max-width:760px) 100vw, 46vw" width="1600" height="1352" alt="The fabrication plan, by the stand builder, Divine Creations." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>The fabrication plan,</b> by the stand builder, Divine Creations.</span></figcaption></figure></div>
-  
-</section>
-<section class="chapter wrap" aria-labelledby="ch-1">
-  <div class="ch-h">
-    <div><p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Height</span></p><h2 id="ch-1" class="rv d1">Then we gave it height, and a ceiling of light.</h2></div>
-    <p class="rv d2">A raised floor of 28 by 24 metres. Two wings up to six metres high, turned around one diagonal. Over the line, spheres hung at different heights, so the ceiling reads as a wave from across the hall.</p>
-  </div>
-  <div class="rowg c2"><figure class="fig contain rv"><div class="m" style="aspect-ratio:4/3;"><img src="../../img/cityscape/3d-plan-1018.webp" srcset="../../img/cityscape/3d-plan-800.webp 800w, ../../img/cityscape/3d-plan-1018.webp 1018w" sizes="(max-width:760px) 100vw, 46vw" width="1018" height="820" alt="3D reconstruction. The plan, given the contract heights. Made for this portfolio." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>3D reconstruction.</b> The plan, given the contract heights. Made for this portfolio.</span></figcaption></figure><figure class="fig contain rv"><div class="m" style="aspect-ratio:4/3;"><img src="../../img/cityscape/3d-ceiling-1018.webp" srcset="../../img/cityscape/3d-ceiling-800.webp 800w, ../../img/cityscape/3d-ceiling-1018.webp 1018w" sizes="(max-width:760px) 100vw, 46vw" width="1018" height="820" alt="3D reconstruction. The spheres over the carpet." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>3D reconstruction.</b> The spheres over the carpet.</span></figcaption></figure></div>
-  <div class="rowg c1"><figure class="fig rv"><div class="m settle" style="aspect-ratio:21/9;"><img src="../../img/cityscape/spheres-1600.webp" srcset="../../img/cityscape/spheres-800.webp 800w, ../../img/cityscape/spheres-1600.webp 1600w, ../../img/cityscape/spheres-1920.webp 1920w" sizes="(max-width:760px) 100vw, 92vw" width="1600" height="900" alt="The ceiling, built. From the show film." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>The ceiling, built.</b> From the show film.</span></figcaption></figure></div>
-  <div class="rowg c2"><figure class="fig rv"><div class="m settle" style="aspect-ratio:16/9;"><img src="../../img/cityscape/spheres-flag-1600.webp" srcset="../../img/cityscape/spheres-flag-800.webp 800w, ../../img/cityscape/spheres-flag-1600.webp 1600w, ../../img/cityscape/spheres-flag-1920.webp 1920w" sizes="(max-width:760px) 100vw, 46vw" width="1600" height="900" alt="In the national colours. From the show film." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>In the national colours.</b> From the show film.</span></figcaption></figure><figure class="fig rv"><div class="m settle" style="aspect-ratio:16/9;"><video data-clip data-src="../../media/clips/cityscape-clip-flag-1080.mp4" data-src-sm="../../media/clips/cityscape-clip-flag-720.mp4" poster="../../img/cityscape/clip-flag-poster.webp" muted loop playsinline preload="none" width="1600" height="900" aria-label="The ceiling in motion. From the show film."></video></div><figcaption><span class="t"><b>The ceiling in motion.</b> From the show film.</span></figcaption></figure></div>
-  
-</section>
-<section class="storylink">
-  <div class="wrap in">
-    <div><p class="label rv" style="color:var(--sub);margin-bottom:20px">The full story</p><h2 class="rv d1">Every step, in order.</h2></div>
-    <div class="rv d2">
-      <p>Department of Municipal Affairs and Transport, Abu Dhabi. ADNEC Hall 8, 18 to 20 April 2017. Built by Divine Creations.</p>
-      <a class="big-btn" href="../../stories/cityscape/">See the full story <span aria-hidden="true">→</span></a>
+
+<!-- 1 · the opening: the show film's own shots of the stand, at real speed, whole; the name stands under it -->
+<section class="fp-hero whole" data-marks='[[0,"From the show film · AntBrush · April 2017"]]' aria-label="Cityscape Abu Dhabi 2017: the stand as built">
+  <video class="v" muted playsinline loop preload="auto" poster="a/hero-poster.webp" data-src="a/hero-1920.mp4" data-src-p="a/hero-p.mp4" data-poster="a/hero-poster.webp" data-poster-p="a/hero-poster.webp"></video>
+  <div class="in">
+    <span class="src"><i></i><b>From the show film · AntBrush · April 2017</b></span>
+    <h1>Cityscape Abu Dhabi</h1>
+    <div class="row">
+      <p class="what"><strong>Abu Dhabi’s municipal pavilion. I built it around one line.</strong><small>Antoni Gerges, Executive Creative Director · AntBrush</small></p>
+      <span class="btns"><button class="fp-play" type="button" data-film="../../stories/cityscape/assets/show-film-1280.mp4" data-title="The show film · AntBrush · 2:38 · sound">Play the show film <small>2:38 · sound</small></button><noscript><span class="fp-nojs"><a class="fp-play" href="../../stories/cityscape/assets/show-film-1280.mp4">Open the show film <small>2:38 · video file</small></a></span></noscript></span>
     </div>
   </div>
 </section>
+
+<!-- 2 · what it was -->
+<section class="fp-say">
+  <span class="fp-lab"><b>The project</b></span>
+  <div>
+    <h2>Four public bodies and fourteen projects had to share one floor. <em>I gave it one line, and a ceiling of light.</em></h2>
+    <div class="facts"><div><b>18 to 20 April 2017</b>Abu Dhabi National Exhibition Centre, Hall 8</div></div>
+    <details class="fp-more"><summary>Read more</summary><div class="tx"><div><span class="fp-lab"><b>The project</b></span><p>The pavilion of Abu Dhabi’s municipal government at Cityscape Abu Dhabi, the capital’s property show: the Department of Municipal Affairs and Transport with the municipalities of Abu Dhabi City, Al Ain City and Al Dhafra Region. Hall 8, three days, 18 to 20 April 2017.</p><p>The concept, the exhibition design, the build and its management were mine, through AntBrush. Built with Divine Creations, Dubai.</p></div><div><span class="fp-lab"><b>The idea</b></span><p>The brief was a list: fourteen projects to show, with their models and screens, a majlis and two meeting rooms. Community markets, boat landings, a platform for building permits.</p><p>I answered with one line. A maroon carpet runs from the open corner to a tower. Two wings turn around it. Over it hangs a ceiling of spheres that rise, fall and change colour.</p></div><div><span class="fp-lab"><b>The fourteen projects</b></span><p>Seven community markets: Al Raha Gardens, Shakhbout City, Mohammed bin Zayed City, Yas Island, Al Shamkha City, Al Wathba City and Bani Yas. Souq Al Zaafarana; the central market of Madinat Zayed; the local market of Ghayathi; boat and jet ski landings at Al Bahya and Al Sadr; and two systems for building permits.</p><p>They were the client’s projects, shown as models and on screens.</p></div><div><span class="fp-lab"><b>Drawn, then chosen</b></span><p>26 March 2017: two options. One was a red block on two floors. The other had the two wings and the tower.</p><p>28 March 2017: the final design. The line arrives, and the stand turns white and maroon. 11 April: the builder’s drawings. 14 April, 2 pm: the hall opens to us. 18 April: the doors open.</p></div><div><span class="fp-lab"><b>The 3D model</b></span><p>The model on this page was made for this portfolio. Its floor is the builder’s own plan, line for line. Its heights are the contract’s. Its upper floor follows the stand as built.</p><p>The films and photographs of the build are my own, taken on my phone. Every picture on this page is shown whole.</p></div></div></details>
+  </div>
+</section>
+
+<!-- 3 · the stand as a 3D model you walk into: the plan on the floor, the walls, one base then all of them, the ceiling of spheres, then inside. The last two stops cut to the film -->
+<section class="fp-pin fp-model" style="--n:12" aria-label="The stand, in 3D: the plan on the floor, the walls, the bases, the ceiling of spheres, then inside">
+  <div class="fp-stick">
+    <canvas aria-hidden="true"></canvas>
+    <div class="veil"></div>
+    <span class="fp-lab chap"><b>01</b> · The idea<span class="x"> · a plan, two wings, fourteen projects, a ceiling</span></span>
+    <span class="fp-lab kind"><b>3D model</b><span class="x"> · made for this portfolio</span></span>
+    <div class="intro"><span class="fp-lab"><b>01</b> · The idea</span><h2>One line<br><b class="tw">across the floor.</b></h2><p>The stand, built again from its own plan. Walk in.</p></div>
+    <div class="st" data-s="0"><span class="fp-lab"><b>01</b> / 05</span><h3>The plan</h3><p>Fourteen projects on one floor. One line crosses it, from the open corner to a tower.</p><div class="spec"><span>Floor<b>7,200 sq ft</b></span></div></div>
+    <div class="st" data-s="1"><span class="fp-lab"><b>02</b> / 05</span><h3>The walls</h3><p>Two wings, two storeys high, turn around the line. The tower stands where it ends.</p></div>
+    <div class="st" data-s="2"><span class="fp-lab"><b>03</b> / 05</span><h3>The projects</h3><p>One base, built as the builder drew it: the stand’s rosette on its sides, its project’s name on the front. Then every base takes its place.</p><div class="spec"><span>Projects<b>14</b></span></div></div>
+    <div class="st" data-s="3"><span class="fp-lab"><b>04</b> / 05</span><h3>The ceiling</h3><p>Over the line, a ceiling of spheres. Each one rises, falls and changes colour.</p></div>
+    <div class="st" data-s="4"><span class="fp-lab"><b>05</b> / 05</span><h3>Inside</h3><p>Walk the line under the light, to the models at its end.</p></div>
+    <div class="fp-built" data-b="3"><div class="fr"><video muted playsinline loop preload="none" poster="a/b-carpet.webp" data-src="a/b-carpet.mp4"></video></div><div class="fp-lab"><span><b>Built · April 2017</b></span><span>The show film · AntBrush</span></div></div>
+    <div class="fp-built" data-b="4"><div class="fr"><video muted playsinline loop preload="none" poster="a/b-front.webp" data-src="a/b-front.mp4"></video></div><div class="fp-lab"><span><b>Built · April 2017</b></span><span>The show film · AntBrush</span></div></div>
+  </div>
+</section>
+
+<!-- 4 · the design, from our own presentations: the option of 26 March (not built) and the design of 28 March, whole and at once on one screen -->
+<section class="cs-set cs-design" aria-label="The design: two answers, then one line">
+  <div class="hd">
+    <span class="fp-lab"><b>02</b> · The design · our presentations of 26 and 28 March 2017</span>
+    <h2>Two answers, <b class="tw">then one line.</b></h2>
+    <p>26 March: a red block on two floors. 28 March: the line from the open corner to the tower, and the stand that was built. The ceiling of spheres was in every option; on the 28th it moved over the line.</p>
+  </div>
+  <div class="grid">
+    <figure class="o1 no"><div class="im"><img src="a/o1-eye.webp" width="1600" height="800" alt="Design option of 26 March 2017: a red block on two floors in the middle of the floor" loading="lazy" decoding="async"></div><figcaption><b>A red block</b>Design option · 26 March 2017</figcaption></figure>
+    <figure class="o2 no"><div class="im"><img src="a/o1-top.webp" width="1600" height="800" alt="The same option seen from above" loading="lazy" decoding="async"></div><figcaption><b>From above</b>Design option · 26 March 2017</figcaption></figure>
+    <figure class="big"><div class="im"><img src="a/r-line.webp" width="1600" height="900" alt="Design render of 28 March 2017: the maroon carpet runs to the tower under the ceiling of spheres" loading="lazy" decoding="async"></div><figcaption><b>The line</b>From the open corner to the tower · design render · 28 March 2017</figcaption></figure>
+    <figure class="p1"><div class="im"><img src="a/r-plan.webp" width="1600" height="900" alt="Design render of 28 March 2017: the plan from above, the line across it" loading="lazy" decoding="async"></div><figcaption><b>From above</b>The line is drawn · 28 March</figcaption></figure>
+    <figure class="p2"><div class="im"><img src="a/r-front.webp" width="1600" height="900" alt="Design render of 28 March 2017: two wings, a tower and a ceiling of spheres" loading="lazy" decoding="async"></div><figcaption><b>The stand</b>Two wings, a tower, the ceiling · 28 March</figcaption></figure>
+    <figure class="w"><div class="im"><img src="a/r-whole.webp" width="1600" height="900" alt="Design render: the whole floor from high up" loading="lazy" decoding="async"></div><figcaption><b>The floor</b>Every project in its place · 28 March</figcaption></figure>
+    <figure class="c"><div class="im"><img src="a/r-corner.webp" width="1600" height="900" alt="Design render: the stand seen from behind its corner" loading="lazy" decoding="async"></div><figcaption><b>The corner</b>The wings are rooms, open to the hall</figcaption></figure>
+    <figure class="m"><div class="im"><img src="a/r-meeting.webp" width="1600" height="900" alt="Design render: the meeting room inside one wing" loading="lazy" decoding="async"></div><figcaption><b>Inside a wing</b>The meeting room · 28 March</figcaption></figure>
+    <figure class="t"><div class="im"><img src="a/fab-plan.webp" width="1600" height="1132" alt="The stand builder’s plan of the stand on a one-metre grid, 11 April 2017" loading="lazy" decoding="async"></div><figcaption><b>Then the builder’s plan</b>Drawn by Divine Creations, the stand builder · 11 April 2017</figcaption></figure>
+  </div>
+</section>
+
+<!-- 5 · the build: two of my photographs and two of my films of the ceiling's first run, at once on one screen -->
+<section class="cs-set cs-build" aria-label="Built in three days">
+  <div class="hd">
+    <span class="fp-lab"><b>03</b> · The build · my own photographs and films, Hall 8</span>
+    <h2>Built in <b class="tw">three days.</b></h2>
+    <p>In the hall at 2 pm on 14 April. Ready on the 17th. Open on the 18th.</p>
+  </div>
+  <div class="grid">
+    <figure class=""><div class="im"><img src="a/p-truss.webp" width="1500" height="845" alt="The truss with the spheres hung on it, before it was lifted" loading="lazy" decoding="async"></div><figcaption><b>The spheres</b>On the truss, before it was lifted · my own photograph · 15 April 2017</figcaption></figure>
+    <figure class=""><div class="im"><img src="a/p-first.webp" width="1600" height="900" alt="A wing half built, with the spheres lit above it" loading="lazy" decoding="async"></div><figcaption><b>Half built</b>The wing still open, the spheres already lit · my own photograph · 15 April 2017</figcaption></figure>
+    <figure class=""><div class="im"><video muted playsinline loop preload="none" data-auto data-src="a/c-wave.mp4" poster="a/c-wave.webp" data-poster="a/c-wave.webp" aria-label="My own film: the ceiling runs over the half-built stand"></video></div><figcaption><b>Switched on</b>The ceiling runs over a stand still being built · my own film · 15 April 2017</figcaption></figure>
+    <figure class=""><div class="im"><video muted playsinline loop preload="none" data-auto data-src="a/c-wide.mp4" poster="a/c-wide.webp" data-poster="a/c-wide.webp" aria-label="My own film: the wave, from across the floor"></video></div><figcaption><b>The wave</b>The same night, from across the floor · my own film · 15 April 2017</figcaption></figure>
+  </div>
+</section>
+
+<!-- 6 · the result, in the records -->
+<section class="fp-res" aria-label="The result">
+  <div class="hd"><h2>The result.</h2><span class="fp-lab"><b>04</b> · In the records</span></div>
+  <div class="nums">
+    <div><b>3 days</b><span>to build it in the hall: in on 14 April, due on the 17th</span></div>
+  </div>
+  <p class="src fp-lab">Source: the organiser’s access letter, 12 April 2017, and the purchase order for the build.</p>
+  <details class="fp-more"><summary>More figures</summary>
+    <div class="nums">
+      <div><b>7,200</b><span>sq ft of floor</span></div>
+      <div><b>14</b><span>projects on one stand</span></div>
+      <div><b>4</b><span>public bodies, one pavilion</span></div>
+      <div><b>3</b><span>show days</span></div>
+    </div>
+    <p class="src fp-lab">Sources: the stand builder’s contract of 6 April 2017; the list of project names, 15 April 2017; the four invoices of 18 April 2017.</p>
+  </details>
+</section>
+
+<!-- 7 · the film, the credits, on -->
+<section class="fp-end fin">
+  <button class="film" type="button" data-film="../../stories/cityscape/assets/show-film-1280.mp4" data-title="The show film · AntBrush · 2:38 · sound" aria-label="Play the show film by AntBrush, 2 minutes 38, with sound">
+    <video muted playsinline loop preload="none" data-auto data-src="a/b-carpet.mp4" poster="a/b-carpet.webp" data-poster="a/b-carpet.webp"></video>
+    <span class="t"><span class="fp-lab"><b>The show film</b> · AntBrush · 2:38 · sound</span><b>Play the film.</b></span><span class="go" aria-hidden="true"></span>
+  </button>
+  <noscript><span class="fp-nojs"><a class="fp-play" href="../../stories/cityscape/assets/show-film-1280.mp4">Open the show film <small>2:38 · video file</small></a></span></noscript>
+  <div class="fp-cred">
+    <div><span class="fp-lab">Role</span>Antoni Gerges<br>Executive Creative Director</div>
+    <div><span class="fp-lab">Made by</span>AntBrush: concept, exhibition design, build and management.</div>
+    <div><span class="fp-lab">Credits</span>For the Department of Municipal Affairs and Transport, Abu Dhabi.<br>Built with Divine Creations, Dubai.</div>
+    <div><span class="fp-lab">The show</span>Cityscape Abu Dhabi is organised by Informa.</div>
+  </div>
+  <a class="fp-next" href="../../work/"><span class="fp-lab">More work</span><b>All work</b><span aria-hidden="true">→</span></a>
+</section>
 </main>
-<nav class="pnext" style="--nbg:#EAE4D0;--nfg:#1B1915" aria-label="Next project">
-  <a href="../big-grill/">
-    <div><p class="label">Next</p><h2>A festival starts with a drawing.</h2><p style="opacity:.72;margin-top:16px">The Big Grill</p></div>
-    <div class="pic"><img src="../../img/big-grill/poster-red-1275.webp" srcset="../../img/big-grill/poster-red-800.webp 800w, ../../img/big-grill/poster-red-1275.webp 1275w" sizes="(max-width:760px) 100vw, 46vw" width="1275" height="1650" alt="The Big Grill poster, whole, in red: a guitarist, a 1950s car and a grill" loading="lazy" decoding="async"></div>
-  </a>
-</nav>
+
+<div class="fp-player" role="dialog" aria-label="Film player"><video playsinline preload="none"></video><div class="bar"><span class="ti"></span><button class="x" type="button">Close</button></div></div>
+
 <footer class="foot"><div class="wrap row">
   <p style="margin:0">Antoni Gerges · Executive Creative Director · <a href="mailto:antoni@antbrush.com">antoni@antbrush.com</a></p>
   <nav aria-label="Footer"><a href="../../work/">Work</a><a href="../../about/">About</a><a href="../../contact/">Contact</a></nav>
 </div></footer>
-<script src="../../assets/site.js?v=afd4c1e0" defer></script>
+<script src="../../assets/fp/fp.js?v=18" defer></script>
+<script type="module" src="cs.js?v=11"></script>
 </body>
 </html>
