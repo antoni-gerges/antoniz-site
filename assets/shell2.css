@@ -566,3 +566,17 @@ body:has(.pj-pick input:not(#k-all):checked) .where{display:none}
 .shell2 .chero.arch{min-height:0;padding:clamp(110px,13vw,190px) 0 clamp(140px,13vw,200px);border-top:1px solid rgba(247,245,241,.18)}
 .shell2 .chero.arch .ch1{font-size:clamp(44px,7vw,112px)}
 .pj-sel .plist{padding-bottom:clamp(40px,5vw,80px)}
+
+/* ---------- Work (14 Oct, evening): seven doors, long names given room; each door also lists its archive pieces ---------- */
+.pj-sel .pj-bar{display:block}
+.pj-sel .pj-pick{margin:22px 0 0 -12px;row-gap:2px}
+.pj-sel .pj-pick label{padding:12px 12px}
+:is(.pj-main:has(#s-gov:checked) .pj:not([data-s~="gov"]),.pj-main:has(#s-edu:checked) .pj:not([data-s~="edu"]),.pj-main:has(#s-health:checked) .pj:not([data-s~="health"]),.pj-main:has(#s-sports:checked) .pj:not([data-s~="sports"]),.pj-main:has(#s-concerts:checked) .pj:not([data-s~="concerts"]),.pj-main:has(#s-festivals:checked) .pj:not([data-s~="festivals"]),.pj-main:has(#s-corporate:checked) .pj:not([data-s~="corporate"])){display:none}
+.sec-more{display:none;margin:0 0 clamp(40px,5vw,80px);font:400 16px/1.5 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
+.sec-more span{display:block;margin-bottom:10px;font:600 13px/1 "Inter",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase}
+.sec-more a{display:inline-flex;align-items:center;gap:8px;margin:0 28px 10px 0;font:600 18px/1.3 "Jost",system-ui,sans-serif;color:#F7F5F1;text-decoration:none}
+.sec-more a i{font-style:normal}
+.pj-main:has(#s-gov:checked) .sec-more[data-for="gov"],.pj-main:has(#s-edu:checked) .sec-more[data-for="edu"],.pj-main:has(#s-health:checked) .sec-more[data-for="health"],.pj-main:has(#s-sports:checked) .sec-more[data-for="sports"],.pj-main:has(#s-concerts:checked) .sec-more[data-for="concerts"],.pj-main:has(#s-festivals:checked) .sec-more[data-for="festivals"],.pj-main:has(#s-corporate:checked) .sec-more[data-for="corporate"]{display:block}
+.cpromo{margin-top:22px}
+.cpromo a{display:inline-flex;align-items:center;gap:10px;font:600 var(--t,18px)/1.3 "Jost",system-ui,sans-serif;color:#F7F5F1;text-decoration:none}
+.cpromo small{font:400 12px/1 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}

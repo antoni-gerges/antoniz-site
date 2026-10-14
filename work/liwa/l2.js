@@ -43,7 +43,7 @@ function build() {
       const b = panel(1.5, 3.0, arts[i], .03); b.position.set(-.85, 5.0, 0); g.add(b);
       g.add(box(.9, .05, .05, steel, -.45, 6.52, 0), box(.9, .05, .05, steel, -.45, 3.48, 0));
       s.g.add(g); }
-    const bb = panel(4.5, 3.5, tex('billboard.webp'), .12); bb.position.set(-5.2, 4.3, -6); bb.rotation.y = .32; s.g.add(bb);
+    const bb = panel(4.5, 3.5, tex('billboard.webp?v=2'), .12); bb.position.set(-5.2, 4.3, -6); bb.rotation.y = .32; s.g.add(bb);
     [-1.4, 1.4].forEach(x => { const l = box(.16, 2.6, .16, steel, 0, 1.3, 0); l.position.set(-5.2 + x * Math.cos(.32), 1.3, -6 - x * Math.sin(.32) - .05); s.g.add(l); });
     
     S.blob(s.g, -5.2, -6, 4.6, 1.6, .85); for (let i = 0; i < 3; i++) S.blob(s.g, 4.3, 5 - i * 9, 1.6, 1.6, .85);
@@ -52,7 +52,7 @@ function build() {
   {
     const s = station(58, { c: [0, 1.6, .2], rx: 2.9, ry: 1.9, yaw: .44, pitch: .06, drift: .6 });
     ['02', '06', '08'].forEach((n, i) => { const g = new T.Group(); g.position.set(-2.0 + i * 2.0, 0, i === 1 ? .5 : 0); g.rotation.y = (1 - i) * .22;
-      const p = panel(1.2, 2.4, tex('sign-' + n + '.webp'), .07, { roughness: .5 }); p.position.y = 1.75; g.add(p);
+      const p = panel(1.2, 2.4, tex('sign-' + n + '.webp?v=2'), .07, { roughness: .5 }); p.position.y = 1.75; g.add(p);
       g.add(box(.09, .6, .09, steel, -.45, .3, 0), box(.09, .6, .09, steel, .45, .3, 0), box(1.3, .04, .5, steel, 0, .02, 0)); s.g.add(g); });
     
     [-2, 0, 2].forEach((x, i) => S.blob(s.g, x, i === 1 ? .5 : 0, 2.0, 1.2, .85));
@@ -61,8 +61,8 @@ function build() {
      WRITTEN on our elevation of 23 Dec 2019: icons 1.7 x 1.1 m, badge 1.7 x 1.7 m, popcorn with playhouse 3.33 x 3.5 m, castle 3 x 2.2 m.
      ESTIMATED ("about") from that drawing, rectified, and from the site footage: the arch 8 m wide and 5.6 m high, legs 1.42 m wide and 1.2 m deep,
      beam 1.1 m, so an opening of about 5.2 x 4.5 m. The cut-outs stand on the ground in front of the legs, as built; the icons and the reel sit above them, as built.
-     Artwork: the vectors of the brochure draft of 6 Dec 2019 (page 26), one layer per file. English only (Tony, 12 Oct): the beam carries the artwork's own
-     FUN ZONE letters at their drawn size, re-centred, and no other lettering. To change the lettering, change NAME. */
+     Artwork: the vectors of the brochure draft of 6 Dec 2019 (page 26), one layer per file. "Show only fun zone" (Tony, 12 Oct): the beam carries the artwork's own
+     FUN ZONE letters at their drawn size, re-centred, and no other lettering of the Liwa Land logo. To change the lettering, change NAME. */
   {
     const GW = 8.0, GH = 5.6, LEG = 1.42, BEAM = 1.1, GD = 1.2, F = GD / 2, Z0 = 70;   /* Z0: the gate stands 70 m in front of the other scenes, beyond their fog */
     const NAME = { face: 'gate-fz-face.webp', edge: 'gate-fz-edge.webp', glow: 'gate-fz-glow.webp', w: 2.196, h: .526, x: 0, y: GH - BEAM / 2 };
@@ -82,7 +82,10 @@ function build() {
     /* printed on the wrap (flat) · boards and cut-outs (standing off, casting shadows) */
     const print = (f, w, h, x, y) => { const m = new T.Mesh(new T.PlaneGeometry(w, h), std({ map: tex(f), transparent: true, depthWrite: false, roughness: .82 })); m.position.set(x, y, F + .012); m.receiveShadow = true; m.renderOrder = 5; G.add(m); return m; };
     const cut = (f, w, h, x, y, z) => { const m = new T.Mesh(new T.PlaneGeometry(w, h), std({ map: tex(f), alphaTest: .5, alphaToCoverage: true, roughness: .78, side: T.DoubleSide })); m.position.set(x, y, F + z); m.castShadow = m.receiveShadow = true; G.add(m); return m; };
-    print('gate-logo.webp', 1.15, .398, -GW / 2 + .85, GH - .575);            /* the festival's Latin lock-up, white as printed */
+    /* the festival's logo, white: only its lower part, the rectangle with LIWA International Festival 2020, nothing above it ("you can use it
+       without the upper part", Tony, 14 Oct). Cut from the final logo file itself (006, "Liwa Intl Fest 2020 logo"), its own proportions, no
+       point moved. 1.13 m wide as before, centred on the beam. */
+    print('gate-logo.webp?v=2', 1.15, 1.15 * 325 / 960, -GW / 2 + .85, GH - BEAM / 2);
     print('gate-stars.webp', 1.09, .494, GW / 2 - .65, GH - .38);
     print('gate-date.webp', 1.407, .208, GW / 2 - .94, GH - .8);              /* "26 Dec–10 Jan", taken from the elevation itself */
     print('gate-reel.webp', .95, .979, -GW / 2 + .8, 3.42);
