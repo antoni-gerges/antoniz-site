@@ -408,3 +408,6 @@ html.no-js:not(.js) .stg-pin{position:relative}
 .home2 .end .row{margin-top:clamp(72px,9vw,140px);border-top-color:rgba(247,245,241,.18);color:rgba(247,245,241,.72)}
 .home2 .end .row>span{display:inline-flex;align-items:center;gap:10px}
 .home2 .end .mk{color:#F7F5F1;flex:none}                                 /* his mark is black or white only */
+/* 14 Oct, evening: six headline numbers (three a row on a wide screen) */
+.h2-nums:has(.h2-num:nth-child(6)) .h2-num{flex:1 1 28%}
+.h2-nums:has(.h2-num:nth-child(6)) .h2-num b{font-size:clamp(54px,6vw,108px)}
