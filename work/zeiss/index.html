@@ -10,7 +10,27 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
 <link rel="preload" href="../../assets/jost-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../../assets/fp/fp.css?v=31">
-<noscript><style>.fp-pin{height:auto!important}.fp-stick{position:static;height:auto;overflow:visible}.fp-reel .ly{position:relative;height:70vh}.fp-plates .trk{position:static;flex-wrap:wrap;padding:40px var(--g);height:auto}.fp-model canvas,.fp-model .veil,.fp-ticks,.fp-cue,.fp-bar{display:none}.fp-model .intro{position:static;transform:none;padding:60px var(--g) 20px}.fp-model .st{position:static;opacity:1;transform:none;width:auto;padding:24px var(--g) 8px}.fp-built{position:static;opacity:1;transform:none;width:auto;max-width:720px;margin:0 var(--g) 24px}.fp-model .chap{position:static;display:block;padding:0 var(--g)}.fp-hero h1,.fp-hero .row{animation:none}.fp-built{visibility:visible;height:auto;background:none}.fp-built .fr{position:relative;inset:auto;aspect-ratio:16/9}.fp-built .fr::after{display:none}.fp-built .fp-lab,.fp-model .kind{position:static;text-align:left;margin-top:8px}.fp-hero.band{min-height:0}.fp-plates.stack .trk{display:block}.fp-plates.stack figure{margin-bottom:40px}@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{font-size:14px;padding:6px 8px}}button[data-film].fp-play{display:none}button[data-film]{pointer-events:none;cursor:default}button[data-film] .go{display:none}.fp-nojs{display:block;margin-top:14px}</style></noscript>
+<style>
+/* the opening is the coverage itself: no title of ours lies over it (Tony, 13 Oct). The page's name stays for screen readers; ZEISS is in the picture. */
+.fp-hero:not(.band) h1{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+/* ZEISS: the campaign scene. One artwork frame; a lens passes over the save the date and shows the invitation inside it. */
+.zl .fp-stick{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.5fr);gap:var(--g);align-items:center;padding:clamp(86px,12vh,120px) var(--g) clamp(26px,5vh,54px)}
+.zl .lead h2{font-size:clamp(40px,5.4vw,104px);line-height:.92;letter-spacing:-.04em;font-weight:300}
+.zl .lead .one{margin:18px 0 0;font-size:clamp(15px,1.15vw,18px);line-height:1.45;color:rgba(255,255,255,.82);max-width:22em}
+.zl .lead .now{margin-top:clamp(18px,4vh,40px)}
+.zl .art{position:relative;margin:0;width:min(100%,calc((100svh - 190px)*1684/1191));aspect-ratio:1684/1191;justify-self:end;overflow:hidden;background:#0b0b0d}
+.zl .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.zl .art .a1,.zl .art .a2{-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-image:var(--lens);mask-image:var(--lens)}
+.zl .art .a2{opacity:0}
+.zl .ring{position:absolute;left:0;top:0;width:36%;pointer-events:none;overflow:visible;opacity:0}
+@media (max-width:760px){
+  .zl .fp-stick{grid-template-columns:1fr;align-content:center;gap:22px;padding:84px var(--g) 30px}
+  .zl .art{width:100%;justify-self:stretch}
+  .zl .lead h2{font-size:clamp(44px,13vw,72px)}
+}
+.fp-more .tx figure.in{margin:14px 0 0}.fp-more .tx figure.in img{width:100%;height:auto;display:block}.fp-more .tx figure.in figcaption{margin-top:8px}
+</style>
+<noscript><style>.zl .fp-stick{display:block;padding:40px var(--g)}.zl .art{max-height:none;overflow:visible;aspect-ratio:auto}.zl .art img{position:static;height:auto;display:block;margin-bottom:14px;-webkit-mask-image:none!important;mask-image:none!important;opacity:1!important}.zl .ring{display:none}.fp-pin{height:auto!important}.fp-stick{position:static;height:auto;overflow:visible}.fp-reel .ly{position:relative;height:70vh}.fp-plates .trk{position:static;flex-wrap:wrap;padding:40px var(--g);height:auto}.fp-model canvas,.fp-model .veil,.fp-ticks,.fp-cue,.fp-bar{display:none}.fp-model .intro{position:static;transform:none;padding:60px var(--g) 20px}.fp-model .st{position:static;opacity:1;transform:none;width:auto;padding:24px var(--g) 8px}.fp-built{position:static;opacity:1;transform:none;width:auto;max-width:720px;margin:0 var(--g) 24px}.fp-model .chap{position:static;display:block;padding:0 var(--g)}.fp-hero h1,.fp-hero .row{animation:none}.fp-built{visibility:visible;height:auto;background:none}.fp-built .fr{position:relative;inset:auto;aspect-ratio:16/9}.fp-built .fr::after{display:none}.fp-built .fp-lab,.fp-model .kind{position:static;text-align:left;margin-top:8px}.fp-hero.band{min-height:0}.fp-plates.stack .trk{display:block}.fp-plates.stack figure{margin-bottom:40px}@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{font-size:14px;padding:6px 8px}}button[data-film].fp-play{display:none}button[data-film]{pointer-events:none;cursor:default}button[data-film] .go{display:none}.fp-nojs{display:block;margin-top:14px}</style></noscript>
 </head>
 <body class="fp">
 <a class="skip" href="#main">Skip to content</a>
@@ -24,9 +44,9 @@
 <main id="main">
 
 <!-- 1 · the film: our own film for the 74-ft wall, whole, then the real wall -->
-<section class="fp-hero" data-marks='[[0,"Campaign film by ZEISS"],[4.38,"The launch night · film with Mission Control X"]]' aria-label="ZEISS launch: the film of the night">
+<section class="fp-hero" data-marks='[[0,"The launch night · film with Mission Control X"]]' aria-label="ZEISS launch: the film of the night">
   <video class="v" muted playsinline loop preload="auto" data-src="a/hero-1600.mp4" data-src-p="a/hero-p.mp4" poster="a/hero-poster.webp" data-poster="a/hero-poster.webp" data-poster-p="a/hero-p-poster.webp"></video>
-  <div class="top"><span class="src"><i></i><b>Campaign film by ZEISS</b></span><span class="fp-lab r">ClearView &amp; PhotoFusion X launch · The Space, Dubai · 27 June 2022</span></div>
+  <div class="top"><span class="src"><i></i><b>The launch night · film with Mission Control X</b></span><span class="fp-lab r">ClearView &amp; PhotoFusion X launch · The Space, Dubai · 27 June 2022</span></div>
   <div class="in">
     <h1>ZEISS</h1>
     <div class="row">
@@ -43,29 +63,21 @@
   <div>
     <h2>ZEISS launched two lenses in one night. <em>I led it, from the first sketch to the last screen.</em></h2>
     <div class="facts"><div><b>27 June 2022</b>The Space, Dubai</div></div>
-    <details class="fp-more"><summary>Read more</summary><div class="tx"><div><span class="fp-lab"><b>The launch</b></span><p>ZEISS Vision Care launched two lenses, ClearView and PhotoFusion X, in one night at The Space, Dubai, on 27 June 2022. I led it from the first sketch to the last screen: the idea, the invitations, the films, the space. Made by AntBrush, with Mission Control X.</p></div><div><span class="fp-lab"><b>The idea</b></span><p>The ZEISS brackets frame what you should look at. So we put the launch inside them: a lens, an eye, and an athlete who is not standard.</p><p>The concept board holds the whole idea on one sheet. The invitation carries the campaign athlete and one line: stand out with stock that is not standard. Both photo walls were drawn into the sports hall before anything was printed.</p></div><div><span class="fp-lab"><b>The pieces</b></span><p>The 3D models are made from the production artwork. The way in is one space: the long screen with our film, and ten flags on the carpet. The two signs carry an arrow, the launch name and the logo, printed on both sides. The entrance wall is an L on the stairs, 4 ft 11 in + 11 ft 2 in wide.</p></div><div><span class="fp-lab"><b>The photo booth</b></span><p>My design. Two acrylic lenses, one clear and one tinted, the way PhotoFusion X darkens in the sun. Guests stand behind them. The base is 5 ft 7 in × 2 ft 4 in.</p><p>The film for the 74-ft wall runs from IT’S TIME to NOT STANDARD.</p></div></div></details>
+    <details class="fp-more"><summary>Read more</summary><div class="tx"><div><span class="fp-lab"><b>The launch</b></span><p>ZEISS Vision Care launched two lenses, ClearView and PhotoFusion X, in one night at The Space, Dubai, on 27 June 2022. I led it from the first sketch to the last screen: the idea, the invitations, the films, the space. Made by AntBrush, with Mission Control X.</p></div><div><span class="fp-lab"><b>The campaign</b></span><p>The ZEISS brackets frame what you should look at. First they framed only a date, on a bare wall. Then the invitation showed who was coming: the campaign athlete and the two lenses. A reminder followed, in the same frame.</p></div><div><span class="fp-lab"><b>The pieces</b></span><p>The 3D models are made from the production artwork. The way in is one space: the long screen with our film, and ten sail flags on the carpet. The two signs carry an arrow, the launch name and the logo, printed on both sides. The entrance wall is an L on the stairs, 4 ft 11 in + 11 ft 2 in wide.</p><p>Both photo walls were drawn into the sports hall before anything was printed.</p><figure class="in"><img src="a/room-273.webp" width="2400" height="1205" alt="The room, planned: both photo walls drawn into the sports hall" loading="lazy" decoding="async"><figcaption class="fp-lab">The room, planned</figcaption></figure></div><div><span class="fp-lab"><b>The photo booth</b></span><p>My design. Two acrylic lenses, one clear and one tinted, the way PhotoFusion X darkens in the sun. Guests stand behind them. The base is 5 ft 7 in × 2 ft 4 in.</p><p>The film for the 74-ft wall runs from IT’S TIME to NOT STANDARD.</p></div></div></details>
   </div>
 </section>
 
-<!-- 2b · our own film for the 74-ft wall, whole -->
-<section class="fp-hero band" aria-label="The film we made for the 74-foot wall">
-  <div class="hd"><div><span class="fp-lab"><b>Screen film by AntBrush</b> · made for the 74-ft wall</span><h2>It’s time.</h2></div></div>
-  <div class="film"><video class="v" muted playsinline loop preload="none" poster="a/led3-poster.webp" data-src="a/led3-2816.mp4" data-src-p="a/led3-1408.mp4" data-poster="a/led3-poster.webp"></video></div>
-  <div class="lo">
-    <div><span class="whole" style="display:block"><button class="fp-play" type="button" data-film="a/led3-2816.mp4" data-film-p="a/led3-1408.mp4" data-title="Screen film by AntBrush · made for the 74-ft wall · 0:35 · silent">Watch the wall film whole <small>0:35 · silent · turn your phone</small></button><noscript><span class="fp-nojs"><a class="fp-play" href="a/led3-2816.mp4">Open the wall film <small>0:35 · video file</small></a></span></noscript></span></div>
-    <div class="test"><figure><video muted playsinline loop preload="none" data-auto poster="a/wall-poster.webp" data-src="a/wall-848.mp4" data-poster="a/wall-poster.webp"></video><figcaption class="fp-lab"><b>The same film on the real wall</b> · screen test, 25 June 2022 · site video</figcaption></figure></div>
-  </div>
-</section>
-
-<!-- 3 · on paper: three artworks, whole, no sideways gallery -->
-<section class="fp-plates stack" aria-label="The design work">
+<!-- 3 · the campaign as it was approved: first only a date on a wall, then the invitation. A lens passes over the first and shows the second. -->
+<section class="fp-pin zl" style="--n:3.2" aria-label="The campaign: save the date, then the invitation">
   <div class="fp-stick">
-    <div class="trk">
-      <div class="lead"><span class="fp-lab"><b>01</b> · The idea</span><h2>First, <b class="tw">on paper.</b></h2><p>We put the launch inside the ZEISS brackets: a lens, an eye, an athlete.</p></div>
-      <figure><img src="a/s073-2000.webp" width="2000" height="1418" alt="Concept board" loading="lazy" decoding="async"><figcaption><b>Concept board</b></figcaption></figure>
-      <figure><img src="a/s149-2000.webp" width="2000" height="1417" alt="Invitation" loading="lazy" decoding="async"><figcaption><b>Invitation</b></figcaption></figure>
-      <figure><img src="a/room-273.webp" width="2400" height="1205" alt="The room, planned" loading="lazy" decoding="async"><figcaption><b>The room, planned</b></figcaption></figure>
-    </div>
+    <div class="lead"><span class="fp-lab"><b>01</b> · The campaign</span><h2>Tease, <b class="tw">then reveal.</b></h2><p class="one">First only a date on a bare wall. Then the invitation shows who is coming.</p>
+      <p class="now fp-lab" aria-live="polite"><b>Save the date</b></p></div>
+    <figure class="art">
+      <img class="a0" src="a/std-1684.webp" width="1684" height="1191" alt="Save the date: light on a concrete wall, Monday 27th June 2022" decoding="async">
+      <img class="a1" src="a/inv-1684.webp" width="1684" height="1191" alt="The invitation: the campaign athlete and the two lenses, ZEISS ClearView and PhotoFusion X" decoding="async">
+      <img class="a2" src="a/rem-1684.webp" width="1684" height="1191" alt="The reminder, in the same frame" loading="lazy" decoding="async">
+      <svg class="ring" viewBox="0 0 100 88.5" aria-hidden="true" focusable="false"><path d="M50,1.8 C80,1.8 99,14.1 98,38.7 C97,65.1 74,86.7 47,86.7 C21,86.7 1.5,63.4 2,35.2 C2.5,12.3 20,1.8 50,1.8 Z" fill="none" stroke="#fff" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+    </figure>
   </div>
 </section>
 
@@ -78,10 +90,10 @@
     <span class="fp-lab kind"><b>3D model</b><span class="x"> · from the production artwork</span></span>
     <div class="intro"><span class="fp-lab"><b>02</b> · The pieces</span><h2>Then every piece,<br><b class="tw">in 3D.</b></h2><p>Each model, then the same piece on the night.</p></div>
     <div class="st" data-s="0"><span class="fp-lab"><b>01</b> / 07</span><h3>The way in</h3><p>The long screen with our film, and ten flags on the carpet.</p><div class="spec"><span>Flags<b>10</b></span></div></div>
-    <div class="st" data-s="1"><span class="fp-lab"><b>02</b> / 07</span><h3>Two signs</h3><p>An arrow, the launch name, the logo.</p><div class="spec"><span>Height<b>6 ft 7 in · 200 cm</b></span></div></div>
-    <div class="st" data-s="2"><span class="fp-lab"><b>03</b> / 07</span><h3>The entrance wall</h3><p>The athlete meets guests on the stairs.</p><div class="spec"><span>Height<b>7 ft 9 in · 235 cm</b></span></div></div>
+    <div class="st" data-s="1"><span class="fp-lab"><b>02</b> / 07</span><h3>Two signs</h3><p>An arrow, the launch name, the logo.</p></div>
+    <div class="st" data-s="2"><span class="fp-lab"><b>03</b> / 07</span><h3>The entrance wall</h3><p>The athlete meets guests on the stairs.</p></div>
     <div class="st" data-s="3"><span class="fp-lab"><b>04</b> / 07</span><h3>The ClearView wall</h3><p>A photo wall and a row of mannequins, all wearing the lens.</p></div>
-    <div class="st" data-s="4"><span class="fp-lab"><b>05</b> / 07</span><h3>The photo booth</h3><p>My design. Two acrylic lenses, one clear, one tinted. Guests stand behind them.</p><div class="spec"><span>Height<b>4 ft 11 in · 150 cm</b></span></div></div>
+    <div class="st" data-s="4"><span class="fp-lab"><b>05</b> / 07</span><h3>The photo booth</h3><p>My design. Two acrylic lenses, one clear, one tinted. Guests stand behind them.</p></div>
     <div class="st" data-s="5"><span class="fp-lab"><b>06</b> / 07</span><h3>The eye</h3><p>The back wall of the product display.</p></div>
     <div class="st" data-s="6"><span class="fp-lab"><b>07</b> / 07</span><h3>74 feet of screen</h3><p>Our film for the main wall.</p><div class="spec"><span>Screen<b>74 ft · 22.5 m</b></span></div></div>
     <div class="fp-built " data-b="0"><div class="fr"><video muted playsinline loop preload="none" poster="a/n1-arrive-d.webp" data-src="a/n1-arrive-d.mp4" data-src-p="a/n1-arrive-p.mp4"></video></div><div class="fp-lab"><span><b>Built · 27 June 2022</b></span><span>Film of the night · Mission Control X</span></div></div>
@@ -90,6 +102,16 @@
     <div class="fp-built " data-b="4"><div class="fr"><video muted playsinline loop preload="none" poster="a/b3-booth-d.webp" data-src="a/b3-booth-d.mp4" data-src-p="a/b3-booth-p.mp4"></video></div><div class="fp-lab"><span><b>Built · 27 June 2022</b></span><span>Film of the night · Mission Control X</span></div></div>
     <div class="fp-built " data-b="5"><div class="fr"><img class="cover" src="a/s006-2000.webp" alt="" loading="lazy" decoding="async"></div><div class="fp-lab"><span><b>Built · 27 June 2022</b></span><span>Event photograph</span></div></div>
     <div class="fp-built native" data-b="6"><div class="fr"><video muted playsinline loop preload="none" poster="a/wall-poster.webp" data-src="a/wall-848.mp4"></video></div><div class="fp-lab"><span><b>Screen test · 25 June 2022</b></span><span>Site video, shown at its own size</span></div></div>
+  </div>
+</section>
+
+<!-- 5 · it is time: our own film for the 74-ft wall, whole, then the night -->
+<section class="fp-hero band" aria-label="The film we made for the 74-foot wall">
+  <div class="hd"><div><span class="fp-lab"><b>Screen film by AntBrush</b> · made for the 74-ft wall</span><h2>It’s time.</h2></div></div>
+  <div class="film"><video class="v" muted playsinline loop preload="none" poster="a/led3-poster.webp" data-src="a/led3-2816.mp4" data-src-p="a/led3-1408.mp4" data-poster="a/led3-poster.webp"></video></div>
+  <div class="lo">
+    <div><span class="whole" style="display:block"><button class="fp-play" type="button" data-film="a/led3-2816.mp4" data-film-p="a/led3-1408.mp4" data-title="Screen film by AntBrush · made for the 74-ft wall · 0:35 · silent">Watch the wall film whole <small>0:35 · silent · turn your phone</small></button><noscript><span class="fp-nojs"><a class="fp-play" href="a/led3-2816.mp4">Open the wall film <small>0:35 · video file</small></a></span></noscript></span></div>
+    <div class="test"><figure><video muted playsinline loop preload="none" data-auto poster="a/wall-poster.webp" data-src="a/wall-848.mp4" data-poster="a/wall-poster.webp"></video><figcaption class="fp-lab"><b>The same film on the real wall</b> · screen test, 25 June 2022 · site video</figcaption></figure></div>
   </div>
 </section>
 
@@ -112,7 +134,7 @@
   <div class="fp-cred">
     <div><span class="fp-lab">Role</span>Antoni Gerges<br>Executive Creative Director</div>
     <div><span class="fp-lab">Made by</span>AntBrush, with Mission Control X.</div>
-    <div><span class="fp-lab">Credits</span>Campaign film and photography by ZEISS.<br>Film of the night by Mission Control X.</div>
+    <div><span class="fp-lab">Credits</span>Campaign photography by ZEISS.<br>Film of the night by Mission Control X.</div>
     <figure><img src="a/s465-1000.webp" alt="Antoni Gerges standing in the photo booth before the doors opened" loading="lazy"><figcaption class="fp-lab">Me, in the booth,<br>before the doors opened</figcaption></figure>
   </div>
   <a class="fp-next" href="../liwa/"><span class="fp-lab">Next project</span><b>Liwa</b><span aria-hidden="true">→</span></a>
@@ -126,6 +148,7 @@
   <nav aria-label="Footer"><a href="../../projects/">Projects</a><a href="../../work/">Craft</a><a href="../../about/">About</a><a href="../../contact/">Contact</a></nav>
 </div></footer>
 <script src="../../assets/fp/fp.js?v=18" defer></script>
-<script type="module" src="z7.js?v=24"></script>
+<script src="zl.js?v=1" defer></script>
+<script type="module" src="z7.js?v=27"></script>
 </body>
 </html>

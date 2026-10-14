@@ -55,7 +55,7 @@ function build() {
     const main = panel(3.4, 2.35, t1, .08); main.position.set(.75, 1.175, 0); s.g.add(main);
     const ret = panel(1.5, 2.35, t2, .08); ret.rotation.y = Math.PI / 2; ret.position.set(-.95, 1.175, .75); s.g.add(ret);
     S.blob(s.g, .75, .1, 4.6, 1.3, .85); S.blob(s.g, -.95, .8, 1.2, 2.2, .7);
-    s.dims.push({ a: [-.95, 2.5, 0], b: [2.45, 2.5, 0], t: '11 ft 2 in · 340 cm', big: true }, { a: [-1.05, 2.5, 0], b: [-1.05, 2.5, 1.5], t: '4 ft 11 in · 150 cm' }, { a: [2.6, 0, .05], b: [2.6, 2.35, .05], t: '7 ft 9 in · 235 cm' });
+    
   }
   /* 5 · the ClearView wall and its row of mannequins */
   {
@@ -70,7 +70,7 @@ function build() {
     const s = boothS, w = panel(5.16, 3.0, tex('wall-pfx.webp'), .08); w.position.set(0, 1.5, 0); s.g.add(w);
     s.g.add(box(1.7, .05, .7, std({ color: 0x24262b, roughness: .35, metalness: .3 }), 0, .025, 1.5));
     S.blob(s.g, 0, 1.5, 2.6, 1.5, .85); S.blob(s.g, 0, .1, 6.4, 1.4, .85);
-    s.dims.push({ a: [-.85, .02, 1.95], b: [.85, .02, 1.95], t: '5 ft 7 in · 170 cm', big: true }, { a: [-.98, .05, 1.5], b: [-.98, 1.5, 1.5], t: '4 ft 11 in · 150 cm' }, { a: [.9, .02, 1.15], b: [.9, .02, 1.85], t: '2 ft 4 in · 70 cm' });
+    
   }
   /* 7 · the eye: the back wall for the product display */
   {
@@ -89,17 +89,17 @@ function build() {
     const l = video('a/led-2816.mp4', 'a/led-1408.mp4', 'a/led-poster.webp'); s.vid = l.v;
     const Wd = 22.56, Hd = Wd * 648 / 2816, scr = new T.Mesh(new T.PlaneGeometry(Wd, Hd), new T.MeshBasicMaterial({ map: l.t, toneMapped: false })); scr.position.set(0, 1.0 + Hd / 2, .02); s.g.add(scr);
     s.g.add(box(Wd + .3, Hd + .3, .3, dark, 0, 1.0 + Hd / 2, -.16));
-    s.dims.push({ a: [-Wd / 2, 1.0 + Hd + .35, .1], b: [Wd / 2, 1.0 + Hd + .35, .1], t: '74 ft · 22.5 m', big: true }, { a: [-9.5, 0, 1.6], b: [-9.5, 1.8, 1.6], t: 'A person · 6 ft' });
+    s.dims.push({ a: [-Wd / 2, 1.0 + Hd + .35, .1], b: [Wd / 2, 1.0 + Hd + .35, .1], t: '74 ft · 22.5 m', big: true });
     S.blob(s.g, 0, .4, 25, 3, .8);
   }
 
   /* pieces that need the traced outlines: the signs, the booth lenses */
-  fetch(A + 'shapes.json').then(r => r.json()).then(j => {
-    { /* signs */
+  fetch(A + 'shapes.json?v=2').then(r => r.json()).then(j => {
+    { /* signs: the outline is traced from the production artwork itself (the project's presentation, 24 June 2022), then given depth; 200 cm tall, 69 cm at the arrow */
       const sh = new T.Shape(j.sign.map(p => new T.Vector2(p[0], p[1]))), geo = new T.ExtrudeGeometry(sh, { depth: .09, bevelEnabled: false });
-      const face = std({ map: tex('sign.webp'), alphaTest: .35, roughness: .55 });
-      [[-.62, .34], [.62, -.3]].forEach((p, i) => { const m = new T.Mesh(geo, [face, std({ color: 0x2a2c31, roughness: .5 })]); m.scale.set(.688, 2.0, 1); m.position.set(p[0] - .344, 0, .1 + i * .5); m.rotation.y = p[1]; m.castShadow = true; signS.g.add(m); S.blob(signS.g, p[0], .2 + i * .5, 1.5, 1.0, .85); });
-      signS.dims.push({ a: [1.25, 0, .6], b: [1.25, 2.0, .6], t: '6 ft 7 in · 200 cm', big: true });
+      const face = std({ map: tex('sign-2.webp'), alphaTest: .35, roughness: .55 });
+      [[-.62, .34], [.62, -.3]].forEach((p, i) => { const m = new T.Mesh(geo, [face, std({ color: 0x2a2c31, roughness: .5 })]); m.scale.set(.689, 2.0, 1); m.position.set(p[0] - .344, 0, .1 + i * .5); m.rotation.y = p[1]; m.castShadow = true; signS.g.add(m); S.blob(signS.g, p[0], .2 + i * .5, 1.5, 1.0, .85); });
+      
     }
     { /* booth: panel 170 x 120 cm, lenses up to 150 cm, 2 cm acrylic */
       const g = boothS.g, z = 1.5, cm = .01;
@@ -112,6 +112,9 @@ function build() {
       const mk = (mir, mat) => { const sh = new T.Shape(pts.map(p => new T.Vector2(mir ? -p.x : p.x, p.y))), geo = new T.ExtrudeGeometry(sh, { depth: .02, bevelEnabled: true, bevelThickness: .003, bevelSize: .003, bevelSegments: 2, curveSegments: 4 }); const m = new T.Mesh(geo, mat); m.position.set(0, 0, z + .014); m.castShadow = !mir; g.add(m);
         const e = new T.LineSegments(new T.EdgesGeometry(geo, 40), edge); e.position.copy(m.position); g.add(e); };
       mk(false, tint); mk(true, glass);
+      /* the tinted lens starts clear and darkens while you stand at the booth, the way PhotoFusion X darkens in the sun */
+      { const c0 = new T.Color(0xdfe8ee), c1 = new T.Color(0x55666f), a0 = new T.Color(0xf4f8fa), a1 = new T.Color(0x2f3d45);
+        S.onFrame((time, i, local) => { if (i !== 4) return; const k = S.FP.ease(S.FP.seg(local, .04, .38)); tint.color.copy(c0).lerp(c1, k); tint.attenuationColor.copy(a0).lerp(a1, k); tint.attenuationDistance = 2.4 - 2.15 * k; tint.transmission = .95 - .13 * k; }); }
       { const sh = new T.Shape(pts.map(p => new T.Vector2(-p.x, p.y))), hint = new T.Mesh(new T.ShapeGeometry(sh), new T.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: .09, depthWrite: false, side: T.DoubleSide })); hint.position.set(0, 0, z + .04); hint.renderOrder = 8; g.add(hint);
         const ph = new T.Mesh(new T.PlaneGeometry(1.7, 1.2), new T.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: .05, depthWrite: false, side: T.DoubleSide })); ph.position.set(0, .65, z + .012); ph.renderOrder = 8; g.add(ph); }
       const lt = tex('booth-label.webp'), lab = new T.Mesh(new T.PlaneGeometry(.78, .78 * 218 / 1024), new T.MeshBasicMaterial({ map: lt, transparent: true, depthWrite: false })); lab.position.set(0, .72, z + .013); lab.renderOrder = 9; g.add(lab);

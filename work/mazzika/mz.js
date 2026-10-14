@@ -179,8 +179,8 @@ function build() {
     station(0, Object.assign({}, none, { c: [-VX, VY, VZ], rx: 5.6, ry: 3.6, yaw: -.52, pitch: -.12, fx: .5, fy: .62, ox: .12, fxp: .95, fyp: .36, yawp: -.4 })),
     station(0, Object.assign({}, none, { c: [0, 6.9, -4], rx: 22.5, ry: 8, yaw: 0, pitch: -.13, fx: .92, fy: .9, ox: 0, oy: 0, oxp: 0, oyp: 0, fxp: 1.1, fyp: .4, yawp: 0, drift: .06, rxp: 11 }))
   ];
-  ST[1].dims.push({ a: [-8.5, DECK_H, 5.6], b: [-8.5, DECK_H + 1.83, 5.6], t: 'A person · 6 ft' });
-  ST[2].dims.push({ a: [-CW / 2, CY + CH / 2 + 3.2, CZ + .1], b: [CW / 2, CY + CH / 2 + 3.2, CZ + .1], t: 'Centre screen · about 33 ft · 10 m', big: true });
+  
+  
 
   /* ---------- names in the model: plain text on a short line, placed from the 3D point each frame ---------- */
   const NAMES = [
@@ -189,7 +189,7 @@ function build() {
     [0, [0, 1.2, PZ(545)], 'Bar'], [0, [-HALL - 9, 7.2, 40], 'Seats'], [0, [HALL + 9, 7.2, 40], 'Seats'],
     
     [1, [0, GY, 5.6], 'Grid, flown from the roof'], [1, [9.6, 13.2, 5.6], 'Front truss'],
-    [2, [-(CW / 2 + CGAP + 1.5 * SW + SGAP), CY + CH / 2, CZ], 'Six pillars'], [2, [VX, VY + VH / 2, VZ], 'Side screen'],
+    [2, [0, CY + CH / 2, CZ], 'Centre screen'], [2, [-(CW / 2 + CGAP + 1.5 * SW + SGAP), CY + CH / 2, CZ], 'Six pillars'], [2, [VX, VY + VH / 2, VZ], 'Side screen'],
     [3, [0, 13.2, 5.6], 'Five rows of truss'], [3, [-16.8, .6, 8.2], 'Floor lights'],
     [4, [-11.8, 16.8, 6.4], 'Left hang'], [4, [11.8, 16.8, 6.4], 'Right hang'], [4, [1.3, DECK_H + .4, 5.5], 'Monitors'],
     [5, [0, 1.9, FOHZ - 1.4], 'Sound, light and screen desks']

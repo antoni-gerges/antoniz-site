@@ -1,0 +1,32 @@
+/* ZEISS: the campaign scene. A lens passes over the save the date and shows the invitation inside it; then the lens opens
+   over the whole frame, and the reminder arrives the same way. Scroll-driven; with reduced motion it steps, without JavaScript
+   the three artworks sit one under the other (see the noscript rules in the page). */
+(function () {
+  var W = window, D = document, FP = W.FP; if (!FP) return;
+  var sec = D.querySelector('.zl'); if (!sec) return;
+  var art = sec.querySelector('.art'), a1 = sec.querySelector('.a1'), a2 = sec.querySelector('.a2'), ring = sec.querySelector('.ring'), now = sec.querySelector('.now b');
+  var LENS = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 88.5'%3E%3Cpath d='M50,1.8 C80,1.8 99,14.1 98,38.7 C97,65.1 74,86.7 47,86.7 C21,86.7 1.5,63.4 2,35.2 C2.5,12.3 20,1.8 50,1.8 Z'/%3E%3C/svg%3E\")";
+  art.style.setProperty('--lens', LENS);
+  var lab = ['Save the date', 'The invitation', 'The reminder'], cur = -1;
+  function set(img, cx, cy, w) { /* centre and width of the lens, as fractions of the frame */
+    var Wd = art.clientWidth, H = art.clientHeight, pw = w * Wd, ph = pw * .885, x = cx * Wd - pw / 2, y = cy * H - ph / 2;
+    img.style.webkitMaskSize = img.style.maskSize = pw.toFixed(1) + 'px ' + ph.toFixed(1) + 'px';
+    img.style.webkitMaskPosition = img.style.maskPosition = x.toFixed(1) + 'px ' + y.toFixed(1) + 'px';
+    return [x, y, pw];
+  }
+  FP.on(function (H) {
+    var r = sec.getBoundingClientRect(); if (r.bottom < -H || r.top > 2 * H) return;
+    var p = FP.clamp(-r.top / (r.height - H), 0, 1);
+    if (FP.rm) p = p < .35 ? 0 : p < .82 ? .74 : 1;
+    /* the lens comes in at the left, crosses the athlete and the glasses to the name, then opens over the whole frame */
+    var t = FP.ease(FP.seg(p, .08, .5)), g = FP.ease(FP.seg(p, .5, .72)), inn = FP.seg(p, .02, .1);
+    var cx = .2 + t * .5 - g * .2, cy = .58 - t * .1 + g * .02, w = .22 + inn * .2 + g * 3.4;
+    var b = set(a1, cx, cy, w);
+    a1.style.opacity = inn > 0 ? 1 : 0;
+    ring.style.transform = 'translate(' + b[0].toFixed(1) + 'px,' + b[1].toFixed(1) + 'px)'; ring.style.width = b[2].toFixed(1) + 'px';
+    ring.style.opacity = (inn * (1 - FP.seg(p, .5, .6))).toFixed(3);
+    /* the reminder arrives in the same frame, the same way */
+    var q = FP.ease(FP.seg(p, .82, .97)); a2.style.opacity = q > 0 ? 1 : 0; set(a2, .5, .5, q * 3.6);
+    var n = p < .3 ? 0 : p < .88 ? 1 : 2; if (n !== cur) { cur = n; now.textContent = lab[n]; }
+  });
+})();

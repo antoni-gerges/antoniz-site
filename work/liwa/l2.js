@@ -57,7 +57,7 @@ function build() {
       s.g.add(g); }
     const bb = panel(4.5, 3.5, tex('billboard.webp'), .12); bb.position.set(-5.2, 4.3, -6); bb.rotation.y = .32; s.g.add(bb);
     [-1.4, 1.4].forEach(x => { const l = box(.16, 2.6, .16, steel, 0, 1.3, 0); l.position.set(-5.2 + x * Math.cos(.32), 1.3, -6 - x * Math.sin(.32) - .05); s.g.add(l); });
-    s.dims.push({ a: [-7.45, 6.3, -5.2], b: [-2.95, 6.3, -6.75], t: '14 ft 9 in · 4.5 m', big: true }, { a: [3.1, 3.5, 5.2], b: [3.1, 6.5, 5.2], t: '9 ft 10 in · 3 m' }, { a: [-3.2, 0, -3.6], b: [-3.2, 1.8, -3.6], t: 'A person · 6 ft' });
+    
     S.blob(s.g, -5.2, -6, 4.6, 1.6, .85); for (let i = 0; i < 3; i++) S.blob(s.g, 4.3, 5 - i * 9, 1.6, 1.6, .85);
   }
   /* 3 · wayfinding: one sign system, seven panels */
@@ -66,7 +66,7 @@ function build() {
     ['02', '06', '08'].forEach((n, i) => { const g = new T.Group(); g.position.set(-2.0 + i * 2.0, 0, i === 1 ? .5 : 0); g.rotation.y = (1 - i) * .22;
       const p = panel(1.2, 2.4, tex('sign-' + n + '.webp'), .07, { roughness: .5 }); p.position.y = 1.75; g.add(p);
       g.add(box(.09, .6, .09, steel, -.45, .3, 0), box(.09, .6, .09, steel, .45, .3, 0), box(1.3, .04, .5, steel, 0, .02, 0)); s.g.add(g); });
-    s.dims.push({ a: [3.0, 0, .4], b: [3.0, 1.8, .4], t: 'A person · 6 ft' });
+    
     [-2, 0, 2].forEach((x, i) => S.blob(s.g, x, i === 1 ? .5 : 0, 2.0, 1.2, .85));
   }
   /* 4 · Liwa Land: the gate of the children's zone.
@@ -116,7 +116,7 @@ function build() {
       { a: [(GW - LEG) / 2 - .85, 2.36, Z0 + F + .1], b: [(GW - LEG) / 2 + .85, 2.36, Z0 + F + .1], t: '5 ft 7 in · 1.7 m' },
       { a: [RX, .06, Z0 + F + 2.5], b: [RX + 3, .06, Z0 + F + 2.5], t: '9 ft 10 in · 3 m' },
       { a: [-.4, 0, Z0 + F + 1.4], b: [-.4, 1.8, Z0 + F + 1.4], t: 'A person · 6 ft' }];
-    s.dims.push({ a: [-GW / 2, GH + .5, Z0 + F], b: [GW / 2, GH + .5, Z0 + F], t: 'about 26 ft · 8 m', big: true }, ...written);
+    
     S.onFrame(() => { const ph = S.FP.phone(); written.forEach(d => { if (d.line) d.line.visible = !ph; }); });   /* a phone shows the width only */
     S.blob(G, -(GW - LEG) / 2, 0, 3.2, 2.8, .8); S.blob(G, (GW - LEG) / 2, 0, 3.2, 2.8, .8); S.blob(G, LX + 1.7, F + .7, 4.4, 1.5, .75); S.blob(G, RX + 1.5, F + .65, 3.9, 1.3, .75);
   }
@@ -128,7 +128,7 @@ function build() {
     const pt = tex('plan.webp'), slab = new T.Mesh(new T.BoxGeometry(24, .16, 24 * 1443 / 2048), [dark, dark, std({ map: pt, emissive: 0xffffff, emissiveMap: pt, emissiveIntensity: .5, roughness: .7 }), dark, dark, dark]);
     slab.position.set(0, .09, 18.5); slab.castShadow = slab.receiveShadow = true; s.g.add(slab);
     s.dims.push({ a: [17, 0, 6.5], b: [17, 15, 6.5], t: '984 ft · 300 m', k: .6, huge: true });
-    const PZ = (u, v, t) => { const x = -12 + 24 * u, z = 18.5 - 8.455 + 16.91 * v; s.dims.push({ a: [x, .2, z], b: [x, 1.7, z], t, k: .14 }); };
+    const PZ = (u, v, t) => { const x = -12 + 24 * u, z = 18.5 - 8.455 + 16.91 * v; };
     PZ(.80, .52, 'Race arenas'); PZ(.40, .63, 'Heritage Village · Moreeb Walk · theatre'); PZ(.80, .70, 'Camping'); PZ(.40, .44, 'Paraglider strip');
   }
   /* 6 · the big screen: the TV commercial, playing */
@@ -137,7 +137,7 @@ function build() {
     const l = video('../../media/films/liwa-tvc-720.mp4', null, '../../media/films/liwa-tvc-poster.jpg'); s.vid = l.v;
     const scr = new T.Mesh(new T.PlaneGeometry(8, 4.5), new T.MeshBasicMaterial({ map: l.t, toneMapped: false })); scr.position.set(0, 3.9, .03); s.g.add(scr);
     s.g.add(box(8.3, 4.8, .3, dark, 0, 3.9, -.14), box(.22, 1.7, .22, steel, -3.4, .85, -.14), box(.22, 1.7, .22, steel, 3.4, .85, -.14), box(8.3, .14, 1.4, steel, 0, .07, -.14));
-    s.dims.push({ a: [-5.0, 0, 1.2], b: [-5.0, 1.8, 1.2], t: 'A person · 6 ft' });
+    
     S.blob(s.g, 0, -.1, 10, 2.6, .85);
   }
   S.ready();

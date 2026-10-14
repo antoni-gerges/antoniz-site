@@ -62,7 +62,7 @@ function build() {
   station(0, Object.assign({}, none, { c: [0, MC, 0], rx: MW / 2 + .5, ry: MH / 2 + .4, yaw: 0, pitch: .02, fx: .62, fy: .74, ox: .16, oy: -.02, fxp: .96, fyp: .42, oxp: 0, oyp: -.14, drift: .06 }));
   station(0, Object.assign({}, none, { c: [0, MC, 0], rx: MW / 2 + .5, ry: MH / 2 + .4, yaw: .62, pitch: .14, fx: .6, fy: .74, ox: .16, oy: -.02, fxp: .96, fyp: .42, oxp: 0, oyp: -.14 }));
   const gate = station(0, Object.assign({}, none, { c: [0, 2.1, 6], rx: 6.9, ry: 2.7, yaw: -.4, pitch: .07, fx: .7, fy: .6, ox: .12, oy: 0, fxp: 1.0, fyp: .4, oxp: 0, oyp: -.14, yawp: -.3 }));
-  gate.dims.push({ a: [-6, 4.55, 6.5], b: [6, 4.55, 6.5], t: '39 ft · 12 m', big: true }, { a: [6.75, 0, 6.5], b: [6.75, 4, 6.5], t: '13 ft · 4 m' });
+  
 
   /* ---------- the zigzag wall: ONE print, 9 m by 3 m, folded twelve times (the size is written on the design render: "9*3 print").
      The print is the wall's own artwork (2D file "sssw"). Nothing is added to it. What the model shows that a photograph cannot:
@@ -80,7 +80,7 @@ function build() {
     const white = new T.MeshStandardMaterial({ color: 0xf2f3f7, roughness: .6 });
     for (let k = 0; k < 5; k++) { const p = new T.Mesh(new T.BoxGeometry(.62, .86, .28), white); p.position.set(-3.4 + k * 1.7, .43, 1.6); p.castShadow = true; p.receiveShadow = true; g.add(p); }
     const lamp = new T.SpotLight(0xffffff, 60, 30, .62, .8, 1.4); lamp.position.set(-2, 7.5, 9); lamp.target.position.set(0, 1.4, 0); g.add(lamp, lamp.target);
-    zig.dims.push({ a: [-span / 2, H + .38, dz / 2], b: [span / 2, H + .38, dz / 2], t: 'One print, folded · 30 ft × 10 ft · 9 × 3 m', big: true }, { a: [span / 2 + .7, 0, 1.2], b: [span / 2 + .7, 1.83, 1.2], t: 'A person · 6 ft' });
+    
   }
 
   compose(0);
