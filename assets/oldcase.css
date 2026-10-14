@@ -3,6 +3,4 @@
 .hdr{--hdr-mk:var(--hdr-fg)!important}
 .hdr .brand,.hdr .brand span,.hdr .brand .mk{color:var(--hdr-fg)!important}
 @media (max-width:760px){.hdr.open .brand,.hdr.open .brand span,.hdr.open .brand .mk,.hdr.open .menu-btn{color:#F7F5F1!important}}
-body.p-big-grill .hdr{--hdr-fg:#0B0C10!important;--hdr-mk:#0B0C10!important}
-body.p-capacity .hdr{--hdr-fg:#F7F5F1!important;--hdr-mk:#F7F5F1!important}
 body.p-pyramids-2021 .hdr{--hdr-fg:#0B0C10!important;--hdr-mk:#0B0C10!important}

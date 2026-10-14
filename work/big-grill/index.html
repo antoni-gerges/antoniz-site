@@ -1,87 +1,196 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Big Grill · Antoni Gerges</title>
-<meta name="description" content="A festival starts with a drawing. Partner and co-producer · The Big Grill poster and festival system. AntBrush · Yas Links, Abu Dhabi · 2018 · with MCX.">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Antoni Gerges">
-<meta property="og:title" content="The Big Grill · Antoni Gerges">
-<meta property="og:description" content="A festival starts with a drawing. Partner and co-producer · The Big Grill poster and festival system. AntBrush · Yas Links, Abu Dhabi · 2018 · with MCX.">
-<meta property="og:url" content="https://antoniz.com/work/big-grill/">
-<meta property="og:image" content="https://antoniz.com/assets/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Antoni Gerges, Creative Director, Brand &amp; Experiential, above Lake Brienz in Interlaken">
-<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://antoniz.com/work/big-grill/">
+<meta name="description" content="The Big Grill Festival, Yas Links, Abu Dhabi, 6 to 8 December 2018: a free family festival of flamin’ grills and smokin’ tunes, from noon to night. Antoni Gerges, Creative Director, Brand &amp; Experiential. AntBrush, with MCX.">
 <link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..800;1,14..32,300..800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
 <link rel="preload" href="../../assets/jost-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../assets/site.css?v=afd4c1e0">
-<link rel="stylesheet" href="../../assets/oldcase.css">
-<script src="../../assets/layers.js" defer></script>
+<link rel="stylesheet" href="../../assets/fp/fp.css?v=34">
+<style>
+/* The Big Grill: this page's own rules. The engine files are used unchanged. Nothing on this page is cropped. */
+/* 1 · the opening is the festival film, whole. Its picture is 2.4:1 inside a 16:9 frame: the page's words sit in the black band
+   under the picture and never over it. No gradient is laid over the film. */
+.fp-hero.whole::after{background:none}
+@media (min-width:761px){
+  .fp-hero.whole .v{object-fit:contain}
+  .fp-hero.whole .in{flex-direction:row;align-items:flex-end;justify-content:space-between;gap:clamp(20px,3vw,56px);padding-bottom:clamp(14px,2.6vh,30px)}
+  .fp-hero.whole h1{font-size:clamp(30px,3.3vw,60px);line-height:.95;letter-spacing:-.03em;margin:0;white-space:nowrap}
+  .fp-hero.whole .row{flex:1;justify-content:flex-end;align-items:flex-end;gap:clamp(18px,2.6vw,48px);flex-wrap:nowrap}
+  .fp-hero.whole .what{max-width:none;text-align:right}
+  .fp-hero.whole .what strong{font-size:clamp(17px,1.5vw,24px);margin-bottom:6px}
+  .fp-hero.whole .what small{margin-top:0}
+  .fp-hero.whole .fp-play{padding-top:13px;padding-bottom:13px;white-space:nowrap}
+  .fp-hero.whole .fp-cue{display:none}
+}
+@media (max-width:760px){
+  .fp-hero.whole .v{aspect-ratio:16/9}
+  .fp-hero.whole .in{padding-top:calc(104px + 56.25vw + 22px)}
+  .fp-hero.whole h1{font-size:clamp(46px,14vw,68px);line-height:.92;margin-bottom:16px}
+}
+/* 3 · the model: the words sit on the dark floor at the lower left; the source line sits under the chapter line, clear of the artwork */
+@media (min-width:761px){
+  .fp-model .veil{background:radial-gradient(110% 90% at 0% 100%,rgba(0,0,0,.86) 0,rgba(0,0,0,.5) 30%,rgba(0,0,0,0) 58%)}
+  .fp-model .kind{left:var(--g);right:auto;text-align:left}
+}
+/* the lawn, noon to night: the family line is long, so it is set smaller than the engine's intro */
+.fp-model .intro h2{font-size:clamp(40px,5.4vw,96px);line-height:.95}
+.fp-model .st .fp-lab b{font-size:1.15em}
+/* without WebGL the model gives way to one still of the model, whole */
+.fp-model .fallback{object-fit:contain;inset:0;width:100%;height:100%}
+/* 3 · the exported pieces: whole and still, on black; a pair sits side by side */
+.fp-plates.stack.bgx figure.tall img{max-height:84vh}
+.fp-plates.stack.bgx .lead h2{font-size:clamp(40px,4.4vw,80px)}
+.fp-plates.stack.bgx figure.two .pr{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,24px);align-items:start}
+.fp-plates.stack.bgx figure.two img{width:100%;height:auto;max-height:none;background:none}
+.fp-plates.stack.bgx figure img{background:none}
+/* the result: one photograph, whole */
+.fp-res .nums{grid-template-columns:repeat(2,minmax(0,1fr))}
+.fp-res .shot{margin:clamp(26px,5vh,48px) 0 0;max-width:1100px}.fp-res .shot img{width:100%;height:auto;display:block}.fp-res .shot figcaption{margin-top:10px}
+@media (max-width:760px){.fp-res .nums{grid-template-columns:1fr}}
+/* 4 · the festival reel: films only, every frame whole. The words sit in the band under the picture, never over it. */
+.fp-reel .ly{background:#000}
+.fp-reel .ly::after{display:none}
+.fp-reel .cap h3{font-size:clamp(34px,calc((100svh - 41.6vw)/2 - 5vh - 16px),6.4vw)}
+@media (min-width:761px){.fp-reel .ly video.r169{inset:auto;left:50%;top:50%;width:auto;height:min(41.56vw,100svh - 300px);aspect-ratio:16/9;transform:translate(-50%,-50%)!important}}
+@media (max-width:760px){
+  .fp-reel .ly video.whole{inset:auto;left:0;top:calc(46svh - 21vw);width:100%;height:auto;object-fit:contain}
+  .fp-reel .ly video.r24{aspect-ratio:1280/532}.fp-reel .ly video.r169{aspect-ratio:16/9;top:calc(44svh - 28vw)}
+  .fp-reel .cap h3{font-size:clamp(46px,15vw,84px)}
+}
+/* 5 · the film button keeps the whole frame of its clip */
+.fp-end .film{aspect-ratio:1280/532}
+.fp-end .film:hover video{transform:none}
+@media (max-width:760px){
+  .fp-end .film{aspect-ratio:auto;clip-path:none;background:none;overflow:visible;text-align:left}
+  .fp-end .film video{position:relative;inset:auto;width:100%;height:auto;aspect-ratio:1280/532;object-fit:contain}
+  .fp-end .film::after{display:none}
+  .fp-end .film .t{position:static;display:block;margin-top:16px;padding-right:74px}
+  .fp-end .film .go{right:0;bottom:0}
+}
+</style>
+<noscript><style>.fp-pin{height:auto!important}.fp-stick{position:static;height:auto;overflow:visible}.fp-reel .ly{position:relative;height:70vh}.fp-plates .trk{position:static;flex-wrap:wrap;padding:40px var(--g);height:auto}.fp-model canvas,.fp-model .veil,.fp-ticks,.fp-cue,.fp-bar{display:none}.fp-model .intro{position:static;transform:none;padding:60px var(--g) 20px}.fp-model .st{position:static;opacity:1;transform:none;width:auto;padding:24px var(--g) 8px}.fp-built{position:static;opacity:1;transform:none;width:auto;max-width:720px;margin:0 var(--g) 24px}.fp-model .chap{position:static;display:block;padding:0 var(--g)}.fp-hero h1,.fp-hero .row{animation:none}.fp-built{visibility:visible;height:auto;background:none}.fp-built .fr{position:relative;inset:auto;aspect-ratio:16/9}.fp-built .fr::after{display:none}.fp-built .fp-lab,.fp-model .kind{position:static;text-align:left;margin-top:8px}.fp-hero.band{min-height:0}.fp-plates.stack .trk{display:block}.fp-plates.stack figure{margin-bottom:40px}@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{font-size:14px;padding:6px 8px}}button[data-film].fp-play{display:none}button[data-film]{pointer-events:none;cursor:default}button[data-film] .go{display:none}.fp-nojs{display:block;margin-top:14px}.mzl{display:none}.fp-built .fr{aspect-ratio:auto}.fp-built .fr video{position:static;width:100%;height:auto;transform:none}</style></noscript>
+<noscript><style>.fp-model .fallback{display:block;position:static;width:min(calc(100% - 2*var(--g)),520px);max-width:none;max-height:none;height:auto;margin:0 var(--g)}</style></noscript>
 </head>
-<body class="proj p-big-grill" style="--bg:#EAE4D0;--fg:#1B1915;--sub:rgba(27,25,21,.64);--acc:#C8262B;--sheet:#FFFFFF;--hdr-bg:#EAE4D0;--hdr-fg:#1B1915;--hdr-mk:#C8262B">
+<body class="fp biggrill">
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr">
-  <a class="pill brand" href="../../" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
+  <a class="pill brand" href="../../index.html" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
   <div class="pill">
     <nav class="nav" id="nav" aria-label="Site"><a href="../../work/" aria-current="page">Work</a><a href="../../about/">About</a><a href="../../contact/">Contact</a><a href="../../assets/Antoni-Gerges-CV.pdf" class="navcv" target="_blank" rel="noopener">CV</a></nav>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
   </div>
 </header>
 <main id="main">
-<section class="p-hero wrap">
-  <p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>The Big Grill · Abu Dhabi · 2018</span></p>
-  <h1 class="rv d1">A festival starts with a drawing.</h1>
-  <div class="cap rv d2">
-    <p class="role"><b>Partner and co-producer · The Big Grill poster and festival system</b><span>AntBrush · Yas Links, Abu Dhabi · 2018 · with MCX</span></p>
-    <p class="sum">A weekend of music and grilling on a golf links. I drew it in July: a guitarist, a 1950s car, a grill, a golf ball. Then I cut it harder, on a slant, in red and in ochre. In December we stood in it.</p>
+
+<!-- 1 · the opening: the festival film, whole, from the lawn at dusk full of families (about 1:00.7 to 1:15.4). No title of ours lies over the picture. -->
+<section class="fp-hero whole" data-marks='[[0,"From the festival film · MCX"]]' data-from="60.7" data-to="75.4" aria-label="The Big Grill: the festival film">
+  <video class="v" muted playsinline loop preload="auto" poster="a/hero-poster.webp" data-src="../../media/films/big-grill-720.mp4#t=60.7" data-poster="a/hero-poster.webp"></video>
+  <div class="top"><span class="src"><i></i><b>From the festival film · MCX</b></span><span class="fp-lab r">Yas Links, Abu Dhabi · 6 to 8 December 2018</span></div>
+  <div class="in">
+    <h1>The Big Grill</h1>
+    <div class="row">
+      <p class="what"><strong>A family festival. Flamin’ grills + smokin’ tunes.</strong><small>Antoni Gerges, Creative Director, Brand &amp; Experiential · AntBrush, with MCX</small></p>
+      <span class="btns"><button class="fp-play" type="button" data-film="../../media/films/big-grill-720.mp4" data-title="The festival film · 3:04 · MCX">Play the festival film <small>3:04 · sound</small></button><noscript><span class="fp-nojs"><a class="fp-play" href="../../media/films/big-grill-720.mp4">Open the festival film <small>3:04 · video file</small></a></span></noscript></span>
+    </div>
+  </div>
+  <i class="fp-cue" aria-hidden="true"></i>
+</section>
+
+<!-- 2 · what it was, what I did -->
+<section class="fp-say">
+  <span class="fp-lab"><b>The festival</b></span>
+  <div>
+    <h2>A free family festival: three days of grills and live music on the lawn of a golf club in Abu Dhabi. <em>I made its poster: the whole weekend in one drawing.</em></h2>
+    <div class="facts"><div><b>6 to 8 December 2018</b>Yas Links, Yas Island, Abu Dhabi</div></div>
+    <details class="fp-more"><summary>Read more</summary><div class="tx"><div><span class="fp-lab"><b>The festival</b></span><p>The Big Grill Festival, 6 to 8 December 2018, on the lawn of the Yas Links golf club on Yas Island, Abu Dhabi. A family festival, free to all, from noon to 11 pm, with a kids’ zone on the lawn. Organised by MCX and presented by SWYP.</p><p>Its theme was “Grillin’ ’n’ Chillin’”: restaurants and steakhouses at the grills, and music on the lawn. Big Mountain, Abbamania, Abri &amp; Funk Radius and KIZA played.</p></div><div><span class="fp-lab"><b>My part</b></span><p>I was a partner in the production, through AntBrush, my agency, with MCX. I made the festival’s poster, in two routes.</p><p>The Big Grill logo belongs to the festival.</p></div><div><span class="fp-lab"><b>The idea</b></span><p>The poster’s own line: “Flamin’ grills + smokin’ tunes = ☺”. Food and music as one weekend, said in one drawing: a guitarist for the tunes, a grill with its smoke, a classic car for the cars on show, a golf ball on its tee for the links, and the city behind.</p><p>Everything in the drawing runs on one slant: the date, the shadows, the stripe.</p></div><div><span class="fp-lab"><b>Two routes</b></span><p>The first is painted: a sky from teal to ochre, palms and a skyline. The second is cut harder: three wedges and a stripe on a pale ground, inside a frame drawn by hand. It went out in red and in ochre, tall and square.</p><p>The same wedge, car and grill stood on the boards at the way in.</p></div><div><span class="fp-lab"><b>The files</b></span><p>Both routes are my Illustrator files of 18 July 2018. The exported posters add a tagline and a place line that the working files do not have.</p></div><div><span class="fp-lab"><b>The 3D</b></span><p>The lawn in 3D is a model made for this portfolio, from my photographs of 6 December 2018 and the festival film. Sizes are estimates. The stalls, the kids’ zone and the beanbags are placed as the film shows them. The lit beam across the top of the three X’s is added in the model; the stage as built had three free-standing X’s.</p></div><div><span class="fp-lab"><b>The films and the photograph</b></span><p>The festival film is by MCX, from its own channel. The film and the photograph of the stage on the first night are my own, taken on my phone on 6 December 2018.</p></div></div></details>
   </div>
 </section>
-<section class="pfilm wrap" aria-label="The festival film"><div class="fgrid one"><button class="film lead rv" type="button" data-film="../../media/films/big-grill-720.mp4" data-film-sm="../../media/films/big-grill-720.mp4" data-film-title="The festival film"><span class="fpic" style="--ar:1280/532"><video data-clip data-src="../../media/films/big-grill-720.mp4" poster="../../media/films/big-grill-cover.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></span><span class="fcap fcap-under"><span class="pl" aria-hidden="true"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z" fill="currentColor"/></svg></span><span><b>The festival film</b><span>The Big Grill · Abu Dhabi · 2018 · 3:04 · film by MCX</span></span></span></button></div></section>
-<section class="stage wrap" aria-label="The work"><div class="rowg c1"><figure class="fig rv"><div class="m" style="aspect-ratio:16/10;background:#E9E3CF"><div class="layers" role="img" aria-label="One drawing, ten layers. The poster’s own layers from the Illustrator file, July 2018. Nothing redrawn."><div class="stack"><img src="../../img/big-grill/layers/sky.webp" alt="" data-z="-150" width="1500" height="2083" loading="lazy" decoding="async"><img src="../../img/big-grill/layers/skyline.webp" alt="" data-z="-105" width="1500" height="2083" loading="lazy" decoding="async"><img src="../../img/big-grill/layers/ball.webp" alt="" data-z="50" width="1500" height="2083" loading="lazy" decoding="async"><img src="../../img/big-grill/layers/palms.webp" alt="" data-z="-75" width="1500" height="2083" loading="lazy" decoding="async"><img src="../../img/big-grill/layers/car.webp" alt="" data-z="-30" width="1500" height="2083" loading="lazy" decoding="async"><img src="../../img/big-grill/layers/date.webp" alt="" data-z="70" width="1500" height="2083" loading="lazy" decoding="async"><img src="../../img/big-grill/layers/grill.webp" alt="" data-z="110" width="1500" height="2083" loading="lazy" decoding="async"><img src="../../img/big-grill/layers/logo.webp" alt="" data-z="140" width="1500" height="2083" loading="lazy" decoding="async"><img src="../../img/big-grill/layers/figures.webp" alt="" data-z="5" width="1500" height="2083" loading="lazy" decoding="async"><img src="../../img/big-grill/layers/guitarist.webp" alt="" data-z="40" width="1500" height="2083" loading="lazy" decoding="async"></div></div></div><figcaption><span class="t"><b>One drawing, ten layers.</b> The poster’s own layers from the Illustrator file, July 2018. Nothing redrawn.</span></figcaption></figure></div></section>
-<section class="chapter wrap" aria-labelledby="ch-0">
-  <div class="ch-h">
-    <div><p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>The idea</span></p><h2 id="ch-0" class="rv d1">Draw it first.</h2></div>
-    <p class="rv d2">I drew the festival in July: a guitarist, a 1950s car, a grill, and a golf ball, because the lawn was a golf links. Then I cut it harder, on a slant. One last question: red, or ochre.</p>
+
+<!-- 3 · in December: the festival as built, on film only; every frame whole. The films lead the page. -->
+<section class="fp-pin fp-reel" aria-label="In December: the festival as built, on film">
+  <div class="fp-stick">
+    <div class="ly"><video class="whole r24" muted playsinline loop preload="none" data-src="a/c-gate.mp4" poster="a/c-gate.webp" data-poster="a/c-gate.webp"></video><span class="fp-lab n"><b>In December</b> · 01 / 06</span><div class="cap"><h3>The way in.</h3><p>The wedge, the car and the grill, on the boards at the gate.<small class="fp-lab">Festival film · MCX · at 0:00</small></p></div></div>
+    <div class="ly"><video class="whole r24" muted playsinline loop preload="none" data-src="a/c-lawn.mp4" poster="a/c-lawn.webp" data-poster="a/c-lawn.webp"></video><span class="fp-lab n"><b>In December</b> · 02 / 06</span><div class="cap"><h3>Families on the lawn.</h3><p>A golf links, for one weekend: beanbags, prams and the kids’ zone.<small class="fp-lab">Festival film · MCX · at 0:49</small></p></div></div>
+    <div class="ly"><video class="whole r24" muted playsinline loop preload="none" data-src="a/c-grill.mp4" poster="a/c-grill.webp" data-poster="a/c-grill.webp"></video><span class="fp-lab n"><b>In December</b> · 03 / 06</span><div class="cap"><h3>The grills.</h3><p>Flamin’, as the poster said.<small class="fp-lab">Festival film · MCX · at 0:40</small></p></div></div>
+    <div class="ly"><video class="whole r24" muted playsinline loop preload="none" data-src="a/c-band.mp4" poster="a/c-band.webp" data-poster="a/c-band.webp"></video><span class="fp-lab n"><b>In December</b> · 04 / 06</span><div class="cap"><h3>The tunes.</h3><p>A band on the stage at night.<small class="fp-lab">Festival film · MCX · at 1:42</small></p></div></div>
+    <div class="ly"><video class="whole r24" muted playsinline loop preload="none" data-src="a/c-music.mp4" poster="a/c-music.webp" data-poster="a/c-music.webp"></video><span class="fp-lab n"><b>In December</b> · 05 / 06</span><div class="cap"><h3>Smokin’.</h3><p>A guitarist on the poster. A full stage at night.<small class="fp-lab">Festival film · MCX · at 1:55</small></p></div></div>
+    <div class="ly"><video class="whole r169" muted playsinline loop preload="none" data-src="a/c-stage.mp4" poster="a/c-stage.webp" data-poster="a/c-stage.webp"></video><span class="fp-lab n"><b>In December</b> · 06 / 06</span><div class="cap"><h3>The stage.</h3><p>The first night, from the lawn.<small class="fp-lab">My own film · 6 December 2018, 9:19 pm</small></p></div></div>
   </div>
-  <div class="rowg c3"><figure class="fig contain rv"><div class="m" style="aspect-ratio:3/4;"><img src="../../img/big-grill/route-1-1100.webp" srcset="../../img/big-grill/route-1-800.webp 800w, ../../img/big-grill/route-1-1100.webp 1100w" sizes="(max-width:760px) 100vw, 31vw" width="1100" height="1528" alt="The first route." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>The first route.</b> </span></figcaption></figure><figure class="fig contain rv"><div class="m" style="aspect-ratio:3/4;"><img src="../../img/big-grill/poster-red-1275.webp" srcset="../../img/big-grill/poster-red-800.webp 800w, ../../img/big-grill/poster-red-1275.webp 1275w" sizes="(max-width:760px) 100vw, 31vw" width="1275" height="1650" alt="Red." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Red.</b> </span></figcaption></figure><figure class="fig contain rv"><div class="m" style="aspect-ratio:3/4;"><img src="../../img/big-grill/poster-ochre-1275.webp" srcset="../../img/big-grill/poster-ochre-800.webp 800w, ../../img/big-grill/poster-ochre-1275.webp 1275w" sizes="(max-width:760px) 100vw, 31vw" width="1275" height="1650" alt="Ochre." style="object-fit:contain" loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Ochre.</b> </span></figcaption></figure></div>
-  
 </section>
-<section class="chapter wrap" aria-labelledby="ch-1">
-  <div class="ch-h">
-    <div><p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>In December</span></p><h2 id="ch-1" class="rv d1">Then we stood in it.</h2></div>
-    <p class="rv d2">Three days at Yas Links, Abu Dhabi, 6 to 8 December 2018. The wedges stood at the stage, the grill was lit and the music played.</p>
+
+<!-- 4 · the lawn, noon to night: one 3D stop, made for this portfolio. The camera walks from the way in to the stage while the light goes from noon to night. -->
+<section class="fp-pin fp-model" style="--n:3.4" aria-label="The lawn from noon to night, in 3D">
+  <div class="fp-stick">
+    <canvas aria-hidden="true"></canvas>
+    <img class="fallback" src="a/lawn-3d.webp" width="1600" height="900" alt="3D model of the festival lawn at dusk: the stage with its three lit X’s joined by a beam across the top, the food stalls with their bulbs, the beanbags and the kids’ zone" loading="lazy" decoding="async">
+    <div class="veil"></div>
+    <span class="fp-lab chap"><b>01</b> · The lawn<span class="x"> · noon to night</span></span>
+    <span class="fp-lab kind"><b>3D model</b> · made for this portfolio<span class="x"> · from my photographs of 6 December 2018</span></span>
+    <div class="intro"><span class="fp-lab"><b>01</b> · The lawn</span><h2>A family festival, from the grills at noon<br><b class="tw">to the stage at night.</b></h2><p>Noon to 11 pm, three free days on the lawn at Yas Links.</p></div>
+    <div class="st" data-s="0"><span class="fp-lab"><b>12 pm</b></span><h3>The grills first.</h3><p>Doors open at noon. Food stalls down one side of the lawn, the kids’ zone by the stage.</p></div>
+    <div class="st" data-s="1"><span class="fp-lab"><b>6 pm</b></span><h3>The stage lights up.</h3><p>The sun goes down behind the stage, and the smoke from the grills drifts into the lights.</p></div>
+    <div class="st" data-s="2"><span class="fp-lab"><b>9 pm</b></span><h3>Music on the lawn.</h3><p>Big Mountain, Abbamania, Abri &amp; Funk Radius and KIZA, for families on beanbags.</p></div>
   </div>
-  <div class="rowg c1"><figure class="fig rv"><div class="m settle" style="aspect-ratio:12/5;"><video data-clip data-src="../../media/clips/big-grill-clip-stage-1080.mp4" data-src-sm="../../media/clips/big-grill-clip-stage-720.mp4" poster="../../img/big-grill/clip-stage-poster.webp" muted loop playsinline preload="none" width="1600" height="666" aria-label="The stage under the X. From the festival film by MCX."></video></div><figcaption><span class="t"><b>The stage under the X.</b> From the festival film by MCX.</span></figcaption></figure></div>
-  <div class="rowg c2"><figure class="fig rv"><div class="m settle" style="aspect-ratio:4/3;"><img src="../../img/big-grill/stage-night-1600.webp" srcset="../../img/big-grill/stage-night-800.webp 800w, ../../img/big-grill/stage-night-1600.webp 1600w, ../../img/big-grill/stage-night-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="1600" height="1500" alt="The rig at night. My own photograph, 6 December." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>The rig at night.</b> My own photograph, 6 December.</span></figcaption></figure><figure class="fig rv"><div class="m settle" style="aspect-ratio:4/3;"><img src="../../img/big-grill/lawn-dusk-1600.webp" srcset="../../img/big-grill/lawn-dusk-800.webp 800w, ../../img/big-grill/lawn-dusk-1600.webp 1600w, ../../img/big-grill/lawn-dusk-1920.webp 1920w" sizes="(max-width:760px) 100vw, 46vw" width="1600" height="667" alt="The lawn at dusk. From the festival film." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>The lawn at dusk.</b> From the festival film.</span></figcaption></figure></div>
-  <div class="rowg c2"><figure class="fig rv"><div class="m settle" style="aspect-ratio:12/5;"><img src="../../img/big-grill/singer-1600.webp" srcset="../../img/big-grill/singer-800.webp 800w, ../../img/big-grill/singer-1600.webp 1600w, ../../img/big-grill/singer-1920.webp 1920w" sizes="(max-width:760px) 100vw, 46vw" width="1600" height="667" alt="And the music played. From the festival film." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>And the music played.</b> From the festival film.</span></figcaption></figure><figure class="fig rv"><div class="m settle" style="aspect-ratio:12/5;"><video data-clip data-src="../../media/clips/big-grill-clip-band-1080.mp4" data-src-sm="../../media/clips/big-grill-clip-band-720.mp4" poster="../../img/big-grill/clip-band-poster.webp" muted loop playsinline preload="none" width="1600" height="666" aria-label="The band under the X. From the festival film."></video></div><figcaption><span class="t"><b>The band under the X.</b> From the festival film.</span></figcaption></figure></div>
-  
 </section>
-<section class="storylink">
-  <div class="wrap in">
-    <div><p class="label rv" style="color:var(--sub);margin-bottom:20px">The full story</p><h2 class="rv d1">Every step, in order.</h2></div>
-    <div class="rv d2">
-      <p>Originated with MCX, who organised it. Yas Links is the venue.</p>
-      <a class="big-btn" href="../../stories/big-grill/">See the full story <span aria-hidden="true">→</span></a>
+
+<!-- 5 · as it went out: the exported pieces, each whole and still -->
+<section class="fp-plates stack bgx" aria-label="The poster as it went out">
+  <div class="fp-stick">
+    <div class="trk">
+      <div class="lead"><span class="fp-lab"><b>02</b> · As it went out</span><h2>Flamin’ grills +<br><b class="tw">smokin’ tunes.</b></h2><p>Two routes. The second in red and in ochre, tall and square.</p></div>
+      <figure class="tall"><img src="a/e-route1.webp" width="1000" height="1389" alt="The first route: the guitarist on a sky from teal to ochre, with the car, the palms, the grill, the golf ball and the date on a slant, under the line Flamin’ grills + smokin’ tunes" loading="lazy" decoding="async"><figcaption><b>The first route</b><span>Painted. Exported 18 July 2018.</span></figcaption></figure>
+      <figure class="two"><div class="pr"><img src="a/e-red.webp" width="1000" height="1294" alt="The second route in red: the guitarist in black and white over a red wedge, the car, an orange stripe and the grill, inside a hand-drawn frame" loading="lazy" decoding="async"><img src="a/e-ochre.webp" width="1000" height="1294" alt="The same poster in ochre, with Yas Island, Abu Dhabi" loading="lazy" decoding="async"></div><figcaption><b>Red, and ochre</b><span>The second route. Exported 18 July 2018.</span></figcaption></figure>
+      <figure class="two"><div class="pr"><img src="a/e-sq1.webp" width="1000" height="1000" alt="Square in ochre: the guitarist close, the car, the wedges, 6 December 2018, Yas Island, Abu Dhabi" loading="lazy" decoding="async"><img src="a/e-sq2.webp" width="1000" height="1000" alt="Square in ochre: the guitarist whole inside the frame" loading="lazy" decoding="async"></div><figcaption><b>Square</b><span>The same cut, for social media.</span></figcaption></figure>
     </div>
   </div>
 </section>
+
+<!-- 6 · the result, from the organiser and the press -->
+<section class="fp-res" aria-label="The result">
+  <div class="hd"><h2>Three days.</h2><span class="fp-lab"><b>03</b> · The result</span></div>
+  <div class="nums">
+    <div><b>Free to all</b><span>noon to 11 pm, 6 to 8 December 2018</span></div>
+    <div><b>Opening weekend</b><span>of Abu Dhabi Food Festival 2018: one of its two events</span></div>
+  </div>
+  <p class="src fp-lab">Sources: the organiser’s release, Dubai Chronicle, 18 October 2018 · Department of Culture and Tourism Abu Dhabi, 13 December 2018.</p>
+  <figure class="shot"><img src="a/p-stage-night.webp" width="1600" height="1200" alt="The stage with its three lit X’s on the first night, KIZA on stage, seen from the lawn" loading="lazy" decoding="async"><figcaption class="fp-lab">The first night · my own photograph · 6 December 2018, 9:17 pm</figcaption></figure>
+  <details class="fp-more"><summary>More figures</summary>
+    <div class="nums">
+      <div><b>4</b><span>music acts: Big Mountain, Abbamania, Abri &amp; Funk Radius, KIZA</span></div>
+      <div><b>Last hour</b><span>Big Mountain closed the festival</span></div>
+    </div>
+    <p class="src fp-lab">The acts: MCX’s own description of the film. The last hour: The National, 15 December 2018.</p>
+  </details>
+</section>
+
+<!-- 7 · the film, the credits, on -->
+<section class="fp-end fin">
+  <button class="film" type="button" data-film="../../media/films/big-grill-720.mp4" data-title="The festival film · 3:04 · MCX" aria-label="Play the festival film by MCX, 3 minutes 4, with sound">
+    <video muted playsinline loop preload="none" data-auto data-src="a/c-crowd.mp4" poster="a/c-crowd.webp" data-poster="a/c-crowd.webp"></video>
+    <span class="t"><span class="fp-lab"><b>The festival film</b> · 3:04 · MCX</span><b>Play the festival.</b></span><span class="go" aria-hidden="true"></span>
+  </button>
+  <noscript><span class="fp-nojs"><a class="fp-play" href="../../media/films/big-grill-720.mp4">Open the festival film <small>3:04 · video file</small></a></span></noscript>
+  <div class="fp-cred">
+    <div><span class="fp-lab">Role</span>Antoni Gerges<br>Creative Director, Brand &amp; Experiential</div>
+    <div><span class="fp-lab">Made by</span>AntBrush, with MCX.</div>
+    <div><span class="fp-lab">Credits</span>Festival organised by MCX, presented by SWYP.<br>Festival film: MCX.</div>
+    <div><span class="fp-lab">The logo</span>The Big Grill logo belongs to the festival.</div>
+  </div>
+  <a class="fp-next" href="../../work/"><span class="fp-lab">More work</span><b>All work</b><span aria-hidden="true">→</span></a>
+</section>
 </main>
-<nav class="pnext" style="--nbg:#E6A434;--nfg:#0A0A0B" aria-label="Next project">
-  <a href="../mazzika/">
-    <div><p class="label">Next</p><h2>Make room for six voices.</h2><p style="opacity:.72;margin-top:16px">Why Not! Mazzika and the concerts</p></div>
-    <div class="pic"><img src="../../img/mazzika/key-visual-800.webp" srcset="../../img/mazzika/key-visual-800.webp 800w, ../../img/mazzika/key-visual-1080.webp 1080w" sizes="(max-width:760px) 100vw, 46vw" width="800" height="587" alt="The Why Not! Mazzika key visual with the six acts, 22 November 2019, Coca-Cola Arena, Dubai" loading="lazy" decoding="async"></div>
-  </a>
-</nav>
+
+<div class="fp-player" role="dialog" aria-label="Film player"><video playsinline preload="none"></video><div class="bar"><span class="ti"></span><button class="x" type="button">Close</button></div></div>
+
 <footer class="foot"><div class="wrap row">
   <p style="margin:0">Antoni Gerges · Creative Director, Brand &amp; Experiential · <a href="mailto:antoni@antbrush.com">antoni@antbrush.com</a></p>
   <nav aria-label="Footer"><a href="../../work/">Work</a><a href="../../about/">About</a><a href="../../contact/">Contact</a></nav>
 </div></footer>
-<script src="../../assets/site.js?v=afd4c1e0" defer></script>
-<script src="../../assets/films.js?v=afd4c1e0" defer></script>
+<script src="../../assets/fp/fp.js?v=18" defer></script>
+<script type="module" src="bg.js?v=10"></script>
 </body>
 </html>

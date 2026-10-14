@@ -1,83 +1,231 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Capacity Middle East · Antoni Gerges</title>
-<meta name="description" content="A city in one line. Creative direction · Etisalat gala dinner, Capacity Middle East. Dubai · 2018 and 2019 · with MCX.">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Antoni Gerges">
-<meta property="og:title" content="Capacity Middle East · Antoni Gerges">
-<meta property="og:description" content="A city in one line. Creative direction · Etisalat gala dinner, Capacity Middle East. Dubai · 2018 and 2019 · with MCX.">
-<meta property="og:url" content="https://antoniz.com/work/capacity/">
-<meta property="og:image" content="https://antoniz.com/assets/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Antoni Gerges, Creative Director, Brand &amp; Experiential, above Lake Brienz in Interlaken">
-<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://antoniz.com/work/capacity/">
+<meta name="description" content="Capacity Middle East: Etisalat’s gala dinner for its carrier partners, at the Burj Khalifa in 2018 and at Atlantis, The Palm in 2019. Points of light that join into one mark. Antoni Gerges, Creative Director, Brand &amp; Experiential.">
 <link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..800;1,14..32,300..800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
 <link rel="preload" href="../../assets/jost-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../assets/site.css?v=afd4c1e0">
-<link rel="stylesheet" href="../../assets/oldcase.css">
+<link rel="stylesheet" href="../../assets/fp/fp.css?v=34">
+<style>
+/* Capacity Middle East: this page's own rules. The engine files are used unchanged. Nothing on this page is cropped.
+   The brand's room (T-40): his frame stays his (the header, his mark, the menu, the footer). Inside the page the 2018 event identity leads,
+   read from the invitation itself (7097_ET_CORP_Capacity-final.pdf): a charcoal night, the lime of the orbits (R199 G204 B6 at its brightest),
+   the green of the Etisalat mark (R126 G167 B49), the yellow-white of the points of light. Lime and green are accents; the ground is the night. */
+body.fp.capacity{
+  --cp-ground:#0d0e0c;      /* the invitation's night, a step above black (its sky reads R12 to R19) */
+  --cp-lime:#c7cc06;        /* the brightest orbit, sampled from the invitation */
+  --cp-green:#7ea731;       /* the mark's green, a fill in the invitation (0.494 0.655 0.192) */
+  --cp-deep:#4f6931;        /* the darker green of the same file */
+  --cp-point:#fffb9a;       /* a point of light */
+}
+body.fp.capacity main,.capacity .fp-stick,.capacity .fp-hero,.capacity .fp-built,.capacity .fp-built .fr,.capacity .fp-built .fr img,.capacity .fp-end,.capacity .fp-res,.capacity .fp-say,.capacity .cp-set{background:var(--cp-ground)}
+.capacity b.tw{color:var(--cp-lime)}
+.capacity .fp-model .st .fp-lab b,.capacity .fp-res .hd .fp-lab b,.capacity .cp-set .hd .fp-lab b{color:var(--cp-lime)}
+.capacity .fp-more summary{border-bottom-color:var(--cp-lime)}.capacity .fp-more summary::after{color:var(--cp-lime)}
+.capacity .fp-ticks i.on{background:var(--cp-lime)}
+.capacity .fp-res .nums{border-top-color:rgba(199,204,6,.5)}
+.capacity .fp-res>.nums>div:first-child b{color:var(--cp-lime)}
+.capacity .fp-say .facts div{border-top:3px solid var(--cp-green);padding-top:12px}
+.capacity .fp-play:hover,.capacity .fp-play:focus-visible{background:var(--cp-lime);border-color:var(--cp-lime);color:#0d0e0c}
+.capacity .fp-model .veil{background:linear-gradient(90deg,rgba(13,14,12,.8) 0,rgba(13,14,12,0) 44%),linear-gradient(0deg,rgba(13,14,12,.66) 0,rgba(13,14,12,0) 30%)}
+@media (max-width:760px){.capacity .fp-model .veil{background:linear-gradient(0deg,var(--cp-ground) 0,rgba(13,14,12,.94) 26%,rgba(13,14,12,0) 46%)!important}}
+.capacity .fp-cred{border-top-color:rgba(199,204,6,.35)}
+
+/* 1 · the opening: the 2018 night large and playing, then 2019 large on the next screen; no word of ours lies on either.
+   The date, the place and the landmark sit under each film; the landmark is the biggest word. The page's name is for screen readers. */
+.fp-hero h1{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.fp-hero.whole.cp-open{height:auto;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:82px var(--g) clamp(26px,5vh,56px)}
+.fp-hero.whole.cp-open::after{display:none}
+.cp-open .cp-top{width:min(100%,calc((100svh - 300px) * 1.7778));margin:0 auto clamp(14px,2.4vh,24px)}
+.cp-one figure{margin:0 auto;width:min(100%,calc((100svh - 300px) * var(--r)))}
+.cp-one .f19{width:min(100%,1150px,calc((100svh - 300px) * var(--r)))}
+.fp-hero.whole.cp-open .v,.cp-one video{position:relative;inset:auto;top:auto;left:auto;display:block;width:100%;height:auto;object-fit:contain;transform:none!important;background:var(--cp-ground)}
+.cp-one .f19 video{aspect-ratio:848/380}.fp-hero.whole.cp-open .f18 video,.cp-one .f18 video{aspect-ratio:16/9}
+.cp-second{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,8vh,90px) var(--g);background:var(--cp-ground)}
+.cp-one figcaption{margin-top:14px;display:flex;flex-direction:column;gap:6px}
+.cp-one .lm{display:block;font:600 clamp(34px,4.2vw,70px)/.95 "Jost",system-ui,sans-serif;letter-spacing:-.035em;color:#fff}
+.cp-one .lm small{display:block;font:300 clamp(15px,1.15vw,19px)/1.2 "Jost",system-ui,sans-serif;letter-spacing:-.005em;color:var(--dim);margin-bottom:6px}
+.cp-one .cp-btn{display:flex;align-items:center;gap:14px 18px;flex-wrap:wrap;margin-top:10px}
+.fp-hero.whole.cp-open .in{position:static;inset:auto;padding:0;opacity:1!important;display:block}
+.fp-hero.cp-open .fp-cue{display:none}
+@media (max-width:760px){
+  .fp-hero.whole.cp-open{justify-content:flex-start;padding:62px 0 34px}
+  .cp-open .cp-top{padding:0 var(--g)}
+  .cp-one figure,.cp-one .f19{width:100%}
+  .cp-second{padding:56px 0}
+  .cp-one figcaption{padding:0 var(--g)}
+  .cp-one .lm{font-size:clamp(30px,9vw,40px)}
+}
+.fp-end .film{aspect-ratio:848/380}.fp-end .film:hover img{transform:none}.fp-end .film img{object-fit:contain;background:var(--cp-ground)}
+@media (max-width:760px){.fp-end .film{aspect-ratio:848/380}}
+
+/* 2 · the composed screens: each set shown whole at once, in rows of one height, fitted to one screen (cp.js sets the widths) */
+.cp-set{padding:clamp(88px,11vh,112px) var(--g) clamp(24px,4vh,40px);min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+.cp-set .hd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px var(--g);align-items:end;margin-bottom:clamp(16px,2.6vh,28px)}
+.cp-set .hd h2{font-size:clamp(36px,4.4vw,76px);line-height:.92;letter-spacing:-.04em;font-weight:300;margin:12px 0 0}
+.cp-set .hd p{font-size:clamp(15px,1.1vw,17px);line-height:1.45;color:var(--dim);max-width:31em;justify-self:end;margin:0}
+.cp-set .hd .cp-btn{grid-column:2;justify-self:end;margin-top:4px}
+.cp-set .hd .tag{display:inline-block;margin-top:14px;border:1px solid var(--cp-lime);color:var(--cp-lime);padding:7px 10px 6px}
+.cp-set .grid{width:100%}
+.cp-set .cp-row{display:flex;justify-content:center;align-items:flex-start}
+.cp-set figure{margin:0;flex:none}
+.cp-set img,.cp-set video{width:100%;height:auto;display:block;background:var(--cp-ground)}
+.cp-set figcaption{margin-top:8px;font-size:13.5px;line-height:1.35;color:var(--dim)}
+.cp-set figcaption b{color:#fff;font:500 15px/1.2 "Jost",system-ui,sans-serif;margin-right:8px}
+@media (max-width:760px){.cp-set{min-height:0;padding-top:72px;padding-bottom:28px}.cp-set .hd{grid-template-columns:1fr}.cp-set .hd p{justify-self:start}.cp-set .hd .cp-btn{grid-column:auto;justify-self:start}}
+/* 3 · the result */
+.capacity .fp-res .nums b{color:#fff}
+</style>
+<noscript><style>.fp-pin{height:auto!important}.fp-stick{position:static;height:auto;overflow:visible}.fp-reel .ly{position:relative;height:70vh}.fp-plates .trk{position:static;flex-wrap:wrap;padding:40px var(--g);height:auto}.fp-model canvas,.fp-model .veil,.fp-ticks,.fp-cue,.fp-bar{display:none}.fp-model .intro{position:static;transform:none;padding:60px var(--g) 20px}.fp-model .st{position:static;opacity:1;transform:none;width:auto;padding:24px var(--g) 8px}.fp-built{position:static;opacity:1;transform:none;width:auto;max-width:720px;margin:0 var(--g) 24px}.fp-model .chap{position:static;display:block;padding:0 var(--g)}.fp-hero h1,.fp-hero .row{animation:none}.fp-built{visibility:visible;height:auto;background:none}.fp-built .fr{position:relative;inset:auto;aspect-ratio:16/9}.fp-built .fr::after{display:none}.fp-built .fp-lab,.fp-model .kind{position:static;text-align:left;margin-top:8px}.fp-hero.band{min-height:0}.fp-plates.stack .trk{display:block}.fp-plates.stack figure{margin-bottom:40px}@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{font-size:14px;padding:6px 8px}}button[data-film].fp-play{display:none}button[data-film]{pointer-events:none;cursor:default}button[data-film] .go{display:none}.fp-nojs{display:block;margin-top:14px}.mzl{display:none}.fp-built .fr{aspect-ratio:auto}.fp-built .fr video{position:static;width:100%;height:auto;transform:none}.cp-set figure{width:auto!important;max-width:900px;margin:0 0 24px}.cp-set .cp-row,.cp-set .grid{display:block}</style></noscript>
 </head>
-<body class="proj p-capacity" style="--bg:#0A0E1C;--fg:#EEF0F6;--sub:rgba(238,240,246,.64);--acc:#C6E83A;--sheet:#0A0E1C;--hdr-bg:#0A0E1C;--hdr-fg:#EEF0F6;--hdr-mk:#C6E83A">
+<body class="fp capacity">
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr">
-  <a class="pill brand" href="../../" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
+  <a class="pill brand" href="../../index.html" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
   <div class="pill">
     <nav class="nav" id="nav" aria-label="Site"><a href="../../work/" aria-current="page">Work</a><a href="../../about/">About</a><a href="../../contact/">Contact</a><a href="../../assets/Antoni-Gerges-CV.pdf" class="navcv" target="_blank" rel="noopener">CV</a></nav>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
   </div>
 </header>
 <main id="main">
-<section class="p-hero wrap">
-  <p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Capacity Middle East · Dubai · 2018, 2019</span></p>
-  <h1 class="rv d1">A city in one line.</h1>
-  <div class="cap rv d2">
-    <p class="role"><b>Creative direction · Etisalat gala dinner, Capacity Middle East</b><span>Dubai · 2018 and 2019 · with MCX</span></p>
-    <p class="sum">Two gala dinners for Etisalat. In 2018, on a terrace under the Burj Khalifa, the city drawn as one line across three screens. A year later, the client came back.</p>
+
+<!-- 1 · the opening: the two nights in their own films, each whole and playing, no word of ours on them.
+     2019: Etisalat's event film of the night at Nasimi Beach, Atlantis, The Palm (made for Etisalat; 1:45, whole; it opens on the hotel).
+     2018: Etisalat UAE's own film of the night at The Pavilion, Armani Hotel (YouTube 7HjtfQVJxQc, 1:30). The loop here is its own shots,
+     in its order: the Burj Khalifa, the Pavilion at night, the room, the stage, the band; Play opens the whole film with sound. -->
+<section class="fp-hero whole cp-open" aria-label="Capacity Middle East: the 2018 night, in Etisalat’s film">
+  <div class="cp-top"><span class="fp-lab"><b>Capacity Middle East</b> · e&amp; galas at the Armani Hotel, Burj Khalifa, and Atlantis, The Palm</span></div>
+  <div class="cp-one">
+    <figure class="f18" style="--r:1.7778">
+      <video class="v" muted playsinline loop preload="auto" width="960" height="540" poster="a/night-2018-poster.webp" data-auto data-src="a/night-2018-loop.mp4" data-poster="a/night-2018-poster.webp" aria-label="Etisalat UAE's film of the 2018 dinner: the Burj Khalifa, The Pavilion at night, the room, the stage with the night's films, the band"></video>
+      <div class="in"><h1>Capacity Middle East</h1></div>
+      <figcaption>
+        <span class="fp-lab"><b>7 March 2018</b> · The Pavilion, Armani Hotel</span>
+        <b class="lm">Burj Khalifa</b>
+        <span class="cp-btn"><button class="fp-play" type="button" data-film="a/night-2018.mp4" data-title="The 2018 dinner, The Pavilion, Armani Hotel · film by Etisalat UAE">Play with sound <small>1:30</small></button><span class="fp-lab">Film by Etisalat UAE</span></span>
+        <noscript><span class="fp-nojs"><a class="fp-play" href="a/night-2018.mp4">Open the film <small>1:30 · video file</small></a></span></noscript>
+      </figcaption>
+    </figure>
   </div>
 </section>
-<section class="stage wrap" aria-label="The work"><div class="rowg c1"><figure class="fig rv"><div class="m settle" style="aspect-ratio:16/9;"><video data-clip data-src="../../media/clips/capacity-clip-city-1080.mp4" data-src-sm="../../media/clips/capacity-clip-city-720.mp4" poster="../../img/capacity/clip-city-poster.webp" muted loop playsinline preload="none" width="1600" height="900" aria-label="The city, drawn as one line. The 2018 main screen film."></video></div><figcaption><span class="t"><b>The city, drawn as one line.</b> The 2018 main screen film.</span></figcaption></figure></div></section>
-<section class="chapter wrap" aria-labelledby="ch-0">
-  <div class="ch-h">
-    <div><p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>2018</span></p><h2 id="ch-0" class="rv d1">A terrace under the Burj Khalifa.</h2></div>
-    <p class="rv d2">The Pavilion, Armani Hotel, Dubai, 7 March 2018. Two directions; the second placed onto the site photograph. On the night, the city was drawn as one line across three screens.</p>
+
+<!-- 1b · the second night, on its own screen -->
+<section class="cp-second" aria-label="The 2019 night, in its event film">
+  <div class="cp-one">
+    <figure class="f19" style="--r:2.2316">
+      <video muted playsinline loop preload="none" data-auto width="848" height="380" poster="a/night-2019-poster.webp" data-src="a/night-2019.mp4" data-poster="a/night-2019-poster.webp" aria-label="Event film of the 2019 dinner: Atlantis, The Palm, the room set on the sand, the arrival, drummers by the lit name, an aerial act, singers, the full room"></video>
+      <figcaption>
+        <span class="fp-lab"><b>6 March 2019</b> · Nasimi Beach</span>
+        <b class="lm">Atlantis, The Palm</b>
+        <span class="cp-btn"><button class="fp-play" type="button" data-film="a/night-2019.mp4" data-title="The 2019 dinner, Nasimi Beach, Atlantis, The Palm · event film made for Etisalat">Play with sound <small>1:45</small></button><span class="fp-lab">Event film · made for Etisalat</span></span>
+        <noscript><span class="fp-nojs"><a class="fp-play" href="a/night-2019.mp4">Open the film <small>1:45 · video file</small></a></span></noscript>
+      </figcaption>
+    </figure>
   </div>
-  <div class="rowg c2"><figure class="fig rv"><div class="m settle" style="aspect-ratio:4/3;"><img src="../../img/capacity/terrace-1600.webp" srcset="../../img/capacity/terrace-800.webp 800w, ../../img/capacity/terrace-1600.webp 1600w, ../../img/capacity/terrace-2016.webp 2016w" sizes="(max-width:760px) 100vw, 46vw" width="1600" height="1200" alt="The site visit, 26 February 2018." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>The site visit,</b> 26 February 2018.</span></figcaption></figure><figure class="fig rv"><div class="m settle" style="aspect-ratio:4/3;"><img src="../../img/capacity/direction-b-1600.webp" srcset="../../img/capacity/direction-b-800.webp 800w, ../../img/capacity/direction-b-1600.webp 1600w, ../../img/capacity/direction-b-2016.webp 2016w" sizes="(max-width:760px) 100vw, 46vw" width="1600" height="854" alt="The second direction, placed on the terrace." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>The second direction,</b> placed on the terrace.</span></figcaption></figure></div>
-  <div class="rowg c3"><figure class="fig rv"><div class="m settle" style="aspect-ratio:1/1;"><img src="../../img/capacity/side-left-1280.webp" srcset="../../img/capacity/side-left-800.webp 800w, ../../img/capacity/side-left-1280.webp 1280w" sizes="(max-width:760px) 100vw, 31vw" width="1280" height="1280" alt="Left screen." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Left screen.</b> </span></figcaption></figure><figure class="fig rv"><div class="m settle" style="aspect-ratio:1/1;"><img src="../../img/capacity/title-1600.webp" srcset="../../img/capacity/title-800.webp 800w, ../../img/capacity/title-1600.webp 1600w, ../../img/capacity/title-1920.webp 1920w" sizes="(max-width:760px) 100vw, 31vw" width="1600" height="900" alt="Main screen." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Main screen.</b> </span></figcaption></figure><figure class="fig rv"><div class="m settle" style="aspect-ratio:1/1;"><img src="../../img/capacity/side-right-1280.webp" srcset="../../img/capacity/side-right-800.webp 800w, ../../img/capacity/side-right-1280.webp 1280w" sizes="(max-width:760px) 100vw, 31vw" width="1280" height="1280" alt="Right screen." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>Right screen.</b> </span></figcaption></figure></div>
-  
 </section>
-<section class="chapter wrap" aria-labelledby="ch-1">
-  <div class="ch-h">
-    <div><p class="label rv"><svg class="mk flymk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>2019</span></p><h2 id="ch-1" class="rv d1">A year later, the client came back.</h2></div>
-    <p class="rv d2">Nasimi Beach, Atlantis The Palm, 6 March 2019.</p>
+
+<!-- 2 · what it was -->
+<section class="fp-say">
+  <span class="fp-lab"><b>The project</b></span>
+  <div>
+    <h2>Etisalat’s gala dinner for its carrier partners, two years running. <em>For 2018 I gave the night its idea, its artwork and its stage films.</em></h2>
+    <div class="facts"><div><b>Won by tender</b>two years running, 2018 and 2019</div><div><b>Two landmarks</b>Burj Khalifa, then Atlantis, The Palm</div></div>
+    <details class="fp-more"><summary>Read more</summary><div class="tx"><div><span class="fp-lab"><b>The dinner</b></span><p>Each March, during the Capacity Middle East telecom congress in Dubai, Etisalat’s Carrier &amp; Wholesale arm hosts a private dinner for the international carriers it works with. Etisalat is now e&amp;.</p></div><div><span class="fp-lab"><b>The idea, 2018</b></span><p>The invitation set the line: “An evening to celebrate our partnership.” The key visual answered: “Celebrating new partnerships &amp; old connections.”</p><p>Both drew Etisalat’s mark as points of light joined into orbits, over Dubai drawn as one line.</p></div><div><span class="fp-lab"><b>The screens, 2018</b></span><p>The stage brief came to me by name on 1 March 2018, six days before the dinner. Nine films for the main screen, one for each moment of the night; two square films for the side walls; three stage plates. An animator made them under my direction.</p></div><div><span class="fp-lab"><b>The beach, 2019</b></span><p>A year later the dinner moved to Nasimi Beach, Atlantis, The Palm. The film at the top of this page is Etisalat’s event film of that night.</p></div><div><span class="fp-lab"><b>With MCX</b></span><p>Both nights were won and produced by MCX, where I was Partner, Creative Director &amp; Co-producer, through AntBrush.</p></div><div><span class="fp-lab"><b>This page</b></span><p>The 3D is made for this portfolio from the invitation’s own drawing; the films are as delivered. The invitation’s date line reads 2017, a slip in the artwork: the dinner was on Wednesday 7 March 2018. The 2023 design at the end is a proposal; it was not built.</p></div></div></details>
   </div>
-  <div class="rowg c1"><figure class="fig rv"><div class="m settle" style="aspect-ratio:21/9;"><img src="../../img/capacity/room-2019-1600.webp" srcset="../../img/capacity/room-2019-800.webp 800w, ../../img/capacity/room-2019-1600.webp 1600w, ../../img/capacity/room-2019-2400.webp 2400w" sizes="(max-width:760px) 100vw, 92vw" width="1600" height="1200" alt="The room, that night. My own photograph." loading="lazy" decoding="async"></div><figcaption><span class="t"><b>The room, that night.</b> My own photograph.</span></figcaption></figure></div>
-  
 </section>
-<section class="storylink">
-  <div class="wrap in">
-    <div><p class="label rv" style="color:var(--sub);margin-bottom:20px">The full story</p><h2 class="rv d1">Every step, in order.</h2></div>
-    <div class="rv d2">
-      <p>For Etisalat, with MCX. Armani Hotel and Atlantis are the venues.</p>
-      <a class="big-btn" href="../../stories/capacity/">See the full story <span aria-hidden="true">→</span></a>
+
+<!-- 3 · the idea as real-time 3D: the points of light join into the mark (from the invitation's vectors), then the stage's three screens playing the delivered films -->
+<section class="fp-pin fp-model" style="--n:7.4" aria-label="The idea, in 3D: points of light join into Etisalat’s mark as the 2018 invitation draws it, then the two side walls and the main screen playing the delivered films">
+  <div class="fp-stick">
+    <canvas aria-hidden="true"></canvas>
+    <div class="veil"></div>
+    <span class="fp-lab chap"><b>01</b> · The idea<span class="x"> · the invitation, the city, the stage</span></span>
+    <span class="fp-lab kind"><b>3D model</b><span class="x"> · made for this portfolio</span></span>
+    <div class="intro"><span class="fp-lab"><b>01</b> · The idea</span><h2>Points of light.<br><b class="tw">One mark.</b></h2><p>Built here from the 2018 invitation’s own drawing, and the films delivered for the stage.</p></div>
+    <div class="st" data-s="0"><span class="fp-lab"><b>01</b> / 03</span><h3>Points that join</h3><p>“An evening to celebrate our partnership.” The invitation drew Etisalat’s mark as points of light, joined into orbits.</p></div>
+    <div class="st" data-s="1"><span class="fp-lab"><b>02</b> / 03</span><h3>The city, in one line</h3><p>Two square walls beside the stage. On each, Dubai draws itself as a single line, mirrored, growing outward.</p></div>
+    <div class="st" data-s="2"><span class="fp-lab"><b>03</b> / 03</span><h3>A film for each moment</h3><p>One film for each moment of the night, from the fountain to the draw. The last closed on the line: celebrating new partnerships &amp; old connections.</p><div class="spec"><span>Delivered for the stage<b>9 films · 2 side films</b></span></div></div>
+    <div class="fp-built whole" data-b="0"><div class="fr"><img src="a/invitation.webp" width="1800" height="1273" alt="The 2018 invitation: on a night sky, Etisalat’s mark drawn as three orbits with points of light on them, above the Dubai skyline; the line An evening to celebrate our partnership; the Etisalat logo in English" loading="lazy" decoding="async"></div><div class="fp-lab"><span><b>Printed · the invitation</b></span><span>A3 · 26 February 2018</span></div></div>
+  </div>
+</section>
+
+<!-- 4 · the terrace and the two stage designs, each whole, at once -->
+<section class="cp-set" data-rows='[[0, 1], [2, 3]]' data-rows-p='[[0], [1], [2], [3]]' aria-label="The terrace, and two stage designs for it, 2018">
+  <div class="hd"><div><span class="fp-lab"><b>02</b> · The stage</span><h2>One terrace,<br><b class="tw">two stages.</b></h2></div><p>The terrace of The Pavilion, beside the Dubai Fountain, nine days before the dinner. Then two stage designs for it: cells of screen in green rims, and towers of light tiles. Renders, 2018.</p></div>
+  <div class="grid">
+    <figure data-r="1.3333"><img src="a/terrace.webp" width="1400" height="1050" alt="Photograph: the empty stone terrace of The Pavilion in daylight, the towers of Downtown Dubai beyond" loading="lazy" decoding="async"><figcaption><b>The terrace</b>Photograph, 26 February 2018.</figcaption></figure>
+    <figure data-r="1.7778"><img src="a/dir-a.webp" width="1280" height="720" alt="Render: a stage of screens shaped like cells, each in a bright green rim, showing a starry sky, the line Celebrating New Partnerships and Old Connections, and the Etisalat mark; etisalat on the stage front" loading="lazy" decoding="async"><figcaption><b>Cells of screen</b>Stage design · render.</figcaption></figure>
+    <figure data-r="2.1299"><img src="a/dir-b.webp" width="1361" height="639" alt="Render: a black main screen with the Etisalat logo between towers of white and green light tiles, a curved stage with lit steps" loading="lazy" decoding="async"><figcaption><b>Towers of light</b>Stage design · render.</figcaption></figure>
+    <figure data-r="1.8727"><img src="a/dir-b-site.webp" width="1500" height="801" alt="The towers of light drawn onto the photograph of the terrace, the lake and Downtown Dubai behind" loading="lazy" decoding="async"><figcaption><b>On the terrace</b>The towers, on the site photograph.</figcaption></figure>
+  </div>
+</section>
+
+<!-- 5 · 2019: the same words, at the beach -->
+<section class="cp-set" data-rows='[[0, 1], [2, 3]]' data-rows-p='[[0], [1], [2], [3]]' aria-label="A year later, at Nasimi Beach, Atlantis, The Palm, 2019">
+  <div class="hd"><div><span class="fp-lab"><b>03</b> · 2019</span><h2>The same words,<br><b class="tw">at the beach.</b></h2></div><p>A year later the dinner moved to Nasimi Beach, Atlantis, The Palm. The sign at the arrival carried the 2018 line again: an evening to celebrate our partnership.</p><span class="cp-btn"><button class="fp-play" type="button" data-film="../../stories/capacity/assets/floor-film-2019.mp4" data-title="The 2019 dinner, from the floor · my own film of the night · silent">From the floor <small>0:58 · my film</small></button></span></div>
+  <div class="grid">
+    <figure data-r="2.2316"><img src="a/sign-2019.webp" width="848" height="380" alt="A frame of the event film: a performer in a red hat beside the directional sign, Capacity Middle East Gala Dinner 2019, An evening to celebrate our partnership" loading="lazy" decoding="async"><figcaption><b>The sign</b>A frame of the event film.</figcaption></figure>
+    <figure data-r="1.3333"><img src="a/arch-2019.webp" width="1400" height="1050" alt="Photograph at night: the arrival arch, Welcome to Capacity Middle East Gala 2019, guests walking in under purple light" loading="lazy" decoding="async"><figcaption><b>The arrival</b>Photograph, 6 March 2019.</figcaption></figure>
+    <figure data-r="2.2316"><img src="a/drums-2019.webp" width="848" height="380" alt="A frame of the event film: drummers with lit drums walk past giant lit letters, etisalat, on the sand" loading="lazy" decoding="async"><figcaption><b>The lit name</b>A frame of the event film.</figcaption></figure>
+    <figure data-r="1.3333"><img src="a/room-2019.webp" width="1400" height="1050" alt="Photograph at night: the full room of tables, the stage under beams of light, the lit letters etisalat in front of it" loading="lazy" decoding="async"><figcaption><b>The room</b>Photograph, 6 March 2019.</figcaption></figure>
+  </div>
+</section>
+
+<!-- 6 · the 2023 proposal, labelled as a proposal: Tony's picks (K12, F01/F02, F05) and the walk of option A to 0:35, before the stage screen -->
+<section class="cp-set" data-rows='[[0, 1], [2, 3]]' data-rows-p='[[0], [1], [2], [3]]' aria-label="Proposal, 2023: not built">
+  <div class="hd"><div><span class="fp-lab"><b>04</b> · Proposal, 2023</span><h2>Asked back:<br><b class="tw">a proposal.</b></h2><span class="fp-lab tag">Proposal · not built</span></div><p>In 2023 e&amp; asked AntBrush, my agency, to bid for the dinner. Its new mark completed the name, Capacity Me&amp;, and one walk led from the waterfront gate to the stage. We drew it two ways.</p></div>
+  <div class="grid">
+    <figure data-r="1.7778"><video muted playsinline loop preload="none" width="768" height="432" poster="a/proposal-2023-poster.webp" data-auto data-src="a/proposal-2023.mp4" data-poster="a/proposal-2023-poster.webp" aria-label="3D walk of the proposal: the totem and flags on the waterfront, the black and red gate with the e&amp; mark, the welcome desk, the media walls, the Capacity Me&amp; letters, the photo booth, the tables"></video><figcaption><b>The walk</b>3D film of the proposal, option A.</figcaption></figure>
+    <figure data-r="1.5414"><img src="a/kv-2023.webp" width="1600" height="1038" alt="Proposal key visual: a purple world map with tiles of city pictures, a 3D e&amp; mark, the line Big network … smart world, and the Capacity Me&amp; logo" loading="lazy" decoding="async"><figcaption><b>Big network … smart world</b>Key visual of the proposal.</figcaption></figure>
+    <figure data-r="1.7766"><img src="a/gate-b-2023.webp" width="1400" height="788" alt="Proposal render, option B: a gate of two timber towers joined by a black beam with the e&amp; mark, a walkway with red ropes" loading="lazy" decoding="async"><figcaption><b>Option B</b>The gate in timber · render.</figcaption></figure>
+    <figure data-r="1.7766"><img src="a/desk-a-2023.webp" width="1400" height="788" alt="Proposal render, option A: a welcome desk under a sloping black and purple wall, Big network smart world, with the Capacity Me&amp; logo and a red e&amp;" loading="lazy" decoding="async"><figcaption><b>Option A</b>The welcome desk · render.</figcaption></figure>
+  </div>
+</section>
+
+<!-- 7 · the result -->
+<section class="fp-res" aria-label="The result">
+  <div class="hd"><h2>The result.</h2><span class="fp-lab"><b>05</b> · The result</span></div>
+  <div class="nums"><div><b>Two years running</b><span>won by tender: the dinner at the Burj Khalifa in 2018, then at Atlantis, The Palm in 2019</span></div></div>
+  <details class="fp-more"><summary>More figures</summary>
+    <div class="nums">
+      <div><b>9</b><span>films for the 2018 main screen, one for each moment of the night</span></div>
+      <div><b>2</b><span>square films for the side walls, one the mirror of the other</span></div>
+      <div><b>3</b><span>stage plates at the shape of the stage screen</span></div>
+      <div><b>2</b><span>designs on one walk, for 2023. A proposal, not built</span></div>
     </div>
+    <p class="src fp-lab">Dates and venues: the running orders of 2 March 2018 and 3 March 2019. Tender: the win of 25 February 2018 and the confirmation of 26 February 2019. Films and plates: the delivered files of 7 March 2018. 2023: the proposal deck and the bid of January 2023.</p>
+  </details>
+</section>
+
+<!-- 8 · the film, the credits, on -->
+<section class="fp-end fin">
+  <button class="film" type="button" data-film="a/night-2019.mp4" data-title="The 2019 dinner, Nasimi Beach, Atlantis, The Palm · event film made for Etisalat" aria-label="Play the event film of the 2019 dinner, with sound">
+    <img src="a/night-2019-poster.webp" width="848" height="380" alt="" loading="lazy" decoding="async">
+    <span class="t"><span class="fp-lab"><b>Event film</b> · 1:45 · sound</span><b>Play the night.</b></span><span class="go" aria-hidden="true"></span>
+  </button>
+  <noscript><span class="fp-nojs"><a class="fp-play" href="a/night-2019.mp4">Open the film <small>1:45 · video file</small></a></span></noscript>
+  <div class="more"><button class="fp-play" type="button" data-film="a/night-2018.mp4" data-title="The 2018 dinner, The Pavilion, Armani Hotel · film by Etisalat UAE">The 2018 night <small>1:30 · sound</small></button><button class="fp-play" type="button" data-film="a/stage-2018.mp4" data-title="The 2018 dinner · the opening film for the stage screen, as delivered">The 2018 opening film <small>0:14</small></button></div>
+  <div class="fp-cred">
+    <div><span class="fp-lab">Role</span>Antoni Gerges<br>Creative Director, Brand &amp; Experiential</div>
+    <div><span class="fp-lab">With</span>MCX: Partner, Creative Director &amp; Co-producer. Partner venture, through AntBrush, for live entertainment and corporate events.</div>
+    <div><span class="fp-lab">For</span>Etisalat, now e&amp;: the Carrier &amp; Wholesale gala dinner, during Capacity Middle East, Dubai.</div>
+    <div><span class="fp-lab">The films and the model</span>2018 stage films made under my direction. 2018 film of the night by Etisalat UAE. 2019 event film made for Etisalat. The 3D is made for this portfolio from the 2018 invitation.</div>
   </div>
+  <a class="fp-next" href="../../work/"><span class="fp-lab">More work</span><b>All work</b><span aria-hidden="true">→</span></a>
 </section>
 </main>
-<nav class="pnext" style="--nbg:#E8F0F9;--nfg:#0A1A3F" aria-label="Next project">
-  <a href="../zeiss/">
-    <div><p class="label">Next</p><h2>See beyond.</h2><p style="opacity:.72;margin-top:16px">ZEISS Vision Care</p></div>
-    <div class="pic"><img src="../../img/zeiss/dinner-1600.webp" srcset="../../img/zeiss/dinner-800.webp 800w, ../../img/zeiss/dinner-1600.webp 1600w, ../../img/zeiss/dinner-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="1600" height="1005" alt="The built wall at The Space, Dubai: the lit eye on a white disc, the night of the ZEISS launch" loading="lazy" decoding="async"></div>
-  </a>
-</nav>
+
+<div class="fp-player" role="dialog" aria-label="Film player"><video playsinline preload="none"></video><div class="bar"><span class="ti"></span><button class="x" type="button">Close</button></div></div>
+
 <footer class="foot"><div class="wrap row">
   <p style="margin:0">Antoni Gerges · Creative Director, Brand &amp; Experiential · <a href="mailto:antoni@antbrush.com">antoni@antbrush.com</a></p>
   <nav aria-label="Footer"><a href="../../work/">Work</a><a href="../../about/">About</a><a href="../../contact/">Contact</a></nav>
 </div></footer>
-<script src="../../assets/site.js?v=afd4c1e0" defer></script>
+<script src="../../assets/fp/fp.js?v=18" defer></script>
+<script type="module" src="cp.js?v=5"></script>
 </body>
 </html>
