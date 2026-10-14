@@ -64,6 +64,25 @@ function build() {
   const gate = station(0, Object.assign({}, none, { c: [0, 2.1, 6], rx: 6.9, ry: 2.7, yaw: -.4, pitch: .07, fx: .7, fy: .6, ox: .12, oy: 0, fxp: 1.0, fyp: .4, oxp: 0, oyp: -.14, yawp: -.3 }));
   gate.dims.push({ a: [-6, 4.55, 6.5], b: [6, 4.55, 6.5], t: '39 ft · 12 m', big: true }, { a: [6.75, 0, 6.5], b: [6.75, 4, 6.5], t: '13 ft · 4 m' });
 
+  /* ---------- the zigzag wall: ONE print, 9 m by 3 m, folded twelve times (the size is written on the design render: "9*3 print").
+     The print is the wall's own artwork (2D file "sssw"). Nothing is added to it. What the model shows that a photograph cannot:
+     the wall changes as you pass it. From the front the lettering reads whole; from the side every second face turns away and it breaks. ---------- */
+  const zig = station(46, Object.assign({}, none, { c: [0, 1.6, .2], rx: 4.7, ry: 2.2, yaw: 0, pitch: .1, drift: 2.1, w: 1.5, fx: .7, fy: .6, ox: .14, oy: 0, fxp: 1.04, fyp: .4, oxp: 0, oyp: -.14 }));
+  { const FOLDS = 12, FW = 9 / FOLDS, ANG = .58, H = 3, g = zig.g, dx = FW * Math.cos(ANG), dz = FW * Math.sin(ANG), span = dx * FOLDS, pos = [], uv = [], idx = [], colr = [];
+    for (let k = 0; k < FOLDS; k++) { const x0 = -span / 2 + k * dx, x1 = x0 + dx, z0 = k % 2 ? dz : 0, z1 = k % 2 ? 0 : dz, b = k * 4;
+      pos.push(x0, 0, z0, x1, 0, z1, x1, H, z1, x0, H, z0); uv.push(k / FOLDS, 0, (k + 1) / FOLDS, 0, (k + 1) / FOLDS, 1, k / FOLDS, 1); idx.push(b, b + 1, b + 2, b, b + 2, b + 3);
+      const sh = k % 2 ? .62 : 1; for (let q = 0; q < 4; q++) colr.push(sh, sh, sh * (k % 2 ? 1.08 : 1)); }
+    const geo = new T.BufferGeometry(); geo.setAttribute('position', new T.Float32BufferAttribute(pos, 3)); geo.setAttribute('uv', new T.Float32BufferAttribute(uv, 2)); geo.setAttribute('color', new T.Float32BufferAttribute(colr, 3)); geo.setIndex(idx); geo.computeVertexNormals();
+    const wall = new T.Mesh(geo, new T.MeshStandardMaterial({ map: S.tex('zigzag.webp'), vertexColors: true, roughness: .78, metalness: 0, side: T.DoubleSide, envMapIntensity: .2 })); wall.position.y = .02; wall.castShadow = true; g.add(wall);
+    const carpet = new T.Mesh(new T.PlaneGeometry(14, 8), new T.MeshStandardMaterial({ color: 0x1622a8, roughness: .95, metalness: 0 })); carpet.rotation.x = -Math.PI / 2; carpet.position.set(0, .006, 2.6); carpet.receiveShadow = true; g.add(carpet);
+    const strip = new T.Mesh(new T.PlaneGeometry(10.2, 1.5), new T.MeshStandardMaterial({ color: 0x43b9e6, roughness: .95, metalness: 0 })); strip.rotation.x = -Math.PI / 2; strip.position.set(0, .012, 1.55); strip.receiveShadow = true; g.add(strip);
+    /* the white plinths that stood in front of every wall (the design render marks them 1 by 1) */
+    const white = new T.MeshStandardMaterial({ color: 0xf2f3f7, roughness: .6 });
+    for (let k = 0; k < 5; k++) { const p = new T.Mesh(new T.BoxGeometry(.62, .86, .28), white); p.position.set(-3.4 + k * 1.7, .43, 1.6); p.castShadow = true; p.receiveShadow = true; g.add(p); }
+    const lamp = new T.SpotLight(0xffffff, 60, 30, .62, .8, 1.4); lamp.position.set(-2, 7.5, 9); lamp.target.position.set(0, 1.4, 0); g.add(lamp, lamp.target);
+    zig.dims.push({ a: [-span / 2, H + .38, dz / 2], b: [span / 2, H + .38, dz / 2], t: 'One print, folded · 30 ft × 10 ft · 9 × 3 m', big: true }, { a: [span / 2 + .7, 0, 1.2], b: [span / 2 + .7, 1.83, 1.2], t: 'A person · 6 ft' });
+  }
+
   compose(0);
   S.onFrame((time, i, local) => compose(i + local));
   /* with reduced motion the engine holds a still per stop: each stop shows its finished state */
