@@ -560,3 +560,9 @@ body:has(.pj-pick input:not(#k-all):checked) .where{display:none}
   .shell2 .abh-sweep{top:auto;bottom:calc(117.7vw - 44px);height:88px}
   .shell2 .abh-sweep img{left:-152%}
 }
+
+/* ---------- Work (14 Oct): the twelve chosen by sector, then the archive ---------- */
+:is(.pj-main:has(#s-brands:checked) .pj:not([data-s="brands"]),.pj-main:has(#s-sport:checked) .pj:not([data-s="sport"]),.pj-main:has(#s-education:checked) .pj:not([data-s="education"]),.pj-main:has(#s-culture:checked) .pj:not([data-s="culture"]),.pj-main:has(#s-health:checked) .pj:not([data-s="health"]),.pj-main:has(#s-government:checked) .pj:not([data-s="government"])){display:none}
+.shell2 .chero.arch{min-height:0;padding:clamp(110px,13vw,190px) 0 clamp(140px,13vw,200px);border-top:1px solid rgba(247,245,241,.18)}
+.shell2 .chero.arch .ch1{font-size:clamp(44px,7vw,112px)}
+.pj-sel .plist{padding-bottom:clamp(40px,5vw,80px)}
