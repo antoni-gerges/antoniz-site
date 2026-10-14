@@ -11,59 +11,105 @@
 <link rel="preload" href="../../assets/jost-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../../assets/fp/fp.css?v=34">
 <style>
-/* Why Not! Mazzika: this page's own rules. The engine files are used unchanged. */
-/* 1 · the opening is the festival film. It carries the MCX mark at its right edge, so the picture is held to that edge and the mark is never cut */
-.fp-hero.whole .v{object-position:100% 50%}
-.fp-hero.whole h1{font-size:clamp(60px,10vw,208px);line-height:.86}
-.fp-hero.whole .row{justify-content:flex-start;gap:clamp(24px,4vw,64px)}
-@media (max-width:760px){
-  .fp-hero.whole .v{aspect-ratio:1200/526}
-  .fp-hero.whole .in{padding-top:calc(104px + 43.84vw + 26px)}
-  .fp-hero.whole h1{font-size:clamp(58px,19vw,96px);line-height:.9}
+/* Why Not! Mazzika: this page's own rules. The engine files are used unchanged. Nothing on this page is cropped by the page.
+   The brand's room: black, with the festival's gold as the accent (the gold of its frame, #e5a333). */
+.mazzika{--mz-gold:#e5a333}
+.mazzika .fp-say>.fp-lab b,.mazzika .mz-set .hd .fp-lab b,.mazzika .fp-model .st .fp-lab b,.mazzika .fp-model .chap b,.mazzika .fp-res .fp-lab b{color:var(--mz-gold)}
+
+/* 1 · the opening: the festival film, whole, from the Coca-Cola Arena's name. Our words sit under the picture, never over it. */
+.fp-hero.whole.mz-open::after{background:none}
+@media (min-width:761px){
+  .fp-hero.whole.mz-open .top{top:70px}
+  .fp-hero.whole.mz-open .v{inset:auto;left:0;right:0;top:94px;margin:0 auto;width:min(100%,calc((100svh - 94px - 176px) * 2.2792));height:auto;aspect-ratio:1600/702;object-fit:contain;transform:none!important}
+  .fp-hero.whole.mz-open .in{flex-direction:row;align-items:flex-end;justify-content:space-between;gap:clamp(20px,3vw,56px);padding-bottom:clamp(16px,2.8vh,30px)}
+  .fp-hero.whole.mz-open h1{font-size:clamp(30px,3.1vw,54px);line-height:.95;letter-spacing:-.03em;margin:0;white-space:nowrap}
+  .fp-hero.whole.mz-open .row{flex:1;justify-content:flex-end;align-items:flex-end;gap:clamp(18px,2.6vw,48px);flex-wrap:nowrap}
+  .fp-hero.whole.mz-open .what{max-width:none;text-align:right}
+  .fp-hero.whole.mz-open .what strong{font-size:clamp(17px,1.5vw,24px);margin-bottom:6px}
+  .fp-hero.whole.mz-open .what small{margin-top:0}
+  .fp-hero.whole.mz-open .fp-play{padding-top:13px;padding-bottom:13px;white-space:nowrap}
+  .fp-hero.whole.mz-open .fp-cue{display:none}
 }
-/* a desktop window narrower than the film can show: the whole frame above the title, as on phones, never a slice of the arena's name */
 @media (min-width:761px) and (max-aspect-ratio:5/4){
-  .fp-hero.whole .v{inset:auto;left:0;top:96px;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;transform:none!important}
-  .fp-hero.whole::after{background:none}.fp-hero.whole .fp-cue{display:none}
-  .fp-hero.whole .in{justify-content:flex-start;padding-top:calc(96px + 56.25vw + 10px);opacity:1!important}
-  .fp-hero.whole h1,.fp-hero.whole .row{animation:none}
+  .fp-hero.whole.mz-open .in{flex-direction:column;align-items:flex-start;justify-content:flex-start;padding-top:calc(94px + 43.88vw + 30px);opacity:1!important}
+  .fp-hero.whole.mz-open .row{flex:none;width:100%;justify-content:space-between;margin-top:14px}
+  .fp-hero.whole.mz-open .what{text-align:left}
+  .fp-hero.whole.mz-open h1,.fp-hero.whole.mz-open .row{animation:none}
 }
-/* 3 · on paper: two square artworks and one wide one, each whole; the key visual is never shown larger than its file */
-.fp-plates.stack figure.tall img{max-height:84vh}
-.fp-plates.stack figure.kv img{max-width:min(100%,1080px);max-height:min(84vh,1080px)}
+@media (max-width:760px){
+  .fp-hero.whole.mz-open .v{aspect-ratio:1200/526}
+  .fp-hero.whole.mz-open{height:auto;min-height:0}
+  .fp-hero.whole.mz-open .in{position:relative;inset:auto;padding-top:calc(104px + 43.84vw + 24px);padding-bottom:36px}
+  .fp-hero.whole.mz-open h1{font-size:clamp(30px,8.4vw,36px);line-height:.95;margin-bottom:14px}
+}
+
+/* 2 · the films we made, and the pieces on paper: each set whole, at once, on one dark screen; films play, pictures stand still */
+.mz-set{padding:clamp(88px,11vh,112px) var(--g) clamp(24px,4vh,40px);min-height:100svh;display:flex;flex-direction:column;justify-content:center;background:#000}
+.mz-set .hd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px var(--g);align-items:end;margin-bottom:clamp(16px,2.6vh,28px)}
+.mz-set .hd h2{font-size:clamp(36px,4.4vw,76px);line-height:.92;letter-spacing:-.04em;font-weight:300;margin:12px 0 0}
+.mz-set .hd p{font-size:clamp(15px,1.1vw,17px);line-height:1.45;color:var(--dim);max-width:31em;justify-self:end;margin:0}
+.mz-set .grid{width:100%}
+.mz-set .mz-row{display:flex;justify-content:center;align-items:flex-start}
+.mz-set figure{margin:0;flex:none}
+.mz-set img,.mz-set video{width:100%;height:auto;display:block;background:#000}
+.mz-set figcaption,.mz-set .note{margin-top:8px;font-size:13.5px;line-height:1.35;color:var(--dim)}
+.mz-set figcaption b,.mz-set .note b{color:#fff;font:500 15px/1.2 "Jost",system-ui,sans-serif;margin-right:8px}
+.mz-set .note{margin:14px 0 0;text-align:center}
+@media (min-width:761px){
+  .mz-set.side{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,2fr);gap:0 var(--g);align-items:center;align-content:center}
+  .mz-set.side .hd{grid-template-columns:1fr;align-items:start;margin:0}
+  .mz-set.side .hd p{justify-self:start;margin-top:18px}
+  .mz-set.side .note{grid-column:2}
+}
+@media (max-width:760px){.mz-set{min-height:0;padding-top:72px;padding-bottom:28px}.mz-set .hd{grid-template-columns:1fr}.mz-set .hd p{justify-self:start}}
+
 /* 4 · the model: the copy sits on the dark floor at the lower left; the screens above it stay clear */
 @media (min-width:761px){.fp-model .veil{background:radial-gradient(120% 95% at 0% 100%,rgba(0,0,0,.88) 0,rgba(0,0,0,.55) 32%,rgba(0,0,0,0) 60%),linear-gradient(0deg,rgba(0,0,0,.5) 0,rgba(0,0,0,0) 24%)}}
 .fp-model .st p small{display:block;margin-top:8px;color:var(--dim);font-size:.86em}
-/* names in the model: plain text on a short line */
+/* names in the model: plain text on a short line, no shadow behind the words; gone at the first frame of every cut to the real thing */
 .mzl{position:absolute;left:0;top:0;z-index:4;pointer-events:none;opacity:0;transition:opacity .35s;will-change:transform}
 .mzl.on{opacity:1}
-.mzl i{position:absolute;left:0;bottom:0;width:1px;height:24px;background:rgba(255,255,255,.8)}
+.mzl i{position:absolute;left:0;bottom:0;width:1px;height:26px;background:rgba(255,255,255,.85)}
 .mzl i::after{content:"";position:absolute;left:-2px;bottom:-2px;width:5px;height:5px;border-radius:50%;background:#fff}
-.mzl b{position:absolute;left:0;bottom:30px;transform:translateX(-50%);white-space:nowrap;font:600 11.5px/1 Inter,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#fff;text-shadow:0 1px 3px #000,0 0 12px rgba(0,0,0,.95)}
-.fp-stick.is-cut .mzl{opacity:0!important}
-@media (max-width:760px){.mzl.more{display:none}.mzl b{font-size:9.5px;letter-spacing:.08em;bottom:22px}.mzl i{height:16px}}
-/* the real pictures. Films that carry a mark or a title are shown whole, never cut and never larger than their file */
-.fp-built.film .fr video{inset:auto;left:50%;top:50%;transform:translate(-50%,-50%);width:min(100vw,1600px);height:auto;max-height:100%;object-fit:contain}
-.fp-built.film.r228 .fr video{aspect-ratio:1600/702}.fp-built.film.r169 .fr video{aspect-ratio:16/9}
-.fp-built.film .fr::after{background:linear-gradient(180deg,rgba(0,0,0,.5) 0,rgba(0,0,0,0) 18%,rgba(0,0,0,0) 62%,rgba(0,0,0,.8) 100%)}
-/* my own phone films carry no mark: full screen, but never wider than they were shot */
-.fp-built.own .fr video{inset:auto;left:50%;top:50%;transform:translate(-50%,-50%);width:min(100vw,1920px);height:min(100%,1080px);object-fit:cover}
-@media (max-width:760px){
-  .fp-built.film .fr video,.fp-built.own .fr video{left:0;top:17svh;transform:none;width:100%;height:auto;max-height:none;object-fit:contain}
-  .fp-built.own .fr video{aspect-ratio:16/9}
-  .fp-built .fr::after{background:linear-gradient(180deg,rgba(0,0,0,0) 0,rgba(0,0,0,0) 46%,rgba(0,0,0,.92) 72%)}
+.mzl b{position:absolute;left:0;bottom:33px;transform:translateX(-50%);white-space:nowrap;font:600 13.5px/1 Inter,system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#fff}
+.fp-stick.is-cut .mzl{opacity:0!important;transition:none;visibility:hidden}
+@media (max-width:760px){.mzl.more{display:none}.mzl b{font-size:11px;letter-spacing:.08em;bottom:24px}.mzl i{height:18px}}
+/* the real things: every film whole, in the middle of the screen, the words under it or beside it */
+@media (min-width:761px){
+  .fp-built .fr video{inset:84px 0 150px 0;width:100%;height:calc(100% - 234px);object-fit:contain;transform:none}
 }
-/* 5 · the night: the film's mark stays whole. On wide screens the picture is held to its right edge and the words sit left; on phones the whole frame is shown */
-.fp-reel .ly video{object-position:100% 50%;transform:none!important}
-.fp-reel .cap{flex-direction:column;align-items:flex-start;gap:14px;right:auto;max-width:min(60vw,760px)}
-.fp-reel .cap p{text-align:left}
+.fp-built .fr::after{background:linear-gradient(180deg,rgba(0,0,0,0) 0,rgba(0,0,0,0) 62%,rgba(0,0,0,.6) 100%)}
 @media (max-width:760px){
-  .fp-reel .ly video{inset:auto;left:0;top:17svh;width:100%;height:auto;aspect-ratio:1200/526;object-fit:contain}
+  .fp-built .fr::after{display:none}
+  .fp-built.film .fr video{inset:auto;left:0;width:100%;height:auto;transform:none}
+  .fp-built.film.r228 .fr video{aspect-ratio:1600/702;top:calc(36svh - 22vw)}
+  .fp-built.film.r169 .fr video{aspect-ratio:16/9;top:calc(36svh - 28.2vw)}
+  .fp-built.own .fr video{inset:84px 0 auto 0;width:100%;height:calc(62svh - 84px);transform:none}
+  .mazzika .fp-stick:has(.fp-built.cut.r228) .st{top:calc(36svh + 22vw + 22px);bottom:auto}
+  .mazzika .fp-stick:has(.fp-built.cut.r169) .st{top:calc(36svh + 28.2vw + 22px);bottom:auto}
+  .mazzika .fp-stick:has(.fp-built.cut.own) .st{top:calc(62svh + 18px);bottom:auto}
+}
+
+/* 5 · the night: films whole, the words in the band under the picture, never over it */
+.fp-reel .ly{background:#000}
+.fp-reel .ly video{object-position:50% 50%;transform:none!important}
+.fp-reel .ly::after{display:none}
+@media (min-width:761px){
+  .fp-reel .ly video.whole{inset:auto;left:0;right:0;margin:0 auto;top:124px;width:min(100%,calc((100svh - 300px) * 2.2792));height:auto;aspect-ratio:1600/702}
+  .fp-reel .ly video.whole.r169{width:min(100%,calc((100svh - 300px) * 1.7778));aspect-ratio:16/9}
+  .fp-reel .cap{bottom:clamp(18px,3.4vh,36px)}
+  .fp-reel .cap h3{font-size:clamp(36px,4.6vw,72px)}
+}
+@media (max-width:760px){
+  .fp-reel .cap{flex-direction:column;align-items:flex-start;gap:12px}
+  .fp-reel .cap p{text-align:left}
+  .fp-reel .ly video{inset:auto;left:0;top:calc(36svh - 22vw);width:100%;height:auto;aspect-ratio:1200/526}
+  .fp-reel .ly video.r169{aspect-ratio:16/9;top:calc(36svh - 28.2vw)}
   .fp-reel .ly::after{background:none}
-  .fp-reel .cap{max-width:none;right:var(--g)}
+  .fp-reel .cap{max-width:none;right:var(--g);top:calc(36svh + 28.2vw + 22px);bottom:auto}
 }
-/* 6 · the film button: same rule for the mark */
-.fp-end .film video{object-position:100% 50%}
+/* 6 · the film button */
+.fp-end .film video{object-position:50% 50%}
 @media (max-width:760px){
   .fp-end .film{aspect-ratio:auto;clip-path:none;background:none;overflow:visible;text-align:left}
   .fp-end .film video{position:relative;inset:auto;width:100%;height:auto;aspect-ratio:1200/526;object-fit:contain}
@@ -72,7 +118,7 @@
   .fp-end .film .go{right:0;bottom:0}
 }
 </style>
-<noscript><style>.fp-pin{height:auto!important}.fp-stick{position:static;height:auto;overflow:visible}.fp-reel .ly{position:relative;height:70vh}.fp-plates .trk{position:static;flex-wrap:wrap;padding:40px var(--g);height:auto}.fp-model canvas,.fp-model .veil,.fp-ticks,.fp-cue,.fp-bar{display:none}.fp-model .intro{position:static;transform:none;padding:60px var(--g) 20px}.fp-model .st{position:static;opacity:1;transform:none;width:auto;padding:24px var(--g) 8px}.fp-built{position:static;opacity:1;transform:none;width:auto;max-width:720px;margin:0 var(--g) 24px}.fp-model .chap{position:static;display:block;padding:0 var(--g)}.fp-hero h1,.fp-hero .row{animation:none}.fp-built{visibility:visible;height:auto;background:none}.fp-built .fr{position:relative;inset:auto;aspect-ratio:16/9}.fp-built .fr::after{display:none}.fp-built .fp-lab,.fp-model .kind{position:static;text-align:left;margin-top:8px}.fp-hero.band{min-height:0}.fp-plates.stack .trk{display:block}.fp-plates.stack figure{margin-bottom:40px}@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{font-size:14px;padding:6px 8px}}button[data-film].fp-play{display:none}button[data-film]{pointer-events:none;cursor:default}button[data-film] .go{display:none}.fp-nojs{display:block;margin-top:14px}.mzl{display:none}.fp-built .fr{aspect-ratio:auto}.fp-built .fr video{position:static;width:100%;height:auto;transform:none}</style></noscript>
+<noscript><style>.fp-pin{height:auto!important}.fp-stick{position:static;height:auto;overflow:visible}.fp-reel .ly{position:relative;height:70vh}.fp-plates .trk{position:static;flex-wrap:wrap;padding:40px var(--g);height:auto}.fp-model canvas,.fp-model .veil,.fp-ticks,.fp-cue,.fp-bar{display:none}.fp-model .intro{position:static;transform:none;padding:60px var(--g) 20px}.fp-model .st{position:static;opacity:1;transform:none;width:auto;padding:24px var(--g) 8px}.fp-built{position:static;opacity:1;transform:none;width:auto;max-width:720px;margin:0 var(--g) 24px}.fp-model .chap{position:static;display:block;padding:0 var(--g)}.fp-hero h1,.fp-hero .row{animation:none}.fp-built{visibility:visible;height:auto;background:none}.fp-built .fr{position:relative;inset:auto;aspect-ratio:16/9}.fp-built .fr::after{display:none}.fp-built .fp-lab,.fp-model .kind{position:static;text-align:left;margin-top:8px}.fp-hero.band{min-height:0}@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{font-size:14px;padding:6px 8px}}button[data-film].fp-play{display:none}button[data-film]{pointer-events:none;cursor:default}button[data-film] .go{display:none}.fp-nojs{display:block;margin-top:14px}.mzl{display:none}.fp-built .fr{aspect-ratio:auto}.fp-built .fr video{position:static;width:100%;height:auto;transform:none}.mz-set figure{width:auto!important;max-width:900px;margin:0 0 24px}.mz-set .mz-row,.mz-set .grid{display:block}</style></noscript>
 </head>
 <body class="fp mazzika">
 <a class="skip" href="#main">Skip to content</a>
@@ -85,14 +131,15 @@
 </header>
 <main id="main">
 
-<!-- 1 · the opening: the festival film, from its first shot, where the Coca-Cola Arena name fills the picture -->
-<section class="fp-hero whole" data-marks='[[0,"From the festival film · MCX"]]' aria-label="Why Not! Mazzika: the festival film">
-  <video class="v" muted playsinline loop preload="auto" poster="a/hero-d.webp" data-src="a/hero-d.mp4" data-src-p="a/hero-p.mp4" data-poster="a/hero-d.webp" data-poster-p="a/hero-p.webp"></video>
+<!-- 1 · the opening: the festival film, whole. It opens on the Coca-Cola Arena's name, slowed so the name holds for four seconds,
+     then the night (no washed beat). No title of ours lies over the picture: the words sit under it. -->
+<section class="fp-hero whole mz-open" data-marks='[[0,"From the festival film · MCX"]]' aria-label="Why Not! Mazzika: the festival film, from the Coca-Cola Arena">
+  <video class="v" muted playsinline loop preload="auto" width="1600" height="702" poster="a/hero-d.webp" data-src="a/hero-d.mp4" data-src-p="a/hero-p.mp4" data-poster="a/hero-d.webp" data-poster-p="a/hero-p.webp"></video>
   <div class="top"><span class="src"><i></i><b>From the festival film · MCX</b></span><span class="fp-lab r">Coca-Cola Arena, Dubai · 22 November 2019</span></div>
   <div class="in">
     <h1>Why Not! Mazzika</h1>
     <div class="row">
-      <p class="what"><strong>Six acts, one night, one arena.</strong><small>Creative Director, Brand &amp; Experiential: Antoni Gerges · AntBrush, with MCX</small></p>
+      <p class="what"><strong>One night at the Coca-Cola Arena.</strong><small>Antoni Gerges, Creative Director, Brand &amp; Experiential · AntBrush, with MCX</small></p>
       <span class="btns"><button class="fp-play" type="button" data-film="../../media/films/mazzika-1080.mp4" data-film-p="../../media/films/mazzika-720.mp4" data-title="The festival film · 2:53 · MCX">Play the festival film <small>2:53 · sound</small></button><noscript><span class="fp-nojs"><a class="fp-play" href="../../media/films/mazzika-1080.mp4">Open the festival film <small>2:53 · video file</small></a></span></noscript></span>
     </div>
   </div>
@@ -105,69 +152,88 @@
   <div>
     <h2>Six Egyptian acts, one night at the Coca-Cola Arena. <em>I led its design, its setup and its branding inside the arena.</em></h2>
     <div class="facts"><div><b>22 November 2019</b>Coca-Cola Arena, Dubai</div></div>
-    <details class="fp-more"><summary>Read more</summary><div class="tx"><div><span class="fp-lab"><b>The festival</b></span><p>Why Not! Mazzika Festival: six Egyptian acts in one night at the Coca-Cola Arena, Dubai, on 22 November 2019. Festival by MCX. Sponsor: SWYP.</p><p>I was the festival’s creative director: its design, its setup and its branding inside the arena, and at front of house on the night. Creative direction of the festival: the frame system, the campaign artwork, the seating plan, the stage design direction, the screen films and the screen sizes.</p></div><div><span class="fp-lab"><b>The idea</b></span><p>One frame for everything: a black square with its corners cut, on gold. Every act steps into it. Six of them make the key visual. Then the same frame goes onto the stage.</p><p>The stage mock-up of 24 October 2019 was drawn by Studio One under my direction: a centre screen, six pillars and two side screens, all carrying the frame.</p></div><div><span class="fp-lab"><b>The arena</b></span><p>An end stage. In front of it the floor, in two standing zones. Seats along both long sides. Front of house in the middle of the floor, and a bar at the far end.</p><p>Load-in was planned for 21 November at 7 am. Doors on 22 November at 4:30 pm. The show ran from 6 pm to about midnight.</p><p>Six acts share one stage in one night: one wide deck at the short end of the hall, wings left and right, a barrier in front. Over it, a grid flown from the roof. I directed the stage design; Studio One drew the mock-ups.</p></div><div><span class="fp-lab"><b>Screens, light and sound</b></span><p>One centre screen for each band’s pictures and the festival’s. Six pillars beside it, three a side, each 208 × 1144 px, that run with it as one picture on one canvas 3328 px wide. Two side screens, flown high, put the live camera inside the same cut-corner frame as every poster.</p><p>Five rows of truss over the stage, counted from the film, carry the moving lights, with short rows at the sides and more on the floor. Two sound hangs flown left and right, and monitors along the front for the bands. The films show no more of the system than that.</p><p>The sound, light and video desks sat together on one riser in the middle of the floor, with the bands’ own operators. I worked from there on the night.</p><p>The festival’s ten-second clips also went to the arena’s own screens, outdoors and indoors. I have no picture of those.</p></div><div><span class="fp-lab"><b>The acts, in order</b></span><p>Disco Misr · H.O.H · Mahmoud El Esseily · Massar Egbari · Sharmoofers · Cairokee</p></div><div><span class="fp-lab"><b>The model and the credits</b></span><p>The 3D model was made for this portfolio: the hall from our seating plan; the stage, screens, light and sound from the films. Sizes in feet and metres are estimates.</p><p>Stage mock-ups: Studio One. Show production: Artes ME. Sponsor: SWYP. Venue: Coca-Cola Arena, Dubai. Festival film and act films by MCX.</p></div></div></details>
+    <details class="fp-more"><summary>Read more</summary><div class="tx"><div><span class="fp-lab"><b>The festival</b></span><p>Why Not! Mazzika Festival: six Egyptian acts in one night at the Coca-Cola Arena, Dubai, on 22 November 2019. Festival by MCX, my partner venture, through AntBrush, for live entertainment and corporate events. Sponsor: SWYP.</p><p>I was the festival’s creative director: its design, its setup and its branding inside the arena, and at front of house on the night. The frame system, the campaign artwork, the seating plan, the stage design direction, the screen films and the screen sizes.</p></div><div><span class="fp-lab"><b>The idea</b></span><p>One frame for everything: a black box with its corners cut, on gold. Every act steps into it. Six of them make the key visual. Then the same frame goes onto the stage.</p><p>The stage mock-up of 24 October 2019 was drawn by Studio One under my direction: a centre screen, six pillars and two side screens, all carrying the frame.</p></div><div><span class="fp-lab"><b>The films we made</b></span><p>AntBrush made the screen films that played on the centre screen on the night, and six short films for Instagram, one for each act. The festival film and the act films of the night are MCX’s.</p></div><div><span class="fp-lab"><b>The arena</b></span><p>An end stage. In front of it the floor, in two standing zones. Seats along both long sides. Front of house in the middle of the floor, and a bar at the far end.</p><p>Six acts share one stage in one night: one wide deck at the short end of the hall, wings left and right, a barrier in front. Over it, a grid flown from the roof.</p></div><div><span class="fp-lab"><b>Screens, light and sound</b></span><p>One centre screen for each band’s pictures and the festival’s. Six pillars beside it, three a side, each 208 × 1144 px, run with it as one picture on one canvas 3328 px wide. Two side screens, flown high, put the live camera inside the same cut-corner frame as every poster.</p><p>Rows of truss over the stage carry the moving lights, with short rows at the sides and more on the floor. Two sound hangs fly left and right, with monitors along the front for the bands.</p><p>The sound, light and video desks sat together on one riser in the middle of the floor, with the bands’ own operators. I worked from there on the night.</p><p>The festival’s ten-second clips also went to the arena’s own screens, outdoors and indoors.</p></div><div><span class="fp-lab"><b>The acts, in order</b></span><p>Disco Misr · H.O.H · Mahmoud El Esseily · Massar Egbari · Sharmoofers · Cairokee</p></div><div><span class="fp-lab"><b>The model and the credits</b></span><p>The 3D model was made for this portfolio: the hall from our seating plan; the stage, screens, light and sound from the films.</p><p>Stage mock-ups: Studio One, under my direction. Show production: Artes ME. Sponsor: SWYP. Venue: Coca-Cola Arena, Dubai. Festival film and act films of the night: MCX. Screen films and act films for Instagram: AntBrush.</p></div></div></details>
   </div>
 </section>
 
-<!-- 3 · on paper: three artworks, whole -->
-<section class="fp-plates stack" aria-label="The frame system, on paper">
-  <div class="fp-stick">
-    <div class="trk">
-      <div class="lead"><span class="fp-lab"><b>01</b> · The idea</span><h2>First, <b class="tw">on paper.</b></h2><p>One frame for everything: a black square with its corners cut, on gold.</p></div>
-      <figure class="tall"><img src="a/p-act.webp" width="1600" height="1600" alt="Act poster: Cairokee inside the cut-corner frame, on gold" loading="lazy" decoding="async"><figcaption><b>One frame</b></figcaption></figure>
-      <figure class="tall kv"><img src="a/p-kv.webp" width="1080" height="1080" alt="The key visual: six acts in six frames, with the date and the arena" loading="lazy" decoding="async"><figcaption><b>Six acts</b><span>The key visual, as released.</span></figcaption></figure>
-      <figure><img src="a/p-concept.webp" width="2400" height="1097" alt="Stage concept: a centre screen, six upright pillars and two side screens, all carrying the frame" loading="lazy" decoding="async"><figcaption><b>Stage mock-up</b><span>Drawn by Studio One under my direction.</span></figcaption></figure>
-    </div>
+<!-- 3 · the films we made, first: the mark in motion (the screen film that played on the centre screen) beside the key visual in its wide cut (Tony's pick M19: no white tile, no Arabic, nothing cut) -->
+<section class="mz-set" data-rows='[[0, 1]]' data-rows-p='[[0], [1]]' aria-label="The frame: the mark in motion, and the key visual">
+  <div class="hd"><div><span class="fp-lab"><b>01</b> · The frame</span><h2>One frame,<br><b class="tw">for everything.</b></h2></div><p>A black box with its corners cut, on gold. On the arena’s screens it builds itself, then turns into an object. In the key visual it holds all six acts.</p></div>
+  <div class="grid">
+    <figure data-r="1.7778"><video muted playsinline loop preload="none" data-auto width="1280" height="720" poster="a/f-mark.webp" data-src="a/f-mark-d.mp4" data-src-p="a/f-mark-p.mp4" data-poster="a/f-mark.webp" aria-label="The screen film: on gold, the mark builds itself, WHY, NOT!, the black box, MAZZIKA FESTIVAL, then the box turns as an object and settles"></video><figcaption><b>The mark, in motion</b>Screen film for the centre screen · AntBrush · 2019</figcaption></figure>
+    <figure data-r="1.7778"><img src="a/s-kv-wide.webp" width="1600" height="900" alt="The key visual in its wide cut: ten black cut-corner frames on gold, six of them holding the acts Disco Misr, H.O.H, Mahmoud El Esseily, Massar Egbari, Sharmoofers and Cairokee, the others the festival mark, the date 22 Nov 2019 at Coca-Cola Arena Dubai, the sponsor and the organiser" loading="lazy" decoding="async"><figcaption><b>Six acts, six frames</b>The key visual, wide · 2019</figcaption></figure>
   </div>
 </section>
 
-<!-- 4 · the arena in 3D: what goes where, then each layer, each followed by the real thing -->
+<!-- 4 · every act steps into the frame: the six act films AntBrush made for Instagram, all at once, each whole (first ten seconds) -->
+<section class="mz-set side" data-rows='[[0, 1, 2], [3, 4, 5]]' data-rows-p='[[0, 1], [2, 3], [4, 5]]' aria-label="The six acts, each stepping into the frame: six films for Instagram">
+  <div class="hd"><div><span class="fp-lab"><b>02</b> · The acts</span><h2>Every act<br><b class="tw">steps in.</b></h2></div><p>One film for each act: the empty frame, the act inside it, then the date and the arena.</p></div>
+  <div class="grid">
+    <figure data-r="1"><video muted playsinline loop preload="none" data-auto width="480" height="480" poster="a/f-disco.webp" data-src="a/f-disco.mp4" data-poster="a/f-disco.webp" aria-label="Disco Misr: the empty frame, the act inside it, then 22 November, Dubai, Coca-Cola Arena"></video></figure>
+    <figure data-r="1"><video muted playsinline loop preload="none" data-auto width="480" height="480" poster="a/f-hoh.webp" data-src="a/f-hoh.mp4" data-poster="a/f-hoh.webp" aria-label="H.O.H: the empty frame, the act inside it, then 22 November, Dubai, Coca-Cola Arena"></video></figure>
+    <figure data-r="1"><video muted playsinline loop preload="none" data-auto width="480" height="480" poster="a/f-esseily.webp" data-src="a/f-esseily.mp4" data-poster="a/f-esseily.webp" aria-label="Mahmoud El Esseily: the empty frame, the act inside it, then 22 November, Dubai, Coca-Cola Arena"></video></figure>
+    <figure data-r="1"><video muted playsinline loop preload="none" data-auto width="480" height="480" poster="a/f-massar.webp" data-src="a/f-massar.mp4" data-poster="a/f-massar.webp" aria-label="Massar Egbari: the empty frame, the act inside it, then the act on stage"></video></figure>
+    <figure data-r="1"><video muted playsinline loop preload="none" data-auto width="480" height="480" poster="a/f-sharmoofers.webp" data-src="a/f-sharmoofers.mp4" data-poster="a/f-sharmoofers.webp" aria-label="Sharmoofers: the empty frame, the act inside it, then 22 November, Dubai, Coca-Cola Arena"></video></figure>
+    <figure data-r="1"><video muted playsinline loop preload="none" data-auto width="480" height="480" poster="a/f-cairokee.webp" data-src="a/f-cairokee.mp4" data-poster="a/f-cairokee.webp" aria-label="Cairokee: the empty frame, the act inside it, then 22 November, Dubai, Coca-Cola Arena"></video></figure>
+  </div>
+  <p class="note"><b>Six films for Instagram</b>AntBrush · September and October 2019</p>
+</section>
+
+<!-- 5 · the same frame, drawn onto the stage: the Studio One mock-up, whole -->
+<section class="mz-set" data-rows='[[0]]' data-rows-p='[[0]]' aria-label="The stage, on paper: the mock-up drawn by Studio One under my direction">
+  <div class="hd"><div><span class="fp-lab"><b>03</b> · The stage</span><h2>The stage,<br><b class="tw">on paper.</b></h2></div><p>The same frame on every screen: one centre screen, six pillars, two side screens.</p></div>
+  <div class="grid">
+    <figure data-r="2.1878"><img src="a/p-concept.webp" width="2400" height="1097" alt="Stage mock-up: on a black stage, a centre screen of six act pictures in a gold frame, three gold pillars on each side, and two side screens in the same frame, one with the festival mark, one with the organiser's" loading="lazy" decoding="async"><figcaption><b>Stage mock-up</b>Drawn by Studio One under my direction · 24 October 2019</figcaption></figure>
+  </div>
+</section>
+
+<!-- 6 · the arena in 3D: what goes where, then each layer, each followed by the real thing -->
 <section class="fp-pin fp-model" style="--n:8.6" aria-label="Designing a festival into an arena: the Coca-Cola Arena in 3D">
   <div class="fp-stick">
     <canvas aria-hidden="true"></canvas>
     <div class="veil"></div>
-    <span class="fp-lab chap"><b>02</b> · The arena<span class="x"> · designed, then real</span></span>
+    <span class="fp-lab chap"><b>04</b> · The arena<span class="x"> · designed, then real</span></span>
     <span class="fp-lab kind"><b>3D model</b><span class="x"> · made for this portfolio</span></span>
-    <div class="intro"><span class="fp-lab"><b>02</b> · Designing a festival into an arena</span><h2>Then the arena,<br><b class="tw">in 3D.</b></h2><p>Each model, then the real thing.</p></div>
-    <div class="st" data-s="0"><span class="fp-lab"><b>01</b> / 08</span><h3>What goes where</h3><p>An end stage, the floor in two zones, seats along both sides.</p><div class="spec"><span>Show<b>6 pm to about midnight</b></span></div></div>
+    <div class="intro"><span class="fp-lab"><b>04</b> · Designing a festival into an arena</span><h2>Then the arena,<br><b class="tw">in 3D.</b></h2><p>Each model, then the real thing.</p></div>
+    <div class="st" data-s="0"><span class="fp-lab"><b>01</b> / 08</span><h3>What goes where</h3><p>An end stage, the floor in two zones, seats along both sides.</p></div>
     <div class="st" data-s="1"><span class="fp-lab"><b>02</b> / 08</span><h3>The stage</h3><p>One wide deck for six acts, under a grid flown from the roof.</p></div>
     <div class="st" data-s="2"><span class="fp-lab"><b>03</b> / 08</span><h3>The LED system</h3><p>One centre screen, six pillars, two side screens.</p></div>
-    <div class="st" data-s="3"><span class="fp-lab"><b>04</b> / 08</span><h3>The light</h3><p>Five rows of truss carry the moving lights.</p><div class="spec"><span>Truss rows over the stage<b>5</b></span></div></div>
+    <div class="st" data-s="3"><span class="fp-lab"><b>04</b> / 08</span><h3>The light</h3><p>The rows of truss over the stage carry the moving lights.</p></div>
     <div class="st" data-s="4"><span class="fp-lab"><b>05</b> / 08</span><h3>The sound</h3><p>Two hangs flown left and right, monitors along the front.</p></div>
-    <div class="st" data-s="5"><span class="fp-lab"><b>06</b> / 08</span><h3>Front of house</h3><p>Sound, light and video on one riser. I worked from there.</p></div>
+    <div class="st" data-s="5"><span class="fp-lab"><b>06</b> / 08</span><h3>Front of house</h3><p>Sound, light and video on one riser, facing the stage. I worked from there.</p></div>
     <div class="st" data-s="6"><span class="fp-lab"><b>07</b> / 08</span><h3>Every screen, one frame</h3><p>Each side screen puts the live camera inside the poster’s frame.</p></div>
-    <div class="st" data-s="7"><span class="fp-lab"><b>08</b> / 08</span><h3>Full house</h3><p>The same hall, from front of house, that night.</p><div class="spec"><span>Acts<b>6</b></span></div></div>
-    <div class="fp-built film r228" data-b="1"><div class="fr"><video muted playsinline loop preload="none" poster="a/b-rig-d.webp" data-src="a/b-rig-d.mp4" data-src-p="a/b-rig-p.mp4"></video></div><div class="fp-lab"><span><b>Built · before the show</b></span><span>Festival film · MCX · at 0:12</span></div></div>
-    <div class="fp-built own" data-b="2"><div class="fr"><video muted playsinline loop preload="none" poster="a/b-led-d.webp" data-src="a/b-led-d.mp4" data-src-p="a/b-led-p.mp4"></video></div><div class="fp-lab"><span><b>Built · 22 November 2019, 3:50 pm</b></span><span>My own phone film · the hall still empty</span></div></div>
-    <div class="fp-built own" data-b="3"><div class="fr"><video muted playsinline loop preload="none" poster="a/b-light-d.webp" data-src="a/b-light-d.mp4" data-src-p="a/b-light-p.mp4"></video></div><div class="fp-lab"><span><b>Built · 22 November 2019, 4:08 pm</b></span><span>My own phone film</span></div></div>
+    <div class="st" data-s="7"><span class="fp-lab"><b>08</b> / 08</span><h3>Full house</h3><p>The same hall, from front of house, that night.</p></div>
+    <div class="fp-built film r228" data-b="1"><div class="fr"><video muted playsinline loop preload="none" poster="a/b-rig-d.webp" data-src="a/b-rig-d.mp4" data-src-p="a/b-rig-p.mp4" data-poster-p="a/b-rig-p.webp"></video></div><div class="fp-lab"><span><b>Built · before the show</b></span><span>Festival film · MCX · at 0:12</span></div></div>
+    <div class="fp-built own" data-b="2"><div class="fr"><video muted playsinline loop preload="none" poster="a/b-led-d.webp" data-src="a/b-led-d.mp4" data-src-p="a/b-led-p.mp4" data-poster-p="a/b-led-p.webp"></video></div><div class="fp-lab"><span><b>Built · 22 November 2019, 3:50 pm</b></span><span>My own phone film · the hall still empty</span></div></div>
+    <div class="fp-built own" data-b="3"><div class="fr"><video muted playsinline loop preload="none" poster="a/b-light-d.webp" data-src="a/b-light-d.mp4" data-src-p="a/b-light-p.mp4" data-poster-p="a/b-light-p.webp"></video></div><div class="fp-lab"><span><b>Built · 22 November 2019, 4:08 pm</b></span><span>My own phone film</span></div></div>
     <div class="fp-built film r169" data-b="4"><div class="fr"><video muted playsinline loop preload="none" poster="a/b-sound-d.webp" data-src="a/b-sound-d.mp4" data-src-p="a/b-sound-p.mp4"></video></div><div class="fp-lab"><span><b>The night · H.O.H on stage</b></span><span>Act film · MCX</span></div></div>
-    <div class="fp-built film r228" data-b="5"><div class="fr"><video muted playsinline loop preload="none" poster="a/b-foh-d.webp" data-src="a/b-foh-d.mp4" data-src-p="a/b-foh-p.mp4"></video></div><div class="fp-lab"><span><b>Front of house, before doors</b></span><span>Festival film · MCX · at 0:16</span></div></div>
+    <div class="fp-built film r228" data-b="5"><div class="fr"><video muted playsinline loop preload="none" poster="a/b-foh-d.webp" data-src="a/b-foh-d.mp4" data-src-p="a/b-foh-p.mp4" data-poster-p="a/b-foh-p.webp"></video></div><div class="fp-lab"><span><b>Front of house, before doors</b></span><span>Festival film · MCX · at 0:16</span></div></div>
     <div class="fp-built film r169" data-b="6"><div class="fr"><video muted playsinline loop preload="none" poster="a/b-frame-d.webp" data-src="a/b-frame-d.mp4" data-src-p="a/b-frame-p.mp4"></video></div><div class="fp-lab"><span><b>The night · Sharmoofers</b></span><span>Act film · MCX · at 3:12</span></div></div>
-    <div class="fp-built own" data-b="7"><div class="fr"><video muted playsinline loop preload="none" poster="a/b-full-d.webp" data-src="a/b-full-d.mp4" data-src-p="a/b-full-p.mp4"></video></div><div class="fp-lab"><span><b>The night · 23 November 2019, 1:27 am</b></span><span>My own phone film · full house</span></div></div>
+    <div class="fp-built own" data-b="7"><div class="fr"><video muted playsinline loop preload="none" poster="a/b-full-d.webp" data-src="a/b-full-d.mp4" data-src-p="a/b-full-p.mp4" data-poster-p="a/b-full-p.webp"></video></div><div class="fp-lab"><span><b>The night · 23 November 2019, 1:27 am</b></span><span>My own phone film · full house</span></div></div>
   </div>
 </section>
 
-<!-- 5 · the night, short -->
+<!-- 7 · the night, short: films only, each whole -->
 <section class="fp-pin fp-reel" aria-label="The night, 22 November 2019">
   <div class="fp-stick">
-    <div class="ly"><video muted playsinline loop preload="none" data-src="a/n1-d.mp4" data-src-p="a/n1-p.mp4" poster="a/n1-d.webp" data-poster="a/n1-d.webp" data-poster-p="a/n1-p.webp"></video><span class="fp-lab n"><b>The night</b> · 22 November 2019 · 01 / 03</span><div class="cap"><h3>Lights.</h3><p>One rig, a different room for every act.<small class="fp-lab">Festival film · MCX</small></p></div></div>
-    <div class="ly"><video muted playsinline loop preload="none" data-src="a/n2-d.mp4" data-src-p="a/n2-p.mp4" poster="a/n2-d.webp" data-poster="a/n2-d.webp" data-poster-p="a/n2-p.webp"></video><span class="fp-lab n"><b>The night</b> · 22 November 2019 · 02 / 03</span><div class="cap"><h3>Stage.</h3><p>Six acts, one after another, from six in the evening.<small class="fp-lab">Festival film · MCX</small></p></div></div>
-    <div class="ly"><video muted playsinline loop preload="none" data-src="a/n3-d.mp4" data-src-p="a/n3-p.mp4" poster="a/n3-d.webp" data-poster="a/n3-d.webp" data-poster-p="a/n3-p.webp"></video><span class="fp-lab n"><b>The night</b> · 22 November 2019 · 03 / 03</span><div class="cap"><h3>Full.</h3><p>The hall, lit by its own phones. Then the film of it all.<small class="fp-lab">Festival film · MCX</small></p></div></div>
+    <div class="ly"><video class="whole" muted playsinline loop preload="none" data-src="a/n1-d.mp4" data-src-p="a/n1-p.mp4" poster="a/n1-d.webp" data-poster="a/n1-d.webp" data-poster-p="a/n1-p.webp"></video><span class="fp-lab n"><b>The night</b> · 22 November 2019 · 01 / 03</span><div class="cap"><h3>Lights.</h3><p>One rig, a different room for every act.<small class="fp-lab">Festival film · MCX</small></p></div></div>
+    <div class="ly"><video class="whole r169" muted playsinline loop preload="none" data-src="a/n2-d.mp4" data-src-p="a/n2-p.mp4" poster="a/n2-d.webp" data-poster="a/n2-d.webp" data-poster-p="a/n2-p.webp"></video><span class="fp-lab n"><b>The night</b> · 22 November 2019 · 02 / 03</span><div class="cap"><h3>Stage.</h3><p>Six acts, one after another, on one stage. Here, Cairokee.<small class="fp-lab">Act film · MCX · at 4:04</small></p></div></div>
+    <div class="ly"><video class="whole" muted playsinline loop preload="none" data-src="a/n3-d.mp4" data-src-p="a/n3-p.mp4" poster="a/n3-d.webp" data-poster="a/n3-d.webp" data-poster-p="a/n3-p.webp"></video><span class="fp-lab n"><b>The night</b> · 22 November 2019 · 03 / 03</span><div class="cap"><h3>Full.</h3><p>The hall, lit by its own phones. Then the film of it all.<small class="fp-lab">Festival film · MCX</small></p></div></div>
   </div>
 </section>
 
-<!-- 6 · the film, credits, all projects -->
+<!-- 8 · the film, credits, all work -->
 <section class="fp-end fin">
-  <button class="film" type="button" data-film="../../media/films/mazzika-1080.mp4" data-film-p="../../media/films/mazzika-720.mp4" data-title="The festival film · 2:53 · MCX" aria-label="Play the festival film, 2 minutes 53, with sound">
+  <button class="film" type="button" data-film="../../media/films/mazzika-1080.mp4" data-film-p="../../media/films/mazzika-720.mp4" data-title="The festival film · 2:53 · MCX" aria-label="Play the festival film by MCX, 2 minutes 53, with sound">
     <video muted playsinline loop preload="none" data-auto data-src="a/n1-d.mp4" data-src-p="a/n1-p.mp4" poster="a/n1-d.webp" data-poster="a/n1-d.webp" data-poster-p="a/n1-p.webp"></video>
     <span class="t"><span class="fp-lab"><b>The festival film</b> · 2:53 · MCX</span><b>Play the night.</b></span><span class="go" aria-hidden="true"></span>
   </button>
   <noscript><span class="fp-nojs"><a class="fp-play" href="../../media/films/mazzika-1080.mp4">Open the festival film <small>2:53 · video file</small></a></span></noscript>
   <div class="fp-cred">
     <div><span class="fp-lab">Role</span>Antoni Gerges<br>Creative Director, Brand &amp; Experiential</div>
-    <div><span class="fp-lab">Made by</span>AntBrush, with MCX.</div>
-    <div><span class="fp-lab">Credits</span>Festival and film by MCX.<br>Stage mock-ups: Studio One.</div>
-    <div><span class="fp-lab">The model</span>Made for this portfolio. Sizes are estimates.</div>
+    <div><span class="fp-lab">Made by</span>AntBrush, with MCX: my partner venture, through AntBrush, for live entertainment and corporate events.<br>At MCX: Partner, Creative Director &amp; Co-producer.</div>
+    <div><span class="fp-lab">Credits</span>Festival, festival film and act films of the night: MCX.<br>Screen films and act films for Instagram: AntBrush.<br>Stage mock-ups: Studio One, under my direction.</div>
+    <div><span class="fp-lab">The model</span>Made for this portfolio.</div>
   </div>
   <a class="fp-next" href="../../work/"><span class="fp-lab">More work</span><b>All work</b><span aria-hidden="true">→</span></a>
 </section>
@@ -180,6 +246,6 @@
   <nav aria-label="Footer"><a href="../../work/">Work</a><a href="../../about/">About</a><a href="../../contact/">Contact</a></nav>
 </div></footer>
 <script src="../../assets/fp/fp.js?v=18" defer></script>
-<script type="module" src="mz.js?v=5"></script>
+<script type="module" src="mz.js?v=6"></script>
 </body>
 </html>

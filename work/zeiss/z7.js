@@ -11,11 +11,13 @@ function build() {
   /* 1 · the way in, as one space: the long screen with our film, and ten flags on the carpet (approved 11 Oct) */
   let wayIn;
   {
-    const s = wayIn = station(0, { c: [0, 2.3, 6.5], rx: 8.3, ry: 3.75, yaw: 0, pitch: -.012, drift: .16, fx: .98, fy: .9, ox: 0, oy: .03, keyK: .3, yawp: .62, rxp: 4.4, fxp: .95, fyp: .44, oyp: .08 });
+    const s = wayIn = station(0, { w: .55, c: [0, 2.3, 6.5], rx: 8.3, ry: 3.75, yaw: 0, pitch: -.012, drift: .16, fx: .98, fy: .9, ox: 0, oy: .03, keyK: .3, yawp: .62, rxp: 4.4, fxp: .95, fyp: .44, oyp: .08 });
     [5, 10, 15].forEach(z => { const l = new T.SpotLight(0xeaf0ff, 170, 26, .34, .95, 1.4); l.position.set(0, 9, z + 1); l.target.position.set(0, 0, z); S.scene.add(l, l.target); });
     [-6.5, 0, 6.5].forEach(px => { const l = new T.SpotLight(0x3f66ff, 240, 16, .9, 1, 1.2); l.position.set(px, .3, 2.6); l.target.position.set(px, 4.5, 0); S.scene.add(l, l.target); });
     s.g.add(box(18.4, 5.6, 5, std({ color: 0x0b0e16, roughness: .55, metalness: .2 }), 0, 2.8, -2.56));
-    const w = video('a/welcome.mp4', null, 'a/welcome-poster.webp'); s.vid = w.v;
+    /* our welcome film for the outdoor screen (archive 457, 1920 x 270): one brief, unbroken moment of it, as made, 22.8 s to 25.85 s:
+       the X, then ZEISS ClearView & PhotoFusion X (Tony, 14 Oct: "it can be very brief"). Nothing spliced, nothing erased. */
+    const w = video('a/welcome-x.mp4', null, 'a/welcome-x-poster.webp'); s.vid = w.v;
     const band = new T.Mesh(new T.PlaneGeometry(15.4, 15.4 * 270 / 1920), new T.MeshBasicMaterial({ map: w.t, toneMapped: false })); band.position.set(0, 3.9, .02); s.g.add(band);
     s.g.add(box(15.7, 15.4 * 270 / 1920 + .3, .12, dark, 0, 3.9, -.05));
     S.blob(s.g, 0, .6, 21, 3.4, .8);
@@ -89,8 +91,23 @@ function build() {
     const l = video('a/led-2816.mp4', 'a/led-1408.mp4', 'a/led-poster.webp'); s.vid = l.v;
     const Wd = 22.56, Hd = Wd * 648 / 2816, scr = new T.Mesh(new T.PlaneGeometry(Wd, Hd), new T.MeshBasicMaterial({ map: l.t, toneMapped: false })); scr.position.set(0, 1.0 + Hd / 2, .02); s.g.add(scr);
     s.g.add(box(Wd + .3, Hd + .3, .3, dark, 0, 1.0 + Hd / 2, -.16));
-    s.dims.push({ a: [-Wd / 2, 1.0 + Hd + .35, .1], b: [Wd / 2, 1.0 + Hd + .35, .1], t: '74 ft · 22.5 m', big: true });
+    s.dims.push({ a: [-Wd / 2, 1.0 + Hd + .35, .1], b: [Wd / 2, 1.0 + Hd + .35, .1], t: '74 ft', big: true });
     S.blob(s.g, 0, .4, 25, 3, .8);
+  }
+
+  /* the caption follows what is on screen. The engine keeps the last caption while a built result is held; when that result's film
+     is not ready yet (a slow phone), no result is held and the new model was on screen under the old caption. Here the caption
+     switches with the camera instead. The intro (before the first stop) is left to the engine. */
+  {
+    const stick = sec.querySelector('.fp-stick'), sts = [].slice.call(sec.querySelectorAll('.st')), N = S.ST.length;
+    const cut = n => !!sec.querySelector('.fp-built[data-b="' + n + '"]');
+    S.onFrame((time, i, local) => {
+      if (i === 0 && local === 0) return;
+      let want = i;
+      if (stick.classList.contains('is-cut')) want = i > 0 && cut(i - 1) && local < .06 ? i - 1 : i;
+      else if (local > .89 && i < N - 1 && cut(i)) want = i + 1;
+      sts.forEach(e => { const on = +e.dataset.s === want; if (e.classList.contains('on') !== on) e.classList.toggle('on', on); });
+    });
   }
 
   /* pieces that need the traced outlines: the signs, the booth lenses */

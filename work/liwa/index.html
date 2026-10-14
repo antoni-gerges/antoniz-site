@@ -10,8 +10,95 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
 <link rel="preload" href="../../assets/jost-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../../assets/fp/fp.css?v=34">
-<style>.fp-plates.stack.three figure.kv{grid-column:1 / -1;justify-self:center;margin-top:clamp(20px,4vh,48px)}.fp-plates.stack.three figure.kv img{width:auto;max-width:100%;max-height:84vh}</style>
+<style>
+/* Liwa International Festival 2020: this page's own rules. The engine files are used unchanged. Nothing on this page is cropped.
+   The brand's room (T-40): the festival's red, from the logo and the sign headers (#D01F24), as an accent on black; the black is the
+   racing ground of the signs and the kit. The header, mark, menu and footer stay his. */
+.liwa{--lw-red:#d01f24;--lw-red-t:#ec3a3f;--lw-sand:#d1883a}
+.liwa .fp-lab{font-size:13px}
+.liwa .fp-lab .n,.liwa .fp-model .st .fp-lab b,.liwa .fp-res .hd .fp-lab b,.liwa .fp-plates .lead .fp-lab b,.liwa .fp-model .intro .fp-lab b,.liwa .fp-model .chap b{color:var(--lw-red-t)}
+.liwa b.tw{color:var(--lw-red-t)}
+.liwa .fp-ticks i.on{background:var(--lw-red)}
+.liwa .fp-say .facts div{border-top:3px solid var(--lw-red);padding-top:12px}
+.liwa .fp-more summary{border-bottom-color:var(--lw-red)}
+.liwa .fp-res .nums{border-top-color:rgba(208,31,36,.6)}
+.liwa .fp-hero .src i{background:var(--lw-red)}
+/* no shadow or glow behind any word (Tony, 30 Sep; 5 Oct): the words sit on a dark ground instead */
+.liwa .fp-model .st,.liwa .fp-hero .top .src,.liwa .fp-hero .top .fp-lab{text-shadow:none}
+
+/* 1 · the opening: the TV commercial's own rush shots, whole, playing. No title of ours lies over the picture:
+   the film sits under the header, the name and the line sit in the black under it. */
+.fp-hero.whole::after{background:none}
+.fp-hero.whole .fp-cue{display:none}
+@media (min-width:761px){
+  .fp-hero.whole{--fh:min(42.5vw,calc(100svh - 250px))}
+  .fp-hero.whole .v{inset:auto;top:78px;left:0;right:0;margin:0 auto;height:var(--fh);width:calc(var(--fh) * 2.3529);object-fit:contain;transform:none!important}
+  .fp-hero.whole .top{top:calc(78px + var(--fh) + 18px)}
+  .fp-hero.whole .in{flex-direction:row;align-items:flex-end;justify-content:space-between;gap:clamp(20px,3vw,56px);padding-bottom:clamp(18px,3vh,34px)}
+  .fp-hero.whole h1{font-size:clamp(56px,7.2vw,124px);line-height:.84;margin:0 0 -.04em -.045em;white-space:nowrap;animation:none}
+  .fp-hero.whole .row{flex:1;justify-content:flex-end;align-items:flex-end;gap:clamp(18px,2.6vw,48px);flex-wrap:nowrap;animation:none}
+  .fp-hero.whole .what{max-width:none;text-align:right}
+  .fp-hero.whole .what strong{font-size:clamp(18px,1.6vw,26px);margin-bottom:6px}
+  .fp-hero.whole .what small{margin-top:0;font-size:13px}
+  .fp-hero.whole .fp-play{white-space:nowrap}
+}
+@media (max-width:760px){
+  /* the phone: the film whole at the top, then the name and the line; the opening ends there, with no empty black under it */
+  .fp-hero.whole{height:auto;min-height:0}
+  .fp-hero.whole .in{position:relative;inset:auto;padding-bottom:clamp(36px,6vh,56px)}
+  .fp-hero.whole .what small{font-size:13px}
+}
+
+/* 2 · the sports, and on site: films only, every frame whole; the words sit in the black band under the picture, never over it */
+.fp-reel .ly{background:#000}
+.fp-reel .ly::after{display:none}
+.fp-reel .cap h3{font-size:clamp(34px,calc((100svh - 42.5vw)/2 - 5vh - 16px),6.4vw)}
+.fp-reel .cap p{max-width:26em}
+@media (min-width:761px){
+  .fp-reel .ly video.r169{inset:auto;left:50%;top:50%;width:auto;height:min(41.56vw,100svh - 300px);aspect-ratio:16/9;transform:translate(-50%,-50%)!important}
+  .fp-reel .ly video.r916{inset:auto;left:50%;top:50%;width:auto;height:calc(100svh - 300px);aspect-ratio:9/16;transform:translate(-50%,-50%)!important}
+}
+@media (max-width:760px){
+  .fp-reel .ly video.whole{inset:auto;left:0;top:calc(44svh - 21vw);width:100%;height:auto;object-fit:contain}
+  .fp-reel .ly video.r24{aspect-ratio:1280/544}
+  .fp-reel .ly video.r169{aspect-ratio:16/9;top:calc(42svh - 28vw)}
+  .fp-reel .ly video.r916{aspect-ratio:9/16;width:auto;height:52svh;left:50%;top:104px;transform:translateX(-50%)!important}
+  .fp-reel .cap h3{font-size:clamp(46px,15vw,84px)}
+}
+
+/* 3 · the model: the words sit on the dark floor at the lower left; the source line under the chapter line */
+@media (min-width:761px){
+  .liwa .fp-model .veil{background:radial-gradient(110% 90% at 0% 100%,rgba(0,0,0,.88) 0,rgba(0,0,0,.55) 30%,rgba(0,0,0,0) 58%)}
+  .liwa .fp-model .kind{left:var(--g);right:auto;text-align:left}
+}
+@media (max-width:760px){.liwa .fp-model .veil{background:linear-gradient(0deg,#000 0,rgba(0,0,0,.92) 26%,rgba(0,0,0,0) 48%)}}
+.fp-model .fallback{object-fit:contain;inset:0;width:100%;height:100%}
+
+/* 4 · the artwork as it went out: whole and still, one under the other; a pair sits side by side */
+.fp-plates.stack.lw figure img{background:none}
+.fp-plates.stack.lw figure.two .pr{display:flex;gap:clamp(12px,1.6vw,24px);align-items:flex-start}
+.fp-plates.stack.lw figure.two img{width:auto;height:auto;max-width:calc(50% - 12px);max-height:82vh}
+.fp-plates.stack.lw figure.sq img{width:min(100%,72vh);height:auto}
+.fp-plates.stack.lw .lead h2{font-size:clamp(40px,4.6vw,84px)}
+.fp-plates.stack.lw figcaption{margin-top:12px}
+
+/* Read more: the two routes not chosen, whole, side by side */
+.fp-more .tx figure.in{margin:14px 0 0}
+.fp-more .tx figure.in .pr{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:520px}
+.fp-more .tx figure.in img{width:100%;height:auto;display:block}
+.fp-more .tx figure.in figcaption{margin-top:8px;font-size:14px;color:var(--dim)}
+.fp-more .tx figure.in figcaption b{color:#fff;font-weight:600;margin-right:8px}
+
+/* 5 · the result: the figure, then one photograph of opening night, whole */
+.fp-res .nums{grid-template-columns:minmax(0,1fr)}
+.fp-res .shot{margin:clamp(26px,5vh,48px) 0 0}.fp-res .shot .pr{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,24px)}.fp-res .shot img{width:100%;height:auto;display:block}
+@media (max-width:760px){.fp-res .shot .pr{grid-template-columns:1fr}}.fp-res .shot figcaption{margin-top:10px}
+
+/* 6 · the film button keeps the whole frame of its clip */
+.fp-end .film:hover video{transform:none}
+</style>
 <noscript><style>.fp-pin{height:auto!important}.fp-stick{position:static;height:auto;overflow:visible}.fp-reel .ly{position:relative;height:70vh}.fp-plates .trk{position:static;flex-wrap:wrap;padding:40px var(--g);height:auto}.fp-model canvas,.fp-model .veil,.fp-ticks,.fp-cue,.fp-bar{display:none}.fp-model .intro{position:static;transform:none;padding:60px var(--g) 20px}.fp-model .st{position:static;opacity:1;transform:none;width:auto;padding:24px var(--g) 8px}.fp-built{position:static;opacity:1;transform:none;width:auto;max-width:720px;margin:0 var(--g) 24px}.fp-model .chap{position:static;display:block;padding:0 var(--g)}.fp-hero h1,.fp-hero .row{animation:none}.fp-built{visibility:visible;height:auto;background:none}.fp-built .fr{position:relative;inset:auto;aspect-ratio:16/9}.fp-built .fr::after{display:none}.fp-built .fp-lab,.fp-model .kind{position:static;text-align:left;margin-top:8px}.fp-hero.band{min-height:0}.fp-plates.stack .trk{display:block}.fp-plates.stack figure{margin-bottom:40px}@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{font-size:14px;padding:6px 8px}}button[data-film].fp-play{display:none}button[data-film]{pointer-events:none;cursor:default}button[data-film] .go{display:none}.fp-nojs{display:block;margin-top:14px}</style></noscript>
+<noscript><style>.fp-model .fallback{display:block;position:static;width:min(calc(100% - 2*var(--g)),720px);max-width:none;max-height:none;height:auto;margin:0 var(--g)}</style></noscript>
 </head>
 <body class="fp liwa">
 <a class="skip" href="#main">Skip to content</a>
@@ -24,10 +111,11 @@
 </header>
 <main id="main">
 
-<!-- 1 · the opening: the released TV commercial, whole (Tony, 12 Oct: "commercial") -->
-<section class="fp-hero whole" data-marks='[[0,"The TV commercial · AntBrush · as released"]]' aria-label="Liwa opening: the TV commercial, as released">
-  <video class="v" muted playsinline loop preload="auto" poster="a/tvc-hero-poster.webp" data-src="a/tvc-hero-1600.mp4" data-src-p="a/tvc-hero-p.mp4" data-poster="a/tvc-hero-poster.webp" data-poster-p="a/tvc-hero-p-poster.webp"></video>
-  <div class="top"><span class="src"><i></i><b>The TV commercial · AntBrush · as released</b></span><span class="fp-lab r">Liwa International Festival 2020 · Tal Moreeb, Abu Dhabi</span></div>
+<!-- 1 · the opening: the TV commercial's own rush, cut from the released film (its shots without titles, in the order quad, buggy, drift,
+     dune climb, bikes, flags, the 4x4 at sunset, ignition), whole. The full commercial, as released, is on the Play button. -->
+<section class="fp-hero whole" data-marks='[[0,"From the TV commercial · AntBrush"]]' aria-label="Liwa opening: from the TV commercial">
+  <video class="v" muted playsinline loop preload="auto" poster="a/tvc-rush-d.webp?v=2" data-src="a/tvc-rush-d.mp4?v=2" data-src-p="a/tvc-rush-p.mp4?v=2" data-poster="a/tvc-rush-d.webp?v=2" data-poster-p="a/tvc-rush-p.webp?v=2"></video>
+  <div class="top"><span class="src"><i></i><b>From the TV commercial · AntBrush</b></span><span class="fp-lab r">Liwa International Festival 2020 · Tal Moreeb, Abu Dhabi</span></div>
   <div class="in">
     <h1>LIWA</h1>
     <div class="row">
@@ -38,70 +126,76 @@
   <i class="fp-cue" aria-hidden="true"></i>
 </section>
 
-<!-- 2 · what it was -->
+<!-- 2 · what it was, what I did -->
 <section class="fp-say">
   <span class="fp-lab"><b>The festival</b></span>
   <div>
-    <h2>A festival at the foot of a 984-foot dune. <em>I led the campaign, the brand and the six zones we built under it.</em></h2>
+    <h2>A festival at the foot of a 984-foot dune, four hours from Dubai. <em>I led the campaign, the brand and the six zones we built under it.</em></h2>
     <div class="facts"><div><b>26 Dec 2019 – 10 Jan 2020</b>Tal Moreeb, Abu Dhabi</div></div>
-    <details class="fp-more"><summary>Read more</summary><div class="tx"><div><span class="fp-lab"><b>The festival</b></span><p>Liwa International Festival 2020 ran at Tal Moreeb, Abu Dhabi, from 26 December 2019 to 10 January 2020: sixteen days at the foot of a 984-foot dune, four hours from Dubai.</p><p>Client: Abu Dhabi Sports Council. AntBrush was the main agency, on a US$1 million festival contract: the campaign, the brand and the six commissioned zones.</p></div><div><span class="fp-lab"><b>The idea</b></span><p>Three routes went to the client on 18 November 2019. The client chose the letters: LIWA, the size of dunes, with every sport bursting out of them.</p></div><div><span class="fp-lab"><b>In space</b></span><p>The scenes are modelled from the campaign’s own artwork and working files.</p><p>The road in: one billboard, 14 ft 9 in × 11 ft 6 in, then lamppost banners, 4 ft 11 in × 9 ft 10 in, one line each. The sign system has nine panels and 24 zone icons.</p><p>The Liwa Land gate is a 3D model made for this portfolio. Its pieces are at the sizes written on our drawing; the arch is an estimate. The dune is about 50° steep and modelled at 1:20; the master plan beside it is not to scale.</p></div><div><span class="fp-lab"><b>The result</b></span><p>In the festival’s own figures: 252,006 visitors, up 68% on the edition before. 16 days, 14 competitions. 100+ radio adverts, and 50+ on billboards and buses. 455 Arab media outlets contacted, and 25 foreign. 29 sponsors.</p><p>Source: the festival media committee’s report, March 2020. Visitors are its estimate: at least three people for each of 84,002 vehicles counted.</p><p>The festival, its competitions and the dune belong to Abu Dhabi Sports Council and Liwa Sports Club.</p></div></div></details>
+    <details class="fp-more"><summary>Read more</summary><div class="tx"><div><span class="fp-lab"><b>The festival</b></span><p>Liwa International Festival 2020 ran at Tal Moreeb, Abu Dhabi, from 26 December 2019 to 10 January 2020: sixteen days at the foot of a 984-foot dune, four hours from Dubai.</p><p>Client: Abu Dhabi Sports Council. AntBrush was the main agency, on a US$1 million festival contract: the campaign, the brand and the six commissioned zones.</p></div><div><span class="fp-lab"><b>The sports</b></span><p>The sports were the festival’s own: the hill climb up Tal Moreeb, drifting, horse and camel races, among its 14 competitions.</p><p>The sports films on this page are cut from the festival film, which is made from footage of earlier editions.</p></div><div><span class="fp-lab"><b>The idea</b></span><p>Three routes went to the client. The client chose the letters: LIWA, the size of dunes, with every sport bursting out of them.</p><figure class="in"><div class="pr"><img src="a/p-route-canyon.webp" width="1400" height="1980" alt="Route 1: a 4x4 bursting out of a sandstone canyon, quad bikes and buggies flying from its walls" loading="lazy" decoding="async"><img src="a/p-route-charge.webp" width="1400" height="1980" alt="Route 2: a 4x4 charging down the dune at the viewer, bikes and buggies behind it" loading="lazy" decoding="async"></div><figcaption><b>Routes 1 and 2</b>Not chosen.</figcaption></figure></div><div><span class="fp-lab"><b>The campaign</b></span><p>The key visual, two posters (Ready?!! and Let the desert challenges begin), the outdoor artwork, the lamppost banners, social posts, and the sign system for the site.</p><p>The kit, in our revised designs of 6 December 2019: the VIP kit (bag, box, folder and invitation), access cards and lanyards, the brochure with the race schedules, wristbands, flags, and T-shirts and jackets for the organisers and security.</p></div><div><span class="fp-lab"><b>In space</b></span><p>The 3D scenes are models made for this portfolio from the campaign’s own artwork and working files: the outdoor artwork and the lamppost banners on the road in, three of the nine sign panels, and the Liwa Land gate.</p><p>On the sign panels the festival’s logo is the lower rectangle of the final logo, at its printed size, and the labels are shown in English. The gate’s pieces are at the sizes written on our elevation of 23 December 2019; its arch is an estimate.</p></div><div><span class="fp-lab"><b>On site</b></span><p>The three films of the site are my own, from my phone: the Layali Moreeb gate on 21 December 2019, skydivers over the festival on opening day, 26 December, and the dunes at sunset on 3 January 2020. The photographs of the pergola and the glass-dome majlis are mine too, from the night before opening.</p></div><div><span class="fp-lab"><b>The result</b></span><p>In the festival’s own figures: 252,006 visitors, up 68% on the edition before. 16 days, 14 competitions. 100+ radio adverts, and 50+ on billboards and buses. 455 Arab media outlets contacted, and 25 foreign. 29 sponsors.</p><p>Source: the festival media committee’s report, March 2020. Visitors are its estimate: at least three people for each of 84,002 vehicles counted.</p><p>The festival, its competitions and the dune belong to Abu Dhabi Sports Council and Liwa Sports Club.</p></div></div></details>
   </div>
 </section>
 
-<!-- 4 · on paper: the three routes, whole -->
-<section class="fp-plates stack three" aria-label="The three routes">
+<!-- 3 · the sports first (Tony, 8 Oct: "I want to show the sports site before showing other things"): films only, each frame whole.
+     Cut from the festival film (lab/liwa-film/m/fest-film-1080.mp4), from his picks L62–L68 and their neighbours; no titles in any cut. -->
+<section class="fp-pin fp-reel" aria-label="The sports, on film">
+  <div class="fp-stick">
+    <div class="ly"><video class="whole r24" muted playsinline loop preload="none" data-src="a/s-climb-d.mp4" data-src-p="a/s-climb-p.mp4" poster="a/s-climb.webp" data-poster="a/s-climb.webp"></video><span class="fp-lab n"><b>01</b> · The sports · 1 / 6</span><div class="cap"><h3>The hill climb.</h3><p>Up the face of Tal Moreeb.<small class="fp-lab">Festival film · footage of earlier editions · at 2:08</small></p></div></div>
+    <div class="ly"><video class="whole r24" muted playsinline loop preload="none" data-src="a/s-drift-d.mp4" data-src-p="a/s-drift-p.mp4" poster="a/s-drift.webp" data-poster="a/s-drift.webp"></video><span class="fp-lab n"><b>01</b> · The sports · 2 / 6</span><div class="cap"><h3>Drifting.</h3><p>Under the lights, at night.<small class="fp-lab">Festival film · footage of earlier editions · at 0:44</small></p></div></div>
+    <div class="ly"><video class="whole r24" muted playsinline loop preload="none" data-src="a/s-horses-d.mp4" data-src-p="a/s-horses-p.mp4" poster="a/s-horses.webp" data-poster="a/s-horses.webp"></video><span class="fp-lab n"><b>01</b> · The sports · 3 / 6</span><div class="cap"><h3>The horse race.</h3><p>Out of the gates.<small class="fp-lab">Festival film · footage of earlier editions · at 1:26</small></p></div></div>
+    <div class="ly"><video class="whole r24" muted playsinline loop preload="none" data-src="a/s-camels-d.mp4" data-src-p="a/s-camels-p.mp4" poster="a/s-camels.webp" data-poster="a/s-camels.webp"></video><span class="fp-lab n"><b>01</b> · The sports · 4 / 6</span><div class="cap"><h3>The camel race.</h3><p>Across open sand.<small class="fp-lab">Festival film · footage of earlier editions · at 2:20</small></p></div></div>
+    <div class="ly"><video class="whole r24" muted playsinline loop preload="none" data-src="a/s-night-d.mp4" data-src-p="a/s-night-p.mp4" poster="a/s-night.webp" data-poster="a/s-night.webp"></video><span class="fp-lab n"><b>01</b> · The sports · 5 / 6</span><div class="cap"><h3>Racing at night.</h3><p>Engines on the floodlit track.<small class="fp-lab">Festival film · footage of earlier editions · at 1:21</small></p></div></div>
+    <div class="ly"><video class="whole r24" muted playsinline loop preload="none" data-src="a/s-air-d.mp4" data-src-p="a/s-air-p.mp4" poster="a/s-air.webp" data-poster="a/s-air.webp"></video><span class="fp-lab n"><b>01</b> · The sports · 6 / 6</span><div class="cap"><h3>From the air.</h3><p>A town on open sand.<small class="fp-lab">Festival film · footage of earlier editions · at 2:00</small></p></div></div>
+  </div>
+</section>
+
+<!-- 4 · the campaign in space: three 3D stops, each made from the campaign's own artwork (l2.js) -->
+<section class="fp-pin fp-model" style="--n:3.6" aria-label="The campaign, piece by piece, in 3D">
+  <div class="fp-stick">
+    <canvas aria-hidden="true"></canvas>
+    <img class="fallback" src="a/3d-gate.webp" width="1600" height="900" alt="3D model of the Liwa Land gate: a red arch with FUN ZONE on the beam, the popcorn and playhouse cut-outs at its left foot and the castle at its right" loading="lazy" decoding="async">
+    <div class="veil"></div>
+    <span class="fp-lab chap"><b>02</b> · The campaign<span class="x"> · in space</span></span>
+    <span class="fp-lab kind"><b>3D model</b> · made for this portfolio<span class="x"> · from the campaign’s own artwork</span></span>
+    <div class="intro"><span class="fp-lab"><b>02</b> · The campaign</span><h2>Then the campaign,<br><b class="tw">in space.</b></h2><p>The road in, the signs, the children’s gate: each from its own artwork.</p></div>
+    <div class="st" data-s="0"><span class="fp-lab"><b>01</b> / 03</span><h3>The road in.</h3><p>One billboard, then the lampposts, one line each.</p></div>
+    <div class="st" data-s="1"><span class="fp-lab"><b>02</b> / 03</span><h3>The signs.</h3><p>One sign system for a town built in weeks.</p></div>
+    <div class="st" data-s="2"><span class="fp-lab"><b>03</b> / 03</span><h3>Liwa Land.</h3><p>The children’s fun zone, entered through a gate built like a toy cinema.</p></div>
+    <div class="fp-built whole" data-b="2"><div class="fr"><img src="a/p-liwaland-built.webp" width="1080" height="1530" alt="The Liwa Land gate, built, on opening day" loading="lazy" decoding="async"></div><div class="fp-lab"><span><b>As built · 26 December 2019</b></span><span>Opening day · a frame of phone video</span></div></div>
+  </div>
+</section>
+
+<!-- 5 · on site: my own films, dated; every frame whole -->
+<section class="fp-pin fp-reel" aria-label="On site: my own films, dated">
+  <div class="fp-stick">
+    <div class="ly"><video class="whole r169" muted playsinline loop preload="none" data-src="a/o-cafe-d.mp4" data-src-p="a/o-cafe-p.mp4" poster="a/o-cafe-d.webp" data-poster="a/o-cafe-d.webp"></video><span class="fp-lab n"><b>03</b> · On site · 1 / 3</span><div class="cap"><h3>21 December.</h3><p>Layali Moreeb, the desert café: its own gate, under the dune.<small class="fp-lab">My own film · on site</small></p></div></div>
+    <div class="ly"><video class="whole r916" muted playsinline loop preload="none" data-src="a/o-sky.mp4" poster="a/o-sky.webp" data-poster="a/o-sky.webp"></video><span class="fp-lab n"><b>03</b> · On site · 2 / 3</span><div class="cap"><h3>26 December.</h3><p>Opening day. Skydivers over the festival.<small class="fp-lab">My own film · 5:29 pm</small></p></div></div>
+    <div class="ly"><video class="whole r169" muted playsinline loop preload="none" data-src="a/o-dune-d.mp4" data-src-p="a/o-dune-p.mp4" poster="a/o-dune-d.webp" data-poster="a/o-dune-d.webp"></video><span class="fp-lab n"><b>03</b> · On site · 3 / 3</span><div class="cap"><h3>3 January.</h3><p>Sunset on the dunes.<small class="fp-lab">My own film · 5:10 pm</small></p></div></div>
+  </div>
+</section>
+
+<!-- 6 · the idea, then the artwork as it went out: whole and still, one under the other -->
+<section class="fp-plates stack lw" aria-label="The idea and the artwork as it went out">
   <div class="fp-stick">
     <div class="trk">
-      <div class="lead"><span class="fp-lab"><b>01</b> · The idea</span><h2>First, <b class="tw">on paper.</b></h2><p>Three routes went to the client. They chose the letters.</p></div>
-      <figure class="tall"><img src="a/p-route-canyon.webp" width="1400" height="1980" alt="Route 1, the canyon" loading="lazy" decoding="async"><figcaption><b>Route 1 · The canyon</b><span>Not chosen.</span></figcaption></figure>
-      <figure class="tall"><img src="a/p-route-charge.webp" width="1400" height="1980" alt="Route 2, the charge" loading="lazy" decoding="async"><figcaption><b>Route 2 · The charge</b><span>Not chosen.</span></figcaption></figure>
-      <figure class="pick"><img src="a/p-draft.webp" width="1800" height="1493" alt="Route 3, the letters, first draft" loading="lazy" decoding="async"><figcaption><b>Route 3 · The letters</b><span>Chosen.</span></figcaption></figure>
-      <figure class="kv"><img src="a/p-kv.webp" width="1800" height="1400" alt="The key visual as released: LIWA in letters the size of dunes, with every sport bursting out of them" loading="lazy" decoding="async"><figcaption><b>The key visual</b><span>Whole, as released.</span></figcaption></figure>
+      <div class="lead"><span class="fp-lab"><b>04</b> · The idea</span><h2>The letters,<br><b class="tw">the size of dunes.</b></h2><p>Three routes went to the client. They chose the letters, with every sport bursting out of them.</p></div>
+      <figure><img src="a/p-draft.webp" width="1800" height="1493" alt="Route 3, the first draft: LIWA 2020 in red letters across the dunes, a quad, a 4x4, bikes, a white horse and a camel bursting out of them, over the word BEGIN" loading="lazy" decoding="async"><figcaption><b>Route 3 · the letters</b><span>Chosen. The first draft.</span></figcaption></figure>
+      <figure><img src="a/p-kv.webp" width="1800" height="1400" alt="The key visual as released: LIWA in letters the size of dunes, with every sport bursting out of them" loading="lazy" decoding="async"><figcaption><b>The key visual</b><span>As released.</span></figcaption></figure>
+      <figure class="two"><div class="pr"><img src="a/p-ready.webp" width="860" height="1650" alt="Poster: Ready?!! A horse and a camel racing, 26 December 2019 to 10 January 2020" loading="lazy" decoding="async"><img src="a/p-begin.webp" width="860" height="1650" alt="Poster: Let the desert challenges begin, over the key visual" loading="lazy" decoding="async"></div><figcaption><b>Two posters</b><span>Ready?!! · Let the desert challenges begin.</span></figcaption></figure>
+      <figure><img src="a/p-billboard.webp?v=2" width="1800" height="1400" alt="The outdoor artwork: Ready?!! over the key visual, Let the desert challenges begin, 26 December 2019 to 10 January 2020" loading="lazy" decoding="async"><figcaption><b>Outdoor</b><span>The billboard on the road in.</span></figcaption></figure>
+      <figure class="sq"><img src="a/p-square.webp" width="1400" height="1400" alt="Square artwork for social: Ready?!!" loading="lazy" decoding="async"><figcaption><b>Social</b><span>Ready?!!, square.</span></figcaption></figure>
     </div>
   </div>
 </section>
 
-<!-- 5 · the model: the campaign in 3D, then the released artwork whole -->
-<section class="fp-pin fp-model" style="--n:5.10" aria-label="The campaign, piece by piece, in 3D">
-  <div class="fp-stick">
-    <canvas aria-hidden="true"></canvas>
-    <div class="veil"></div>
-    <span class="fp-lab chap"><b>02</b> · The campaign idea<span class="x"> · in space</span></span>
-    <span class="fp-lab kind"><b>3D scene</b><span class="x"> · built from the campaign’s own artwork</span></span>
-    <div class="intro"><span class="fp-lab"><b>02</b> · The campaign idea</span><h2>Then the campaign,<br><b class="tw">in space.</b></h2><p>Each scene, then the artwork as it went out.</p></div>
-    <div class="st" data-s="0"><span class="fp-lab"><b>01</b> / 05</span><h3>The road in</h3><p>One billboard, then the lampposts, one line each.</p></div>
-    <div class="st" data-s="1"><span class="fp-lab"><b>02</b> / 05</span><h3>The signs</h3><p>One sign system for a town built in weeks.</p><div class="spec"><span>Panels<b>9</b></span></div></div>
-    <div class="st" data-s="2"><span class="fp-lab"><b>03</b> / 05</span><h3>Liwa Land</h3><p>A children’s zone, entered through a gate built like a toy cinema.</p></div>
-    <div class="st" data-s="3"><span class="fp-lab"><b>04</b> / 05</span><h3>The dune</h3><p>A wall of sand, with the festival at its foot.</p><div class="spec"><span>The dune<b>984 ft · 300 m</b></span></div></div>
-    <div class="st" data-s="4"><span class="fp-lab"><b>05</b> / 05</span><h3>The screen</h3><p>The TV commercial, on a model of the site’s big screen.</p><div class="spec"><span>Film<b>1:01</b></span></div></div>
-    <div class="fp-built whole" data-b="0"><div class="fr"><img src="a/p-billboard.webp?v=2" width="1800" height="1400" alt="" loading="lazy" decoding="async"></div><div class="fp-lab"><span><b>The released artwork</b></span><span>Outdoor</span></div></div>
-    <div class="fp-built whole" data-b="1"><div class="fr"><img src="a/p-signs.webp?v=2" alt="" loading="lazy" decoding="async"></div><div class="fp-lab"><span><b>The system</b></span><span>Seven of nine panels, artwork as released</span></div></div>
-    <div class="fp-built whole" data-b="2"><div class="fr"><img src="a/p-liwaland-built.webp" width="1080" height="1530" alt="" loading="lazy" decoding="async"></div><div class="fp-lab"><span><b>As built · 26 December 2019</b></span><span>Opening day · a frame of phone video</span></div></div>
-    <div class="fp-built " data-b="3"><div class="fr"><video muted playsinline loop preload="none" poster="a/s-site-d.webp" data-src="a/s-site-d.mp4" data-src-p="a/s-site-p.mp4"></video></div><div class="fp-lab"><span><b>Festival film</b></span><span>Footage from earlier editions</span></div></div>
-  </div>
-</section>
-
-<!-- 6 · released: the finished commercial and the campaign artwork, whole; the site photo is context only -->
-<section class="fp-rel" aria-label="Released: the finished campaign">
-  <div class="hd"><h2>Released.</h2><span class="fp-lab"><b>03</b> · The finished campaign · the TV commercial · 1:01 · as released · AntBrush</span></div>
-  <button class="tv" type="button" data-film="../../media/films/liwa-tvc-1080.mp4" data-film-p="../../media/films/liwa-tvc-720.mp4" data-title="The TV commercial · 1:01 · as released" aria-label="Play the TV commercial, 1 minute 1, with sound"><img src="a/tvc-end.webp" width="1920" height="817" alt="The closing frame of the TV commercial: the Liwa International Festival 2020 logo pressed into sand" loading="lazy" decoding="async"><span class="go" aria-hidden="true"></span></button>
-  <noscript><span class="fp-nojs"><a class="fp-play" href="../../media/films/liwa-tvc-1080.mp4">Open the TV commercial <small>1:01 · video file</small></a></span></noscript>
-  <div class="set">
-    <figure><img src="a/p-billboard.webp?v=2" width="1800" height="1400" alt="Outdoor artwork, 14 feet 9 inches by 11 feet 6 inches" loading="lazy" decoding="async"><figcaption class="fp-lab"><b>Outdoor</b></figcaption></figure>
-    <figure><img src="a/p-ready.webp" width="860" height="1650" alt="Poster: Ready?!!" loading="lazy" decoding="async"><figcaption class="fp-lab"><b>Poster</b></figcaption></figure>
-    <figure><img src="a/p-begin.webp" width="860" height="1650" alt="Poster: Let the desert challenges begin" loading="lazy" decoding="async"><figcaption class="fp-lab"><b>Poster</b></figcaption></figure>
-    <figure><img src="a/p-square.webp" width="1400" height="1400" alt="Square artwork for social" loading="lazy" decoding="async"><figcaption class="fp-lab"><b>Social</b></figcaption></figure>
-  </div>
-  <div class="ctx"><img src="a/ctx-site-1jan.webp" width="338" height="600" alt="A photograph on the Moreeb Walk at night, 1 January 2020" loading="lazy" decoding="async"><span class="fp-lab">Context only · on site, 1 January 2020 · photograph</span></div>
-</section>
-
-<!-- 6a · the result, in the festival's own figures (media committee report, March 2020; not our document) -->
+<!-- 7 · the result, in the festival's own figures (media committee report, March 2020; not our document), then two of his picks (L38, L37), whole -->
 <section class="fp-res" aria-label="The result, in the festival's own figures">
-  <div class="hd"><h2>The result.</h2><span class="fp-lab"><b>04</b> · In the festival’s own figures</span></div>
+  <div class="hd"><h2>The result.</h2><span class="fp-lab"><b>05</b> · In the festival’s own figures</span></div>
   <div class="nums">
     <div><b>252,006</b><span>visitors, up 68% on the edition before</span></div>
   </div>
   <p class="src fp-lab">Source: the festival media committee’s report, March 2020. Its estimate.</p>
+  <figure class="shot"><div class="pr"><img src="a/pergola-lit.webp" width="2000" height="1125" alt="The pergola, lit: strings of bulbs over pallet seating on the sand" loading="lazy" decoding="async"><img src="a/majlis-lit.webp" width="2000" height="1125" alt="The glass-dome majlis, lit: a clear dome over cushions and carpets on the sand" loading="lazy" decoding="async"></div><figcaption class="fp-lab">The night before opening: the pergola and the glass-dome majlis, lit · my own photographs · 26 December 2019, 12:41 am</figcaption></figure>
   <details class="fp-more"><summary>More figures</summary>
     <div class="nums">
       <div><b>16</b><span>days, 14 competitions</span></div>
@@ -113,27 +207,19 @@
   </details>
 </section>
 
-<!-- 6b · on site, dated: the build proof kept from the earlier version -->
-<section class="fp-pin fp-reel" aria-label="On site, dated: the build">
-  <div class="fp-stick">
-    <div class="ly"><video muted playsinline loop preload="none" data-src="a/b4-cafe-d.mp4" data-src-p="a/b4-cafe-p.mp4" poster="a/b4-cafe-d.webp" data-poster="a/b4-cafe-d.webp" data-poster-p="a/b4-cafe-p.webp"></video><span class="fp-lab n"><b>On site, dated</b> · 01 / 02</span><div class="cap"><h3>21 December.</h3><p>Layali Moreeb, the desert café: its own gate, under the dune.<small class="fp-lab">Phone video · on site</small></p></div></div>
-    <div class="ly"><img class="ps" src="a/pergola-lit.webp" alt="" loading="lazy" decoding="async"><span class="fp-lab n"><b>On site, dated</b> · 02 / 02</span><div class="cap"><h3>26 December.</h3><p>Opening night. The pergola, lit.<small class="fp-lab">Photograph · 00:40</small></p></div></div>
-  </div>
-</section>
-
-<!-- 7 · the films, credits, next -->
+<!-- 8 · the films, credits, next -->
 <section class="fp-end fin">
-  <button class="film" type="button" data-film="a/fest-highlights-1080.mp4" data-film-p="a/fest-highlights-720.mp4" data-title="Festival film, highlights · 0:31 · sports footage from earlier editions" aria-label="Play the festival highlights, 31 seconds, with sound">
+  <button class="film" type="button" data-film="a/fest-highlights-1080.mp4" data-film-p="a/fest-highlights-720.mp4" data-title="Festival film, highlights · 0:31 · footage of earlier editions" aria-label="Play the festival highlights, 31 seconds, with sound">
     <video muted playsinline loop preload="none" data-auto poster="a/fest-highlights-poster.webp" data-src="a/fest-highlights-loop.mp4" data-poster="a/fest-highlights-poster.webp"></video>
-    <span class="t"><span class="fp-lab"><b>Festival film, highlights</b> · 0:31 · sports footage from earlier editions</span><b>Play the highlights.</b></span><span class="go" aria-hidden="true"></span>
+    <span class="t"><span class="fp-lab"><b>Festival film, highlights</b> · 0:31 · footage of earlier editions</span><b>Play the highlights.</b></span><span class="go" aria-hidden="true"></span>
   </button>
   <noscript><span class="fp-nojs"><a class="fp-play" href="a/fest-highlights-1080.mp4">Open the highlights <small>0:31 · video file</small></a></span></noscript>
-  <div class="more"><button class="fp-play" type="button" data-film="../../media/films/liwa-festival-720.mp4" data-film-p="../../media/films/liwa-festival-720.mp4" data-title="Festival film · 3:07 · sports footage from earlier editions">The full festival film <small>3:07 · sound</small></button><button class="fp-play" type="button" data-film="../../media/films/liwa-tvc-1080.mp4" data-film-p="../../media/films/liwa-tvc-720.mp4" data-title="The TV commercial · 1:01 · as released">The TV commercial <small>1:01 · sound</small></button></div>
+  <div class="more"><button class="fp-play" type="button" data-film="../../media/films/liwa-festival-720.mp4" data-film-p="../../media/films/liwa-festival-720.mp4" data-title="Festival film · 3:07 · footage of earlier editions">The full festival film <small>3:07 · sound</small></button><button class="fp-play" type="button" data-film="../../media/films/liwa-tvc-1080.mp4" data-film-p="../../media/films/liwa-tvc-720.mp4" data-title="The TV commercial · 1:01 · as released">The TV commercial <small>1:01 · sound</small></button></div>
   <noscript><span class="fp-nojs"><a class="fp-play" href="../../media/films/liwa-festival-720.mp4">Open the full festival film <small>3:07 · video file</small></a></span></noscript>
   <div class="fp-cred">
     <div><span class="fp-lab">Role</span>Antoni Gerges<br>Creative Director, Brand &amp; Experiential</div>
     <div><span class="fp-lab">Made by</span>AntBrush, main agency.<br>A US$1 million festival contract.</div>
-    <div><span class="fp-lab">Credits</span>Client: Abu Dhabi Sports Council.</div>
+    <div><span class="fp-lab">Credits</span>Client: Abu Dhabi Sports Council.<br>Sports films: the festival film. Site films: my own.</div>
     <figure><img src="a/tony-dune.webp" alt="Antoni Gerges on the dune at Tal Moreeb" loading="lazy"><figcaption class="fp-lab">Me, on the dune,<br>3 January 2020</figcaption></figure>
   </div>
   <a class="fp-next" href="../../work/"><span class="fp-lab">More work</span><b>All work</b><span aria-hidden="true">→</span></a>
@@ -147,6 +233,6 @@
   <nav aria-label="Footer"><a href="../../work/">Work</a><a href="../../about/">About</a><a href="../../contact/">Contact</a></nav>
 </div></footer>
 <script src="../../assets/fp/fp.js?v=18" defer></script>
-<script type="module" src="l2.js?v=27"></script>
+<script type="module" src="l2.js?v=28"></script>
 </body>
 </html>

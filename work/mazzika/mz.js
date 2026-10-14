@@ -13,8 +13,29 @@
 import { stage, T } from '../../assets/fp/fp3d.js?v=21';
 
 const sec = document.querySelector('.fp-model'), FP = window.FP;
+layoutSets();
 const S = sec && FP && stage(sec, { assets: 'a/3d/', grid: false, exposure: 1.0, fill: .05, fog: 0x030305, rimI: .001 });
 if (S) build();
+
+/* the films we made and the pieces on paper: each set is shown whole at once, in rows of one height each, fitted to one screen on a
+   wide screen (on a phone, two squares or one picture per row). No picture or film is cut and no field of ours is laid behind any of them. */
+function layoutSets() {
+  const sets = [].slice.call(document.querySelectorAll('.mz-set')); if (!sets.length) return;
+  const lay = () => sets.forEach(s => {
+    const ph = innerWidth <= 760, side = !ph && s.classList.contains('side'), grid = s.querySelector('.grid'), figs = [].slice.call(grid.querySelectorAll('figure')), rows = JSON.parse(s.dataset[ph ? 'rowsP' : 'rows']);
+    figs.forEach(f => grid.appendChild(f)); [].slice.call(grid.querySelectorAll('.mz-row')).forEach(r => r.remove());
+    const gap = ph ? 10 : 18, W = grid.clientWidth, cs = getComputedStyle(s), note = s.querySelector('.note');
+    const capH = r => r.some(k => figs[k].querySelector('figcaption')) ? (ph ? 40 : 36) : 0;
+    const hw = rows.map(r => (W - gap * (r.length - 1)) / r.reduce((a, k) => a + +figs[k].dataset.r, 0));
+    let k = 1;
+    if (!ph) { const H = innerHeight - (side ? 0 : s.querySelector('.hd').offsetHeight) - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom) - rows.reduce((a, r) => a + capH(r), 0) - gap * (rows.length - 1) - (note ? note.offsetHeight + 14 : 0) - 10;
+      k = Math.max(.35, Math.min(1, H / hw.reduce((a, b) => a + b, 0))); }
+    rows.forEach((r, i) => { const row = document.createElement('div'); row.className = 'mz-row'; row.style.gap = gap + 'px'; row.style.marginTop = i ? gap + 'px' : '0';
+      const hh = ph ? Math.min(hw[i], innerHeight * .42) : hw[i] * k;
+      r.forEach(n => { const f = figs[n]; f.style.width = Math.floor(+f.dataset.r * hh) + 'px'; row.appendChild(f); }); grid.appendChild(row); });
+  });
+  lay(); addEventListener('resize', lay); addEventListener('load', lay);
+}
 
 function build() {
   const { std, box, station, scene, cam, renderer, tex, video } = S, stick = sec.querySelector('.fp-stick');
@@ -150,9 +171,37 @@ function build() {
   /* ---------- the sound, as far as the films show it: two flown hangs, monitors along the front of the stage ---------- */
   [-1, 1].forEach(sd => { for (let i = 0; i < 12; i++) { const b = box(1.15, .36, .72, SND, sd * 11.8, 16.6 - i * .385, 6.4 - i * i * .011); b.rotation.x = -i * .034; add(b); } add(box(.03, 5, .03, STEEL, sd * 11.8, 19.3, 6.4)); });
   [-9, -6.4, -3.8, -1.3, 1.3, 3.8, 6.4, 9].forEach(x => { const w = box(.62, .3, .46, SND, x, DECK_H + .17, 5.5); w.rotation.x = -.45; add(w); });
-  /* front of house: one riser in the middle of the floor. Placed in the slot the standing floor leaves at its back on the plan (the plan does not label the slot; the films show the riser mid-floor) */
-  { const r = new T.Group(); r.position.set(0, 0, FOHZ); r.add(box(8.2, .6, 5.4, FOHM, 0, .3, 0)); [[-2.6, 0], [0, 0], [2.6, 0]].forEach(p => { r.add(box(2.1, .9, .9, BODY, p[0], 1.05, -1.4)); const sc = new T.Mesh(new T.PlaneGeometry(.9, .5), flat(0x9fb6ff, .5)); sc.position.set(p[0], 1.85, -1.1); sc.rotation.x = -.2; sc.rotation.y = Math.PI; r.add(sc); });
-    r.add(box(.05, 1.7, .05, STEEL, 3.6, 1.45, 1.4)); r.add(box(.5, .3, .3, BODY, 3.6, 2.35, 1.3)); [[-4.2, 0, .1, 5.6], [4.2, 0, .1, 5.6], [0, 2.8, 8.5, .1], [0, -2.8, 8.5, .1]].forEach(b => r.add(box(b[2], 1.1, b[3], BODY, b[0], .55, b[1]))); add(r); }
+  /* front of house: one riser in the middle of the floor. Placed in the slot the standing floor leaves at its back on the plan (the plan does not label the slot; the films show the riser mid-floor).
+     On it, three desks side by side facing the stage: sound, light and video, each a console with its faders and buttons lit, and its screens
+     turned to the operator (festival film at 0:16, the front-of-house shot). The riser is dark; only the desks give light. No make or model is named. */
+  const FOHL = []; let fohLamp = null;
+  { const r = new T.Group(); r.position.set(0, 0, FOHZ); r.add(box(8.6, .6, 5.6, FOHM, 0, .3, 0));
+    const edge = new T.Mesh(new T.BoxGeometry(8.6, .025, .025), flat(GOLD, .9)); edge.position.set(0, .615, 2.8); r.add(edge);      /* a gold line along the riser's edge, the festival's colour */
+    const deskT = kind => canvasTex(512, 256, (x, w, h) => { x.fillStyle = '#08090c'; x.fillRect(0, 0, w, h);
+      if (kind === 'sound') { for (let c = 0; c < 24; c++) { const cx = 14 + c * 20.6; x.fillStyle = '#1b1d24'; x.fillRect(cx, 18, 12, 200); for (let k = 0; k < 6; k++) { x.fillStyle = ['#ffb347', '#9fb6ff', '#e5a333', '#c6ffd0', '#ffffff', '#ff8a5c'][(c + k) % 6]; x.globalAlpha = .55 + .45 * ((c * 7 + k * 3) % 5) / 4; x.fillRect(cx + 3, 24 + k * 14, 6, 5); } x.globalAlpha = 1; x.fillStyle = '#d9dbe2'; x.fillRect(cx + 1, 150 + ((c * 37) % 50), 10, 14); } }
+      else if (kind === 'light') { for (let c = 0; c < 10; c++) for (let rr = 0; rr < 4; rr++) { x.fillStyle = (c + rr) % 3 ? '#2b2f3a' : '#e5a333'; x.fillRect(16 + c * 48, 22 + rr * 30, 36, 20); } for (let c = 0; c < 10; c++) { x.fillStyle = '#1b1d24'; x.fillRect(28 + c * 48, 150, 12, 90); x.fillStyle = '#d9dbe2'; x.fillRect(26 + c * 48, 170 + ((c * 29) % 50), 16, 12); } }
+      else { for (let c = 0; c < 8; c++) { x.fillStyle = c === 3 ? '#ff5a4a' : (c === 5 ? '#6bff8f' : '#2b2f3a'); x.fillRect(30 + c * 58, 30, 44, 34); x.fillStyle = '#2b2f3a'; x.fillRect(30 + c * 58, 80, 44, 34); } x.fillStyle = '#1b1d24'; x.fillRect(60, 150, 390, 14); x.fillStyle = '#d9dbe2'; x.fillRect(230, 140, 26, 34); } });
+    const scrT = kind => canvasTex(256, 144, (x, w, h) => { x.fillStyle = '#0b0d14'; x.fillRect(0, 0, w, h);
+      if (kind === 'sound') { for (let i = 0; i < 32; i++) { const v = .25 + .7 * Math.abs(Math.sin(i * 1.7)); x.fillStyle = i % 5 ? '#4fd27a' : '#e5a333'; x.fillRect(8 + i * 7.6, h - 10 - v * (h - 30), 5, v * (h - 30)); } }
+      else if (kind === 'light') { for (let c = 0; c < 8; c++) for (let rr = 0; rr < 5; rr++) { x.fillStyle = (c * 3 + rr) % 4 ? '#25304a' : '#9fb6ff'; x.fillRect(8 + c * 30.5, 10 + rr * 26, 26, 21); } }
+      else { for (let c = 0; c < 3; c++) for (let rr = 0; rr < 2; rr++) { const gr = x.createLinearGradient(0, 0, 0, 60); gr.addColorStop(0, '#2a1d08'); gr.addColorStop(1, (c + rr) % 2 ? '#e5a333' : '#7a5418'); x.fillStyle = gr; x.save(); x.translate(8 + c * 83, 8 + rr * 68); x.fillRect(0, 0, 74, 60); x.restore(); } } });
+    const MON = [], DESKM = std({ color: 0x2c2e36, roughness: .55, metalness: .45 });
+    [['sound', -2.75], ['light', 0], ['video', 2.75]].forEach(([kind, x]) => {
+      const d = new T.Group(); d.position.set(x, .6, -1.2); r.add(d);
+      d.add(box(2.4, .85, 1.1, DESKM, 0, .425, 0));                                                                             /* the desk body, in road-case grey */
+      const top = new T.Mesh(new T.PlaneGeometry(2.3, 1.0), new T.MeshBasicMaterial({ map: deskT(kind), toneMapped: false, color: new T.Color(.75, .75, .75) }));
+      top.rotation.x = -Math.PI / 2 + .3; top.position.set(0, .88, .03); d.add(top);                                              /* tilted toward the operator, who stands on the far side from the stage */
+      const n = kind === 'video' ? 2 : 1;
+      for (let m = 0; m < n; m++) { const w = 1.0, h = .58, sx = n === 2 ? (m ? .56 : -.56) : 0;
+        d.add(box(w + .06, h + .06, .05, DESKM, sx, 1.42 + h / 2, -.42)); d.add(box(.06, .55, .06, DESKM, sx, 1.14, -.45));
+        const sc = new T.Mesh(new T.PlaneGeometry(w, h), kind === 'video' && m ? new T.MeshBasicMaterial({ map: loop.v ? still : loop.t, toneMapped: false, color: new T.Color(.85, .85, .85) }) : new T.MeshBasicMaterial({ map: scrT(kind), toneMapped: false }));
+        sc.position.set(sx, 1.42 + h / 2, -.39); d.add(sc); MON.push(sc); }                                                      /* the screens face the operator */
+      const lamp = glow(1.4, 1.4, 0xffd9a0, .35, 0, 1.25, .45, d); FOHL.push(lamp);                                              /* the desk lamp's pool of light */
+    });
+    r.add(box(.05, 1.7, .05, STEEL, 3.9, 1.45, 1.5)); r.add(box(.5, .3, .3, BODY, 3.9, 2.35, 1.4));                             /* the follow-camera on its stand */
+    [[-4.4, 0, .1, 5.8], [4.4, 0, .1, 5.8], [0, 2.9, 8.9, .1], [0, -2.9, 8.9, .1]].forEach(b => r.add(box(b[2], 1.1, b[3], BODY, b[0], .55, b[1])));   /* the barrier round the riser */
+    add(r);
+    fohLamp = new T.PointLight(0xffe2b8, 0, 16, 1.6); fohLamp.position.set(0, 4.2, FOHZ + 1.6); scene.add(fohLamp); }
   /* the camera crane at the side of the pit (his film, 16:08) */
   { const c = new T.Group(); c.position.set(11.5, 0, 9); c.add(box(.6, 1.6, .6, BODY, 0, .8, 0)); const arm = box(.12, .12, 7.5, STEEL, 0, 0, 0); arm.position.set(-1.6, 3.3, -2.2); arm.rotation.set(.38, .5, 0); c.add(arm); c.add(box(.4, .3, .4, BODY, -3.3, 4.6, -4.9)); add(c); }
   /* backline, plain: a drum riser, two amplifiers, a keyboard, microphone stands */
@@ -175,7 +224,7 @@ function build() {
     station(0, Object.assign({}, none, { c: [0, 8.2, -1], rx: 23.5, ry: 8.5, yaw: -.24, pitch: -.03, fx: .8, fy: .8, ox: -.06, fxp: 1.12, fyp: .42, yawp: -.34, rxp: 9.5 })),
     station(0, Object.assign({}, none, { c: [0, 10.5, 4], rx: 24, ry: 12, yaw: .3, pitch: -.1, fx: .8, fy: .9, ox: -.05, fxp: 1.1, fyp: .44, yawp: .4, rxp: 10.5 })),
     station(0, Object.assign({}, none, { c: [0, 8.6, 5], rx: 15.5, ry: 10, yaw: -.5, pitch: .1, fx: .7, fy: .82, fxp: 1.1, fyp: .44, yawp: -.6 })),
-    station(0, Object.assign({}, none, { c: [0, 2.2, FOHZ - 6], rx: 9.5, ry: 6.5, yaw: .34, pitch: .2, fx: .62, fy: .7, fxp: 1.0, fyp: .4, yawp: .4, rxp: 5.2 })),
+    station(0, Object.assign({}, none, { c: [0, 3.2, 46], rx: 8.5, ry: 4.5, yaw: .1, pitch: .1, fx: .95, fy: .9, ox: -.2, oy: -.035, drift: .1, fxp: 1.1, fyp: .7, yawp: .06, rxp: 3.7, oyp: .02 })),   /* from behind the desks, the stage lit beyond */
     station(0, Object.assign({}, none, { c: [-VX, VY, VZ], rx: 5.6, ry: 3.6, yaw: -.52, pitch: -.12, fx: .5, fy: .62, ox: .12, fxp: .95, fyp: .36, yawp: -.4 })),
     station(0, Object.assign({}, none, { c: [0, 6.9, -4], rx: 22.5, ry: 8, yaw: 0, pitch: -.13, fx: .92, fy: .9, ox: 0, oy: 0, oxp: 0, oyp: 0, fxp: 1.1, fyp: .4, yawp: 0, drift: .06, rxp: 11 }))
   ];
@@ -190,15 +239,16 @@ function build() {
     
     [1, [0, GY, 5.6], 'Grid, flown from the roof'], [1, [9.6, 13.2, 5.6], 'Front truss'],
     [2, [0, CY + CH / 2, CZ], 'Centre screen'], [2, [-(CW / 2 + CGAP + 1.5 * SW + SGAP), CY + CH / 2, CZ], 'Six pillars'], [2, [VX, VY + VH / 2, VZ], 'Side screen'],
-    [3, [0, 13.2, 5.6], 'Five rows of truss'], [3, [-16.8, .6, 8.2], 'Floor lights'],
+    [3, [0, 13.2, 5.6], 'Truss rows'], [3, [-16.8, .6, 8.2], 'Floor lights'],
     [4, [-11.8, 16.8, 6.4], 'Left hang'], [4, [11.8, 16.8, 6.4], 'Right hang'], [4, [1.3, DECK_H + .4, 5.5], 'Monitors'],
-    [5, [0, 1.9, FOHZ - 1.4], 'Sound, light and screen desks']
+    [5, [0, 2.95, FOHZ - 1.6], 'Sound, light and video desks'], [5, [0, CY + CH / 2 + .4, CZ], 'Stage']
   ].map(n => { const el = document.createElement('span'); el.className = 'mzl' + (n[3] ? ' more' : ''); el.innerHTML = '<i></i><b></b>'; el.lastChild.textContent = n[2]; stick.appendChild(el); return { st: n[0], p: new T.Vector3(...n[1]), el, on: false }; });
 
   /* ---------- the layers: each station switches on what it is about ---------- */
   const E = FP.ease, seg = FP.seg, tmp = new T.Vector3(), fwd = new T.Vector3();
   let cur = { i: -1, l: 0 }, live = false, frameN = 0;
-  S.onFrame((time, i, local) => { cur.i = i; cur.l = local; });
+  S.onFrame((time, i, local) => { cur.i = i; cur.l = local;
+    if (i === 5) { scene.fog.near = 44; scene.fog.far = 170; }   /* front of house looks down the whole hall: the stage stays clear at the far end */ });
   function state() {
     if (FP.rm || cur.i < 0) { const on = sec.querySelector('.st.on'); cur.i = on ? +on.dataset.s : 0; cur.l = 1; }
     const i = cur.i, l = cur.l, cut = stick.classList.contains('is-cut');
@@ -208,7 +258,7 @@ function build() {
     else if (i === 2) { c = seg(l, .03, .13); s = seg(l, .11, .21); v = seg(l, .19, .3); wk = .35 * (1 - v); }
     else if (i === 3) { lt = E(seg(l, .03, .3)); }
     else if (i === 4) { lt = .12; snd = .55 + .45 * Math.sin(performance.now() / 420); c = s = v = .5; wk = .25; }
-    else if (i === 5) { lt = .3; foh = 1; }
+    else if (i === 5) { lt = .55; }
     else if (i === 6) { lt = .45; }
     else { lt = 1; }
     centre.material.color.setScalar(centre.userData.k * c); centre.visible = c > .01;
@@ -216,7 +266,8 @@ function build() {
     sides.forEach(o => { o.live.material.color.setScalar(v); o.fr.material.color.setScalar(v); o.live.visible = o.fr.visible = v > .01; });
     const led = (c + s + v) / 3; LEDG.forEach(m => { m.material.opacity = m.userData.op * led; }); ledLights.forEach(p => { p.intensity = p.userData.i * led; });
     beams.children.forEach(b => { b.material.uniforms.k.value = b.userData.k * lt; }); beams.visible = lt > .005; LIGHTG.forEach(sp => { sp.material.opacity = sp.userData.op * Math.min(1, lt * 2.2 + (i === 3 ? .0 : 0)); }); LENS.color.setScalar(.12 + .88 * Math.min(1, lt * 2.2));
-    SND.emissiveIntensity = snd * .9; FOHM.emissiveIntensity = foh * .55; work.intensity = 2600 * wk; front.intensity = 240 * Math.max(led, .2);
+    SND.emissiveIntensity = snd * .9; if (fohLamp) fohLamp.intensity = i === 5 ? 70 : 0; SND.color.setHex(i === 1 ? 0x010102 : 0x101014); SND.roughness = i === 1 ? 1 : .5; SND.metalness = 0;   /* in the working light the hangs stay dark: only the grid reads white (Tony's truss check, 12 Oct) */
+    FOHM.emissiveIntensity = foh * .55; work.intensity = 2600 * wk; front.intensity = 240 * Math.max(led, .2);
     ZONES.forEach(m => { m.material.opacity += (m.userData.op * zn - m.material.opacity) * .2; });
     /* names */
     const Wd = stick.clientWidth, Hd = stick.clientHeight, show = !cut && sec.querySelector('.st.on');

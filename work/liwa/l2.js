@@ -1,34 +1,24 @@
-/* Liwa: the festival as a 3D model, built from the campaign artwork and the working files.
-   Scroll: the road in, the wayfinding, the Liwa Land gate, the site under the dune, the big screen. */
+/* Liwa: the campaign in space, built from the campaign's own artwork and working files. Three stops:
+   the road in (the outdoor artwork and the lamppost banners), the wayfinding (three sign panels), the Liwa Land gate.
+   14 Oct night: the dune model and the "big screen" were taken out (audit B-16, B-17: a TV on a stand the TVC never played on,
+   and a dune below the bar); the dune and the site are now seen in films. */
 import { stage, T } from '../../assets/fp/fp3d.js?v=21';
 
 const sec = document.querySelector('.fp-model'), S = sec && window.FP && stage(sec, { assets: 'a/3d/', key: 0xfff0dc, rim: 0xffb066, rimI: .5, floor: 0x060504 , grid: false, sky: [[0, '#000'], [.5, '#050307'], [.63, '#2a150a'], [.68, '#0d0703'], [1, '#000']], fog: 0x0a0503 });
 if (S) build();
 
 function build() {
-  const { tex, std, dark, box, panel, manq, station, video } = S, A = S.A;
+  const { tex, std, dark, box, panel, station } = S;
   const steel = std({ color: 0x4a4d53, roughness: .45, metalness: .7 });
 
-  /* Tal Moreeb at 1:20 */
-  const tan50 = Math.tan(50 * Math.PI / 180), crest = x => -8 + 4.5 * Math.sin(x * .06) + 2 * Math.sin(x * .17 + 1), top = x => 15 * Math.exp(-Math.pow(x / 34, 2)) * (.86 + .14 * Math.cos(x * .1));
-  function addDune(G) {
-    const SX = 110, SZ = 64, geo = new T.PlaneGeometry(SX, SZ, 220, 128); geo.rotateX(-Math.PI / 2);
-    const pa = geo.attributes.position, col = new Float32Array(pa.count * 3);
-    for (let n = 0; n < pa.count; n++) { const x = pa.getX(n), z = pa.getZ(n), zc = crest(x), hc = top(x); let h, face = 0;
-      if (z > zc) { const d = z - zc, raw = hc - d * tan50; h = raw > 1.2 ? raw : Math.max(0, 1.2 * Math.exp((raw - 1.2) / 1.2)); face = raw > 0 ? 1 : 0; }
-      else { const d = zc - z; h = hc * Math.exp(-Math.pow(d / 26, 2)) + .5 * Math.sin(x * .3 + d * .2) * Math.exp(-d / 30); }
-      h *= FPsm(Math.abs(x), 54, 40) * FPsm(-z, 32, 22); h += .05 * Math.sin(x * 2.1 + z * .7) * Math.min(1, h);
-      pa.setY(n, Math.max(0, h)); const c = face ? .78 : 1; col[n * 3] = .86 * c; col[n * 3 + 1] = .58 * c; col[n * 3 + 2] = .3 * c; }
-    { /* soften the stepped crest: two passes of a 3 x 3 average over the height grid */
-      const nx = 221, nz = 129, hgt = new Float32Array(pa.count); for (let n = 0; n < pa.count; n++) hgt[n] = pa.getY(n);
-      for (let pass = 0; pass < 3; pass++) { const src = hgt.slice(); for (let j = 1; j < nz - 1; j++) for (let i2 = 1; i2 < nx - 1; i2++) { let a2 = 0; for (let dj = -1; dj <= 1; dj++) for (let di = -1; di <= 1; di++) a2 += src[(j + dj) * nx + i2 + di]; hgt[j * nx + i2] = a2 / 9; } }
-      for (let n = 0; n < pa.count; n++) pa.setY(n, hgt[n]); }
-    geo.setAttribute('color', new T.BufferAttribute(col, 3)); geo.computeVertexNormals();
-    const dune = new T.Mesh(geo, std({ vertexColors: true, roughness: 1 })); dune.position.set(0, .01, -6); dune.castShadow = dune.receiveShadow = true; G.add(dune);
-    /* the climb: two rows of floodlights up the face */
-    const zc0 = crest(0) - 6, lm = new T.MeshBasicMaterial({ color: 0xfff3c4 });
-    for (let i = 0; i <= 12; i++) { const t = i / 12, y = 15 * .98 * t * (.86 + .14) , z = zc0 + (1 - t) * (15 / tan50); [-1.1, 1.1].forEach(x => { const b = new T.Mesh(new T.SphereGeometry(.09, 8, 8), lm); b.position.set(x, Math.max(.2, top(0) * t) + .12, z); G.add(b); }); }
-  }
+  /* the ground: warm sand that fades into the dark floor, so no piece stands in a void */
+  const radial = (stops, srgb) => { const c = document.createElement('canvas'); c.width = c.height = 128; const x = c.getContext('2d'), g = x.createRadialGradient(64, 64, 2, 64, 64, 64); stops.forEach(k => g.addColorStop(k[0], k[1])); x.fillStyle = g; x.fillRect(0, 0, 128, 128); const t = new T.CanvasTexture(c); if (srgb) t.colorSpace = T.SRGBColorSpace; return t; };
+  const fade = radial([[0, '#fff'], [.5, '#fff'], [1, '#000']]);
+  const sand = (g, w, d, x, z, k) => { const m = new T.Mesh(new T.PlaneGeometry(w, d), std({ color: 0xc9925a, roughness: 1, transparent: true, depthWrite: false, alphaMap: fade, opacity: k || 1 })); m.rotation.x = -Math.PI / 2; m.position.set(x, .002, z); m.receiveShadow = true; m.renderOrder = 3; m.userData.noMirror = true; g.add(m); return m; };
+  /* a low line of dunes behind the road, lit from the side, going into the dusk */
+  const ridge = (g, x, z, w, h) => { const geo = new T.PlaneGeometry(w, 26, 160, 40); geo.rotateX(-Math.PI / 2); const pa = geo.attributes.position;
+    for (let n = 0; n < pa.count; n++) { const px = pa.getX(n), pz = pa.getZ(n), crest = h * (.55 + .3 * Math.sin(px * .07 + 1) + .15 * Math.sin(px * .19)), t = Math.max(0, 1 - Math.abs(pz + 2) / 13); pa.setY(n, crest * Math.pow(t, 1.6) * (1 - Math.pow(Math.abs(px) / (w / 2), 6))); }
+    geo.computeVertexNormals(); const m = new T.Mesh(geo, std({ color: 0xb87a45, roughness: 1 })); m.position.set(x, 0, z); m.receiveShadow = true; m.userData.noMirror = true; g.add(m); return m; };
 
   /* 1 · the road in: the billboard and the lamppost banners */
   {
@@ -46,15 +36,18 @@ function build() {
     const bb = panel(4.5, 3.5, tex('billboard.webp?v=2'), .12); bb.position.set(-5.2, 4.3, -6); bb.rotation.y = .32; s.g.add(bb);
     [-1.4, 1.4].forEach(x => { const l = box(.16, 2.6, .16, steel, 0, 1.3, 0); l.position.set(-5.2 + x * Math.cos(.32), 1.3, -6 - x * Math.sin(.32) - .05); s.g.add(l); });
     
+    sand(s.g, 40, 84, 0, -12); ridge(s.g, 0, -46, 80, 9);
     S.blob(s.g, -5.2, -6, 4.6, 1.6, .85); for (let i = 0; i < 3; i++) S.blob(s.g, 4.3, 5 - i * 9, 1.6, 1.6, .85);
   }
-  /* 2 · wayfinding: one sign system, seven panels */
+  /* 2 · wayfinding: one sign system; three panels whose every row is labelled (08, 04, 07). The header strip of each is the one from the
+     printed sign file (page 8, as in 49548e8): the lower rectangle LIWA 2020 at its printed size, and the band as printed. */
   {
-    const s = station(58, { c: [0, 1.6, .2], rx: 2.9, ry: 1.9, yaw: .44, pitch: .06, drift: .6 });
-    ['02', '06', '08'].forEach((n, i) => { const g = new T.Group(); g.position.set(-2.0 + i * 2.0, 0, i === 1 ? .5 : 0); g.rotation.y = (1 - i) * .22;
-      const p = panel(1.2, 2.4, tex('sign-' + n + '.webp?v=2'), .07, { roughness: .5 }); p.position.y = 1.75; g.add(p);
+    const s = station(58, { c: [.1, 1.75, .25], rx: 2.45, ry: 1.5, yaw: .4, pitch: .05, drift: .5, rxp: 3.3, yawp: .3 });
+    ['08', 'r04', 'r07'].forEach((n, i) => { const g = new T.Group(); g.position.set(-2.0 + i * 2.0, 0, i === 1 ? .5 : 0); g.rotation.y = (1 - i) * .22;
+      const p = panel(1.2, 2.4, tex('sign-' + n + '.webp?v=3'), .07, { roughness: .5 }); p.position.y = 1.75; g.add(p);
       g.add(box(.09, .6, .09, steel, -.45, .3, 0), box(.09, .6, .09, steel, .45, .3, 0), box(1.3, .04, .5, steel, 0, .02, 0)); s.g.add(g); });
     
+    sand(s.g, 16, 12, 0, .2, .9);
     [-2, 0, 2].forEach((x, i) => S.blob(s.g, x, i === 1 ? .5 : 0, 2.0, 1.2, .85));
   }
   /* 3 · Liwa Land: the gate of the children's zone.
@@ -68,7 +61,6 @@ function build() {
     const NAME = { face: 'gate-fz-face.webp', edge: 'gate-fz-edge.webp', glow: 'gate-fz-glow.webp', w: 2.196, h: .526, x: 0, y: GH - BEAM / 2 };
     const s = station(100, { c: [-.35, 2.7, Z0 + F], rx: 5.9, ry: 3.3, yaw: -.5, pitch: -.08, drift: .34, fx: .64, fy: .8, ox: -.2, oy: -.03, keyK: .38, noMirror: true, yawp: -.74, rxp: 4.3, fxp: 1, fyp: .5, oyp: .12 });
     const G = new T.Group(); G.position.z = Z0; s.g.add(G);
-    const radial = (stops, srgb) => { const c = document.createElement('canvas'); c.width = c.height = 128; const x = c.getContext('2d'), g = x.createRadialGradient(64, 64, 2, 64, 64, 64); stops.forEach(k => g.addColorStop(k[0], k[1])); x.fillStyle = g; x.fillRect(0, 0, 128, 128); const t = new T.CanvasTexture(c); if (srgb) t.colorSpace = T.SRGBColorSpace; return t; };
     /* sand that fades into the dark floor, and a warm pool of light at each foot */
     const sand = new T.Mesh(new T.PlaneGeometry(52, 34), std({ color: 0xc9925a, roughness: 1, transparent: true, depthWrite: false, alphaMap: radial([[0, '#fff'], [.5, '#fff'], [1, '#000']]) }));
     sand.rotation.x = -Math.PI / 2; sand.position.set(0, .012, 2); sand.receiveShadow = true; sand.renderOrder = 3; G.add(sand);
@@ -103,34 +95,7 @@ function build() {
       for (let i = 0; i < 6; i++) { const m = new T.Mesh(geo, side); m.position.z = .02 + i * .024; name.add(m); }
       const face = new T.Mesh(geo, new T.MeshBasicMaterial({ map: tex(NAME.face), alphaTest: .5, alphaToCoverage: true, toneMapped: false })); face.position.z = .144; name.add(face);
       const glow = new T.Mesh(new T.PlaneGeometry(NAME.w * 1.155, NAME.h * 1.648), new T.MeshBasicMaterial({ map: tex(NAME.glow), transparent: true, depthWrite: false, blending: T.AdditiveBlending, opacity: .34, toneMapped: false })); glow.position.z = .16; glow.renderOrder = 6; name.add(glow); }
-    const written = [{ a: [LX - .3, 0, Z0 + F + .85], b: [LX - .3, 3.48, Z0 + F + .85], t: '11 ft 6 in · 3.5 m' },
-      { a: [(GW - LEG) / 2 - .85, 2.36, Z0 + F + .1], b: [(GW - LEG) / 2 + .85, 2.36, Z0 + F + .1], t: '5 ft 7 in · 1.7 m' },
-      { a: [RX, .06, Z0 + F + 2.5], b: [RX + 3, .06, Z0 + F + 2.5], t: '9 ft 10 in · 3 m' },
-      { a: [-.4, 0, Z0 + F + 1.4], b: [-.4, 1.8, Z0 + F + 1.4], t: 'A person · 6 ft' }];
-    
-    S.onFrame(() => { const ph = S.FP.phone(); written.forEach(d => { if (d.line) d.line.visible = !ph; }); });   /* a phone shows the width only */
     S.blob(G, -(GW - LEG) / 2, 0, 3.2, 2.8, .8); S.blob(G, (GW - LEG) / 2, 0, 3.2, 2.8, .8); S.blob(G, LX + 1.7, F + .7, 4.4, 1.5, .75); S.blob(G, RX + 1.5, F + .65, 3.9, 1.3, .75);
-  }
-  /* 4 · the site under the dune: the master plan and Tal Moreeb at 1:20 */
-  {
-    const s = station(150, { c: [0, 5.2, 5], rx: 24, ry: 10, yaw: .46, pitch: .13, drift: .36, fx: .84, fy: .62, ox: -.05, oy: .1, yawp: .75, rxp: 12, noMirror: true, keyK: .16, w: 1.5 });
-    addDune(s.g);
-    /* the master plan, lit like a drawing on a table */
-    const pt = tex('plan.webp'), slab = new T.Mesh(new T.BoxGeometry(24, .16, 24 * 1443 / 2048), [dark, dark, std({ map: pt, emissive: 0xffffff, emissiveMap: pt, emissiveIntensity: .5, roughness: .7 }), dark, dark, dark]);
-    slab.position.set(0, .09, 18.5); slab.castShadow = slab.receiveShadow = true; s.g.add(slab);
-    s.dims.push({ a: [17, 0, 6.5], b: [17, 15, 6.5], t: '984 ft · 300 m', k: .6, huge: true });
-    const PZ = (u, v, t) => { const x = -12 + 24 * u, z = 18.5 - 8.455 + 16.91 * v; };
-    PZ(.80, .52, 'Race arenas'); PZ(.40, .63, 'Heritage Village · Moreeb Walk · theatre'); PZ(.80, .70, 'Camping'); PZ(.40, .44, 'Paraglider strip');
-  }
-  /* 5 · the big screen: the TV commercial, playing */
-  {
-    const s = station(260, { c: [0, 3.2, 0], rx: 5.4, ry: 3.6, yaw: .34, pitch: .04, drift: .44, fx: .66, yawp: .6 });
-    const l = video('../../media/films/liwa-tvc-720.mp4', null, '../../media/films/liwa-tvc-poster.jpg'); s.vid = l.v;
-    const scr = new T.Mesh(new T.PlaneGeometry(8, 4.5), new T.MeshBasicMaterial({ map: l.t, toneMapped: false })); scr.position.set(0, 3.9, .03); s.g.add(scr);
-    s.g.add(box(8.3, 4.8, .3, dark, 0, 3.9, -.14), box(.22, 1.7, .22, steel, -3.4, .85, -.14), box(.22, 1.7, .22, steel, 3.4, .85, -.14), box(8.3, .14, 1.4, steel, 0, .07, -.14));
-    
-    S.blob(s.g, 0, -.1, 10, 2.6, .85);
   }
   S.ready();
 }
-function FPsm(v, edge, soft) { const t = Math.max(0, Math.min(1, (edge - v) / (edge - soft))); return t * t * (3 - 2 * t); }
