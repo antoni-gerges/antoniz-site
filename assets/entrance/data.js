@@ -2,9 +2,9 @@
 // always shown whole (contain), never cropped. Photos (art:false) may be cropped.
 // film = the loop used by the motion idea in the built version.
 window.MP = [
-  { n:'01', client:'ZEISS Vision Care', what:'Product launch', place:'Dubai', year:'2022', credit:'with Mission Control X',
+  { n:'01', client:'ZEISS Vision Care', what:'Product launch', place:'Dubai', year:'2022', credit:'with MCX',
     img:'a/dinner-2400.webp', pos:'50% 50%', film:'../zeiss2/a/c12-wall-720.mp4' },
-  { n:'02', client:'Coca-Cola Arena', what:'Why Not! Mazzika Festival', place:'Dubai', year:'2019', credit:'with Mission Control X',
+  { n:'02', client:'Coca-Cola Arena', what:'Why Not! Mazzika Festival', place:'Dubai', year:'2019', credit:'with MCX',
     img:'a/mazzika-cover.webp', pos:'75% 50%', posC:'100% 45%', film:'../../media/films/mazzika-720.mp4' },
   { n:'03', client:'Liwa International Festival', what:'Campaign, film and festival build', place:'Abu Dhabi', year:'2019–20',
     img:'a/liwa-s1f-quad-into-sun.webp', pos:'48% 58%', kv:'a/kv-2400.webp', kvTint:'#c4935f', film:'../liwa-film/a/s1f-quad-into-sun-720.mp4' },
@@ -16,15 +16,15 @@ window.MP = [
     img:'a/cityscape-44.webp', pos:'50% 40%' },
   { n:'07', client:'UAE Ministry of Education', what:'Bullying Prevention Week', place:'UAE', year:'2018',
     img:'a/door-2400.webp', art:true, tint:'#bacbb2' },
-  { n:'08', client:'Unilever', what:'Around the World in 3 Days', place:'Istanbul', year:'2018', credit:'with Mission Control X',
+  { n:'08', client:'Unilever', what:'Around the World in 3 Days', place:'Istanbul', year:'2018', credit:'with MCX',
     img:'a/unilever-world.webp', art:true, tint:'#90cfeb' },
   { n:'09', client:'AIAASC', what:'Rebrand of an accreditation body', place:'New York / Dubai', year:'2021',
     img:'a/aiaasc-alpha.webp', art:true, tint:'#000' },
-  { n:'10', client:'Lilly Singh', what:'Live in Dubai, show campaign', place:'Dubai', year:'2017', credit:'with Mission Control X',
+  { n:'10', client:'Lilly Singh', what:'Live in Dubai, show campaign', place:'Dubai', year:'2017', credit:'with MCX',
     img:'a/lilly-clock.webp', art:true, tint:'#c8202a' },
   { n:'11', client:'Al Forsan', what:'Sports resort campaign', place:'Abu Dhabi', year:'2009',
     img:'a/hoarding-2400.webp', pos:'50% 50%' },
-  { n:'12', client:'Big Grill Festival', what:'Poster and festival system', place:'Abu Dhabi', year:'2018', credit:'with Mission Control X',
+  { n:'12', client:'Big Grill Festival', what:'Poster and festival system', place:'Abu Dhabi', year:'2018', credit:'with MCX',
     img:'a/grill-stage.webp', pos:'50% 45%' },
 ];
 window.LINE='Big ideas, built.';
