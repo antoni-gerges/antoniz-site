@@ -130,6 +130,43 @@ body.fp.aiaasc .fp-hero .v,body.fp.aiaasc .fp-reel .ly video,body.fp.aiaasc .fp-
 .aa-q p{font:300 clamp(22px,2.3vw,38px)/1.22 "Jost",system-ui,sans-serif;letter-spacing:-.015em;color:#fff;margin:0 0 14px}
 /* the back-to-school film is square and small: it plays at its own size */
 .fp-built.native.sqf .fr video{width:min(600px,84vw,54vh);aspect-ratio:1;top:52%}
+/* ---- From brief to result (approved storyboard THINKING-AIAASC-14-Oct, built 15 Oct as an addition). Six beats: 01 and 06 are new screens on
+   the brand's dark blue (#141a3c, the storyboard's ground); 02 to 05 are the page's own 3D, its stops now in the story's order:
+   the plan (the world), the idea (Alpha, then the flag), the system (the book, the event set), the campaigns (the posts, then the film). ---- */
+body.fp.aiaasc .zb-hd,body.fp.aiaasc .zt .fp-stick{background:#141a3c}
+.zb-hd{padding:clamp(56px,9vh,110px) var(--g) clamp(10px,3vh,30px)}
+.zb-hd h2{font-size:clamp(40px,5.4vw,104px);line-height:.92;letter-spacing:-.04em;font-weight:300;color:#fff}
+.zt .fp-stick{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);gap:var(--g);align-items:center;padding:clamp(86px,12vh,120px) var(--g) clamp(26px,5vh,54px)}
+.zt .lead>.fp-lab{display:block;margin-bottom:16px}
+.zt .lead h2{font-size:clamp(34px,3.7vw,64px);line-height:1;letter-spacing:-.035em;font-weight:300}
+.zt .lead .one{margin:16px 0 0;font-size:clamp(15px,1.12vw,18px);line-height:1.45;color:rgba(255,255,255,.82);max-width:24em}
+.zt .q{margin:14px 0 0;font:300 clamp(20px,1.7vw,28px)/1.2 "Jost",system-ui,sans-serif;letter-spacing:-.01em;color:#fff;opacity:0;transform:translateY(14px)}
+.zt .q small{display:block;margin-top:5px;font:600 11.5px/1.3 Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.66)}
+.zt .figs{display:grid;gap:14px;margin-top:clamp(18px,3.4vh,34px);padding-top:14px;border-top:1px solid var(--line);max-width:24em}
+.zt .figs>div{font:600 11.5px/1.35 Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.zt .figs>div>b{display:block;font:600 clamp(20px,1.7vw,27px)/1.1 "Jost",system-ui,sans-serif;letter-spacing:-.01em;text-transform:none;color:#fff;margin-bottom:3px}
+.zt .pic{margin:0;justify-self:end;width:min(100%,calc((100svh - 230px) * var(--ar)),var(--mw,2000px))}
+.zt .pic img,.zt .pic video{display:block;width:100%;height:auto;aspect-ratio:var(--ar);outline:1px solid rgba(255,255,255,.14)}
+.zt figcaption{margin-top:10px}
+/* the plan's three phases step up in the 3D caption while the red line travels */
+.aa-ph{list-style:none;margin:14px 0 0;padding:12px 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.aa-ph li{font-size:12.5px;line-height:1.3;color:rgba(255,255,255,.7);border-top:2px solid var(--room-accent);padding-top:7px;opacity:.18;transform:translateY(10px);transition:opacity .5s,transform .5s}
+.aa-ph li.on{opacity:1;transform:none}
+.aa-ph li b{display:block;font:600 15px/1.15 "Jost",system-ui,sans-serif;color:#fff}
+@media (max-width:760px){
+  .zt .fp-stick{grid-template-columns:1fr;align-content:center;gap:18px;padding:78px var(--g) 22px}
+  .zt .pic{order:-1;width:100%;justify-self:stretch}
+  .zt .lead h2{font-size:clamp(30px,8.4vw,42px)}
+  .zt .lead>.fp-lab{margin-bottom:10px}
+  .zt .lead .one{margin-top:10px;font-size:15px}
+  .zt .q{margin-top:10px;font-size:20px}
+  .zt .figs{margin-top:14px;padding-top:10px;gap:10px;grid-template-columns:1fr 1fr}
+  .zt .figs>div>b{font-size:20px}
+  .aa-ph li{font-size:11.5px}.aa-ph li b{font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){.zt .q{opacity:1;transform:none}}
+/* phone: the posts wall fills the screen, so its caption keeps to the point and stays clear of the last row */
+@media (max-width:760px){.fp-model .st .dsk{display:none}.fp-model .st[data-s="5"] .spec{display:none}}
 </style>
 <noscript><style>.fp-pin{height:auto!important}.fp-stick{position:static;height:auto;overflow:visible}.fp-reel .ly{position:relative;height:70vh}.fp-model canvas,.fp-model .veil,.fp-ticks,.fp-cue,.fp-bar{display:none}.fp-model .intro{position:static;transform:none;padding:60px var(--g) 20px}.fp-model .st{position:static;opacity:1;transform:none;width:auto;padding:24px var(--g) 8px}.fp-built{position:static;opacity:1;transform:none;width:auto;max-width:720px;margin:0 var(--g) 24px}.fp-model .chap{position:static;display:block;padding:0 var(--g)}.fp-hero h1,.fp-hero .row{animation:none}.fp-built{visibility:visible;height:auto;background:none}.fp-built .fr{position:relative;inset:auto;aspect-ratio:16/9}.fp-built .fr::after{display:none}.fp-built .fp-lab,.fp-model .kind{position:static;text-align:left;margin-top:8px}@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{font-size:14px;padding:6px 8px}}button[data-film].fp-play{display:none}button[data-film]{pointer-events:none;cursor:default}button[data-film] .go{display:none}.fp-nojs{display:block;margin-top:14px}.fp-built .fr{aspect-ratio:auto}.fp-built .fr video{position:static;width:100%;height:auto;transform:none}</style></noscript>
 </head>
@@ -166,15 +203,56 @@ body.fp.aiaasc .fp-hero .v,body.fp.aiaasc .fp-reel .ly video,body.fp.aiaasc .fp-
   </div>
 </section>
 
+<!-- 3 · from brief to result: six beats from the approved storyboard (THINKING-AIAASC-14-Oct), 15 Oct -->
+<section class="zb-hd" aria-labelledby="zb-t"><h2 id="zb-t">From brief <b class="tw">to result.</b></h2></section>
+
+<!-- 01 · the problem: our proposal's cover holds; the audit's two lines come up beside it -->
+<section class="fp-pin zt z1" style="--n:1.8;--ar:1000/562" aria-label="01, the problem: an American body, seen as a follower">
+  <div class="fp-stick">
+    <div class="lead"><span class="fp-lab"><b>01</b> · The problem</span><h2>An American body, <b class="tw">seen as a follower.</b></h2><p class="one">A New York association that accredits schools outside the US. Our audit, before any design:</p>
+      <p class="q">“Dated, needs an uplift.”<small>Its brand · proposal, p. 6</small></p>
+      <p class="q">“Followers rather than leaders.”<small>Its standing · proposal, p. 10</small></p>
+      <div class="figs"><div><b>Nov 2020</b>our audit, before any design</div></div></div>
+    <figure class="pic"><img src="a/p/mp-1.webp" width="1000" height="562" alt="The cover of our proposal: AiAA strategic marketing proposal 2021/2022, AntBrush" decoding="async"><figcaption class="fp-lab">Our strategic marketing proposal · 14 November 2020</figcaption></figure>
+  </div>
+</section>
+
+<!-- 02 to 05 · the page's own 3D, its stops in the story's order: the plan, the idea, the system, the campaigns -->
+<section class="fp-pin fp-model" style="--n:12.2" aria-label="From brief to result, in 3D: the plan, the idea, the system, the campaigns">
+  <div class="fp-stick">
+    <canvas aria-hidden="true"></canvas>
+    <div class="veil"></div>
+    <span class="fp-lab chap"><b>From brief to result</b><span class="x"> · the plan, the idea, the system, the campaigns</span></span>
+    <span class="fp-lab kind"><b>3D model</b><span class="x"> · made for this portfolio</span></span>
+    <div class="intro"><span class="fp-lab"><b>02</b> · The plan</span><h2>Before any logo,<br><b class="tw">a plan.</b></h2><p>Then the idea, the system and the campaigns, in 3D.</p></div>
+    <div class="st" data-s="0"><span class="fp-lab"><b>02</b> · The plan</span><h3>American education, <b class="tw">to the world.</b></h3><p>Before any logo, a plan: who to reach, where first, and in what order.</p><div class="spec"><span>Markets first<b>7</b></span><span>Audiences<b>4</b></span></div><ol class="aa-ph"><li><b>Phase 1</b>Jan 2021 · rebrand, message, positioning</li><li><b>Phase 2</b>Apr 2021 · outreach and conversion</li><li><b>Phase 3</b>Sept 2021 · loyalty and sustainability</li></ol></div>
+    <div class="st" data-s="1"><span class="fp-lab"><b>03</b> · The idea</span><h3>A for <b class="tw">first.</b></h3><p>A is the first letter. The idea: the association as the first in its field.</p></div>
+    <div class="st" data-s="2"><span class="fp-lab"><b>03</b> · The idea</span><h3>Rebranded from <b class="tw">the American flag.</b></h3><p>Its blue and red; an A for first; a star for excellence; a red line reaching for it.</p><div class="spec"><span>The colors of the American flag<b>Blue + red</b></span><span>First · excellence<b>A · ★</b></span></div></div>
+    <div class="st" data-s="3"><span class="fp-lab"><b>04</b> · The system</span><h3>One book of rules, <b class="tw">in every piece.</b></h3><p>The toolkit set the colours, the type and every piece: stationery, ads, banners, signs, gifts. The pages turn.</p><div class="spec"><span>Dark blue · #283473<b>2757 C</b></span><span>Red · #dc2034<b>1795 C</b></span></div></div>
+    <div class="st" data-s="4"><span class="fp-lab"><b>04</b> · The system</span><h3>At every event</h3><p>Its banner, roll-ups and ring banner, from the same book.</p></div>
+    <div class="st" data-s="5"><span class="fp-lab"><b>05</b> · The campaigns</span><h3><span class="dsk">Then the campaigns: </span><b class="tw">It’s time.</b></h3><p>Back to school in eight posts, two films on what accreditation gives, and a thank-you to teachers.</p><div class="spec"><span>Posts, back to school<b>8</b></span><span>Films<b>4</b></span></div></div>
+    <div class="fp-built native sqf" data-b="5"><div class="fr"><video muted playsinline loop preload="none" poster="../../media/films/aiaasc-school-poster.jpg" data-src="../../media/films/aiaasc-school-720.mp4" data-poster="../../media/films/aiaasc-school-poster.jpg"></video></div><div class="fp-lab"><span><b>Released · back to school, 2021</b></span><span>Our film, at its own size</span></div></div>
+  </div>
+</section>
+
+<!-- 06 · the result: the logo animation from our films plays whole -->
+<section class="fp-pin zt z6" style="--n:1.4;--ar:16/9;--mw:1280px" aria-label="06, the result: run from Dubai, 2020 to 2022">
+  <div class="fp-stick">
+    <div class="lead"><span class="fp-lab"><b>06</b> · The result</span><h2>Run from Dubai, <b class="tw">2020 to 2022.</b></h2><p class="one">I ran its brand from Dubai: the plan, the rebrand, the toolkit, the films and the campaigns.</p>
+      <div class="figs"><div><b>Exclusive agent</b>for marketing, promotion, advertising and publicity</div><div><b>29 Jan 2021</b>agreement signed</div></div></div>
+    <figure class="pic"><video muted playsinline loop preload="none" data-auto poster="a/logo-anim-poster.webp" data-src="a/logo-anim.mp4" aria-label="The logo animation from our films: the A lands, the red line rises, the star arrives, then S and C"></video><figcaption class="fp-lab">The logo animation · the opening of our film for colleges, 2021</figcaption></figure>
+  </div>
+</section>
+
 <!-- 3 · the plan, as we presented it: six pages of the proposal, whole, at once -->
 <section class="aa-set" aria-label="The plan, November 2020">
   <div class="hd">
-    <span class="fp-lab"><b>01</b> · The plan · our strategic marketing proposal, 14 November 2020</span>
+    <span class="fp-lab"><b>The plan</b> · our strategic marketing proposal, 14 November 2020</span>
     <h2>We began with a plan, <b class="tw">not a logo.</b></h2>
     <div class="nums"><div><b>7</b>markets first, from the UAE to Egypt and North Africa</div><div><b>4</b>audiences: ministries, teachers, students and parents, partners</div><div><b>3</b>phases: rebrand and position, reach out, keep</div></div>
   </div>
   <div class="grid">
-    <figure class="ph1"><img src="a/p/mp-1.webp" width="1000" height="562" alt="The cover of our proposal: AiAA strategic marketing proposal 2021/2022, AntBrush" loading="lazy" decoding="async"><figcaption><b>The proposal</b>Our plan for them, before any drawing.</figcaption></figure>
+    <figure class="ph1"><img src="a/p/mp-11.webp" width="1000" height="562" alt="Executive summary: a vision to become a global landmark for quality education and accreditation" loading="lazy" decoding="async"><figcaption><b>The vision</b>“A global landmark for quality education and accreditation.”</figcaption></figure>
     <figure><img src="a/p/mp-8.webp" width="1000" height="562" alt="Communication: a barcode whose bars read merchandise, brand, advertise, promotion, analysis, product and symbol" loading="lazy" decoding="async"><figcaption><b>One code</b>Brand, advertising, promotion and product, read as one.</figcaption></figure>
     <figure><img src="a/p/mp-10.webp" width="1000" height="562" alt="Strengths, weaknesses, opportunities and tactics" loading="lazy" decoding="async"><figcaption><b>Where it stood</b>“Followers rather than leaders.”</figcaption></figure>
     <figure><img src="a/p/mp-12.webp" width="1000" height="562" alt="Target: seven markets and the audiences" loading="lazy" decoding="async"><figcaption><b>Who and where</b>Seven markets first; four audiences.</figcaption></figure>
@@ -185,7 +263,7 @@ body.fp.aiaasc .fp-hero .v,body.fp.aiaasc .fp-reel .ly video,body.fp.aiaasc .fp-
 <!-- 4 · the idea, as we presented it: six pages of the rebranding presentation, whole, at once -->
 <section class="aa-set" aria-label="The idea, 26 March 2021">
   <div class="hd">
-    <span class="fp-lab"><b>02</b> · The idea · our rebranding presentation, 26 March 2021</span>
+    <span class="fp-lab"><b>The idea</b> · our rebranding presentation, 26 March 2021</span>
     <h2>Alpha, a star, <b class="tw">the flag.</b></h2>
     <p>Blue and red, in our own words: “the colors of the American flag to capture the reputation and quality of the American Education.”</p>
   </div>
@@ -199,28 +277,10 @@ body.fp.aiaasc .fp-hero .v,body.fp.aiaasc .fp-reel .ly video,body.fp.aiaasc .fp-
   </div>
 </section>
 
-<!-- 5 · the idea as real-time 3D: Alpha, the flag, the world, the system, the event set, the campaign -->
-<section class="fp-pin fp-model" style="--n:12.2" aria-label="The identity, in 3D: Alpha, the flag, the world, the system, the event set, the campaign">
-  <div class="fp-stick">
-    <canvas aria-hidden="true"></canvas>
-    <div class="veil"></div>
-    <span class="fp-lab chap"><b>03</b> · The identity<span class="x"> · Alpha, the flag, the world, the system, the campaign</span></span>
-    <span class="fp-lab kind"><b>3D model</b><span class="x"> · made for this portfolio</span></span>
-    <div class="intro"><span class="fp-lab"><b>03</b> · The identity</span><h2>From the first letter,<br><b class="tw">to the world.</b></h2><p>The idea and the plan, in 3D.</p></div>
-    <div class="st" data-s="0"><span class="fp-lab"><b>01</b> / 06</span><h3>Alpha</h3><p>A is the first letter. The idea: the association as the first in its field.</p></div>
-    <div class="st" data-s="1"><span class="fp-lab"><b>02</b> / 06</span><h3>From the flag</h3><p>A star leaves the blue field and a red stripe peels off the cloth: together they make the mark. Its four letters became six.</p></div>
-    <div class="st" data-s="2"><span class="fp-lab"><b>03</b> / 06</span><h3>To the world</h3><p>The plan: an American standard for schools, from the United States to seven markets first.</p><div class="spec"><span>Markets in the plan<b>7</b></span></div></div>
-    <div class="st" data-s="3"><span class="fp-lab"><b>04</b> / 06</span><h3>The system</h3><p>One book of rules for everything the association prints, hangs and gives. The pages turn.</p></div>
-    <div class="st" data-s="4"><span class="fp-lab"><b>05</b> / 06</span><h3>At every event</h3><p>Its banner, roll-ups and ring banner, from the same book.</p></div>
-    <div class="st" data-s="5"><span class="fp-lab"><b>06</b> / 06</span><h3>It’s time</h3><p>Back to school: eight posts, one line. Then the film.</p></div>
-    <div class="fp-built native sqf" data-b="5"><div class="fr"><video muted playsinline loop preload="none" poster="../../media/films/aiaasc-school-poster.jpg" data-src="../../media/films/aiaasc-school-720.mp4" data-poster="../../media/films/aiaasc-school-poster.jpg"></video></div><div class="fp-lab"><span><b>Released · back to school, 2021</b></span><span>Our film, at its own size</span></div></div>
-  </div>
-</section>
-
 <!-- 6 · online: the teaser for the launch, and the home page design -->
 <section class="aa-web" aria-label="Online: the launch teaser and the website design">
   <div class="tx">
-    <span class="fp-lab"><b>04</b> · Online · 2021</span>
+    <span class="fp-lab"><b>Online</b> · 2021</span>
     <h2>Shooting <b class="tw">soon.</b></h2>
     <p>Our teaser for the launch: the red line rises over the earth to its star. And our design for the website’s home page.</p>
   </div>
@@ -239,7 +299,7 @@ body.fp.aiaasc .fp-hero .v,body.fp.aiaasc .fp-reel .ly video,body.fp.aiaasc .fp-
 
 <!-- 8 · for teachers and children: the programs, by date -->
 <section class="aa-prog" aria-label="For teachers and children">
-  <span class="fp-lab"><b>05</b> · For teachers and children</span>
+  <span class="fp-lab"><b>For teachers and children</b></span>
   <h2>Not only a brand. <b class="tw">Work for the people in the school.</b></h2>
   <ol class="tl">
     <li><span class="fp-lab">April 2021</span><b>Child protection</b>A training program, proposed to the UAE Ministry of Education.</li>
@@ -254,7 +314,7 @@ body.fp.aiaasc .fp-hero .v,body.fp.aiaasc .fp-reel .ly video,body.fp.aiaasc .fp-
 
 <!-- 9 · the result: still in use -->
 <section class="fp-res" aria-label="The result">
-  <div class="hd"><h2>Still theirs.</h2><span class="fp-lab"><b>06</b> · The result</span></div>
+  <div class="hd"><h2>Still theirs.</h2><span class="fp-lab"><b>Today</b></span></div>
   <div class="nums"><div><b>5 years on</b><span>the association still signs with this mark</span></div></div>
   <figure class="shot mk"><img src="a/3d/mark.svg" alt="The AIAASC mark" loading="lazy" decoding="async"><figcaption class="fp-lab">On aiaasc.org today</figcaption></figure>
   <blockquote class="aa-q"><p>“This collaboration was made possible by the efforts of AntBrush Founder, Antoni Zaki, another one of our preferred partners.”</p><span class="fp-lab"><b>In their words</b> · the association’s announcement of a new partnership, July 2021</span></blockquote>
@@ -280,6 +340,7 @@ body.fp.aiaasc .fp-hero .v,body.fp.aiaasc .fp-reel .ly video,body.fp.aiaasc .fp-
   <nav aria-label="Footer"><a href="../../work/">Work</a><a href="../../about/">About</a><a href="../../contact/">Contact</a></nav>
 </div></footer>
 <script src="../../assets/fp/fp.js?v=18" defer></script>
-<script type="module" src="aa.js?v=20"></script>
+<script src="zb.js?v=1" defer></script>
+<script type="module" src="aa.js?v=22"></script>
 </body>
 </html>

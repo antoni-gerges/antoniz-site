@@ -28,6 +28,8 @@ if (S) boot();
 async function boot() {
   const { station, std, box, renderer } = S, E = FP.ease, seg = FP.seg, none = { drift: .4, keyK: .6 }, PH = FP.phone();
   renderer.localClippingEnabled = true; renderer.setClearColor(INK, 1);
+  const C_INK = new T.Color(INK), C_BLUE = new T.Color(0x141a3c), C_NOW = new T.Color(); let roomK = -1;
+  const room = k => { if (Math.abs(k - roomK) < .004) return; roomK = k; C_NOW.copy(C_INK).lerp(C_BLUE, k); renderer.setClearColor(C_NOW, 1); if (S.scene.fog) S.scene.fog.color.copy(C_NOW); };
   const svg = await (await fetch('a/3d/mark.svg')).text();
   const BASE = 408.6, TOP = 364.76, XC = 421.82, K = 2.44 / (BASE - TOP), PL_H = 1.1, PL_D = 1.0, LET_D = .26, LH = 2.7;
   const mx = X => (X - XC) * K, my = Y => (BASE - Y) * K + PL_H;
@@ -42,6 +44,32 @@ async function boot() {
     g.addColorStop(0, 'rgba(235,242,255,.95)'); g.addColorStop(.12, 'rgba(190,210,255,.45)'); g.addColorStop(.4, 'rgba(120,150,255,.12)'); g.addColorStop(1, 'rgba(0,0,0,0)'); x.fillStyle = g; x.fillRect(0, 0, 256, 256);
     if (streaks) { x.globalCompositeOperation = 'lighter'; [[0, 1], [Math.PI / 2, .8], [Math.PI / 4, .28], [-Math.PI / 4, .28]].forEach(([a, k]) => { x.save(); x.translate(128, 128); x.rotate(a); const l = x.createLinearGradient(-128, 0, 128, 0); l.addColorStop(0, 'rgba(160,190,255,0)'); l.addColorStop(.5, 'rgba(235,242,255,' + k + ')'); l.addColorStop(1, 'rgba(160,190,255,0)'); x.fillStyle = l; x.fillRect(-128, -1.6, 256, 3.2); x.restore(); }); }
     return new T.CanvasTexture(c); };
+
+  /* 0 · to the world: the plan (From brief to result, 02). It now comes first, before the idea, as the plan came before any logo. The ground is the association's own dotted world map (from its back-to-school post "It's time to impact
+     the WORLD"), laid flat. The red line leaves the United States and lands on the seven markets named in our strategic marketing proposal
+     of November 2020: the UAE, Saudi Arabia, Kuwait, Oman, Bahrain, Qatar, Egypt and North Africa.
+     Places come from real coordinates (each market's capital; New York for the association). The drawn map was fitted to the real world by
+     least squares on eight coast points it shows clearly (Kanyakumari, Cape Agulhas, the tip of Florida, Cabo Branco, Cap-Vert, Cape Palmas,
+     Cape York, Steep Point): x = 4.3406 * lon + 722.52, y = -5.3225 * lat + 467.98 in the map's 1500 x 760 pixels, within 5 px around the
+     Atlantic and the Indian Ocean. Bahrain and Qatar sit 100 km apart, so their two pins nearly touch, as they do on a real map. */
+  const s1 = station(-100, Object.assign({}, none, { noMirror: true, c: [PH ? -.4 : .6, .5, -.5], rx: 5.2, ry: 1.9, yaw: -.42, pitch: .52, drift: PH ? .22 : .8, w: 1.25, fx: .96, fy: .62, ox: -.02, oy: .1, rxp: 4.6, fxp: .98, fyp: .4, oxp: 0, oyp: .13, yawp: -.1 }));
+  const MP = (px, py) => [(px - 750) * .011, (py - 380) * .011];
+  { const mapT = S.tex('world.webp'), ground = new T.Mesh(new T.PlaneGeometry(1500 * .011, 760 * .011), new T.MeshBasicMaterial({ map: mapT, transparent: true, depthWrite: false })); ground.rotation.x = -Math.PI / 2; ground.position.y = .03; ground.renderOrder = 3; s1.g.add(ground);
+    const slab = new T.Mesh(new T.BoxGeometry(1500 * .011 + .8, .1, 760 * .011 + .8), std({ color: 0x1b2157, roughness: .7 })); slab.position.y = -.03; slab.receiveShadow = true; s1.g.add(slab); }
+  const GEO = (lat, lon) => MP(4.3406 * lon + 722.52, -5.3225 * lat + 467.98);
+  const HOME = GEO(40.71, -74.01) /* New York */, MARKETS = [[30.04, 31.24] /* Cairo: Egypt and North Africa */, [24.71, 46.68] /* Riyadh */, [29.38, 47.98] /* Kuwait City */, [26.23, 50.59] /* Manama */,
+    [25.29, 51.53] /* Doha */, [24.47, 54.37] /* Abu Dhabi */, [23.59, 58.41] /* Muscat */].map(p => GEO(p[0], p[1]));
+  const starShape = (() => { const sh = new T.Shape(); for (let k = 0; k < 10; k++) { const a = Math.PI / 2 + k * Math.PI / 5, r = k % 2 ? .382 : 1; k ? sh.lineTo(Math.cos(a) * r, Math.sin(a) * r) : sh.moveTo(Math.cos(a) * r, Math.sin(a) * r); } sh.closePath(); return sh; })();
+  const starGeo = new T.ExtrudeGeometry(starShape, { depth: .25, bevelEnabled: false }); starGeo.translate(0, 0, -.125);
+  const home = new T.Mesh(starGeo, std({ color: 0xffffff, roughness: .35, emissive: 0xffffff, emissiveIntensity: .7 })); home.scale.setScalar(.22); home.position.set(HOME[0], .62, HOME[1]); s1.g.add(home);
+  { const stem = new T.Mesh(new T.CylinderGeometry(.008, .008, .5, 6), std({ color: 0xcfd3e6 })); stem.position.set(HOME[0], .25, HOME[1]); s1.g.add(stem); }
+  const arcs = MARKETS.map((m, n) => { const a = new T.Vector3(HOME[0], .62, HOME[1]), b = new T.Vector3(m[0], .44, m[1]), mid = a.clone().add(b).multiplyScalar(.5); mid.y = 2.0 + n * .22; mid.z -= .5 - n * .16;
+      const tube = new T.Mesh(new T.TubeGeometry(new T.QuadraticBezierCurve3(a, mid, b), 90, .018, 8, false), new T.MeshBasicMaterial({ color: 0xd60f29 })); s1.g.add(tube);
+      const pin = new T.Mesh(starGeo, std({ color: 0xd60f29, roughness: .45, emissive: 0xd60f29, emissiveIntensity: .25 })); pin.position.copy(b); s1.g.add(pin);
+      const stem = new T.Mesh(new T.CylinderGeometry(.006, .006, .44, 6), std({ color: 0xcfd3e6 })); stem.position.set(m[0], .22, m[1]); s1.g.add(stem);
+      return { tube, pin, stem, n, N: tube.geometry.index.count }; });
+  const phs = [].slice.call(sec.querySelectorAll('.aa-ph li'));
+  const world = (t, time) => { phs.forEach((e, n) => { const on = t > .3 + n * .2; if (e.classList.contains('on') !== on) e.classList.toggle('on', on); }); home.rotation.y = time * .6; arcs.forEach(a => { const u = E(seg(t, .04 + a.n * .07, .04 + a.n * .07 + .3)), k = E(seg(t, .26 + a.n * .07, .38 + a.n * .07)); a.tube.geometry.setDrawRange(0, Math.floor(a.N * u / 6) * 6); a.pin.scale.setScalar(Math.max(.001, k * .085)); a.pin.rotation.y = time * .8 + a.n; a.stem.scale.y = Math.max(.001, k); a.stem.position.y = .22 * k; }); };
 
   /* 0 · Alpha: the first plate of our rebranding presentation (26 March 2021) is a tunnel of A-shaped frames with a star of light at its
      end: "A, the first letter... AIAASC as the alpha in educational standards". Here it is a real tunnel: scroll and you travel through it.
@@ -91,9 +119,9 @@ async function boot() {
   const fcv = document.createElement('canvas'); fcv.width = 1900; fcv.height = 1000; const fx = fcv.getContext('2d');
   const flagTex = new T.CanvasTexture(fcv); flagTex.colorSpace = T.SRGBColorSpace; flagTex.anisotropy = 16;
   let flagKey = '';
-  const paintFlag = (gone, starGone) => { const key = Math.round(gone * 30) + '|' + starGone; if (key === flagKey) return; flagKey = key;
+  const paintFlag = (gone, starGone) => { const key = Math.round(gone * 90) + '|' + starGone; if (key === flagKey) return; flagKey = key;
     for (let i = 0; i < 13; i++) { fx.fillStyle = i % 2 ? '#f3f2ee' : '#b31329'; fx.fillRect(0, i * SHT, 1900, SHT + 1); }
-    if (gone > 0) { fx.fillStyle = 'rgba(243,242,238,' + Math.min(1, gone).toFixed(3) + ')'; fx.fillRect(0, STRIPE * SHT, 1900, SHT + 1); }
+    if (gone > 0) { fx.fillStyle = '#f3f2ee'; fx.fillRect(0, STRIPE * SHT, Math.min(1, gone + .02) * 1900, SHT + 1); }
     const cw = 760, ch = SHT * 7; fx.fillStyle = '#29306b'; fx.fillRect(0, 0, cw, ch); fx.fillStyle = '#f3f2ee';
     const st = (cx, cy, r) => { fx.beginPath(); for (let k = 0; k < 10; k++) { const a = -Math.PI / 2 + k * Math.PI / 5, rr = k % 2 ? r * .382 : r; fx.lineTo(cx + Math.cos(a) * rr, cy + Math.sin(a) * rr); } fx.closePath(); fx.fill(); };
     for (let r = 0; r < 9; r++) { const n = r % 2 ? 5 : 6; for (let c = 0; c < n; c++) { if (starGone && r === SROW && c === SCOL) continue; st((cw / 12) * (r % 2 ? 2 + c * 2 : 1 + c * 2), (ch / 10) * (r + 1), 23); } }
@@ -131,37 +159,28 @@ async function boot() {
     const su = E(seg(t, .12, .56));
     { const e = star.userData, k = e.k, arc = Math.sin(su * Math.PI), z0 = fz + wz(SFX, SFY, time, amp) + .03; star.position.set(FX + SFX + (e.end.x - FX - SFX) * su, FY + SFY + (e.end.y - FY - SFY) * su + arc * .5, z0 + (e.end.z - z0) * su + arc * 3.2);
       const sc = (starR / e.r0) + (k - starR / e.r0) * su; star.scale.setScalar(sc); star.rotation.z = (1 - su) * 3.4; star.visible = t > .12; const cu = E(seg(su, .08, .5)); star.material.color.setRGB(.953 + (.84 - .953) * cu, .949 + (.06 - .949) * cu, .933 + (.16 - .933) * cu, T.SRGBColorSpace); star.material.emissiveIntensity = .1 * cu; }
-    /* the stripe: peels off the cloth and bends into the line; the stripe's own place on the cloth goes empty as it leaves */
-    const u = E(seg(t, .2, .62));
-    { const arc = Math.sin(u * Math.PI); for (let n = 0; n <= NR; n++) { const v = n / NR, soft = Math.min(1, v / .12, (1 - v) / .12), lift = Math.min(1, u * 4);
-        for (let s = 0; s < 2; s++) { const ax = ribA[n * 4 + s * 2], ay = ribA[n * 4 + s * 2 + 1], o = n * 6 + s * 3, Ax = FX + ax, Ay = FY + ay, Az = fz + wz(ax, ay, time, amp) + .012;
-          let X = Ax + (ribB[o] - Ax) * u, Y = Ay + (ribB[o + 1] - Ay) * u + arc * (.3 + v * .5) + arc * Math.sin(v * 7 - time * 2.6) * .12, Z = Az + (ribB[o + 2] - Az) * u + arc * (1.2 + v * 1.4) + arc * Math.sin(v * 9 - time * 3.2) * .22;
-          ribPos[o] = X; ribPos[o + 1] = Y; ribPos[o + 2] = Z; }
-        /* the ends soften to points as it lifts, so it reads as cloth, not a cut plank */
-        if (lift > 0) { const o = n * 6, mid = (ribPos[o + 1] + ribPos[o + 4]) / 2, k2 = 1 - lift * (1 - (.3 + .7 * soft)) * (1 - u * .85); ribPos[o + 1] = mid + (ribPos[o + 1] - mid) * k2; ribPos[o + 4] = mid + (ribPos[o + 4] - mid) * k2; } }
-      ribGeo.attributes.position.needsUpdate = true; ribGeo.computeVertexNormals(); ribbon.visible = t > .2 && u < 1; swoosh.visible = u >= 1;
-      REDR.color.copy(cA).lerp(cB, E(seg(u, 0, .4))); REDR.emissiveIntensity = .12 * E(seg(u, 0, .4)); }
-    paintFlag(t > .2 ? Math.min(1, u * 5) : 0, t > .125);
+    /* the stripe: it peels off the cloth like tape, from its left end, and flies as cloth: each part of it lifts in turn, the free part
+       arcs, ripples along its length and turns its face over as it travels (a twist about its own length), then settles exactly on the
+       swoosh's outline. Never a flat bar: no two parts of it move together until it lands. The stripe's place on the cloth empties
+       behind the peel. */
+    const ur = seg(t, .2, .66), front = Math.min(1, ur * 2.82);
+    { for (let n = 0; n <= NR; n++) { const v = n / NR, uv = E(Math.min(1, Math.max(0, ur * 1.55 - v * .55))), arc = Math.sin(uv * Math.PI), soft = Math.min(1, v / .12, (1 - v) / .12), o = n * 6;
+        for (let s = 0; s < 2; s++) { const ax = ribA[n * 4 + s * 2], ay = ribA[n * 4 + s * 2 + 1], q = o + s * 3, Ax = FX + ax, Ay = FY + ay, Az = fz + wz(ax, ay, time, amp) + .012;
+          ribPos[q] = Ax + (ribB[q] - Ax) * uv; ribPos[q + 1] = Ay + (ribB[q + 1] - Ay) * uv; ribPos[q + 2] = Az + (ribB[q + 2] - Az) * uv; }
+        if (arc > 0) {
+          let cx = (ribPos[o] + ribPos[o + 3]) / 2, cy = (ribPos[o + 1] + ribPos[o + 4]) / 2, cz = (ribPos[o + 2] + ribPos[o + 5]) / 2, hx = ribPos[o] - cx, hy = ribPos[o + 1] - cy, hz = ribPos[o + 2] - cz;
+          cx += arc * Math.sin(v * 5 - time * 1.7) * .12;
+          cy += arc * (.35 + v * .45) + arc * Math.sin(v * 6.5 - time * 2.4) * .28;
+          cz += arc * (1.1 + v * 1.3) + arc * Math.sin(v * 8 - time * 3.0) * .42;
+          const th = arc * (1.6 * Math.sin(v * Math.PI * 1.3 + .4) + .5 * Math.sin(time * 1.5 + v * 4)), c = Math.cos(th), sn = Math.sin(th), kw = 1 - arc * (1 - (.35 + .65 * soft)) * .9;
+          const ty = (hy * c - hz * sn) * kw, tz = (hy * sn + hz * c) * kw; hx *= kw;
+          ribPos[o] = cx + hx; ribPos[o + 1] = cy + ty; ribPos[o + 2] = cz + tz; ribPos[o + 3] = cx - hx; ribPos[o + 4] = cy - ty; ribPos[o + 5] = cz - tz; } }
+      ribGeo.attributes.position.needsUpdate = true; ribGeo.computeVertexNormals(); ribbon.visible = ur > 0 && ur < 1; swoosh.visible = ur >= 1;
+      const cu = E(seg(ur, 0, .4)); REDR.color.copy(cA).lerp(cB, cu); REDR.emissiveIntensity = .12 * cu; }
+    /* the room turns to the brand's dark blue while the mark forms (storyboard frame 3) */
+    room(E(seg(t, .55, .9)));
+    paintFlag(t > .2 ? front : 0, t > .125);
   };
-
-  /* 2 · to the world: the plan. The ground is the association's own dotted world map (from its back-to-school post "It's time to impact
-     the WORLD"), laid flat. The red line leaves the United States and lands on the seven markets named in our strategic marketing proposal
-     of November 2020: the UAE, Saudi Arabia, Kuwait, Oman, Bahrain, Qatar, Egypt and North Africa. Places are set by eye on a drawn map. */
-  const s1 = station(42, Object.assign({}, none, { noMirror: true, c: [PH ? -.4 : .6, .5, -.5], rx: 5.2, ry: 1.9, yaw: -.42, pitch: .52, drift: PH ? .22 : .8, w: 1.25, fx: .96, fy: .62, ox: -.02, oy: .1, rxp: 4.6, fxp: .98, fyp: .4, oxp: 0, oyp: .13, yawp: -.1 }));
-  const MP = (px, py) => [(px - 750) * .011, (py - 380) * .011];
-  { const mapT = S.tex('world.webp'), ground = new T.Mesh(new T.PlaneGeometry(1500 * .011, 760 * .011), new T.MeshBasicMaterial({ map: mapT, transparent: true, depthWrite: false })); ground.rotation.x = -Math.PI / 2; ground.position.y = .03; ground.renderOrder = 3; s1.g.add(ground);
-    const slab = new T.Mesh(new T.BoxGeometry(1500 * .011 + .8, .1, 760 * .011 + .8), std({ color: 0x1b2157, roughness: .7 })); slab.position.y = -.03; slab.receiveShadow = true; s1.g.add(slab); }
-  const HOME = MP(432, 232), MARKETS = [[850, 338], [932, 368], [953, 334], [1002, 384], [966, 352], [975, 362], [992, 368]].map(p => MP(p[0], p[1]));
-  const starShape = (() => { const sh = new T.Shape(); for (let k = 0; k < 10; k++) { const a = Math.PI / 2 + k * Math.PI / 5, r = k % 2 ? .382 : 1; k ? sh.lineTo(Math.cos(a) * r, Math.sin(a) * r) : sh.moveTo(Math.cos(a) * r, Math.sin(a) * r); } sh.closePath(); return sh; })();
-  const starGeo = new T.ExtrudeGeometry(starShape, { depth: .25, bevelEnabled: false }); starGeo.translate(0, 0, -.125);
-  const home = new T.Mesh(starGeo, std({ color: 0xffffff, roughness: .35, emissive: 0xffffff, emissiveIntensity: .7 })); home.scale.setScalar(.22); home.position.set(HOME[0], .62, HOME[1]); s1.g.add(home);
-  { const stem = new T.Mesh(new T.CylinderGeometry(.008, .008, .5, 6), std({ color: 0xcfd3e6 })); stem.position.set(HOME[0], .25, HOME[1]); s1.g.add(stem); }
-  const arcs = MARKETS.map((m, n) => { const a = new T.Vector3(HOME[0], .62, HOME[1]), b = new T.Vector3(m[0], .44, m[1]), mid = a.clone().add(b).multiplyScalar(.5); mid.y = 2.0 + n * .22; mid.z -= .5 - n * .16;
-      const tube = new T.Mesh(new T.TubeGeometry(new T.QuadraticBezierCurve3(a, mid, b), 90, .018, 8, false), new T.MeshBasicMaterial({ color: 0xd60f29 })); s1.g.add(tube);
-      const pin = new T.Mesh(starGeo, std({ color: 0xd60f29, roughness: .45, emissive: 0xd60f29, emissiveIntensity: .25 })); pin.position.copy(b); s1.g.add(pin);
-      const stem = new T.Mesh(new T.CylinderGeometry(.006, .006, .44, 6), std({ color: 0xcfd3e6 })); stem.position.set(m[0], .22, m[1]); s1.g.add(stem);
-      return { tube, pin, stem, n, N: tube.geometry.index.count }; });
-  const world = (t, time) => { home.rotation.y = time * .6; arcs.forEach(a => { const u = E(seg(t, .04 + a.n * .07, .04 + a.n * .07 + .3)), k = E(seg(t, .26 + a.n * .07, .38 + a.n * .07)); a.tube.geometry.setDrawRange(0, Math.floor(a.N * u / 6) * 6); a.pin.scale.setScalar(Math.max(.001, k * .13)); a.pin.rotation.y = time * .8 + a.n; a.stem.scale.y = Math.max(.001, k); a.stem.position.y = .22 * k; }); };
 
   /* 3 · the system: the brand toolkit as a book. Each sheet is one whole page of the toolkit of 18 August 2021; the pages turn.
      On a desktop it opens like a book and both pages of each spread sit inside the frame. On a phone the same book is bound at the top,
@@ -175,15 +194,22 @@ async function boot() {
     if (PH) cover.position.set(0, 0, -.04); else cover.position.set(0, BH2 / 2, -.04); cover.castShadow = true; book.add(cover);
     if (PH) { const bar = new T.Mesh(new T.CylinderGeometry(.03, .03, BW + .2, 12), std({ color: 0xb9bcc6, roughness: .3, metalness: .8 })); bar.rotation.z = Math.PI / 2; bar.position.set(0, 0, .03); book.add(bar); }
     S.blob(s2.g, BKX, .6, PH ? BW + 1 : BW * 2 + 1, 2.2, .7); }
+  /* the book has thickness (storyboard frame 4): a block of pages under each half, paper-white at its edges, so it reads as a bound book, not two sheets */
+  const PBK = .1;
+  { const edge = std({ color: 0xe9e7e1, roughness: .85 }), top = std({ color: 0xf4f3ef, roughness: .9 }), mat = [edge, edge, edge, edge, top, edge];
+    if (PH) { const blk = new T.Mesh(new T.BoxGeometry(BW - .03, BH2 * 2 - .03, PBK), mat); blk.position.set(0, 0, PBK / 2 - .015); blk.castShadow = true; book.add(blk); }
+    else [-1, 1].forEach(sx => { const blk = new T.Mesh(new T.BoxGeometry(BW - .05, BH2 - .03, PBK), mat); blk.position.set(sx * (BW / 2 + .01), BH2 / 2, PBK / 2 - .015); blk.castShadow = true; book.add(blk); }); }
+  /* the book opens on a real spread: the toolkit's own page 2 (its opening words on the night sky) faces the cover page, so no blank page shows */
+  { const lp = new T.Mesh(new T.PlaneGeometry(BW, BH2), new T.MeshBasicMaterial({ map: S.tex('tk-2.webp') })); if (PH) lp.position.set(0, BH2 / 2, PBK + .001); else lp.position.set(-BW / 2, BH2 / 2, PBK + .001); book.add(lp); }
   const paper = std({ color: 0x1a1f4a, roughness: .9, side: T.DoubleSide });
   /* two-sided sheets, as in a real book: the front is one page, the back is the next */
   const NS2 = Math.ceil(PAGES.length / 2), NT = PAGES.length % 2 ? NS2 - 1 : NS2, sheets = Array.from({ length: NS2 }, (_, n) => { const hinge = new T.Group(), front = new T.Mesh(new T.PlaneGeometry(BW, BH2), new T.MeshBasicMaterial({ map: S.tex('tk-' + PAGES[n * 2] + '.webp') })), back = new T.Mesh(new T.PlaneGeometry(BW, BH2), PAGES[n * 2 + 1] ? new T.MeshBasicMaterial({ map: S.tex('tk-' + PAGES[n * 2 + 1] + '.webp') }) : paper);
       if (PH) { front.position.set(0, -BH2 / 2, .002); back.position.set(0, -BH2 / 2, -.002); back.rotation.x = Math.PI; }
       else { front.position.set(BW / 2, BH2 / 2, .002); back.position.set(BW / 2, BH2 / 2, -.002); back.rotation.y = Math.PI; }
-      hinge.add(front, back); hinge.position.z = (NS2 - n) * .004; book.add(hinge); return { hinge, n }; });
+      hinge.add(front, back); hinge.position.z = PBK + (NS2 - n) * .004; book.add(hinge); return { hinge, n }; });
   /* each turning sheet has its own slot of the scroll: hold, turn, hold */
   const pagesTurn = t => sheets.forEach(sh => { const u = sh.n >= NT ? 0 : E(seg(t * NT - sh.n, .3, .62)); if (PH) sh.hinge.rotation.x = -u * Math.PI; else sh.hinge.rotation.y = -u * Math.PI;
-    sh.hinge.position.z = (u > .5 ? sh.n + 1 : (NS2 - sh.n)) * .004 + Math.sin(u * Math.PI) * .3; });
+    sh.hinge.position.z = PBK + (u > .5 ? sh.n + 1 : (NS2 - sh.n)) * .004 + Math.sin(u * Math.PI) * .3; });
 
   /* 4 · the event set: the toolkit's own long navy banner (page 61, the logo alone) on a frame, two of its roll-ups (page 62) and its
      ring banner (page 63), standing as objects. Only finished pieces: none of them carries the template words. On a phone the same pieces stand closer together, so all of them are in the frame. */
@@ -217,7 +243,7 @@ async function boot() {
     [1, 2, 3, 4, 5, 6, 7, 8].forEach((p, n) => { const c = n % COLS, r = (n / COLS) | 0, x = (c - (COLS - 1) / 2) * (FS + GAP), y = TOPY - r * (FS + GAP) + .04, fr = new T.Mesh(new T.BoxGeometry(FS + .03, FS + .03, .07), std({ color: 0x0b0c14, roughness: .4, metalness: .3 })), face = new T.Mesh(new T.PlaneGeometry(FS, FS), new T.MeshBasicMaterial({ map: S.tex('post-' + p + '.webp') }));
       fr.position.set(x, y, .06); fr.castShadow = true; face.position.set(x, y, .097); s3.g.add(fr, face); }); }
 
-  const compose = (i, l, tm) => { alpha(i === 0 ? seg(l, .04, .9) : 1, tm || 0, i === 0); logo(i < 1 ? 0 : i === 1 ? seg(l, .02, .86) : 1, tm || 0); world(i < 2 ? 0 : i === 2 ? seg(l, .02, .8) : 1, tm || 0); pagesTurn(i < 3 ? 0 : i === 3 ? seg(l, .04, .92) : 1); };
+  const compose = (i, l, tm) => { world(i === 0 ? seg(l, .02, .8) : 1, tm || 0); alpha(i === 1 ? seg(l, .04, .9) : i < 1 ? 0 : 1, tm || 0, i === 1); logo(i < 2 ? 0 : i === 2 ? seg(l, .02, .86) : 1, tm || 0); if (i !== 2) room(i === 3 ? 1 - E(seg(l, 0, .2)) : 0); pagesTurn(i < 3 ? 0 : i === 3 ? seg(l, .04, .92) : 1); };
   compose(0, 0);
   S.onFrame((time_, i, local) => compose(i, local, time_));
   if (FP.rm) FP.on(() => { const on = sec.querySelector('.st.on'); compose(on ? +on.dataset.s : 0, 1); });

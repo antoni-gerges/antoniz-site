@@ -45,6 +45,70 @@
 .zl .art .a1{transform-origin:0 0}
 /* phone: the credit picture and its caption take the full row, so the caption reads on one or two lines */
 @media (max-width:760px){.fp-cred figure{grid-column:1/-1}.fp-cred figure figcaption br{display:none}}
+/* ---- From brief to result (approved storyboard THINKING-ZEISS-14-Oct, built 15 Oct as an addition). Six screens: 01, 03, 04, 06 are new; 02 is the
+   invitations' lens reveal (.zl) and 05 is the wall-film band, both kept as they were and given their place in the story.
+   ZEISS's own corner brackets frame each picture, whole: the insight carried into how the page shows the work. ---- */
+body.fp{--zb:#2a5cc4}
+.zb-hd{padding:clamp(8px,2vh,24px) var(--g) clamp(24px,5vh,56px)}
+.zb-hd h2{font-size:clamp(40px,5.4vw,104px);line-height:.92;letter-spacing:-.04em;font-weight:300}
+.zb-br,.zb-fr:not(.mv)::after{background:linear-gradient(var(--zb),var(--zb)) 0 0/26px 2px,linear-gradient(var(--zb),var(--zb)) 0 0/2px 26px,linear-gradient(var(--zb),var(--zb)) 100% 0/26px 2px,linear-gradient(var(--zb),var(--zb)) 100% 0/2px 26px,linear-gradient(var(--zb),var(--zb)) 0 100%/26px 2px,linear-gradient(var(--zb),var(--zb)) 0 100%/2px 26px,linear-gradient(var(--zb),var(--zb)) 100% 100%/26px 2px,linear-gradient(var(--zb),var(--zb)) 100% 100%/2px 26px;background-repeat:no-repeat;pointer-events:none}
+.zb-fr{position:relative}
+.zb-fr:not(.mv)::after{content:"";position:absolute;inset:-12px}
+.zb-br{position:absolute;left:0;top:0;width:0;height:0;z-index:3;will-change:transform}
+.zt .fp-stick{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.5fr);gap:var(--g);align-items:center;padding:clamp(86px,12vh,120px) var(--g) clamp(26px,5vh,54px)}
+.zt .lead h2,.zl .lead h2,.z5 .hd h2{font-size:clamp(34px,3.7vw,64px);line-height:1;letter-spacing:-.035em;font-weight:300}
+.zt .lead>.fp-lab,.zl .lead>.fp-lab,.z5 .hd .fp-lab{display:block;margin-bottom:16px}
+.zt .lead .one,.z5 .hd .one{margin:16px 0 0;font-size:clamp(15px,1.12vw,18px);line-height:1.45;color:rgba(255,255,255,.82);max-width:24em}
+.figs{display:grid;gap:14px;margin-top:clamp(18px,3.4vh,34px);padding-top:14px;border-top:1px solid var(--line);max-width:22em}
+.figs>div{font:600 11.5px/1.35 Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.figs>div>b{display:block;font:600 clamp(20px,1.7vw,27px)/1.1 "Jost",system-ui,sans-serif;letter-spacing:-.01em;text-transform:none;color:#fff;margin-bottom:3px}
+.figs .now,.zl .lead .figs .now{display:block;margin-top:0}.figs .now b{color:#fff}
+.zt .pic{margin:0;justify-self:end;width:min(100%,calc((100svh - 230px) * var(--ar)))}
+.zt .pic img,.zt .pic video{display:block;width:100%;height:auto;aspect-ratio:var(--ar);background:#0b0b0d}
+.zt figcaption,.z4 figcaption{margin-top:10px}
+.z4 .pair{justify-self:end;width:min(100%,calc((100svh - 262px) / .731));display:grid;grid-template-columns:repeat(12,minmax(0,1fr));row-gap:16px}
+.z4 .pair figure{margin:0}.z4 .pair .d{grid-column:1/7}.z4 .pair .b{grid-column:5/13}
+.z4 .pair img,.z4 .pair video{display:block;width:100%;height:auto}
+.z4 .pair .d img{aspect-ratio:1400/1008;background:#fff}.z4 .pair .b video{aspect-ratio:16/9;background:#0b0b0d}
+.z6 .pic{position:relative;z-index:2}.z6 .pic img{transform-origin:0 0;will-change:transform}
+.z6 .endcap{position:absolute;left:0;top:0;opacity:0;z-index:3;white-space:nowrap}
+/* 02: the lens reveal keeps its scene; its frame now carries the brackets */
+.zl .zb-fr{justify-self:end;width:min(100%,calc((100svh - 190px)*1684/1191))}
+.zl .zb-fr .art{width:100%}
+/* 05: the band keeps its film, its button and its wall test; the film sits inside the gutter so the brackets can hold it */
+.z5 .hd{align-items:flex-end}
+.z5 .hd .figs{margin-top:0;min-width:15em}
+.z5 .zb-fr{margin:clamp(18px,3.4vh,40px) var(--g)}
+.z5 .zb-fr .film{margin:0}
+.z5 .lo .fp-lab{display:block;margin-bottom:12px}
+/* 04 on a desktop: the words in one row, then the drawing and the booth side by side at the same height, given the screen */
+@media (min-width:761px){
+  .z4 .fp-stick{grid-template-columns:1fr;align-content:center;row-gap:clamp(18px,3vh,30px)}
+  .z4 .lead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);column-gap:var(--g);align-items:end}
+  .z4 .lead>.fp-lab{grid-column:1/-1}
+  .z4 .lead .one{margin:0;max-width:34em}
+  .z4 .pair{justify-self:center;width:min(100%,calc((100svh - 330px) * 3.167 + 24px));grid-template-columns:minmax(0,1.389fr) minmax(0,1.778fr);column-gap:24px;row-gap:0;align-items:start}
+  .z4 .pair .d,.z4 .pair .b{grid-column:auto}
+}
+@media (max-width:760px){
+  .zt .fp-stick{grid-template-columns:1fr;align-content:center;gap:18px;padding:78px var(--g) 22px}
+  .zt .pic,.zl .zb-fr,.z4 .pair{order:-1;width:100%;justify-self:stretch}
+  .zt .lead h2,.zl .lead h2,.z5 .hd h2{font-size:clamp(30px,8.4vw,42px)}
+  .zt .lead>.fp-lab,.zl .lead>.fp-lab{margin-bottom:10px}
+  .zt .lead .one{margin-top:10px;font-size:15px}
+  .figs{margin-top:14px;padding-top:10px;gap:10px;grid-template-columns:1fr 1fr}
+  .figs>div>b{font-size:21px}
+  .z4 .pair{row-gap:12px}.z4 .pair .d{grid-column:1/10}.z4 .pair .b{grid-column:1/13}
+  .z5 .hd{flex-direction:column;align-items:flex-start}
+  .z5 .hd .figs{min-width:0;width:100%}
+  .zt .fp-stick,.zl .fp-stick{padding:66px 0 16px;gap:14px}
+  .zt .lead,.zl .lead{padding:0 var(--g)}
+  .zt .pic,.zl .zb-fr{width:100%}
+  .zt figcaption{padding:0 var(--g);margin-top:7px}
+  .zb-fr:not(.mv)::after{inset:8px}
+  .zt .lead h2,.zl .lead h2,.z5 .hd h2{font-size:clamp(34px,9.6vw,44px)}
+  .z4 .pair{width:100%}.z4 .pair .d{grid-column:2/12}.z4 .pair .d figcaption{padding:0}
+}
 </style>
 <noscript><style>.zl .fp-stick{display:block;padding:40px var(--g)}.zl .art{max-height:none;overflow:visible;aspect-ratio:auto}.zl .art img{position:static;height:auto;display:block;margin-bottom:14px;-webkit-mask-image:none!important;mask-image:none!important;opacity:1!important}.zl .ring{display:none}.fp-pin{height:auto!important}.fp-stick{position:static;height:auto;overflow:visible}.fp-reel .ly{position:relative;height:70vh}.fp-plates .trk{position:static;flex-wrap:wrap;padding:40px var(--g);height:auto}.fp-model canvas,.fp-model .veil,.fp-ticks,.fp-cue,.fp-bar{display:none}.fp-model .intro{position:static;transform:none;padding:60px var(--g) 20px}.fp-model .st{position:static;opacity:1;transform:none;width:auto;padding:24px var(--g) 8px}.fp-built{position:static;opacity:1;transform:none;width:auto;max-width:720px;margin:0 var(--g) 24px}.fp-model .chap{position:static;display:block;padding:0 var(--g)}.fp-hero h1,.fp-hero .row{animation:none}.fp-built{visibility:visible;height:auto;background:none}.fp-built .fr{position:relative;inset:auto;aspect-ratio:16/9}.fp-built .fr::after{display:none}.fp-built .fp-lab,.fp-model .kind{position:static;text-align:left;margin-top:8px}.fp-hero.band{min-height:0}.fp-plates.stack .trk{display:block}.fp-plates.stack figure{margin-bottom:40px}@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{font-size:14px;padding:6px 8px}}button[data-film].fp-play{display:none}button[data-film]{pointer-events:none;cursor:default}button[data-film] .go{display:none}.fp-nojs{display:block;margin-top:14px}</style></noscript>
 </head>
@@ -83,17 +147,73 @@
   </div>
 </section>
 
-<!-- 3 · the invitations as they were approved (Tony, 6 Oct: "Change the campaign to invitations"): first only a date on a wall, then the invitation. A lens passes over the first and shows the second. -->
-<section class="fp-pin zl" style="--n:3.2" aria-label="The invitations: save the date, then the invitation">
+<!-- 3 · from brief to result: six screens from the approved storyboard (THINKING-ZEISS-14-Oct), 15 Oct -->
+<section class="zb-hd" aria-labelledby="zb-t"><h2 id="zb-t">From brief <b class="tw">to result.</b></h2></section>
+
+<!-- 01 · the problem: the film holds on the closed shutter (its sharpest frame, at the film's own resolution) -->
+<section class="fp-pin zt z1" style="--n:1.5;--ar:1382/778" aria-label="01, the problem: two lenses, one night, six days">
   <div class="fp-stick">
-    <div class="lead"><span class="fp-lab"><b>01</b> · The invitations</span><h2>Tease, <b class="tw">then reveal.</b></h2><p class="one">First only a date on a bare wall. Then the invitation shows who is coming.</p>
-      <p class="now fp-lab" aria-live="polite"><b>Save the date</b></p></div>
-    <figure class="art">
+    <div class="lead"><span class="fp-lab"><b>01</b> · The problem</span><h2>Two lenses. One night. <b class="tw">Six days.</b></h2><p class="one">ZEISS Vision Care had six days from go-ahead to launch ClearView and PhotoFusion X.</p>
+      <div class="figs"><div><b>6 days</b>go-ahead to launch</div><div><b>2 lenses</b>one night</div></div></div>
+    <figure class="pic"><div class="zb-fr"><img src="a/zb1-shutter.webp" width="1382" height="778" alt="The ZEISS shutter, closed, light on the blue carpet under it" decoding="async"></div><figcaption class="fp-lab">The closed shutter · film of the night by MCX</figcaption></figure>
+  </div>
+</section>
+
+<!-- 02 · the insight: the invitations as they were approved (Tony, 6 Oct: "Change the campaign to invitations"): first only a date on a wall, then the invitation. A lens passes over the first and shows the second. -->
+<section class="fp-pin zl" style="--n:3.2" aria-label="02, the insight: save the date, then the invitation">
+  <div class="fp-stick">
+    <div class="lead"><span class="fp-lab"><b>02</b> · The insight</span><h2>Tease, <b class="tw">then reveal.</b></h2><p class="one">ZEISS’s campaign was already made, and its brackets show where to look. So the invitations showed a date first, then who was coming.</p>
+      <div class="figs"><div><b>3 steps</b><span class="now" aria-live="polite"><b>Save the date</b></span></div></div></div>
+    <div class="zb-fr"><figure class="art">
       <img class="a0" src="a/std-1684.webp" width="1684" height="1191" alt="Save the date: light on a concrete wall, Monday 27th June 2022" decoding="async">
       <img class="a1" src="a/inv-1684.webp" width="1684" height="1191" alt="The invitation: the campaign athlete and the two lenses, ZEISS ClearView and PhotoFusion X" decoding="async">
       <img class="a2" src="a/rem-1684.webp" width="1684" height="1191" alt="The reminder, in the same frame" loading="lazy" decoding="async">
       <svg class="ring" viewBox="0 0 100 88.5" aria-hidden="true" focusable="false"><path d="M50,1.8 C80,1.8 99,14.1 98,38.7 C97,65.1 74,86.7 47,86.7 C21,86.7 1.5,63.4 2,35.2 C2.5,12.3 20,1.8 50,1.8 Z" fill="none" stroke="#fff" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
-    </figure>
+    </figure></div>
+  </div>
+</section>
+
+<!-- 03 · the move: the brackets close in from the edges of the screen onto the way in, playing -->
+<section class="fp-pin zt z3" style="--n:1.6;--ar:16/9" aria-label="03, the move: the brackets lead you in">
+  <div class="fp-stick">
+    <div class="lead"><span class="fp-lab"><b>03</b> · The move</span><h2>The brackets <b class="tw">lead you in.</b></h2><p class="one">One frame from the invitation to the door: flags, signs, the welcome screen, the entrance wall.</p>
+      <div class="figs"><div><b>24 June 2022</b>the content deck: every piece, every screen</div></div></div>
+    <figure class="pic"><div class="zb-fr mv"><video muted playsinline loop preload="none" data-auto poster="a/zb3-way.webp" data-src="a/zb3-way.mp4" aria-label="The way in: the long welcome screen outside, a directional sign, the door with its flags"></video></div><figcaption class="fp-lab">The way in · film of the night by MCX</figcaption></figure>
+    <i class="zb-br" aria-hidden="true"></i>
+  </div>
+</section>
+
+<!-- 04 · the idea, built: the brackets leave the drawing for the booth as it was built -->
+<section class="fp-pin zt z4" style="--n:1.9" aria-label="04, the idea, built: step inside the lens">
+  <div class="fp-stick">
+    <div class="lead"><span class="fp-lab"><b>04</b> · The idea, built</span><h2>Step inside <b class="tw">the lens.</b></h2><p class="one">The creative was mine, produced with MCX as co-producer: a booth of two acrylic lenses, one clear, one tinted, the way PhotoFusion X darkens in the sun.</p></div>
+    <div class="pair">
+      <figure class="d"><div class="zb-fr mv"><img src="a/zb4-drawing.webp" width="1400" height="1008" alt="The booth drawing: a clear lens and a tinted lens on one acrylic panel, 170 cm wide, on a base" loading="lazy" decoding="async"></div><figcaption class="fp-lab">The drawing</figcaption></figure>
+      <figure class="b"><div class="zb-fr mv"><video muted playsinline loop preload="none" data-auto poster="a/zb4-booth.webp" data-src="a/zb4-booth.mp4" aria-label="The booth as built, then three guests posing at it"></video></div><figcaption class="fp-lab">Built · 27 June 2022 · film by MCX</figcaption></figure>
+    </div>
+    <i class="zb-br" aria-hidden="true"></i>
+  </div>
+</section>
+
+<!-- 05 · the reveal: our own film for the 74-ft wall, whole, then the real wall (this band stood after the 3D chapter; moved here so each film shows once) -->
+<section class="fp-hero band z5" aria-label="05, the reveal: the film we made for the 74-foot wall">
+  <div class="hd"><div><span class="fp-lab"><b>05</b> · The reveal</span><h2>74 feet. <b class="tw">It’s time.</b></h2><p class="one">Our film for the LED wall counted down, from IT’S TIME to NOT STANDARD. Then the doors opened.</p></div>
+    <div class="figs"><div><b>74 ft</b>LED wall</div><div><b>25 June</b>first test on the wall</div></div></div>
+  <div class="zb-fr"><div class="film"><video class="v" muted playsinline loop preload="none" poster="a/led3-poster.webp" data-src="a/led3-2816.mp4" data-src-p="a/led3-1408.mp4" data-poster="a/led3-poster.webp"></video></div></div>
+  <div class="lo">
+    <div><span class="fp-lab"><b>Screen film by AntBrush</b> · made for the 74-ft wall</span><span class="whole" style="display:block"><button class="fp-play" type="button" data-film="a/led3-2816.mp4" data-film-p="a/led3-1408.mp4" data-title="Screen film by AntBrush · made for the 74-ft wall · 0:35 · silent">Watch the wall film whole <small>0:35 · silent · turn your phone</small></button><noscript><span class="fp-nojs"><a class="fp-play" href="a/led3-2816.mp4">Open the wall film <small>0:35 · video file</small></a></span></noscript></span></div>
+    <div class="test"><figure><video muted playsinline loop preload="none" data-auto poster="a/wall-poster.webp" data-src="a/wall-848.mp4" data-poster="a/wall-poster.webp"></video><figcaption class="fp-lab"><b>The same film on the real wall</b> · screen test, 25 June 2022 · site video</figcaption></figure></div>
+  </div>
+</section>
+
+<!-- 06 · the result: the night takes the whole screen -->
+<section class="fp-pin zt z6" style="--n:2;--ar:2400/1597" aria-label="06, the result: 27 June 2022, the night">
+  <div class="fp-stick">
+    <div class="lead"><span class="fp-lab"><b>06</b> · The result</span><h2>27 June 2022. <b class="tw">The night.</b></h2><p class="one">Six days after the go-ahead: the keynote, then dinner among the supercars at The Space, Dubai.</p>
+      <div class="figs"><div><b>6 days</b>from go-ahead to this</div></div></div>
+    <figure class="pic"><div class="zb-fr mv"><img src="a/zb6-hall.webp" width="2400" height="1597" alt="Launch night: one long dinner table among the supercars, under the long LED wall, The Space, Dubai" loading="lazy" decoding="async"></div><figcaption class="fp-lab">Launch night · 27 June 2022 · event photograph</figcaption></figure>
+    <span class="fp-lab endcap" aria-hidden="true"><b>Launch night</b> · 27 June 2022 · event photograph</span>
+    <i class="zb-br" aria-hidden="true"></i>
   </div>
 </section>
 
@@ -102,9 +222,9 @@
   <div class="fp-stick">
     <canvas aria-hidden="true"></canvas>
     <div class="veil"></div>
-    <span class="fp-lab chap"><b>02</b> · The pieces<span class="x"> · designed, then built</span></span>
+    <span class="fp-lab chap"><b>The pieces</b><span class="x"> · designed, then built</span></span>
     <span class="fp-lab kind"><b>3D model</b><span class="x"> · from the production artwork</span></span>
-    <div class="intro"><span class="fp-lab"><b>02</b> · The pieces</span><h2>Then every piece,<br><b class="tw">in 3D.</b></h2><p>Each model, then the same piece on the night.</p></div>
+    <div class="intro"><span class="fp-lab"><b>The pieces</b></span><h2>Then every piece,<br><b class="tw">in 3D.</b></h2><p>Each model, then the same piece on the night.</p></div>
     <div class="st" data-s="0"><span class="fp-lab"><b>01</b> / 07</span><h3>The way in</h3><p>The long screen with our welcome film, and ten flags on the carpet.</p></div>
     <div class="st" data-s="1"><span class="fp-lab"><b>02</b> / 07</span><h3>Two signs</h3><p>An arrow, the launch name, the logo.</p></div>
     <div class="st" data-s="2"><span class="fp-lab"><b>03</b> / 07</span><h3>The entrance wall</h3><p>The athlete meets guests on the stairs.</p></div>
@@ -120,20 +240,10 @@
   </div>
 </section>
 
-<!-- 5 · it is time: our own film for the 74-ft wall, whole, then the night -->
-<section class="fp-hero band" aria-label="The film we made for the 74-foot wall">
-  <div class="hd"><div><span class="fp-lab"><b>Screen film by AntBrush</b> · made for the 74-ft wall</span><h2>It’s time.</h2></div></div>
-  <div class="film"><video class="v" muted playsinline loop preload="none" poster="a/led3-poster.webp" data-src="a/led3-2816.mp4" data-src-p="a/led3-1408.mp4" data-poster="a/led3-poster.webp"></video></div>
-  <div class="lo">
-    <div><span class="whole" style="display:block"><button class="fp-play" type="button" data-film="a/led3-2816.mp4" data-film-p="a/led3-1408.mp4" data-title="Screen film by AntBrush · made for the 74-ft wall · 0:35 · silent">Watch the wall film whole <small>0:35 · silent · turn your phone</small></button><noscript><span class="fp-nojs"><a class="fp-play" href="a/led3-2816.mp4">Open the wall film <small>0:35 · video file</small></a></span></noscript></span></div>
-    <div class="test"><figure><video muted playsinline loop preload="none" data-auto poster="a/wall-poster.webp" data-src="a/wall-848.mp4" data-poster="a/wall-poster.webp"></video><figcaption class="fp-lab"><b>The same film on the real wall</b> · screen test, 25 June 2022 · site video</figcaption></figure></div>
-  </div>
-</section>
-
 <!-- 6 · the night -->
 <section class="fp-pin fp-reel" aria-label="The night, 27 June 2022">
   <div class="fp-stick">
-    <div class="ly"><video muted playsinline loop preload="none" data-src="a/n2-doors-d.mp4" data-src-p="a/n2-doors-p.mp4" poster="a/n2-doors-d.webp" data-poster="a/n2-doors-d.webp" data-poster-p="a/n2-doors-p.webp"></video><span class="fp-lab n"><b>The night</b> · 27 June 2022 · 01 / 03</span><div class="cap"><h3>Doors.</h3><p>A countdown on the wall. Then the shutter rises on ZEISS.<small class="fp-lab">Film · MCX</small></p></div></div>
+    <div class="ly"><video muted playsinline loop preload="none" data-src="a/n2-doors-d.mp4" data-src-p="a/n2-doors-p.mp4" poster="a/n2-doors-d.webp" data-poster="a/n2-doors-d.webp" data-poster-p="a/n2-doors-p.webp"></video><span class="fp-lab n"><b>The night</b> · 27 June 2022 · 01 / 03</span><div class="cap"><h3>Doors.</h3><p>The countdown ends, and the guests go in.<small class="fp-lab">Film · MCX</small></p></div></div>
     <div class="ly"><video muted playsinline loop preload="none" data-src="a/n3-keynote2-d.mp4" data-src-p="a/n3-keynote2-p.mp4" poster="a/n3-keynote-d.webp" data-poster="a/n3-keynote-d.webp" data-poster-p="a/n3-keynote2-p.webp"></video><span class="fp-lab n"><b>The night</b> · 27 June 2022 · 02 / 03</span><div class="cap"><h3>Keynote.</h3><p>The two lenses, presented.<small class="fp-lab">Film · MCX</small></p></div></div>
     <div class="ly"><video muted playsinline loop preload="none" data-src="a/n5-dinner-d.mp4" data-src-p="a/n5-dinner-p.mp4" poster="a/n5-dinner-d.webp" data-poster="a/n5-dinner-d.webp" data-poster-p="a/n5-dinner-p.webp"></video><span class="fp-lab n"><b>The night</b> · 27 June 2022 · 03 / 03</span><div class="cap"><h3>Dinner.</h3><p>One long table, under the gold car. Then the film of it all.<small class="fp-lab">Film · MCX</small></p></div></div>
   </div>
@@ -164,6 +274,7 @@
 </div></footer>
 <script src="../../assets/fp/fp.js?v=18" defer></script>
 <script src="zl.js?v=2" defer></script>
+<script src="zb.js?v=2" defer></script>
 <script type="module" src="z7.js?v=30"></script>
 </body>
 </html>
