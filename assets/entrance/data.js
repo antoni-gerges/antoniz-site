@@ -8,7 +8,7 @@ window.MP = [
     img:'a/mazzika-cover.webp', pos:'75% 50%', posC:'100% 45%', film:'../../media/films/mazzika-720.mp4' },
   { n:'03', client:'Liwa International Festival', what:'Campaign, film and festival build', place:'Abu Dhabi', year:'2019–20',
     img:'a/liwa-s1f-quad-into-sun.webp', pos:'48% 58%', kv:'a/kv-2400.webp', kvTint:'#c4935f', film:'../liwa-film/a/s1f-quad-into-sun-720.mp4' },
-  { n:'04', client:'Majid Al Futtaim', what:'Anniversary event at the Pyramids', place:'Giza', year:'2021',
+  { n:'04', client:'MAF GS1', what:'Anniversary event at the Pyramids', place:'Giza', year:'2021',
     img:'a/pyr-invite.webp', art:true, tint:'#0d0b08', photo:'a/pyr-night.webp' },
   { n:'05', client:'Dubai Health Authority', what:'Brand identity and launch', place:'Dubai', year:'2008',
     img:'a/launch-ads-2400.webp', art:true, tint:'#d4e4ee' },
