@@ -313,7 +313,7 @@ document.fonts.ready.then(()=>{ layout(); measure(); TS=sampleT(); MS=sampleMark
     const tick=ts=>{ if(me!==run) return; t0??=ts; const f=skip?END:(ts-t0)/1000*60; frame(Math.min(f,END)); if(f<END) requestAnimationFrame(tick); else settle(); };
     wrap.classList.add('intro'); frame(0); requestAnimationFrame(tick); }
   P.forEach(p=>{const i=new Image(); i.src=BASE+p.img});   // preload all nine photos
-  if(RMQ.matches||window.__enInstant){ frame(END); settle(); }               // reduced motion: the still page, nothing moves by itself
+  if(RMQ.matches||window.__enInstant||innerWidth<=760){ frame(END); settle(); }               // reduced motion: the still page, nothing moves by itself
   else play();
 });
 
@@ -463,5 +463,6 @@ document.fonts.ready.then(()=>{ layout(); measure(); TS=sampleT(); MS=sampleMark
 <script src="assets/site.js?v=afd4c1e0" defer></script>
 <script src="assets/films.js?v=afd4c1e0" defer></script>
 <script src="assets/brand.js" defer></script>
+<script src="assets/entrance-film/mobile-film.js"></script>
 </body>
 </html>
