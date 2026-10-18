@@ -1,0 +1,22 @@
+/* 17 Oct: mobile access and spacing; all project content remains in place. */
+/* Legacy exact-match selector hid both multi-sector healthcare projects. */
+.pj-main:has(#s-health:checked) .pj[data-s~="health"]{display:block}
+.mobile-jump{display:none}
+.mobile-sectors{display:contents}
+.mobile-sectors>summary{display:none}
+@media(max-width:760px){
+ .home2 .h2-nums:has(.h2-num:nth-child(6)) .h2-num b{font-size:clamp(38px,12vw,64px)}
+ .home2 .wl-dim{white-space:normal;line-height:1.4}
+ .shell2 .ct{min-height:0;justify-content:flex-start;gap:52px;padding-bottom:52px}
+ .mobile-jump{display:block;margin-top:24px}
+ .mobile-jump label{display:block;font:500 12px/1.4 Inter,system-ui,sans-serif;color:rgba(247,245,241,.72);margin-bottom:6px}
+ .mobile-jump select{width:100%;min-height:48px;border:0;border-bottom:1px solid rgba(247,245,241,.3);border-radius:0;background:#0B0C10;color:#F7F5F1;font:500 17px/1.3 Jost,system-ui,sans-serif;padding:10px 24px 10px 0;color-scheme:dark}
+ .mobile-jump select:focus-visible,.mobile-sectors>summary:focus-visible{outline:2px solid #F7F5F1;outline-offset:4px}
+ .mobile-sectors{display:block;margin-top:8px}
+ .mobile-sectors>summary{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:48px;list-style:none;font:500 16px/1.35 Jost,system-ui,sans-serif;cursor:pointer}
+ .mobile-sectors>summary::-webkit-details-marker{display:none}
+ .mobile-sectors>summary::after{content:'+';font-size:24px;font-weight:300;flex-shrink:0}
+ .mobile-sectors[open]>summary::after{content:'−'}
+ .pj-sel .mobile-sectors .pj-pick{margin-top:4px;margin-bottom:16px}
+ .pj-sel article[id],.chap[id]{scroll-margin-top:84px}
+}

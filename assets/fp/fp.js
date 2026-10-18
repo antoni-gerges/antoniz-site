@@ -12,7 +12,7 @@
   function arm(v) {
     if (v._armed) return; v._armed = 1;
     var s = (phone() && v.dataset.srcP) || v.dataset.src; if (!s) return;
-    var p = (phone() && v.dataset.posterP) || v.dataset.poster; if (p && !v.poster) v.poster = p;
+    var p = (phone() && v.dataset.posterP) || v.dataset.poster; if (p) v.poster = p;
     v.muted = true; v.playsInline = true; v.loop = !v.hasAttribute('data-once'); v.src = s; v.load();
   }
   function play(v) { arm(v); if (FP.hold) { v._want = 1; return; } if (RM && !v._asked) return; if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } }
