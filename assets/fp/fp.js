@@ -15,7 +15,7 @@
     var p = (phone() && v.dataset.posterP) || v.dataset.poster; if (p) v.poster = p;
     v.muted = true; v.playsInline = true; v.loop = !v.hasAttribute('data-once'); v.src = s; v.load();
   }
-  function play(v) { arm(v); if (FP.hold) { v._want = 1; return; } if (RM && !v._asked) return; if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } }
+  function play(v) { if (FP.userPaused) return; arm(v); if (FP.hold) { v._want = 1; return; } if (RM && !v._asked) return; if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } }
   function stop(v) { if (!v.paused) v.pause(); }
   FP.play = play; FP.stop = stop; FP.arm = arm;
   var auto = [].slice.call(D.querySelectorAll('video[data-auto]'));
@@ -155,4 +155,31 @@
   [].forEach.call(D.querySelectorAll('.fp-more'), function (d) { d.addEventListener('toggle', function () { W.dispatchEvent(new Event('resize')); }); });
   W.addEventListener('scroll', ask, { passive: true }); W.addEventListener('resize', ask); W.addEventListener('load', ask);
   D.addEventListener('DOMContentLoaded', ask); ask();
+})();
+
+/* Case orientation: existing headings, real anchors, and a route onward. */
+(function(){
+ const main=document.querySelector('main'),fp=window.FP;if(!main||!fp)return;
+ const title=document.querySelector('h1')?.textContent.trim()||'This project';
+ const sections=[...main.querySelectorAll(':scope > section')].filter(s=>!s.matches('.fp-hero:first-child,.fp-end,.zb-hd')&&(s.querySelector('h2')||s.matches('.fp-model,.fp-reel')));
+ const items=sections.map((s,i)=>{const h=s.querySelector('h2');const label=s.matches('.fp-say')?'Overview':s.matches('.fp-model')?'The work in 3D':s.matches('.fp-reel')?'Films':s.matches('.fp-res')?'Results':null;const name=(label||h?.innerText||s.getAttribute('aria-label')||'The films').replace(/\s+/g,' ').trim();if(!s.id)s.id='project-chapter-'+(i+1);s.classList.add('case-chapter');return {s,name}}).filter(x=>x.name);
+ if(items.length>1){
+  const nav=document.createElement('nav');nav.className='case-index';nav.id='case-chapters';nav.setAttribute('aria-label','Project chapters');
+  const top=document.createElement('div');top.className='case-index-heading';const label=document.createElement('span');label.textContent='Explore the project';const name=document.createElement('strong');name.textContent=title;top.append(label,name);
+  const details=document.createElement('details');details.open=innerWidth>760;const summary=document.createElement('summary');summary.textContent='Chapters · '+items.length;const list=document.createElement('ol');
+  items.forEach(({s,name},i)=>{const li=document.createElement('li'),a=document.createElement('a'),num=document.createElement('span');num.textContent=String(i+1).padStart(2,'0');num.setAttribute('aria-hidden','true');a.href='#'+s.id;a.append(num,document.createTextNode(name));a.addEventListener('click',()=>{s.tabIndex=-1;requestAnimationFrame(()=>s.focus({preventScroll:true}))});li.append(a);list.append(li)});
+  details.append(summary,list);nav.append(top,details);main.querySelector('section')?.after(nav);
+  const headerNav=document.querySelector('.hdr .nav');if(headerNav){const a=document.createElement('a');a.href='#case-chapters';a.textContent='Chapters';a.addEventListener('click',()=>{if(document.querySelector('.hdr.open'))document.querySelector('.menu-btn').click()});headerNav.append(a)}
+  const mq=matchMedia('(min-width:761px)');mq.addEventListener('change',()=>{details.open=mq.matches});
+ }
+ const videos=[...document.querySelectorAll('video[data-auto],.fp-built video')];
+ if(videos.length){
+  const nav=document.querySelector('.hdr .nav'),button=document.createElement('button');button.type='button';button.className='case-motion';fp.userPaused=fp.rm;
+  const label=()=>{button.textContent=fp.userPaused?'Play films':'Pause films';button.setAttribute('aria-label',fp.userPaused?'Play background films':'Pause background films')};label();
+  button.addEventListener('click',()=>{fp.userPaused=!fp.userPaused;if(fp.userPaused)window.__fp3d?.vids.forEach(v=>v.pause());videos.forEach(v=>{if(fp.userPaused)v.pause();else{const r=v.getBoundingClientRect();v._asked=true;if(r.bottom>0&&r.top<innerHeight)fp.play(v)}});label()});nav?.append(button);
+ }
+ const order=[['dha','Dubai Health Authority'],['zeiss','ZEISS Vision Care'],['liwa','Liwa International Festival'],['aiaasc','AIAASC'],['mazzika','Why Not! Mazzika'],['anti-bullying','National Bullying Prevention Week'],['al-forsan','Al Forsan International Sports Resort'],['cityscape','Cityscape Abu Dhabi'],['big-grill','The Big Grill'],['al-ain','Innovation Month, Al Ain'],['pyramids-2021','MAF Global Solutions'],['capacity','Capacity Middle East']];
+ const aliases={zeiss7:'zeiss',liwa2:'liwa',bullying:'anti-bullying',alain:'al-ain',alforsan:'al-forsan',biggrill:'big-grill'};let slug=location.pathname.split('/').filter(Boolean).at(-1);if(slug==='index.html')slug=location.pathname.split('/').filter(Boolean).at(-2);slug=aliases[slug]||slug;
+ const n=order.findIndex(x=>x[0]===slug),next=document.querySelector('.fp-next');
+ if(n>=0&&next){const dest=order[(n+1)%order.length];next.href='/work/'+dest[0]+'/';next.querySelector('.fp-lab').textContent='Next project';next.querySelector('b').textContent=dest[1];const all=document.createElement('a');all.className='case-all';all.href='/work/';all.textContent='View all work';next.after(all)}
 })();

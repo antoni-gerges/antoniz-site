@@ -156,7 +156,7 @@ export function stage(sec, opt) {
     const inspect = act === i && !cutEl;
     if (intro) intro.style.opacity = (1 - FP.seg(P, .02, start * .9)).toFixed(3);
     canvas.style.opacity = (.28 + .72 * FP.seg(P, .025, start)).toFixed(3);
-    ST.forEach((s, n) => { if (s.vid) vplay(s.vid, running && !FP.hold && !FP.rm && Math.abs(n - (i + k)) < 1.2); });
+    ST.forEach((s, n) => { if (s.vid) vplay(s.vid, running && !FP.hold && !FP.userPaused && !FP.rm && Math.abs(n - (i + k)) < 1.2); });
     if (!FP.rm) for (let n = 0; n < frameFns.length; n++) frameFns[n](time, i, local);
     labels.forEach(l => { const on = l.i === i && inspect; l.d.el.classList.toggle('on', on); l.d.line.material.opacity += ((on ? .85 : 0) - l.d.line.material.opacity) * .12;
       if (!on) return; tmp.copy(l.d.mid); l.s.g.localToWorld(tmp); tmp.project(cam); const hw = (l.d.hw || (l.d.hw = l.d.el.offsetWidth / 2)) + 10, lx = Math.max(hw, Math.min(Wd - hw, (tmp.x * .5 + .5) * Wd)), ly = Math.max(FP.phone() ? 128 : 118, Math.min(FP.phone() ? Hd * .5 : Hd - 20, (-tmp.y * .5 + .5) * Hd));
