@@ -43,7 +43,7 @@
     pl.insertAdjacentHTML('afterend', '<div class="route" aria-hidden="true"><svg viewBox="0 0 ' + W + ' ' + Hh + '"><path id="rt" d="' + d + '" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round" opacity=".8"/>' +
       '<circle cx="' + A[0] + '" cy="' + A[1] + '" r="5" fill="currentColor"/><circle id="rmid" r="5" fill="currentColor"/><circle cx="' + Z[0] + '" cy="' + Z[1] + '" r="5" fill="currentColor"/>' +
       '<text x="' + A[0] + '" y="' + (A[1] + dy) + '">Cairo</text><text class="yr" x="' + A[0] + '" y="' + (A[1] + dy2) + '">2003</text><text class="rl" x="' + A[0] + '" y="' + (A[1] + dy3) + '">Graphic designer</text>' +
-      '<text id="rmt" text-anchor="middle">The Gulf</text><text id="rmy" class="yr" text-anchor="middle">2006 to 2024</text>' + two(null, null, 'middle', 'Founder of AntBrush ·', 'partner at MCX', 'rml') +
+      '<text id="rmt" text-anchor="middle">Dubai</text><text id="rmy" class="yr" text-anchor="middle">2006 to 2024</text>' + two(null, null, 'middle', 'Founder of AntBrush ·', 'partner at MCX', 'rml') +
       '<text x="' + ZX + '" y="' + (Z[1] + dy) + '" text-anchor="end">Tampa</text><text class="yr" x="' + ZX + '" y="' + (Z[1] + dy2) + '" text-anchor="end">2024</text>' + two(ZX, Z[1] + dy3, 'end', 'Creative direction,', 'with new tools for making') +
       '<g id="rm"><g transform="scale(' + (ph ? .1 : .19) + ') translate(-62 -141)" fill="currentColor"><path d="' + BIRD + '"/><path d="' + SIGS + '"/></g></g></svg></div>');
     var rt = $('#rt'), rm = $('#rm'), L = rt.getTotalLength(), sec = $('.places');
