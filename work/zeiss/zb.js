@@ -42,7 +42,7 @@
     FP.on(function (H, Wd) {
       var p = prog(s6, H); if (p < 0) return;
       var a = rel(fr6, st6);
-      if (Wd <= 760) { im6.style.transform = ''; put(br6, a, -8); lead6.style.opacity = cap6.style.opacity = ''; end6.style.opacity = 0; return; }
+      if (Wd <= 760 || FP.rm) { im6.style.transform = ''; put(br6, a, -8); lead6.style.opacity = cap6.style.opacity = ''; end6.style.opacity = 0; return; }
       var t = FP.rm ? 1 : ease(seg(p, .1, .66));
       var Sw = st6.clientWidth, Sh = st6.clientHeight, bw = Sw - 2 * 56, bh = Sh - 34 - 64, w = Math.min(bw, bh * AR), h = w / AR;
       var b = [(Sw - w) / 2, 34 + (bh - h) / 2, w, h], c = mix(a, b, t), k = c[2] / a[2];
