@@ -11,6 +11,7 @@
   style.textContent = `
     .mobile-film,.mobile-film-control{display:none}
     @media(max-width:760px){
+      .wrap.mobile-film-ready{background:#000}
       .wrap.mobile-film-ready .s,.wrap.mobile-film-ready .caps,.wrap.mobile-film-ready .sub,
       .wrap.mobile-film-ready .detail,.wrap.mobile-film-ready .pager,
       .wrap.mobile-film-ready #il,.wrap.mobile-film-ready #sv{display:none!important}
@@ -34,7 +35,7 @@
     video.setAttribute('muted',''); video.setAttribute('playsinline','');
     video.setAttribute('aria-hidden','true'); video.preload = 'metadata';
     video.poster = new URL('./mobile-clean-17oct.jpg', assetBase).href;
-    video.src = new URL('./mobile-clean-17oct.mp4', assetBase).href;
+    video.src = new URL('./mobile-black-17oct.mp4', assetBase).href;
     button = document.createElement('button'); button.type = 'button';
     button.className = 'mobile-film-control'; button.textContent = 'Play film';
     button.addEventListener('click', () => {
