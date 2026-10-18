@@ -74,3 +74,6 @@ body.lock .where,.hdr.open~.where{display:none}
 @media (max-width:760px){.hdr.open .nav{background:#0B0C10!important;color:#F7F5F1!important}
   .hdr.open .brand,.hdr.open .brand span,.hdr.open .brand .mk,.hdr.open .menu-btn{color:#F7F5F1!important}}
 
+
+/* Keep About deep links below the fixed header; allow explicit disclosure labels to wrap. */
+.abh[id],.ab2[id]{scroll-margin-top:100px}.ab2 .rm summary{max-width:100%;white-space:normal}.ab2 .rm-o{white-space:normal}
