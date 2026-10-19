@@ -71,6 +71,13 @@
   .fp-end .film .t{position:static;display:block;margin-top:16px;padding-right:74px}
   .fp-end .film .go{right:0;bottom:0}
 }
+
+.bg-editorial{display:grid;grid-template-columns:1.15fr 1fr;gap:6vw;align-items:center;padding:110px var(--g) 64px;min-height:90svh}.bg-editorial-copy{grid-column:2;grid-row:1}.bg-editorial figure{grid-column:1;grid-row:1;margin:0;min-width:0}
+.bg-editorial h1{font:300 clamp(58px,7vw,112px)/.92 Jost,sans-serif;letter-spacing:-.04em;margin:24px 0}.bg-editorial h1 b{font-weight:600;color:#e75a43}.bg-editorial-idea{font:500 clamp(26px,2.8vw,42px)/1.1 Jost,sans-serif;margin:0 0 24px}.bg-editorial-role{font:400 16px/1.7 Inter,sans-serif;color:var(--dim);max-width:38ch}
+.bg-editorial img{display:block;width:100%;height:auto;max-height:76svh;object-fit:contain}.bg-editorial figcaption{font:400 12px/1.6 Inter,sans-serif;color:var(--dim);margin-top:12px}.bg-editorial a{color:inherit;text-underline-offset:5px}.bg-editorial-copy>a{display:inline-block;padding:12px 0;font:500 18px/1.4 Jost,sans-serif}.bg-editorial a:focus-visible{outline:2px solid #e75a43;outline-offset:5px}#bg-event{scroll-margin-top:80px}
+.bg-film-title{font:500 30px/1 Jost,sans-serif;margin:0}
+@media(max-width:760px){.bg-editorial{grid-template-columns:1fr;gap:16px;padding-top:96px;min-height:0}.bg-editorial-copy{display:contents}.bg-editorial .fp-lab{grid-row:1;margin:0}.bg-editorial h1{grid-row:2;margin:0;font-size:56px}.bg-editorial figure{grid-column:1;grid-row:3}.bg-editorial img{max-height:none}.bg-editorial-idea{grid-row:4;margin:8px 0}.bg-editorial-role{grid-row:5;margin:0}.bg-editorial-copy>a{grid-row:6;justify-self:start}}
+#bg-event.fp-hero.whole{height:auto;min-height:0;display:flex;flex-direction:column;padding:28px 0 44px}#bg-event .top{position:relative;inset:auto;order:0;padding:16px var(--g)}#bg-event .v{position:relative;inset:auto;order:1;display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;transform:none!important}#bg-event .in{position:relative;inset:auto;order:2;padding:20px var(--g);opacity:1!important}#bg-event .fp-cue{display:none}@media(min-width:761px){#bg-event .v{max-width:1100px;align-self:center}}
 </style>
 <noscript><style>.fp-pin{height:auto!important}.fp-stick{position:static;height:auto;overflow:visible}.fp-reel .ly{position:relative;height:70vh}.fp-plates .trk{position:static;flex-wrap:wrap;padding:40px var(--g);height:auto}.fp-model canvas,.fp-model .veil,.fp-ticks,.fp-cue,.fp-bar{display:none}.fp-model .intro{position:static;transform:none;padding:60px var(--g) 20px}.fp-model .st{position:static;opacity:1;transform:none;width:auto;padding:24px var(--g) 8px}.fp-built{position:static;opacity:1;transform:none;width:auto;max-width:720px;margin:0 var(--g) 24px}.fp-model .chap{position:static;display:block;padding:0 var(--g)}.fp-hero h1,.fp-hero .row{animation:none}.fp-built{visibility:visible;height:auto;background:none}.fp-built .fr{position:relative;inset:auto;aspect-ratio:16/9}.fp-built .fr::after{display:none}.fp-built .fp-lab,.fp-model .kind{position:static;text-align:left;margin-top:8px}.fp-hero.band{min-height:0}.fp-plates.stack .trk{display:block}.fp-plates.stack figure{margin-bottom:40px}@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{font-size:14px;padding:6px 8px}}button[data-film].fp-play{display:none}button[data-film]{pointer-events:none;cursor:default}button[data-film] .go{display:none}.fp-nojs{display:block;margin-top:14px}.mzl{display:none}.fp-built .fr{aspect-ratio:auto}.fp-built .fr video{position:static;width:100%;height:auto;transform:none}</style></noscript>
 <noscript><style>.fp-model .fallback{display:block;position:static;width:min(calc(100% - 2*var(--g)),520px);max-width:none;max-height:none;height:auto;margin:0 var(--g)}</style></noscript>
@@ -85,13 +92,15 @@
   </div>
 </header>
 <main id="main">
+<section class="bg-editorial" aria-labelledby="bg-editorial-h"><div class="bg-editorial-copy"><p class="fp-lab">Yas Links · Abu Dhabi · December 2018</p><h1 id="bg-editorial-h">The Big<br> <b>Grill.</b></h1><p class="bg-editorial-idea">Flamin’ grills.<br>Smokin’ tunes.</p><p class="bg-editorial-role">The whole weekend in one drawing. Original festival poster by Antoni Gerges, through AntBrush, with MCX.</p><a href="#bg-event">From the drawing to the festival ↓</a></div><figure><a href="a/e-red.webp"><img src="a/e-red.webp" width="1000" height="1294" alt="Complete original Big Grill festival poster in red" fetchpriority="high" decoding="async"></a><figcaption>Original festival poster · 2018 · <a href="a/e-red.webp">View full artwork ↗</a></figcaption></figure></section>
+
 
 <!-- 1 · the opening: the festival film, whole, from the lawn at dusk full of families (about 1:00.7 to 1:15.4). No title of ours lies over the picture. -->
-<section class="fp-hero whole" data-marks='[[0,"From the festival film · MCX"]]' data-from="60.7" data-to="75.4" aria-label="The Big Grill: the festival film">
+<section id="bg-event" class="fp-hero whole" data-marks='[[0,"From the festival film · MCX"]]' data-from="60.7" data-to="75.4" aria-label="The Big Grill: the festival film">
   <video class="v" muted playsinline loop preload="auto" poster="a/hero-poster.webp" data-src="../../media/films/big-grill-720.mp4#t=60.7" data-poster="a/hero-poster.webp"></video>
   <div class="top"><span class="src"><i></i><b>From the festival film · MCX</b></span><span class="fp-lab r">Yas Links, Abu Dhabi · 6 to 8 December 2018</span></div>
   <div class="in">
-    <h1>The Big Grill</h1>
+    <h2 class="bg-film-title">The festival film.</h2>
     <div class="row">
       <p class="what"><strong>A family festival. Flamin’ grills + smokin’ tunes.</strong><small>Antoni Gerges, Creative Director, Brand &amp; Experiential · AntBrush, with MCX</small></p>
       <span class="btns"><button class="fp-play" type="button" data-film="../../media/films/big-grill-720.mp4" data-title="The festival film · 3:04 · MCX">Play the festival film <small>3:04 · sound</small></button><noscript><span class="fp-nojs"><a class="fp-play" href="../../media/films/big-grill-720.mp4">Open the festival film <small>3:04 · video file</small></a></span></noscript></span>
