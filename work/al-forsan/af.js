@@ -3,8 +3,7 @@
    - the logo, in ENGLISH ONLY (Tony's ruling, 14 Oct: where a logo has an English version, only the English one). Every outline is read
      from the identity manual itself (136 pages, A3) into a/3d/mark.svg; no point is moved. The icon (the wave of the dunes, the arch, the
      knight on his horse) is from page 10; "AL FORSAN" and "INTERNATIONAL SPORTS RESORT" are the manual's own English lockup, page 24
-     ("Grid study, Landscape system"), laid on the page-10 icon by the transform that makes the two icons coincide. The stage is black, so
-     the logo is shown in the manual's own version for a black ground (page 26, "reversed gold on black"): every part in gold.
+     ("Grid study, Landscape system"), laid on the page-10 icon by the transform that makes the two icons coincide. The interactive study uses the primary black horse and lettering with gold gate/dunes on a neutral studio ground.
    - five centres: the manual's section 13, "Subsidiaries" (pages 119 to 134). Each sport centre keeps the mark and the two names and adds its
      own line in its own colour, read from its page: Equestrian (120), Paintball (129), Motor Sports (123), Water Sports (132), Shooting (126).
      The two names of a centre logo are read from the Equestrian page. The centre logos exist only in this bilingual form (no English
@@ -12,7 +11,7 @@
      One centre is held at a time, as large as the mark. The light of its colour on the floor and behind it is stage light, not artwork.
    - the manual: the printed book (its cover, pages 1, 16 and 17) lies closed and opens once, at the idea. No page turns.
    - the gateway: the campaign "Your gateway to awesomeness" built the arch of the mark as a gate in 3D, and every sport came through it.
-     Here the same outline (arch and roof, page 10) is given depth, and the knight of the mark, his own outline given depth, in gold, rides
+     Here the same outline (arch and roof, page 10) is given depth, and the knight of the mark, his own outline given depth, in black, rides
      through it. The sand and the light are staging. NO GATE WAS BUILT AT THE RESORT BY US: this is a model of the mark, as the press
      advertisements show it. */
 import { stage, T } from '../../assets/fp/fp3d.js?v=21';
@@ -60,7 +59,9 @@ export function mats() {
   const line = c => { const f = new T.MeshBasicMaterial({ color: c, toneMapped: false, transparent: true }), d = new T.MeshBasicMaterial({ color: new T.Color(c).multiplyScalar(.55), toneMapped: false, transparent: true }); return [f, d]; };
   const faceE = new T.MeshStandardMaterial({ color: 0x5a4b24, roughness: .5, metalness: .2, envMapIntensity: .5, emissive: 0xb59748, emissiveIntensity: .62 });
   const sideE = new T.MeshStandardMaterial({ color: 0x3e3318, roughness: .6, metalness: .2, envMapIntensity: .4, emissive: 0x7c6630, emissiveIntensity: .5 });
-  return { gold: [face, side], even: [faceE, sideE], face, side, line };
+  const inkFace = new T.MeshStandardMaterial({ color: 0x140f06, roughness: .55, metalness: 0 });
+  const inkSide = new T.MeshStandardMaterial({ color: 0x140f06, roughness: .65, metalness: 0 });
+  return { ink: [inkFace, inkSide], inkFace, inkSide, gold: [face, side], even: [faceE, sideE], face, side, line };
 }
 
 /* ---------- a piece and its reflection in the floor: the copy follows the piece every frame ---------- */
@@ -81,9 +82,9 @@ export function buildMark(kit, rig, g, M) {
   P.arch = rig.add(g, kit.ext(kit.shapes('arch'), .5, 16, .018), M.gold);
   P.dome = rig.add(g, kit.ext(kit.shapes('dome'), .5, 16, .018), M.gold);
   P.dunes = kit.G.dunes.ds.map(d => rig.add(g, kit.ext(kit.shapesOf(d), .05, 28), M.gold));
-  P.rider = rig.add(g, kit.ext(kit.shapes('rider'), .09, 3), M.gold);
-  P.name = kit.G['land-name'].ds.map(d => rig.add(g, kit.ext(kit.shapesOf(d), .1, 5), M.gold));
-  P.sub = kit.G['land-sub'].ds.map(d => rig.add(g, kit.ext(kit.shapesOf(d), .04, 3), M.gold));
+  P.rider = rig.add(g, kit.ext(kit.shapes('rider'), .09, 3), M.ink);
+  P.name = kit.G['land-name'].ds.map(d => rig.add(g, kit.ext(kit.shapesOf(d), .1, 5), M.ink));
+  P.sub = kit.G['land-sub'].ds.map(d => rig.add(g, kit.ext(kit.shapesOf(d), .04, 3), M.ink));
   const yNm = my(209.6), ySb = my(234.3), ZD = [3.1, 2.4, 1.8];   /* the baselines of the two English lines (manual p.24) */
   const stand = (m, y0, u, z) => { m.visible = u > 0; m.scale.y = Math.max(u, .001); m.position.set(0, y0 * (1 - u), z); };
   /* each part can also be driven on its own (the opening film does): o.dunes, o.arch, o.dome, o.rider, o.close, o.names, each 0 to 1 */
@@ -105,9 +106,9 @@ export function buildGate(kit, rig, g, M, o) {
   const arch = rig.add(gg, kit.ext(kit.shapes('arch'), D, 18, .03), M.gold, { noTwin: !o.twins }), dome = rig.add(gg, kit.ext(kit.shapes('dome'), D, 18, .03), M.gold, { noTwin: !o.twins });
   arch.receiveShadow = dome.receiveShadow = true;
   /* the knight keeps his size beside the gate; his hooves are on the sand. He is the knight of the mark: the manual's own outline (page 10,
-     a/3d/mark.svg, no point moved) given depth, in the gold of the mark and lit like it, never a flat figure */
+     a/3d/mark.svg, no point moved) given depth, in the primary black and lit like it, never a flat figure */
   const rg = new T.Group(); rg.scale.setScalar(SC); rg.position.y = -Y_HOOF * SC; g.add(rg);
-  const riderMat = M.face.clone(), riderSide = M.side.clone(); riderMat.transparent = riderSide.transparent = true; riderMat.emissiveIntensity = .42; riderMat.roughness = .34;
+  const riderMat = M.inkFace.clone(), riderSide = M.inkSide.clone(); riderMat.transparent = riderSide.transparent = true; riderMat.emissiveIntensity = 0; riderMat.roughness = .34;
   const rider = rig.add(rg, kit.ext(kit.shapes('rider'), .2, 6), [riderMat, riderSide], { noTwin: !o.twins }); rider.receiveShadow = true;
   /* the sand: a patch of ground that fades into the dark floor */
   const fade = (() => { const c = document.createElement('canvas'); c.width = c.height = 256; const x = c.getContext('2d'), gr = x.createRadialGradient(128, 128, 20, 128, 128, 128); gr.addColorStop(0, '#fff'); gr.addColorStop(.55, '#bbb'); gr.addColorStop(1, '#000'); x.fillStyle = gr; x.fillRect(0, 0, 256, 256); return new T.CanvasTexture(c); })();
@@ -128,8 +129,8 @@ export function buildGate(kit, rig, g, M, o) {
 /* =================================================================== the page =================================================================== */
 const INK = 0x140f06;   /* Al Forsan black, PANTONE Black U, R20 G15 B6 (manual p.35): the ground of the brand's room */
 const sec = document.querySelector('.fp-model'), FP = window.FP;
-const S = sec && FP && stage(sec, { assets: 'a/3d/', grid: false, exposure: 1.0, fog: INK, floorColor: 0x17110a, floorRough: .7, floorOpacity: .74, mirrorK: 0, rim: 0xffe2b8, rimI: .2 });   /* a weak warm rim and a matte floor: no haze behind the text; the reflections are real copies under the floor */
-if (S) { S.renderer.setClearColor(INK, 1); boot(); }
+const S = sec && FP && stage(sec, { assets: 'a/3d/', grid: false, exposure: 1.0, fog: 0xb8b1a2, floorColor: 0xb8b1a2, floorRough: .7, floorOpacity: 1, mirrorK: 0, rim: 0xffe2b8, rimI: .2 });   /* a weak warm rim and a matte floor: no haze behind the text; the reflections are real copies under the floor */
+if (S) { S.renderer.setClearColor(0xb8b1a2, 1); boot(); }
 layoutSets();
 
 /* a dark desk fading into the room, and a reading lamp from the upper left: the set for the boards and for the manual */
@@ -141,6 +142,7 @@ function deskRoom(g, w, d, lp, tg, power) {
 async function boot() {
   const { station, std, scene } = S, none = { noMirror: true };
   const kit = await loadKit('a/3d/mark.svg'), M = mats(), rig = Rig(scene);
+  rig.refl.visible = false; S.renderer.shadowMap.enabled = false; S.renderer.shadowMap.type = T.PCFShadowMap; S.key.shadow.radius = 5;
   const PHN = FP.phone();   /* read once: phone layouts are chosen when the page loads */
 
   /* 1 · the manual: the printed book (landscape A3, a gold hard cover, bound on the short side) lies closed on the desk under a lamp; it opens
@@ -183,7 +185,7 @@ async function boot() {
   const gIcon = [kit.ext(kit.shapes('arch'), .5, 12, .018), kit.ext(kit.shapes('dome'), .5, 12, .018), kit.ext(kit.shapes('dunes'), .05, 20), kit.ext(kit.shapes('rider'), .09, 4), kit.ext(kit.shapes('sub-names'), .1, 4)];
   const glow = (() => { const c = document.createElement('canvas'); c.width = c.height = 128; const x = c.getContext('2d'), gr = x.createRadialGradient(64, 64, 2, 64, 64, 64); gr.addColorStop(0, 'rgba(255,255,255,.9)'); gr.addColorStop(.5, 'rgba(255,255,255,.28)'); gr.addColorStop(1, 'rgba(255,255,255,0)'); x.fillStyle = gr; x.fillRect(0, 0, 128, 128); return new T.CanvasTexture(c); })();
   const cen = CENTRES.map((c, i) => { const g = new T.Group(); s2.g.add(g); const gi = g;   /* each logo turns about its own centre line */
-    gIcon.forEach((geo, n) => { const m = rig.add(gi, geo, M.gold); m.position.z = [0, 0, .05, .14, .1][n]; });
+    gIcon.forEach((geo, n) => { const m = rig.add(gi, geo, n >= 3 ? M.ink : M.gold); m.position.z = [0, 0, .05, .14, .1][n]; });
     const ln = rig.add(gi, kit.ext(kit.shapes(c[0]), .1, 4), M.line(c[1])); ln.position.z = .1;
     const light = () => new T.MeshBasicMaterial({ map: glow, color: c[1], transparent: true, opacity: 0, depthWrite: false, blending: T.AdditiveBlending, toneMapped: false });
     const pool = new T.Mesh(new T.PlaneGeometry(7.4, 5), light()); pool.rotation.x = -Math.PI / 2; pool.position.set(0, .02, 1.3); pool.renderOrder = 5; s2.g.add(pool);
