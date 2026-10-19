@@ -171,6 +171,9 @@ export function stage(sec, opt) {
     if (on && !running) { running = true; last = performance.now(); dims(); warm(); loop(); }
     else if (!on && running) { running = false; vids.forEach(v => vplay(v, false)); setAct(-9); bEls.forEach(e => { if (!e) return; e.classList.remove('cut', 'on'); e._live = false; const v = e.querySelector('video'); if (v) FP.stop(v); }); stick.classList.remove('is-cut'); wasBe = null; }
   });
+  // The sticky viewport can settle after fonts/styles load without a window resize.
+  // Keep drawing-buffer dimensions and camera aspect tied to its actual box.
+  if ('ResizeObserver' in window) new ResizeObserver(() => { if (stick.clientWidth && stick.clientHeight) size(); }).observe(stick);
   window.addEventListener('resize', size); size();
   window.addEventListener('pointermove', e => { mx = e.clientX / window.innerWidth * 2 - 1; my = e.clientY / window.innerHeight * 2 - 1; }, { passive: true });
   const S = { T, FP, scene, world, cam, renderer, key, rim, floor, grid, A, tex, std, dark, box, panel, manq, blob, station, video, vids, ST, ready, at, onFrame: f => frameFns.push(f), isReady: () => built };
