@@ -162,7 +162,7 @@ function ring(i){ const fo=R.getElementById('fo'); if(i<0||!SG[i].matches(':focu
   const d=SG[i], H=parseFloat(d.style.height), g=sig(H); fo.setAttribute('d',g.d.slice(6,-2)); fo.setAttribute('transform',`translate(${parseFloat(d.style.left)} ${parseFloat(d.style.top)})`); }
 /* layout: where the signal group sits at rest */
 let G;  // {s: px per mark unit, ox, oy: screen position of mark point (SL[0],STOP)}
-function layout(){ const w=innerWidth,h=innerHeight;
+function layout(){ const w=innerWidth,h=innerHeight; if(w<=760&&window.__mobileFilmTarget){const t=window.__mobileFilmTarget;G={s:t.height/SH,ox:t.x,oy:t.y};return;}
   const short=w>760&&(h<880||w<1360); wrap.classList.toggle('shortd',short);
   if(w>760){ const H=Math.min(h-(short?290:340),(w*.56)/(GW/SH)), s=H/SH; G={s, ox:w-56-GW*s, oy:short?92:112}; }
   else { const top=caps.getBoundingClientRect().top||h-300, H=Math.min((w-32)/GW*SH, top-262-18), s=H/SH; G={s, ox:(w-GW*s)/2, oy:262}; } }
@@ -275,7 +275,7 @@ function frame(n){ curF=n;
   R.getElementById('mp').setAttribute('d', n>=164?'':'M'+pts.map(p=>p[0].toFixed(1)+' '+p[1].toFixed(1)).join('L')+'Z');
   mk.style.visibility=n>=164?'visible':'hidden'; mk.style.transform=''; mk.style.clipPath='';
   // the three signals travel out, one per beat, turning toward the viewer and into the work
-  SG.forEach((d,i)=>{ const f0=162+12*i, p=STOPC(cl(f0,f0+36,n)), s=LG(M.sM,G.s,Math.pow(p,.7));
+  SG.forEach((d,i)=>{ const mobile=innerWidth<=760,f0=(mobile?142:162)+12*i, u=cl(f0,f0+(mobile?62:36),n), p=mobile?u*u*u*(u*(u*6-15)+10):STOPC(u), s=LG(M.sM,G.s,mobile?p:Math.pow(p,.7));
     const x0=M.Ox+SL[i]*M.sM, y0=M.Oy+STOP*M.sM, x1=G.ox+(SL[i]-SL[0])*G.s, y1=G.oy;
     const x=L(x0,x1,p), y=L(y0,y1,p), g=sig(SH*s);
     d.style.display=''; d.style.left=x+'px'; d.style.top=y+'px'; d.style.width=g.W+'px'; d.style.height=SH*s+'px'; d.style.clipPath=g.d;
@@ -307,13 +307,13 @@ document.fonts.ready.then(()=>{ layout(); measure(); TS=sampleT(); MS=sampleMark
     R.getElementById('pp').hidden=RMQ.matches;
     if(!rot&&!RMQ.matches) rot=rotate();
     kick=()=>{ if(rot){ clearInterval(rot); rot=rotate(); } };
-    if(typeof enDone==='function') enDone(); }
+    if(typeof enDone==='function') enDone(); R.dispatchEvent(new Event('entrance-landed')); }
   function play(){ settled=false; const me=++run; t0=undefined; skip=skip&&!rot; if(rot){clearInterval(rot);rot=null}
     if(set){set=0;show(false)} sel=-1; hovI=-1; paint(); SG.forEach(d=>d.tabIndex=-1);
     const tick=ts=>{ if(me!==run) return; t0??=ts; const f=skip?END:(ts-t0)/1000*60; frame(Math.min(f,END)); if(f<END) requestAnimationFrame(tick); else settle(); };
     wrap.classList.add('intro'); frame(0); requestAnimationFrame(tick); }
   P.forEach(p=>{const i=new Image(); i.src=BASE+p.img});   // preload all nine photos
-  if(RMQ.matches||window.__enInstant||innerWidth<=760){ frame(END); settle(); }               // reduced motion: the still page, nothing moves by itself
+  if(RMQ.matches||window.__enInstant){ frame(END); settle(); }               // reduced motion: the still page, nothing moves by itself
   else play();
 });
 
