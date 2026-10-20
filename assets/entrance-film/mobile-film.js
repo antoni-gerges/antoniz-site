@@ -7,8 +7,9 @@
  .mobile-film,.mobile-film-control,.mobile-projects{display:none}
  @media(max-width:760px){
  .wrap.mobile-film-opening .mobile-film,.wrap.mobile-film-opening .mobile-projects,.wrap.mobile-film-opening .mobile-film-control{visibility:hidden}
- .wrap.mobile-film-opening .who,.wrap.mobile-film-opening .line,.wrap.mobile-film-opening .caps,.wrap.mobile-film-opening .sub,.wrap.mobile-film-opening .pager,.wrap.mobile-film-opening .detail{visibility:hidden!important}
+ .wrap.mobile-film-opening .who,.wrap.mobile-film-opening .line,.wrap.mobile-film-opening .caps,.wrap.mobile-film-opening .sub,.wrap.mobile-film-opening .pager,.wrap.mobile-film-opening .detail{display:none!important}
  .wrap.mobile-film-opening .s img{opacity:0!important}
+ .wrap.mobile-film-opening .foot>span:first-child{display:none!important}
  .wrap.mobile-film-ready .line{display:none!important}
  .wrap.mobile-film-ready .who{opacity:var(--identity-visible,0)}
  }
