@@ -47,7 +47,7 @@
 </style></noscript>
 <link rel="stylesheet" href="assets/brand.css">
 <link rel="stylesheet" href="assets/type.css">
-</head>
+<link rel="stylesheet" href="assets/scale.css"></head>
 <body class="home home2">
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr">
@@ -465,5 +465,13 @@ document.fonts.ready.then(()=>{ layout(); measure(); TS=sampleT(); MS=sampleMark
 <script src="assets/brand.js" defer></script>
 <script src="assets/entrance-film/mobile-film.js"></script>
 <link rel="stylesheet" href="assets/mobile-refinements.css"><script src="assets/mobile-browse.js"></script>
-</body>
+<script>(function(){function go(){var h=document.getElementById('en-host');if(!h)return;if(!h.shadowRoot)return setTimeout(go,40);if(h.shadowRoot.getElementById('t2'))return;var s=document.createElement('style');s.id='t2';s.textContent=`*{font-size:var(--t-text) !important;letter-spacing:normal !important;text-transform:none !important}
+.name,.line,.line *,#intro,#intro *,#il,#il *{font-size:var(--t-big) !important;line-height:1.02 !important;letter-spacing:-.02em !important}
+@media (min-width:761px){
+  .sub{top:calc(240px + 2.04 * var(--t-big) + 28px) !important}
+  .wrap.shortd .sub{top:calc(186px + 2.04 * var(--t-big) + 24px) !important}
+}
+.cap1 .n,.cap1 .pl,.foot,.cap,.lab,.meta,.pager span,.cue{color:rgba(255,255,255,.62)}
+.cap1 .n{font-size:0 !important;padding:0 0 12px !important}
+.cue{display:none !important}`;h.shadowRoot.appendChild(s)}go()})();</script></body>
 </html>

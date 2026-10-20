@@ -1,0 +1,53 @@
+/* One type scale for antoniz.com (Tony, 20 Oct 2026: "many font sizes ... only two").
+   Two sizes at any width: BIG for titles, names, numbers and quotes; TEXT for everything else.
+   Weight and tone carry the rest of the hierarchy. Loaded last on every page.
+   html:not(#_t) lifts these rules above the older per-page sizes, including their !important ones. */
+:root{
+  --t-big: clamp(2.125rem, 1rem + 3.4vw, 4rem);        /* 34px on a phone, 64px on a desktop */
+  --t-text: clamp(1rem, 0.94rem + 0.2vw, 1.125rem);    /* 16px on a phone, 18px on a desktop */
+  --lh-big: 1.08;
+  --lh-text: 1.55;
+}
+html:not(#_t) body, html:not(#_t) body *{
+  font-size: var(--t-text) !important;
+  line-height: var(--lh-text) !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+}
+
+/* BIG: page and section titles, project and venue names, the numbers, quotes */
+html:not(#_t) body :where(h1, h2, .stg-nm, .ct-mail, .hi-mail, .cap h3, .st h3, .nums > div > b, .h2-num > b,
+  button.film .t b, .fp-next > b, .ab-l, details.mv > summary h3, figcaption b.lm, ul.awall > li,
+  ul.all12 > li, .rhead h3, .bg-editorial-idea, .cp-editorial-idea, section.artists h3, blockquote p, .dh-news .hl, .hdr.open .nav a),
+html:not(#_t) body :where(h1, h2, .stg-nm, .ct-mail, .hi-mail, .cap h3, .st h3, .nums > div > b, .h2-num > b,
+  button.film .t b, .fp-next > b, .ab-l, details.mv > summary h3, figcaption b.lm, ul.awall > li,
+  ul.all12 > li, .rhead h3, .bg-editorial-idea, .cp-editorial-idea, section.artists h3, blockquote p, .dh-news .hl, .hdr.open .nav a) *{
+  font-size: var(--t-big) !important;
+  line-height: var(--lh-big) !important;
+  letter-spacing: -0.015em !important;
+}
+html:not(#_t) body .hdr.open .nav a{ line-height: 1.2 !important; }
+
+/* headings that work as captions or panel titles stay TEXT, set in Jost */
+html:not(#_t) body :is(h2.pj-name, .work-reading-grid h2),
+html:not(#_t) body :is(h2.pj-name, .work-reading-grid h2) *{
+  font-size: var(--t-text) !important; line-height: 1.3 !important; letter-spacing: normal !important; font-weight: 600 !important;
+}
+
+/* big figures sit a touch tighter so four fit in a row */
+html:not(#_t) body :is(.nums > div > b, .h2-num > b){ letter-spacing: -0.03em !important; }
+
+/* screen-reader-only text keeps its own clipping */
+html:not(#_t) body :is(.en-sr, .sr-only, .visually-hidden){ font-size: 1px !important; }
+
+/* reading comfort: prose never runs wider than a comfortable line */
+html:not(#_t) body p:not(.ab-l, .bg-editorial-idea, .cp-editorial-idea){ max-width: 68ch; }
+
+/* calmer: numbers that carry no information are dropped (project cards 01-12, values 01-06) */
+html:not(#_t) body :is(.pj-k > b, ol.vmv-g > li > span){ display: none !important; }
+
+/* chapter index numbers keep room for two digits */
+html:not(#_t) body a[href^="#project-chapter"] > span[aria-hidden="true"]{ width: auto !important; min-width: 2.4ch; }
+
+/* case pages: the header gets its own ground, so it never sits on top of the text */
+html body.fp .hdr{ background: #0B0C10; }
