@@ -16,13 +16,28 @@
  tools.after(guide);
  const filter=root.querySelector('.mobile-sectors');if(filter){filter.open=false;tools.insertBefore(filter,tools.lastElementChild);}
  const gallery=document.createElement('div');gallery.className='work-index wrap';gallery.id='work-visual-index';gallery.setAttribute('aria-label','Selected projects');
+ /* perfwork21 W1 (21 Oct): a tile's picture is a fresh <img>, not a clone of the card's: a clone began its download at once, at the
+    card's sizes, before loading="lazy" was set (all sixteen came with the page). loading, decoding and fetchpriority go first,
+    srcset/src last; the first row loads at once, the rest when within one screen (a transparent SVG of the same proportions holds
+    the place until then); sizes = the tile's rendered width. Liwa: its whole key visual, as before (no longer the TVC cover first). */
+ const PW_SIZES='(max-width:699px) calc(100vw - 32px), (max-width:760px) calc(100vw - 80px), (max-width:1199px) calc(50vw - 64px), (max-width:1679px) calc(50vw - 88px), 752px';
+ const pwNear='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){pwNear.unobserve(e.target);pwSet(e.target);}}),{rootMargin:'100% 0px'}):null;
+ function pwSet(img){const d=img.dataset;if(d.pwSrcset)img.srcset=d.pwSrcset;img.src=d.pwSrc;delete d.pwSrcset;delete d.pwSrc;}
+ function pwImg(src,i,id){const img=document.createElement('img'),first=i<2;img.loading=first?'eager':'lazy';img.decoding='async';if(!first)img.setAttribute('fetchpriority','low');
+   for(const a of src.attributes)if(!/^(src|srcset|sizes|style|loading|decoding|fetchpriority)$/.test(a.name))img.setAttribute(a.name,a.value);
+   let s=src.getAttribute('src'),ss=src.getAttribute('srcset')||'';
+   // Liwa's existing whole key visual, rather than the cropped window scene.
+   if(id==='p-liwa'){s='../img/liwa/kv-1600.webp';ss='../img/liwa/kv-800.webp 800w, ../img/liwa/kv-1600.webp 1600w, ../img/liwa/kv-2400.webp 2400w';img.alt='Liwa International Festival: the complete Ready? campaign artwork';img.width=1600;img.height=1145;}
+   img.sizes=PW_SIZES;
+   if(first||!pwNear){if(ss)img.srcset=ss;img.src=s;return img;}
+   const w=+img.getAttribute('width')||1,h=+img.getAttribute('height')||1;img.dataset.pwSrc=s;if(ss)img.dataset.pwSrcset=ss;
+   img.src='data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'"/>');
+   pwNear.observe(img);return img;}
  cards.forEach((card,i)=>{
    const name=card.querySelector('.pj-name a'),src=card.querySelector('.pj-stage .pj-pic img')||card.querySelector('.pj-txt .pj-pic img')||card.querySelector('.sgw-in img');if(!name||!src)return;
    const item=document.createElement('article');item.className='work-tile';item.dataset.sectors=card.dataset.s;item.dataset.story=card.id;item.dataset.search=card.textContent.toLowerCase();
    const link=document.createElement('a');link.href=name.getAttribute('href');link.className='work-tile-link';
-   const media=document.createElement('div');media.className='work-tile-media';const img=src.cloneNode(false);img.removeAttribute('style');img.loading=i<2?'eager':'lazy';img.sizes='(max-width:760px) 92vw, 46vw';img.removeAttribute('fetchpriority');media.append(img);
-   // Liwa's existing whole key visual, rather than the cropped window scene.
-   if(card.id==='p-liwa'){img.src='../img/liwa/kv-1600.webp';img.srcset='../img/liwa/kv-800.webp 800w, ../img/liwa/kv-1600.webp 1600w, ../img/liwa/kv-2400.webp 2400w';img.alt='Liwa International Festival: the complete Ready? campaign artwork';img.width=1600;img.height=1145;}
+   const media=document.createElement('div');media.className='work-tile-media';const img=pwImg(src,i,card.id);media.append(img);   /* perfwork21 W1 */
    const meta=document.createElement('p');meta.className='work-tile-meta';const num=document.createElement('span');num.textContent=String(i+1).padStart(2,'0');const type=document.createElement('span');type.textContent=card.querySelector('.pj-k>span')?.textContent||'';meta.append(num,type);
    const title=document.createElement('h2');title.textContent=name.textContent;const arrow=document.createElement('span');arrow.className='work-tile-arrow';arrow.setAttribute('aria-hidden','true');arrow.textContent='↗';title.append(arrow);
    const desc=document.createElement('p');desc.className='work-tile-desc';desc.textContent=card.querySelector('.pj-line')?.textContent||'';
