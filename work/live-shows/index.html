@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Live shows · Dubai, 2017 to 2018 · Antoni Gerges</title>
+<link rel="canonical" href="https://antoniz.com/work/live-shows/">
+<meta name="description" content="Live shows in Dubai, 2017 to 2018: Amr Diab, Angham, Mohamed Mounir, Magida El Roumi and Lilly Singh. Creative direction by Antoni Gerges through AntBrush, with MCX as co-producer.">
+<link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+<link rel="preload" href="../../assets/jost-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="a/mounir-stage-2400.webp" imagesrcset="a/mounir-stage-1200.webp 1200w, a/mounir-stage-2400.webp 2400w" imagesizes="100vw">
+<link rel="stylesheet" href="../../assets/fp/fp.css?v=34">
+<style>
+/* Live shows with MCX, Dubai, 2017 to 2018. His frame throughout: the dark ground #0B0C10, Jost and Inter.
+   There is no one client brand here, so the pictures carry the colour: the gates as drawn, then the nights as photographed.
+   Every picture whole (no crop, no cover). Two type sizes (scale.css, loaded last): var(--t-big) for the one big line per screen, var(--t-text) for the rest.
+   No Arabic anywhere: the Magida gate and both LED artworks carry it and are left out; the recap film is trimmed by hard cuts so no shot with Arabic remains (build/film.sh). */
+html{background:#0B0C10}
+body.fp.ls{--ground:#0B0C10;--dim:rgba(255,255,255,.72);--line:rgba(255,255,255,.18);background:#0B0C10}
+body.ls main{background:#0B0C10}
+body.ls .foot{background:#0B0C10}
+.ls h1{font-weight:600}
+.sr-only{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.ls h2{font-family:"Jost",system-ui,sans-serif;font-size:var(--t-big);line-height:1.08;font-weight:300;color:#fff;margin:0;text-wrap:balance}
+.ls h2 b{font-weight:600}
+.ls section p,.ls figcaption{font-family:Inter,system-ui,sans-serif;font-size:var(--t-text);font-weight:400}
+.ls .lead{margin-top:14px;color:rgba(255,255,255,.86);max-width:40em}
+.ls figure{margin:0;min-width:0}
+.ls figure img{display:block;width:100%;height:auto;max-width:100%}
+.ls figcaption{margin-top:10px;color:var(--dim)}
+.ls figcaption b{font-weight:600;color:#fff}
+
+/* 0 · the opening: the Mounir night, full width and whole, then the label, the big line and the five names */
+.ls-open{padding-top:72px;background:var(--ground)}
+.ls-open .hero figcaption{padding:0 var(--g)}
+.ls-open .in{padding:clamp(26px,4.4vh,48px) var(--g) clamp(22px,4vh,40px)}
+.ls-open .lab{margin:0 0 14px;font-weight:600;color:var(--dim)}
+.ls-open .in p.txt{margin-top:14px;color:rgba(255,255,255,.86);max-width:46em}
+
+/* 1 · the gate, drawn then built: the two side by side at one height (columns in the pictures' own proportions) */
+.ls-gate,.ls-gates{padding:clamp(88px,13vh,150px) var(--g) 0}
+.ls-gate .pair{display:grid;grid-template-columns:minmax(0,3.062fr) minmax(0,1.778fr);gap:clamp(16px,2vw,28px);margin-top:clamp(36px,6vh,60px);align-items:start}
+
+/* 2 · the next gate, whole, at the same width as the Mounir gate above (the two read as one system); its line beside it */
+.ls-gates .g-amr{margin-top:clamp(36px,6vh,60px);display:grid;grid-template-columns:minmax(0,3.062fr) minmax(0,1.778fr);gap:clamp(16px,2vw,28px);align-items:end}
+.ls-gates .g-amr figcaption{margin-top:0}
+
+/* 3 · the nights: four photographs, two by two, each whole with its line */
+.ls-nights{padding:clamp(88px,13vh,150px) var(--g) clamp(24px,5vh,56px)}
+.ls-nights .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(36px,5.5vh,64px) clamp(18px,2.4vw,36px);margin-top:clamp(36px,6vh,64px);align-items:start}
+
+/* 6 · credits, then the next project */
+.ls-end.fp-end{background:var(--ground);padding-top:clamp(40px,8vh,90px)}
+.ls-end .fp-cred{margin-top:0;grid-template-columns:repeat(3,minmax(0,1fr))}
+.ls-end .fp-next .nx-b{grid-row:2;grid-column:1}
+.ls-end .fp-next .nx-a{grid-row:2;grid-column:2}
+.ls-end .fp-next .nx-l{grid-row:3;grid-column:1/-1;color:var(--dim);font-family:Inter,system-ui,sans-serif}
+
+/* 5 · the night, in motion: the MCX recap film, trimmed so no Arabic shows, whole (16:9), played on click with sound (the ZEISS film button and player) */
+.ls-film.fp-end{background:var(--ground);padding:clamp(88px,13vh,150px) var(--g) 0}
+.ls-film .film{margin-top:clamp(36px,6vh,60px)}
+.ls-film .film .t{right:calc(clamp(28px,5vw,84px) + clamp(56px,6vw,96px) + 18px)}
+.ls-film .cap{margin-top:10px;color:var(--dim)}
+
+@media (max-width:760px){
+  .ls-open{padding-top:58px}
+  .ls-gate .pair{grid-template-columns:1fr;gap:28px}
+  .ls-gates .g-amr{grid-template-columns:1fr;gap:10px}
+  .ls-nights .grid{grid-template-columns:1fr;gap:32px}
+  .ls-end .fp-cred{grid-template-columns:1fr}
+}
+</style>
+<noscript><style>@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{padding:6px 8px}.ls-open{padding-top:0}}</style></noscript>
+<link rel="stylesheet" href="../../assets/scale.css"><link rel="stylesheet" href="../../assets/fixes.css"></head>
+<body class="fp ls">
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr">
+  <a class="pill brand" href="../../index.html" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
+  <div class="pill">
+    <nav class="nav" id="nav" aria-label="Site"><a href="../../work/" aria-current="page">Work</a><a href="../../about/">Tony</a><a href="../../contact/">Contact</a><a href="../../assets/Antoni-Gerges-CV.pdf" class="navcv" target="_blank" rel="noopener">CV</a></nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+</header>
+<main id="main">
+<h1 class="sr-only">Live shows, Dubai, 2017 to 2018</h1>
+
+<!-- 0 · the opening: the Mohamed Mounir stage, the crowd and the skyline, 19 Jan 2018, full width and whole -->
+<section class="ls-open" aria-labelledby="s0">
+  <figure class="hero"><img src="a/mounir-stage-2400.webp" srcset="a/mounir-stage-1200.webp 1200w, a/mounir-stage-2400.webp 2400w" sizes="100vw" width="2400" height="1800" fetchpriority="high" decoding="async" alt="An open-air stage at night, its towers in red, lights and beams over the band, two video screens, and a large crowd in front, with lit towers on the skyline behind."><figcaption>Mohamed Mounir Live in Dubai · 19 January 2018</figcaption></figure>
+  <div class="in">
+    <p class="lab">Live shows · Dubai · 2017 to 2018 · with MCX</p>
+    <h2 id="s0">Five nights, <b>one city.</b></h2>
+    <p class="txt">Amr Diab, Angham, Mohamed Mounir, Magida El Roumi, Lilly Singh. Live shows in Dubai, 2017 to 2018: creative direction through AntBrush, with MCX as co-producer.</p>
+  </div>
+</section>
+
+<!-- 1 · the gate is drawn first: the Mounir gate as drawn, whole, and the gate built on the night (a frame from the MCX film) -->
+<section class="ls-gate" aria-labelledby="s1">
+  <h2 id="s1">The gate is <b>drawn first.</b></h2>
+  <p class="lead">Mohamed Mounir Live in Dubai, January 2018. The entrance gate, drawn, then built on the night.</p>
+  <div class="pair">
+    <figure class="g-drawn"><img src="a/mounir-gate-2400.webp" srcset="a/mounir-gate-1200.webp 1200w, a/mounir-gate-2400.webp 2400w" sizes="(max-width:760px) 100vw, 60vw" width="2400" height="784" loading="lazy" decoding="async" alt="The entrance gate artwork on navy: Presents Mohamed Mounir Live in Dubai across the top, colour-coded lanes for All Categories, VIP, Lounges, Fast Track and No Entry, and the SWYP, Hills Advertising and MCX logos on both side panels, the opening left plain grey."><figcaption>Drawn · January 2018</figcaption></figure>
+    <figure class="g-built"><img src="a/mounir-built-1920.webp" srcset="a/mounir-built-960.webp 960w, a/mounir-built-1920.webp 1920w" sizes="(max-width:760px) 100vw, 36vw" width="1920" height="1080" loading="lazy" decoding="async" alt="The same gate built over the entrance, seen from below against the evening sky, with security signs and staff underneath."><figcaption>Built · 19 January 2018 · frame from the MCX film</figcaption></figure>
+  </div>
+</section>
+
+<!-- 2 · the other gate with no Arabic on it: Amr Diab (the final design, as in the print file Amr Gate OL.pdf). The Magida gate carries Arabic and is left out. -->
+<section class="ls-gates" aria-labelledby="s2">
+  <h2 id="s2">Another night, <b>another gate.</b></h2>
+  <figure class="g-amr"><img src="a/amr-gate-2400.webp" srcset="a/amr-gate-1200.webp 1200w, a/amr-gate-2400.webp 2400w" sizes="(max-width:760px) 100vw, 60vw" width="2400" height="784" loading="lazy" decoding="async" alt="The entrance gate artwork on navy: Presents Amr Diab Live in Dubai across the top, the same colour-coded lanes, and the SWYP, Hills Advertising and MCX logos on both side panels."><figcaption>Amr Diab Live in Dubai · 29 December 2017 · the gate as drawn</figcaption></figure>
+</section>
+
+<!-- 3 · then the stage, then the night: four photographs, each whole -->
+<section class="ls-nights" aria-labelledby="s3">
+  <h2 id="s3">Then the stage, <b>then the night.</b></h2>
+  <p class="lead">Four of the five nights, photographed from where the work was checked: the stage, the hall, the crowd.</p>
+  <div class="grid">
+    <figure><img src="a/amr-stage-2400.webp" srcset="a/amr-stage-1200.webp 1200w, a/amr-stage-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1800" loading="lazy" decoding="async" alt="From the back of the stage: musicians and singers in red light, seen from behind, facing the crowd, with towers beyond."><figcaption>Amr Diab Live in Dubai · 29 December 2017 · from the stage</figcaption></figure>
+    <figure><img src="a/angham-hall-2400.webp" srcset="a/angham-hall-1200.webp 1200w, a/angham-hall-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1800" loading="lazy" decoding="async" alt="An indoor hall in violet light: rows of seated guests on the floor and on the raised tiers behind, under a dark ceiling grid."><figcaption>Angham Live in Dubai · Dubai World Trade Centre · 10 November 2017 · the hall</figcaption></figure>
+    <figure><img src="a/angham-stage-2400.webp" srcset="a/angham-stage-1200.webp 1200w, a/angham-stage-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1800" loading="lazy" decoding="async" alt="The same hall from the back: an orchestra on a wide stage under amber and green beams, five tall light columns behind it, a screen on each side and the dark seated audience in front."><figcaption>Angham Live in Dubai · Dubai World Trade Centre · 10 November 2017 · the stage</figcaption></figure>
+    <figure><img src="a/lilly-hall-2400.webp" srcset="a/lilly-hall-1200.webp 1200w, a/lilly-hall-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1800" loading="lazy" decoding="async" alt="A ballroom under crystal chandeliers, the walls lit red, rows of guests facing a screen that reads How to Be a Bawse."><figcaption>Lilly Singh Live in Dubai · 10 May 2017 · the ballroom</figcaption></figure>
+  </div>
+</section>
+
+<!-- 5 · the night, in motion: the MCX recap film of the Mounir night, trimmed by hard cuts to leave out every shot with Arabic lettering (build/film.sh) -->
+<section class="fp-end ls-film" aria-labelledby="s5">
+  <h2 id="s5">The night, <b>in motion.</b></h2>
+  <button class="film" type="button" data-film="a/mounir-recap-1280.mp4" data-title="Mohamed Mounir Live in Dubai, 2018 · recap film by MCX, trimmed · 1:18" aria-label="Play the recap film of Mohamed Mounir Live in Dubai, 1 minute 18 seconds, with sound">
+    <img src="a/mounir-recap-poster.webp" width="1280" height="720" loading="lazy" decoding="async" alt="">
+    <span class="t"><span class="fp-lab">Recap film · 1:18 · sound</span></span><span class="go" aria-hidden="true"></span>
+  </button>
+  <noscript><p class="cap"><a href="a/mounir-recap-1280.mp4">Open the recap film (video file, 1:18)</a></p></noscript>
+  <p class="cap">Mohamed Mounir Live in Dubai, 2018 · recap film by MCX, trimmed</p>
+</section>
+
+<!-- 6 · credits, then the next project -->
+<section class="fp-end ls-end" aria-label="Credits">
+  <div class="fp-cred">
+    <div><span class="fp-lab">Role</span>Antoni Gerges<br>Partner, Creative Director &amp; Co-producer, through AntBrush, 2017 to 2022</div>
+    <div><span class="fp-lab">Produced by</span>MCX</div>
+    <div><span class="fp-lab">Gate and screen artwork</span>AntBrush</div>
+  </div>
+  <a class="fp-next" href="../mazzika/"><span class="fp-lab">Next project</span><b class="nx-b">Why Not! Mazzika</b><span class="nx-a" aria-hidden="true">→</span><span class="nx-l">Make room for six acts.</span></a>
+</section>
+</main>
+
+<div class="fp-player" role="dialog" aria-label="Film player"><video playsinline preload="none"></video><div class="bar"><span class="ti"></span><button class="x" type="button">Close</button></div></div>
+
+<footer class="foot"><div class="wrap row">
+  <p style="margin:0">Antoni Gerges · Creative Director, Brand &amp; Experiential · <a href="mailto:antoni@antbrush.com">antoni@antbrush.com</a></p>
+  <nav aria-label="Footer"><a href="../../work/">Work</a><a href="../../about/">Tony</a><a href="../../contact/">Contact</a></nav>
+</div></footer>
+<script>
+/* The page's own small script: the header menu (as on the other project pages), the header out of the way while reading down, and the film player. */
+(function () {
+  var D = document, W = window, phone = function () { return W.innerWidth <= 760; };
+  var hdr = D.querySelector('.hdr'), mb = D.querySelector('.menu-btn'), ly0 = 0, acc = 0;
+  function menu(o) { hdr.classList.toggle('open', o); mb.setAttribute('aria-expanded', o ? 'true' : 'false'); mb.textContent = o ? 'Close' : 'Menu';
+    [].forEach.call(D.querySelectorAll('main, footer, .skip'), function (e) { o ? e.setAttribute('inert', '') : e.removeAttribute('inert'); });
+    D.documentElement.style.overflow = o ? 'hidden' : ''; }
+  function items() { return [].filter.call(hdr.querySelectorAll('a[href], button'), function (e) { return e.getClientRects().length > 0; }); }
+  if (hdr && mb) {
+  mb.addEventListener('click', function () { menu(!hdr.classList.contains('open')); });
+  D.addEventListener('keydown', function (e) { if (!hdr.classList.contains('open')) return;
+    if (e.key === 'Escape') { menu(false); mb.focus(); return; }
+    if (e.key === 'Tab') { var f = items(), i = f.indexOf(D.activeElement); e.preventDefault(); f[(i < 0 ? 0 : i + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus(); } });
+  W.addEventListener('resize', function () { if (!phone() && hdr.classList.contains('open')) menu(false); });
+  [].forEach.call(hdr.querySelectorAll('.nav a'), function (l) { l.addEventListener('click', function () { menu(false); }); });
+  W.addEventListener('scroll', function () { var y = W.scrollY, d = y - ly0; ly0 = y; if (y < 80) { hdr.classList.remove('hide'); acc = 0; return; }
+    acc = (d > 0) === (acc > 0) ? acc + d : d; if (acc > 24) hdr.classList.add('hide'); else if (acc < -12) hdr.classList.remove('hide'); }, { passive: true });
+  }
+  /* the film player, as on the ZEISS page: the full film with sound; focus moves in, stays in, and returns to the button that opened it */
+  var pl = D.querySelector('.fp-player');
+  if (pl) {
+    var pv = pl.querySelector('video'), pt = pl.querySelector('.ti'), px = pl.querySelector('.x'), opener = null;
+    pl.setAttribute('aria-modal', 'true'); pl.setAttribute('tabindex', '-1');
+    var close = function () { if (!pl.classList.contains('open')) return; pv.pause(); pl.classList.remove('open'); D.documentElement.style.overflow = ''; if (opener && opener.focus) opener.focus(); opener = null; };
+    [].forEach.call(D.querySelectorAll('[data-film]'), function (b) {
+      b.addEventListener('click', function () {
+        var s = (phone() && b.dataset.filmP) || b.dataset.film;
+        if (pv.getAttribute('src') !== s) pv.src = s;
+        if (pt) pt.textContent = b.dataset.title || '';
+        opener = b; pl.classList.add('open'); D.documentElement.style.overflow = 'hidden'; pv.muted = false; pv.controls = true; px.focus();
+        var p = pv.play(); if (p && p.catch) p.catch(function () {});
+      });
+    });
+    px.addEventListener('click', close);
+    D.addEventListener('keydown', function (e) {
+      if (!pl.classList.contains('open')) return;
+      if (e.key === 'Escape') { e.preventDefault(); close(); return; }
+      if (e.key === 'Tab') { var f = [pv, px], i = f.indexOf(D.activeElement); e.preventDefault(); f[(i + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus(); }
+    });
+  }
+})();
+</script>
+</body>
+</html>

@@ -542,7 +542,7 @@ body:has(.pj-pick input:not(#k-all):checked) .where{display:none}
 .shell2 .abh-sub{margin:26px 0 0;font:400 clamp(16px,1.25vw,20px)/1.6 "Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
 .shell2 .abh-fig{--sgw-h:min(91svh,57vw);position:absolute;right:7.08vw;bottom:0;z-index:3}
 .shell2 .abh-fig img{left:-80.36%;top:-28.05%;width:341.96%;height:auto}
-.shell2 .abh-fig .sgw-out img{clip-path:polygon(0 0,100% 0,100% 100%,-1.6% 100%,5.06% 68.67%,0 68.67%)}   /* the bull's end, cut at the signal's slant */
+.shell2 .abh-fig .sgw-out img{clip-path:none}   /* the bull's end fades out inside the cut-out's own alpha (20 Oct) */
 .shell2 .abh-sweep{position:absolute;left:0;right:0;top:52.2%;height:22.2%;overflow:hidden;z-index:1;pointer-events:none}
 .shell2 .abh-sweep img{position:absolute;top:0;left:-133.3%;width:296.3%;height:100%;max-width:none;opacity:.9;display:block}
 /* The line never crosses the words (the design system: "never behind body text"). The words hang from the top of the screen and grow with its WIDTH;

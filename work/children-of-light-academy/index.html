@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Children of Light Academy · Brand identity · Antoni Gerges</title>
+<link rel="canonical" href="https://antoniz.com/work/children-of-light-academy/">
+<meta name="description" content="Children of Light Academy, New Port Richey, Florida: a full volunteer rebrand by Antoni Gerges, Creative Director, Brand &amp; Experiential. Identity, design system, logo animation, collateral and enrollment forms.">
+<link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Poppins:wght@600&family=Nunito+Sans:opsz,wght@6..12,400&family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+<link rel="preload" href="../../assets/jost-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/fp/fp.css?v=34">
+<style>
+/* Children of Light Academy. His frame (header, footer, the opening and the credits) stays on his dark ground #0B0C10.
+   Inside, the brand's own colours lead where they hold a big field: Teal #0C3B4A and its deep tone #082C38, Sunrise Orange #F5891F only as a line.
+   The full-colour logo lives on white only (brand book p. 03), so it is shown in its animation, on its own white; on teal the brand's mono white mark is used.
+   Two type sizes (scale.css, loaded last): var(--t-big) for the one big line per screen, var(--t-text) for everything else. */
+html{background:#0B0C10}
+body.fp.cola{--ground:#0B0C10;--teal:#0C3B4A;--teal-deep:#082C38;--sun:#F5891F;--dim:rgba(255,255,255,.72);--line:rgba(255,255,255,.18);background:#0B0C10}
+body.cola main{background:#0B0C10}
+body.cola .foot{background:#0B0C10}
+.sr-only{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.cola h2{font-family:"Jost",system-ui,sans-serif;font-size:var(--t-big);line-height:1.08;font-weight:300;color:#fff;margin:0;text-wrap:balance}
+.cola h2 b{font-weight:600}
+.cola section p,.cola figcaption{font-family:Inter,system-ui,sans-serif;font-size:var(--t-text);font-weight:400}
+.cola .lead{margin-top:14px;color:rgba(255,255,255,.86);max-width:40em}
+.cola .sun-line{display:block;width:64px;height:2px;background:var(--sun);margin:0 0 22px}
+
+/* 1 · the opening: the logo animation, whole, on its own white, full width on the dark ground */
+.c-open{display:flex;flex-direction:column;min-height:100svh;padding-top:72px;background:var(--ground)}
+.c-film{background:#fff;width:100%}
+.c-film video{display:block;width:100%;height:max(220px,min(43.75vw,calc(100svh - 290px)));object-fit:contain;background:#fff}
+.c-open .in{padding:clamp(20px,3.4vh,34px) var(--g) clamp(22px,4vh,40px)}
+.c-open .in p{margin-top:12px;color:var(--dim);max-width:52em}
+
+/* 2 · the mark, on the brand's teal */
+.c-mark{background:var(--teal);min-height:100svh;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:center;gap:clamp(28px,5vw,96px);padding:clamp(88px,13vh,150px) var(--g)}
+.c-mark .mk{margin:0;display:flex;justify-content:center}
+.c-mark .mk img{display:block;width:min(100%,600px,calc((100svh - 240px) * 485.46 / 396.5));height:auto}
+.c-mark .tx p{max-width:30em}
+
+/* 3 · the system, on the deep teal */
+.c-sys{background:var(--teal-deep);padding:clamp(88px,13vh,150px) var(--g) clamp(72px,11vh,130px)}
+.c-sys .sw{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(22px,2.4vw,36px) clamp(16px,2vw,28px);margin-top:clamp(36px,6vh,60px)}
+.c-sys .sw div{min-width:0}
+.c-sys .sw i{display:block;width:100%;aspect-ratio:16/7;box-shadow:inset 0 0 0 1px var(--line)}
+.c-sys .sw .n i{aspect-ratio:16/4}
+.c-sys .sw p{margin-top:10px;color:var(--dim);line-height:1.45}
+.c-sys .sw p b{display:block;font-family:"Jost",system-ui,sans-serif;font-weight:600;color:#fff}
+.c-sys .sw p span{font-family:"Jost",system-ui,sans-serif;font-weight:300;color:#fff}
+.c-sys .two{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(28px,5vw,96px);margin-top:clamp(44px,7vh,80px);align-items:start}
+.c-sys .ty{border-top:1px solid var(--line);padding:16px 0 18px}
+.c-sys .ty .s{color:#fff;margin:0}
+.c-sys .ty .k{color:var(--dim);margin-top:4px}
+.c-sys .ty .pop{font-family:"Poppins",sans-serif;font-weight:600}
+.c-sys .ty .nun{font-family:"Nunito Sans",sans-serif;font-weight:400}
+.c-sys .ty .lor{font-family:"Lora",Georgia,serif;font-style:italic;font-weight:500}
+.c-sys .ty .lor cite{font-style:normal;color:var(--sun)}
+.c-sys .cs{margin:0;border-top:1px solid var(--line);padding-top:16px;--w:min(230px,56vw)}
+.c-sys .cs .room{display:flex;justify-content:center;padding:calc(var(--w) * .075 + 22px) 0}
+.c-sys .cs img{display:block;width:var(--w);height:auto;outline:1.5px dashed var(--sun);outline-offset:calc(var(--w) * .075)}
+.c-sys .cs figcaption{color:var(--dim)}
+.c-sys .cs figcaption b{font-weight:600;color:#fff}
+
+/* 4 · in use: every piece whole, on the dark ground, one line each */
+.c-use{background:var(--ground);padding:clamp(88px,13vh,150px) var(--g) clamp(24px,5vh,56px)}
+.c-use .pcs{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(36px,5.5vh,64px) clamp(18px,2.4vw,36px);margin-top:clamp(36px,6vh,64px);align-items:start}
+.c-use figure{margin:0;min-width:0}
+.c-use figure img{display:block;width:100%;height:auto}
+.c-use figcaption{margin-top:12px;color:var(--dim)}
+.c-use .p-signs{grid-column:1/-1}
+.c-use .p-lh{grid-column:1/6;grid-row:2/span 2}
+.c-use .p-cards{grid-column:6/-1;grid-row:2}
+.c-use .p-folder{grid-column:6/-1;grid-row:3}
+.c-use .p-report{grid-column:1/7}
+.c-use .p-cert{grid-column:7/-1}
+.c-use .p-form{grid-column:2/12}
+.c-use .p-online{grid-column:4/10}
+
+/* 5 · credits, then the next project */
+.c-end.fp-end{background:var(--ground);padding-top:clamp(40px,8vh,90px)}
+.c-end .fp-cred{margin-top:0;grid-template-columns:repeat(4,minmax(0,1fr))}
+.c-end .fp-next .nx-b{grid-row:2;grid-column:1}
+.c-end .fp-next .nx-a{grid-row:2;grid-column:2}
+.c-end .fp-next .nx-l{grid-row:3;grid-column:1/-1;color:var(--dim);font-family:Inter,system-ui,sans-serif}
+
+@media (max-width:760px){
+  .c-open{padding-top:58px;min-height:0}
+  .c-film video{height:auto;aspect-ratio:1/1;max-height:calc(100svh - 300px)}
+  .c-mark{grid-template-columns:1fr;min-height:0;gap:30px}
+  .c-mark .mk img{width:min(84%,420px)}
+  .c-sys .sw{grid-template-columns:1fr;gap:16px}
+  .c-sys .sw div{display:grid;grid-template-columns:40% minmax(0,1fr);gap:16px;align-items:center}
+  .c-sys .sw i,.c-sys .sw .n i{aspect-ratio:16/10}
+  .c-sys .sw p{margin-top:0}
+  .c-sys .two{grid-template-columns:1fr;gap:36px}
+  .c-use .pcs{grid-template-columns:1fr}
+  .c-use .pcs>figure{grid-column:1/-1!important;grid-row:auto!important}
+  .c-end .fp-cred{grid-template-columns:1fr}
+}
+</style>
+<noscript><style>@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{padding:6px 8px}.c-open{padding-top:0}}</style></noscript>
+<link rel="stylesheet" href="../../assets/scale.css"></head>
+<body class="fp cola">
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr">
+  <a class="pill brand" href="../../index.html" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
+  <div class="pill">
+    <nav class="nav" id="nav" aria-label="Site"><a href="../../work/" aria-current="page">Work</a><a href="../../about/">Tony</a><a href="../../contact/">Contact</a><a href="../../assets/Antoni-Gerges-CV.pdf" class="navcv" target="_blank" rel="noopener">CV</a></nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+</header>
+<main id="main">
+<h1 class="sr-only">Children of Light Academy</h1>
+
+<!-- 1 · the opening: the final logo animation (v4, the one on colacademy.org), whole, on its own white -->
+<section class="c-open" aria-labelledby="c1">
+  <div class="c-film">
+    <video id="film" muted autoplay loop playsinline preload="auto" poster="a/logo-anim-d.webp" data-poster-p="a/logo-anim-p.webp" aria-label="The Children of Light Academy logo animation: an open book, children jumping up from it, the rising sun behind them, the cross, then the name.">
+      <source src="a/logo-anim-p.mp4" type="video/mp4" media="(max-width: 760px)">
+      <source src="a/logo-anim-d.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="in">
+    <h2 id="c1">A small school, <b>given its light.</b></h2>
+    <p>New Port Richey, Florida · volunteer work · identity, design system, logo animation, collateral and enrollment forms.</p>
+  </div>
+</section>
+
+<!-- 2 · the mark: the brand's mono white version, the one the guidelines set for teal grounds -->
+<section class="c-mark" aria-labelledby="c2">
+  <figure class="mk"><img src="a/mark-white.svg" width="485" height="397" alt="The Children of Light Academy mark in white: five children jumping inside the arch of a rising sun, a cross above them, all standing on an open book, the name set beneath."></figure>
+  <div class="tx">
+    <i class="sun-line" aria-hidden="true"></i>
+    <h2 id="c2">The <b>mark.</b></h2>
+    <p class="lead">The idea is a guiding light. Everything comes from the logo’s scene: children at play, lifted by the rising sun, standing on an open book.</p>
+  </div>
+</section>
+
+<!-- 3 · the system: colours, type and the mark's rules, as the brand book sets them -->
+<section class="c-sys" aria-labelledby="c3">
+  <i class="sun-line" aria-hidden="true"></i>
+  <h2 id="c3">One system, <b>every piece.</b></h2>
+  <p class="lead">Two colours carry the brand. Everything else is neutral or derived from them.</p>
+  <div class="sw">
+    <div><i style="background:#0C3B4A"></i><p><b>Teal</b><span>#0C3B4A</span> · primary, the ink</p></div>
+    <div><i style="background:#F5891F"></i><p><b>Sunrise Orange</b><span>#F5891F</span> · the accent</p></div>
+    <div class="c3"><i style="background:linear-gradient(125deg,#EA6F0D 0%,#F5891F 55%,#FAA61A 100%)"></i><p><b>Dawn</b>The one gradient: orange, amber, gold, used inside the sun</p></div>
+    <div class="n"><i style="background:#FFFFFF"></i><p><b>Paper</b><span>#FFFFFF</span> · pages</p></div>
+    <div class="n"><i style="background:#EEF3F4"></i><p><b>Mist</b><span>#EEF3F4</span> · bands</p></div>
+    <div class="n c3"><i style="background:#DDE6E8"></i><p><b>Line</b><span>#DDE6E8</span> · rules</p></div>
+  </div>
+  <div class="two">
+    <div class="types">
+      <div class="ty"><p class="s pop">YOUR CHILD’S FIRST STEPS START HERE</p><p class="k">Poppins · headings, buttons, navigation</p></div>
+      <div class="ty"><p class="s nun">A secure, enriching environment where children explore, learn, and grow.</p><p class="k">Nunito Sans · reading text</p></div>
+      <div class="ty"><p class="s lor">“Train up a child in the way he should go.” <cite>Proverbs 22:6</cite></p><p class="k">Lora Italic · scripture only, always with an orange citation</p></div>
+    </div>
+    <figure class="cs">
+      <div class="room"><img src="a/mark-white.svg" width="485" height="397" alt="The mark in white, with its clear space drawn as a dashed orange line around it." loading="lazy"></div>
+      <figcaption><b>Clear space:</b> the height of the C in CHILDREN, on every side. Full colour on white is the default; on teal and dark grounds the mark goes white.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 4 · in use: the collateral suite and the enrollment forms, each whole -->
+<section class="c-use" aria-labelledby="c4">
+  <i class="sun-line" aria-hidden="true"></i>
+  <h2 id="c4">From the sign <b>to the enrollment form.</b></h2>
+  <div class="pcs">
+    <figure class="p-signs"><img src="a/signs-2400.webp" srcset="a/signs-1200.webp 1200w, a/signs-2400.webp 2400w" sizes="(max-width:760px) 100vw, 92vw" width="2400" height="816" loading="lazy" decoding="async" alt="Four name badges for staff, children, visitors and cubbies, a teal door sign for Room 3 Preschool with a rising sun, and a white sign that reads Please Wash Hands."><figcaption>Name badges, door and cubby signs.</figcaption></figure>
+    <figure class="p-lh"><img src="a/letterhead-2400.webp" srcset="a/letterhead-1200.webp 1200w, a/letterhead-2400.webp 1435w" sizes="(max-width:760px) 100vw, 40vw" width="1435" height="2025" loading="lazy" decoding="async" alt="The letterhead: a sunrise-gradient line at the top, the horizontal logo and contact block, and a slim teal footer carrying a verse."><figcaption>Letterhead.</figcaption></figure>
+    <figure class="p-cards"><img src="a/cards-2400.webp" srcset="a/cards-1200.webp 1200w, a/cards-2400.webp 2400w" sizes="(max-width:760px) 100vw, 55vw" width="2400" height="975" loading="lazy" decoding="async" alt="A business card front with the logo, name, role and contact, its back with the white mark on deep teal, and a long compliment slip."><figcaption>Business cards and compliment slip.</figcaption></figure>
+    <figure class="p-folder"><img src="a/folder-2400.webp" srcset="a/folder-1200.webp 1200w, a/folder-2400.webp 2400w" sizes="(max-width:760px) 100vw, 55vw" width="2400" height="914" loading="lazy" decoding="async" alt="A number 10 envelope with the logo and a sunrise-gradient edge, and a teal welcome folder that reads Your Child’s First Steps Start Here."><figcaption>Envelope and welcome folder.</figcaption></figure>
+    <figure class="p-report"><img src="a/report-2400.webp" srcset="a/report-1200.webp 1200w, a/report-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1031" loading="lazy" decoding="async" alt="The daily report for infants and toddlers: tables for meals and diapers, a nap line, and an orange panel for a note from the teacher."><figcaption>Daily report, infants and toddlers.</figcaption></figure>
+    <figure class="p-cert"><img src="a/certificate-2400.webp" srcset="a/certificate-1200.webp 1200w, a/certificate-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1229" loading="lazy" decoding="async" alt="The VPK certificate of completion, framed in teal and gold, with the logo, the child’s name in orange italic and a verse."><figcaption>VPK certificate of completion.</figcaption></figure>
+    <figure class="p-form"><img src="a/form-2400.webp" srcset="a/form-1200.webp 1200w, a/form-2400.webp 2400w" sizes="(max-width:760px) 100vw, 84vw" width="2400" height="1175" loading="lazy" decoding="async" alt="The printed enrollment and registration form: sections for the child, parents and authorized pick-up, a signature line and an orange office-use tab."><figcaption>Enrollment and registration form, for print.</figcaption></figure>
+    <figure class="p-online"><img src="a/online-form-1287.webp" srcset="a/online-form-640.webp 640w, a/online-form-1287.webp 1287w" sizes="(max-width:760px) 100vw, 46vw" width="1287" height="1166" loading="lazy" decoding="async" alt="The first page of the online enrollment form on the school’s website: a welcome note, what to have ready, an email field, and Page 1 of 10."><figcaption>The online enrollment form, built to replace a 30-page paper packet.</figcaption></figure>
+  </div>
+</section>
+
+<!-- 5 · credits, then the next project -->
+<section class="fp-end c-end" aria-label="Credits">
+  <div class="fp-cred">
+    <div><span class="fp-lab">Role</span>Antoni Gerges<br>Creative Director, Brand &amp; Experiential</div>
+    <div><span class="fp-lab">The work</span>Full rebrand: identity, design system, logo animation, collateral and enrollment forms. Volunteer work, New Port Richey, Florida, 2026.</div>
+    <div><span class="fp-lab">Made with</span>Logo animation made with AI video tools, from the logo artwork.</div>
+    <div><span class="fp-lab">Note</span>The names on the badges, cards and signs are the brand book’s samples.</div>
+  </div>
+  <a class="fp-next" href="../dha/"><span class="fp-lab">Next project</span><b class="nx-b">Dubai Health Authority</b><span class="nx-a" aria-hidden="true">→</span><span class="nx-l">A star with one corner open.</span></a>
+</section>
+</main>
+
+<footer class="foot"><div class="wrap row">
+  <p style="margin:0">Antoni Gerges · Creative Director, Brand &amp; Experiential · <a href="mailto:antoni@antbrush.com">antoni@antbrush.com</a></p>
+  <nav aria-label="Footer"><a href="../../work/">Work</a><a href="../../about/">Tony</a><a href="../../contact/">Contact</a></nav>
+</div></footer>
+<script>
+/* The page's own small script: the header menu (as on the other project pages), the header out of the way while reading down,
+   and the opening film: phone poster, a Pause/Play control, paused off screen, waiting on its poster under reduced motion. */
+(function () {
+  var D = document, W = window, phone = function () { return W.innerWidth <= 760; };
+  var hdr = D.querySelector('.hdr'), mb = D.querySelector('.menu-btn'), nav = D.getElementById('nav'), ly0 = 0, acc = 0;
+  function menu(o) { hdr.classList.toggle('open', o); mb.setAttribute('aria-expanded', o ? 'true' : 'false'); mb.textContent = o ? 'Close' : 'Menu';
+    [].forEach.call(D.querySelectorAll('main, footer, .skip'), function (e) { o ? e.setAttribute('inert', '') : e.removeAttribute('inert'); });
+    D.documentElement.style.overflow = o ? 'hidden' : ''; }
+  function items() { return [].filter.call(hdr.querySelectorAll('a[href], button'), function (e) { return e.getClientRects().length > 0; }); }
+  if (hdr && mb) {
+    mb.addEventListener('click', function () { menu(!hdr.classList.contains('open')); });
+    D.addEventListener('keydown', function (e) { if (!hdr.classList.contains('open')) return;
+      if (e.key === 'Escape') { menu(false); mb.focus(); return; }
+      if (e.key === 'Tab') { var f = items(), i = f.indexOf(D.activeElement); e.preventDefault(); f[(i < 0 ? 0 : i + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus(); } });
+    W.addEventListener('resize', function () { if (!phone() && hdr.classList.contains('open')) menu(false); });
+    [].forEach.call(hdr.querySelectorAll('.nav a'), function (l) { l.addEventListener('click', function () { menu(false); }); });
+    W.addEventListener('scroll', function () { var y = W.scrollY, d = y - ly0; ly0 = y; if (y < 80) { hdr.classList.remove('hide'); acc = 0; return; }
+      acc = (d > 0) === (acc > 0) ? acc + d : d; if (acc > 24) hdr.classList.add('hide'); else if (acc < -12) hdr.classList.remove('hide'); }, { passive: true });
+  }
+  var v = D.getElementById('film'); if (!v) return;
+  if (phone() && v.dataset.posterP) v.poster = v.dataset.posterP;
+  var RM = W.matchMedia && W.matchMedia('(prefers-reduced-motion: reduce)').matches, held = RM;
+  function go() { if (held) return; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+  if (RM) { v.removeAttribute('autoplay'); v.pause(); }
+  var b = D.createElement('button'); b.type = 'button'; b.className = 'case-motion';
+  function label() { b.textContent = held ? 'Play film' : 'Pause film'; b.setAttribute('aria-label', held ? 'Play the logo animation' : 'Pause the logo animation'); }
+  b.addEventListener('click', function () { held = !held; held ? v.pause() : go(); label(); });
+  label(); if (nav) nav.appendChild(b);
+  if ('IntersectionObserver' in W) new IntersectionObserver(function (es) { es.forEach(function (e) { e.isIntersecting ? go() : v.pause(); }); }, { threshold: .2 }).observe(v);
+})();
+</script>
+</body>
+</html>

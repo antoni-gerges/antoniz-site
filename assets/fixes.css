@@ -1,0 +1,49 @@
+/* 20 Oct fixes (fixes-20oct/fixes20.py): F4 the four Cs, in one plain line for a client; F5 the MCX heading over its film */
+.hw-for{margin:14px 0 0;max-width:34em;color:rgba(247,245,241,.78)}
+.ab-mcx-h{margin:0 0 12px;font-family:"Jost",system-ui,sans-serif;font-weight:600}
+/* V1 Home, V2 Tony page: "In their words", three quotes. No font-size here: scale.css sets the two sizes (quotes BIG, sources TEXT) */
+.words{list-style:none;margin:clamp(28px,3vw,48px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px var(--gap,24px)}
+.words li{min-width:0;border-top:1px solid rgba(247,245,241,.18);padding-top:16px}
+.words blockquote{margin:0}
+.words blockquote p{margin:0 0 12px;font-family:"Jost",system-ui,sans-serif;font-weight:600;color:#F7F5F1;text-wrap:pretty}
+.words footer{font-family:"Inter",system-ui,sans-serif;color:rgba(247,245,241,.72)}
+@media (max-width:760px){.words{grid-template-columns:1fr;gap:24px}}
+/* the band quotes are TEXT size (Jost 600), not Big: beats scale.css; the AIAASC page's own pull-quote (.aa-q) keeps Big */
+html:not(#_t):not(#_u) body .words blockquote p{font-size:var(--t-text) !important;line-height:var(--lh-text) !important;letter-spacing:normal !important}
+/* R-*: one result line per case page (p. so it outranks the pages' own ".lead p" / ".storylink p") */
+p.fp-result{margin:12px 0 0;font-family:"Jost",system-ui,sans-serif;font-weight:600;color:#F7F5F1;max-width:34em}
+/* in a section.fp-res heading row (h2 and its label share a flex row): the line takes its own row under both, 12px below */
+.fp-res .hd>p.fp-result{order:1;flex:0 0 100%;max-width:none!important;margin-top:-12px}
+/* Al Ain has no result section: the line stands just before the closing section, on the sections' left edge */
+body.fp main>p.fp-result{margin:clamp(36px,7vh,80px) var(--g) 0}
+/* light grounds: AIAASC's result section, and the older page form (pyramids-2021) */
+.aiaasc .fp-res p.fp-result{color:var(--brand-navy)}
+body.proj p.fp-result{color:var(--fg)}
+/* E-COLA-EDU: the Tony page's Education band holds four articles (Children of Light Academy added): two by two, four across from 1200 px, one column on a phone */
+.education-proof .education-links{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (min-width:1200px){.education-proof .education-links{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:760px){.education-proof .education-links{grid-template-columns:1fr}}
+/* E-BG-JEEPS: the Big Grill "off-road zone" chapter, one photograph whole: the page's result-section form (heading row, then figure.shot);
+   never cropped (no object-fit:cover, no max-height); type sizes come from scale.css (heading BIG, label and caption TEXT) */
+.bg-jeeps{padding:clamp(70px,12vh,150px) var(--g) clamp(30px,6vh,70px)}
+.bg-jeeps .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(26px,5vh,56px)}
+.bg-jeeps .hd h2{margin:0;font-weight:600}
+.bg-jeeps .shot{margin:0;max-width:1100px}
+.bg-jeeps .shot img{display:block;width:100%;height:auto;max-width:100%;max-height:none;object-fit:contain}
+.bg-jeeps .shot figcaption{margin-top:10px}
+/* E-CITY-EDITIONS: Cityscape, "Five editions. One client.", in the page's own picture-chapter form (section.cs-set: label, h2, figures of
+   .im + figcaption); the renders whole and at one height, side by side (each figure's width follows its picture's ratio, --ar), stacked
+   on a phone. Never cropped: the .im box drops its fixed 16:9 and the image its absolute fill. Type sizes from scale.css (heading BIG, the rest TEXT) */
+.cs-editions{--gw:min(1500px,calc((100svh - 400px) / .5625 * 2 + 24px))}
+.cs-editions .grid{display:flex;align-items:flex-start;gap:clamp(12px,1.4vw,20px)}
+.cs-editions figure{flex:var(--ar,1.7778) 1 0;min-width:0}
+.cs-editions figure .im{aspect-ratio:auto}
+.cs-editions figure img{position:static;inset:auto;width:100%;height:auto;max-width:100%;max-height:none;object-fit:contain}
+.cs-editions figcaption b{display:inline;margin:0}
+.cs-editions .cs-ed-ft{margin:clamp(16px,2.6vh,28px) auto 0;width:100%;max-width:var(--gw)}
+.cs-editions .cs-ed-ft p{margin:0;color:rgba(242,241,237,.8)}
+@media (max-width:760px){.cs-editions .grid{flex-direction:column}.cs-editions figure{flex:none;width:100%}}
+/* E-LIVE-TONY (20 Oct): "The live shows →" under the MCX film caption on the Tony page, a little air above it */
+.ab-mcx-go{margin:10px 0 0}
+/* Tony 21 Oct: the bull on desktop ends on a straight cut at 16 degrees, parallel to the signal, through the picture's bottom corner (no fade) */
+@media (min-width:761px){ html:not(#_t) body .abh-fig .sgw-out img{ clip-path: polygon(21.25% 0%, 100% 0%, 100% 100%, 0% 100%); } }

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How a space is planned · Spaces · Antoni Gerges</title>
+<link rel="canonical" href="https://antoniz.com/work/spaces/">
+<meta name="description" content="How a space is planned, from the client’s brief to the opening day, shown with the real drawings: Cityscape Abu Dhabi, the World Future Energy Summit and Innovation Month in Al Ain. Antoni Gerges, Creative Director, Brand &amp; Experiential.">
+<link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+<link rel="preload" href="../../assets/jost-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/fp/fp.css?v=34">
+<style>
+/* Spaces: how a space is planned. Seven steps, each shown with the real document or photograph, every plan and render whole.
+   His frame and ground throughout: #0B0C10. Two type sizes (scale.css, loaded last): var(--t-big) for the one big line per screen
+   and the figures, var(--t-text) for everything else. Jost 300/600 for the big lines, Inter 400/600 for the text.
+   Pictures sit in rows whose heights match (each figure grows by its own aspect ratio), so nothing is ever cropped. */
+html{background:#0B0C10}
+body.fp.spaces{--ground:#0B0C10;--dim:rgba(255,255,255,.72);--line:rgba(255,255,255,.18);background:#0B0C10}
+body.spaces main{background:#0B0C10}
+body.spaces .foot{background:#0B0C10}
+.sr-only{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.spaces h2{font-family:"Jost",system-ui,sans-serif;font-size:var(--t-big);line-height:1.08;font-weight:300;color:#fff;margin:0;text-wrap:balance}
+.spaces h2 b{font-weight:600}
+.spaces section p,.spaces figcaption{font-family:Inter,system-ui,sans-serif;font-size:var(--t-text);font-weight:400;margin:0}
+.spaces .lab{font-weight:600;color:var(--dim);margin:0 0 14px}
+.spaces .lead{margin-top:14px;color:rgba(255,255,255,.86);max-width:40em}
+.spaces figure{margin:0;min-width:0}
+.spaces figure img{display:block;width:100%;height:auto}
+.spaces figcaption{margin-top:10px;color:var(--dim);line-height:1.45}
+
+/* 0 · the opening: the spheres over the stand, whole and full width (the brief); the label and the big line follow under it, never on it */
+.s-open{padding-top:72px;background:var(--ground)}
+.s-open .hero{margin:0;width:100%}
+.s-open .in{padding:clamp(20px,3.4vh,34px) var(--g) clamp(22px,4vh,40px)}
+.s-open .in .lead{margin-top:12px}
+
+/* 1-4 · one step per screen: the words on the left, the document on the right, whole */
+.st{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.3fr);gap:clamp(28px,4vw,80px);align-items:center;padding:clamp(72px,12vh,140px) var(--g) 0}
+.st .doc{justify-self:center;width:min(100%,calc((100svh - 190px) * var(--ar)))}
+.st .doc.small{width:min(100%,760px,calc((100svh - 190px) * var(--ar)))}
+
+/* 5-7 · the big line on top, then the pictures in rows of equal height */
+.sw{padding:clamp(72px,12vh,140px) var(--g) 0}
+.sw .hd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(14px,3vw,56px);align-items:end;margin-bottom:clamp(26px,5vh,52px)}
+.sw .hd .lead{margin-top:0}
+.pics{display:flex;gap:clamp(14px,1.8vw,26px);align-items:flex-start}
+.pics+.pics{margin-top:clamp(22px,3.4vh,36px)}
+.pics>figure{flex:var(--ar) 1 0%}
+.pics.narrow{max-width:1080px}
+.pics.one{max-width:1100px}
+.spaces .sub{margin:clamp(30px,5vh,52px) 0 14px;font-weight:600;color:#fff}
+
+/* 8 · the numbers */
+.s-nums{padding:clamp(80px,13vh,150px) var(--g) 0}
+.nums{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:28px clamp(16px,2.2vw,36px);margin:0}
+.nums>div{border-top:1px solid var(--line);padding-top:16px;min-width:0}
+.nums>div>b{display:block;font-family:"Jost",system-ui,sans-serif;font-weight:600;color:#fff}
+.nums>div>span{display:block;margin-top:8px;color:var(--dim);font-family:Inter,system-ui,sans-serif}
+
+/* 10 · the way on to the archive */
+.s-more{padding:clamp(56px,9vh,100px) var(--g) 0}
+.s-more a{color:#fff;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;font-weight:600}
+.s-more a:hover,.s-more a:focus-visible{text-decoration-thickness:2px}
+
+/* 11 · credits, then the next project */
+.s-end.fp-end{background:var(--ground);padding-top:clamp(40px,8vh,90px)}
+.s-end .fp-cred{margin-top:0;grid-template-columns:repeat(4,minmax(0,1fr))}
+.s-end .fp-next .nx-b{grid-row:2;grid-column:1}
+.s-end .fp-next .nx-a{grid-row:2;grid-column:2}
+.s-end .fp-next .nx-l{grid-row:3;grid-column:1/-1;color:var(--dim);font-family:Inter,system-ui,sans-serif}
+
+@media (max-width:760px){
+  .s-open{padding-top:58px}
+  .s-open .hero{width:100%}
+  .st{grid-template-columns:1fr;gap:26px;padding-top:clamp(64px,10vh,96px)}
+  .st .doc,.st .doc.small{width:100%}
+  .sw{padding-top:clamp(64px,10vh,96px)}
+  .sw .hd{grid-template-columns:1fr;gap:14px}
+  .pics{flex-direction:column;gap:22px}
+  .pics>figure{flex:none;width:100%}
+  .nums{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .s-end .fp-cred{grid-template-columns:1fr}
+}
+</style>
+<noscript><style>@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{padding:6px 8px}.s-open{padding-top:0}}</style></noscript>
+<link rel="stylesheet" href="../../assets/scale.css"><link rel="stylesheet" href="../../assets/fixes.css"></head>
+<body class="fp spaces">
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr">
+  <a class="pill brand" href="../../index.html" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
+  <div class="pill">
+    <nav class="nav" id="nav" aria-label="Site"><a href="../../work/" aria-current="page">Work</a><a href="../../about/">Tony</a><a href="../../contact/">Contact</a><a href="../../assets/Antoni-Gerges-CV.pdf" class="navcv" target="_blank" rel="noopener">CV</a></nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+</header>
+<main id="main">
+<h1 class="sr-only">How a space is planned</h1>
+
+<!-- 0 · the opening: the Cityscape 2017 spheres over the stand (AntBrush show film), whole -->
+<section class="s-open" aria-labelledby="s0">
+  <figure class="hero"><img src="a/hero-1920.webp" srcset="a/hero-960.webp 960w, a/hero-1920.webp 1920w" sizes="100vw" width="1920" height="1080" fetchpriority="high" decoding="async" alt="The Cityscape 2017 pavilion’s ceiling of light seen from below: rows of white spheres hung from a black truss under the hall roof, the lower ones glowing red."></figure>
+  <div class="in">
+    <p class="lab">Spaces</p>
+    <h2 id="s0">How a space <b>is planned.</b></h2>
+    <p class="lead">From the client’s boxes to the opening day: the same steps, on every stand, pavilion and gate. Seven of them, shown with the real drawings.</p>
+  </div>
+</section>
+
+<!-- 1 · the brief: the client's block plan, brief of 20 March 2017, p.7 (the English page), cropped to the plan -->
+<section class="st" aria-labelledby="s1">
+  <div class="tx">
+    <p class="lab">1 · The brief</p>
+    <h2 id="s1">It starts <b>with boxes.</b></h2>
+    <p class="lead">Cityscape 2017. The Department of Municipal Affairs and Transport sent its plan: two conference rooms, a store, the souq and fourteen projects on one platform, 75 by 92 ft (23 by 28 m).</p>
+  </div>
+  <figure class="doc" style="--ar:1.8779"><img src="a/brief-2400.webp" srcset="a/brief-1200.webp 1200w, a/brief-2400.webp 2400w" sizes="(max-width:760px) 100vw, 66vw" width="2400" height="1278" loading="lazy" decoding="async" alt="The client’s block plan for the platform, in English: two conference rooms in the top corners, a reception and a store at the sides, a large block for Souq Al Zafarana, seven boxes for the community markets and a row of boxes for the other projects."><figcaption>The client’s block plan, from its brief of 20 March 2017.</figcaption></figure>
+</section>
+
+<!-- 2 · the idea: the design plan from above, the 45° line, 28 March 2017 -->
+<section class="st" aria-labelledby="s2">
+  <div class="tx">
+    <p class="lab">2 · The idea</p>
+    <h2 id="s2">Then <b>one line.</b></h2>
+    <p class="lead">One diagonal across the grid. The red carpet carries the visitor past the projects to the souq, the main one, at its end; the rooms sit where the line leaves space.</p>
+  </div>
+  <figure class="doc" style="--ar:1.2102"><img src="a/plan-1048.webp" width="1048" height="866" loading="lazy" decoding="async" alt="The design plan seen from above: a maroon carpet crosses the square floor grid on the diagonal, from the open corner to a tower, inside a curved floor zone, with the project bases set along the edges."><figcaption>The design plan, from above · 28 March 2017.</figcaption></figure>
+</section>
+
+<!-- 3 · the route: Cityscape 2015 hall plan with the visitor arrows (deck p.1), cropped to the drawing.
+     The zoning page (p.3) is left out: most of its blocks are labelled in Arabic. -->
+<section class="st" aria-labelledby="s3">
+  <div class="tx">
+    <p class="lab">3 · The route</p>
+    <h2 id="s3">Where people <b>will walk.</b></h2>
+    <p class="lead">Cityscape 2015. The hall plan with the visitors’ way in drawn on it: an arrow at every entrance, and the stand in its place among the others.</p>
+  </div>
+  <figure class="doc" style="--ar:1.8942"><img src="a/hall-2400.webp" srcset="a/hall-1200.webp 1200w, a/hall-2400.webp 2400w" sizes="(max-width:760px) 100vw, 66vw" width="2400" height="1267" loading="lazy" decoding="async" alt="The Cityscape Abu Dhabi 2015 hall plan: rows of exhibitor stands, two hatched aisles, red arrows at each hall entrance pointing in, and the stand’s own top view placed in the hall."><figcaption>The hall plan, Cityscape Abu Dhabi, April 2015.</figcaption></figure>
+</section>
+
+<!-- 4 · the zones: WFES 2013 flow diagram (exhibit story, 20 Dec 2012, p.2), cropped to the diagram -->
+<section class="st" aria-labelledby="s4">
+  <div class="tx">
+    <p class="lab">4 · The zones</p>
+    <h2 id="s4">Entry to exit, <b>in zones.</b></h2>
+    <p class="lead">World Future Energy Summit 2013. A 65 by 85 ft stand (20 by 26 m) planned as a walk: in through sun, power and water, across the core in the centre, out through the future.</p>
+  </div>
+  <figure class="doc small" style="--ar:1.4106"><img src="a/flow-1168.webp" width="1168" height="828" loading="lazy" decoding="async" alt="Diagram of the 2013 stand: Zone 1, sun, power and water, along one side; Zone 2, the Department’s core, a circle in the middle; Zone 3, the future, along the other side; coloured lines link the topics around them, from energy and water to transport, waste, food, industry and research."><figcaption>The flow diagram, from the exhibit story of 20 December 2012.</figcaption></figure>
+</section>
+
+<!-- 5 · the drawings: the approved render (p.16, whole) and the builder's fabrication plan (Divine Creations L.L.C) -->
+<section class="sw" aria-labelledby="s5">
+  <div class="hd">
+    <div><p class="lab">5 · The drawings</p><h2 id="s5">Drawn, then drawn again <b>for the builder.</b></h2></div>
+    <p class="lead">The approved 3D, then the fabrication plan the contractor built from.</p>
+  </div>
+  <div class="pics">
+    <figure style="--ar:1.7778"><img src="a/render-1920.webp" srcset="a/render-960.webp 960w, a/render-1920.webp 1920w" sizes="(max-width:760px) 100vw, 58vw" width="1920" height="1080" loading="lazy" decoding="async" alt="The approved 3D render: a white and maroon pavilion with two wings and a central tower, a red carpet running in from the open corner, a ceiling of blue spheres above it, project tables along the front."><figcaption>The approved design, Cityscape 2017 · 28 March 2017.</figcaption></figure>
+    <figure style="--ar:1.1831"><img src="a/fab-1680.webp" srcset="a/fab-840.webp 840w, a/fab-1680.webp 1680w" sizes="(max-width:760px) 100vw, 40vw" width="1680" height="1420" loading="lazy" decoding="async" alt="The builder’s fabrication plan: the stand’s floor on a grid, with the diagonal carpet, the podiums, the stairs, the access ramp and the main dimensions."><figcaption>The fabrication plan, by Divine Creations, the stand builder.</figcaption></figure>
+  </div>
+</section>
+
+<!-- 6 · the build: Cityscape 2017, Hall 8 (camera times; 1043 and 1057 fall between the 15 April 13:06 photo and the 15 April 22:22 film), then Tawdheef 2017 -->
+<section class="sw" aria-labelledby="s6">
+  <div class="hd">
+    <div><p class="lab">6 · The build</p><h2 id="s6">Three days <b>in the hall.</b></h2></div>
+    <p class="lead">Cityscape 2017: 7,200 sq ft, fourteen projects, built in three days. Tawdheef 2017, the recruitment fair: the same client’s stand, glass going in on 28 January, finished the next night.</p>
+  </div>
+  <div class="pics">
+    <figure style="--ar:1.3333"><img src="a/b1033-1600.webp" srcset="a/b1033-800.webp 800w, a/b1033-1600.webp 1600w" sizes="(max-width:760px) 100vw, 40vw" width="1600" height="1200" loading="lazy" decoding="async" alt="Day one in the hall: the stand’s floor boards laid out, crew in safety vests on it, the frames of neighbouring stands going up behind."><figcaption>14 April, 8:33 pm · day one, the floor goes down.</figcaption></figure>
+    <figure style="--ar:1.7758"><img src="a/b1043-1600.webp" srcset="a/b1043-800.webp 800w, a/b1043-1600.webp 1600w" sizes="(max-width:760px) 100vw, 54vw" width="1600" height="901" loading="lazy" decoding="async" alt="The truss low over the floor with rows of white spheres hanging from it, a crew standing beneath before it is lifted."><figcaption>15 April · the truss and its spheres, before the lift.</figcaption></figure>
+  </div>
+  <div class="pics">
+    <figure style="--ar:1.7758"><img src="a/b1057-1600.webp" srcset="a/b1057-800.webp 800w, a/b1057-1600.webp 1600w" sizes="(max-width:760px) 100vw, 47vw" width="1600" height="901" loading="lazy" decoding="async" alt="The stand half built, its white wings still open in places, the ceiling of spheres switched on above it."><figcaption>15 April · the spheres lit, the wings half built.</figcaption></figure>
+    <figure style="--ar:1.7758"><img src="a/b1081-1600.webp" srcset="a/b1081-800.webp 800w, a/b1081-1600.webp 1600w" sizes="(max-width:760px) 100vw, 47vw" width="1600" height="901" loading="lazy" decoding="async" alt="The stand almost finished: the carpet laid, the two wings glazed, the ceiling of spheres lit, a few of the crew still on ladders."><figcaption>Almost finished, before the doors opened on 18 April.</figcaption></figure>
+  </div>
+  <p class="sub">Tawdheef 2017</p>
+  <div class="pics narrow">
+    <figure style="--ar:1.3333"><img src="a/t0747-1600.webp" srcset="a/t0747-800.webp 800w, a/t0747-1600.webp 1600w" sizes="(max-width:760px) 100vw, 37vw" width="1600" height="1200" loading="lazy" decoding="async" alt="The Tawdheef stand under construction: glass panels going in around a red-framed room, crew in safety vests, cartons on the floor."><figcaption>28 January 2017, 5:24 pm.</figcaption></figure>
+    <figure style="--ar:1.3333"><img src="a/t0770-1600.webp" srcset="a/t0770-800.webp 800w, a/t0770-1600.webp 1600w" sizes="(max-width:760px) 100vw, 37vw" width="1600" height="1200" loading="lazy" decoding="async" alt="The Tawdheef stand finished at night: a red frame carrying the Department’s sign, white lounge chairs behind a glass rail, a reception desk at the side."><figcaption>29 January 2017, 9:45 pm · built.</figcaption></figure>
+  </div>
+</section>
+
+<!-- 7 · the opening: Cityscape 2017 opening day (own film IMG_1102.MOV, 18 April 2017 11:38, frame C28), then Al Ain in three dated frames -->
+<section class="sw" aria-labelledby="s7">
+  <div class="hd">
+    <div><p class="lab">7 · The opening</p><h2 id="s7">Then the doors <b>open.</b></h2></div>
+    <p class="lead">Cityscape Abu Dhabi, opening day 2017. Innovation Month, Al Ain: from an empty forecourt to a gate in nine weeks.</p>
+  </div>
+  <div class="pics one">
+    <figure style="--ar:1.7771"><img src="a/open-1100.webp" width="1100" height="619" loading="lazy" decoding="async" alt="Opening day: a crowd of visitors walking the pavilion’s maroon carpet, the other stands of the hall behind them."><figcaption>Opening day, 18 April 2017.</figcaption></figure>
+  </div>
+  <p class="sub">Innovation Month, Al Ain City Municipality</p>
+  <div class="pics">
+    <figure style="--ar:1.3333"><img src="a/aa1-1200.webp" srcset="a/aa1-600.webp 600w, a/aa1-1200.webp 1200w" sizes="(max-width:760px) 100vw, 25vw" width="1200" height="900" loading="lazy" decoding="async" alt="The municipality’s forecourt in Al Ain: empty paving under a clear sky, the main building behind."><figcaption>19 December 2023 · the empty forecourt.</figcaption></figure>
+    <figure style="--ar:2.1505"><img src="a/aa2-1200.webp" srcset="a/aa2-600.webp 600w, a/aa2-1200.webp 1200w" sizes="(max-width:760px) 100vw, 37vw" width="1200" height="558" loading="lazy" decoding="async" alt="The same forecourt at dusk: steel frames and scaffolding set out on the paving."><figcaption>18 February 2024 · the steel.</figcaption></figure>
+    <figure style="--ar:2.0202"><img src="a/aa3-1200.webp" srcset="a/aa3-600.webp 600w, a/aa3-1200.webp 1200w" sizes="(max-width:760px) 100vw, 35vw" width="1200" height="594" loading="lazy" decoding="async" alt="The gate open: stacked boxes in shades of blue frame the entrance to a long, blue-carpeted street of booths, visitors walking through."><figcaption>21 February 2024 · the gate open.</figcaption></figure>
+  </div>
+</section>
+
+<!-- 8 · the numbers -->
+<section class="s-nums" aria-label="In numbers">
+  <div class="nums">
+    <div><b>25</b><span>stands and pavilions, 2011 to 2024</span></div>
+    <div><b>7,200</b><span>sq ft, built in three days (Cityscape 2017)</span></div>
+    <div><b>6</b><span>zones on open sand (Liwa)</span></div>
+    <div><b>6</b><span>days from confirmation to launch (ZEISS)</span></div>
+    <div><b>14</b><span>projects on one platform (Cityscape 2017)</span></div>
+  </div>
+</section>
+
+<!-- 10 · on to the Work page's "Designed, then built" chapter (#spaces) -->
+<section class="s-more" aria-label="More stands">
+  <p><a href="../index.html#spaces">All 25 stands and pavilions are in the Work archive <span aria-hidden="true">→</span></a></p>
+</section>
+
+<!-- 11 · credits, then the next project -->
+<section class="fp-end s-end" aria-label="Credits">
+  <div class="fp-cred">
+    <div><span class="fp-lab">Role</span>Antoni Gerges<br>Creative Director, Brand &amp; Experiential</div>
+    <div><span class="fp-lab">Made by</span>AntBrush.</div>
+    <div><span class="fp-lab">Built by</span>Cityscape 2017: Divine Creations, Dubai. Innovation Month: Halwan Advertising and Production.</div>
+    <div><span class="fp-lab">The documents</span>Block plan from the client’s brief, 20 March 2017. Hall plan from the Cityscape 2015 presentation. Flow diagram from the WFES 2013 exhibit story. Photographs taken on site.</div>
+  </div>
+  <a class="fp-next" href="../cityscape/"><span class="fp-lab">Next project</span><b class="nx-b">Cityscape Abu Dhabi</b><span class="nx-a" aria-hidden="true">→</span><span class="nx-l">From floor plan to full scale.</span></a>
+</section>
+</main>
+
+<footer class="foot"><div class="wrap row">
+  <p style="margin:0">Antoni Gerges · Creative Director, Brand &amp; Experiential · <a href="mailto:antoni@antbrush.com">antoni@antbrush.com</a></p>
+  <nav aria-label="Footer"><a href="../../work/">Work</a><a href="../../about/">Tony</a><a href="../../contact/">Contact</a></nav>
+</div></footer>
+<script>
+/* The page's own small script, as on the other project pages: the header menu, and the header out of the way while reading down. */
+(function () {
+  var D = document, W = window, phone = function () { return W.innerWidth <= 760; };
+  var hdr = D.querySelector('.hdr'), mb = D.querySelector('.menu-btn'), ly0 = 0, acc = 0;
+  if (!hdr || !mb) return;
+  function menu(o) { hdr.classList.toggle('open', o); mb.setAttribute('aria-expanded', o ? 'true' : 'false'); mb.textContent = o ? 'Close' : 'Menu';
+    [].forEach.call(D.querySelectorAll('main, footer, .skip'), function (e) { o ? e.setAttribute('inert', '') : e.removeAttribute('inert'); });
+    D.documentElement.style.overflow = o ? 'hidden' : ''; }
+  function items() { return [].filter.call(hdr.querySelectorAll('a[href], button'), function (e) { return e.getClientRects().length > 0; }); }
+  mb.addEventListener('click', function () { menu(!hdr.classList.contains('open')); });
+  D.addEventListener('keydown', function (e) { if (!hdr.classList.contains('open')) return;
+    if (e.key === 'Escape') { menu(false); mb.focus(); return; }
+    if (e.key === 'Tab') { var f = items(), i = f.indexOf(D.activeElement); e.preventDefault(); f[(i < 0 ? 0 : i + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus(); } });
+  W.addEventListener('resize', function () { if (!phone() && hdr.classList.contains('open')) menu(false); });
+  [].forEach.call(hdr.querySelectorAll('.nav a'), function (l) { l.addEventListener('click', function () { menu(false); }); });
+  W.addEventListener('scroll', function () { var y = W.scrollY, d = y - ly0; ly0 = y; if (y < 80) { hdr.classList.remove('hide'); acc = 0; return; }
+    acc = (d > 0) === (acc > 0) ? acc + d : d; if (acc > 24) hdr.classList.add('hide'); else if (acc < -12) hdr.classList.remove('hide'); }, { passive: true });
+})();
+</script>
+</body>
+</html>
