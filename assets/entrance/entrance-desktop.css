@@ -1,0 +1,37 @@
+/* Home entrance, DESKTOP film (21 Oct 2026; fixes20 E-ENTRANCE-DESKTOP; published as assets/entrance/entrance-desktop.css).
+   Desktop only. entrance-desktop.js tests matchMedia('(min-width:761px)') once at load and, on a desktop, sets html.en-desk-on and
+   window.__enDesk, so the old HTML/SVG opening in #en-host is never built there. A phone never gets the class: every rule that shows
+   anything below is under html.en-desk-on, so nothing here touches the phone opening (#en-host + mobile-film.js).
+   The section keeps its geometry (185svh, the next section rising over the pinned stage); the stage takes #en-host's place:
+   sticky, one screen tall. The whole 16:9 frame is always on screen (contain); the letterbox bands are the film's own black, as browsers
+   paint it: the file's black (Y 27) shows as #07090F in Chrome and #090A0F in Safari (video is colour-managed), so the ground is #08090F,
+   within one level of both; while the poster shows (a plain image, #0B0D11) the ground is the poster's black. Measured 21 Oct. */
+.en-desk{display:none}
+@media (min-width:761px){
+  html.en-desk-on #en-host{display:none}
+  html.en-desk-on .en-desk{display:block}
+  html.en-desk-on .en-desk .en-txt{max-width:38%}
+}
+/* a desktop window narrowed below 761 px after it loaded keeps the film (the phone opening was never built in that window) */
+@media (max-width:760px){
+  html.en-desk-on #en-host{display:none}
+  html.en-desk-on .en-desk{display:block}
+  html.en-desk-on .en-desk .en-txt{right:var(--g,16px)}
+}
+html.en-desk-on #entrance{background:#0B0D11}
+html.en-desk-on .en-desk{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#0B0D11;color:#fff}
+.en-desk .en-film{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;object-position:50% 50%;background:#0B0D11}
+html.en-desk-on .en-desk.vid,.en-desk.vid .en-film{background:#08090F}   /* the film's frames are on screen */
+/* the words are ours, never in the film: name (Big) and title (Text), top-left at the page margin, clear of the three windows */
+.en-desk .en-txt{position:absolute;z-index:1;left:var(--g,40px);top:clamp(96px,14vh,140px);margin:0;pointer-events:none;opacity:0;transition:opacity .45s linear}
+.en-desk.on .en-txt{opacity:1}
+html:not(#_t) body .en-desk .en-nm{margin:0;max-width:none;color:#fff;font:600 var(--t-big)/var(--lh-big,1.08) "Jost",system-ui,sans-serif !important;letter-spacing:-.015em !important}
+html:not(#_t) body .en-desk .en-tt{margin:.5em 0 0;max-width:none;color:rgba(255,255,255,.72);font:400 var(--t-text)/var(--lh-text,1.55) "Inter",system-ui,sans-serif !important}
+/* controls: text buttons, bottom-right at the margin, 44 px targets, no boxes */
+.en-desk .en-ctl{position:absolute;z-index:2;right:calc(var(--g,40px) - 12px);bottom:clamp(8px,3vh,28px);display:flex;gap:4px}
+html:not(#_t) body .en-desk .en-ctl button{min-height:44px;min-width:44px;margin:0;padding:0 12px;border:0;border-radius:0;background:none;box-shadow:none;cursor:pointer;
+  color:rgba(255,255,255,.72);font:600 var(--t-text)/1 "Inter",system-ui,sans-serif !important}
+html:not(#_t) body .en-desk .en-ctl button:hover{color:#fff}
+.en-desk .en-ctl button:focus-visible{outline:2px solid #fff;outline-offset:-2px}
+.en-desk .en-ctl button[hidden]{display:none}
+@media (prefers-reduced-motion:reduce){.en-desk .en-txt{transition:none}}
