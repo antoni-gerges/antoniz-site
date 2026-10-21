@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Akshaya × Vikas Khanna · Dubai, 2022 · Antoni Gerges</title>
+<link rel="canonical" href="https://antoniz.com/work/akshaya/">
+<meta name="description" content="Akshaya × Vikas Khanna, Dubai, 23 June 2022: the launch of “Sacred Foods of India” as a physical book with an NFT twin, for Akshaya, Texas. Creative direction by Antoni Gerges through AntBrush, with MCX.">
+<meta property="og:image" content="https://antoniz.com/img/og/antoniz-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/jost-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/bundle-case-6da8db5909.css"><!--perf21-css <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../assets/fp/fp.css?v=34">-->
+<style>
+/* Akshaya × Vikas Khanna, "Sacred Foods of India", Kinara, JA Resort, Dubai, 23 June 2022. His frame throughout: the dark ground
+   #0B0C10, Jost and Inter, the ZEISS header and footer. Inside, the brand's own colour leads in two places only: its purple-to-blue
+   (sampled from the key visual: the deep purple ground #250537 / #3E1A60, the visor's violet #6C308A and blue #32ABE2) as one accent
+   line on the opening, and as the field the key visual sits on in "The idea." Every picture whole, in a 4:3 or 16:9 box on the ground
+   (contained, never cropped). Two type sizes (scale.css, loaded last): var(--t-big) for the one big line per screen, var(--t-text) for
+   the rest. No Arabic anywhere (none in any source used); no guest's face fills a frame; the chef, the subject, appears twice. */
+html{background:#0B0C10}
+body.fp.ak{--ground:#0B0C10;--dim:rgba(255,255,255,.72);--line:rgba(255,255,255,.18);--ak-deep:#250537;--ak-purple:#3E1A60;--ak-violet:#6C308A;--ak-blue:#32ABE2;background:#0B0C10}
+body.ak main{background:#0B0C10}
+body.ak .foot{background:#0B0C10}
+.ak h1{font-weight:600}
+.sr-only{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.ak h2{font-family:"Jost",system-ui,sans-serif;font-size:var(--t-big);line-height:1.08;font-weight:300;color:#fff;margin:0;text-wrap:balance}
+.ak h2 b{font-weight:600}
+.ak section p,.ak figcaption{font-family:Inter,system-ui,sans-serif;font-size:var(--t-text);font-weight:400}
+.ak .lead{margin-top:14px;color:rgba(255,255,255,.86);max-width:40em}
+.ak figure{margin:0;min-width:0}
+.ak figcaption{margin-top:10px;color:var(--dim)}
+.ak figcaption b{font-weight:600;color:#fff}
+/* the box: every picture whole in a 4:3 (or .w 16:9) box on the ground */
+.ak .box{position:relative;display:block;width:100%;aspect-ratio:4/3;background:var(--ground);overflow:hidden}
+.ak .box.w{aspect-ratio:16/9}
+.ak .box img{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:none;object-fit:contain;object-position:50% 50%}
+
+/* 0 · the glimpse (op21, below), then the label, the big line and the text under it, never on it */
+.ak-open{background:var(--ground);padding:clamp(26px,4.4vh,48px) var(--g) clamp(22px,4vh,40px)}
+.ak-open .lab{margin:0 0 14px;font-weight:600;color:var(--dim)}
+.ak-open .lab::before{content:"";display:block;width:72px;height:3px;margin:0 0 18px;background:linear-gradient(90deg,var(--ak-violet),var(--ak-blue))}
+.ak-open p.txt{margin-top:14px;color:rgba(255,255,255,.86);max-width:46em}
+
+/* 1-5 · one thing per screen: the big line, one line under it, then the pictures */
+.ak-s{padding:clamp(88px,13vh,150px) var(--g) 0}
+.ak-s .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(36px,5.5vh,64px) clamp(18px,2.4vw,36px);margin-top:clamp(36px,6vh,64px);align-items:start}
+.ak-s .grid .span{grid-column:1/-1}
+.ak-s .pair+.pair{margin-top:clamp(40px,6vh,72px)}
+
+/* 1 · the idea: the key visual whole on the brand's field (deep purple to blue), the e-invite beside it (under it on a phone) */
+.ak-idea .grid{grid-template-columns:minmax(0,2.15fr) minmax(0,1fr);align-items:end}
+.ak-idea .field{background:linear-gradient(135deg,var(--ak-deep) 0%,var(--ak-purple) 48%,#1F3C8C 100%)}
+.ak-idea .field img{inset:7%;width:86%;height:86%}
+
+/* 5 · the night: the film (16:9) and the chef with the book (4:3 box) at one height */
+.ak-night.fp-end{background:var(--ground);padding:clamp(88px,13vh,150px) var(--g) 0}
+.ak-night .grid{display:grid;grid-template-columns:minmax(0,1.7778fr) minmax(0,1.3333fr);gap:clamp(18px,2.4vw,36px);margin-top:clamp(36px,6vh,64px);align-items:start}
+.ak-night .film{margin:0;aspect-ratio:16/9}
+.ak-night .film .t{right:calc(clamp(28px,5vw,84px) + clamp(56px,6vw,96px) + 18px)}
+.ak-night .cap{margin-top:10px;color:var(--dim)}
+
+/* 7 · credits, then the next project */
+.ak-end.fp-end{background:var(--ground);padding-top:clamp(40px,8vh,90px)}
+.ak-end .fp-cred{margin-top:0;grid-template-columns:repeat(4,minmax(0,1fr))}
+.ak-end .fp-next .nx-b{grid-row:2;grid-column:1}
+.ak-end .fp-next .nx-a{grid-row:2;grid-column:2}
+.ak-end .fp-next .nx-l{grid-row:3;grid-column:1/-1;color:var(--dim);font-family:Inter,system-ui,sans-serif}
+
+@media (max-width:760px){
+  .ak-s .grid,.ak-idea .grid,.ak-night .grid{grid-template-columns:1fr;gap:28px}
+  .ak-idea .field img{inset:5%;width:90%;height:90%}
+  .ak-end .fp-cred{grid-template-columns:1fr}
+}
+</style>
+<noscript><style>@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{padding:6px 8px}.op21{padding-top:0}}</style></noscript>
+<link rel="stylesheet" href="../../assets/bundle-case-14fcca7cd4.css"><!--perf21-css <link rel="stylesheet" href="../../assets/scale.css"><link rel="stylesheet" href="../../assets/fixes.css"><link rel="stylesheet" href="../../assets/scope.css"><link rel="stylesheet" href="../../assets/nav.css">--><link rel="preload" as="image" href="a/glimpse-poster.webp" fetchpriority="high">
+<style id="op21">/* glimpse openers, 21 Oct (openers-21oct/openers21.py) */.op21{position:relative;display:flex;justify-content:center;background:#0B0C10;padding:74px var(--g,16px) clamp(16px,3vh,32px)}.op21-f{margin:0;width:min(100%,calc((100svh - 74px - 58px) * 16 / 9))}.op21-film{display:block;position:relative;width:100%;margin:0;padding:0;border:0;border-radius:0;background:#0B0C10;color:inherit;font:inherit;cursor:pointer}.op21-film:focus-visible{outline:2px solid #fff;outline-offset:3px}.op21-v{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#0B0C10}.op21-cap{margin:10px 0 0;font:500 11px/1.35 Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.62)}@media (max-width:760px){.op21{padding:68px 0 18px}.op21-f{width:100%}.op21-cap{padding:0 16px}}</style>
+</head>
+<body class="fp ak">
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr">
+  <a class="pill brand" href="../../index.html" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
+  <div class="pill">
+    <nav class="nav" id="nav" aria-label="Site"><a href="../../work/" aria-current="page">Work</a><a href="../../about/">Tony</a><a href="../../contact/">Contact</a><a href="../../assets/Antoni-Gerges-CV.pdf" class="navcv" target="_blank" rel="noopener">CV</a></nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+</header>
+<main id="main">
+<h1 class="sr-only">Akshaya × Vikas Khanna, “Sacred Foods of India”, Dubai, 2022</h1>
+
+<!-- 0 · the glimpse: the launch in 11 s, eight hard cuts from the 1080p coverage film (build/glimpse.py; the op21 markup of the live openers) -->
+<section class="op21" aria-label="A glimpse of the launch: the room lit for the night, the VR-head photo wall, the shield wall, the guests, the chef lifting the cloth off the book box, the book, and the stage wall: World’s first #Phygital NFT launch">
+  <figure class="op21-f"><button class="op21-film" type="button" data-film="a/glimpse-d.mp4" data-film-p="a/glimpse-p.mp4" data-title="A glimpse · 11 s · sound" aria-label="Play the glimpse with sound"><video class="op21-v" data-fix="E-OPENER-akshaya" muted playsinline loop preload="metadata" width="1280" height="720" poster="a/glimpse-poster.webp"><source src="a/glimpse-p.mp4" type="video/mp4" media="(max-width:760px)"><source src="a/glimpse-d.mp4" type="video/mp4"></video></button><figcaption class="op21-cap">A glimpse · cut from the film of the night, 23 June 2022</figcaption></figure>
+  <script>(function(){var s=document.currentScript.parentNode,b=s.querySelector(".op21-film"),v=s.querySelector("video"),rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches,on=false,user=false,go=function(){if(rm&&!user)return;var p=v.play();if(p&&p.catch)p.catch(function(){});};if("IntersectionObserver"in window)new IntersectionObserver(function(e){on=e[0].isIntersecting;on?go():v.pause();},{threshold:.2}).observe(v);else go();if(!b.hasAttribute("data-film"))b.addEventListener("click",function(){if(v.muted){v.muted=false;v.currentTime=0;user=true;go();b.setAttribute("aria-label","Pause the glimpse");}else if(v.paused){user=true;go();b.setAttribute("aria-label","Pause the glimpse");}else{user=false;v.pause();rm=true;b.setAttribute("aria-label","Play the glimpse");}});})();</script>
+</section>
+
+<section class="ak-open" aria-labelledby="s0">
+  <p class="lab">Akshaya × Vikas Khanna · Dubai · 23 June 2022</p>
+  <h2 id="s0">A book, and its <b>digital twin.</b></h2>
+  <p class="txt">The launch of “Sacred Foods of India” by chef Vikas Khanna as a physical book with an NFT twin, for Akshaya, Texas. Creative direction, design and the room, through AntBrush, with MCX.</p>
+</section>
+
+<!-- 1 · the idea: the key visual (05ec1376, 1280x853 at source) whole on the brand's field; the e-invite (720x405 at source) beside it -->
+<section class="ak-s ak-idea" aria-labelledby="s1">
+  <h2 id="s1">The <b>idea.</b></h2>
+  <p class="lead">One face carries the launch: the book’s reader seen through a headset, the sacred and the digital in a single look.</p>
+  <div class="grid">
+    <figure><div class="box field"><img src="a/kv-1280.webp" srcset="a/kv-960.webp 960w, a/kv-1280.webp 1280w" sizes="(max-width:760px) 100vw, 64vw" width="1280" height="853" loading="lazy" decoding="async" alt="The key visual: a stylised purple head wearing a VR headset whose visor, in a cyan-to-pink gradient, reads Power of Phygital NFT, on a deep purple ground repeating the Akshaya logo and the Sacred Foods of India title."></div><figcaption>The key visual</figcaption></figure>
+    <figure><div class="box w"><img src="a/invite-720.webp" srcset="a/invite-480.webp 480w, a/invite-720.webp 720w" sizes="(max-width:760px) 100vw, 30vw" width="720" height="405" loading="lazy" decoding="async" alt="The e-invite: Akshaya’s first-ever launch of #Phygital NFT, physical asset plus digital twin, celebrity chef Vikas Khanna’s magnum opus book, 23rd June 2022, Dubai, at Kinara, JA Resort, 7:30 pm, followed by a personalised dinner with the Michelin chef; the chef smiling in an apron on the right."></div><figcaption>The e-invite: 23 June 2022, 7:30 pm, Kinara, JA Resort</figcaption></figure>
+  </div>
+</section>
+
+<!-- 2 · drawn, then built: the shield-wall spec (01-WORK/046) and the wall built (IMG_2497); the flag sheet (01-WORK/049, the design of the
+     22 Jun approval screenshot 5AB677BF) and the flags up at the entrance (IMG_2480: read from the front; IMG_2488 shows the Akshaya flag from behind, mirrored) -->
+<section class="ak-s ak-drawn" aria-labelledby="s2">
+  <h2 id="s2">Drawn, <b>then built.</b></h2>
+  <p class="lead">Each piece went to the fabricators as a production file, and stood in the hotel three weeks after the recce.</p>
+  <div class="grid pair">
+    <figure><div class="box"><img src="a/shield-spec-2400.webp" srcset="a/shield-spec-1200.webp 1200w, a/shield-spec-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="2001" loading="lazy" decoding="async" alt="The shield-wall production drawing on black: a round panel in a golden frame carrying Sacred Foods of India, Vikas Khanna and the Akshaya logo, with arrows naming the sticker, the frosted acrylic, the golden frame and the clear acrylic; 191.1 cm wide by 188.3 cm high."></div><figcaption>Drawn · the shield wall: a sticker on frosted acrylic, in a golden frame · June 2022</figcaption></figure>
+    <figure><div class="box"><img src="a/shield-built-2400.webp" srcset="a/shield-built-1200.webp 1200w, a/shield-built-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1800" loading="lazy" decoding="async" alt="The shield wall built in its room: the round golden panel with Sacred Foods of India and the Akshaya logo, ringed in white light, on a wall of large dark leaves, two draped plinths in front."></div><figcaption>Built · 23 June 2022</figcaption></figure>
+  </div>
+  <div class="grid pair">
+    <figure><div class="box"><img src="a/flags-drawn-1325.webp" srcset="a/flags-drawn-800.webp 800w, a/flags-drawn-1325.webp 1325w" sizes="(max-width:760px) 100vw, 46vw" width="1325" height="793" loading="lazy" decoding="async" alt="The flag sheet: three tall sail flags, white with the Akshaya logo, gold with Sacred Foods of India and Vikas Khanna, and dark with the chef in an apron, shown on poles and flat, marked two of the first and one each of the others."></div><figcaption>Drawn · the three flags: the brand, the book, the chef · June 2022</figcaption></figure>
+    <figure><div class="box"><img src="a/flags-built-1200.webp" srcset="a/flags-built-600.webp 600w, a/flags-built-1200.webp 1200w" sizes="(max-width:760px) 100vw, 46vw" width="1200" height="1600" loading="lazy" decoding="async" alt="The flags up at the hotel entrance at night: the chef’s flag and the Akshaya flag between the stone columns, two of the crew setting up beside them."></div><figcaption>Built · at the entrance, the night before, 22 June 2022</figcaption></figure>
+  </div>
+</section>
+
+<!-- 3 · the room: the recce (IMG_2344, 3 Jun) and the room lit (IMG_2501, 23 Jun); the VR-head wall (IMG_2495) and the stage wall (IMG_2494) -->
+<section class="ak-s ak-room" aria-labelledby="s3">
+  <h2 id="s3">The <b>room.</b></h2>
+  <p class="lead">Kinara, JA Resort, Dubai: empty at the recce on 3 June, lit for the night on 23 June.</p>
+  <div class="grid">
+    <figure><div class="box"><img src="a/recce-2400.webp" srcset="a/recce-1200.webp 1200w, a/recce-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1800" loading="lazy" decoding="async" alt="An empty meeting room at the recce: rows of grey chairs facing a projection screen, a wooden sideboard, windows along one side under a wooden ceiling."></div><figcaption>The recce · 3 June 2022</figcaption></figure>
+    <figure><div class="box"><img src="a/room-2400.webp" srcset="a/room-1200.webp 1200w, a/room-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1800" loading="lazy" decoding="async" alt="A room lit pink and violet for the night: walls of large leaf patterns traced in white light, a screen showing the book box, two draped plinths on lit bases, a striped carpet."></div><figcaption>Lit for the night · 23 June 2022</figcaption></figure>
+    <figure><div class="box"><img src="a/vrwall-2400.webp" srcset="a/vrwall-1200.webp 1200w, a/vrwall-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1800" loading="lazy" decoding="async" alt="The photo wall built: the giant VR-headset head on a purple wall repeating the Akshaya logo and the book title, its visor a lit screen, under violet light."></div><figcaption>The VR-head photo wall, built</figcaption></figure>
+    <figure><div class="box"><img src="a/stage-2400.webp" srcset="a/stage-1200.webp 1200w, a/stage-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1800" loading="lazy" decoding="async" alt="The stage wall: a wide blue screen reading World’s first #Phygital NFT launch over the Akshaya logo, the book and the chef holding it, above a low black stage."></div><figcaption>The stage wall, in the client’s own words: “World’s first #Phygital NFT launch”</figcaption></figure>
+  </div>
+</section>
+
+<!-- 4 · the object: the sandalwood book box open (IMG_2459, shown as stored: the EXIF turn puts its lettering upside down) and closed (IMG_2460),
+     then on a dinner table (the coverage film at 90.0 s, build/film.sh) -->
+<section class="ak-s ak-object" aria-labelledby="s4">
+  <h2 id="s4">The <b>object.</b></h2>
+  <p class="lead">The physical half of the launch: the book in a sandalwood box, unveiled in front of the guests.</p>
+  <div class="grid">
+    <figure><div class="box"><img src="a/box-open-2400.webp" srcset="a/box-open-1200.webp 1200w, a/box-open-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1800" loading="lazy" decoding="async" alt="The wooden book box open on a table, seen from above: the book inside, its cover printed with rows of pink lotuses and the title Sacred Foods of India, a bookmark and a card in the lid."></div><figcaption>The box, open · 20 June 2022</figcaption></figure>
+    <figure><div class="box"><img src="a/box-closed-1200.webp" srcset="a/box-closed-600.webp 600w, a/box-closed-1200.webp 1200w" sizes="(max-width:760px) 100vw, 46vw" width="1200" height="1600" loading="lazy" decoding="async" alt="The book box closed: a dark wood lid painted with lotus leaves and flowers, a printed panel with Sacred Foods of India, Heritage, Pilgrimage, Holy Kitchens and Vikas Khanna, and the Akshaya logo."></div><figcaption>Closed · 20 June 2022</figcaption></figure>
+    <figure class="span"><div class="box w"><img src="a/box-film-1920.webp" srcset="a/box-film-960.webp 960w, a/box-film-1920.webp 1920w" sizes="(max-width:760px) 100vw, 92vw" width="1920" height="1080" loading="lazy" decoding="async" alt="The open book box standing on a dinner table in the restaurant, guests at their tables behind it."></div><figcaption>On a table at the dinner · from the film of the night</figcaption></figure>
+  </div>
+</section>
+
+<!-- 5 · the night: the coverage film, whole (96 s, build/film.sh), played on click with sound (the ZEISS film button and player); the chef with the book (IMG_7864) -->
+<section class="fp-end ak-night" aria-labelledby="s5">
+  <h2 id="s5">The <b>night.</b></h2>
+  <p class="lead">23 June 2022, 7:30 pm: the launch, then dinner with the chef.</p>
+  <div class="grid">
+    <div>
+      <button class="film" type="button" data-film="a/film-1280.mp4" data-title="Akshaya × Vikas Khanna, the film of the night · 1:36" aria-label="Play the film of the night, 1 minute 36 seconds, with sound">
+        <img src="a/film-poster.webp" srcset="a/film-poster-perf800.webp 800w, a/film-poster.webp 1280w" sizes="100vw" width="1280" height="720" loading="lazy" decoding="async" alt="">
+        <span class="t"><span class="fp-lab">The film · 1:36 · sound</span></span><span class="go" aria-hidden="true"></span>
+      </button>
+      <noscript><p class="cap"><a href="a/film-1280.mp4">Open the film of the night (video file, 1:36)</a></p></noscript>
+      <p class="cap">The film of the night, 23 June 2022</p>
+    </div>
+    <figure><div class="box"><img src="a/chef-2400.webp" srcset="a/chef-1200.webp 1200w, a/chef-2400.webp 2400w" sizes="(max-width:760px) 100vw, 40vw" width="2400" height="1600" loading="lazy" decoding="async" alt="Chef Vikas Khanna smiling at the dinner, holding the book open to its lotus cover beside its box, the restaurant’s tables and lights behind him."></div><figcaption>The chef with the book, at the dinner</figcaption></figure>
+  </div>
+</section>
+
+<!-- 6 · what we delivered: the scope table of ADDITIONS-EVIDENCE.md §2, delivered items only (none was proposed and not taken up);
+     the e-invite, the chef banner, the coverage film and the book box are left out (their makers are not documented) -->
+<section class="fp-scope" data-fix="E-SCOPE-akshaya" aria-labelledby="scope-h">
+  <span class="fp-lab"><b>The scope</b></span>
+  <h2 id="scope-h">What we <b class="tw">delivered.</b></h2>
+  <p class="scope-lead">The look of the launch and every piece in the room, sent to the fabricators as production files and built with MCX.</p>
+  <div class="scope-grid">
+    <div class="scope-group"><p class="scope-k">Idea &amp; screens</p><ul><li>The key visual: the VR-goggled head</li><li>Virtual photo booth: the face, the frames, the QR mobile screen, the microsite background</li><li>Website link files</li></ul></div>
+    <div class="scope-group"><p class="scope-k">Space</p><ul><li>The VR-head photo wall</li><li>The stage wall</li><li>The shield wall: sticker, frosted acrylic, golden frame</li><li>Podiums</li><li>Flags and directional signage</li><li>Venue walls and wood bases</li></ul></div>
+    <div class="scope-group"><p class="scope-k">Production</p><ul><li>Production files for every piece, to the fabricators</li><li>The build at the hotel, 20 to 23 June 2022, with MCX</li></ul></div>
+  </div>
+  <ul class="scope-pics" aria-label="Pieces of the scope">
+    <li><figure><img src="a/scope-booth-1200.webp" srcset="a/scope-booth-800.webp 800w, a/scope-booth-1200.webp 1200w" sizes="(max-width:760px) 45vw, 35vw" width="1200" height="1201" alt="The virtual photo booth artwork: a purple stylised head whose visor opens on a woman’s eyes, the Akshaya logo above and Sacred Foods of India, Vikas Khanna in the corner." loading="lazy" decoding="async"><figcaption>The virtual photo booth: the face</figcaption></figure></li>
+    <li><figure><img src="a/scope-face-1200.webp" srcset="a/scope-face-800.webp 800w, a/scope-face-1200.webp 1200w" sizes="(max-width:760px) 45vw, 35vw" width="1200" height="1296" alt="The VR-headset head cut out on its own: purple hair, a cyan-to-pink visor, a pink chin." loading="lazy" decoding="async"><figcaption>The face, cut out for the exhibition walls</figcaption></figure></li>
+    <li><figure><img src="a/scope-visor-1200.webp" srcset="a/scope-visor-800.webp 800w, a/scope-visor-1200.webp 1200w" sizes="(max-width:760px) 45vw, 35vw" width="1200" height="800" alt="The VR-head photo wall photographed on the night, the visor screen showing the book in its box." loading="lazy" decoding="async"><figcaption>The photo wall: the visor is a screen</figcaption></figure></li>
+    <li><figure><img src="a/scope-shield-1200.webp" srcset="a/scope-shield-800.webp 800w, a/scope-shield-1200.webp 1200w" sizes="(max-width:760px) 45vw, 35vw" width="1200" height="900" alt="The shield wall at the end of its room: the round golden panel on the leaf wall, two draped plinths on lit bases, the carpet striped in pink light." loading="lazy" decoding="async"><figcaption>The shield wall in its room, 23 June 2022</figcaption></figure></li>
+    <li><figure><img src="a/scope-sign-900.webp" srcset="a/scope-sign-600.webp 600w, a/scope-sign-900.webp 900w" sizes="(max-width:760px) 45vw, 35vw" width="900" height="1200" alt="The directional sign: an angular black panel with an arrow and Sacred Foods of India, Vikas Khanna, on a white base with the Akshaya logo." loading="lazy" decoding="async"><figcaption>The directional sign, 23 June 2022</figcaption></figure></li>
+  </ul>
+  <p class="scope-src">From the job register, the artwork and production files, the photographs of the build and the client’s payment.</p>
+</section>
+
+<!-- 7 · credits, then the next project -->
+<section class="fp-end ak-end" aria-label="Credits">
+  <div class="fp-cred">
+    <div><span class="fp-lab">Role</span>Antoni Gerges<br>Creative Director, Brand &amp; Experiential</div>
+    <div><span class="fp-lab">Made by</span>AntBrush, with MCX.</div>
+    <div><span class="fp-lab">For</span>Akshaya, Cypress, Texas: the launch of “Sacred Foods of India” at Kinara, JA Resort, Dubai.</div>
+    <div><span class="fp-lab">Credits</span>Film and photographs of the night: the event’s coverage. The e-invite and the sandalwood box: shown as made for the launch.</div>
+  </div>
+  <a class="fp-next" href="../live-shows/"><span class="fp-lab">Next project</span><b class="nx-b">Live shows</b><span class="nx-a" aria-hidden="true">→</span><span class="nx-l">Five nights, one city.</span></a>
+</section>
+</main>
+
+<div class="fp-player" role="dialog" aria-label="Film player"><video playsinline preload="none"></video><div class="bar"><span class="ti"></span><button class="x" type="button">Close</button></div></div>
+
+<footer class="foot"><div class="wrap row">
+  <p style="margin:0">Antoni Gerges · Creative Director, Brand &amp; Experiential · <a href="mailto:antoni@antbrush.com">antoni@antbrush.com</a></p>
+  <nav aria-label="Footer"><a href="../../work/">Work</a><a href="../../about/">Tony</a><a href="../../contact/">Contact</a></nav>
+</div></footer>
+<script>
+/* The page's own small script: the header menu (as on the other project pages), the header out of the way while reading down, and the film player. */
+(function () {
+  var D = document, W = window, phone = function () { return W.innerWidth <= 760; };
+  var hdr = D.querySelector('.hdr'), mb = D.querySelector('.menu-btn'), ly0 = 0, acc = 0;
+  function menu(o) { hdr.classList.toggle('open', o); mb.setAttribute('aria-expanded', o ? 'true' : 'false'); mb.textContent = o ? 'Close' : 'Menu';
+    [].forEach.call(D.querySelectorAll('main, footer, .skip'), function (e) { o ? e.setAttribute('inert', '') : e.removeAttribute('inert'); });
+    D.documentElement.style.overflow = o ? 'hidden' : ''; }
+  function items() { return [].filter.call(hdr.querySelectorAll('a[href], button'), function (e) { return e.getClientRects().length > 0; }); }
+  if (hdr && mb) {
+  mb.addEventListener('click', function () { menu(!hdr.classList.contains('open')); });
+  D.addEventListener('keydown', function (e) { if (!hdr.classList.contains('open')) return;
+    if (e.key === 'Escape') { menu(false); mb.focus(); return; }
+    if (e.key === 'Tab') { var f = items(), i = f.indexOf(D.activeElement); e.preventDefault(); f[(i < 0 ? 0 : i + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus(); } });
+  W.addEventListener('resize', function () { if (!phone() && hdr.classList.contains('open')) menu(false); });
+  [].forEach.call(hdr.querySelectorAll('.nav a'), function (l) { l.addEventListener('click', function () { menu(false); }); });
+  W.addEventListener('scroll', function () { var y = W.scrollY, d = y - ly0; ly0 = y; if (y < 80) { hdr.classList.remove('hide'); acc = 0; return; }
+    acc = (d > 0) === (acc > 0) ? acc + d : d; if (acc > 24) hdr.classList.add('hide'); else if (acc < -12) hdr.classList.remove('hide'); }, { passive: true });
+  }
+  /* the film player, as on the ZEISS page: the full film with sound; focus moves in, stays in, and returns to the button that opened it */
+  var pl = D.querySelector('.fp-player');
+  if (pl) {
+    var pv = pl.querySelector('video'), pt = pl.querySelector('.ti'), px = pl.querySelector('.x'), opener = null;
+    pl.setAttribute('aria-modal', 'true'); pl.setAttribute('tabindex', '-1');
+    var close = function () { if (!pl.classList.contains('open')) return; pv.pause(); pl.classList.remove('open'); D.documentElement.style.overflow = ''; if (opener && opener.focus) opener.focus(); opener = null; };
+    [].forEach.call(D.querySelectorAll('[data-film]'), function (b) {
+      b.addEventListener('click', function () {
+        var s = (phone() && b.dataset.filmP) || b.dataset.film;
+        if (pv.getAttribute('src') !== s) pv.src = s;
+        if (pt) pt.textContent = b.dataset.title || '';
+        opener = b; pl.classList.add('open'); D.documentElement.style.overflow = 'hidden'; pv.muted = false; pv.controls = true; px.focus();
+        var p = pv.play(); if (p && p.catch) p.catch(function () {});
+      });
+    });
+    px.addEventListener('click', close);
+    D.addEventListener('keydown', function (e) {
+      if (!pl.classList.contains('open')) return;
+      if (e.key === 'Escape') { e.preventDefault(); close(); return; }
+      if (e.key === 'Tab') { var f = [pv, px], i = f.indexOf(D.activeElement); e.preventDefault(); f[(i + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus(); }
+    });
+  }
+})();
+</script>
+<script src="../../assets/nav.js" defer></script>
+</body>
+</html>
