@@ -1,0 +1,110 @@
+/* antoniz.com · E-NAV (21 Oct 2026): the site menu, the link signal, the scroll cue. Linked directly after fixes.css on every page
+   (fixes20 E-NAV); nav.js builds the parts and marks the links. Design: website-review/clickability-21oct/DESIGN.md.
+   Two sizes only (--t-big, --t-text from scale.css), Jost 600 for names and links, Inter for reading, ground #0B0C10, paper #F7F5F1.
+   No boxes behind text, no fades (everything shows and hides at once), no glow.
+   html:not(#_t) body matches scale.css's own weight, so these rules stand above the older per-page ones. */
+:root{
+  --nb-page:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Cpath d='M44 0H23.46C17.41 0 11.11 4.76 9.46 10.58L0 44h20.54c6.05 0 12.35-4.76 14-10.58Z' fill='%23F7F5F1' stroke='%230B0C10' stroke-opacity='.28'/%3E%3Cpath d='M14.5 22h14.5M23.5 16.5L29 22l-5.5 5.5' fill='none' stroke='%230B0C10' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --nb-film:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Cpath d='M44 0H23.46C17.41 0 11.11 4.76 9.46 10.58L0 44h20.54c6.05 0 12.35-4.76 14-10.58Z' fill='%23F7F5F1' stroke='%230B0C10' stroke-opacity='.28'/%3E%3Cpath d='M18 15.5v13l11-6.5z' fill='%230B0C10'/%3E%3C/svg%3E");
+  --nb-out:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Cpath d='M44 0H23.46C17.41 0 11.11 4.76 9.46 10.58L0 44h20.54c6.05 0 12.35-4.76 14-10.58Z' fill='%23F7F5F1' stroke='%230B0C10' stroke-opacity='.28'/%3E%3Cpath d='M16.5 27.5L27.5 16.5M19.5 16.5h8v8' fill='none' stroke='%230B0C10' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --nb-zoom:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Cpath d='M44 0H23.46C17.41 0 11.11 4.76 9.46 10.58L0 44h20.54c6.05 0 12.35-4.76 14-10.58Z' fill='%23F7F5F1' stroke='%230B0C10' stroke-opacity='.28'/%3E%3Cpath d='M22 14.5v15M14.5 22h15' fill='none' stroke='%230B0C10' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E");
+  --nav-sig:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25.68 51.46'%3E%3Cpath d='M25.68 0C19.1 0 13.35 4.36 11.55 10.69L0 51.46c6.58 0 12.34-4.35 14.13-10.69Z'/%3E%3C/svg%3E");
+  --nav-g:var(--g, clamp(18px, 3.4vw, 56px));
+}
+
+/* ------------------------------------------------------------------ 1 · THE MENU */
+/* the desktop trigger, a fifth word after CV; on a phone the header's own Menu button opens the same panel */
+html:not(#_t) body .hdr .nav .nav-menu{appearance:none;-webkit-appearance:none;background:none;border:0;border-radius:0;color:inherit;cursor:pointer;
+  font-size:var(--t-text)!important;line-height:inherit;pointer-events:auto}
+@media (max-width:760px){html:not(#_t) body .hdr .nav .nav-menu{display:none!important}}
+
+html.sm-open, html.sm-open body{overflow:hidden!important}
+html.sm-open body{padding-right:var(--sm-sbw, 0)}
+.site-menu[hidden]{display:none!important}
+.site-menu{position:fixed;inset:0;z-index:2147483000;background:#0B0C10;color:#F7F5F1;margin:0;padding:0;text-align:left;
+  font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.site-menu .sm-bar{position:absolute;top:0;left:0;right:0;height:72px;display:flex;justify-content:flex-end;align-items:center;padding:0 var(--nav-g);box-sizing:border-box}
+.site-menu .sm-scroll{position:absolute;top:72px;left:0;right:0;bottom:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+  padding:clamp(4px, 1.5vh, 16px) var(--nav-g) var(--nav-g);box-sizing:border-box}
+.site-menu .sm-grid{display:grid;grid-template-columns:repeat(12, minmax(0, 1fr));column-gap:var(--nav-g);row-gap:56px;align-items:start}
+.site-menu .sm-col{grid-column:span 4;min-width:0}
+@media (max-width:760px){.site-menu .sm-col{grid-column:1 / -1}}
+.site-menu ul{list-style:none;margin:0;padding:0}
+.site-menu li{margin:0;padding:0}
+
+/* type: headings Big, everything else Text; on a desktop the three columns fit one screen at 900px */
+html:not(#_t) body .site-menu .sm-h{font-family:Jost,system-ui,sans-serif!important;font-weight:600!important;font-size:var(--t-big)!important;
+  line-height:var(--lh-big, 1.08)!important;letter-spacing:-.015em!important;color:#F7F5F1;margin:0 0 .3em}
+html:not(#_t) body .site-menu :is(li, a, p, button, span){font-size:var(--t-text)!important}
+html:not(#_t) body .site-menu .sm-list li{padding:2px 0;line-height:1.35!important}
+html:not(#_t) body .site-menu .sm-list :is(a, span){line-height:1.35!important}
+@media (max-width:760px){html:not(#_t) body .site-menu .sm-list li{padding:8px 0}}
+html:not(#_t) body .site-menu .sm-lab{font-family:Inter,system-ui,sans-serif!important;font-weight:600!important;color:rgba(247,245,241,.72);margin:1.1em 0 .2em;max-width:none}
+.site-menu .sm-reach{margin-top:1.1em}
+
+/* the menu's links: the one link signal */
+html:not(#_t) body .site-menu a{font-family:Jost,system-ui,sans-serif!important;font-weight:600!important;color:#F7F5F1!important;
+  text-decoration-line:underline!important;text-decoration-style:solid!important;text-decoration-color:rgba(247,245,241,.38)!important;
+  text-decoration-thickness:1px!important;text-underline-offset:.32em!important;transition:none!important}
+html:not(#_t) body .site-menu a:is(:hover, :focus-visible, [aria-current="page"]){text-decoration-color:#F7F5F1!important}
+/* the clients as small names, and the two ways to reach him: Inter 400 at 72% */
+html:not(#_t) body .site-menu .sm-small :is(li, a){font-family:Inter,system-ui,sans-serif!important;font-weight:400!important;color:rgba(247,245,241,.72)!important}
+html:not(#_t) body .site-menu .sm-small a:is(:hover, :focus-visible){color:#F7F5F1!important}
+html:not(#_t) body .site-menu .sm-ar{text-decoration:none}
+
+/* Close, top right, where Menu was */
+html:not(#_t) body .site-menu .sm-close{appearance:none;-webkit-appearance:none;background:none;border:0;border-radius:0;margin:0;padding:10px 0 10px 14px;
+  color:#F7F5F1;cursor:pointer;font-family:Jost,system-ui,sans-serif!important;font-weight:600!important;line-height:1.2!important}
+
+/* ------------------------------------------------------------------ 2 · THE LINK SIGNAL */
+/* text links: Jost 600, paper, a thin line under them that turns paper on hover or focus, at once */
+html:not(#_t) body a.nl{font-family:Jost,system-ui,sans-serif!important;font-weight:600!important;color:var(--nl-ink, #F7F5F1)!important;
+  text-decoration-line:underline!important;text-decoration-style:solid!important;text-decoration-color:var(--nl-line, rgba(247,245,241,.38))!important;
+  text-decoration-thickness:1px!important;text-underline-offset:.32em!important;transition:none!important;cursor:pointer;opacity:1!important}
+html:not(#_t) body a.nl :not(svg, svg *){color:inherit!important;transition:none!important}
+html:not(#_t) body a.nl:is(:hover, :focus-visible){color:var(--nl-ink, #F7F5F1)!important;text-decoration-color:var(--nl-ink, #F7F5F1)!important}
+/* a link that holds a block (the stage's projects, the next-project band, a press card): the line goes under the words that say where it goes */
+html:not(#_t) body a.nl-block{text-decoration:none!important;cursor:pointer}
+html:not(#_t) body a.nl-block .nl-u{text-decoration-line:underline!important;text-decoration-style:solid!important;text-decoration-color:var(--nl-line, rgba(247,245,241,.38))!important;
+  text-decoration-thickness:1px!important;text-underline-offset:.32em!important;transition:none!important}
+html:not(#_t) body a.nl-block:is(:hover, :focus-visible) .nl-u{text-decoration-color:var(--nl-ink, #F7F5F1)!important}
+html:not(#_t) body .nl-ar{text-decoration:none!important}
+
+/* expanders and buttons keep their look; every one shows the hand. An expander that wore a link's arrow and line ("See 12 more stands →")
+   loses both: it opens in place, it goes nowhere */
+html:not(#_t) body :is(summary, button).nl-exp{text-decoration:none!important}
+summary, button:not([disabled]), [role="button"], a.nl-btn, .nb-click{cursor:pointer}
+
+/* nothing that opens nothing wears a link sign: the client and venue names */
+html:not(#_t) body :is(.h2-trust li, .ab-names li){cursor:default!important;text-decoration:none!important}
+
+/* pictures that open something: a leaning tab in the mark's own shape (16 degrees, like the signal), paper, the glyph in ground colour,
+   always shown. → another page here · ▶ a film · ↗ another site · + the picture itself, larger (a zoom; approved 21 Oct) */
+.has-badge.nb-rel{position:relative}
+.has-badge:not(.nb-before)::after, .has-badge.nb-before::before, .nav-badge{content:"";position:absolute;right:var(--nb-r, 12px);bottom:var(--nb-b, 12px);width:44px;height:44px;z-index:3;pointer-events:none;
+  background:var(--nb-page) no-repeat center / 100% 100%;transform:none;opacity:1;transition:none;border:0;border-radius:0;box-shadow:none;margin:0;padding:0}
+.has-badge:not(.nb-before)[data-badge="\25B6"]::after, .has-badge.nb-before[data-badge="\25B6"]::before, .nav-badge[data-badge="\25B6"]{background-image:var(--nb-film)}
+.has-badge:not(.nb-before)[data-badge="\2197"]::after, .has-badge.nb-before[data-badge="\2197"]::before, .nav-badge[data-badge="\2197"]{background-image:var(--nb-out)}
+.has-badge:not(.nb-before)[data-badge="+"]::after, .has-badge.nb-before[data-badge="+"]::before, .nav-badge[data-badge="+"]{background-image:var(--nb-zoom)}
+/* Home, the stage: only the head window opens its project; a waiting window takes the stage, so it carries no badge */
+.stg .stg-w.stg-badge::after{display:none}
+.stg:not([data-state]) .stg-w.p1.stg-badge::after, .stg[data-state="1"] .stg-w.p1.stg-badge::after,
+.stg[data-state="2"] .stg-w.p2.stg-badge::after, .stg[data-state="3"] .stg-w.p3.stg-badge::after{display:block}
+
+/* ------------------------------------------------------------------ 3 · THE SCROLL CUE */
+html:not(#_t) body a.scroll-cue{position:fixed;left:var(--nav-g);bottom:24px;z-index:45;display:inline-flex;align-items:center;gap:.45em;margin:0;padding:4px 0;
+  font-family:Inter,system-ui,sans-serif!important;font-weight:600!important;font-size:var(--t-text)!important;line-height:1.2!important;
+  color:var(--cue-ink, rgba(247,245,241,.72))!important;text-decoration:none!important;background:none;transition:none!important;opacity:1;pointer-events:auto}
+html:not(#_t) body a.scroll-cue[hidden]{display:none!important}
+html:not(#_t) body a.scroll-cue:is(:hover, :focus-visible){color:var(--cue-ink, #F7F5F1)!important}
+html:not(#_t) body a.scroll-cue .sg1{display:inline-block;flex:none;height:1em;width:auto;aspect-ratio:25.68 / 51.46;background:currentColor;color:inherit!important;
+  -webkit-mask:var(--nav-sig) center / contain no-repeat;mask:var(--nav-sig) center / contain no-repeat;font-size:var(--t-text)!important}
+/* Home on a phone: the opening's own "All work →" and "Play film" sit on the bottom line (inside its shadow root, at 24px from the
+   edge), so the cue stands just above them, on their left edge */
+@media (max-width:760px){html:not(#_t) body.home a.scroll-cue{bottom:84px;left:24px}}
+/* Home on a desktop: on one line with the film's Pause and Replay (same type), so 7px above the 24 */
+@media (min-width:761px){html:not(#_t) body.home a.scroll-cue{bottom:31px}}
+
+/* ------------------------------------------------------------------ keyboard: one ring for everything new */
+html:not(#_t) body :is(.site-menu a, .site-menu button, .hdr .nav-menu, a.scroll-cue, a.nl, a.nl-block):focus-visible{outline:2px solid #F7F5F1!important;outline-offset:3px!important}
+html:not(#_t) body :is(a.nl.nl-light, a.nl-block.nl-light):focus-visible{outline-color:var(--nl-ink)!important}

@@ -1,0 +1,40 @@
+/* E-SCOPE (21 Oct 2026, fixes20 SCOPE_BLOCKS): "What we delivered." on the 15 project pages, directly after each page's overview.
+   Tony: "We need to show the scope on each project." Published as assets/scope.css, linked after fixes.css (after scale.css where a
+   page has no fixes.css). The same design on every page: dark ground, one margin var(--g), 12-column conventions (groups and pictures
+   4|4|4, column gap var(--gap)), no boxes, no rules, no fades. Two type sizes only, from scale.css: the h2 BIG, everything else TEXT;
+   Jost 600 for the item lines, Inter for labels and reading. Pictures whole: each in a 4:3 box on the ground, contained, never cropped.
+   Selectors start with section.fp-scope so the pages' own rules (.spaces h2, .ls figure img, .cola section p ...) never reach in. */
+section.fp-scope{
+  --sc-fg:#F7F5F1; --sc-dim:rgba(247,245,241,.72); --sc-gap:var(--gap,24px);
+  display:block; position:relative; margin:0; background:#0B0C10; color:var(--sc-fg);
+  padding:clamp(70px,12vh,150px) var(--g,clamp(16px,4.57vw - 1.83px,64px)) clamp(56px,9vh,110px);
+  text-align:left;
+}
+section.fp-scope *{box-sizing:border-box}
+section.fp-scope .fp-lab{display:block; margin:0 0 16px; font-family:"Inter",system-ui,sans-serif; font-weight:500; color:var(--sc-dim)}
+section.fp-scope .fp-lab b{color:var(--sc-fg); font-weight:600}
+section.fp-scope h2{margin:0; max-width:none; font-family:"Jost",system-ui,sans-serif; font-weight:300; color:var(--sc-fg); text-wrap:balance}
+section.fp-scope h2 b.tw{font-weight:600; color:var(--sc-fg)}
+section.fp-scope p{margin:0; font-family:"Inter",system-ui,sans-serif; font-weight:400}
+section.fp-scope .scope-lead{margin-top:24px; max-width:34em; color:var(--sc-fg)}
+/* the groups: three columns (4|4|4), one on a phone */
+section.fp-scope .scope-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:48px var(--sc-gap); margin-top:clamp(40px,7vh,72px)}
+section.fp-scope .scope-group{min-width:0}
+section.fp-scope .scope-k{margin:0 0 12px; font-weight:500; color:var(--sc-dim)}
+section.fp-scope .scope-group ul{list-style:none; margin:0; padding:0}
+section.fp-scope .scope-group li{margin:0 0 10px; padding:0; font-family:"Jost",system-ui,sans-serif; font-weight:600; color:var(--sc-fg); text-wrap:pretty}
+section.fp-scope .scope-group li:last-child{margin-bottom:0}
+section.fp-scope .scope-also{margin-top:clamp(36px,6vh,56px); max-width:34em; color:var(--sc-dim)}
+/* the pictures: whole, each in a 4:3 box on the ground (object-fit: contain), three across, two on a phone */
+section.fp-scope .scope-pics{list-style:none; margin:clamp(48px,8vh,88px) 0 0; padding:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:40px var(--sc-gap)}
+section.fp-scope .scope-pics li{margin:0; padding:0; min-width:0}
+section.fp-scope .scope-pics figure{margin:0; min-width:0}
+section.fp-scope .scope-pics img{display:block; width:100%; height:auto; max-width:100%; max-height:none; aspect-ratio:4/3; object-fit:contain !important; object-position:50% 50%; position:static; background:transparent}
+section.fp-scope .scope-pics figcaption{margin-top:10px; font-family:"Inter",system-ui,sans-serif; font-weight:400; color:var(--sc-dim)}
+section.fp-scope .scope-src{margin-top:clamp(40px,7vh,72px); max-width:34em; color:var(--sc-dim)}
+section.fp-scope .scope-note{margin-top:12px; max-width:34em; color:var(--sc-dim)}
+@media (max-width:760px){
+  section.fp-scope{--sc-gap:var(--gap,16px)}
+  section.fp-scope .scope-grid{grid-template-columns:1fr; gap:32px}
+  section.fp-scope .scope-pics{grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px var(--sc-gap)}
+}

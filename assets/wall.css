@@ -1,0 +1,15 @@
+/* wall-play.css, published as assets/wall.css — Home 2b, the ZEISS 74-ft wall, playing (21 Oct 2026; fixes20 E-WALL-ROOM, off until
+   Tony's yes: WALL_ROOM). Tony: "Don't play with it. The original content is already good." So the section shows the real site video of
+   the wall running its film above the cars (work/zeiss/a/wall-848.mp4, 848 x 480, the largest copy in the archive; the ZEISS page's own
+   clip), whole, at the full width of .wrap, autoplaying muted and looping while on screen (site.js data-clip); the button opens it in the
+   player (films.js data-film). No measure line: the camera moves (the wall's top edge is not in the same place at 1 s and 15 s), so
+   "74 feet" stays in the heading only. No composite, no fades. The frame, caption and play mark are home2.css's .wl / .wl-pic / .wl-cap.
+   Loaded after site.css, home2.css, brand.css, type.css, scale.css and fixes.css. */
+
+.home2 .h2-wall h2{margin:0}
+.wl-play{margin-top:clamp(40px,4.4vw,72px)}
+
+@media (max-width:760px){
+  .wl-play{margin-top:clamp(28px,7vw,40px)}
+  .wl-play .wl-pic{width:auto;margin-left:0}                       /* home2.css runs .wl-pic edge to edge on a phone (the old thin strip); this one keeps to .wrap */
+}
