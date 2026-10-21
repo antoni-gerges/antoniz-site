@@ -1,0 +1,13 @@
+/* antoniz.com numbers (fixes20 E-NUMBERS, 21 Oct). numbers.js counts the figures up once (900 ms, cubic ease-out, 80 ms apart)
+   and puts a 24 px line icon to the left of each of Home's six labels. No opacity, transform or fade is animated; text sizes unchanged. */
+.nm-run{font-variant-numeric:lining-nums tabular-nums!important}
+.nm-sr{position:absolute!important;width:1px!important;height:1px!important;margin:-1px!important;padding:0!important;border:0!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important}
+/* Home, In numbers: the icon left of the label, 10 px gap, centred on the label's first line */
+.h2-num .cp.nm-i{position:relative;padding-left:34px}
+.nm-ic{position:absolute;left:0;top:calc((var(--t-text,1rem) * var(--lh-text,1.55) - 24px) / 2);width:24px;height:24px;overflow:visible;
+  /* the quiet 72% of the label, mixed opaque on the dark ground so joints never double up */
+  color:#B5B4B2;color:color-mix(in srgb,#F7F5F1 72%,#0B0C10);
+  fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.nm-ic .nm-t{stroke-opacity:.25}
+/* while drawing: each stroke runs from its start, --p 0 to 1 (pathLength 1; 1.02 keeps the hidden end clear of a cap dot) */
+.nm-d path[pathLength]{stroke-dasharray:1 2;stroke-dashoffset:calc(1.02 - 1.02 * var(--p,0))}

@@ -58,3 +58,5 @@ html:not(#_t):not(#_u) body .h2-all ul.all12 a{white-space:normal;display:inline
 @media (max-width:760px){ html:not(#_t):not(#_u) body .h2-all ul.all12{grid-template-columns:repeat(2,minmax(0,1fr))} }
 html:not(#_t):not(#_u) body .h2-all ul.all12 > li::before{display:none}
 html:not(#_t):not(#_u) body .h2-all ul.all12 > li{padding-left:0}
+/* the case-studies list no longer inherits the old name wall's clip (it cut the first column) */
+html:not(#_t):not(#_u) body .h2-all ul.all12{clip-path:none;margin-left:0}
