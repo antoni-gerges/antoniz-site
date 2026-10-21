@@ -26,8 +26,8 @@
     ['Al Forsan', 'work/al-forsan/'], ['Cityscape Abu Dhabi', 'work/cityscape/'], ['The Big Grill', 'work/big-grill/'],
     ['Innovation Month', 'work/al-ain/'], ['MAF', 'work/pyramids-2021/'], ['Capacity Middle East', 'work/capacity/'],
     ['Live shows', 'work/live-shows/'], ['Children of Light Academy', 'work/children-of-light-academy/'], ['How a space is planned', 'work/spaces/']];
-  var ARCHIVE = [['All work', 'work/'], ['Ideas', 'work/#ideas'], ['Designed, then built', 'work/#spaces'], ['Identities', 'work/#identities'],
-    ['Campaigns', 'work/#campaigns'], ['Live', 'work/#live'], ['Film', 'work/#film']];
+  var ARCHIVE = [['All work', 'work/'], ['Ideas', 'work/archive/#ideas'], ['Designed, then built', 'work/archive/#spaces'], ['Identities', 'work/archive/#identities'],
+    ['Campaigns', 'work/archive/#campaigns'], ['Live', 'work/archive/#live'], ['Film', 'work/#film']];
   var TONY = [['About', 'about/'], ['What I stand for', 'about/#what-i-stand-for'], ['How I work', 'about/#how-i-work'], ['The agency', 'about/#studio'],
     ['In their words', 'about/#in-their-words'], ['Education', 'about/#education-work'], ['Where and for whom', 'about/#where'],
     ['Contact', 'contact/'], ['Download the CV', 'assets/Antoni-Gerges-CV.pdf', 'download']];

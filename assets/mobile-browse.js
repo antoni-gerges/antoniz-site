@@ -15,7 +15,7 @@
  const selected=document.createElement('optgroup');selected.label='Selected projects';
  document.querySelectorAll('.pj-sel article[id]').forEach(article=>{const title=article.querySelector('.pj-name');if(title)selected.append(new Option(title.textContent.trim(),article.id));});
  const archive=document.createElement('optgroup');archive.label='More work';
- document.querySelectorAll('.cnav a[href^="#"]').forEach(a=>{const id=a.hash.slice(1);if(document.getElementById(id))archive.append(new Option(a.textContent.trim().replace(/^\d+\s*/,''),id));});
+ document.querySelectorAll('.cnav a[href*="#"]').forEach(a=>{const id=a.hash.slice(1),here=a.getAttribute('href').charAt(0)==='#';if(here?document.getElementById(id):a.closest('[data-fix="E-ARCHIVE"]'))archive.append(new Option(a.textContent.trim().replace(/^\d+\s*/,''),here?id:a.href));});   /* E-ARCHIVE: the chapters on the archive page too */
  select.append(selected,archive);nav.append(label,select);panel.before(nav);
- select.addEventListener('change',()=>{const target=document.getElementById(select.value);if(!target)return;const all=document.getElementById('s-all');if(all){all.checked=true;all.dispatchEvent(new Event('change',{bubbles:true}));}target.setAttribute('tabindex','-1');history.replaceState(null,'','#'+target.id);target.scrollIntoView({behavior:'auto',block:'start'});target.focus({preventScroll:true});});
+ select.addEventListener('change',()=>{const target=document.getElementById(select.value);if(!target){if(/^https?:/.test(select.value))location.href=select.value;return;}const all=document.getElementById('s-all');if(all){all.checked=true;all.dispatchEvent(new Event('change',{bubbles:true}));}target.setAttribute('tabindex','-1');history.replaceState(null,'','#'+target.id);target.scrollIntoView({behavior:'auto',block:'start'});target.focus({preventScroll:true});});
 })();

@@ -3,7 +3,7 @@
  const root=document.querySelector('.pj-sel'),list=root?.querySelector('.plist'),head=root?.querySelector('.pj-head');if(!list||!head)return;
  const cards=[...list.querySelectorAll('article.pj')],pick=root.querySelector('.pj-pick');
  const tools=document.createElement('div');tools.className='work-tools';
- tools.innerHTML='<div class="work-view" role="group" aria-label="Work presentation"><button type="button" data-view="gallery" aria-pressed="true">Visual index</button><button type="button" data-view="stories" aria-pressed="false">Full stories</button></div><a class="work-archive" href="#archive">Explore the archive <span aria-hidden="true">↗</span></a>';
+ tools.innerHTML='<div class="work-view" role="group" aria-label="Work presentation"><button type="button" data-view="gallery" aria-pressed="true">Visual index</button><button type="button" data-view="stories" aria-pressed="false">Full stories</button></div><a class="work-archive" href="archive/">Explore the archive <span aria-hidden="true">↗</span></a>';
  head.append(tools);
  const paths=head.querySelector('.work-paths');
  const guide=document.createElement('details');guide.className='work-guide';
@@ -48,7 +48,7 @@
  document.addEventListener('click',e=>{if(filter&&!filter.contains(e.target))filter.open=false;});
  filter?.addEventListener('keydown',e=>{if(e.key==='Escape'){filter.open=false;filter.querySelector('summary').focus();}});
  // Run before the existing jump handler scrolls to its original story.
- root.querySelector('#mobile-work-jump')?.addEventListener('change',()=>apply('stories'),true);
+ root.querySelector('#mobile-work-jump')?.addEventListener('change',e=>{if(!/^https?:/.test(e.target.value))apply('stories')},true);   /* E-ARCHIVE: a chapter on the archive page is left as it is */
  addEventListener('hashchange',()=>{if(document.getElementById(location.hash.slice(1))?.matches('article.pj')){search.value='';pick.querySelector('#s-all').checked=true;filterCards();apply('stories');}});
  addEventListener('popstate',restore);restore();
 })();
