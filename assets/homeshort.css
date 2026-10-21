@@ -1,0 +1,4 @@
+/* Home, "Go deeper" (21 Oct 2026; home-21oct/homeshort21.py E-HOME-DEEPER; published as assets/homeshort.css, linked directly after
+   fixes.css on Home only). The section is the page's own pattern (section.h2: label, one big line); the four links stand in one row that
+   wraps, at text size, Jost 600. nav.css's link signal (a.nl) gives them the underline and the paper ink, as every text link on the site. */
+.deeper{list-style:none;margin:clamp(24px,3vw,40px) 0 0;padding:0;display:flex;flex-wrap:wrap;gap:12px 40px}.deeper a{font-family:"Jost",system-ui,sans-serif;font-weight:600}
