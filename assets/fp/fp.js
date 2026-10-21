@@ -18,9 +18,10 @@
   function play(v) { if (FP.userPaused) return; arm(v); if (FP.hold) { v._want = 1; return; } if (RM && !v._asked) return; if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } }
   function stop(v) { if (!v.paused) v.pause(); }
   FP.play = play; FP.stop = stop; FP.arm = arm;
+  var NC = navigator.connection, SLOW = !!(NC && (NC.saveData || (NC.effectiveType && NC.effectiveType !== '4g')));   /* perf21 F3: a slow or save-data line looks half a screen ahead */
   var auto = [].slice.call(D.querySelectorAll('video[data-auto]'));
   if ('IntersectionObserver' in W) {
-    var near = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { arm(e.target); near.unobserve(e.target); } }); }, { rootMargin: '120% 0px' });
+    var near = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { arm(e.target); near.unobserve(e.target); } }); }, { rootMargin: (SLOW ? '50%' : '120%') + ' 0px' });
     var vis = new IntersectionObserver(function (es) { es.forEach(function (e) { e.isIntersecting ? play(e.target) : stop(e.target); }); }, { threshold: .2 });
     auto.forEach(function (v) { near.observe(v); vis.observe(v); });
     [].forEach.call(D.querySelectorAll('video[data-late]'), function (v) { near.observe(v); });
@@ -32,7 +33,9 @@
   [].forEach.call(D.querySelectorAll('.fp-hero'), function (h) {
     var v = h.querySelector('video'), lab = h.querySelector('.src b'), marks = [];
     try { marks = JSON.parse(h.dataset.marks || '[]'); } catch (e) {}
-    arm(v); if (h.getBoundingClientRect().top < W.innerHeight) play(v);
+    var r0 = h.getBoundingClientRect();   /* perf21 F3: armed now only within two screens; further down, when near */
+    if (r0.top < 2 * W.innerHeight || !near) arm(v); else near.observe(v);
+    if (r0.top < W.innerHeight) play(v);
     if (lab && marks.length) v.addEventListener('timeupdate', function () {
       var t = v.currentTime, s = marks[0][1];
       for (var i = 0; i < marks.length; i++) if (t >= marks[i][0]) s = marks[i][1];
@@ -163,12 +166,13 @@
  const title=document.querySelector('h1')?.textContent.trim()||'This project';
  const sections=[...main.querySelectorAll(':scope > section')].filter(s=>!s.matches('.fp-hero:first-child,.fp-end,.zb-hd')&&(s.querySelector('h2')||s.matches('.fp-model,.fp-reel')));
  const items=sections.map((s,i)=>{const h=s.querySelector('h2');const label=s.matches('.fp-say')?'Overview':s.matches('.fp-model')?'The work in 3D':s.matches('.fp-reel')?'Films':s.matches('.fp-res')?'Results':null;const name=(label||h?.innerText||s.getAttribute('aria-label')||'The films').replace(/\s+/g,' ').trim();if(!s.id)s.id='project-chapter-'+(i+1);s.classList.add('case-chapter');return {s,name}}).filter(x=>x.name);
+ if(items.length<=1)document.querySelector('.case-index[data-perf-ph]')?.remove();
  if(items.length>1){
   const nav=document.createElement('nav');nav.className='case-index';nav.id='case-chapters';nav.setAttribute('aria-label','Project chapters');
   const top=document.createElement('div');top.className='case-index-heading';const label=document.createElement('span');label.textContent='Explore the project';const name=document.createElement('strong');name.textContent=title;top.append(label,name);
   const details=document.createElement('details');details.open=innerWidth>760;const summary=document.createElement('summary');summary.textContent='Chapters · '+items.length;const list=document.createElement('ol');
   items.forEach(({s,name},i)=>{const li=document.createElement('li'),a=document.createElement('a'),num=document.createElement('span');num.textContent=String(i+1).padStart(2,'0');num.setAttribute('aria-hidden','true');a.href='#'+s.id;a.append(num,document.createTextNode(name));a.addEventListener('click',()=>{s.tabIndex=-1;requestAnimationFrame(()=>s.focus({preventScroll:true}))});li.append(a);list.append(li)});
-  details.append(summary,list);nav.append(top,details);main.querySelector('section')?.after(nav);
+  details.append(summary,list);nav.append(top,details);const ph=document.querySelector('.case-index[data-perf-ph]');ph?ph.replaceWith(nav):main.querySelector('section')?.after(nav);
   const headerNav=document.querySelector('.hdr .nav');if(headerNav){const a=document.createElement('a');a.href='#case-chapters';a.textContent='Chapters';a.addEventListener('click',()=>{if(document.querySelector('.hdr.open'))document.querySelector('.menu-btn').click()});headerNav.append(a)}
   const mq=matchMedia('(min-width:761px)');mq.addEventListener('change',()=>{details.open=mq.matches});
  }

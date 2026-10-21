@@ -11,12 +11,13 @@
    - the stage: one main screen and two square side walls, LED cabinets with depth, on a dark deck with a lime edge. They play the films
      delivered for them (the side films 0 to 4.6 s and the closing film 0 to 10.45 s: the clean seconds before the client's bilingual
      logo enters; the opening film plays at the top of the page). The arrangement of the screens on the night is not recorded: this is a model, said so on the page, with no venue drawn. */
-import { stage, T } from '../../assets/fp/fp3d.js?v=21';
+let stage, T;   /* perf21 F1: three.js and the 3D engine load when the 3D chapter is near: near3d() at the end */
 
 const INK = 0x0d0e0c;   /* the invitation's night */
 const sec = document.querySelector('.fp-model'), FP = window.FP;
-const S = sec && FP && stage(sec, { assets: 'a/3d/', grid: false, exposure: 1.0, fog: INK, floorColor: 0x101110, floorRough: .8, floorOpacity: .86, mirrorK: 1.4, rim: 0xe4f08a, rimI: .25, fill: .5 });
-if (S) { S.renderer.setClearColor(INK, 1); boot(); }
+let S;
+near3d(sec, () => { S = sec && FP && stage(sec, { assets: 'a/3d/', grid: false, exposure: 1.0, fog: INK, floorColor: 0x101110, floorRough: .8, floorOpacity: .86, mirrorK: 1.4, rim: 0xe4f08a, rimI: .25, fill: .5 });
+if (S) { S.renderer.setClearColor(INK, 1); boot(); } });
 heroFilms();
 layoutSets();
 
@@ -176,4 +177,15 @@ function layoutSets() {
       r.forEach(n => { const f = figs[n]; f.style.width = Math.floor(+f.dataset.r * hh) + 'px'; row.appendChild(f); }); grid.appendChild(row); });
   });
   lay(); addEventListener('resize', lay); addEventListener('load', lay);
+}
+
+
+/* perf21 F1 (21 Oct): three.js and the 3D engine are fetched when the 3D chapter comes within one and a half screens,
+   not with the page; then the chapter is built exactly as before (near3d(sec, build) above). */
+function near3d(el, go) {
+  if (!el) return;
+  const load = () => import('../../assets/fp/fp3d.js?v=21').then(m => { stage = m.stage; T = m.T; go(); });
+  if (!('IntersectionObserver' in window)) { load(); return; }
+  const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); load(); } }, { rootMargin: '150% 0px' });
+  io.observe(el);
 }

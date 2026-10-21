@@ -1,9 +1,10 @@
 /* ZEISS: the night as a 3D model. Every piece is built from the production artwork at its drawn size (metres).
    Scroll walks the guest's way in: welcome screen, flags, signs, entrance wall, two photo walls, the eye, the 74-ft screen. */
-import { stage, T } from '../../assets/fp/fp3d.js?v=21';
+let stage, T;   /* perf21 F1: three.js and the 3D engine load when the 3D chapter is near: near3d() at the end */
 
-const sec = document.querySelector('.fp-model'), S = sec && window.FP && stage(sec, { assets: 'a/3d/', grid: false, sky: [[0, '#000'], [.52, '#03050c'], [.66, '#0a1230'], [.7, '#03050c'], [1, '#000']], fog: 0x03050c, floorColor: 0x070a12, floorRough: .32, floorMetal: .55, floorOpacity: .72, mirrorK: 2.2, rim: 0x5878ff, rimI: .8 });
-if (S) build();
+const sec = document.querySelector('.fp-model'); let S;
+near3d(sec, () => { S = sec && window.FP && stage(sec, { assets: 'a/3d/', grid: false, sky: [[0, '#000'], [.52, '#03050c'], [.66, '#0a1230'], [.7, '#03050c'], [1, '#000']], fog: 0x03050c, floorColor: 0x070a12, floorRough: .32, floorMetal: .55, floorOpacity: .72, mirrorK: 2.2, rim: 0x5878ff, rimI: .8 });
+if (S) build(); });
 
 function build() {
   const { tex, std, dark, box, panel, manq, station, video } = S, A = S.A;
@@ -138,4 +139,15 @@ function build() {
     }
     S.ready();
   }).catch(() => S.ready());
+}
+
+
+/* perf21 F1 (21 Oct): three.js and the 3D engine are fetched when the 3D chapter comes within one and a half screens,
+   not with the page; then the chapter is built exactly as before (near3d(sec, build) above). */
+function near3d(el, go) {
+  if (!el) return;
+  const load = () => import('../../assets/fp/fp3d.js?v=21').then(m => { stage = m.stage; T = m.T; go(); });
+  if (!('IntersectionObserver' in window)) { load(); return; }
+  const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); load(); } }, { rootMargin: '150% 0px' });
+  io.observe(el);
 }

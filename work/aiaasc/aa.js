@@ -17,13 +17,14 @@
      banner (page 63, the logo alone). The pieces that carry the template words HEAD LINE GOES HERE are left out.
    - the campaign: the eight back-to-school posts of August and September 2021 (copies recovered from the designer's portfolio), each whole,
      as framed prints on a wall. On a phone the wall is two posts wide and four high, all of it in the frame. */
-import { stage, T } from '../../assets/fp/fp3d.js?v=21';
+let stage, T;   /* perf21 F1: three.js and the 3D engine load when the 3D chapter is near: near3d() at the end */
 
 const sec = document.querySelector('.fp-model'), FP = window.FP;
 /* the brand room: the 3D sits on the toolkit's own dark (#302c3a), its rim light is the toolkit's light blue (#4c75ba) */
 const INK = 0x302c3a;
-const S = sec && FP && stage(sec, { assets: 'a/3d/', grid: false, exposure: 1.0, fog: INK, floorColor: 0x2a2734, floorRough: .55, mirrorK: 1.3, rim: 0x4c75ba, rimI: .55 });
-if (S) boot();
+let S;
+near3d(sec, () => { S = sec && FP && stage(sec, { assets: 'a/3d/', grid: false, exposure: 1.0, fog: INK, floorColor: 0x2a2734, floorRough: .55, mirrorK: 1.3, rim: 0x4c75ba, rimI: .55 });
+if (S) boot(); });
 
 async function boot() {
   const { station, std, box, renderer } = S, E = FP.ease, seg = FP.seg, none = { drift: .4, keyK: .6 }, PH = FP.phone();
@@ -248,4 +249,15 @@ async function boot() {
   S.onFrame((time_, i, local) => compose(i, local, time_));
   if (FP.rm) FP.on(() => { const on = sec.querySelector('.st.on'); compose(on ? +on.dataset.s : 0, 1); });
   S.ready();
+}
+
+
+/* perf21 F1 (21 Oct): three.js and the 3D engine are fetched when the 3D chapter comes within one and a half screens,
+   not with the page; then the chapter is built exactly as before (near3d(sec, build) above). */
+function near3d(el, go) {
+  if (!el) return;
+  const load = () => import('../../assets/fp/fp3d.js?v=21').then(m => { stage = m.stage; T = m.T; go(); });
+  if (!('IntersectionObserver' in window)) { load(); return; }
+  const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); load(); } }, { rootMargin: '150% 0px' });
+  io.observe(el);
 }

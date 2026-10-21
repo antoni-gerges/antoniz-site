@@ -46,12 +46,14 @@
  function label(){if(!button)return;button.textContent=started&&elapsed<DURATION?(paused?'Play animation':'Pause animation'):video.ended?'Replay film':video.paused?'Play film':'Pause film';}
  const DURATION=5.4;
  const beats=[0,.22,.44,.66,.88,1.10,1.32,1.54,1.76,1.98];
+ /* perf21 F2: each montage set is fetched about 2 s before its cue (film time 9 s + its beat), not all 29 with the page */
+ function need(t){groups.forEach((gr,j)=>{if(beats[j]<=t)gr.forEach(g=>{const im=g.querySelector('image'),u=im&&im.getAttribute('data-perf-href');if(u&&!im.getAttribute('href'))im.setAttribute('href',u);});});}
  let slices=[],index,outro=[];
  function paint(){
   const t=reduced.matches?DURATION:elapsed;
   groups.forEach((group,j)=>group.forEach((g,i)=>{
    const begin=beats[j]+i*.025,end=j<beats.length-1?beats[j+1]+i*.025:99;
-   const active=t>=begin&&t<end;g.style.opacity=active?ease(t/.18):0;
+   const active=t>=begin&&t<end;if(active)need(beats[j]);g.style.opacity=active?ease(t/.18):0;
    // Fast diagonal shutter within each fixed window, followed by a still image.
    const p=clamp((t-begin)/.075),im=g.querySelector('image');
    im.setAttribute('transform',active?`translate(${(1-p)*24} ${(1-p)*-70})`:'');
@@ -83,12 +85,12 @@
   video.poster=new URL('./mobile-clean-17oct.jpg',base).href;video.src=new URL('./mobile-windows-17oct.mp4',base).href;
   svg=document.createElementNS(ns,'svg');svg.classList.add('mobile-projects');svg.setAttribute('viewBox','0 0 720 1280');svg.setAttribute('preserveAspectRatio','xMidYMid meet');svg.setAttribute('aria-hidden','true');
   const defs=document.createElementNS(ns,'defs');paths.forEach((d,i)=>{const clip=document.createElementNS(ns,'clipPath');clip.id='film-window-'+i;const path=document.createElementNS(ns,'path');path.setAttribute('d',d);clip.append(path);defs.append(clip)});svg.append(defs);
-  groups=sets.map(set=>set.map((name,i)=>{const g=document.createElementNS(ns,'g');g.setAttribute('clip-path',`url(#film-window-${i})`);g.style.opacity=0;const im=document.createElementNS(ns,'image');im.setAttribute('x',200+i*147);im.setAttribute('y',472);im.setAttribute('width',200);im.setAttribute('height',400);im.setAttribute('preserveAspectRatio','xMidYMid slice');im.setAttribute('href',new URL('./montage/'+name,base).href);g.append(im);svg.append(g);return g}));
+  groups=sets.map(set=>set.map((name,i)=>{const g=document.createElementNS(ns,'g');g.setAttribute('clip-path',`url(#film-window-${i})`);g.style.opacity=0;const im=document.createElementNS(ns,'image');im.setAttribute('x',200+i*147);im.setAttribute('y',472);im.setAttribute('width',200);im.setAttribute('height',400);im.setAttribute('preserveAspectRatio','xMidYMid slice');im.setAttribute('data-perf-href',new URL('./montage/'+name,base).href);g.append(im);svg.append(g);return g}));
   outro=paths.map(d=>{const p=document.createElementNS(ns,'path');p.setAttribute('d',d);p.setAttribute('fill','#F7F5F1');p.style.opacity=0;svg.append(p);return p});
   button=document.createElement('button');button.type='button';button.className='mobile-film-control';
   button.addEventListener('click',()=>{if(started&&elapsed<DURATION){paused=!paused;label();return;}if(video.ended){reset();video.currentTime=0;video.play().catch(label);}else if(video.paused){video.play().catch(label);}else video.pause();});
-  video.addEventListener('timeupdate',()=>{const shade=Math.round(8*(1-clamp((video.currentTime-8))));wrap.style.setProperty('--film-ground',`rgb(${shade},${shade},${shade})`);if(video.currentTime>=9)start();});video.addEventListener('ended',start);['play','pause','ended'].forEach(e=>video.addEventListener(e,label));
-  video.addEventListener('error',()=>{wrap.classList.remove('mobile-film-ready');video.remove();svg.remove();button.remove();line.innerHTML='Big ideas,<br>built.';});
+  video.addEventListener('timeupdate',()=>{need(video.currentTime-7);const shade=Math.round(8*(1-clamp((video.currentTime-8))));wrap.style.setProperty('--film-ground',`rgb(${shade},${shade},${shade})`);if(video.currentTime>=9)start();});video.addEventListener('ended',start);['play','pause','ended'].forEach(e=>video.addEventListener(e,label));
+  video.addEventListener('error',()=>{window.__enFilmFailed=1;if(window.__enLoadOld)window.__enLoadOld();wrap.classList.remove('mobile-film-ready');video.remove();svg.remove();button.remove();line.innerHTML='Big ideas,<br>built.';});
   wrap.prepend(video);wrap.append(svg,button);wrap.classList.add('mobile-film-opening');reset();label();
   function handoff(){
    wrap.classList.remove('mobile-film-opening');wrap.classList.add('mobile-film-ready');

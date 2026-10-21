@@ -10,12 +10,13 @@
      two side screens 1152 x 672. Centre and pillars are one canvas, 3328 x 1144. These set the proportions of the screens here.
    NO SPECIFICATION IS INVENTED. Sizes in metres are estimates read from the films against the people on stage and say "about" wherever they are shown.
    Nothing here names a brand, a wattage, a pixel pitch or a weight. Counts are counted from the film and say so. */
-import { stage, T } from '../../assets/fp/fp3d.js?v=21';
+let stage, T;   /* perf21 F1: three.js and the 3D engine load when the 3D chapter is near: near3d() at the end */
 
 const sec = document.querySelector('.fp-model'), FP = window.FP;
 layoutSets();
-const S = sec && FP && stage(sec, { assets: 'a/3d/', grid: false, exposure: 1.0, fill: .05, fog: 0x030305, rimI: .001 });
-if (S) build();
+let S;
+near3d(sec, () => { S = sec && FP && stage(sec, { assets: 'a/3d/', grid: false, exposure: 1.0, fill: .05, fog: 0x030305, rimI: .001 });
+if (S) build(); });
 
 /* the films we made and the pieces on paper: each set is shown whole at once, in rows of one height each, fitted to one screen on a
    wide screen (on a phone, two squares or one picture per row). No picture or film is cut and no field of ours is laid behind any of them. */
@@ -298,4 +299,15 @@ function build() {
   if ('IntersectionObserver' in window) new IntersectionObserver(es => { live = es[0].isIntersecting; }, { rootMargin: '20% 0px' }).observe(sec); else live = true;
   state(); tick();
   S.ready();
+}
+
+
+/* perf21 F1 (21 Oct): three.js and the 3D engine are fetched when the 3D chapter comes within one and a half screens,
+   not with the page; then the chapter is built exactly as before (near3d(sec, build) above). */
+function near3d(el, go) {
+  if (!el) return;
+  const load = () => import('../../assets/fp/fp3d.js?v=21').then(m => { stage = m.stage; T = m.T; go(); });
+  if (!('IntersectionObserver' in window)) { load(); return; }
+  const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); load(); } }, { rootMargin: '150% 0px' });
+  io.observe(el);
 }

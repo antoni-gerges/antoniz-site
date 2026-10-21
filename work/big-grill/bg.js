@@ -12,7 +12,7 @@
    - the kids' zone: an orange inflatable arch with a football on top, a green inflatable dome (festival film about 0:00, 0:44, 1:00).
    - the beanbags: the festival's own, colours from IMG_1186 (the sponsor's logo is left off). The white blocks of Yas behind.
    SIZES ARE ESTIMATES read from the photographs. No stage plan is in the archive. No people are drawn. */
-import { stage, T } from '../../assets/fp/fp3d.js?v=21';
+let stage, T;   /* perf21 F1: three.js and the 3D engine load when the 3D chapter is near: near3d() at the end */
 
 /* the opening: one passage of the whole festival film, played from the film file itself */
 (function () {
@@ -23,8 +23,9 @@ import { stage, T } from '../../assets/fp/fp3d.js?v=21';
 })();
 
 const sec = document.querySelector('.fp-model'), FP = window.FP;
-const S = sec && FP && stage(sec, { assets: 'a/', grid: false, exposure: 1, fill: 0, floorColor: 0x000000, floorOpacity: 1, mirrorK: 0 });
-if (S) build();
+let S;
+near3d(sec, () => { S = sec && FP && stage(sec, { assets: 'a/', grid: false, exposure: 1, fill: 0, floorColor: 0x000000, floorOpacity: 1, mirrorK: 0 });
+if (S) build(); });
 
 function build() {
 const { std, box, scene, cam, renderer } = S;
@@ -398,4 +399,15 @@ S.onFrame((time, i, local) => {
   setTime(G);
 });
 S.ready();
+}
+
+
+/* perf21 F1 (21 Oct): three.js and the 3D engine are fetched when the 3D chapter comes within one and a half screens,
+   not with the page; then the chapter is built exactly as before (near3d(sec, build) above). */
+function near3d(el, go) {
+  if (!el) return;
+  const load = () => import('../../assets/fp/fp3d.js?v=21').then(m => { stage = m.stage; T = m.T; go(); });
+  if (!('IntersectionObserver' in window)) { load(); return; }
+  const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); load(); } }, { rootMargin: '150% 0px' });
+  io.observe(el);
 }

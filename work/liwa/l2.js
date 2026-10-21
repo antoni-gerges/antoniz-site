@@ -2,10 +2,11 @@
    the road in (the outdoor artwork and the lamppost banners), the wayfinding (three sign panels), the Liwa Land gate.
    14 Oct night: the dune model and the "big screen" were taken out (audit B-16, B-17: a TV on a stand the TVC never played on,
    and a dune below the bar); the dune and the site are now seen in films. */
-import { stage, T } from '../../assets/fp/fp3d.js?v=21';
+let stage, T;   /* perf21 F1: three.js and the 3D engine load when the 3D chapter is near: near3d() at the end */
 
-const sec = document.querySelector('.fp-model'), S = sec && window.FP && stage(sec, { assets: 'a/3d/', key: 0xfff0dc, rim: 0xffb066, rimI: .5, floor: 0x060504 , grid: false, sky: [[0, '#000'], [.5, '#050307'], [.63, '#2a150a'], [.68, '#0d0703'], [1, '#000']], fog: 0x0a0503 });
-if (S) build();
+const sec = document.querySelector('.fp-model'); let S;
+near3d(sec, () => { S = sec && window.FP && stage(sec, { assets: 'a/3d/', key: 0xfff0dc, rim: 0xffb066, rimI: .5, floor: 0x060504 , grid: false, sky: [[0, '#000'], [.5, '#050307'], [.63, '#2a150a'], [.68, '#0d0703'], [1, '#000']], fog: 0x0a0503 });
+if (S) build(); });
 
 function build() {
   const { tex, std, dark, box, panel, station } = S;
@@ -98,4 +99,15 @@ function build() {
     S.blob(G, -(GW - LEG) / 2, 0, 3.2, 2.8, .8); S.blob(G, (GW - LEG) / 2, 0, 3.2, 2.8, .8); S.blob(G, LX + 1.7, F + .7, 4.4, 1.5, .75); S.blob(G, RX + 1.5, F + .65, 3.9, 1.3, .75);
   }
   S.ready();
+}
+
+
+/* perf21 F1 (21 Oct): three.js and the 3D engine are fetched when the 3D chapter comes within one and a half screens,
+   not with the page; then the chapter is built exactly as before (near3d(sec, build) above). */
+function near3d(el, go) {
+  if (!el) return;
+  const load = () => import('../../assets/fp/fp3d.js?v=21').then(m => { stage = m.stage; T = m.T; go(); });
+  if (!('IntersectionObserver' in window)) { load(); return; }
+  const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); load(); } }, { rootMargin: '150% 0px' });
+  io.observe(el);
 }

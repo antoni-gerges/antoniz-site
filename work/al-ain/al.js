@@ -11,14 +11,15 @@
      150 render pixels are taken as one metre, so the model keeps the render's proportions exactly. The built gate of February stood under a
      truss; that is shown after this model, in the renders and the film.
    The sequence is the idea itself: the squares gather into the mark, each square takes depth and is a box, the boxes stack into the gate. */
-import { stage, T } from '../../assets/fp/fp3d.js?v=21';
+let stage, T;   /* perf21 F1: three.js and the 3D engine load when the 3D chapter is near: near3d() at the end */
 
 const MARK = {"cols":26,"rows":20,"cells":[[1,12,2,"#71cff1"],[5,12,2,"#3936b6"],[5,14,2,"#4c55f0"],[5,16,2,"#2223be"],[7,12,2,"#72cff3"],[7,14,2,"#383aef"],[7,16,2,"#5836e2"],[9,12,2,"#5047ee"],[9,14,2,"#5a36e4"],[9,16,2,"#6975ff"],[11,10,2,"#5796f5"],[11,12,2,"#5836e0"],[11,14,2,"#3937b4"],[11,16,2,"#362c70"],[13,10,2,"#71cff1"],[13,12,2,"#4f48ee"],[13,14,2,"#5836e2"],[13,16,2,"#2622bd"],[13,18,2,"#5a95f5"],[15,8,2,"#71d0f2"],[15,10,2,"#362d70"],[15,12,2,"#6b74fd"],[15,14,2,"#3837b6"],[15,16,2,"#4f48f0"],[15,18,2,"#5837e2"],[17,6,2,"#485eed"],[17,8,2,"#5737e4"],[17,10,2,"#4e49ee"],[17,12,2,"#5b35e1"],[17,14,2,"#393aef"],[17,16,2,"#6975fd"],[17,18,2,"#5697f5"],[19,4,2,"#485feb"],[19,6,2,"#5836e2"],[19,8,2,"#71cff3"],[19,10,2,"#5836e2"],[19,12,2,"#6974ff"],[19,14,2,"#5996f1"],[21,4,2,"#5836e2"],[21,6,2,"#3b62db"],[21,8,2,"#2622bf"],[21,10,2,"#c0c0ff"],[23,2,2,"#393aed"],[23,4,2,"#4f48ee"],[24,0,1,"#5797f4"],[24,1,1,"#3e60df"],[21,3,1,"#71d0f0"],[22,3,1,"#3a62d9"],[25,3,1,"#3d61db"],[25,4,1,"#5994f7"],[25,5,1,"#5796f7"],[23,6,1,"#5996f3"],[25,6,1,"#3665d7"],[23,7,1,"#6fd0f3"],[0,11,1,"#bfc1ff"],[23,11,1,"#3a63dc"],[4,12,1,"#5896ef"],[21,12,1,"#3a63d9"],[3,13,1,"#383aea"],[4,13,1,"#3939ef"],[21,13,1,"#564aee"],[3,14,1,"#3939ed"],[4,14,1,"#383be6"],[21,14,1,"#c0bfff"],[4,15,1,"#72cff2"],[4,16,1,"#5b94f0"],[19,16,1,"#2421c4"],[20,16,1,"#393aee"],[19,17,1,"#3a3aec"],[7,18,1,"#5796ed"],[8,18,1,"#c1bfff"],[9,18,1,"#71d0f3"],[10,18,1,"#5997ec"],[11,18,1,"#5048ed"],[12,18,1,"#3a38b2"],[19,18,1,"#3a36b9"],[19,19,1,"#4e4be4"]]};
 const GATE = {"px":150,"cx":982.5,"base":815,"boxes":[[355,440,180,300,-1,"#37227d"],[440,575,170,300,1,"#4b60d7"],[905,1050,155,285,0,"#6ca0dc"],[1350,1490,155,290,1,"#4e62d7"],[1490,1635,165,285,-1,"#392681"],[320,450,300,430,1,"#679bd7"],[455,565,300,430,0,"#8ac9db"],[565,700,300,430,1,"#4f62d8"],[700,770,305,440,-1,"#68acc8"],[765,895,300,385,0,"#cac2db"],[895,1050,290,365,0,"#3e2c83"],[1050,1180,300,380,0,"#cec5dd"],[1150,1220,300,440,-1,"#7eb2ce"],[1220,1355,290,425,1,"#4d64d8"],[1355,1480,295,425,0,"#8acadd"],[1480,1615,290,420,1,"#699dd9"],[190,325,425,555,1,"#679bd7"],[330,455,435,555,-1,"#cbc2db"],[455,585,435,555,0,"#4b5ed5"],[585,645,435,560,-1,"#2b1f60"],[1340,1480,425,555,0,"#4c60d7"],[1480,1615,425,555,0,"#ccc4dd"],[1615,1760,420,550,1,"#6298d6"],[235,355,555,685,0,"#271a5b"],[355,480,555,685,0,"#455bd2"],[480,610,555,685,1,"#8acbdd"],[615,755,555,685,1,"#6a9eda"],[1185,1320,555,690,1,"#6a9eda"],[1320,1450,555,690,0,"#8bccde"],[1450,1585,555,690,0,"#475dd4"],[1585,1720,555,685,0,"#342075"],[110,215,685,810,0,"#281562"],[215,345,685,815,1,"#cbc3db"],[350,460,690,815,-1,"#352077"],[460,590,685,815,0,"#689ede"],[600,710,690,815,0,"#d0c7e0"],[1235,1335,690,815,0,"#d0c8e0"],[1335,1470,690,815,1,"#699fde"],[1470,1595,690,815,-1,"#341f76"],[1595,1735,690,815,1,"#c2b9d6"],[1735,1855,685,820,0,"#2a1964"]],"boards":[[612,904,158,292,"board-dmt.webp"],[1051,1339,151,291,"board-uae.webp"]],"side":[1666,1851,356,682]};
 
 const sec = document.querySelector('.fp-model'), FP = window.FP;
-const S = sec && FP && stage(sec, { assets: 'a/3d/', grid: false, exposure: 1.02, fog: 0x030409, floorColor: 0x0a0c16, floorRough: .5, mirrorK: 0 });
-if (S) build();
+let S;
+near3d(sec, () => { S = sec && FP && stage(sec, { assets: 'a/3d/', grid: false, exposure: 1.02, fog: 0x030409, floorColor: 0x0a0c16, floorRough: .5, mirrorK: 0 });
+if (S) build(); });
 
 function build() {
   const { station, scene, world } = S, E = FP.ease, seg = FP.seg, lerp = (a, b, t) => a + (b - a) * t;
@@ -138,4 +139,15 @@ function build() {
   /* with reduced motion the engine holds a still per stop: each stop shows its finished state */
   if (FP.rm) FP.on(() => { const on = sec.querySelector(".st.on"); compose(on ? +on.dataset.s + .995 : 0); if (roof) roof.visible = !!on && +on.dataset.s === 3; });
   S.ready();
+}
+
+
+/* perf21 F1 (21 Oct): three.js and the 3D engine are fetched when the 3D chapter comes within one and a half screens,
+   not with the page; then the chapter is built exactly as before (near3d(sec, build) above). */
+function near3d(el, go) {
+  if (!el) return;
+  const load = () => import('../../assets/fp/fp3d.js?v=21').then(m => { stage = m.stage; T = m.T; go(); });
+  if (!('IntersectionObserver' in window)) { load(); return; }
+  const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); load(); } }, { rootMargin: '150% 0px' });
+  io.observe(el);
 }

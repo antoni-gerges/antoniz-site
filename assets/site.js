@@ -79,7 +79,7 @@
         if (e.isIntersecting) {
           if (!v.getAttribute('src')) { v.src = srcFor(v); }
           if (!reduce) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
-        } else { if (!v.paused) v.pause(); if (v.getAttribute('src')) { v.removeAttribute('src'); v.load(); } }
+        } else { if (!v.paused) v.pause(); }   /* perf21 F4: a clip keeps its file when it leaves the screen (paused), so a return does not fetch it again */
       });
     }, { rootMargin: '200px 0px', threshold: 0.2 }) : null;
     clips.forEach(function (v) {

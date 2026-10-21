@@ -14,7 +14,8 @@
      Here the same outline (arch and roof, page 10) is given depth, and the knight of the mark, his own outline given depth, in black, rides
      through it. The sand and the light are staging. NO GATE WAS BUILT AT THE RESORT BY US: this is a model of the mark, as the press
      advertisements show it. */
-import { stage, T } from '../../assets/fp/fp3d.js?v=21';
+let stage, T;   /* perf21 F1: three.js and the 3D engine load when the 3D chapter is near: near3d() at the end */
+if (!document.querySelector('.fp-model')) ({ stage, T } = await import('../../assets/fp/fp3d.js?v=21'));   /* perf21 F1: a page without the 3D chapter (film.html) gets them at once, as before */
 
 export { T };
 export const K = .02, XC = 928, YB = 396, LIFT = .34;
@@ -129,8 +130,9 @@ export function buildGate(kit, rig, g, M, o) {
 /* =================================================================== the page =================================================================== */
 const INK = 0x140f06;   /* Al Forsan black, PANTONE Black U, R20 G15 B6 (manual p.35): the ground of the brand's room */
 const sec = document.querySelector('.fp-model'), FP = window.FP;
-const S = sec && FP && stage(sec, { assets: 'a/3d/', grid: false, exposure: 1.0, fog: 0xb8b1a2, floorColor: 0xb8b1a2, floorRough: .7, floorOpacity: 1, mirrorK: 0, rim: 0xffe2b8, rimI: .2 });   /* a weak warm rim and a matte floor: no haze behind the text; the reflections are real copies under the floor */
-if (S) { S.renderer.setClearColor(0xb8b1a2, 1); boot(); }
+let S;
+near3d(sec, () => { S = sec && FP && stage(sec, { assets: 'a/3d/', grid: false, exposure: 1.0, fog: 0xb8b1a2, floorColor: 0xb8b1a2, floorRough: .7, floorOpacity: 1, mirrorK: 0, rim: 0xffe2b8, rimI: .2 });   /* a weak warm rim and a matte floor: no haze behind the text; the reflections are real copies under the floor */
+if (S) { S.renderer.setClearColor(0xb8b1a2, 1); boot(); } });
 layoutSets();
 
 /* a dark desk fading into the room, and a reading lamp from the upper left: the set for the boards and for the manual */
@@ -232,4 +234,15 @@ function layoutSets() {
       r.forEach(n => { const f = figs[n]; f.style.width = Math.floor(+f.dataset.r * hh) + 'px'; row.appendChild(f); }); grid.appendChild(row); });
   });
   lay(); addEventListener('resize', lay); addEventListener('load', lay);
+}
+
+
+/* perf21 F1 (21 Oct): three.js and the 3D engine are fetched when the 3D chapter comes within one and a half screens,
+   not with the page; then the chapter is built exactly as before (near3d(sec, build) above). */
+function near3d(el, go) {
+  if (!el) return;
+  const load = () => import('../../assets/fp/fp3d.js?v=21').then(m => { stage = m.stage; T = m.T; go(); });
+  if (!('IntersectionObserver' in window)) { load(); return; }
+  const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); load(); } }, { rootMargin: '150% 0px' });
+  io.observe(el);
 }

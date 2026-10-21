@@ -16,7 +16,8 @@
      change, not how it was done in 2008. On this page's road the boxes have simply changed. The night, the wet road, the lamps, the traffic and the far lights are atmosphere made for the picture, not record.
    - the three pictures: the same three boxes, close, on plain posts in the dark studio, so each artwork is seen large and whole; the
      camera walks round them, teasers on the front, revealers on the back. */
-import { stage, T } from '../../assets/fp/fp3d.js?v=21';
+let stage, T;   /* perf21 F1: three.js and the 3D engine load when the 3D chapter is near: near3d() at the end */
+if (!document.querySelector('.fp-model')) ({ stage, T } = await import('../../assets/fp/fp3d.js?v=21'));   /* perf21 F1: a page without the 3D chapter (film.html) gets them at once, as before */
 
 export { T };
 export const clamp = (v, a, b) => Math.max(a, Math.min(b, v)), seg = (p, a, b) => clamp((p - a) / (b - a), 0, 1), lerp = (a, b, t) => a + (b - a) * t;
@@ -273,8 +274,9 @@ export function floorLabel(text, sub, w, accent) { const c = document.createElem
 const sec = document.querySelector('.fp-model'), FP = window.FP;
 /* with reduced motion the opening film waits; it then waits on the finished logo, not on its first dark frame */
 if (FP && FP.rm) { const hv = document.querySelector('.fp-hero video'), st = hv && ((FP.phone() && hv.dataset.stillP) || hv.dataset.still); if (st) hv.poster = st; }
-const S = sec && FP && stage(sec, { assets: 'a/3d/', grid: false, exposure: 1.04, fog: STUDIO, floorColor: 0x07222a, floorRough: .5, mirrorK: 0 });
-if (S) boot();
+let S;
+near3d(sec, () => { S = sec && FP && stage(sec, { assets: 'a/3d/', grid: false, exposure: 1.04, fog: STUDIO, floorColor: 0x07222a, floorRough: .5, mirrorK: 0 });
+if (S) boot(); });
 
 async function boot() {
   const { station, scene, cam, renderer } = S, PH = FP.phone(), XR = 5000;
@@ -410,3 +412,14 @@ if (vote) (async () => {
   const ask = () => { if (!want) { want = 1; requestAnimationFrame(draw); } };
   addEventListener('scroll', ask, { passive: true }); addEventListener('resize', ask); ask();
 })();
+
+
+/* perf21 F1 (21 Oct): three.js and the 3D engine are fetched when the 3D chapter comes within one and a half screens,
+   not with the page; then the chapter is built exactly as before (near3d(sec, build) above). */
+function near3d(el, go) {
+  if (!el) return;
+  const load = () => import('../../assets/fp/fp3d.js?v=21').then(m => { stage = m.stage; T = m.T; go(); });
+  if (!('IntersectionObserver' in window)) { load(); return; }
+  const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); load(); } }, { rootMargin: '150% 0px' });
+  io.observe(el);
+}

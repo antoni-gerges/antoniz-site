@@ -47,3 +47,5 @@ body.proj p.fp-result{color:var(--fg)}
 .ab-mcx-go{margin:10px 0 0}
 /* Tony 21 Oct: the bull on desktop ends on a straight cut at 16 degrees, parallel to the signal, through the picture's bottom corner (no fade) */
 @media (min-width:761px){ html:not(#_t) body .abh-fig .sgw-out img{ clip-path: polygon(21.25% 0%, 100% 0%, 100% 100%, 0% 100%); } }
+/* Cityscape, the "Five editions" chapter: no slanted chapter rule above it (Tony asked what it was, 21 Oct; it read as a stray stroke) */
+html body.cityscape .cs-editions .hd::before{ display:none; }
