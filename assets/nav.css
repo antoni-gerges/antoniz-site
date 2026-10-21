@@ -81,7 +81,7 @@ html:not(#_t) body :is(.h2-trust li, .ab-names li){cursor:default!important;text
 /* pictures that open something: a leaning tab in the mark's own shape (16 degrees, like the signal), paper, the glyph in ground colour,
    always shown. → another page here · ▶ a film · ↗ another site · + the picture itself, larger (a zoom; approved 21 Oct) */
 .has-badge.nb-rel{position:relative}
-.has-badge:not(.nb-before)::after, .has-badge.nb-before::before, .nav-badge{content:"";position:absolute;right:var(--nb-r, 12px);bottom:var(--nb-b, 12px);width:44px;height:44px;z-index:3;pointer-events:none;
+.has-badge:not(.nb-before)::after, .has-badge.nb-before::before, .nav-badge{content:"";position:absolute;right:var(--nb-r, 12px);bottom:var(--nb-b, 12px);width:var(--nb-s,44px);height:var(--nb-s,44px);z-index:3;pointer-events:none;
   background:var(--nb-page) no-repeat center / 100% 100%;transform:none;opacity:1;transition:none;border:0;border-radius:0;box-shadow:none;margin:0;padding:0}
 .has-badge:not(.nb-before)[data-badge="\25B6"]::after, .has-badge.nb-before[data-badge="\25B6"]::before, .nav-badge[data-badge="\25B6"]{background-image:var(--nb-film)}
 .has-badge:not(.nb-before)[data-badge="\2197"]::after, .has-badge.nb-before[data-badge="\2197"]::before, .nav-badge[data-badge="\2197"]{background-image:var(--nb-out)}

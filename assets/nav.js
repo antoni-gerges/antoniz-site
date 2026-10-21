@@ -241,8 +241,10 @@
     var right, bottom;
     if (f.__nbWin) {
       var wn = f.__nbWin, fb = f.getBoundingClientRect(), wb = wn.getBoundingClientRect(), own = wn.offsetParent === f;
-      right = (own ? f.offsetWidth - wn.offsetLeft - wn.offsetWidth : fb.right - wb.right) + .4494 * (own ? wn.offsetWidth : wb.width) + 12;
-      bottom = (own ? f.offsetHeight - wn.offsetTop - wn.offsetHeight : fb.bottom - wb.bottom) + .2078 * (own ? wn.offsetHeight : wb.height) + 12;
+      /* Tony, 21 Oct: "a small arrow in the right bottom corner of each signal": 28px, tucked 5px into the corner */
+      right = (own ? f.offsetWidth - wn.offsetLeft - wn.offsetWidth : fb.right - wb.right) + .4494 * (own ? wn.offsetWidth : wb.width) + 5;
+      bottom = (own ? f.offsetHeight - wn.offsetTop - wn.offsetHeight : fb.bottom - wb.bottom) + .2078 * (own ? wn.offsetHeight : wb.height) + 5;
+      f.style.setProperty('--nb-s', '28px');
     } else {
       var fr = f.getBoundingClientRect(), u = null; if (!fr.width) return;
       (f.__nbm || []).forEach(function (m) { var r = shownRect(m); if (!r.width || !r.height) return;
