@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hakawi Sharqia · Ramadan tent · 2017 · Antoni Gerges</title>
+<link rel="canonical" href="https://antoniz.com/work/hakawi/">
+<meta name="description" content="Hakawi Sharqia, Ramadan 2017: a night venue built from nothing in a marquee on the Emirates Golf Club lawn, Dubai, with a TV studio inside for Al Aan TV’s nightly live show. Owned, produced and organized with MCX; Antoni Gerges, Partner, Creative Director &amp; Co-producer, through AntBrush.">
+<meta property="og:image" content="https://antoniz.com/img/og/antoniz-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/jost-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/bundle-case-6da8db5909.css"><!--perf21-css <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../assets/fp/fp.css?v=34">-->
+<style>
+/* The live shows, one page each (live-shows-21oct/build/page.py). His frame throughout: the dark ground #0B0C10, Jost and Inter, the
+   header and footer of every project page. Inside, the show's own colours (PAGE-PLAN.md "Brand mood"): --acc on the opening rule and
+   the labels, --deep and --stage for the kinetic stage. Every picture whole in a box of its own proportion (contained, never cropped),
+   artwork on its own ground colour. Two type sizes (scale.css, loaded last): var(--t-big) for the one big line per screen, var(--t-text)
+   for the rest. No fades: nothing changes opacity; pictures and pieces appear by visibility and move by transform. */
+html{background:#0B0C10}
+body.fp.ls21{--ground:#0B0C10;--dim:rgba(255,255,255,.72);--line:rgba(255,255,255,.18);background:#0B0C10}
+body.ls21 main{background:#0B0C10}
+body.ls21 .foot{background:#0B0C10}
+.ls21 h1{font-weight:600}
+.sr-only{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.ls21 h2{font-family:"Jost",system-ui,sans-serif;font-size:var(--t-big);line-height:1.08;font-weight:300;color:#fff;margin:0;text-wrap:balance}
+.ls21 h2 b{font-weight:600}
+.ls21 section p,.ls21 figcaption{font-family:Inter,system-ui,sans-serif;font-size:var(--t-text);font-weight:400}
+.ls21 .lead{margin-top:14px;color:rgba(255,255,255,.86);max-width:40em}
+.ls21 figure{margin:0;min-width:0}
+.ls21 figcaption{margin-top:10px;color:var(--dim)}
+.ls21 figcaption b{font-weight:600;color:#fff}
+/* the box: a picture whole, in its own proportion (--ar), on the ground or on the artwork's own colour (--bg) */
+.ls21 .box{position:relative;display:block;width:100%;aspect-ratio:var(--ar,4/3);background:var(--bg,#0B0C10);overflow:hidden;color:inherit}
+.ls21 .box img,.ls21 .box video{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:none;object-fit:contain;object-position:50% 50%}
+.ls21 a.box:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.ls21 .box video{background:#0B0C10;cursor:pointer}
+
+/* 0 · the statement: the label, the big line and the text under the glimpse, never on it */
+.ls-open{background:var(--ground);padding:clamp(26px,4.4vh,48px) var(--g) clamp(22px,4vh,40px)}
+.ls-open .lab{margin:0 0 14px;font-weight:600;color:var(--dim)}
+.ls-open .lab::before{content:"";display:block;width:72px;height:3px;margin:0 0 18px;background:var(--acc)}
+.ls-open p.txt{margin-top:14px;color:rgba(255,255,255,.86);max-width:46em}
+.ls-open p.role{margin-top:14px;color:var(--dim)}
+.ls-open p.role b{color:#fff;font-weight:600}
+
+/* the chapters: the big line, one line under it, then the pictures */
+.ch{padding:clamp(88px,13vh,150px) var(--g) 0}
+.ch .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(36px,5.5vh,64px) clamp(18px,2.4vw,36px);margin-top:clamp(36px,6vh,64px);align-items:start}
+.ch .grid.one{grid-template-columns:minmax(0,1fr)}
+.ch .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ch .grid .span{grid-column:1/-1}
+.ch .grid.narrow{max-width:min(100%,980px)}
+.ch .grid.small{grid-template-columns:repeat(2,minmax(0,1fr));max-width:min(100%,880px)}
+.ch .acc{color:var(--acc2,#fff)}
+/* the result and the film: the line, the picture, then the film on Play (the film button and player of the ZEISS page) */
+.ls21 button.film{position:relative;display:block;width:100%;aspect-ratio:16/9;margin:clamp(36px,6vh,60px) 0 0;padding:0;border:0;background:#000;color:#fff;cursor:pointer;overflow:hidden;text-align:left;font:inherit}
+.ls21 button.film img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
+.ls21 button.film .t{position:absolute;left:clamp(28px,5vw,84px);bottom:clamp(22px,4vw,60px);right:calc(clamp(28px,5vw,84px) + clamp(56px,6vw,96px) + 18px);z-index:2;text-align:left}
+.ls21 button.film .t .fp-lab{position:static;display:block;margin:0;color:#fff}
+.ls21 button.film .go{position:absolute;right:clamp(28px,5vw,84px);bottom:clamp(22px,4vw,60px);z-index:2;width:clamp(56px,6vw,96px);aspect-ratio:1;border:1px solid #fff;border-radius:50%;display:grid;place-items:center;box-sizing:border-box}
+.ls21 button.film .go::before{content:"";border-left:clamp(14px,1.5vw,22px) solid #fff;border-top:clamp(9px,1vw,14px) solid transparent;border-bottom:clamp(9px,1vw,14px) solid transparent;margin-left:5px}
+.ls21 button.film:focus-visible{outline:2px solid #fff;outline-offset:-6px}
+
+.ch .cap{margin-top:10px;color:var(--dim)}
+.ch .src{margin-top:10px;color:var(--dim)}
+
+/* the kinetic beat: a pinned stage; its steps advance with the scroll; pieces stand up and move as objects with thickness */
+.kb{position:relative;height:calc(var(--n) * 70svh + 100svh);background:var(--stage,#0B0C10);margin-top:clamp(88px,13vh,150px)}
+.kb-pin{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;padding:calc(74px + clamp(14px,3vh,32px)) var(--g) clamp(18px,4vh,40px);box-sizing:border-box}
+.kb-head{flex:none;min-height:calc(var(--t-big) * 2.3)}
+.kb-lab{margin:0 0 10px!important;color:var(--acc2,var(--dim));font-weight:600}
+.kb-cap{min-height:1.1em}
+.kb-stage{position:relative;flex:1;min-height:0;perspective:calc(1500 * var(--u,1px));perspective-origin:50% 30%;--u:1px}
+.kb-world{position:absolute;inset:0;transform-style:preserve-3d}
+.kb-floor{position:absolute;left:0;right:0;bottom:calc(var(--fl,60) * var(--u));height:1px;background:rgba(255,255,255,.18)}
+.kb .ob{position:absolute;left:calc(50% - var(--w) * var(--u) / 2);bottom:calc(var(--fl,60) * var(--u));width:calc(var(--w) * var(--u));height:calc(var(--h) * var(--u));
+  transform-style:preserve-3d;transform-origin:50% 100%;transition:transform 1s cubic-bezier(.2,.7,.15,1)}
+.kb .ob .fc{position:absolute;inset:0;transform:translateZ(0);transform-style:preserve-3d}
+.kb .ob .fc>img{display:block;width:100%;height:100%;max-width:none}
+.kb .ob .sd{position:absolute;background:var(--ec)}
+.kb .ob .sd.r{top:0;right:0;width:calc(var(--d) * var(--u));height:100%;transform-origin:100% 50%;transform:rotateY(-90deg)}
+.kb .ob .sd.l{top:0;left:0;width:calc(var(--d) * var(--u));height:100%;transform-origin:0 50%;transform:rotateY(90deg)}
+.kb .ob .sd.t{top:0;left:0;width:100%;height:calc(var(--d) * var(--u));transform-origin:50% 0;transform:rotateX(-90deg)}
+.kb .ob .sd.bk{inset:0;transform:translateZ(calc(var(--d) * var(--u) * -1))}
+@media (prefers-reduced-motion:reduce){.kb *{transition:none!important}}
+
+/* the guide (as on Home and Tony: the page's stops, "3 of 12", Next) */
+.where{position:fixed;left:max(16px,env(safe-area-inset-left));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:12px;
+  background:#0B0C10;color:#F7F5F1;font-family:"Jost",system-ui,sans-serif;font-weight:500;padding:0 18px 0 15px;min-height:46px;border-radius:14px 0 14px 0;
+  transform:translateY(calc(100% + 28px));box-shadow:0 0 0 1px rgba(247,245,241,.16)}
+.where.on{transform:none}
+.where .tk{display:flex;gap:3px;align-items:flex-end}
+.where .tk i{display:block;width:3px;height:12px;background:currentColor;transform:skewX(-16deg)}
+.where b{font-weight:500;white-space:nowrap;max-width:38vw;overflow:hidden;text-overflow:ellipsis}
+.where .of{font-family:Inter,system-ui,sans-serif;color:rgba(247,245,241,.66);font-variant-numeric:tabular-nums;white-space:nowrap}
+.where a{font-family:Inter,system-ui,sans-serif;font-weight:500;color:#F7F5F1;text-decoration:none;border-left:1px solid rgba(247,245,241,.22);padding:13px 0 13px 14px;margin:-1px 0;white-space:nowrap;max-width:34vw;overflow:hidden;text-overflow:ellipsis}
+.where a:hover{text-decoration:underline;text-underline-offset:3px}
+.where a:focus-visible{outline:2px solid #F7F5F1;outline-offset:3px}
+.where.on.end{transform:translateY(calc(100% + 28px))}
+.hdr.open~.where{display:none}
+
+/* credits, then the next project */
+.ls-end.fp-end{background:var(--ground);padding-top:clamp(40px,8vh,90px)}
+.ls-end .fp-cred{margin-top:0;grid-template-columns:repeat(4,minmax(0,1fr))}
+.ls-end .fp-next .nx-b{grid-row:2;grid-column:1}
+.ls-end .fp-next .nx-a{grid-row:2;grid-column:2}
+.ls-end .fp-next .nx-l{grid-row:3;grid-column:1/-1;color:var(--dim);font-family:Inter,system-ui,sans-serif}
+.ls-end .all5{margin:clamp(36px,6vh,56px) 0 0}
+.ls-end .all5 a{color:#fff;font-weight:600}
+
+@media (max-width:760px){
+  .ch .grid,.ch .grid.three,.ch .grid.small{grid-template-columns:minmax(0,1fr);gap:28px}
+  .ls-end .fp-cred{grid-template-columns:1fr}
+  .where{left:0;right:0;bottom:0;border-radius:0;padding:0 16px calc(env(safe-area-inset-bottom,0px)) 14px;gap:10px;min-height:calc(50px + env(safe-area-inset-bottom,0px));box-shadow:0 -1px 0 rgba(247,245,241,.16)}
+  .where b{max-width:30vw}.where .of{margin-right:auto}.where a{max-width:52vw;padding-left:12px}
+  .kb{height:calc(var(--n) * 60svh + 100svh)}
+  .kb-pin{padding-top:calc(73px + 14px)}
+  .kb-head{min-height:calc(var(--t-big) * 3.4)}
+  .kb:not(.kb-ly) .kb-stage{flex:none;height:min(62svh,96vw);margin:auto 0}
+}
+
+/* this show */
+.hk{--acc:#D2AE62;--acc2:#E8B65A;--stage:#0B0C10}.hk .ls-open p.own{margin-top:14px;color:#fff}.hk .hk-more{margin-top:clamp(28px,5vh,48px);color:rgba(255,255,255,.86)}.hk .hk-more a,.hk .ls-end .all5 a{color:#E8B65A;font-weight:600;text-underline-offset:4px}.hk .ch .lead{max-width:44em}
+</style>
+<noscript><style>@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{padding:6px 8px}.op21{padding-top:0}}.kb{height:auto!important}.kb-pin{position:relative!important;height:auto!important}.kb .ob,.kb .kv{visibility:visible!important}.lp-wrap video{display:block}</style></noscript>
+<link rel="stylesheet" href="../../assets/bundle-case-14fcca7cd4.css"><!--perf21-css <link rel="stylesheet" href="../../assets/scale.css"><link rel="stylesheet" href="../../assets/fixes.css"><link rel="stylesheet" href="../../assets/scope.css"><link rel="stylesheet" href="../../assets/nav.css">--><link rel="preload" as="image" href="a/glimpse-poster.webp" fetchpriority="high">
+<style id="op21">/* glimpse openers, 21 Oct (openers-21oct/openers21.py) */.op21{position:relative;display:flex;justify-content:center;background:#0B0C10;padding:74px var(--g,16px) clamp(16px,3vh,32px)}.op21-f{margin:0;width:min(100%,calc((100svh - 74px - 58px) * 16 / 9))}.op21-film{display:block;position:relative;width:100%;margin:0;padding:0;border:0;border-radius:0;background:#0B0C10;color:inherit;font:inherit;cursor:pointer}.op21-film:focus-visible{outline:2px solid #fff;outline-offset:3px}.op21-v{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#0B0C10}.op21-cap{margin:10px 0 0;font:500 11px/1.35 Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.62)}@media (max-width:760px){.op21{padding:68px 0 18px}.op21-f{width:100%}.op21-cap{padding:0 16px}}</style>
+</head>
+<body class="fp ls21 hk">
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr">
+  <a class="pill brand" href="../../index.html" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
+  <div class="pill">
+    <nav class="nav" id="nav" aria-label="Site"><a href="../../work/" aria-current="page">Work</a><a href="../../about/">Tony</a><a href="../../contact/">Contact</a><a href="../../assets/Antoni-Gerges-CV.pdf" class="navcv" target="_blank" rel="noopener">CV</a></nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+</header>
+<main id="main">
+<h1 class="sr-only">Hakawi Sharqia, the Ramadan tent on the Emirates Golf Club lawn, Dubai, Ramadan 2017</h1>
+
+<!-- 0 · the glimpse: the tent in 12 s, seven hard cuts from the event film, then the name (build/films.py; the op21 markup of the live openers, one 16:9 film, muted) -->
+<section class="op21" data-stop="The glimpse" aria-label="A glimpse of the tent: the lit marquee across the dark lawn, the pagoda entrance, the fretwork reception counter, dates and lanterns, a lantern close, desserts, the buffet arches with the full hall, then the name Hakawi Sharqia">
+  <figure class="op21-f"><button class="op21-film" type="button" aria-label="Pause the glimpse"><video class="op21-v" data-fix="E-OPENER-hakawi" muted playsinline loop preload="metadata" width="1280" height="720" poster="a/glimpse-poster.webp"><source src="a/glimpse-p.mp4" type="video/mp4" media="(max-width:760px)"><source src="a/glimpse.mp4" type="video/mp4"></video></button><figcaption class="op21-cap">A glimpse · cut from the event film by Marc Wassim, 2017</figcaption></figure>
+</section>
+
+<section class="ls-open" data-stop="The tent" aria-labelledby="s0">
+  <p class="lab">Hakawi Sharqia · Ramadan tent · the marquee on the Emirates Golf Club lawn, Dubai · Ramadan 2017 · with MCX</p>
+  <h2 id="s0">A night venue, <b>built from nothing.</b></h2>
+  <p class="txt">For the month of Ramadan 2017 we built a night venue from nothing on the lawn of Emirates Golf Club: a glass marquee where people broke the day’s fast at sunset and stayed until 3 a.m. We named it, designed it, dressed it, and built a TV studio inside it, where a talk show went out live every night.</p>
+  <p class="own">The event was ours: owned, produced and organized, with MCX.</p>
+  <p class="role"><b>Antoni Gerges</b> · Partner, Creative Director &amp; Co-producer, through AntBrush</p>
+</section>
+
+<!-- what we delivered: PAGE-PLAN.md "What we delivered" (SCOPE-BY-PROJECT §15 and the job register) -->
+<section class="fp-scope" data-fix="E-SCOPE-hakawi" data-stop="What we delivered" aria-labelledby="scope-h">
+  <span class="fp-lab"><b>The scope</b></span>
+  <h2 id="scope-h">What we <b class="tw">delivered.</b></h2>
+  <p class="scope-lead">Everything the guests saw, owned, produced and organized with MCX.</p>
+  <div class="scope-grid"><div class="scope-group"><p class="scope-k">Ours, with MCX</p><ul><li>The name and the identity</li><li>The venue, planned with the marquee partner, and its interior</li><li>The TV studio for Al Aan TV’s nightly live show, and the show’s own mark</li><li>The guests booked for the show</li><li>The sound in the tent</li></ul></div><div class="scope-group"><p class="scope-k">Campaign &amp; print</p><ul><li>Radio, a TV promo, social, e-mail and SMS</li><li>Menus, placemats, banners and signage</li></ul></div><div class="scope-group"><p class="scope-k">Partners</p><ul><li>Al Aan TV, Al Arabiya 99 FM, Harlequin, FLOW, Emirates Golf Club</li><li>Not ours: the food and drink (the club’s kitchens) and the cameras of the show (Al Aan TV)</li></ul></div></div>
+  <ul class="scope-pics" aria-label="Pieces of the scope"><li><figure><img src="a/sketch-2400.webp" srcset="a/sketch-1200.webp 1200w, a/sketch-2400.webp 2400w" sizes="(max-width:760px) 45vw, 35vw" width="2400" height="1351" loading="lazy" decoding="async" alt="The pencil sketch of the arch, held up in the empty tent."><figcaption>The sketch</figcaption></figure></li><li><figure><img src="a/screen-top-1200.webp" srcset="a/screen-top-600.webp 600w, a/screen-top-1200.webp 1200w" sizes="(max-width:760px) 45vw, 35vw" width="1200" height="2132" loading="lazy" decoding="async" alt="The gold lattice screen’s arched top against the truss."><figcaption>The gold screen</figcaption></figure></li><li><figure><img src="a/counter-2400.webp" srcset="a/counter-1200.webp 1200w, a/counter-2400.webp 2400w" sizes="(max-width:760px) 45vw, 35vw" width="2400" height="1602" loading="lazy" decoding="async" alt="The fretwork reception counter."><figcaption>The counter</figcaption></figure></li><li><figure><img src="a/lantern-1200.webp" srcset="a/lantern-600.webp 600w, a/lantern-1200.webp 1200w" sizes="(max-width:760px) 45vw, 35vw" width="1200" height="1798" loading="lazy" decoding="async" alt="A brass lantern, close."><figcaption>The lanterns</figcaption></figure></li></ul>
+  <p class="scope-src">From the mail of April to June 2017, the photographs of the build and the nights, and the event film.</p>
+</section>
+
+<section class="ch " data-stop="The approach" aria-labelledby="s1">
+  <h2 id="s1">A red carpet <b>across a golf course.</b></h2>
+  <p class="lead">To a lit marquee on the lawn of Emirates Golf Club: Ramadan nights, sunset to 3 a.m.</p>
+  <div class="grid one"><figure><a class="box zm" href="a/carpet-2400.webp" style="--ar:2400/1588"><img src="a/carpet-2400.webp" srcset="a/carpet-1200.webp 1200w, a/carpet-2400.webp 2400w" sizes="(max-width:760px) 100vw, 92vw" width="2400" height="1588" loading="lazy" decoding="async" alt="A red carpet between lit palm sculptures and a white picket fence, leading across the lawn at dusk to a glass marquee lit blue, its pagoda entrance glowing, towers on the skyline behind."></a><figcaption>The approach at dusk · 28 May 2017</figcaption></figure></div>
+</section>
+<section class="ch " data-stop="The name" aria-labelledby="s2">
+  <h2 id="s2">Hakawi Sharqia: <b>Eastern tales.</b></h2>
+  <p class="lead">We named it and drew its mark in Arabic calligraphy: a month of evenings told like stories.</p>
+  <div class="grid one"><figure><a class="box zm" href="a/tent-2400.webp" style="--ar:2400/1602"><img src="a/tent-2400.webp" srcset="a/tent-1200.webp 1200w, a/tent-2400.webp 2400w" sizes="(max-width:760px) 100vw, 92vw" width="2400" height="1602" loading="lazy" decoding="async" alt="The white marquee on the green lawn at golden hour: a long glass hall with a curved roof and a pagoda-roofed entrance at its end."></a><figcaption>The marquee on the Emirates Golf Club lawn · 28 May</figcaption></figure></div>
+</section>
+<section class="ch " data-stop="The sketch" aria-labelledby="s3">
+  <h2 id="s3">It began as <b>a pencil arch.</b></h2>
+  <p class="lead">Drawn by hand inside the empty tent: the studio’s screen, before anything was built.</p>
+  <div class="grid one narrow"><figure><a class="box zm" href="a/sketch-2400.webp" style="--ar:2400/1351"><img src="a/sketch-2400.webp" srcset="a/sketch-1200.webp 1200w, a/sketch-2400.webp 2400w" sizes="(max-width:760px) 100vw, 92vw" width="2400" height="1351" loading="lazy" decoding="async" alt="A hand holds up a pencil sketch of an arch with a pointed top and draped sides, inside the empty marquee, a truss frame behind."></a><figcaption>The sketch, held up in the empty tent · May 2017</figcaption></figure></div>
+</section>
+<section class="kb kb-hk " data-stop="Pencil to gold" data-kb-mode="scroll" data-caps="[&quot;A pencil line: the arch.&quot;, &quot;The lattice grows inside it.&quot;, &quot;Cut in gold, with depth.&quot;, &quot;The real screen, going in.&quot;]" style="--n:4" aria-labelledby="kb-hk">
+  <div class="kb-pin">
+    <div class="kb-head"><p class="kb-lab">From the pencil sketch to the gold screen</p><h2 class="kb-cap" id="kb-hk" aria-live="polite">A pencil line: the arch.</h2></div>
+    <div class="kb-stage" role="img" aria-label="The arch drawn as a pencil line on paper, the eight-point star lattice growing inside it row by row, the panel turning gold with depth and turning in the light, then, by a hard cut, the real screen going into its truss"><div class="kb-world"><svg class="hk-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs><clipPath id="hk-arch" clipPathUnits="userSpaceOnUse"><path d="M 60 800 L 60 360 C 60 290 110 262 178 262 L 292 262 C 352 262 384 232 404 182 C 426 126 474 96 500 22 C 526 96 574 126 596 182 C 616 232 648 262 708 262 L 822 262 C 890 262 940 290 940 360 L 940 800 Z"/></clipPath><pattern id="hk-lat-g" width="120" height="120" patternUnits="userSpaceOnUse" x="-40" y="0"><g fill="none" stroke="#5b5b5b" stroke-width="3"><path d="M60 15 L91.8 28.2 L105 60 L91.8 91.8 L60 105 L28.2 91.8 L15 60 L28.2 28.2 Z M28.5 28.5 H91.5 V91.5 H28.5 Z M60 0 V15 M60 105 V120 M0 60 H15 M105 60 H120 M0 0 L28.2 28.2 M120 0 L91.8 28.2 M0 120 L28.2 91.8 M120 120 L91.8 91.8"/></g></pattern><pattern id="hk-lat-au" width="120" height="120" patternUnits="userSpaceOnUse" x="-40" y="0"><g fill="none" stroke="#D2AE62" stroke-width="12" stroke-linejoin="round"><path d="M60 15 L91.8 28.2 L105 60 L91.8 91.8 L60 105 L28.2 91.8 L15 60 L28.2 28.2 Z M28.5 28.5 H91.5 V91.5 H28.5 Z M60 0 V15 M60 105 V120 M0 60 H15 M105 60 H120 M0 0 L28.2 28.2 M120 0 L91.8 28.2 M0 120 L28.2 91.8 M120 120 L91.8 91.8"/></g></pattern><pattern id="hk-lat-d" width="120" height="120" patternUnits="userSpaceOnUse" x="-40" y="0"><g fill="none" stroke="#7A5A24" stroke-width="12" stroke-linejoin="round"><path d="M60 15 L91.8 28.2 L105 60 L91.8 91.8 L60 105 L28.2 91.8 L15 60 L28.2 28.2 Z M28.5 28.5 H91.5 V91.5 H28.5 Z M60 0 V15 M60 105 V120 M0 60 H15 M105 60 H120 M0 0 L28.2 28.2 M120 0 L91.8 28.2 M0 120 L28.2 91.8 M120 120 L91.8 91.8"/></g></pattern></defs></svg><div class="paper" aria-hidden="true"></div><div class="panel"><svg class="ly b" style="--k:5" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><rect x="0" y="0" width="1000" height="800" fill="url(#hk-lat-d)" clip-path="url(#hk-arch)"/><path d="M 60 800 L 60 360 C 60 290 110 262 178 262 L 292 262 C 352 262 384 232 404 182 C 426 126 474 96 500 22 C 526 96 574 126 596 182 C 616 232 648 262 708 262 L 822 262 C 890 262 940 290 940 360 L 940 800" fill="none" stroke="#2E1A0B" stroke-width="16"/></svg><svg class="ly b" style="--k:4" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><rect x="0" y="0" width="1000" height="800" fill="url(#hk-lat-d)" clip-path="url(#hk-arch)"/><path d="M 60 800 L 60 360 C 60 290 110 262 178 262 L 292 262 C 352 262 384 232 404 182 C 426 126 474 96 500 22 C 526 96 574 126 596 182 C 616 232 648 262 708 262 L 822 262 C 890 262 940 290 940 360 L 940 800" fill="none" stroke="#2E1A0B" stroke-width="16"/></svg><svg class="ly b" style="--k:3" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><rect x="0" y="0" width="1000" height="800" fill="url(#hk-lat-d)" clip-path="url(#hk-arch)"/><path d="M 60 800 L 60 360 C 60 290 110 262 178 262 L 292 262 C 352 262 384 232 404 182 C 426 126 474 96 500 22 C 526 96 574 126 596 182 C 616 232 648 262 708 262 L 822 262 C 890 262 940 290 940 360 L 940 800" fill="none" stroke="#2E1A0B" stroke-width="16"/></svg><svg class="ly b" style="--k:2" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><rect x="0" y="0" width="1000" height="800" fill="url(#hk-lat-d)" clip-path="url(#hk-arch)"/><path d="M 60 800 L 60 360 C 60 290 110 262 178 262 L 292 262 C 352 262 384 232 404 182 C 426 126 474 96 500 22 C 526 96 574 126 596 182 C 616 232 648 262 708 262 L 822 262 C 890 262 940 290 940 360 L 940 800" fill="none" stroke="#2E1A0B" stroke-width="16"/></svg><svg class="ly b" style="--k:1" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><rect x="0" y="0" width="1000" height="800" fill="url(#hk-lat-d)" clip-path="url(#hk-arch)"/><path d="M 60 800 L 60 360 C 60 290 110 262 178 262 L 292 262 C 352 262 384 232 404 182 C 426 126 474 96 500 22 C 526 96 574 126 596 182 C 616 232 648 262 708 262 L 822 262 C 890 262 940 290 940 360 L 940 800" fill="none" stroke="#2E1A0B" stroke-width="16"/></svg><svg class="ly f" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><g class="lat g"><rect x="0" y="0" width="1000" height="800" fill="url(#hk-lat-g)" clip-path="url(#hk-arch)"/></g><g class="lat au"><rect x="0" y="0" width="1000" height="800" fill="url(#hk-lat-au)" clip-path="url(#hk-arch)"/></g><path class="ol" d="M 60 800 L 60 360 C 60 290 110 262 178 262 L 292 262 C 352 262 384 232 404 182 C 426 126 474 96 500 22 C 526 96 574 126 596 182 C 616 232 648 262 708 262 L 822 262 C 890 262 940 290 940 360 L 940 800" pathLength="1000"/><path class="fr" d="M 60 800 L 60 360 C 60 290 110 262 178 262 L 292 262 C 352 262 384 232 404 182 C 426 126 474 96 500 22 C 526 96 574 126 596 182 C 616 232 648 262 708 262 L 822 262 C 890 262 940 290 940 360 L 940 800"/></svg></div><figure class="ph p1"><img src="a/screen-in-2400.webp" srcset="a/screen-in-1200.webp 1200w, a/screen-in-2400.webp 2400w" sizes="(max-width:760px) 100vw, 80vw" width="2400" height="1351" loading="lazy" decoding="async" alt="The real screen going in: the arch of laser-cut gold lattice lifted into its truss frame inside the tent, a crew member beside it."></figure></div><i class="kb-floor" aria-hidden="true"></i></div>
+  </div>
+  <style>.kb-hk{--uw:1000;--uh:700;--stage:#0B0C10}.kb-hk .kb-floor{display:none}.kb-hk .hk-defs{position:absolute;width:0;height:0}.kb-hk .paper{position:absolute;left:calc(50% - 380 * var(--u));top:calc(20 * var(--u));width:calc(760 * var(--u));height:calc(640 * var(--u));background:#EDEAE1}.kb-hk .panel{position:absolute;left:calc(50% - 300 * var(--u));top:calc(70 * var(--u));width:calc(600 * var(--u));height:calc(480 * var(--u));transform-style:preserve-3d;transform:rotateY(0deg);transition:transform 1.3s cubic-bezier(.2,.7,.15,1)}.kb-hk .ly{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.kb-hk .ly.b{visibility:hidden;transform:translateZ(calc(var(--k) * -7 * var(--u)))}.kb-hk .ol{fill:none;stroke:#3d3d3d;stroke-width:3.2;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;transition:stroke-dashoffset 1.2s linear}.kb-hk .fr{fill:none;stroke:#4E2D14;stroke-width:16;visibility:hidden}.kb-hk .lat{visibility:hidden;clip-path:inset(100% 0 0 0);transition:clip-path 1.4s steps(10,end)}.kb-hk .ph{position:absolute;inset:0;margin:0;visibility:hidden}.kb-hk .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}.kb-hk .kb-stage.s0 .ol{stroke-dashoffset:0}.kb-hk .kb-stage.s1 .lat.g{visibility:visible;clip-path:inset(0 0 0 0)}.kb-hk .kb-stage.s2 .paper{visibility:hidden}.kb-hk .kb-stage.s2 .lat.g,.kb-hk .kb-stage.s2 .ol{visibility:hidden}.kb-hk .kb-stage.s2 .lat.au{visibility:visible;clip-path:inset(0 0 0 0);transition:none}.kb-hk .kb-stage.s2 .fr,.kb-hk .kb-stage.s2 .ly.b{visibility:visible}.kb-hk .kb-stage.s2 .panel{transform:rotateY(-20deg) rotateX(3deg)}.kb-hk .kb-stage.s3 .panel{visibility:hidden}.kb-hk .kb-stage.s3 .panel *{visibility:hidden!important}.kb-hk .kb-stage.s3 .p1{visibility:visible}@media (prefers-reduced-motion:reduce){.kb-hk .ol,.kb-hk .lat,.kb-hk .panel{transition:none!important}}</style>
+</section>
+<section class="kb kb-cut " data-stop="Empty to open" data-kb-mode="scroll" data-caps="[&quot;The shell, 22 May.&quot;, &quot;The hall, 28 May.&quot;]" style="--n:2" aria-labelledby="kb-cut">
+  <div class="kb-pin">
+    <div class="kb-head"><p class="kb-lab">Built from 16 May, open on 27 May: eleven days</p><h2 class="kb-cap" id="kb-cut" aria-live="polite">The shell, 22 May.</h2></div>
+    <div class="kb-stage" role="img" aria-label="The marquee half built on 22 May, then, by a hard cut, the finished hall on 28 May"><div class="kb-world"><figure class="ph p1"><img src="a/shell-2400.webp" srcset="a/shell-1200.webp 1200w, a/shell-2400.webp 2400w" sizes="(max-width:760px) 100vw, 80vw" width="2400" height="1800" loading="lazy" decoding="async" alt="The shell on 22 May: the glass marquee with its floor and air-conditioning units in, white lounges and dining chairs set out, the teal canopy going up at the far end."></figure><figure class="ph p2"><img src="a/hall-blue-2400.webp" srcset="a/hall-blue-1200.webp 1200w, a/hall-blue-2400.webp 2400w" sizes="(max-width:760px) 100vw, 80vw" width="2400" height="1602" loading="lazy" decoding="async" alt="The hall on 28 May: teal canopy swags, hanging lanterns, white lounges and dining tables, the golf course through the glass walls, the first guests at the far tables."></figure></div><i class="kb-floor" aria-hidden="true"></i></div>
+  </div>
+  <style>.kb-cut{--uw:1000;--uh:600;--stage:#0B0C10}.kb-cut .kb-floor{display:none}.kb-cut .ph{position:absolute;inset:0;margin:0;visibility:hidden}.kb-cut .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}.kb-cut .p1{visibility:visible}.kb-cut .kb-stage.s1 .p1{visibility:hidden}.kb-cut .kb-stage.s1 .p2{visibility:visible}</style>
+</section>
+<section class="ch " data-stop="The hall" aria-labelledby="s6">
+  <h2 id="s6">Teal canopies, lanterns <b>and white lounges.</b></h2>
+  <p class="lead">Made for long nights after the fast.</p>
+  <div class="grid one"><figure><a class="box zm" href="a/lounges-2400.webp" style="--ar:2400/1602"><img src="a/lounges-2400.webp" srcset="a/lounges-1200.webp 1200w, a/lounges-2400.webp 2400w" sizes="(max-width:760px) 100vw, 92vw" width="2400" height="1602" loading="lazy" decoding="async" alt="White leather lounges with blue and patterned cushions under teal canopy swags, a lantern on a white table, brass lanterns hanging from the roof."></a><figcaption>The lounges · 28 May</figcaption></figure></div>
+</section>
+<section class="ch " data-stop="The welcome" aria-labelledby="s7">
+  <h2 id="s7">A fretwork counter <b>for every guest.</b></h2>
+  <p class="lead">The same pattern wrapped the buffets.</p>
+  <div class="grid "><figure><a class="box zm" href="a/counter-2400.webp" style="--ar:2400/1602"><img src="a/counter-2400.webp" srcset="a/counter-1200.webp 1200w, a/counter-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1602" loading="lazy" decoding="async" alt="The reception: a white counter wrapped in gold fretwork, a lattice screen behind it, lanterns on the floor, the hall beyond."></a><figcaption>The reception counter · 27 May</figcaption></figure><figure><a class="box zm" href="a/dessert-2400.webp" style="--ar:2400/1602"><img src="a/dessert-2400.webp" srcset="a/dessert-1200.webp 1200w, a/dessert-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1602" loading="lazy" decoding="async" alt="A dessert counter wrapped in the same white fretwork, trays of cakes and pastries on tiered stands."></a><figcaption>The dessert counter</figcaption></figure></div>
+</section>
+<section class="ch " data-stop="The studio" aria-labelledby="s8">
+  <h2 id="s8">Inside the tent, <b>a TV studio.</b></h2>
+  <p class="lead">Al Aan TV broadcast a talk show live from here every night at midnight; its own cameras and crew ran the show.</p>
+  <div class="grid one"><figure><a class="box zm" href="a/studio-2400.webp" style="--ar:2400/1351"><img src="a/studio-2400.webp" srcset="a/studio-1200.webp 1200w, a/studio-2400.webp 2400w" sizes="(max-width:760px) 100vw, 92vw" width="2400" height="1351" loading="lazy" decoding="async" alt="The studio inside the tent: the gold lattice arch in a dark frame on a silver truss, flood lights rigged above, two crew members on ladders finishing it."></a><figcaption>The studio, built inside the tent · May 2017</figcaption></figure></div>
+</section>
+<section class="ch " data-stop="The show" aria-labelledby="s9">
+  <h2 id="s9">Its mark, <b>and its guests.</b></h2>
+  <p class="lead">We designed the show’s mark too, and booked its guests: actors and singers.</p>
+  <div class="grid one narrow"><figure><a class="box zm" href="a/set-floor-1200.webp" style="--ar:1200/675"><img src="a/set-floor-1200.webp" srcset="a/set-floor-600.webp 600w, a/set-floor-1200.webp 1200w" sizes="(max-width:760px) 100vw, 92vw" width="1200" height="675" loading="lazy" decoding="async" alt="The set floor before the show: two white armchairs and a sofa on a rug, a lamp lit between them, a ladder and a red rope at the side."></a><figcaption>The set, before the first night</figcaption></figure></div>
+</section>
+<section class="ch " data-stop="The nights" aria-labelledby="s10">
+  <h2 id="s10">Every night <b>until 3 a.m.</b></h2>
+  <p class="lead">Families, friends and companies, for the whole month; one channel hosted its own staff iftar for 200 here.</p>
+  <div class="grid one narrow"><figure><div class="box" style="--ar:1280/720"><video class="lp" muted playsinline loop preload="none" width="1280" height="720" poster="a/night-loop-poster.webp" data-src="a/night-loop.mp4" aria-label="The buffet with the full hall behind it, then the buffet arches with guests serving themselves"></video></div><figcaption>The hall at iftar · from the event film · three seconds</figcaption></figure></div>
+</section>
+<section class="ch res" data-stop="In motion" aria-labelledby="s11">
+  <h2 id="s11">The month, <b>in motion.</b></h2>
+  <button class="film" type="button" data-film="../../media/films/hakawi-2017-1280.mp4" data-title="Hakawi Sharqia, Ramadan 2017 · the event film, cut · 0:26" aria-label="Play the event film, 26 seconds, with sound"><img src="../../media/films/hakawi-2017-poster.webp" srcset="../../media/films/hakawi-2017-poster-perf800.webp 800w, ../../media/films/hakawi-2017-poster.webp 1280w" sizes="100vw" width="1280" height="720" loading="lazy" decoding="async" alt=""><span class="t"><span class="fp-lab">The event film · 0:26 · sound</span></span><span class="go" aria-hidden="true"></span></button><noscript><p class="cap"><a href="../../media/films/hakawi-2017-1280.mp4">Open the film (video file)</a></p></noscript><p class="cap">The event film by Marc Wassim, 2017, cut by hard cuts so no Arabic lettering and no child’s face shows.</p>
+</section>
+<section class="ch " data-stop="The partners" aria-labelledby="s12">
+  <h2 id="s12">With Al Aan TV, Al Arabiya 99 FM, Harlequin, <b>FLOW and Emirates Golf Club.</b></h2>
+  <p class="lead">The club’s kitchens served the food and drink; Al Aan TV ran the cameras of its show; Harlequin put up the marquee; FLOW brought the power and the cooling.</p>
+  <p class="hk-more">The same marquee came back in July as <a href="../live-shows/#qds">QD’s 2.0</a>, the summer venue on the same lawn.</p>
+</section>
+<!-- credits, then the next project (the ring) -->
+<section class="fp-end ls-end" aria-label="Credits">
+  <div class="fp-cred"><div><span class="fp-lab">Role</span>Antoni Gerges<br>Partner, Creative Director &amp; Co-producer, through AntBrush</div><div><span class="fp-lab">The event</span>Ours: owned, produced and organized, with MCX</div><div><span class="fp-lab">Partners</span>Al Aan TV · Al Arabiya 99 FM · Harlequin · FLOW · Emirates Golf Club</div><div><span class="fp-lab">Film</span>Marc Wassim</div><div><span class="fp-lab">Photographs</span>The event’s own record, May and June 2017</div></div>
+  <p class="all5">On <a href="../live-shows/#qds">Live shows</a>, with QD’s 2.0: the same marquee, the summer after.</p>
+  <a class="fp-next" href="../anti-bullying/"><span class="fp-lab">Next project</span><b class="nx-b">National Bullying Prevention Week</b><span class="nx-a" aria-hidden="true">→</span><span class="nx-l">Give growth a language.</span></a>
+</section>
+</main>
+
+<div class="fp-player" role="dialog" aria-label="Film player"><video playsinline preload="none"></video><div class="bar"><span class="ti"></span><button class="x" type="button">Close</button></div></div>
+
+<footer class="foot"><div class="wrap row">
+  <p style="margin:0">Antoni Gerges · Creative Director, Brand &amp; Experiential · <a href="mailto:antoni@antbrush.com">antoni@antbrush.com</a></p>
+  <nav aria-label="Footer"><a href="../../work/">Work</a><a href="../../about/">Tony</a><a href="../../contact/">Contact</a></nav>
+</div></footer>
+<script>
+/* The page's own script: the header menu (as on the other project pages), the header out of the way while reading down, the glimpse
+   (plays while on screen, a click pauses it), the chapter clips, the kinetic beats, the guide and the film player. */
+(function () {
+  var D = document, W = window, phone = function () { return W.innerWidth <= 760; },
+      RM = W.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hdr = D.querySelector('.hdr'), mb = D.querySelector('.menu-btn'), ly0 = 0, acc = 0;
+  function menu(o) { hdr.classList.toggle('open', o); mb.setAttribute('aria-expanded', o ? 'true' : 'false'); mb.textContent = o ? 'Close' : 'Menu';
+    [].forEach.call(D.querySelectorAll('main, footer, .skip'), function (e) { o ? e.setAttribute('inert', '') : e.removeAttribute('inert'); });
+    D.documentElement.style.overflow = o ? 'hidden' : ''; }
+  function items() { return [].filter.call(hdr.querySelectorAll('a[href], button'), function (e) { return e.getClientRects().length > 0; }); }
+  if (hdr && mb) {
+    mb.addEventListener('click', function () { menu(!hdr.classList.contains('open')); });
+    D.addEventListener('keydown', function (e) { if (!hdr.classList.contains('open')) return;
+      if (e.key === 'Escape') { menu(false); mb.focus(); return; }
+      if (e.key === 'Tab') { var f = items(), i = f.indexOf(D.activeElement); e.preventDefault(); f[(i < 0 ? 0 : i + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus(); } });
+    W.addEventListener('resize', function () { if (!phone() && hdr.classList.contains('open')) menu(false); });
+    [].forEach.call(hdr.querySelectorAll('.nav a'), function (l) { l.addEventListener('click', function () { menu(false); }); });
+    W.addEventListener('scroll', function () { var y = W.scrollY, d = y - ly0; ly0 = y; if (y < 80) { hdr.classList.remove('hide'); acc = 0; return; }
+      acc = (d > 0) === (acc > 0) ? acc + d : d; if (acc > 24) hdr.classList.add('hide'); else if (acc < -12) hdr.classList.remove('hide'); }, { passive: true });
+  }
+  /* the glimpse and the chapter clips: muted, played while on screen (not with reduced motion: then a click plays), a click pauses */
+  function play(v) { if (v.dataset.src && !v.getAttribute('src')) v.src = v.dataset.src; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+  [].forEach.call(D.querySelectorAll('.op21 video, video.lp'), function (v) {
+    var btn = v.closest('button') || v, user = null;
+    if ('IntersectionObserver' in W) new IntersectionObserver(function (e) { if (e[0].isIntersecting) { if (user !== false && (!RM || user)) play(v); } else v.pause(); }, { threshold: .25 }).observe(v);
+    btn.addEventListener('click', function () { if (v.paused) { user = true; play(v); } else { user = false; v.pause(); }
+      if (btn.tagName === 'BUTTON') btn.setAttribute('aria-label', v.paused ? 'Play the glimpse' : 'Pause the glimpse'); });
+  });
+  /* the kinetic beats */
+  [].forEach.call(D.querySelectorAll('.kb'), function (kb) {
+    var st = kb.querySelector('.kb-stage'), cap = kb.querySelector('.kb-cap'), caps = JSON.parse(kb.getAttribute('data-caps')), n = caps.length,
+        mode = kb.getAttribute('data-kb-mode'), cur = -2, tt = null, U = +(getComputedStyle(kb).getPropertyValue('--uw') || 1000), V = +(getComputedStyle(kb).getPropertyValue('--uh') || 600);
+    function fit() { var r = st.getBoundingClientRect(); st.style.setProperty('--u', Math.max(.2, Math.min(r.width / U, r.height / V)).toFixed(4) + 'px'); }
+    function type(s) { clearInterval(tt); if (RM) { cap.textContent = s; return; } var i = 0; cap.textContent = '';
+      tt = setInterval(function () { i += Math.max(1, Math.round(s.length / 24)); cap.textContent = s.slice(0, i); if (i >= s.length) clearInterval(tt); }, 28); }
+    function set(k) { if (k === cur) return; cur = k;
+      for (var i = 0; i < n; i++) st.classList.toggle('s' + i, i <= k);
+      kb.classList.toggle('kb-on', k >= 0); if (k >= 0) type(caps[k]); else { clearInterval(tt); cap.textContent = caps[0]; } }
+    fit(); W.addEventListener('resize', fit);
+    if (mode === 'time') {
+      var started = false;
+      var go = function () { if (started) return; started = true; if (RM) { set(n - 1); return; } var k = 0; set(0); var t = setInterval(function () { k++; if (k >= n) { clearInterval(t); return; } set(k); }, 1150); };
+      if ('IntersectionObserver' in W) new IntersectionObserver(function (e) { if (e[0].isIntersecting) go(); }, { threshold: .35 }).observe(st); else go();
+      return;
+    }
+    function upd() { var r = kb.getBoundingClientRect(), H = W.innerHeight, span = r.height - H;
+      if (r.top > H * .35) { set(-1); return; }
+      var p = Math.min(.9999, Math.max(0, -r.top / Math.max(1, span))); set(Math.floor(p * n)); }
+    var tk = false; W.addEventListener('scroll', function () { if (!tk) { tk = true; requestAnimationFrame(function () { tk = false; upd(); }); } }, { passive: true });
+    W.addEventListener('resize', upd); upd();
+  });
+  /* the guide: the page's stops (data-stop), "3 of 12", and Next */
+  var stops = [].slice.call(D.querySelectorAll('main [data-stop]'));
+  if (stops.length > 1) {
+    var chip = D.createElement('div'); chip.className = 'where'; chip.setAttribute('role', 'status'); chip.setAttribute('aria-live', 'off');
+    chip.innerHTML = '<span class="tk" aria-hidden="true"><i></i><i></i><i></i></span><b></b><span class="of"></span><a href="#"></a>';
+    D.body.appendChild(chip);
+    var cb = chip.querySelector('b'), co = chip.querySelector('.of'), ca = chip.querySelector('a'), cur = -1, foot = D.querySelector('body > footer.foot');
+    var short = function (s) { return s.length > 18 ? s.slice(0, 17).replace(/\s+\S*$/, '') + '…' : s; };
+    ca.addEventListener('click', function (e) { e.preventDefault(); var nx = stops[cur + 1]; if (nx) nx.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'start' }); });
+    var upd2 = function () { var mid = W.innerHeight * .5, k = -1;
+      chip.classList.toggle('end', !!foot && !phone() && foot.getBoundingClientRect().top < W.innerHeight - 6);
+      stops.forEach(function (s, i) { var top = s.getBoundingClientRect().top, nx = stops[i + 1], bot = nx ? nx.getBoundingClientRect().top : s.getBoundingClientRect().bottom; if (top <= mid && bot > mid) k = i; });
+      if (W.scrollY + W.innerHeight >= D.documentElement.scrollHeight - 4) for (var j = stops.length - 1; j >= 0; j--) if (stops[j].getBoundingClientRect().top < W.innerHeight * .9) { k = Math.max(k, j); break; }   /* at the foot: the last stop in view */
+      if (W.scrollY < 8 && stops[0].getBoundingClientRect().top < W.innerHeight * .5) k = 0;   /* at the top: the first stop, however short */
+      if (k === cur) return; cur = k;
+      if (k < 0) { chip.classList.remove('on'); return; }
+      var s = stops[k], nx = stops[k + 1], nm = s.getAttribute('data-stop'); cb.textContent = phone() ? short(nm) : nm; co.textContent = (k + 1) + ' of ' + stops.length;
+      if (nx) { ca.textContent = 'Next: ' + short(nx.getAttribute('data-stop')) + ' ↓'; ca.hidden = false; ca.setAttribute('aria-label', 'Go to the next part: ' + nx.getAttribute('data-stop')); } else ca.hidden = true;
+      chip.classList.add('on'); };
+    var tk2 = false; W.addEventListener('scroll', function () { if (!tk2) { tk2 = true; requestAnimationFrame(function () { tk2 = false; upd2(); }); } }, { passive: true });
+    W.addEventListener('resize', upd2); upd2();
+  }
+  /* the film player, as on the ZEISS page: the full film with sound; focus moves in, stays in, and returns to the button that opened it */
+  var pl = D.querySelector('.fp-player');
+  if (pl) {
+    var pv = pl.querySelector('video'), pt = pl.querySelector('.ti'), px = pl.querySelector('.x'), opener = null;
+    pl.setAttribute('aria-modal', 'true'); pl.setAttribute('tabindex', '-1');
+    var close = function () { if (!pl.classList.contains('open')) return; pv.pause(); pl.classList.remove('open'); D.documentElement.style.overflow = ''; if (opener && opener.focus) opener.focus(); opener = null; };
+    [].forEach.call(D.querySelectorAll('[data-film]'), function (b) {
+      b.addEventListener('click', function () {
+        var s = (phone() && b.dataset.filmP) || b.dataset.film;
+        if (pv.getAttribute('src') !== s) pv.src = s;
+        if (pt) pt.textContent = b.dataset.title || '';
+        opener = b; pl.classList.add('open'); D.documentElement.style.overflow = 'hidden'; pv.muted = false; pv.controls = true; px.focus();
+        var p = pv.play(); if (p && p.catch) p.catch(function () {});
+      });
+    });
+    px.addEventListener('click', close);
+    D.addEventListener('keydown', function (e) {
+      if (!pl.classList.contains('open')) return;
+      if (e.key === 'Escape') { e.preventDefault(); close(); return; }
+      if (e.key === 'Tab') { var f = [pv, px], i = f.indexOf(D.activeElement); e.preventDefault(); f[(i + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus(); }
+    });
+  }
+})();
+</script>
+<script src="../../assets/nav.js" defer></script>
+<link rel="stylesheet" href="../../assets/viewer.css"><script defer src="../../assets/viewer.js"></script>
+</body>
+</html>
