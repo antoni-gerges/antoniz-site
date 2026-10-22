@@ -104,7 +104,120 @@ body.cola .foot{background:#0B0C10}
 }
 </style>
 <noscript><style>@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{padding:6px 8px}.c-open{padding-top:0}}</style></noscript>
-<link rel="stylesheet" href="../../assets/bundle-case-de70f39b21.css"><!--perf21-css <link rel="stylesheet" href="../../assets/scale.css"><link rel="stylesheet" href="../../assets/scope.css"><link rel="stylesheet" href="../../assets/nav.css">--></head>
+<link rel="stylesheet" href="../../assets/bundle-case-de70f39b21.css"><!--perf21-css <link rel="stylesheet" href="../../assets/scale.css"><link rel="stylesheet" href="../../assets/scope.css"><link rel="stylesheet" href="../../assets/nav.css">--><style data-cola22>
+/* E-COLA-PAGE (colapage22, 22 Oct 2026): the kinetic presentation. The brand's rooms inside his frame: Teal #0C3B4A, deep #082C38, Sunrise
+   Orange #F5891F, Dawn (orange, amber, gold), Paper #FFFFFF, the cream (Glow tint #FFF3C4). Hard edges, hard cuts, no fades. Two type
+   sizes come from scale.css (h2 BIG, the rest TEXT). Pins only with the script on and motion allowed (html.k-js); otherwise plain columns. */
+body.fp.cola{--cream:#FFF3C4;--dawn:linear-gradient(125deg,#EA6F0D 0%,#F5891F 55%,#FAA61A 100%);--hh:72px;--floor:clamp(76px,13svh,124px)}
+.k-pin{position:relative}
+.k-head{padding:0 var(--g)}
+.k-head h2{margin:0}
+.cola .k-head .sun-line{margin-bottom:18px}
+.k-stage{position:relative}
+.k-pc{margin:0}
+.k-pc img{display:block;max-width:100%;height:auto}
+.k-pc figcaption{color:rgba(255,255,255,.86)}
+.k-floor{display:none}
+
+/* 1 · the opening: the film on its own white, then the mark on the cream */
+.k-open .c-film{background:#fff}
+.k-open .k-cut{background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  padding:clamp(40px,7vh,72px) var(--g)}
+.k-open .k-mk{margin:0}
+.k-open .k-mk img{display:block;width:auto;height:auto;max-width:min(78vw,560px);max-height:calc(100svh - var(--hh) - 300px)}
+.cola .k-open .k-cut h2{color:#0C3B4A;margin-top:clamp(18px,3.4vh,34px)}
+.cola .k-open .k-cut p{color:rgba(12,59,74,.84);margin:12px auto 0;max-width:40em}
+
+/* What we delivered: on the brand's Paper (the logo animation's last frame on its own white; the pages as pages) */
+body.cola section.fp-scope{--sc-fg:#0C3B4A;--sc-dim:rgba(12,59,74,.74);background:#fff}
+body.cola section.fp-scope .scope-pics img{filter:drop-shadow(0 14px 16px rgba(12,59,74,.22))}
+body.cola section.fp-scope .scope-pics img[src*="scope-animation"]{filter:none}
+
+/* the beats, in plain columns (no script, reduced motion) */
+.k-sys,.k-form,.k-wall{padding:clamp(72px,11vh,130px) 0 clamp(48px,8vh,90px)}
+.k-sys{background:var(--dawn)}
+.k-form{background:#0C3B4A}
+.k-wall{background:var(--cream)}
+.cola .k-sys h2,.cola .k-wall h2{color:#0C3B4A}
+.cola .k-sys .sun-line{background:#0C3B4A}
+.k-sys figcaption,.k-wall figcaption{color:#0C3B4A}
+.k-stage>.k-pc{max-width:1100px;margin:clamp(36px,6vh,64px) auto 0;padding:0 var(--g)}
+.k-pc figcaption{margin-top:12px}
+.k-sys .p-lh{max-width:560px}
+.k-form .p-online{max-width:760px}
+.k-clip{display:none}
+html:not(.k-js) .k-form .k-stage{display:flex;flex-direction:column}
+html:not(.k-js) .k-form .p-form{order:-1}
+.k-pc img{filter:drop-shadow(0 18px 20px rgba(4,22,28,.32))}
+
+/* the result */
+.k-res{background:#082C38;padding:clamp(88px,13vh,150px) var(--g) clamp(72px,11vh,130px)}
+.cola .k-res .lead{color:rgba(255,255,255,.86)}
+
+/* ---- the kinetic stage: pinned, one piece at a time ---- */
+html.k-js .k-open{height:200svh;min-height:0;padding:0;display:block;background:#fff}
+html.k-js .k-open .k-pin{position:sticky;top:0;height:100svh;overflow:hidden}
+html.k-js .k-open .c-film,html.k-js .k-open .k-cut{position:absolute;inset:0}
+html.k-js .k-open .c-film{padding-top:var(--hh);display:flex;align-items:center}
+html.k-js .k-open .c-film video{width:100%;height:100%;max-height:none;aspect-ratio:auto;object-fit:contain}
+html.k-js .k-open .k-cut{visibility:hidden;padding-top:calc(var(--hh) + 2vh)}
+html.k-js .k-open.cut .k-cut{visibility:visible}
+html.k-js .k-open.cut .c-film{visibility:hidden}
+
+html.k-js .k-sys,html.k-js .k-form,html.k-js .k-wall{padding:0;background:none}
+html.k-js .k-sys{height:calc(100svh + 5 * 80svh)}
+html.k-js .k-form{height:270svh}
+html.k-js .k-wall{height:240svh}
+html.k-js :is(.k-sys,.k-form,.k-wall) .k-pin{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;padding-top:calc(var(--hh) + 3vh)}
+html.k-js .k-sys .k-pin{background:var(--dawn)}
+html.k-js .k-form .k-pin{background:#0C3B4A}
+html.k-js .k-wall .k-pin{background:var(--cream)}
+html.k-js .k-head{flex:0 0 auto;position:relative;z-index:2}
+html.k-js .k-stage{flex:1 1 auto;min-height:0;z-index:2}
+html.k-js .k-floor{display:block;flex:0 0 var(--floor);position:relative;z-index:1}
+html.k-js .k-sys .k-floor,html.k-js .k-wall .k-floor{background:#0C3B4A}
+html.k-js .k-form .k-floor{background:#082C38}
+html.k-js .k-stage>.k-pc{position:absolute;inset:clamp(18px,4vh,44px) var(--g) 0;max-width:none;margin:0;padding:0;display:flex;align-items:flex-end;justify-content:center;visibility:hidden}
+html.k-js .k-stage>.k-pc.on{visibility:visible}
+html.k-js .k-stage>.k-pc img{width:100%;height:100%;max-width:none;max-height:none;object-fit:contain;object-position:50% 100%;transform-origin:50% 100%}
+html.k-js .k-stage>.k-pc figcaption{position:absolute;left:0;right:0;top:calc(100% + (var(--floor) - 1.55em) / 2);margin:0;color:#fff;text-align:left}
+html.k-js .k-sys .k-stage>.k-pc figcaption{padding-right:5.5em}
+html.k-js .k-n{position:absolute;right:var(--g);top:50%;transform:translateY(-50%);margin:0;color:rgba(255,255,255,.72)}
+html.k-js .k-n b{color:#fff;font-weight:600}
+
+/* beat 1: the slow turn, one way then the other */
+html.k-js .k-sys .k-pc img{transform:perspective(1700px) rotateX(4deg) rotateY(calc(-14deg + var(--t,.5) * 28deg))}
+html.k-js .k-sys .k-pc:nth-child(even) img{transform:perspective(1700px) rotateX(4deg) rotateY(calc(14deg - var(--t,.5) * 28deg))}
+/* beat 2: the pad, clipped at the top; the printed form flips away over its binding (backwards, top edge fixed) */
+html.k-js .k-form .k-stage>.k-pc{align-items:flex-start;top:clamp(40px,7vh,70px)}
+html.k-js .k-form .k-pc img{transform-origin:50% 0;object-position:50% 0}
+html.k-js .k-form .p-form img{transform:perspective(1500px) rotateX(var(--fx,0deg));backface-visibility:hidden;
+  filter:drop-shadow(0 3px 0 #E4ECEE) drop-shadow(0 3px 0 #CFDCE0) drop-shadow(0 3px 0 #BACBD0) drop-shadow(0 20px 22px rgba(0,0,0,.38))}
+html.k-js .k-form .p-online,html.k-js .k-form .p-form{visibility:visible}
+html.k-js .k-form.flipped .p-form{visibility:hidden}
+html.k-js .k-form:not(.flipped) .p-online figcaption,html.k-js .k-form:not(.turning) .p-online{visibility:hidden}
+html.k-js .k-form .p-online img{transform:perspective(1500px) rotateX(calc(var(--lean,0) * 4deg))}
+html.k-js .k-clip{display:block;position:absolute;z-index:3;left:50%;top:clamp(22px,4.4vh,44px);width:min(34vw,260px);height:clamp(18px,2.6vh,26px);
+  transform:translateX(-50%);background:#F5891F;border-radius:6px 6px 3px 3px;box-shadow:0 5px 0 #C76B10}
+/* beat 3: the wall turns slowly; on a phone it pans past */
+html.k-js .k-wall .k-stage>.k-pc{visibility:visible;align-items:center}
+html.k-js .k-wall .p-signs img{object-position:50% 50%;transform-origin:50% 50%;transform:perspective(1800px) rotateY(calc(12deg - var(--t,.5) * 24deg));filter:drop-shadow(0 12px 12px rgba(12,59,74,.3))}
+
+@media (max-width:760px){
+  body.fp.cola{--hh:58px;--floor:clamp(72px,12svh,104px)}
+  .k-open .k-mk img{max-width:76vw;max-height:calc(100svh - var(--hh) - 330px)}
+  html.k-js .k-sys{height:calc(100svh + 5 * 72svh)}
+  html.k-js .k-sys .k-pc img{transform:perspective(1100px) rotateX(3deg) rotateY(calc(-12deg + var(--t,.5) * 24deg))}
+  html.k-js .k-sys .k-pc:nth-child(even) img{transform:perspective(1100px) rotateX(3deg) rotateY(calc(12deg - var(--t,.5) * 24deg))}
+  html.k-js .k-sys .k-stage>.k-pc{inset:2vh 8px 2vh;align-items:center}
+  html.k-js .k-sys .k-stage>.k-pc img{object-position:50% 50%;transform-origin:50% 50%}
+  html.k-js .k-sys .k-stage>.k-pc figcaption{left:8px;top:calc(100% + 2vh + (var(--floor) - 1.55em) / 2)}
+  html.k-js .k-wall .k-stage>.k-pc{justify-content:flex-start}
+  html.k-js .k-wall .p-signs img{height:min(100%,46svh);width:auto;max-width:none;max-height:none;
+    transform:translateX(calc(var(--t,0) * (100vw - 2 * var(--g) - 100%)))}
+}
+</style>
+</head>
 <body class="fp cola">
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr">
@@ -117,18 +230,22 @@ body.cola .foot{background:#0B0C10}
 <main id="main">
 <h1 class="sr-only">Children of Light Academy</h1>
 
-<!-- 1 · the opening: the final logo animation (v4, the one on colacademy.org), whole, on its own white -->
-<section class="c-open" aria-labelledby="c1">
+<!-- 1 · the opening (colapage22 E-COLA-OPEN, 22 Oct): the logo animation, whole, fills the first screen on its own white; then a hard
+     cut to the mark whole, in its colours, on the brand's cream, with the statement -->
+<section class="c-open k-open" data-k="open" data-fix="E-COLA-PAGE" aria-labelledby="c1">
+ <div class="k-pin">
   <div class="c-film">
     <video id="film" muted autoplay loop playsinline preload="auto" poster="a/logo-anim-d.webp" data-poster-p="a/logo-anim-p.webp" aria-label="The Children of Light Academy logo animation: an open book, children jumping up from it, the rising sun behind them, the cross, then the name.">
       <source src="a/logo-anim-p.mp4" type="video/mp4" media="(max-width: 760px)">
       <source src="a/logo-anim-d.mp4" type="video/mp4">
     </video>
   </div>
-  <div class="in">
+  <div class="in k-cut">
+    <figure class="k-mk"><img src="a/mark-colour-tile.webp" srcset="a/mark-colour-tile-perf800.webp 800w, a/mark-colour-tile.webp 1210w" sizes="(max-width:760px) 80vw, 40vw" width="1210" height="1094" decoding="async" alt="The Children of Light Academy mark in its colours: five children jumping inside the arch of a rising sun, a cross above them, standing on an open book, the name set beneath."></figure>
     <h2 id="c1">A small school, <b>given its light.</b></h2>
     <p>New Port Richey, Florida · volunteer work · identity, design system, logo animation, collateral and enrollment forms.</p>
   </div>
+ </div>
 </section>
 
 <!-- what we delivered: the verified scope, item by item (fixes20 E-SCOPE-children-of-light-academy; research website-review/scope-21oct) -->
@@ -185,20 +302,49 @@ body.cola .foot{background:#0B0C10}
   </div>
 </section>
 
-<!-- 4 · in use: the collateral suite and the enrollment forms, each whole -->
-<section class="c-use" aria-labelledby="c4">
-  <i class="sun-line" aria-hidden="true"></i>
-  <h2 id="c4">From the sign <b>to the enrollment form.</b></h2>
-  <div class="pcs">
-    <figure class="p-signs"><img src="a/signs-2400.webp" srcset="a/signs-1200.webp 1200w, a/signs-2400.webp 2400w" sizes="(max-width:760px) 100vw, 92vw" width="2400" height="816" loading="lazy" decoding="async" alt="Four name badges for staff, children, visitors and cubbies, a teal door sign for Room 3 Preschool with a rising sun, and a white sign that reads Please Wash Hands."><figcaption>Name badges, door and cubby signs.</figcaption></figure>
-    <figure class="p-lh"><img src="a/letterhead-2400.webp" srcset="a/letterhead-1200.webp 1200w, a/letterhead-2400.webp 1435w" sizes="(max-width:760px) 100vw, 40vw" width="1435" height="2025" loading="lazy" decoding="async" alt="The letterhead: a sunrise-gradient line at the top, the horizontal logo and contact block, and a slim teal footer carrying a verse."><figcaption>Letterhead.</figcaption></figure>
-    <figure class="p-cards"><img src="a/cards-2400.webp" srcset="a/cards-1200.webp 1200w, a/cards-2400.webp 2400w" sizes="(max-width:760px) 100vw, 55vw" width="2400" height="975" loading="lazy" decoding="async" alt="A business card front with the logo, name, role and contact, its back with the white mark on deep teal, and a long compliment slip."><figcaption>Business cards and compliment slip.</figcaption></figure>
-    <figure class="p-folder"><img src="a/folder-2400.webp" srcset="a/folder-1200.webp 1200w, a/folder-2400.webp 2400w" sizes="(max-width:760px) 100vw, 55vw" width="2400" height="914" loading="lazy" decoding="async" alt="A number 10 envelope with the logo and a sunrise-gradient edge, and a teal welcome folder that reads Your Child’s First Steps Start Here."><figcaption>Envelope and welcome folder.</figcaption></figure>
-    <figure class="p-report"><img src="a/report-2400.webp" srcset="a/report-1200.webp 1200w, a/report-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1031" loading="lazy" decoding="async" alt="The daily report for infants and toddlers: tables for meals and diapers, a nap line, and an orange panel for a note from the teacher."><figcaption>Daily report, infants and toddlers.</figcaption></figure>
-    <figure class="p-cert"><img src="a/certificate-2400.webp" srcset="a/certificate-1200.webp 1200w, a/certificate-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1229" loading="lazy" decoding="async" alt="The VPK certificate of completion, framed in teal and gold, with the logo, the child’s name in orange italic and a verse."><figcaption>VPK certificate of completion.</figcaption></figure>
-    <figure class="p-form"><img src="a/form-2400.webp" srcset="a/form-1200.webp 1200w, a/form-2400.webp 2400w" sizes="(max-width:760px) 100vw, 84vw" width="2400" height="1175" loading="lazy" decoding="async" alt="The printed enrollment and registration form: sections for the child, parents and authorized pick-up, a signature line and an orange office-use tab."><figcaption>Enrollment and registration form, for print.</figcaption></figure>
-    <figure class="p-online"><img src="a/online-form-1287.webp" srcset="a/online-form-640.webp 640w, a/online-form-1287.webp 1287w" sizes="(max-width:760px) 100vw, 46vw" width="1287" height="1166" loading="lazy" decoding="async" alt="The first page of the online enrollment form on the school’s website: a welcome note, what to have ready, an email field, and Page 1 of 10."><figcaption>The online enrollment form, built to replace a 30-page paper packet.</figcaption></figure>
+<!-- 4 · in use (colapage22 E-COLA-USE, 22 Oct): three kinetic beats, each piece whole on the brand's own ground, one at a time,
+     hard cuts and a slow 3D turn; then the result -->
+<section class="k-sys" data-k="sys" aria-labelledby="c4">
+ <div class="k-pin">
+  <div class="k-head"><i class="sun-line" aria-hidden="true"></i><h2 id="c4">From the sign <b>to the enrollment form.</b></h2></div>
+  <div class="k-stage">
+   <figure class="k-pc p-lh"><img src="a/letterhead-2400.webp" srcset="a/letterhead-1200.webp 1200w, a/letterhead-2400.webp 1435w" sizes="(max-width:760px) 100vw, 40vw" width="1435" height="2025" loading="lazy" decoding="async" alt="The letterhead: a sunrise-gradient line at the top, the horizontal logo and contact block, and a slim teal footer carrying a verse."><figcaption>Letterhead.</figcaption></figure>
+   <figure class="k-pc p-cards"><img src="a/cards-2400.webp" srcset="a/cards-1200.webp 1200w, a/cards-2400.webp 2400w" sizes="(max-width:760px) 100vw, 92vw" width="2400" height="975" loading="lazy" decoding="async" alt="A business card front with the logo, name, role and contact, its back with the white mark on deep teal, and a long compliment slip."><figcaption>Business cards and compliment slip.</figcaption></figure>
+   <figure class="k-pc p-folder"><img src="a/folder-2400.webp" srcset="a/folder-1200.webp 1200w, a/folder-2400.webp 2400w" sizes="(max-width:760px) 100vw, 92vw" width="2400" height="914" loading="lazy" decoding="async" alt="A number 10 envelope with the logo and a sunrise-gradient edge, and a teal welcome folder that reads Your Child’s First Steps Start Here."><figcaption>Envelope and welcome folder.</figcaption></figure>
+   <figure class="k-pc p-report"><img src="a/report-2400.webp" srcset="a/report-1200.webp 1200w, a/report-2400.webp 2400w" sizes="(max-width:760px) 100vw, 92vw" width="2400" height="1031" loading="lazy" decoding="async" alt="The daily report for infants and toddlers: tables for meals and diapers, a nap line, and an orange panel for a note from the teacher."><figcaption>Daily report, infants and toddlers.</figcaption></figure>
+   <figure class="k-pc p-cert"><img src="a/certificate-2400.webp" srcset="a/certificate-1200.webp 1200w, a/certificate-2400.webp 2400w" sizes="(max-width:760px) 100vw, 80vw" width="2400" height="1229" loading="lazy" decoding="async" alt="The VPK certificate of completion, framed in teal and gold, with the logo, the child’s name in orange italic and a verse."><figcaption>VPK certificate of completion.</figcaption></figure>
   </div>
+  <div class="k-floor"><p class="k-n" aria-hidden="true"><b>01</b> / 05</p></div>
+ </div>
+</section>
+
+<section class="k-form" data-k="form" aria-labelledby="c5">
+ <div class="k-pin">
+  <div class="k-head"><i class="sun-line" aria-hidden="true"></i><h2 id="c5">Paper, <b>then phone.</b></h2></div>
+  <div class="k-stage">
+   <i class="k-clip" aria-hidden="true"></i>
+   <figure class="k-pc p-online"><img src="a/online-form-1287.webp" srcset="a/online-form-640.webp 640w, a/online-form-1287.webp 1287w" sizes="(max-width:760px) 100vw, 46vw" width="1287" height="1166" loading="lazy" decoding="async" alt="The first page of the online enrollment form on the school’s website: a welcome note, what to have ready, an email field, and Page 1 of 10."><figcaption>The online enrollment form, built to replace a 30-page paper packet.</figcaption></figure>
+   <figure class="k-pc p-form"><img src="a/form-2400.webp" srcset="a/form-1200.webp 1200w, a/form-2400.webp 2400w" sizes="(max-width:760px) 100vw, 84vw" width="2400" height="1175" loading="lazy" decoding="async" alt="The printed enrollment and registration form: sections for the child, parents and authorized pick-up, a signature line and an orange office-use tab."><figcaption>Enrollment and registration form, for print.</figcaption></figure>
+  </div>
+  <div class="k-floor"></div>
+ </div>
+</section>
+
+<section class="k-wall" data-k="wall" aria-labelledby="c6">
+ <div class="k-pin">
+  <div class="k-head"><i class="sun-line" aria-hidden="true"></i><h2 id="c6">On the <b>walls.</b></h2></div>
+  <div class="k-stage">
+   <figure class="k-pc p-signs"><img src="a/signs-2400.webp" srcset="a/signs-1200.webp 1200w, a/signs-2400.webp 2400w" sizes="(max-width:760px) 1200px, 92vw" width="2400" height="816" loading="lazy" decoding="async" alt="Four name badges for staff, children, visitors and cubbies, a teal door sign for Room 3 Preschool with a rising sun, and a white sign that reads Please Wash Hands."><figcaption>Name badges, door and cubby signs.</figcaption></figure>
+  </div>
+  <div class="k-floor"></div>
+ </div>
+</section>
+
+<!-- the result (colapage22, 22 Oct; full review #18) -->
+<section class="k-res" aria-labelledby="c7">
+  <i class="sun-line" aria-hidden="true"></i>
+  <h2 id="c7">A 30-page paper packet, <b>now 15 minutes on a phone.</b></h2>
+  <p class="lead">One online form for each child, on a phone, tablet or computer, with an emailed confirmation.</p>
 </section>
 
 <!-- 5 · credits, then the next project -->
@@ -247,6 +393,45 @@ body.cola .foot{background:#0B0C10}
   b.addEventListener('click', function () { held = !held; held ? v.pause() : go(); label(); });
   label(); if (nav) nav.appendChild(b);
   if ('IntersectionObserver' in W) new IntersectionObserver(function (es) { es.forEach(function (e) { e.isIntersecting ? go() : v.pause(); }); }, { threshold: .2 }).observe(v);
+})();
+</script>
+<script data-cola22>
+/* E-COLA-PAGE (colapage22, 22 Oct 2026): the kinetic beats. Each [data-k] section is a pinned stage; its scroll progress p (0..1) drives
+   it: open = a hard cut from the film to the mark at p .42; sys = one piece at a time (hard cuts), --t the slow turn within its step;
+   form = the printed form flips away over its binding (--fx), then the online form under it; wall = --t, the wall's turn (a pan on a
+   phone), held still for the first and last tenth. Reduced motion: nothing pinned, the plain columns stay. */
+(function () {
+  var D = document, W = window, H = D.documentElement;
+  if (W.matchMedia && W.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var S = [].slice.call(D.querySelectorAll('[data-k]'));
+  if (!S.length) return;
+  H.classList.add('k-js');
+  function clamp(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
+  var F = {
+    open: function (s, p) { s.classList.toggle('cut', p >= .42); },
+    sys: function (s, p) {
+      var pc = s._pc || (s._pc = [].slice.call(s.querySelectorAll('.k-pc'))), n = pc.length, f = Math.min(n - .0001, p * n), i = Math.floor(f);
+      pc.forEach(function (e, j) { e.classList.toggle('on', j === i); });
+      s.style.setProperty('--t', (f - i).toFixed(4));
+      var c = s.querySelector('.k-n b'); if (c && c._i !== i) { c._i = i; c.textContent = (i < 9 ? '0' : '') + (i + 1); }
+    },
+    form: function (s, p) {
+      var a = clamp((p - .22) / .42) * 180;
+      s.style.setProperty('--fx', (-a).toFixed(2) + 'deg'); s.style.setProperty('--lean', clamp((p - .64) / .36).toFixed(4));
+      s.classList.toggle('turning', a > 0); s.classList.toggle('flipped', a >= 90);
+    },
+    wall: function (s, p) { s.style.setProperty('--t', clamp((p - .1) / .8).toFixed(4)); }
+  };
+  var ticking = false;
+  function run() {
+    ticking = false; var vh = W.innerHeight;
+    S.forEach(function (s) {
+      var r = s.getBoundingClientRect(); if (r.bottom < -vh || r.top > 2 * vh) return;
+      var L = s.offsetHeight - vh, p = L > 0 ? clamp(-r.top / L) : 0, f = F[s.getAttribute('data-k')]; if (f) f(s, p);
+    });
+  }
+  function req() { if (!ticking) { ticking = true; W.requestAnimationFrame(run); } }
+  W.addEventListener('scroll', req, { passive: true }); W.addEventListener('resize', req); run();
 })();
 </script>
 <script src="../../assets/nav.js" defer></script>
