@@ -23,7 +23,7 @@
   /* ---------------------------------------------------------------- 1 · THE MENU */
   var WORK = [['Dubai Health Authority', 'work/dha/'], ['ZEISS Vision Care', 'work/zeiss/'], ['Liwa International Festival', 'work/liwa/'],
     ['AIAASC', 'work/aiaasc/'], ['Why Not! Mazzika', 'work/mazzika/'], ['National Bullying Prevention Week', 'work/anti-bullying/'],
-    ['Al Forsan', 'work/al-forsan/'], ['Cityscape Abu Dhabi', 'work/cityscape/'], ['The Big Grill', 'work/big-grill/'],
+    ['Al Forsan', 'work/al-forsan/'], ['Cityscape Abu Dhabi', 'work/cityscape/'], ['World Future Energy Summit', 'work/wfes/'], ['The Big Grill', 'work/big-grill/'],
     ['Innovation Month', 'work/al-ain/'], ['MAF', 'work/pyramids-2021/'], ['Capacity Middle East', 'work/capacity/'],
     ['Live shows', 'work/live-shows/'], ['Akshaya × Vikas Khanna', 'work/akshaya/'], ['Children of Light Academy', 'work/children-of-light-academy/'], ['How a space is planned', 'work/spaces/']];
   var ARCHIVE = [['All work', 'work/'], ['Ideas', 'work/archive/#ideas'], ['Designed, then built', 'work/archive/#spaces'], ['Identities', 'work/archive/#identities'],

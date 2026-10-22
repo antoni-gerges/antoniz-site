@@ -78,7 +78,37 @@ body.ls .foot{background:#0B0C10}
 <noscript><style>@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{padding:6px 8px}.ls-open{padding-top:0}}</style></noscript>
 <link rel="stylesheet" href="../../assets/bundle-case-14fcca7cd4.css"><!--perf21-css <link rel="stylesheet" href="../../assets/scale.css"><link rel="stylesheet" href="../../assets/fixes.css"><link rel="stylesheet" href="../../assets/scope.css"><link rel="stylesheet" href="../../assets/nav.css">--><link rel="preload" as="image" href="a/glimpse-poster.webp" fetchpriority="high">
 <style id="op21">/* glimpse openers, 21 Oct (openers-21oct/openers21.py) */.op21{position:relative;display:flex;justify-content:center;background:#0B0C10;padding:74px var(--g,16px) clamp(16px,3vh,32px)}.op21-f{margin:0;width:min(100%,calc((100svh - 74px - 58px) * 16 / 9))}.op21-film{display:block;position:relative;width:100%;margin:0;padding:0;border:0;border-radius:0;background:#0B0C10;color:inherit;font:inherit;cursor:pointer}.op21-film:focus-visible{outline:2px solid #fff;outline-offset:3px}.op21-v{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#0B0C10}.op21-cap{margin:10px 0 0;font:500 11px/1.35 Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.62)}@media (max-width:760px){.op21{padding:68px 0 18px}.op21-f{width:100%}.op21-cap{padding:0 16px}}</style>
-</head>
+<style id="ls21">/* E-LIVESHOWS-INDEX (live-shows-21oct/liveshows21.py): the five tiles and the chapter of work made for concerts that were
+   cancelled. Two type sizes (scale.css); pictures whole in 16:9 boxes, contained; no fades. */
+.ls-five,.ls-cx{padding:clamp(88px,13vh,150px) var(--g) 0}
+.ls .box{position:relative;display:block;width:100%;aspect-ratio:var(--ar,16/9);background:#0B0C10;overflow:hidden}
+.ls .box img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.ls-five ul{list-style:none;margin:clamp(36px,6vh,64px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(36px,5.5vh,64px) clamp(18px,2.4vw,36px)}
+.ls-five li{margin:0;min-width:0}
+.ls-five a.t5{display:block;color:#fff;text-decoration:none}
+.ls-five .t5-n{display:block;margin-top:14px;font-family:"Jost",system-ui,sans-serif;font-weight:600}
+.ls-five .t5-d{display:block;margin-top:4px;font-family:Inter,system-ui,sans-serif;color:var(--dim)}
+.ls-five .t5-go{display:block;margin-top:10px;font-family:Inter,system-ui,sans-serif;font-weight:600;text-decoration:underline;text-underline-offset:4px}
+.ls-five a.t5:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.ls-cx button.film{position:relative;display:block;width:100%;aspect-ratio:16/9;margin:clamp(36px,6vh,60px) 0 0;padding:0;border:0;background:#000;color:#fff;cursor:pointer;overflow:hidden;text-align:left;font:inherit}
+.ls-cx button.film img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
+.ls-cx button.film .t{position:absolute;left:clamp(28px,5vw,84px);bottom:clamp(22px,4vw,60px);right:calc(clamp(28px,5vw,84px) + clamp(56px,6vw,96px) + 18px);z-index:2;text-align:left}
+.ls-cx button.film .t .fp-lab{position:static;display:block;margin:0;color:#fff}
+.ls-cx button.film .go{position:absolute;right:clamp(28px,5vw,84px);bottom:clamp(22px,4vw,60px);z-index:2;width:clamp(56px,6vw,96px);aspect-ratio:1;border:1px solid #fff;border-radius:50%;display:grid;place-items:center;box-sizing:border-box}
+.ls-cx button.film .go::before{content:"";border-left:clamp(14px,1.5vw,22px) solid #fff;border-top:clamp(9px,1vw,14px) solid transparent;border-bottom:clamp(9px,1vw,14px) solid transparent;margin-left:5px}
+.ls-cx button.film:focus-visible{outline:2px solid #fff;outline-offset:-6px}
+.ls-cx .cap{margin-top:10px;color:var(--dim)}
+.ls-cx .pair{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(18px,2.4vw,36px);margin-top:clamp(36px,6vh,60px);align-items:start}
+.ls-cx .pair p{margin:0;color:rgba(255,255,255,.86)}
+.where{position:fixed;left:max(16px,env(safe-area-inset-left));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:12px;background:#0B0C10;color:#F7F5F1;font-family:"Jost",system-ui,sans-serif;font-weight:500;padding:0 18px 0 15px;min-height:46px;border-radius:14px 0 14px 0;transform:translateY(calc(100% + 28px));box-shadow:0 0 0 1px rgba(247,245,241,.16)}
+.where.on{transform:none}.where.on.end{transform:translateY(calc(100% + 28px))}.hdr.open~.where{display:none}
+.where .tk{display:flex;gap:3px;align-items:flex-end}.where .tk i{display:block;width:3px;height:12px;background:currentColor;transform:skewX(-16deg)}
+.where b{font-weight:500;white-space:nowrap;max-width:38vw;overflow:hidden;text-overflow:ellipsis}
+.where .of{font-family:Inter,system-ui,sans-serif;color:rgba(247,245,241,.66);font-variant-numeric:tabular-nums;white-space:nowrap}
+.where a{font-family:Inter,system-ui,sans-serif;font-weight:500;color:#F7F5F1;text-decoration:none;border-left:1px solid rgba(247,245,241,.22);padding:13px 0 13px 14px;margin:-1px 0;white-space:nowrap;max-width:34vw;overflow:hidden;text-overflow:ellipsis}
+.where a:focus-visible{outline:2px solid #F7F5F1;outline-offset:3px}
+@media (max-width:760px){.ls-five ul{grid-template-columns:minmax(0,1fr);gap:32px}.ls-cx .pair{grid-template-columns:minmax(0,1fr)}.where{left:0;right:0;bottom:0;border-radius:0;padding:0 16px calc(env(safe-area-inset-bottom,0px)) 14px;gap:10px;min-height:calc(50px + env(safe-area-inset-bottom,0px));box-shadow:0 -1px 0 rgba(247,245,241,.16)}.where b{max-width:30vw}.where .of{margin-right:auto}.where a{max-width:52vw;padding-left:12px}}
+</style></head>
 <body class="fp ls">
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr">
@@ -126,6 +156,13 @@ body.ls .foot{background:#0B0C10}
   <p class="scope-src">From the job register, the project mail and the artwork files.</p>
 </section>
 
+<!-- the five nights, one page each (live-shows-21oct/liveshows21.py E-LIVESHOWS-INDEX), the plan's order -->
+<section class="ls-five" data-fix="E-LIVESHOWS-FIVE" aria-labelledby="s-five">
+  <h2 id="s-five">Five nights, <b>one page each.</b></h2>
+  <p class="lead">Each show with its own film, its own artwork and its own night.</p>
+  <ul><li><a class="t5" href="../mounir/"><span class="box" style="--ar:16/9"><img src="../mounir/a/glimpse-poster.webp" srcset="../mounir/a/glimpse-poster-perf800.webp 800w, ../mounir/a/glimpse-poster.webp 1280w" sizes="100vw" width="1280" height="720" loading="lazy" decoding="async" alt="The built stage lit over the empty lawn the night before the Mohamed Mounir concert"></span><span class="t5-n">Mohamed Mounir Live in Dubai</span><span class="t5-d">Dubai Media City Amphitheatre · 19 January 2018 · SWYP presents</span><span class="t5-go">Open the project <i aria-hidden="true">→</i></span></a></li><li><a class="t5" href="../amr-diab/"><span class="box" style="--ar:16/9"><img src="../amr-diab/a/glimpse-poster.webp" srcset="../amr-diab/a/glimpse-poster-perf800.webp 800w, ../amr-diab/a/glimpse-poster.webp 1280w" sizes="100vw" width="1280" height="720" loading="lazy" decoding="async" alt="The Amr Diab crowd with balloons and phone lights"></span><span class="t5-n">Amr Diab Live in Dubai</span><span class="t5-d">Dubai Media City Amphitheatre · 29 December 2017 · SWYP presents</span><span class="t5-go">Open the project <i aria-hidden="true">→</i></span></a></li><li><a class="t5" href="../angham/"><span class="box" style="--ar:16/9"><img src="../angham/a/glimpse-poster.webp" srcset="../angham/a/glimpse-poster-perf800.webp 800w, ../angham/a/glimpse-poster.webp 1280w" sizes="100vw" width="1280" height="720" loading="lazy" decoding="async" alt="The Angham promo title: The Legendary Super Star"></span><span class="t5-n">Angham Live in Dubai</span><span class="t5-d">Sheikh Rashid Hall, Dubai World Trade Centre · 10 November 2017</span><span class="t5-go">Open the project <i aria-hidden="true">→</i></span></a></li><li><a class="t5" href="../magida-el-roumi/"><span class="box" style="--ar:16/9"><img src="../magida-el-roumi/a/glimpse-poster.webp" srcset="../magida-el-roumi/a/glimpse-poster-perf800.webp 800w, ../magida-el-roumi/a/glimpse-poster.webp 1280w" sizes="100vw" width="1280" height="720" loading="lazy" decoding="async" alt="The orchestra on the open stage under white beams"></span><span class="t5-n">Magida El Roumi Live in Dubai</span><span class="t5-d">Dubai Media City Amphitheatre · 26 January 2018 · Etisalat presents</span><span class="t5-go">Open the project <i aria-hidden="true">→</i></span></a></li><li><a class="t5" href="../lilly-singh/"><span class="box" style="--ar:16/9"><img src="../lilly-singh/a/room-1200.webp" srcset="../lilly-singh/a/room-1200-perf800.webp 800w, ../lilly-singh/a/room-1200.webp 1200w" sizes="100vw" width="1200" height="900" loading="lazy" decoding="async" alt="A ballroom lit red, rows of guests facing a screen that reads How to Be a Bawse"></span><span class="t5-n">Lilly Singh Live in Dubai</span><span class="t5-d">Habtoor Grand Resort, JBR · 10 May 2017</span><span class="t5-go">Open the project <i aria-hidden="true">→</i></span></a></li></ul>
+</section>
+
 <!-- 1 · the gate is drawn first: the Mounir gate as drawn, whole, and the gate built on the night (a frame from the MCX film) -->
 <section class="ls-gate" aria-labelledby="s1">
   <h2 id="s1">The gate is <b>drawn first.</b></h2>
@@ -165,6 +202,16 @@ body.ls .foot{background:#0B0C10}
   <p class="cap">Mohamed Mounir Live in Dubai, 2018 · recap film by MCX, trimmed</p>
 </section>
 
+<!-- work made for concerts that were cancelled (Tony, 15 Oct: never a show that happened); DIDO leads, its teaser whole -->
+<section class="ls-cx" data-fix="E-LIVESHOWS-CANCELLED" aria-labelledby="s-cx">
+  <h2 id="s-cx">Work made for concerts <b>that were cancelled.</b></h2>
+  <button class="film" type="button" data-film="a/dido-teaser-1280.mp4" data-title="DIDO, Dubai 2019 · the teaser · 0:43" aria-label="Play the DIDO teaser, 43 seconds, with sound"><img src="a/dido-teaser-poster.webp" srcset="a/dido-teaser-poster-perf800.webp 800w, a/dido-teaser-poster.webp 1280w" sizes="100vw" width="1280" height="720" loading="lazy" decoding="async" alt=""><span class="t"><span class="fp-lab">The DIDO teaser · 0:43 · sound</span></span><span class="go" aria-hidden="true"></span></button>
+  <noscript><p class="cap"><a href="a/dido-teaser-1280.mp4">Open the DIDO teaser (video file, 0:43)</a></p></noscript>
+  <p class="cap">DIDO, 13 December 2019, Dubai Media City Amphitheatre: cancelled the night before; she could not fly. The teaser, the stencil name built letter by letter, made by AntBrush for MCX; the concert footage is the artist’s own.</p>
+  <div class="pair"><figure style="margin:0"><a class="box zm" href="a/lara-card-1920.webp" style="--ar:16/9"><img src="a/lara-card-1920.webp" srcset="a/lara-card-1200.webp 1200w, a/lara-card-1920.webp 1920w" sizes="(max-width:760px) 100vw, 56vw" width="1920" height="1080" loading="lazy" decoding="async" alt="The Lara Fabian teaser’s end card: 50 World Tour 2019, Live for the first time in Dubai, Lara Fabian, Friday 20 December 2019, Coca-Cola Arena, the artist seated on the right."></a><figcaption>Lara Fabian, Friday 20 December 2019, Coca-Cola Arena: the teaser’s end card. Cancelled.</figcaption></figure>
+  <p>Amr Diab, Etihad Arena, Abu Dhabi, Eid al-Fitr 2020: the A3 layouts were made in February 2020, for a concert cancelled when events were suspended that spring.</p></div>
+</section>
+
 <!-- 6 · credits, then the next project -->
 <section class="fp-end ls-end" aria-label="Credits">
   <div class="fp-cred">
@@ -172,7 +219,7 @@ body.ls .foot{background:#0B0C10}
     <div><span class="fp-lab">Produced by</span>MCX</div>
     <div><span class="fp-lab">Gate and screen artwork</span>AntBrush</div>
   </div>
-  <a class="fp-next" href="../anti-bullying/"><span class="fp-lab">Next project</span><b class="nx-b">National Bullying Prevention Week</b><span class="nx-a" aria-hidden="true">→</span><span class="nx-l">Give growth a language.</span></a>
+  <a class="fp-next" href="../mounir/"><span class="fp-lab">Next project</span><b class="nx-b">Mohamed Mounir Live in Dubai</b><span class="nx-a" aria-hidden="true">→</span><span class="nx-l">One key visual, rebuilt for every place.</span></a>
 </section>
 </main>
 
@@ -227,5 +274,23 @@ body.ls .foot{background:#0B0C10}
 </script>
 <script src="../../assets/nav.js" defer></script>
 <link rel="stylesheet" href="../../assets/viewer.css"><script defer src="../../assets/viewer.js"></script>
+<script id="ls21-guide">/* E-LIVESHOWS-INDEX: the page's guide, as on the five show pages: each part of the page a stop ("3 of 9", Next) */
+(function(){var D=document,W=window,RM=W.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches,phone=function(){return W.innerWidth<=760};
+var NM=[["section.op21","The glimpse"],["section.ls-open","Live shows"],["section.fp-scope","What we delivered"],["section.ls-five","The five nights"],["section.ls-gate","The gate"],["section.ls-gates","Another gate"],["section.ls-nights","The nights"],["section.ls-film","In motion"],["section.ls-cx","Cancelled concerts"]];
+NM.forEach(function(x){var s=D.querySelector("main > "+x[0]);if(s&&!s.hasAttribute("data-stop"))s.setAttribute("data-stop",x[1]);});
+var stops=[].slice.call(D.querySelectorAll("main > [data-stop]"));if(stops.length<2)return;
+var chip=D.createElement("div");chip.className="where";chip.setAttribute("role","status");chip.setAttribute("aria-live","off");
+chip.innerHTML='<span class="tk" aria-hidden="true"><i></i><i></i><i></i></span><b></b><span class="of"></span><a href="#"></a>';D.body.appendChild(chip);
+var cb=chip.querySelector("b"),co=chip.querySelector(".of"),ca=chip.querySelector("a"),cur=-1,foot=D.querySelector("body > footer.foot");
+var short=function(s){return s.length>18?s.slice(0,17).replace(/\s+\S*$/,"")+"…":s};
+ca.addEventListener("click",function(e){e.preventDefault();var nx=stops[cur+1];if(nx)nx.scrollIntoView({behavior:RM?"auto":"smooth",block:"start"});});
+var upd=function(){var mid=W.innerHeight*.5,k=-1;chip.classList.toggle("end",!!foot&&!phone()&&foot.getBoundingClientRect().top<W.innerHeight-6);
+stops.forEach(function(s,i){var top=s.getBoundingClientRect().top,nx=stops[i+1],bot=nx?nx.getBoundingClientRect().top:s.getBoundingClientRect().bottom;if(top<=mid&&bot>mid)k=i;});
+if(W.scrollY+W.innerHeight>=D.documentElement.scrollHeight-4)for(var j=stops.length-1;j>=0;j--)if(stops[j].getBoundingClientRect().top<W.innerHeight*.9){k=Math.max(k,j);break;}
+if(W.scrollY<8&&stops[0].getBoundingClientRect().top<W.innerHeight*.5)k=0;
+if(k===cur)return;cur=k;if(k<0){chip.classList.remove("on");return;}
+var s=stops[k],nx=stops[k+1],nm=s.getAttribute("data-stop");cb.textContent=phone()?short(nm):nm;co.textContent=(k+1)+" of "+stops.length;
+if(nx){ca.textContent="Next: "+short(nx.getAttribute("data-stop"))+" ↓";ca.hidden=false;ca.setAttribute("aria-label","Go to the next part: "+nx.getAttribute("data-stop"));}else ca.hidden=true;chip.classList.add("on");};
+var tk=false;W.addEventListener("scroll",function(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;upd();});}},{passive:true});W.addEventListener("resize",upd);upd();})();</script>
 </body>
 </html>

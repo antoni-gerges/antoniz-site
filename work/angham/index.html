@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Angham Live in Dubai · 2017 · Antoni Gerges</title>
+<link rel="canonical" href="https://antoniz.com/work/angham/">
+<meta name="description" content="Angham Live in Dubai, 10 November 2017, Sheikh Rashid Hall, Dubai World Trade Centre: a campaign in black and champagne for a seated hall. Creative direction by Antoni Gerges through AntBrush, with MCX.">
+<meta property="og:image" content="https://antoniz.com/img/og/antoniz-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/jost-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/bundle-case-6da8db5909.css"><!--perf21-css <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../assets/fp/fp.css?v=34">-->
+<style>
+/* The live shows, one page each (live-shows-21oct/build/page.py). His frame throughout: the dark ground #0B0C10, Jost and Inter, the
+   header and footer of every project page. Inside, the show's own colours (PAGE-PLAN.md "Brand mood"): --acc on the opening rule and
+   the labels, --deep and --stage for the kinetic stage. Every picture whole in a box of its own proportion (contained, never cropped),
+   artwork on its own ground colour. Two type sizes (scale.css, loaded last): var(--t-big) for the one big line per screen, var(--t-text)
+   for the rest. No fades: nothing changes opacity; pictures and pieces appear by visibility and move by transform. */
+html{background:#0B0C10}
+body.fp.ls21{--ground:#0B0C10;--dim:rgba(255,255,255,.72);--line:rgba(255,255,255,.18);background:#0B0C10}
+body.ls21 main{background:#0B0C10}
+body.ls21 .foot{background:#0B0C10}
+.ls21 h1{font-weight:600}
+.sr-only{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.ls21 h2{font-family:"Jost",system-ui,sans-serif;font-size:var(--t-big);line-height:1.08;font-weight:300;color:#fff;margin:0;text-wrap:balance}
+.ls21 h2 b{font-weight:600}
+.ls21 section p,.ls21 figcaption{font-family:Inter,system-ui,sans-serif;font-size:var(--t-text);font-weight:400}
+.ls21 .lead{margin-top:14px;color:rgba(255,255,255,.86);max-width:40em}
+.ls21 figure{margin:0;min-width:0}
+.ls21 figcaption{margin-top:10px;color:var(--dim)}
+.ls21 figcaption b{font-weight:600;color:#fff}
+/* the box: a picture whole, in its own proportion (--ar), on the ground or on the artwork's own colour (--bg) */
+.ls21 .box{position:relative;display:block;width:100%;aspect-ratio:var(--ar,4/3);background:var(--bg,#0B0C10);overflow:hidden;color:inherit}
+.ls21 .box img,.ls21 .box video{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:none;object-fit:contain;object-position:50% 50%}
+.ls21 a.box:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.ls21 .box video{background:#0B0C10;cursor:pointer}
+
+/* 0 · the statement: the label, the big line and the text under the glimpse, never on it */
+.ls-open{background:var(--ground);padding:clamp(26px,4.4vh,48px) var(--g) clamp(22px,4vh,40px)}
+.ls-open .lab{margin:0 0 14px;font-weight:600;color:var(--dim)}
+.ls-open .lab::before{content:"";display:block;width:72px;height:3px;margin:0 0 18px;background:var(--acc)}
+.ls-open p.txt{margin-top:14px;color:rgba(255,255,255,.86);max-width:46em}
+.ls-open p.role{margin-top:14px;color:var(--dim)}
+.ls-open p.role b{color:#fff;font-weight:600}
+
+/* the chapters: the big line, one line under it, then the pictures */
+.ch{padding:clamp(88px,13vh,150px) var(--g) 0}
+.ch .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(36px,5.5vh,64px) clamp(18px,2.4vw,36px);margin-top:clamp(36px,6vh,64px);align-items:start}
+.ch .grid.one{grid-template-columns:minmax(0,1fr)}
+.ch .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ch .grid .span{grid-column:1/-1}
+.ch .grid.narrow{max-width:min(100%,980px)}
+.ch .grid.small{grid-template-columns:repeat(2,minmax(0,1fr));max-width:min(100%,880px)}
+.ch .acc{color:var(--acc2,#fff)}
+/* the result and the film: the line, the picture, then the film on Play (the film button and player of the ZEISS page) */
+.ls21 button.film{position:relative;display:block;width:100%;aspect-ratio:16/9;margin:clamp(36px,6vh,60px) 0 0;padding:0;border:0;background:#000;color:#fff;cursor:pointer;overflow:hidden;text-align:left;font:inherit}
+.ls21 button.film img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
+.ls21 button.film .t{position:absolute;left:clamp(28px,5vw,84px);bottom:clamp(22px,4vw,60px);right:calc(clamp(28px,5vw,84px) + clamp(56px,6vw,96px) + 18px);z-index:2;text-align:left}
+.ls21 button.film .t .fp-lab{position:static;display:block;margin:0;color:#fff}
+.ls21 button.film .go{position:absolute;right:clamp(28px,5vw,84px);bottom:clamp(22px,4vw,60px);z-index:2;width:clamp(56px,6vw,96px);aspect-ratio:1;border:1px solid #fff;border-radius:50%;display:grid;place-items:center;box-sizing:border-box}
+.ls21 button.film .go::before{content:"";border-left:clamp(14px,1.5vw,22px) solid #fff;border-top:clamp(9px,1vw,14px) solid transparent;border-bottom:clamp(9px,1vw,14px) solid transparent;margin-left:5px}
+.ls21 button.film:focus-visible{outline:2px solid #fff;outline-offset:-6px}
+
+.ch .cap{margin-top:10px;color:var(--dim)}
+.ch .src{margin-top:10px;color:var(--dim)}
+
+/* the kinetic beat: a pinned stage; its steps advance with the scroll; pieces stand up and move as objects with thickness */
+.kb{position:relative;height:calc(var(--n) * 70svh + 100svh);background:var(--stage,#0B0C10);margin-top:clamp(88px,13vh,150px)}
+.kb-pin{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;padding:calc(74px + clamp(14px,3vh,32px)) var(--g) clamp(18px,4vh,40px);box-sizing:border-box}
+.kb-head{flex:none;min-height:calc(var(--t-big) * 2.3)}
+.kb-lab{margin:0 0 10px!important;color:var(--acc2,var(--dim));font-weight:600}
+.kb-cap{min-height:1.1em}
+.kb-stage{position:relative;flex:1;min-height:0;perspective:calc(1500 * var(--u,1px));perspective-origin:50% 30%;--u:1px}
+.kb-world{position:absolute;inset:0;transform-style:preserve-3d}
+.kb-floor{position:absolute;left:0;right:0;bottom:calc(var(--fl,60) * var(--u));height:1px;background:rgba(255,255,255,.18)}
+.kb .ob{position:absolute;left:calc(50% - var(--w) * var(--u) / 2);bottom:calc(var(--fl,60) * var(--u));width:calc(var(--w) * var(--u));height:calc(var(--h) * var(--u));
+  transform-style:preserve-3d;transform-origin:50% 100%;transition:transform 1s cubic-bezier(.2,.7,.15,1)}
+.kb .ob .fc{position:absolute;inset:0;transform:translateZ(0);transform-style:preserve-3d}
+.kb .ob .fc>img{display:block;width:100%;height:100%;max-width:none}
+.kb .ob .sd{position:absolute;background:var(--ec)}
+.kb .ob .sd.r{top:0;right:0;width:calc(var(--d) * var(--u));height:100%;transform-origin:100% 50%;transform:rotateY(-90deg)}
+.kb .ob .sd.l{top:0;left:0;width:calc(var(--d) * var(--u));height:100%;transform-origin:0 50%;transform:rotateY(90deg)}
+.kb .ob .sd.t{top:0;left:0;width:100%;height:calc(var(--d) * var(--u));transform-origin:50% 0;transform:rotateX(-90deg)}
+.kb .ob .sd.bk{inset:0;transform:translateZ(calc(var(--d) * var(--u) * -1))}
+@media (prefers-reduced-motion:reduce){.kb *{transition:none!important}}
+
+/* the guide (as on Home and Tony: the page's stops, "3 of 12", Next) */
+.where{position:fixed;left:max(16px,env(safe-area-inset-left));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:12px;
+  background:#0B0C10;color:#F7F5F1;font-family:"Jost",system-ui,sans-serif;font-weight:500;padding:0 18px 0 15px;min-height:46px;border-radius:14px 0 14px 0;
+  transform:translateY(calc(100% + 28px));box-shadow:0 0 0 1px rgba(247,245,241,.16)}
+.where.on{transform:none}
+.where .tk{display:flex;gap:3px;align-items:flex-end}
+.where .tk i{display:block;width:3px;height:12px;background:currentColor;transform:skewX(-16deg)}
+.where b{font-weight:500;white-space:nowrap;max-width:38vw;overflow:hidden;text-overflow:ellipsis}
+.where .of{font-family:Inter,system-ui,sans-serif;color:rgba(247,245,241,.66);font-variant-numeric:tabular-nums;white-space:nowrap}
+.where a{font-family:Inter,system-ui,sans-serif;font-weight:500;color:#F7F5F1;text-decoration:none;border-left:1px solid rgba(247,245,241,.22);padding:13px 0 13px 14px;margin:-1px 0;white-space:nowrap;max-width:34vw;overflow:hidden;text-overflow:ellipsis}
+.where a:hover{text-decoration:underline;text-underline-offset:3px}
+.where a:focus-visible{outline:2px solid #F7F5F1;outline-offset:3px}
+.where.on.end{transform:translateY(calc(100% + 28px))}
+.hdr.open~.where{display:none}
+
+/* credits, then the next project */
+.ls-end.fp-end{background:var(--ground);padding-top:clamp(40px,8vh,90px)}
+.ls-end .fp-cred{margin-top:0;grid-template-columns:repeat(4,minmax(0,1fr))}
+.ls-end .fp-next .nx-b{grid-row:2;grid-column:1}
+.ls-end .fp-next .nx-a{grid-row:2;grid-column:2}
+.ls-end .fp-next .nx-l{grid-row:3;grid-column:1/-1;color:var(--dim);font-family:Inter,system-ui,sans-serif}
+.ls-end .all5{margin:clamp(36px,6vh,56px) 0 0}
+.ls-end .all5 a{color:#fff;font-weight:600}
+
+@media (max-width:760px){
+  .ch .grid,.ch .grid.three,.ch .grid.small{grid-template-columns:minmax(0,1fr);gap:28px}
+  .ls-end .fp-cred{grid-template-columns:1fr}
+  .where{left:0;right:0;bottom:0;border-radius:0;padding:0 16px calc(env(safe-area-inset-bottom,0px)) 14px;gap:10px;min-height:calc(50px + env(safe-area-inset-bottom,0px));box-shadow:0 -1px 0 rgba(247,245,241,.16)}
+  .where b{max-width:30vw}.where .of{margin-right:auto}.where a{max-width:52vw;padding-left:12px}
+  .kb{height:calc(var(--n) * 60svh + 100svh)}
+  .kb-pin{padding-top:calc(73px + 14px)}
+  .kb-head{min-height:calc(var(--t-big) * 3.4)}
+  .kb:not(.kb-ly) .kb-stage{flex:none;height:min(62svh,96vw);margin:auto 0}
+}
+
+/* this show */
+.an{--acc:#C09F85;--acc2:#DAC8B4;--stage:#000}
+</style>
+<noscript><style>@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{padding:6px 8px}.op21{padding-top:0}}.kb{height:auto!important}.kb-pin{position:relative!important;height:auto!important}.kb .ob,.kb .kv{visibility:visible!important}.lp-wrap video{display:block}</style></noscript>
+<link rel="stylesheet" href="../../assets/bundle-case-14fcca7cd4.css"><!--perf21-css <link rel="stylesheet" href="../../assets/scale.css"><link rel="stylesheet" href="../../assets/fixes.css"><link rel="stylesheet" href="../../assets/scope.css"><link rel="stylesheet" href="../../assets/nav.css">--><link rel="preload" as="image" href="a/glimpse-poster.webp" fetchpriority="high">
+<style id="op21">/* glimpse openers, 21 Oct (openers-21oct/openers21.py) */.op21{position:relative;display:flex;justify-content:center;background:#0B0C10;padding:74px var(--g,16px) clamp(16px,3vh,32px)}.op21-f{margin:0;width:min(100%,calc((100svh - 74px - 58px) * 16 / 9))}.op21-film{display:block;position:relative;width:100%;margin:0;padding:0;border:0;border-radius:0;background:#0B0C10;color:inherit;font:inherit;cursor:pointer}.op21-film:focus-visible{outline:2px solid #fff;outline-offset:3px}.op21-v{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#0B0C10}.op21-cap{margin:10px 0 0;font:500 11px/1.35 Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.62)}@media (max-width:760px){.op21{padding:68px 0 18px}.op21-f{width:100%}.op21-cap{padding:0 16px}}</style>
+</head>
+<body class="fp ls21 an">
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr">
+  <a class="pill brand" href="../../index.html" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
+  <div class="pill">
+    <nav class="nav" id="nav" aria-label="Site"><a href="../../work/" aria-current="page">Work</a><a href="../../about/">Tony</a><a href="../../contact/">Contact</a><a href="../../assets/Antoni-Gerges-CV.pdf" class="navcv" target="_blank" rel="noopener">CV</a></nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+</header>
+<main id="main">
+<h1 class="sr-only">Angham Live in Dubai, Sheikh Rashid Hall, Dubai World Trade Centre, 10 November 2017</h1>
+
+<!-- 0 · the glimpse: the night in 11 s: the MCX promo’s title, four of his photographs of the hall held whole, our own English title on the last (build/films.py; the op21 markup of the live openers, one 16:9 film, muted) -->
+<section class="op21" data-stop="The glimpse" aria-label="A glimpse: the title builds, The Legendary Super Star Angham; the full hall and the stage; the camera crane over the hall; the seated audience; the stage in white light; Angham, Live in Dubai; and the hall with the title Dubai World Trade Centre, 10 November 2017">
+  <figure class="op21-f"><button class="op21-film" type="button" aria-label="Pause the glimpse"><video class="op21-v" data-fix="E-OPENER-angham" muted playsinline loop preload="metadata" width="1280" height="720" poster="a/glimpse-poster.webp"><source src="a/glimpse.mp4" type="video/mp4"></video></button><figcaption class="op21-cap">A glimpse · the MCX promo’s title (over the artist’s footage from other concerts) and his photographs of the night</figcaption></figure>
+</section>
+
+<section class="ls-open" data-stop="The show" aria-labelledby="s0">
+  <p class="lab">Angham Live in Dubai · Sheikh Rashid Hall, Dubai World Trade Centre · 10 November 2017 · with MCX</p>
+  <h2 id="s0">Black and champagne, <b>for a seated hall.</b></h2>
+  <p class="txt">The Legendary Super Star with her orchestra, for a seated hall at Dubai World Trade Centre. A campaign in black and champagne, from the first promo film to the roll-ups in the hotel partner’s lobby.</p>
+  <p class="role"><b>Antoni Gerges</b> · Partner, Creative Director &amp; Co-producer, through AntBrush</p>
+</section>
+
+<!-- what we delivered: PAGE-PLAN.md "What we delivered" (SCOPE-BY-PROJECT §15 and the job register) -->
+<section class="fp-scope" data-fix="E-SCOPE-angham" data-stop="What we delivered" aria-labelledby="scope-h">
+  <span class="fp-lab"><b>The scope</b></span>
+  <h2 id="scope-h">What we <b class="tw">delivered.</b></h2>
+  <p class="scope-lead">A campaign in two looks and the partners around it, produced with MCX.</p>
+  <div class="scope-grid"><div class="scope-group"><p class="scope-k">Campaign</p><ul><li>The name lettering</li><li>The key art, in two looks</li><li>Roll-ups</li><li>The promo title system, for the MCX films</li></ul></div><div class="scope-group"><p class="scope-k">Partners</p><ul><li>The Conrad Dubai hotel partnership</li><li>Alaan TV: screens and outdoor LED</li><li>PR with MSL Group</li></ul></div></div>
+  <ul class="scope-pics" aria-label="Pieces of the scope"><li><figure><img src="a/scope-keyart-1080.webp" srcset="a/scope-keyart-800.webp 800w, a/scope-keyart-1080.webp 1080w" sizes="(max-width:760px) 45vw, 35vw" width="1080" height="1080" loading="lazy" decoding="async" alt="The key art in English on black."><figcaption>The key art</figcaption></figure></li><li><figure><img src="a/scope-title-1200.webp" srcset="a/scope-title-800.webp 800w, a/scope-title-1200.webp 1200w" sizes="(max-width:760px) 45vw, 35vw" width="1200" height="675" loading="lazy" decoding="async" alt="The promo title: The Legendary Super Star, Angham, Live in Dubai, over the artist’s own footage."><figcaption>The promo title</figcaption></figure></li><li><figure><img src="a/scope-tv-1200.webp" srcset="a/scope-tv-800.webp 800w, a/scope-tv-1200.webp 1200w" sizes="(max-width:760px) 45vw, 35vw" width="1200" height="900" loading="lazy" decoding="async" alt="The camera crane in front of the full hall."><figcaption>Filmed for Alaan TV</figcaption></figure></li></ul>
+  <p class="scope-src">From the job register, the artwork files, the promo films and his photographs of the night.</p>
+</section>
+
+<section class="ch " data-stop="The hall" aria-labelledby="s1">
+  <h2 id="s1">A seated hall, <b>at Dubai World Trade Centre.</b></h2>
+  <p class="lead">Sheikh Rashid Hall at 10:38 pm: the orchestra on stage, a screen on each side, every seat taken.</p>
+  <div class="grid one narrow"><figure><a class="box zm" href="a/hall-2400.webp" style="--ar:2400/1800"><img src="a/hall-2400.webp" srcset="a/hall-1200.webp 1200w, a/hall-2400.webp 2400w" sizes="(max-width:760px) 100vw, 92vw" width="2400" height="1800" loading="lazy" decoding="async" alt="The full seated hall and the stage with the orchestra under amber light, a screen on each side, the ceiling grid above."></a><figcaption>The hall and the stage, 10:38 pm · his photograph</figcaption></figure></div>
+</section>
+<section class="kb kb-an " data-stop="The title" data-kb-mode="scroll" data-caps="[&quot;The Legendary Super Star&quot;, &quot;Angham&quot;, &quot;Live in Dubai&quot;, &quot;Friday 10th November 2017 \u00b7 Sheikh Rashid Hall&quot;, &quot;Then the hall.&quot;]" style="--n:5" aria-labelledby="kb-an">
+  <div class="kb-pin">
+    <div class="kb-head"><p class="kb-lab">The title, built in type, in the promo’s own order</p><p class="kb-cap" id="kb-an" aria-live="polite">The Legendary Super Star</p></div>
+    <div class="kb-stage" role="img" aria-label="The title of the key art builds letter by letter in champagne on black: The Legendary Super Star, Angham, Live in Dubai, Friday 10th November 2017, Sheikh Rashid Hall; then the full hall rises behind it"><div class="kb-world"><div class="kv hall"><img src="a/hall-2400.webp" srcset="a/hall-1200.webp 1200w, a/hall-2400.webp 2400w" sizes="(max-width:760px) 100vw, 80vw" width="2400" height="1800" loading="lazy" decoding="async" alt="The full seated hall and the stage with the orchestra, a screen on each side."></div><div class="kv type"><p class="ln l1"><i style="--i:0">T</i><i style="--i:1">H</i><i style="--i:2">E</i><i style="--i:3">&nbsp;</i><i style="--i:4">L</i><i style="--i:5">E</i><i style="--i:6">G</i><i style="--i:7">E</i><i style="--i:8">N</i><i style="--i:9">D</i><i style="--i:10">A</i><i style="--i:11">R</i><i style="--i:12">Y</i><i style="--i:13">&nbsp;</i><i style="--i:14">S</i><i style="--i:15">U</i><i style="--i:16">P</i><i style="--i:17">E</i><i style="--i:18">R</i><i style="--i:19">&nbsp;</i><i style="--i:20">S</i><i style="--i:21">T</i><i style="--i:22">A</i><i style="--i:23">R</i></p><h2 class="ln l2 big" aria-label="Angham"><i style="--i:0">A</i><i style="--i:1">N</i><i style="--i:2">G</i><i style="--i:3">H</i><i style="--i:4">A</i><i style="--i:5">M</i></h2><p class="ln l3"><i style="--i:0">L</i><i style="--i:1">I</i><i style="--i:2">V</i><i style="--i:3">E</i><i style="--i:4">&nbsp;</i><i style="--i:5">I</i><i style="--i:6">N</i><i style="--i:7">&nbsp;</i><i style="--i:8">D</i><i style="--i:9">U</i><i style="--i:10">B</i><i style="--i:11">A</i><i style="--i:12">I</i></p><p class="ln l4"><i style="--i:0">F</i><i style="--i:1">R</i><i style="--i:2">I</i><i style="--i:3">D</i><i style="--i:4">A</i><i style="--i:5">Y</i><i style="--i:6">&nbsp;</i><i style="--i:7">1</i><i style="--i:8">0</i><i style="--i:9">T</i><i style="--i:10">H</i><i style="--i:11">&nbsp;</i><i style="--i:12">N</i><i style="--i:13">O</i><i style="--i:14">V</i><i style="--i:15">E</i><i style="--i:16">M</i><i style="--i:17">B</i><i style="--i:18">E</i><i style="--i:19">R</i><i style="--i:20">&nbsp;</i><i style="--i:21">2</i><i style="--i:22">0</i><i style="--i:23">1</i><i style="--i:24">7</i><i style="--i:25">&nbsp;</i><i style="--i:26">·</i><i style="--i:27">&nbsp;</i><i style="--i:28">S</i><i style="--i:29">H</i><i style="--i:30">E</i><i style="--i:31">I</i><i style="--i:32">K</i><i style="--i:33">H</i><i style="--i:34">&nbsp;</i><i style="--i:35">R</i><i style="--i:36">A</i><i style="--i:37">S</i><i style="--i:38">H</i><i style="--i:39">I</i><i style="--i:40">D</i><i style="--i:41">&nbsp;</i><i style="--i:42">H</i><i style="--i:43">A</i><i style="--i:44">L</i><i style="--i:45">L</i></p></div></div><i class="kb-floor" aria-hidden="true"></i></div>
+  </div>
+  <style>.kb-an{--uw:1000;--uh:560}.kb-an .kb-stage{perspective:900px}.kb-an .kv{position:absolute;inset:0}.kb-an .kv.type{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6em;text-align:center;transform-style:preserve-3d;z-index:2}.kb-an .ln{margin:0!important;color:#C09F85;font-family:"Jost",system-ui,sans-serif;font-weight:300;transform-style:preserve-3d}.kb-an .ln i{display:inline-block;font-style:normal;margin:0 .14em;visibility:hidden;transform:rotateX(-90deg);transform-origin:50% 100%;transition:transform .7s cubic-bezier(.2,.7,.15,1);transition-delay:calc(var(--i) * 32ms);text-shadow:1px 1px 0 #8E735F,2px 2px 0 #7A6150,3px 3px 0 #664F41,4px 4px 0 #523F33}.kb-an .ln.big{color:#DAC8B4;font-weight:300}.kb-an .ln.big i{margin:0 .06em;text-shadow:1px 1px 0 #A8917C,2px 2px 0 #96806C,3px 3px 0 #846F5D,4px 4px 0 #725F4F,5px 5px 0 #604F41,6px 6px 0 #4E3F34}.kb-an .kb-stage.s0 .l1 i,.kb-an .kb-stage.s1 .l2 i,.kb-an .kb-stage.s2 .l3 i,.kb-an .kb-stage.s3 .l4 i{visibility:visible;transform:none}.kb-an .kv.hall{z-index:1;transform:translateY(110%);transition:transform 1.1s cubic-bezier(.2,.7,.15,1)}.kb-an .kv.hall img{width:100%;height:100%;object-fit:contain}.kb-an .kb-stage.s4 .kv.hall{transform:none}.kb-an .kb-stage.s4 .kv.type{transform:translateY(-34%)}.kb-an .kv.type{transition:transform 1.1s cubic-bezier(.2,.7,.15,1)}.kb-an .kb-floor{display:none}</style>
+</section>
+<section class="ch " data-stop="The key art" aria-labelledby="s3">
+  <h2 id="s3">The key <b>art.</b></h2>
+  <p class="lead">MCX presents: the name in light caps over the champagne lines, the date and the hall under it.</p>
+  <div class="grid small"><figure><a class="box zm" href="a/keyart-1080.webp" style="--ar:1080/1080;--bg:#000"><img src="a/keyart-1080.webp" srcset="a/keyart-720.webp 720w, a/keyart-1080.webp 1080w" sizes="(max-width:760px) 100vw, 46vw" width="1080" height="1080" loading="lazy" decoding="async" alt="The square key art on black: MCX presents The Legendary Super Star ANGHAM Live in Dubai, Friday 10th November 2017, Sheikh Rashid Hall at Dubai World Trade Centre, the artist on the right."></a><figcaption>The key art, in English</figcaption></figure></div>
+</section>
+<section class="ch " data-stop="Before doors" aria-labelledby="s4">
+  <h2 id="s4">Before doors, <b>8:03 pm.</b></h2>
+  <div class="grid small"><figure><a class="box zm" href="a/doors-1600.webp" style="--ar:1600/1202"><img src="a/doors-1600.webp" srcset="a/doors-800.webp 800w, a/doors-1600.webp 1600w" sizes="(max-width:760px) 100vw, 46vw" width="1600" height="1202" loading="lazy" decoding="async" alt="Antoni Gerges in the empty hall before doors, the stage lit behind him."></a><figcaption>Antoni Gerges in the empty hall, 8:03 pm</figcaption></figure></div>
+</section>
+<section class="ch " data-stop="Full" aria-labelledby="s5">
+  <h2 id="s5">Full by <b>10:16 pm.</b></h2>
+  <div class="grid "><figure><a class="box zm" href="a/full-1-2400.webp" style="--ar:2400/1800"><img src="a/full-1-2400.webp" srcset="a/full-1-1200.webp 1200w, a/full-1-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1800" loading="lazy" decoding="async" alt="The seated audience from the side in purple light."></a><figcaption>10:16 pm</figcaption></figure><figure><a class="box zm" href="a/full-2-2400.webp" style="--ar:2400/1800"><img src="a/full-2-2400.webp" srcset="a/full-2-1200.webp 1200w, a/full-2-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1800" loading="lazy" decoding="async" alt="The seated audience, wider."></a><figcaption>10:16 pm</figcaption></figure></div>
+</section>
+<section class="ch " data-stop="Filmed for television" aria-labelledby="s6">
+  <h2 id="s6">Filmed <b>for television.</b></h2>
+  <p class="lead">A camera crane over the seats: Alaan TV was the exclusive TV partner.</p>
+  <div class="grid "><figure><a class="box zm" href="a/tv-2400.webp" style="--ar:2400/1800"><img src="a/tv-2400.webp" srcset="a/tv-1200.webp 1200w, a/tv-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1800" loading="lazy" decoding="async" alt="A camera operator and a crane in front of the full hall."></a><figcaption>The crane and the full hall, 10:20 pm</figcaption></figure><figure><a class="box zm" href="a/crane-2400.webp" style="--ar:2400/1800"><img src="a/crane-2400.webp" srcset="a/crane-1200.webp 1200w, a/crane-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1800" loading="lazy" decoding="async" alt="The crane’s arm over the audience in purple light."></a><figcaption>The crane over the seats</figcaption></figure></div>
+</section>
+<section class="ch " data-stop="The orchestra" aria-labelledby="s7">
+  <h2 id="s7">The <b>orchestra.</b></h2>
+  <div class="grid small"><figure><a class="box zm" href="a/orchestra-2400.webp" style="--ar:2400/1800"><img src="a/orchestra-2400.webp" srcset="a/orchestra-1200.webp 1200w, a/orchestra-2400.webp 2400w" sizes="(max-width:760px) 100vw, 70vw" width="2400" height="1800" loading="lazy" decoding="async" alt="The conductor and the orchestra on stage in purple light, seen from the side of the stage."></a><figcaption>The orchestra, from the side of the stage</figcaption></figure></div>
+</section>
+<section class="ch " data-stop="The light" aria-labelledby="s8">
+  <h2 id="s8">White, green, <b>purple.</b></h2>
+  <div class="grid "><figure><a class="box zm" href="a/white-2400.webp" style="--ar:2400/1800"><img src="a/white-2400.webp" srcset="a/white-1200.webp 1200w, a/white-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1800" loading="lazy" decoding="async" alt="The stage under a bank of white lights, the full hall in front."></a><figcaption>White, 10:37 pm</figcaption></figure><figure><a class="box zm" href="a/green-2400.webp" style="--ar:2400/1800"><img src="a/green-2400.webp" srcset="a/green-1200.webp 1200w, a/green-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1800" loading="lazy" decoding="async" alt="The stage in green, the hall dark."></a><figcaption>Green, 10:37 pm</figcaption></figure><figure class="span"><a class="box zm" href="a/purple-2400.webp" style="--ar:2400/1800"><img src="a/purple-2400.webp" srcset="a/purple-1200.webp 1200w, a/purple-2400.webp 2400w" sizes="(max-width:760px) 100vw, 92vw" width="2400" height="1800" loading="lazy" decoding="async" alt="The hall and the stage from the floor in a purple wash."></a><figcaption>Purple, 10:15 pm</figcaption></figure></div>
+</section>
+<section class="ch res" data-stop="The result" aria-labelledby="s9">
+  <h2 id="s9">Friday, <b>10 November 2017.</b></h2>
+  <p class="lead">The hall at 10:40 pm, then the promo film that opened the campaign.</p>
+  <div class="grid one narrow"><figure><a class="box zm" href="a/result-2400.webp" style="--ar:2400/1800"><img src="a/result-2400.webp" srcset="a/result-1200.webp 1200w, a/result-2400.webp 2400w" sizes="(max-width:760px) 100vw, 92vw" width="2400" height="1800" loading="lazy" decoding="async" alt="The full hall and the stage in warm light, the orchestra and a screen on each side."></a><figcaption>The hall, 10:40 pm</figcaption></figure></div><button class="film" type="button" data-film="../../media/films/angham-2017-promo-1280.mp4" data-title="Angham Live in Dubai · the promo film by MCX · 0:40" aria-label="Play the promo film, 40 seconds, with sound"><img src="../../media/films/angham-2017-promo-poster.webp" srcset="../../media/films/angham-2017-promo-poster-perf800.webp 800w, ../../media/films/angham-2017-promo-poster.webp 1280w" sizes="100vw" width="1280" height="720" loading="lazy" decoding="async" alt=""><span class="t"><span class="fp-lab">The promo film · 0:40 · sound</span></span><span class="go" aria-hidden="true"></span></button><noscript><p class="cap"><a href="../../media/films/angham-2017-promo-1280.mp4">Open the film (video file)</a></p></noscript><p class="cap">MCX’s promo film, 21 September 2017: the title over the artist’s own footage from other concerts; trimmed by hard cuts so no Arabic shows</p>
+</section>
+<!-- credits, then the next project (the ring) -->
+<section class="fp-end ls-end" aria-label="Credits">
+  <div class="fp-cred"><div><span class="fp-lab">Role</span>Antoni Gerges<br>Partner, Creative Director &amp; Co-producer, through AntBrush</div><div><span class="fp-lab">Produced by</span>MCX, with AntBrush</div><div><span class="fp-lab">Partners</span>Conrad Dubai, Alaan TV</div><div><span class="fp-lab">Credits</span>Photographs: his own. The promo film: MCX, over the artist’s own concert footage. Artist photography in the key art: the artist’s press photograph.</div></div>
+  <p class="all5">Part of <a href="../live-shows/">Live shows</a>: five nights in Dubai, 2017 to 2018, with MCX.</p>
+  <a class="fp-next" href="../magida-el-roumi/"><span class="fp-lab">Next project</span><b class="nx-b">Magida El Roumi Live in Dubai</b><span class="nx-a" aria-hidden="true">→</span><span class="nx-l">Three rounds of an arch, an evening of light.</span></a>
+</section>
+</main>
+
+<div class="fp-player" role="dialog" aria-label="Film player"><video playsinline preload="none"></video><div class="bar"><span class="ti"></span><button class="x" type="button">Close</button></div></div>
+
+<footer class="foot"><div class="wrap row">
+  <p style="margin:0">Antoni Gerges · Creative Director, Brand &amp; Experiential · <a href="mailto:antoni@antbrush.com">antoni@antbrush.com</a></p>
+  <nav aria-label="Footer"><a href="../../work/">Work</a><a href="../../about/">Tony</a><a href="../../contact/">Contact</a></nav>
+</div></footer>
+<script>
+/* The page's own script: the header menu (as on the other project pages), the header out of the way while reading down, the glimpse
+   (plays while on screen, a click pauses it), the chapter clips, the kinetic beats, the guide and the film player. */
+(function () {
+  var D = document, W = window, phone = function () { return W.innerWidth <= 760; },
+      RM = W.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hdr = D.querySelector('.hdr'), mb = D.querySelector('.menu-btn'), ly0 = 0, acc = 0;
+  function menu(o) { hdr.classList.toggle('open', o); mb.setAttribute('aria-expanded', o ? 'true' : 'false'); mb.textContent = o ? 'Close' : 'Menu';
+    [].forEach.call(D.querySelectorAll('main, footer, .skip'), function (e) { o ? e.setAttribute('inert', '') : e.removeAttribute('inert'); });
+    D.documentElement.style.overflow = o ? 'hidden' : ''; }
+  function items() { return [].filter.call(hdr.querySelectorAll('a[href], button'), function (e) { return e.getClientRects().length > 0; }); }
+  if (hdr && mb) {
+    mb.addEventListener('click', function () { menu(!hdr.classList.contains('open')); });
+    D.addEventListener('keydown', function (e) { if (!hdr.classList.contains('open')) return;
+      if (e.key === 'Escape') { menu(false); mb.focus(); return; }
+      if (e.key === 'Tab') { var f = items(), i = f.indexOf(D.activeElement); e.preventDefault(); f[(i < 0 ? 0 : i + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus(); } });
+    W.addEventListener('resize', function () { if (!phone() && hdr.classList.contains('open')) menu(false); });
+    [].forEach.call(hdr.querySelectorAll('.nav a'), function (l) { l.addEventListener('click', function () { menu(false); }); });
+    W.addEventListener('scroll', function () { var y = W.scrollY, d = y - ly0; ly0 = y; if (y < 80) { hdr.classList.remove('hide'); acc = 0; return; }
+      acc = (d > 0) === (acc > 0) ? acc + d : d; if (acc > 24) hdr.classList.add('hide'); else if (acc < -12) hdr.classList.remove('hide'); }, { passive: true });
+  }
+  /* the glimpse and the chapter clips: muted, played while on screen (not with reduced motion: then a click plays), a click pauses */
+  function play(v) { if (v.dataset.src && !v.getAttribute('src')) v.src = v.dataset.src; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+  [].forEach.call(D.querySelectorAll('.op21 video, video.lp'), function (v) {
+    var btn = v.closest('button') || v, user = null;
+    if ('IntersectionObserver' in W) new IntersectionObserver(function (e) { if (e[0].isIntersecting) { if (user !== false && (!RM || user)) play(v); } else v.pause(); }, { threshold: .25 }).observe(v);
+    btn.addEventListener('click', function () { if (v.paused) { user = true; play(v); } else { user = false; v.pause(); }
+      if (btn.tagName === 'BUTTON') btn.setAttribute('aria-label', v.paused ? 'Play the glimpse' : 'Pause the glimpse'); });
+  });
+  /* the kinetic beats */
+  [].forEach.call(D.querySelectorAll('.kb'), function (kb) {
+    var st = kb.querySelector('.kb-stage'), cap = kb.querySelector('.kb-cap'), caps = JSON.parse(kb.getAttribute('data-caps')), n = caps.length,
+        mode = kb.getAttribute('data-kb-mode'), cur = -2, tt = null, U = +(getComputedStyle(kb).getPropertyValue('--uw') || 1000), V = +(getComputedStyle(kb).getPropertyValue('--uh') || 600);
+    function fit() { var r = st.getBoundingClientRect(); st.style.setProperty('--u', Math.max(.2, Math.min(r.width / U, r.height / V)).toFixed(4) + 'px'); }
+    function type(s) { clearInterval(tt); if (RM) { cap.textContent = s; return; } var i = 0; cap.textContent = '';
+      tt = setInterval(function () { i += Math.max(1, Math.round(s.length / 24)); cap.textContent = s.slice(0, i); if (i >= s.length) clearInterval(tt); }, 28); }
+    function set(k) { if (k === cur) return; cur = k;
+      for (var i = 0; i < n; i++) st.classList.toggle('s' + i, i <= k);
+      kb.classList.toggle('kb-on', k >= 0); if (k >= 0) type(caps[k]); else { clearInterval(tt); cap.textContent = caps[0]; } }
+    fit(); W.addEventListener('resize', fit);
+    if (mode === 'time') {
+      var started = false;
+      var go = function () { if (started) return; started = true; if (RM) { set(n - 1); return; } var k = 0; set(0); var t = setInterval(function () { k++; if (k >= n) { clearInterval(t); return; } set(k); }, 1150); };
+      if ('IntersectionObserver' in W) new IntersectionObserver(function (e) { if (e[0].isIntersecting) go(); }, { threshold: .35 }).observe(st); else go();
+      return;
+    }
+    function upd() { var r = kb.getBoundingClientRect(), H = W.innerHeight, span = r.height - H;
+      if (r.top > H * .35) { set(-1); return; }
+      var p = Math.min(.9999, Math.max(0, -r.top / Math.max(1, span))); set(Math.floor(p * n)); }
+    var tk = false; W.addEventListener('scroll', function () { if (!tk) { tk = true; requestAnimationFrame(function () { tk = false; upd(); }); } }, { passive: true });
+    W.addEventListener('resize', upd); upd();
+  });
+  /* the guide: the page's stops (data-stop), "3 of 12", and Next */
+  var stops = [].slice.call(D.querySelectorAll('main [data-stop]'));
+  if (stops.length > 1) {
+    var chip = D.createElement('div'); chip.className = 'where'; chip.setAttribute('role', 'status'); chip.setAttribute('aria-live', 'off');
+    chip.innerHTML = '<span class="tk" aria-hidden="true"><i></i><i></i><i></i></span><b></b><span class="of"></span><a href="#"></a>';
+    D.body.appendChild(chip);
+    var cb = chip.querySelector('b'), co = chip.querySelector('.of'), ca = chip.querySelector('a'), cur = -1, foot = D.querySelector('body > footer.foot');
+    var short = function (s) { return s.length > 18 ? s.slice(0, 17).replace(/\s+\S*$/, '') + '…' : s; };
+    ca.addEventListener('click', function (e) { e.preventDefault(); var nx = stops[cur + 1]; if (nx) nx.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'start' }); });
+    var upd2 = function () { var mid = W.innerHeight * .5, k = -1;
+      chip.classList.toggle('end', !!foot && !phone() && foot.getBoundingClientRect().top < W.innerHeight - 6);
+      stops.forEach(function (s, i) { var top = s.getBoundingClientRect().top, nx = stops[i + 1], bot = nx ? nx.getBoundingClientRect().top : s.getBoundingClientRect().bottom; if (top <= mid && bot > mid) k = i; });
+      if (W.scrollY + W.innerHeight >= D.documentElement.scrollHeight - 4) for (var j = stops.length - 1; j >= 0; j--) if (stops[j].getBoundingClientRect().top < W.innerHeight * .9) { k = Math.max(k, j); break; }   /* at the foot: the last stop in view */
+      if (W.scrollY < 8 && stops[0].getBoundingClientRect().top < W.innerHeight * .5) k = 0;   /* at the top: the first stop, however short */
+      if (k === cur) return; cur = k;
+      if (k < 0) { chip.classList.remove('on'); return; }
+      var s = stops[k], nx = stops[k + 1], nm = s.getAttribute('data-stop'); cb.textContent = phone() ? short(nm) : nm; co.textContent = (k + 1) + ' of ' + stops.length;
+      if (nx) { ca.textContent = 'Next: ' + short(nx.getAttribute('data-stop')) + ' ↓'; ca.hidden = false; ca.setAttribute('aria-label', 'Go to the next part: ' + nx.getAttribute('data-stop')); } else ca.hidden = true;
+      chip.classList.add('on'); };
+    var tk2 = false; W.addEventListener('scroll', function () { if (!tk2) { tk2 = true; requestAnimationFrame(function () { tk2 = false; upd2(); }); } }, { passive: true });
+    W.addEventListener('resize', upd2); upd2();
+  }
+  /* the film player, as on the ZEISS page: the full film with sound; focus moves in, stays in, and returns to the button that opened it */
+  var pl = D.querySelector('.fp-player');
+  if (pl) {
+    var pv = pl.querySelector('video'), pt = pl.querySelector('.ti'), px = pl.querySelector('.x'), opener = null;
+    pl.setAttribute('aria-modal', 'true'); pl.setAttribute('tabindex', '-1');
+    var close = function () { if (!pl.classList.contains('open')) return; pv.pause(); pl.classList.remove('open'); D.documentElement.style.overflow = ''; if (opener && opener.focus) opener.focus(); opener = null; };
+    [].forEach.call(D.querySelectorAll('[data-film]'), function (b) {
+      b.addEventListener('click', function () {
+        var s = (phone() && b.dataset.filmP) || b.dataset.film;
+        if (pv.getAttribute('src') !== s) pv.src = s;
+        if (pt) pt.textContent = b.dataset.title || '';
+        opener = b; pl.classList.add('open'); D.documentElement.style.overflow = 'hidden'; pv.muted = false; pv.controls = true; px.focus();
+        var p = pv.play(); if (p && p.catch) p.catch(function () {});
+      });
+    });
+    px.addEventListener('click', close);
+    D.addEventListener('keydown', function (e) {
+      if (!pl.classList.contains('open')) return;
+      if (e.key === 'Escape') { e.preventDefault(); close(); return; }
+      if (e.key === 'Tab') { var f = [pv, px], i = f.indexOf(D.activeElement); e.preventDefault(); f[(i + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus(); }
+    });
+  }
+})();
+</script>
+<script src="../../assets/nav.js" defer></script>
+<link rel="stylesheet" href="../../assets/viewer.css"><script defer src="../../assets/viewer.js"></script>
+</body>
+</html>
