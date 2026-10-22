@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abu Dhabi International Building Codes · 2010–11 · Antoni Gerges</title>
+<link rel="canonical" href="https://antoniz.com/work/building-codes/">
+<meta name="description" content="The launch campaign of the Abu Dhabi International Building Codes, January 2011, for the Department of Municipal Affairs, Abu Dhabi: the code names stacked into one building, a teaser, print, a website and a touch table, launched at the World Future Energy Summit; the look ran on to 2015. Creative direction by Antoni Gerges through AntBrush.">
+<meta property="og:image" content="https://antoniz.com/img/og/antoniz-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/jost-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/bundle-case-6da8db5909.css"><!--perf21-css <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../assets/fp/fp.css?v=34">-->
+<style>
+/* Abu Dhabi International Building Codes, the launch campaign, 2010-11, for the Department of Municipal Affairs, Abu Dhabi. His frame
+   throughout: the dark ground #0B0C10, Jost and Inter, the ZEISS header and footer. Inside, the campaign's own colours lead, as accents
+   only: the eight code colours of the main visual (sampled from its lit letters, 01-WORK/024) as the label line and in the opening's
+   kinetic move, and the red of its billboard (#C8473F). Every picture whole (contained, never cropped); the 2011 photographs survive at
+   600-800 px and are never enlarged. Two type sizes (scale.css, loaded last). No Arabic piece chosen: the English teaser, the English user
+   guide; where the department's bilingual lockup sits on a piece, it is the client's signature, small. No fades anywhere: the kinetic
+   move ends on a hard cut to the artwork. */
+html{background:#0B0C10}
+body.fp.bc{--ground:#0B0C10;--dim:rgba(255,255,255,.72);--line:rgba(255,255,255,.18);--bc-red:#C8473F;--bc-bar:linear-gradient(90deg,#D4B85E 0.0% 12.5%,#C64B5C 12.5% 25.0%,#6FB1B4 25.0% 37.5%,#A584B4 37.5% 50.0%,#93B4B6 50.0% 62.5%,#DEA474 62.5% 75.0%,#B07CB0 75.0% 87.5%,#7F8FC6 87.5% 100.0%);background:#0B0C10}
+body.bc main{background:#0B0C10}
+body.bc .foot{background:#0B0C10}
+.sr-only{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.bc h2{font-family:"Jost",system-ui,sans-serif;line-height:1.08;font-weight:300;color:#fff;margin:0;text-wrap:balance}
+.bc h2 b{font-weight:600}
+.bc section p,.bc figcaption,.bc li{font-family:Inter,system-ui,sans-serif;font-weight:400}
+.bc b{font-weight:600}
+.bc .lab{margin:0 0 14px;font-weight:600;color:var(--dim)}
+.bc .lab::before{content:"";display:block;width:96px;height:3px;margin:0 0 18px;background:var(--bc-bar)}
+.bc .lead{margin-top:14px;color:rgba(255,255,255,.86);max-width:44em}
+.bc figure{margin:0;min-width:0}
+.bc figcaption{margin-top:10px;color:var(--dim)}
+.bc figcaption b{color:#fff}
+.bc a.pic{display:block;color:inherit}
+.bc a.pic img,.bc img.own{display:block;width:100%;height:auto}
+.bc-s{padding:clamp(88px,13vh,150px) var(--g) 0}
+.bc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(36px,5.5vh,64px) clamp(18px,2.4vw,36px);margin-top:clamp(36px,6vh,64px);align-items:end}
+.bc-grid .span{grid-column:1/-1}
+.bc-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bc .go{margin-top:22px}
+.bc .go a{color:#fff;font-weight:600}
+
+/* 0 . the opening: the words, and the main visual whole, under a canvas where the eight code names stack into the building (a hard
+   cut to the artwork when it stands; reduced motion or no script: the artwork alone) */
+.bc-open{background:var(--ground);padding:calc(74px + clamp(16px,3vh,32px)) var(--g) 0;display:grid;grid-template-columns:minmax(0,1fr) auto;
+  grid-template-areas:"w1 st" "w2 st";column-gap:clamp(28px,4.4vw,80px);align-items:end}
+.bc-open .w1{grid-area:w1;align-self:end}
+.bc-open .w2{grid-area:w2;align-self:start}
+.bc-open .w2 .txt{margin-top:18px;color:rgba(255,255,255,.86);max-width:36em}
+.bc-open .w2 .txt+.txt{margin-top:10px}
+.bc-open .st{grid-area:st;width:calc((100svh - 74px - clamp(16px,3vh,32px) - 54px) * 1370 / 1927);max-width:46vw}
+.bc-stage{position:relative;aspect-ratio:1370/1927;background:var(--ground);overflow:hidden}
+.bc-stage img{position:absolute;inset:0;display:block;width:100%;height:100%}
+.bc-stage canvas{position:absolute;inset:0;display:none;width:100%;height:100%}
+.bc-stage.live canvas{display:block}
+.bc-open .cap{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin:10px 0 0;color:var(--dim)}
+.bc-again{flex:none;min-height:44px;padding:0 14px;background:#0B0C10;color:#fff;border:1px solid rgba(255,255,255,.5);font-family:Jost,system-ui,sans-serif;font-weight:600;cursor:pointer}
+.bc-again[hidden]{display:none}
+.bc-again:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+/* 1 . the teaser: the words beside the poster, whole, no taller than the screen */
+.bc-pair{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(28px,4.4vw,80px);align-items:end}
+.bc-teaser figure{width:min(100%,calc((100svh - 140px) * 935 / 1559));max-width:42vw}
+
+/* 2 . the launch: the photographs at their own size */
+.bc-launch .bc-grid{grid-template-columns:minmax(0,4fr) minmax(0,4fr) minmax(0,3fr);align-items:end}   /* in proportion to 800, 800 and 600 px */
+
+.bc-system .span{max-width:1040px}
+
+/* 4 . the touch table: the home screen, then the three rooms */
+.bc-touch .home{max-width:1280px}
+
+/* 5 . the follow-on: the user guide whole, the words beside it */
+.bc-after .bc-pair{grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);align-items:start;margin-top:clamp(36px,6vh,64px)}
+.bc-after ul{list-style:none;margin:0;padding:0}
+.bc-after li{margin:0 0 18px;color:rgba(255,255,255,.86)}
+.bc-after li b{display:block;color:#fff}
+
+/* 6 . the result */
+.bc .fp-res .nums{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bc .fp-res .nums div:first-child{grid-column:auto}
+.bc .fp-res .src{margin-top:16px}
+
+/* 8 . credits, then the next project */
+.bc-end.fp-end{background:var(--ground);padding-top:clamp(40px,8vh,90px)}
+.bc-end .fp-cred{margin-top:0;grid-template-columns:repeat(4,minmax(0,1fr))}
+.bc-end .fp-next .nx-b{grid-row:2;grid-column:1}
+.bc-end .fp-next .nx-a{grid-row:2;grid-column:2}
+.bc-end .fp-next .nx-l{grid-row:3;grid-column:1/-1;color:var(--dim);font-family:Inter,system-ui,sans-serif}
+
+@media (max-width:760px){
+  .bc-open{grid-template-columns:1fr;grid-template-areas:"w1" "st" "w2";padding-top:calc(73px + 22px)}
+  .bc-open .st{width:100%;max-width:none;margin-top:22px}
+  .bc-open .cap{flex-direction:column;align-items:flex-start;gap:10px}   /* Play again under the caption, on the left: the site's scroll cue holds the bottom right */
+  .bc-pair,.bc-after .bc-pair{grid-template-columns:1fr}
+  .bc-teaser figure{width:100%;max-width:none}
+  .bc-grid,.bc-grid.three,.bc-launch .bc-grid{grid-template-columns:1fr;gap:28px}
+  .bc-end .fp-cred{grid-template-columns:1fr}
+  .bc .fp-res .nums{grid-template-columns:1fr}
+}
+</style>
+<noscript><style>@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{padding:6px 8px}.bc-open{padding-top:22px}}</style></noscript>
+<link rel="stylesheet" href="../../assets/bundle-case-14fcca7cd4.css"><!--perf21-css <link rel="stylesheet" href="../../assets/scale.css"><link rel="stylesheet" href="../../assets/fixes.css"><link rel="stylesheet" href="../../assets/scope.css"><link rel="stylesheet" href="../../assets/nav.css">--><link rel="preload" as="image" href="a/kv-1370.webp" imagesrcset="a/kv-800.webp 800w, a/kv-1370.webp 1370w" imagesizes="(max-width:760px) 100vw, 40vw" fetchpriority="high">
+</head>
+<body class="fp bc">
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr">
+  <a class="pill brand" href="../../index.html" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
+  <div class="pill">
+    <nav class="nav" id="nav" aria-label="Site"><a href="../../work/" aria-current="page">Work</a><a href="../../about/">Tony</a><a href="../../contact/">Contact</a><a href="../../assets/Antoni-Gerges-CV.pdf" class="navcv" target="_blank" rel="noopener">CV</a></nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+</header>
+<main id="main">
+<h1 class="sr-only">Abu Dhabi International Building Codes: the launch campaign, Abu Dhabi, 2010–11</h1>
+
+<!-- 0 · the opening: the main visual (01-WORK/024, 1370 x 1927) whole, under the kinetic move (the eight code names stacking into the
+     building in the artwork's own columns and colours, then a hard cut to the artwork); the words beside it (under it on a phone) -->
+<section class="bc-open" aria-labelledby="s0">
+  <div class="w1">
+    <p class="lab">Abu Dhabi International Building Codes · 2010–11</p>
+    <h2 id="s0">Eight codes, <b>one building.</b></h2>
+  </div>
+  <figure class="st">
+    <div class="bc-stage"><img src="a/kv-1370.webp" srcset="a/kv-800.webp 800w, a/kv-1370.webp 1370w" sizes="(max-width:760px) 100vw, 40vw" width="1370" height="1927" fetchpriority="high" decoding="async" alt="The main visual: the names of eight building codes, fuel gas, fire, sewage, maintenance, plumbing, energy, mechanical and building, stacked as giant coloured letters into one building on a city street, cranes at both sides, a red billboard on the roof reading The International Building Codes, under a blue sky; above, the line International building codes, visit our booth at ADNEC, 17 to 20 January 2011."><canvas aria-hidden="true"></canvas></div>
+    <figcaption class="cap"><span>The main visual · January 2011</span><button class="bc-again" type="button" hidden>Play again</button></figcaption>
+  </figure>
+  <div class="w2">
+    <p class="txt">From 1 January 2011, Abu Dhabi implemented international regulations and standards for its construction industry. The launch campaign gave the rules a picture: the names of the codes, stacked into a building.</p>
+    <p class="txt">For the Department of Municipal Affairs, Abu Dhabi (today the Department of Municipalities and Transport), with the municipalities of Abu Dhabi City, Al Ain City and the Western Region. Delivered by AntBrush, from the idea to the launch.</p>
+  </div>
+</section>
+
+<!-- 1 · the teaser: 01-WORK/002, the English teaser, whole (the Arabic teaser and the revealer are not shown) -->
+<section class="bc-s bc-teaser" aria-labelledby="s1">
+  <div class="bc-pair">
+    <div>
+      <h2 id="s1">Counting down to <b>01|01|2011.</b></h2>
+      <p class="lead">Before the launch, a teaser counted down to 01|01|2011. The tower’s floors are the code books, one colour for each code.</p>
+    </div>
+    <figure><a class="pic" href="a/teaser-935.webp"><img src="a/teaser-935.webp" srcset="a/teaser-600.webp 600w, a/teaser-935.webp 935w" sizes="(max-width:760px) 100vw, 34vw" width="935" height="1559" loading="lazy" decoding="async" alt="The teaser in English: a glass tower whose lower floors are coloured code books, beside a red panel; the counter reads 02 days, then Towards Sustainable Development, 01 01 2011, Abu Dhabi implements international regulations and standards for the construction industry; www.dma.abudhabi.ae on a red band at the foot."></a><figcaption>The teaser, two days out: “02 DAYS” to 01|01|2011</figcaption></figure>
+  </div>
+</section>
+
+<!-- 2 · the launch: the 2011 pavilion as built (the 2013 deck's native 800 x 474 photographs, pp. 29-30) and the code books in their
+     glass case (2014-wfes/01-WORK/029, 600 x 420), each at its own size at most -->
+<section class="bc-s bc-launch" aria-labelledby="s2">
+  <h2 id="s2">Launched at <b>the summit.</b></h2>
+  <p class="lead">The codes went public at the World Future Energy Summit, Abu Dhabi, 17 to 20 January 2011, on the Department’s pavilion in the ADNEC Atrium: green glass, touch kiosks, and the new code books in a glass case. And a hologram presentation of the codes at the 2011 summit, quoted and invoiced.</p>
+  <div class="bc-grid">
+    <figure><img class="own" src="a/stand-29-800.webp" width="800" height="474" style="max-width:800px" loading="lazy" decoding="async" alt="The 2011 pavilion as built: white floor, green glass panes on slanted white frames, wooden touch kiosks on white stands, a lit glass case at the right."><figcaption>The pavilion as built · ADNEC, January 2011</figcaption></figure>
+    <figure><img class="own" src="a/stand-30-800.webp" width="800" height="474" style="max-width:800px" loading="lazy" decoding="async" alt="The 2011 pavilion from another side: a glass box beside a tall panel with a tree drawn as a fingerprint, green glass behind it, kiosks on the white floor."><figcaption>The pavilion, its glass and kiosks</figcaption></figure>
+    <figure><img class="own" src="a/vitrine-600.webp" width="600" height="420" style="max-width:600px" loading="lazy" decoding="async" alt="A glass case on the 2011 pavilion holding the new code books, standing and open, under the department’s sign, green glass panes beside it."><figcaption>The new code books, in a glass case</figcaption></figure>
+  </div>
+  <p class="lead">The photographs survive at 800 and 600 pixels wide, so they are shown no larger.</p>
+  <p class="go"><a href="../wfes/">The pavilion, edition by edition: World Future Energy Summit <span aria-hidden="true">→</span></a></p>
+</section>
+
+<!-- 3 · the system: 01-WORK/005-007 (booklet, folder, tri-fold) and 008-009 (the website), mock-ups as presented -->
+<section class="bc-s bc-system" aria-labelledby="s3">
+  <h2 id="s3">One building, <b>every surface.</b></h2>
+  <p class="lead">The same building runs through print and screen: the user booklet, the folder, the tri-fold brochure, and the website of the Higher Committee of Abu Dhabi Building Codes.</p>
+  <div class="bc-grid">
+    <figure><a class="pic" href="a/booklet-2400.webp"><img src="a/booklet-2400.webp" srcset="a/booklet-1200.webp 1200w, a/booklet-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1448" loading="lazy" decoding="async" alt="The user booklet, mocked up lying open: the code-book tower and a crane lifting a coloured code into place over a city, the title User Guide, The International Building Codes in the Emirate of Abu Dhabi."></a><figcaption>The user booklet · as presented</figcaption></figure>
+    <figure><a class="pic" href="a/folder-2400.webp"><img src="a/folder-2400.webp" srcset="a/folder-1200.webp 1200w, a/folder-2400.webp 2400w" sizes="(max-width:760px) 100vw, 46vw" width="2400" height="1448" loading="lazy" decoding="async" alt="The folder, mocked up: a white cover with the department’s lockup and a large grey line drawing of interlocking petals, an orange line along its edge."></a><figcaption>The folder · as presented</figcaption></figure>
+    <figure class="span"><a class="pic" href="a/trifold-2000.webp"><img src="a/trifold-2000.webp" srcset="a/trifold-1000.webp 1000w, a/trifold-2000.webp 2000w" sizes="(max-width:760px) 100vw, 64vw" width="2000" height="1413" loading="lazy" decoding="async" alt="The tri-fold brochure, mocked up standing open: the code-book tower on its outer panels, the inner panels explaining the codes in English, a red band along the foot."></a><figcaption>The tri-fold brochure · as presented</figcaption></figure>
+    <figure><a class="pic" href="a/web-home-1801.webp"><img src="a/web-home-1801.webp" srcset="a/web-home-900.webp 900w, a/web-home-1801.webp 1801w" sizes="(max-width:760px) 100vw, 46vw" width="1801" height="1167" loading="lazy" decoding="async" alt="The website on a desktop monitor: Higher Committee of Abu Dhabi Building Codes, the code-book tower and the crane in its banner, news and training below."></a><figcaption>The website, home</figcaption></figure>
+    <figure><a class="pic" href="a/web-inner-1801.webp"><img src="a/web-inner-1801.webp" srcset="a/web-inner-900.webp 900w, a/web-inner-1801.webp 1801w" sizes="(max-width:760px) 100vw, 46vw" width="1801" height="1167" loading="lazy" decoding="async" alt="The website’s inner page on a desktop monitor: the media centre, the teaser poster in the middle, quick links to the codes on the right."></a><figcaption>The website, inner page</figcaption></figure>
+  </div>
+  <p class="lead">The website: designed by AntBrush and presented this way; built by another company.</p>
+</section>
+
+<!-- 4 · the touch table: 01-WORK/010 (home) and 012-014 (three code rooms) -->
+<section class="bc-s bc-touch" aria-labelledby="s4">
+  <h2 id="s4">Touch a book, <b>open the code.</b></h2>
+  <p class="lead">A touch table: the code-book tower stands on the skyline, the books line the street, and a touch opens each code as a room. Fire: a sprinkler over a living room. Property maintenance: the pipes behind a bathroom wall. Energy conservation: daylight across a façade. By 2015, seven touch presentations were delivered, one for each code.</p>
+  <div class="bc-grid three">
+    <figure class="span home"><a class="pic" href="a/touch-home-1600.webp"><img src="a/touch-home-1600.webp" srcset="a/touch-home-800.webp 800w, a/touch-home-1600.webp 1600w" sizes="(max-width:760px) 100vw, 89vw" width="1600" height="900" loading="lazy" decoding="async" alt="The touch table’s home screen: a city skyline under clouds, the code-book tower at the right, a row of coloured code books along the street, the line click on the book to reveal the code."></a><figcaption>The home screen: “click on the book to reveal the code”</figcaption></figure>
+    <figure><a class="pic" href="a/touch-fire-1600.webp"><img src="a/touch-fire-1600.webp" srcset="a/touch-fire-800.webp 800w, a/touch-fire-1600.webp 1600w" sizes="(max-width:760px) 100vw, 31vw" width="1600" height="900" loading="lazy" decoding="async" alt="The Fire Code room: a sprinkler spraying over a living room with red sofas, the buttons Fire Protection System and Maintenance of Exits at the left."></a><figcaption>Fire Code</figcaption></figure>
+    <figure><a class="pic" href="a/touch-pmc-1600.webp"><img src="a/touch-pmc-1600.webp" srcset="a/touch-pmc-800.webp 800w, a/touch-pmc-1600.webp 1600w" sizes="(max-width:760px) 100vw, 31vw" width="1600" height="900" loading="lazy" decoding="async" alt="The Property Maintenance Code room: hot and cold pipes behind a tiled bathroom wall above a bathtub, the buttons Regular Maintenance and Hot and Cold Water at the left."></a><figcaption>Property Maintenance Code</figcaption></figure>
+    <figure><a class="pic" href="a/touch-energy-1600.webp"><img src="a/touch-energy-1600.webp" srcset="a/touch-energy-800.webp 800w, a/touch-energy-1600.webp 1600w" sizes="(max-width:760px) 100vw, 31vw" width="1600" height="900" loading="lazy" decoding="async" alt="The Energy Conservation Code room: sunlight arrows striking a glass tower over a green city block, the buttons glazing ratio, shading, natural daylight, mechanical right sizing and efficient lighting at the left."></a><figcaption>Energy Conservation Code</figcaption></figure>
+  </div>
+</section>
+
+<!-- 5 · the follow-on: the 2013 user guide in English (the 2013 code covers and the 2014 posters carry Arabic titles: described, not shown) -->
+<section class="bc-s bc-after" aria-labelledby="s5">
+  <h2 id="s5">The look <b>kept going.</b></h2>
+  <div class="bc-pair">
+    <ul>
+      <li><b>2013 · the codes in print</b>The 2013 edition of the codes: six books, ADIBC, ADIPMC, ADIECC, ADIPSDC, ADIFGC and ADIMC, one colour each, and a user guide in English.</li>
+      <li><b>2014 · a poster for each code</b>April 2014: one poster per code, signed by the Department and the three municipalities.</li>
+      <li><b>2015 · at the summit</b>January 2015: six codes artworks, seven touch presentations and seven films for the Department’s stand.</li>
+    </ul>
+    <figure><a class="pic" href="a/guide-1754.webp"><img src="a/guide-1754.webp" srcset="a/guide-900.webp 900w, a/guide-1754.webp 1754w" sizes="(max-width:760px) 100vw, 52vw" width="1754" height="1241" loading="lazy" decoding="async" alt="Two cover options for the 2013 User Guide for the International Building Code in the Emirate of Abu Dhabi, one purple and one red, each over a white 3D model of a tower built from QR-code blocks standing on drawings."></a><figcaption>The 2013 user guide, two cover options · November 2013</figcaption></figure>
+  </div>
+</section>
+
+<!-- 6 · the result -->
+<section class="fp-res" aria-label="The result">
+  <div class="hd"><h2>The result.</h2><p class="fp-result">The launch look became the codes’ house style, 2013 to 2015.</p></div>
+  <div class="nums">
+    <div><b>8</b><span>codes launched, January 2011</span></div>
+    <div><b>6</b><span>codes in their 2013 edition, one colour each</span></div>
+    <div><b>7</b><span>touch presentations by 2015, one for each code</span></div>
+  </div>
+  <p class="src">Sources: the campaign’s advertisement “The 8 International Building Codes”; the 2013 cover artwork; the invoice of 27 January 2014, which lists the codes work; the delivery note of 24 January 2015 (six codes artworks, seven touch presentations, seven films).</p>
+</section>
+
+<!-- 7 · what we delivered (Tony, 21 Oct: "Delivered. And everything presented."; the website built by another company, shown as presented) -->
+<section class="fp-scope" data-fix="E-SCOPE-building-codes" aria-labelledby="scope-h">
+  <span class="fp-lab"><b>The scope</b></span>
+  <h2 id="scope-h">What we <b class="tw">delivered.</b></h2>
+  <p class="scope-lead">The launch campaign from the idea to the summit, then its look on every code that followed, to 2015.</p>
+  <div class="scope-grid">
+    <div class="scope-group"><p class="scope-k">Idea &amp; campaign</p><ul><li>The main visual: the codes as a building</li><li>The teaser and the revealer, in English and Arabic</li><li>Press advertisements</li></ul></div>
+    <div class="scope-group"><p class="scope-k">Print</p><ul><li>The user booklet, the folder and the tri-fold brochure</li><li>2013: the six codes’ covers and the user guide</li><li>2014: a poster for each code</li></ul></div>
+    <div class="scope-group"><p class="scope-k">Screens &amp; the launch</p><ul><li>The website, designed and presented; built by another company</li><li>The touch table and its code rooms; seven touch presentations by 2015</li><li>The launch on the Department’s pavilion, January 2011, with a hologram presentation of the codes</li></ul></div>
+  </div>
+  <p class="scope-src">From the campaign’s artwork and the 2012 AntBrush folio, the summit quotations and invoices of 2011 and 2014, and the delivery note of 2015.</p>
+</section>
+
+<!-- 8 · credits, then the next project (the ring: WFES -> Building Codes -> Exhibitions) -->
+<section class="fp-end bc-end" aria-label="Credits">
+  <div class="fp-cred">
+    <div><span class="fp-lab">Role</span>Antoni Gerges<br>Creative Director, Brand &amp; Experiential</div>
+    <div><span class="fp-lab">Made by</span>AntBrush, Abu Dhabi, a team he led as managing director and creative director: the idea, 3D and graphics, print, screens and the launch.</div>
+    <div><span class="fp-lab">For</span>The Higher Committee of Abu Dhabi Building Codes: the Department of Municipal Affairs, Abu Dhabi (today the Department of Municipalities and Transport), with Abu Dhabi City, Al Ain City and Western Region (today Al Dhafra Region) municipalities.</div>
+    <div><span class="fp-lab">Credits</span>The website: designed by AntBrush, presented this way, built by another company. Photographs of the 2011 pavilion: AntBrush’s records, at the size they survive.</div>
+  </div>
+  <a class="fp-next" href="../spaces/"><span class="fp-lab">Next project</span><b class="nx-b">Exhibitions</b><span class="nx-a" aria-hidden="true">→</span><span class="nx-l">Twenty-two shows, built.</span></a>
+</section>
+</main>
+
+<footer class="foot"><div class="wrap row">
+  <p style="margin:0">Antoni Gerges · Creative Director, Brand &amp; Experiential · <a href="mailto:antoni@antbrush.com">antoni@antbrush.com</a></p>
+  <nav aria-label="Footer"><a href="../../work/">Work</a><a href="../../about/">Tony</a><a href="../../contact/">Contact</a></nav>
+</div></footer>
+<script>
+(function () {
+  var st = document.querySelector('.bc-stage'), cv = st && st.querySelector('canvas'), again = document.querySelector('.bc-again');
+  var S = window.__bc = { state: 'idle', frames: 0, letters: 0, total: 0, runs: 0 };
+  if (!st || !cv || !cv.getContext) { S.state = 'off'; return; }
+  var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // the eight columns, left to right as the main visual stacks them: colour, relative width (a column of letter pairs is wider), the
+  // column's top below the roof line (fraction of the building's height, from the artwork), the rows top to bottom
+  var COLS = [
+    ['#D4B85E', 1.00, .09, ['G', 'A', 'S', '&', 'F', 'U', 'E', 'L']],
+    ['#C64B5C', 1.15, .04, ['F', 'I', 'R', 'E']],
+    ['#6FB1B4', 1.00, .05, ['S', 'E', 'W', 'A', 'G', 'E']],
+    ['#A584B4', 1.70, .05, ['MA', 'IN', 'TE', 'NA', 'NC', 'E']],
+    ['#93B4B6', 1.00, 0, ['P', 'L', 'U', 'M', 'B', 'I', 'N', 'G']],
+    ['#DEA474', 1.00, 0, ['E', 'N', 'E', 'R', 'G', 'Y']],
+    ['#B07CB0', 1.70, .06, ['M', 'EC', 'HA', 'NI', 'CA', 'L']],
+    ['#7F8FC6', 1.00, .07, ['B', 'U', 'I', 'L', 'D', 'I', 'N', 'G']]
+  ];
+  // the building in the artwork (01-WORK/024, 1370 x 1927): x .266 to .832, roof .524, street .8225; its billboard x .322 to .648, y .420 to .483
+  var ART = { x0: .266, x1: .832, top: .524, g: .8225 }, ORDER = [3, 0, 5, 1, 6, 2, 7, 4], RED = '#C8473F';
+  var T_ROW = 150, T_COL = 55, T_FALL = 460, T_SIGN = 420, T_HOLD = 450, T_FIT = 520;
+  var F = '"Jost", system-ui, sans-serif';
+  var ctx = cv.getContext('2d'), W = 0, H = 0, dpr = 1, L = [], B = {}, SG = {}, M = {}, t0 = 0, raf = 0, signAt = 0, fitAt = 0, end = 0;
+  function shade(hex, k) { var n = parseInt(hex.slice(1), 16); return 'rgb(' + Math.round((n >> 16) * k) + ',' + Math.round((n >> 8 & 255) * k) + ',' + Math.round((n & 255) * k) + ')'; }
+  function layout() {
+    var r = st.getBoundingClientRect(); dpr = Math.min(2, window.devicePixelRatio || 1);
+    W = Math.max(1, Math.round(r.width * dpr)); H = Math.max(1, Math.round(r.height * dpr)); cv.width = W; cv.height = H;
+    // built big first: the same building, the width of the stage, standing on a street at .86; the artwork's proportions
+    var aw = (ART.x1 - ART.x0) * W, ah = (ART.g - ART.top) * H;
+    B = { x0: .06 * W, x1: .94 * W, g: .86 * H }; B.h = (B.x1 - B.x0) * ah / aw; B.top = B.g - B.h;
+    // then fitted into the artwork's own building: one scale, the street on its street, centred on it
+    M.s = Math.min(aw / (B.x1 - B.x0), ah / B.h); M.tx = (ART.x0 * W + aw / 2) - ((B.x0 + B.x1) / 2) * M.s; M.ty = ART.g * H - B.g * M.s;
+    var sum = 0; COLS.forEach(function (c) { sum += c[1]; });
+    L = []; var last = 0, x = B.x0;
+    COLS.forEach(function (c, ci) {
+      var cw = (B.x1 - B.x0) * c[1] / sum, y0 = B.top + c[2] * B.h, rows = c[3], ch = (B.g - y0) / rows.length, fs = ch / .74;
+      ctx.font = '700 100px ' + F;
+      rows.forEach(function (txt) { fs = Math.min(fs, cw * .94 / (ctx.measureText(txt).width / 100)); });   // one size per column
+      rows.forEach(function (txt, ri) {
+        var up = rows.length - 1 - ri, start = 140 + up * T_ROW + ORDER.indexOf(ci) * T_COL;
+        L.push({ t: txt, c: c[0], s: shade(c[0], .56), x: x + cw / 2, y: y0 + (ri + 1) * ch, ch: ch, fs: fs, at: start });
+        last = Math.max(last, start + T_FALL);
+      });
+      x += cw;
+    });
+    var bw = B.x1 - B.x0; SG = { x0: B.x0 + .099 * bw, x1: B.x0 + .675 * bw, h: .21 * B.h }; SG.y = B.top - .35 * B.h;
+    S.total = L.length; signAt = last + 80; fitAt = signAt + T_SIGN + T_HOLD; end = fitAt + T_FIT + 120;
+  }
+  function fall(p) { return p * p * p; }
+  function inout(p) { return p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2; }
+  function draw(now) {
+    var t = now - t0, landed = 0; S.frames++;
+    ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.fillStyle = '#0B0C10'; ctx.fillRect(0, 0, W, H);
+    var e = inout(Math.max(0, Math.min(1, (t - fitAt) / T_FIT))), k = 1 + (M.s - 1) * e;
+    ctx.setTransform(k, 0, 0, k, M.tx * e, M.ty * e);
+    ctx.fillStyle = 'rgba(247,245,241,.55)'; ctx.fillRect(B.x0 - .04 * W, B.g + 2 * dpr, (B.x1 - B.x0) + .08 * W, Math.max(1, dpr / k));   // the street
+    ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+    for (var i = 0; i < L.length; i++) {
+      var a = L[i], p = (t - a.at) / T_FALL, y; if (p <= 0) continue;
+      if (p >= 1) { landed++; var q = Math.min(1, (t - a.at - T_FALL) / 140); y = a.y + Math.sin(q * Math.PI) * a.ch * .06; }
+      else y = -a.ch - B.top + (a.y + a.ch + B.top) * fall(p);
+      ctx.font = '700 ' + a.fs.toFixed(1) + 'px ' + F;
+      var base = y - (a.ch - a.fs * .70) / 2, d = Math.max(2, a.fs * .07);
+      ctx.fillStyle = a.s; for (var j = d; j > 0; j -= dpr) ctx.fillText(a.t, a.x + j, base - j * .55);   // the letter's depth
+      ctx.fillStyle = a.c; ctx.fillText(a.t, a.x, base);
+    }
+    S.letters = landed;
+    var ps = Math.min(1, (t - signAt) / T_SIGN);
+    if (ps > 0) {   // the billboard lands on the roof, on its two posts
+      var sw = SG.x1 - SG.x0, sy = -SG.h - B.top + (SG.y + SG.h + B.top) * fall(ps), pw = Math.max(2, .006 * W);
+      ctx.fillStyle = '#5A5F66'; ctx.fillRect(SG.x0 + .18 * sw, sy + SG.h, pw, Math.max(0, B.top - sy - SG.h)); ctx.fillRect(SG.x1 - .18 * sw - pw, sy + SG.h, pw, Math.max(0, B.top - sy - SG.h));
+      ctx.fillStyle = RED; ctx.fillRect(SG.x0, sy, sw, SG.h);
+      var fs2 = SG.h * .34; ctx.font = '700 ' + fs2.toFixed(1) + 'px ' + F; ctx.fillStyle = '#fff';
+      var mw2 = ctx.measureText('THE INTERNATIONAL').width; if (mw2 > sw * .86) { fs2 *= sw * .86 / mw2; ctx.font = '700 ' + fs2.toFixed(1) + 'px ' + F; }
+      ctx.fillText('THE INTERNATIONAL', (SG.x0 + SG.x1) / 2, sy + SG.h * .44); ctx.fillText('BUILDING CODES', (SG.x0 + SG.x1) / 2, sy + SG.h * .86);
+    }
+    if (t < end) raf = requestAnimationFrame(draw); else finish();
+  }
+  function finish() { st.classList.remove('live'); S.state = 'done'; if (again) again.hidden = false; }   // the hard cut to the artwork
+  function play() { cancelAnimationFrame(raf); layout(); st.classList.add('live'); S.state = 'live'; S.runs++; if (again) again.hidden = true; t0 = performance.now(); raf = requestAnimationFrame(draw); }
+  window.addEventListener('resize', function () { if (S.state === 'live') layout(); });
+  if (again) again.addEventListener('click', play);
+  if (rm) { S.state = 'reduced'; if (again) again.hidden = false; return; }
+  var go = function () { play(); };
+  if (document.fonts && document.fonts.load) document.fonts.load('700 100px "Jost"').then(go, go); else go();
+})();
+</script>
+<script>
+/* The page's own small script: the header menu (as on the other project pages) and the header out of the way while reading down. */
+(function () {
+  var D = document, W = window, phone = function () { return W.innerWidth <= 760; };
+  var hdr = D.querySelector('.hdr'), mb = D.querySelector('.menu-btn'), ly0 = 0, acc = 0;
+  function menu(o) { hdr.classList.toggle('open', o); mb.setAttribute('aria-expanded', o ? 'true' : 'false'); mb.textContent = o ? 'Close' : 'Menu';
+    [].forEach.call(D.querySelectorAll('main, footer, .skip'), function (e) { o ? e.setAttribute('inert', '') : e.removeAttribute('inert'); });
+    D.documentElement.style.overflow = o ? 'hidden' : ''; }
+  function items() { return [].filter.call(hdr.querySelectorAll('a[href], button'), function (e) { return e.getClientRects().length > 0; }); }
+  if (hdr && mb) {
+  mb.addEventListener('click', function () { menu(!hdr.classList.contains('open')); });
+  D.addEventListener('keydown', function (e) { if (!hdr.classList.contains('open')) return;
+    if (e.key === 'Escape') { menu(false); mb.focus(); return; }
+    if (e.key === 'Tab') { var f = items(), i = f.indexOf(D.activeElement); e.preventDefault(); f[(i < 0 ? 0 : i + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus(); } });
+  W.addEventListener('resize', function () { if (!phone() && hdr.classList.contains('open')) menu(false); });
+  [].forEach.call(hdr.querySelectorAll('.nav a'), function (l) { l.addEventListener('click', function () { menu(false); }); });
+  W.addEventListener('scroll', function () { var y = W.scrollY, d = y - ly0; ly0 = y; if (y < 80) { hdr.classList.remove('hide'); acc = 0; return; }
+    acc = (d > 0) === (acc > 0) ? acc + d : d; if (acc > 24) hdr.classList.add('hide'); else if (acc < -12) hdr.classList.remove('hide'); }, { passive: true });
+  }
+})();
+</script>
+<script src="../../assets/nav.js" defer></script>
+<link rel="stylesheet" href="../../assets/viewer.css"><script defer src="../../assets/viewer.js"></script>
+</body>
+</html>
