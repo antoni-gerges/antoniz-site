@@ -108,7 +108,7 @@ export function createBeats(section) {
     set(p) {
       for (const b of beats) {
         const o = clamp(Math.min(b.a > 0 ? (p - b.a) / 0.02 : 1, b.b < 1 ? (b.b - p) / 0.02 : 1));
-        b.el.style.opacity = o.toFixed(3);
+        b.el.style.opacity = (+(o) >= .5 ? 1 : 0)/*wa-cut*/;
         b.el.style.transform = `translateY(${(14 * (1 - o)).toFixed(1)}px)`;
         b.el.classList.toggle("on", o > 0.5);
       }

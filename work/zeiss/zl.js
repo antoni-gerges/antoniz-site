@@ -33,7 +33,7 @@
     var b = set(a1, cx, cy, w, 1 - FP.ease(FP.seg(p, .58, .72)));
     a1.style.opacity = inn > 0 ? 1 : 0;
     ring.style.transform = 'translate(' + b[0].toFixed(1) + 'px,' + b[1].toFixed(1) + 'px)'; ring.style.width = b[2].toFixed(1) + 'px';
-    ring.style.opacity = (inn * (1 - FP.seg(p, .5, .6))).toFixed(3);
+    ring.style.opacity = (+((inn * (1 - FP.seg(p, .5, .6)))) >= .5 ? 1 : 0)/*wa-cut*/;
     /* the reminder arrives in the same frame, the same way */
     var q = FP.ease(FP.seg(p, .82, .97)); a2.style.opacity = q > 0 ? 1 : 0; set(a2, .5, .5, q * 3.6);
     var n = p < .3 ? 0 : p < .88 ? 1 : 2; if (n !== cur) { cur = n; now.textContent = lab[n]; }

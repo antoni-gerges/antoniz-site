@@ -7,7 +7,7 @@
   FP.on(function (H) {
     var r = s.getBoundingClientRect(); if (r.bottom < -H || r.top > 2 * H) return;
     var p = FP.clamp(-r.top / Math.max(1, r.height - H), 0, 1);
-    qs.forEach(function (q, i) { var k = FP.rm ? 1 : FP.ease(FP.seg(p, .1 + i * .3, .32 + i * .3)); q.style.opacity = k.toFixed(3); q.style.transform = 'translateY(' + ((1 - k) * 14).toFixed(1) + 'px)'; });
+    qs.forEach(function (q, i) { var k = FP.rm ? 1 : FP.ease(FP.seg(p, .1 + i * .3, .32 + i * .3)); q.style.opacity = (+(k) >= .5 ? 1 : 0)/*wa-cut*/; q.style.transform = 'translateY(' + ((1 - k) * 14).toFixed(1) + 'px)'; });
   });
   FP.ask();
 })();

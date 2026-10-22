@@ -192,7 +192,7 @@ function renderVote() {
   const pad = 4 / (P.S + 8), full = P.vs / (1 - 2 * pad);
   chosen.style.width = chosen.style.height = `${full.toFixed(1)}px`;
   chosen.style.transform = `translate(${(x0 - pad * full).toFixed(1)}px, ${(y0 - pad * full).toFixed(1)}px)`;
-  chosen.style.opacity = (seg(b.q, 0.76, 0.9) * b.o).toFixed(3);
+  chosen.style.opacity = (+((seg(b.q, 0.76, 0.9) * b.o)) >= .5 ? 1 : 0)/*wa-cut*/;
 }
 
 // II · three shapes, one open corner, and the name that completes it
@@ -203,22 +203,22 @@ function renderMark() {
   if (!on) return;
   const toLock = seg(b.q, 0.56, 0.72);
   const k = lerp(P.k1, P.kL, toLock), x = lerp(P.C[0], P.cL[0], toLock), y = lerp(P.C[1], P.cL[1], toLock);
-  hero.style.opacity = b.o.toFixed(3);
+  hero.style.opacity = (+(b.o) >= .5 ? 1 : 0)/*wa-cut*/;
   hero.style.transform = `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, 0) scale(${(k / K0).toFixed(5)})`;
   // a quarter turn at a time, clockwise, about the centre: upper left, upper right, lower right
   const tUR = seg(b.q, 0.08, 0.2), tLR = seg(b.q, 0.2, 0.32), tOpen = seg(b.q, 0.32, 0.44);
   parts["piece-ur"].g.setAttribute("transform", `rotate(${(-90 * (1 - tUR)).toFixed(3)} ${cx} ${cy})`);
-  parts["piece-ur"].svg.style.opacity = seg(b.q, 0.08, 0.12).toFixed(3);
+  parts["piece-ur"].svg.style.opacity = (+(seg(b.q, 0.08, 0.12)) >= .5 ? 1 : 0)/*wa-cut*/;
   parts["piece-lr"].g.setAttribute("transform", `rotate(${(-90 * (1 - tLR)).toFixed(3)} ${cx} ${cy})`);
-  parts["piece-lr"].svg.style.opacity = seg(b.q, 0.2, 0.24).toFixed(3);
+  parts["piece-lr"].svg.style.opacity = (+(seg(b.q, 0.2, 0.24)) >= .5 ? 1 : 0)/*wa-cut*/;
   // the turn goes on into the fourth quarter, but only as an outline: it stays open
   parts.open.g.setAttribute("transform", `rotate(${(180 + 90 * tOpen).toFixed(3)} ${cx} ${cy})`);
-  parts.open.svg.style.opacity = (seg(b.q, 0.32, 0.36) * (1 - seg(b.q, 0.6, 0.68))).toFixed(3);
+  parts.open.svg.style.opacity = (+((seg(b.q, 0.32, 0.36) * (1 - seg(b.q, 0.6, 0.68)))) >= .5 ? 1 : 0)/*wa-cut*/;
   // the name slides into the open quarter
   const tAr = seg(b.q, 0.66, 0.78), tEn = seg(b.q, 0.72, 0.84);
   // the Arabic name is not shown (ruling of 30 Sep 2026): the English name completes the mark alone
   parts["name-en"].g.setAttribute("transform", `translate(${(-26 * (1 - tEn)).toFixed(2)} 0)`);
-  parts["name-en"].svg.style.opacity = tEn.toFixed(3);
+  parts["name-en"].svg.style.opacity = (+(tEn) >= .5 ? 1 : 0)/*wa-cut*/;
 }
 
 // IV · the manual: the page in front lies flat and whole; those behind stand turned; a page that has been read leaves
@@ -229,7 +229,7 @@ function renderBook() {
   pages.forEach((el, i) => {
     const t = i - f, back = Math.max(t, 0), gone = Math.max(-t, 0);
     const o = clamp(1 - gone * 3.2) * clamp(5.4 - back) * inn;
-    el.style.opacity = o.toFixed(3);
+    el.style.opacity = (+(o) >= .5 ? 1 : 0)/*wa-cut*/;
     el.style.zIndex = String(100 - i);
     el.style.display = o > 0.004 ? "" : "none";                      // never its own visibility: a visible child would show through a hidden beat
     el.style.transform = `translate3d(${(Bk.x0 + back * Bk.dx - gone * Bk.pw * 0.5).toFixed(1)}px, ${(Bk.y0 + back * Bk.dy).toFixed(1)}px, ${(-back * Bk.dz).toFixed(1)}px) rotateY(${(Bk.ry * clamp(back)).toFixed(2)}deg)`;

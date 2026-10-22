@@ -21,11 +21,8 @@
   function desc(e) { return e.tagName.toLowerCase() + (e.className && typeof e.className === 'string' ? '.' + e.className.trim().split(/\s+/).join('.') : '') + (e.id ? '#' + e.id : ''); }
 
   /* ---------------------------------------------------------------- 1 · THE MENU */
-  var WORK = [['Dubai Health Authority', 'work/dha/'], ['ZEISS Vision Care', 'work/zeiss/'], ['Liwa International Festival', 'work/liwa/'],
-    ['AIAASC', 'work/aiaasc/'], ['Why Not! Mazzika', 'work/mazzika/'], ['National Bullying Prevention Week', 'work/anti-bullying/'],
-    ['Al Forsan', 'work/al-forsan/'], ['Cityscape Abu Dhabi', 'work/cityscape/'], ['World Future Energy Summit', 'work/wfes/'], ['Abu Dhabi International Building Codes', 'work/building-codes/'], ['The Big Grill', 'work/big-grill/'],
-    ['Innovation Month', 'work/al-ain/'], ['MAF', 'work/pyramids-2021/'], ['Capacity Middle East', 'work/capacity/'],
-    ['Live shows', 'work/live-shows/'], ['Akshaya × Vikas Khanna', 'work/akshaya/'], ['Children of Light Academy', 'work/children-of-light-academy/'], ['Exhibitions', 'work/spaces/']];
+  /* wavea22 E-A4: the Home order, with the five live shows */
+  var WORK = [['Dubai Health Authority', 'work/dha/'], ['ZEISS', 'work/zeiss/'], ['Liwa', 'work/liwa/'], ['AIAASC', 'work/aiaasc/'], ['Why Not! Mazzika', 'work/mazzika/'], ['National Bullying Prevention Week', 'work/anti-bullying/'], ['Al Forsan', 'work/al-forsan/'], ['Exhibitions', 'work/spaces/'], ['Cityscape Abu Dhabi', 'work/cityscape/'], ['World Future Energy Summit', 'work/wfes/'], ['Abu Dhabi International Building Codes', 'work/building-codes/'], ['The Big Grill', 'work/big-grill/'], ['Innovation Month', 'work/al-ain/'], ['MAF', 'work/pyramids-2021/'], ['Capacity Middle East', 'work/capacity/'], ['Live shows', 'work/live-shows/'], ['Mohamed Mounir Live in Dubai', 'work/mounir/'], ['Amr Diab Live in Dubai', 'work/amr-diab/'], ['Angham Live in Dubai', 'work/angham/'], ['Magida El Roumi Live in Dubai', 'work/magida-el-roumi/'], ['Lilly Singh Live in Dubai', 'work/lilly-singh/'], ['Hakawi Sharqia', 'work/hakawi/'], ['Akshaya × Vikas Khanna', 'work/akshaya/'], ['Children of Light Academy', 'work/children-of-light-academy/']];
   var ARCHIVE = [['All work', 'work/'], ['Ideas', 'work/archive/#ideas'], ['Designed, then built', 'work/archive/#spaces'], ['Identities', 'work/archive/#identities'],
     ['Campaigns', 'work/archive/#campaigns'], ['Live', 'work/archive/#live'], ['Film', 'work/#film']];
   var TONY = [['About', 'about/'], ['What I stand for', 'about/#what-i-stand-for'], ['How I work', 'about/#how-i-work'], ['The agency', 'about/#studio'],

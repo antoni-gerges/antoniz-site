@@ -10,12 +10,14 @@
 
   /* ---- videos: late source, phone rendition, play on screen ---- */
   function arm(v) {
-    if (v._armed) return; v._armed = 1;
+    if (v._armed) return;
+    if (phone() && D.readyState !== 'complete') { if (!v._waL) { v._waL = 1; var pp = v.dataset.posterP || v.dataset.poster; if (pp && !v.getAttribute('poster')) v.poster = pp; W.addEventListener('load', function () { arm(v); var r = v.getBoundingClientRect(); if (v._waP && r.bottom > 0 && r.top < W.innerHeight) play(v); }, { once: true }); } return; }   /* wavea22 E-A11: on a phone, films after the load event */
+    v._armed = 1;
     var s = (phone() && v.dataset.srcP) || v.dataset.src; if (!s) return;
     var p = (phone() && v.dataset.posterP) || v.dataset.poster; if (p) v.poster = p;
     v.muted = true; v.playsInline = true; v.loop = !v.hasAttribute('data-once'); v.src = s; v.load();
   }
-  function play(v) { if (FP.userPaused) return; arm(v); if (FP.hold) { v._want = 1; return; } if (RM && !v._asked) return; if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } }
+  function play(v) { if (FP.userPaused) return; arm(v); if (!v._armed && v._waL) { v._waP = 1; return; } if (FP.hold) { v._want = 1; return; } if (RM && !v._asked) return; if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } }
   function stop(v) { if (!v.paused) v.pause(); }
   FP.play = play; FP.stop = stop; FP.arm = arm;
   var NC = navigator.connection, SLOW = !!(NC && (NC.saveData || (NC.effectiveType && NC.effectiveType !== '4g')));   /* perf21 F3: a slow or save-data line looks half a screen ahead */
@@ -47,7 +49,7 @@
       var p = clamp(-r.top / r.height, 0, 1);
       if (h.classList.contains('band') || RM || (h.classList.contains('whole') && phone())) return;
       v.style.transform = 'translate3d(0,' + (p * 14) + '%,0) scale(' + (1 + p * .06) + ')';
-      h.querySelector('.in').style.opacity = (1 - seg(p, .25, .7)).toFixed(3);
+      h.querySelector('.in').style.opacity = (+((1 - seg(p, .25, .7))) >= .5 ? 1 : 0)/*wa-cut*/;
     });
   });
 
@@ -182,7 +184,7 @@
   const label=()=>{button.textContent=fp.userPaused?'Play films':'Pause films';button.setAttribute('aria-label',fp.userPaused?'Play background films':'Pause background films')};label();
   button.addEventListener('click',()=>{fp.userPaused=!fp.userPaused;if(fp.userPaused)window.__fp3d?.vids.forEach(v=>v.pause());videos.forEach(v=>{if(fp.userPaused)v.pause();else{const r=v.getBoundingClientRect();v._asked=true;if(r.bottom>0&&r.top<innerHeight)fp.play(v)}});label()});nav?.append(button);
  }
- const order=[['dha','Dubai Health Authority'],['zeiss','ZEISS Vision Care'],['liwa','Liwa International Festival'],['aiaasc','AIAASC'],['children-of-light-academy','Children of Light Academy'],['mazzika','Why Not! Mazzika'],['akshaya','Akshaya × Vikas Khanna'],['live-shows','Live shows'],['mounir','Mohamed Mounir Live in Dubai'],['amr-diab','Amr Diab Live in Dubai'],['angham','Angham Live in Dubai'],['magida-el-roumi','Magida El Roumi Live in Dubai'],['lilly-singh','Lilly Singh Live in Dubai'],['hakawi','Hakawi Sharqia'],['anti-bullying','National Bullying Prevention Week'],['al-forsan','Al Forsan International Sports Resort'],['cityscape','Cityscape Abu Dhabi'],['wfes','World Future Energy Summit'],['building-codes','Abu Dhabi International Building Codes'],['spaces','Exhibitions'],['big-grill','The Big Grill'],['al-ain','Innovation Month, Al Ain'],['pyramids-2021','MAF Global Solutions'],['capacity','Capacity Middle East']];
+ const order=[['dha','Dubai Health Authority'],['zeiss','ZEISS Vision Care'],['liwa','Liwa International Festival'],['aiaasc','AIAASC'],['children-of-light-academy','Children of Light Academy'],['mazzika','Why Not! Mazzika'],['akshaya','Akshaya × Vikas Khanna'],['live-shows','Live shows'],['mounir','Mohamed Mounir Live in Dubai'],['amr-diab','Amr Diab Live in Dubai'],['angham','Angham Live in Dubai'],['magida-el-roumi','Magida El Roumi Live in Dubai'],['lilly-singh','Lilly Singh Live in Dubai'],['hakawi','Hakawi Sharqia'],['anti-bullying','National Bullying Prevention Week'],['al-forsan','Al Forsan International Sports Resort'],['cityscape','Cityscape Abu Dhabi'],['wfes','World Future Energy Summit'],['building-codes','Abu Dhabi International Building Codes'],['spaces','Exhibitions'],['big-grill','The Big Grill'],['al-ain','Innovation Month, Al Ain'],['pyramids-2021','MAF Global Solutions'],['capacity','Capacity Middle East']];/* wavea22 E-A4 ring */order.splice(0,order.length,...[["dha","Dubai Health Authority"],["zeiss","ZEISS"],["liwa","Liwa"],["aiaasc","AIAASC"],["mazzika","Why Not! Mazzika"],["anti-bullying","National Bullying Prevention Week"],["al-forsan","Al Forsan"],["spaces","Exhibitions"],["cityscape","Cityscape Abu Dhabi"],["wfes","World Future Energy Summit"],["building-codes","Abu Dhabi International Building Codes"],["big-grill","The Big Grill"],["al-ain","Innovation Month"],["pyramids-2021","MAF"],["capacity","Capacity Middle East"],["live-shows","Live shows"],["mounir","Mohamed Mounir Live in Dubai"],["amr-diab","Amr Diab Live in Dubai"],["angham","Angham Live in Dubai"],["magida-el-roumi","Magida El Roumi Live in Dubai"],["lilly-singh","Lilly Singh Live in Dubai"],["hakawi","Hakawi Sharqia"],["akshaya","Akshaya × Vikas Khanna"],["children-of-light-academy","Children of Light Academy"]]);
  const aliases={zeiss7:'zeiss',liwa2:'liwa',bullying:'anti-bullying',alain:'al-ain',alforsan:'al-forsan',biggrill:'big-grill'};let slug=location.pathname.split('/').filter(Boolean).at(-1);if(slug==='index.html')slug=location.pathname.split('/').filter(Boolean).at(-2);slug=aliases[slug]||slug;
  const n=order.findIndex(x=>x[0]===slug),next=document.querySelector('.fp-next');
  if(n>=0&&next){const dest=order[(n+1)%order.length];next.href='/work/'+dest[0]+'/';next.querySelector('.fp-lab').textContent='Next project';next.querySelector('b').textContent=dest[1];const all=document.createElement('a');all.className='case-all';all.href='/work/';all.textContent='View all work';next.after(all)}

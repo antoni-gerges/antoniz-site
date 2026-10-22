@@ -150,12 +150,12 @@ export function stage(sec, opt) {
     /* model, then its result as a whole-scene cut. The result is HELD through the camera's travel, until the next model and its caption are ready:
        no return to the old model, no empty floor. The caption stays with its result. */
     const cutEl = own && local > .44 && mediaReady(own) ? own : (prev && local < .06 && mediaReady(prev) ? prev : null);
-    setAct(P < start * .6 ? -1 : (prev && local < .06 ? i - 1 : i));
+    setAct(P < start ? -1 : /* wavea22 E-A8: the first caption cuts in as the intro leaves, so no screen between them is empty */ (prev && local < .06 ? i - 1 : i));
     bEls.forEach((e, n) => { if (!e) return; const live = e === cutEl || (n === i && local > .1); if (live === !!e._live) return; e._live = live; e.classList.toggle('on', live); const v = e.querySelector('video'); if (v) live ? FP.play(v) : FP.stop(v); });
     if (cutEl !== wasBe) { bEls.forEach(e => e && e.classList.toggle('cut', e === cutEl)); stick.classList.toggle('is-cut', !!cutEl); wasBe = cutEl; }
     const inspect = act === i && !cutEl;
-    if (intro) intro.style.opacity = (1 - FP.seg(P, .02, start * .9)).toFixed(3);
-    canvas.style.opacity = (.28 + .72 * FP.seg(P, .025, start)).toFixed(3);
+    if (intro) { intro.style.opacity = ''; intro.style.visibility = P < start ? '' : 'hidden'; } /* wavea22 E-A1: the intro stays until the stage's first stop, then a hard cut */
+    canvas.style.opacity = '1'; /* wavea22 E-A1: the canvas at full opacity, no ramp */
     ST.forEach((s, n) => { if (s.vid) vplay(s.vid, running && !FP.hold && !FP.userPaused && !FP.rm && Math.abs(n - (i + k)) < 1.2); });
     if (!FP.rm) for (let n = 0; n < frameFns.length; n++) frameFns[n](time, i, local);
     labels.forEach(l => { const on = l.i === i && inspect; l.d.el.classList.toggle('on', on); l.d.line.material.opacity += ((on ? .85 : 0) - l.d.line.material.opacity) * .12;

@@ -182,8 +182,8 @@ async function boot() {
         lock-up (and to its place on the screen) as the name writes on */
       const back = (PH ? .45 : .3) * (1 - E(seg(f, 0, .62))), m = E(nm); tv.set(0, CY, 0); S.cam.position.sub(tv).multiplyScalar((1 + back) * (RC + (1 - RC) * m)).add(tv);
       const v = S.cam.view; if (v && v.enabled) S.cam.setViewOffset(v.fullWidth, v.fullHeight, v.offsetX * m, OY0 * v.fullHeight + (v.offsetY - OY0 * v.fullHeight) * m, v.width, v.height); }
-    if (intro) intro.style.opacity = (seg(f, .96, 1.08) * (1 - seg(p, .004, .03))).toFixed(3);
-    if (veil) veil.style.opacity = (.35 + .65 * seg(p, .01, .05)).toFixed(3);
+    if (intro) intro.style.opacity = (+((seg(f, .96, 1.08) * (1 - seg(p, .004, .03)))) >= .5 ? 1 : 0)/*wa-cut*/;
+    if (veil) veil.style.opacity = (seg(p, .01, .05) >= .5 ? 1 : .35)/*wa-cut*/;
     turn(i === 3 ? seg(l, .1, .9) : i > 3 ? 1 : 0); props.visible = i !== 3;
     for (let k = 0; k < sway.length; k++) sway[k].o.rotation.x = Math.sin(now * 1.3 + sway[k].p) * .07;
   };

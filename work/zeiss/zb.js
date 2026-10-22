@@ -48,10 +48,10 @@
       var b = [(Sw - w) / 2, 34 + (bh - h) / 2, w, h], c = mix(a, b, t), k = c[2] / a[2];
       im6.style.transform = t > 0 ? 'translate(' + (c[0] - a[0]).toFixed(1) + 'px,' + (c[1] - a[1]).toFixed(1) + 'px) scale(' + k.toFixed(4) + ')' : '';
       put(br6, c, 12);
-      lead6.style.opacity = (1 - seg(p, .06, .3)).toFixed(3);
-      cap6.style.opacity = (1 - seg(t, 0, .25)).toFixed(3);
+      lead6.style.opacity = (+((1 - seg(p, .06, .3))) >= .5 ? 1 : 0)/*wa-cut*/;
+      cap6.style.opacity = (+((1 - seg(t, 0, .25))) >= .5 ? 1 : 0)/*wa-cut*/;
       end6.style.transform = 'translate(' + b[0].toFixed(1) + 'px,' + (b[1] + h + 14).toFixed(1) + 'px)';
-      end6.style.opacity = seg(t, .82, 1).toFixed(3);
+      end6.style.opacity = (+(seg(t, .82, 1)) >= .5 ? 1 : 0)/*wa-cut*/;
     });
   }
   FP.ask();
