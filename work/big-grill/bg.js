@@ -145,6 +145,19 @@ CAT = 'led';
   add(new T.Mesh(geo, [m, XSIDE])).position.set(0, 0, XZ + .02);
   add(box(L + .1, .08, .4, BODY, 0, y1 + .04, XZ + .02));                                        /* the frame on top of it */
   for (let i = 0; i < 9; i++) sprite(0x2f8cff, .16, 2.8, -L / 2 + L * i / 8, y1 - H / 2, XZ + .5); }
+/* WB-BG-ONE-STAGE (22 Oct): one braced band of the same LED: a bottom chord under the arms' feet and a post at each end, so the top
+   beam, the posts and the chord frame the X's as the lattice of one stage structure; two more X's over the joints carry the diagonals across (never letters) */
+{ const L = XS * 3 + XW * .5, H = XW * 1.1, y0 = XB, y1 = XB + XS + .03, PW = XW * .9;
+  const band = (x0, x1, ya, yb, k, z) => { const sh = new T.Shape(); sh.moveTo(x0, ya); sh.lineTo(x1, ya); sh.lineTo(x1, yb); sh.lineTo(x0, yb); sh.closePath();
+    const geo = new T.ExtrudeGeometry(sh, { depth: .16, bevelEnabled: false }), p = geo.attributes.position, uv = geo.attributes.uv, lw = Math.max(x1 - x0, yb - ya);
+    for (let i = 0; i < p.count; i++) uv.setXY(i, (x1 - x0 >= yb - ya ? p.getX(i) - x0 : p.getY(i) - ya) / 5.6, (x1 - x0 >= yb - ya ? p.getY(i) - ya : p.getX(i) - x0) / Math.min(x1 - x0, yb - ya));
+    const t = LEDS[k].clone(); t.wrapS = T.RepeatWrapping; t.needsUpdate = true;
+    const m = new T.MeshBasicMaterial({ map: t, toneMapped: false }); m.color.setScalar(.95); TOD.led.push({ m, k: .95 });
+    add(new T.Mesh(geo, [m, XSIDE])).position.set(0, 0, z); return lw; };
+  band(-L / 2, L / 2, y0, y0 + H, 5, XZ + .02);                                                   /* the bottom chord */
+  [-XS / 2, XS / 2].forEach((cx, i) => { bar(cx, 1, -.3, i * 2 + 6); bar(cx, -1, -.46, i * 2 + 7); });   /* two more X's over the joints: one lattice */
+  [-1.5, 1.5].forEach((f, i) => band(f * XS - PW / 2, f * XS + PW / 2, y0 + H, y1 - H, (i + 1) % LEDS.length, XZ + .03));   /* the two end posts */
+}
 /* the X's light, seen through the haze */
 [-XS, 0, XS].forEach(cx => { [[-.3, .3], [.3, .3], [0, .5], [-.3, .7], [.3, .7]].forEach(f => sprite(0x2f8cff, .18, 3.4, cx + f[0] * XS, XB + f[1] * XS, XZ + .5)); });
 sprite(0x2a74ff, .22, 22, 0, XB + XS * .5, XZ + 1.2);

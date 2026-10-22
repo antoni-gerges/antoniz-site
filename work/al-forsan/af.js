@@ -184,10 +184,10 @@ async function boot() {
   const s2 = station(92, Object.assign({}, none, PHN
     ? { c: [0, 3.3, 0], rx: 2.9, ry: 3.3, yaw: .22, pitch: .0, drift: .1, w: 3.4, keyK: .55, fxp: .8, fyp: .44, oxp: 0, oyp: .13, yawp: .22 }
     : { c: [0, 3.3, 0], rx: 2.9, ry: 3.3, yaw: .26, pitch: .0, drift: .12, w: 3.0, keyK: .55, fx: .56, fy: .74, ox: -.13, oy: .035 }));
-  const gIcon = [kit.ext(kit.shapes('arch'), .5, 12, .018), kit.ext(kit.shapes('dome'), .5, 12, .018), kit.ext(kit.shapes('dunes'), .05, 20), kit.ext(kit.shapes('rider'), .09, 4), kit.ext(kit.shapes('sub-names'), .1, 4)];
+  const gIcon = [kit.ext(kit.shapes('arch'), .5, 12, .018), kit.ext(kit.shapes('dome'), .5, 12, .018), kit.ext(kit.shapes('dunes'), .05, 20), kit.ext(kit.shapes('rider'), .09, 4), kit.ext(kit.shapes('land-name'), .1, 4), kit.ext(kit.shapes('land-sub'), .1, 4)];   /* WB-AF-CENTRES (22 Oct): the English names (land-name, land-sub), never the bilingual sub-names */
   const glow = (() => { const c = document.createElement('canvas'); c.width = c.height = 128; const x = c.getContext('2d'), gr = x.createRadialGradient(64, 64, 2, 64, 64, 64); gr.addColorStop(0, 'rgba(255,255,255,.9)'); gr.addColorStop(.5, 'rgba(255,255,255,.28)'); gr.addColorStop(1, 'rgba(255,255,255,0)'); x.fillStyle = gr; x.fillRect(0, 0, 128, 128); return new T.CanvasTexture(c); })();
   const cen = CENTRES.map((c, i) => { const g = new T.Group(); s2.g.add(g); const gi = g;   /* each logo turns about its own centre line */
-    gIcon.forEach((geo, n) => { const m = rig.add(gi, geo, n >= 3 ? M.ink : M.gold); m.position.z = [0, 0, .05, .14, .1][n]; });
+    gIcon.forEach((geo, n) => { const m = rig.add(gi, geo, n >= 3 ? M.ink : M.gold); m.position.z = [0, 0, .05, .14, .1, .1][n]; if (n >= 4) { m.position.x += -237 * K; m.position.y += -100 * K; } /* WB-AF-CENTRES */ });
     const ln = rig.add(gi, kit.ext(kit.shapes(c[0]), .1, 4), M.line(c[1])); ln.position.z = .1;
     const light = () => new T.MeshBasicMaterial({ map: glow, color: c[1], transparent: true, opacity: 0, depthWrite: false, blending: T.AdditiveBlending, toneMapped: false });
     const pool = new T.Mesh(new T.PlaneGeometry(7.4, 5), light()); pool.rotation.x = -Math.PI / 2; pool.position.set(0, .02, 1.3); pool.renderOrder = 5; s2.g.add(pool);

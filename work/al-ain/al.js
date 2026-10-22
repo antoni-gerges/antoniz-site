@@ -91,7 +91,7 @@ function build() {
   /* ---------- the zigzag wall: ONE print, 9 m by 3 m, folded twelve times (the size is written on the design render: "9*3 print").
      The print is the wall's own artwork (2D file "sssw"). Nothing is added to it. What the model shows that a photograph cannot:
      the wall changes as you pass it. From the front the lettering reads whole; from the side every second face turns away and it breaks. ---------- */
-  const zig = station(46, Object.assign({}, none, { c: [0, 1.6, .2], rx: 4.7, ry: 2.2, yaw: 0, pitch: PH ? .1 : -.03, drift: 2.1, w: 1.5, fx: .7, fy: .6, ox: .14, oy: 0, fxp: 1.04, fyp: .4, oxp: 0, oyp: -.14 }));
+  const zig = station(46, Object.assign({}, none, { c: [0, 1.6, .2], rx: 4.7, ry: 2.2, yaw: 0, pitch: PH ? .1 : -.03, drift: .3 /* WB-IM-WALL: front-on, the lettering whole */, w: 1.5, fx: .7, fy: .6, ox: .14, oy: 0, fxp: 1.04, fyp: .4, oxp: 0, oyp: -.14 }));
   { const FOLDS = 12, FW = 9 / FOLDS, ANG = .58, H = 3, g = zig.g, dx = FW * Math.cos(ANG), dz = FW * Math.sin(ANG), span = dx * FOLDS, pos = [], uv = [], idx = [], colr = [];
     for (let k = 0; k < FOLDS; k++) { const x0 = -span / 2 + k * dx, x1 = x0 + dx, z0 = k % 2 ? dz : 0, z1 = k % 2 ? 0 : dz, b = k * 4;
       pos.push(x0, 0, z0, x1, 0, z1, x1, H, z1, x0, H, z0); uv.push(k / FOLDS, 0, (k + 1) / FOLDS, 0, (k + 1) / FOLDS, 1, k / FOLDS, 1); idx.push(b, b + 1, b + 2, b, b + 2, b + 3);
