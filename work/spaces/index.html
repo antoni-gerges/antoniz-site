@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>How a space is planned · Spaces · Antoni Gerges</title>
+<title>Exhibitions · Antoni Gerges</title>
 <link rel="canonical" href="https://antoniz.com/work/spaces/">
-<meta name="description" content="How a space is planned, from the client’s brief to the opening day, shown with the real drawings: Cityscape Abu Dhabi, the World Future Energy Summit and Innovation Month in Al Ain. Antoni Gerges, Creative Director, Brand &amp; Experiential.">
+<meta name="description" content="Exhibitions: twenty-two stands and pavilions built from 2010 to 2024, from ADNEC in Abu Dhabi to Dubai and Sharjah, and more than fifty designed, for government departments and companies; how each space is planned, from the client’s boxes to the opening day. Antoni Gerges, Creative Director, Brand &amp; Experiential.">
 <meta property="og:image" content="https://antoniz.com/img/og/antoniz-og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -86,12 +86,118 @@ body.spaces .foot{background:#0B0C10}
   .nums{grid-template-columns:repeat(2,minmax(0,1fr))}
   .s-end .fp-cred{grid-template-columns:1fr}
 }
+
+/* E-EXHIBITIONS (21 Oct 2026): the page reads "Exhibitions". The shows by year (built first, photographed ones large), the designs and the
+   proposals (each labelled), the method ("How a space is planned", the former opening and its seven steps, whole), the hall in 3D, the scope,
+   the result. Two type sizes only (scale.css decides the sizes; this sets weight, tone and layout). Every picture whole: rows of equal
+   height (each figure grows by its own aspect ratio) that never grow taller than the screen; hard edges, no fades, nothing behind text. */
+body.exh{--x-gap:clamp(14px,1.8vw,26px)}
+.exh h1{font-family:"Jost",system-ui,sans-serif;font-weight:300;color:#fff;margin:0;text-wrap:balance}
+.exh .x-pic{display:block;color:inherit}
+.exh .x-pic:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.exh figure video{display:block;width:100%;height:auto;background:#0B0C10}
+.exh .x-go a,.exh .x-play a,.exh .xh-list a,.exh .x-steps>summary{color:#fff;font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.exh .x-go a:hover,.exh .x-play a:hover,.exh .xh-list a:hover,.exh .x-steps>summary:hover{text-decoration-thickness:2px}
+
+/* 1 · Exhibitions */
+.x-scale{padding:clamp(36px,6vh,72px) var(--g) 0}
+.x-scale .lead{margin-top:14px}
+.x-play{margin:18px 0 0}
+.x-play span{color:var(--dim);font-weight:400;margin-left:.4em}
+.x-hero{margin-top:clamp(22px,4vh,40px);max-width:calc((100svh - 150px) * 1.4995)}
+
+/* 2 · the shows */
+.x-sec{padding:clamp(72px,12vh,140px) var(--g) 0}
+.x-sec>.hd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(14px,3vw,56px);align-items:end;margin-bottom:clamp(26px,5vh,52px)}
+.x-sec>.hd .lead{margin-top:0}
+.x-show{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.3fr);gap:clamp(20px,3.4vw,64px);align-items:start;border-top:1px solid var(--line);padding-top:clamp(22px,3.6vh,36px);margin-top:clamp(40px,7vh,80px)}
+.x-shows>.x-show:first-of-type{margin-top:0}
+.x-show.sm{padding-bottom:0}
+.x-yr{font-weight:600;color:var(--dim);margin:0 0 6px}
+.exh .x-show h3,.exh .x-band h3,.exh .x-pair h3,.exh .x-h3{font-family:"Jost",system-ui,sans-serif;font-weight:600;color:#fff;margin:0 0 10px}
+.x-show .x-tx p{color:rgba(255,255,255,.86);margin:0}
+.x-show .x-tx p+p{margin-top:10px}
+.x-show .x-tx .x-win{color:#fff;font-weight:600}
+.x-show .x-tx .x-go{margin-top:16px}
+.x-show>.pics,.x-pair>.pics{max-width:calc((100svh - 220px) * var(--sum) + 2 * var(--x-gap))}
+.x-band{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px clamp(20px,3.4vw,64px);border-top:1px solid var(--line);margin-top:clamp(56px,9vh,100px);padding-top:clamp(22px,3.6vh,36px)}
+.x-band .x-record{grid-column:1/-1;margin-top:0}
+.x-record>.x-rec{margin-top:14px}
+.x-list,.x-rec,.xh-list{list-style:none;margin:0;padding:0}
+.x-list li,.x-rec li,.xh-list li{border-top:1px solid var(--line);padding:9px 0;color:rgba(255,255,255,.86)}
+.x-rec{columns:2;column-gap:clamp(20px,3.4vw,64px)}
+.x-rec li{break-inside:avoid}
+.x-rec b,.xh-list b{font-weight:600;color:#fff}
+.x-ry{font-weight:600;color:var(--dim);margin-right:.35em}
+
+/* 3 · on paper */
+.x-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(22px,3.4vh,36px) var(--x-gap);align-items:start}
+.x-grid figcaption b{font-weight:600;color:#fff}
+.x-h3{margin:clamp(48px,8vh,90px) 0 clamp(18px,3vh,30px)!important}
+.x-sub{color:rgba(255,255,255,.86);margin:0 0 clamp(20px,3.6vh,36px)}
+.exh .s-more{padding-top:clamp(40px,7vh,72px)}
+
+/* 4 · the method */
+.x-method .s-open{padding-top:clamp(72px,12vh,140px)}
+.x-pairs{padding-top:clamp(40px,7vh,80px)}
+.x-pair{border-top:1px solid var(--line);padding-top:clamp(22px,3.6vh,36px)}
+.x-pair+.x-pair{margin-top:clamp(56px,9vh,100px)}
+.x-pair>p{color:rgba(255,255,255,.86);margin:0 0 clamp(18px,3vh,30px)}
+.x-pair>.pics.x-four{max-width:none}
+.x-steps{margin-top:clamp(22px,3.6vh,36px)}
+.x-steps>summary{display:inline-block;list-style:none;cursor:pointer;padding:6px 0}
+.x-steps>summary::-webkit-details-marker{display:none}
+.x-steps[open]>summary span{display:inline-block;transform:rotate(90deg)}
+.x-steps>section.st,.x-steps>section.sw{padding-left:0;padding-right:0}
+
+/* 5 · the hall */
+.xh-pin{position:relative;height:300svh;margin:clamp(10px,2vh,24px) calc(-1 * var(--g)) 0}
+.xh-stage{position:sticky;top:0;height:100svh;overflow:hidden;background:#0B0C10}
+.xh-canvas{display:block;width:100%;height:100%}
+.xh-labs{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.xh-lab{position:absolute;left:0;top:0;display:flex;flex-direction:column;align-items:center;padding-bottom:14px;color:#fff;text-decoration:none;white-space:nowrap;pointer-events:auto}
+.xh-lab[hidden]{display:none}
+.xh-lab::after{content:"";position:absolute;bottom:0;left:50%;width:1px;height:12px;background:#fff}
+.xh-lab b{font-weight:600}
+.xh-lab span{color:rgba(255,255,255,.78)}
+a.xh-lab span{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.xh-ui{position:absolute;left:var(--g);right:var(--g);bottom:max(18px,env(safe-area-inset-bottom));display:flex;justify-content:space-between;align-items:flex-end;gap:12px 28px;pointer-events:none}
+.xh-cap{margin:0;color:rgba(255,255,255,.86);max-width:62ch}
+.xh-cap b{font-weight:600;color:#fff}
+.xh-raise{pointer-events:auto;appearance:none;-webkit-appearance:none;background:none;border:0;padding:10px 0;margin:0;color:#fff;font:inherit;font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;cursor:pointer;white-space:nowrap}
+.xh-raise:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.xh-still{display:none;margin:0}
+.x-hall.xh-off .xh-pin{display:none}
+.x-hall.xh-off .xh-still{display:block}
+.xh-list{columns:2;column-gap:clamp(20px,3.4vw,64px);margin-top:clamp(28px,5vh,52px)}
+.xh-list li{break-inside:avoid}
+.x-note{color:var(--dim);margin:18px 0 0}
+
+/* 7 · the result */
+.x-result .lead{margin-top:14px}
+.exh .s-nums{padding-top:clamp(40px,7vh,72px)}
+
+/* where you are: the page's stops (data-stop), desktop only, never over the foot of the page */
+.x-where{position:fixed;left:var(--g);bottom:16px;z-index:40;margin:0;color:rgba(255,255,255,.86);pointer-events:none;background:#0B0C10;padding:2px 0}
+.x-where[hidden]{display:none}
+.x-where b{font-weight:600;color:#fff;margin-right:.4em}
+
+@media (max-width:760px){
+  .x-sec>.hd,.x-show,.x-band{grid-template-columns:1fr}
+  .x-show{gap:16px}
+  .x-show>.pics,.x-pair>.pics{max-width:none}
+  .x-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .x-rec,.xh-list{columns:1}
+  .x-hero{max-width:none}
+  .xh-ui{flex-direction:column;align-items:flex-start}
+  .x-where{display:none}
+}
 </style>
 <noscript><style>@media (max-width:760px){.hdr{position:static;flex-wrap:wrap;gap:6px}.hdr .menu-btn{display:none}.hdr .nav{display:flex;flex-wrap:wrap}.hdr .nav a{padding:6px 8px}.s-open{padding-top:0}}</style></noscript>
 <link rel="stylesheet" href="../../assets/bundle-case-7d3f7a5b16.css"><!--perf21-css <link rel="stylesheet" href="../../assets/scale.css"><link rel="stylesheet" href="../../assets/fixes.css"><link rel="stylesheet" href="../../assets/numbers.css"><link rel="stylesheet" href="../../assets/scope.css"><link rel="stylesheet" href="../../assets/nav.css">--><link rel="preload" as="image" href="a/glimpse-poster.webp" fetchpriority="high">
 <style id="op21">/* glimpse openers, 21 Oct (openers-21oct/openers21.py) */.op21{position:relative;display:flex;justify-content:center;background:#0B0C10;padding:74px var(--g,16px) clamp(16px,3vh,32px)}.op21-f{margin:0;width:min(100%,calc((100svh - 74px - 58px) * 16 / 9))}.op21-film{display:block;position:relative;width:100%;margin:0;padding:0;border:0;border-radius:0;background:#0B0C10;color:inherit;font:inherit;cursor:pointer}.op21-film:focus-visible{outline:2px solid #fff;outline-offset:3px}.op21-v{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#0B0C10}.op21-cap{margin:10px 0 0;font:500 11px/1.35 Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.62)}@media (max-width:760px){.op21{padding:68px 0 18px}.op21-f{width:100%}.op21-cap{padding:0 16px}}</style>
 </head>
-<body class="fp spaces">
+<body class="fp spaces exh" data-fix="E-EXHIBITIONS">
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr">
   <a class="pill brand" href="../../index.html" aria-label="Antoni Gerges, home"><svg class="mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Antoni Gerges</span></a>
@@ -101,17 +207,160 @@ body.spaces .foot{background:#0B0C10}
   </div>
 </header>
 <main id="main">
-<h1 class="sr-only">How a space is planned</h1>
 
-<!-- 0 · the opening: the Cityscape 2017 spheres over the stand (AntBrush show film), whole -->
-<!-- 0 · the glimpse: the project in 12 s, hard cuts from its own films (openers-21oct) -->
-<section class="op21" aria-label="A glimpse of a build: the crews, the floor laid, the stand nearly done, the sphere ceiling waking up in white, blue, pink and gold">
+<!-- 0 · the glimpse (openers-21oct), moved whole -->
+<section class="op21" data-stop="Opening" data-stop-quiet aria-label="A glimpse of a build: the crews, the floor laid, the stand nearly done, the sphere ceiling waking up in white, blue, pink and gold">
   <figure class="op21-f"><button class="op21-film" type="button" aria-label="Play the glimpse with sound"><video class="op21-v" data-fix="E-OPENER-spaces" muted playsinline loop preload="metadata" width="1280" height="720" poster="a/glimpse-poster.webp"><source src="a/glimpse-p.mp4" type="video/mp4" media="(max-width:760px)"><source src="a/glimpse-d.mp4" type="video/mp4"></video></button><figcaption class="op21-cap">A glimpse · my own films of the Cityscape 2017 build, ADNEC Abu Dhabi</figcaption></figure>
   <script>(function(){var s=document.currentScript.parentNode,b=s.querySelector(".op21-film"),v=s.querySelector("video"),rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches,on=false,user=false,go=function(){if(rm&&!user)return;var p=v.play();if(p&&p.catch)p.catch(function(){});};if("IntersectionObserver"in window)new IntersectionObserver(function(e){on=e[0].isIntersecting;on?go():v.pause();},{threshold:.2}).observe(v);else go();if(!b.hasAttribute("data-film"))b.addEventListener("click",function(){if(v.muted){v.muted=false;v.currentTime=0;user=true;go();b.setAttribute("aria-label","Pause the glimpse");}else if(v.paused){user=true;go();b.setAttribute("aria-label","Pause the glimpse");}else{user=false;v.pause();rm=true;b.setAttribute("aria-label","Play the glimpse");}});})();</script>
 </section>
 
+<!-- 1 · Exhibitions: what the page is, in one line, and its first big name (E-EXHIBITIONS) -->
+<section class="x-scale" data-stop="Exhibitions" aria-labelledby="x1">
+  <h1 id="x1">Exhibitions.</h1>
+  <p class="lead">Twenty-two shows built, 2010 to 2024, and more than fifty designed: stands and pavilions for government departments and companies, from ADNEC in Abu Dhabi to Dubai and Sharjah. Made by AntBrush, a team he led.</p>
+  <p class="x-play"><a href="../../stories/cityscape/assets/show-film-1280.mp4">Play the show film, Cityscape Abu Dhabi 2017 <span>2:38 · sound</span></a></p>
+  <div class="x-hero"><figure style="--ar:1.4995"><a class="x-pic" href="a/x-adnoc-arch-2400.webp"><img src="a/x-adnoc-arch-800.webp" srcset="a/x-adnoc-arch-800.webp 800w, a/x-adnoc-arch-1600.webp 1600w, a/x-adnoc-arch-2400.webp 2400w" sizes="100vw" width="2400" height="1601" loading="lazy" decoding="async" alt="ADNOC’s stand at the World Future Energy Summit, January 2012: a white arch of slatted frames over a print of desert birds, two storeys of white panels, visitors in the aisle."></a><figcaption>ADNOC at the World Future Energy Summit, January 2012 · designed by the team for the builder Marcoms</figcaption></figure></div>
+</section>
+
+<!-- 2 · the shows, by year: the built ones first, the photographed ones large; then the delivered ones without a photograph (E-EXHIBITIONS) -->
+<section class="x-sec x-shows" data-stop="Built" aria-labelledby="x2">
+  <div class="hd"><div><p class="lab">The shows, by year</p><h2 id="x2">Built, <b>show by show.</b></h2></div>
+    <p class="lead">In the order they stood. Where the record shows how a job was won, one line says so.</p></div>
+  <article class="x-show" id="x-wfes">
+    <div class="x-tx"><p class="x-yr">2010 to 2015</p><h3>World Future Energy Summit</h3><p>The capital’s city department, today the Department of Municipalities and Transport, at the Gulf’s yearly clean-energy summit, ADNEC, Abu Dhabi.</p><p class="x-win">2013: won by public tender.</p><p class="x-go"><a href="../wfes/">The summit, on its own page <span aria-hidden="true">→</span></a></p></div>
+    <div class="pics" style="--sum:1.6931">
+      <figure style="--ar:1.6931"><a class="x-pic" href="a/wfes-2013-built.webp"><img src="a/wfes-2013-built-800.webp" srcset="a/wfes-2013-built-800.webp 800w, a/wfes-2013-built.webp 1600w" sizes="(max-width:760px) 100vw, 62vw" width="1600" height="945" loading="lazy" decoding="async" alt="The 2013 pavilion as built: a white tunnel lit along its floor and ceiling, panels on its walls, visitors walking through it."></a><figcaption>2013 · the energy tunnel, as built</figcaption></figure>
+    </div>
+  </article>
+  <article class="x-show" id="x-adnoc">
+    <div class="x-tx"><p class="x-yr">2012</p><h3>ADNOC</h3><p>Abu Dhabi’s national oil company, at the same summit: a two-storey stand, designed by the team for the builder Marcoms.</p></div>
+    <div class="pics" style="--sum:2.9990">
+      <figure style="--ar:1.4995"><a class="x-pic" href="a/x-adnoc-front-1600.webp"><img src="a/x-adnoc-front-800.webp" srcset="a/x-adnoc-front-800.webp 800w, a/x-adnoc-front-1600.webp 1600w" sizes="(max-width:760px) 100vw, 33vw" width="1600" height="1067" loading="lazy" decoding="async" alt="The front of ADNOC’s stand: two storeys of white panels and screens, a long counter, visitors on a black and white floor."></a><figcaption>The front · January 2012</figcaption></figure>
+      <figure style="--ar:1.4995"><a class="x-pic" href="a/x-adnoc-tower-1600.webp"><img src="a/x-adnoc-tower-800.webp" srcset="a/x-adnoc-tower-800.webp 800w, a/x-adnoc-tower-1600.webp 1600w" sizes="(max-width:760px) 100vw, 33vw" width="1600" height="1067" loading="lazy" decoding="async" alt="ADNOC’s glass tower at the corner of the stand, a panel reading Clean environment, visitors around it."></a><figcaption>The glass tower</figcaption></figure>
+    </div>
+  </article>
+  <article class="x-show" id="x-adsports">
+    <div class="x-tx"><p class="x-yr">2012</p><h3>Abu Dhabi Sports Channel</h3><p>The emirate’s public sports TV network, at the Abu Dhabi International Sports Exhibition, ADNEC, April 2012: black ribbed shells, lit from inside.</p></div>
+    <div class="pics" style="--sum:1.6891">
+      <figure style="--ar:1.6891"><a class="x-pic" href="a/x-adsports-shell-1157.webp"><img src="a/x-adsports-shell-1157.webp" width="1157" height="685" loading="lazy" decoding="async" alt="The end of the stand: a white shell banded in black ribs and red stripes, glass behind it, lit at night."></a><figcaption>As built · April 2012</figcaption></figure>
+    </div>
+  </article>
+  <article class="x-show" id="x-nasair">
+    <div class="x-tx"><p class="x-yr">2012</p><h3>Nas Air, today flynas</h3><p>A Saudi airline at the Arabian Travel Market, Dubai World Trade Centre: green and white, a map wall, a fares desk.</p></div>
+    <div class="pics" style="--sum:3.3781">
+      <figure style="--ar:1.6891"><a class="x-pic" href="a/x-nasair-desk-1157.webp"><img src="a/x-nasair-desk-1157.webp" width="1157" height="685" loading="lazy" decoding="async" alt="The Nas Air stand: a green and white desk with a host, a screen behind, the airline’s name on the fascia."></a><figcaption>The desk</figcaption></figure>
+      <figure style="--ar:1.6891"><a class="x-pic" href="a/x-nasair-map-1157.webp"><img src="a/x-nasair-map-1157.webp" width="1157" height="685" loading="lazy" decoding="async" alt="The map wall of the Nas Air stand, carved door shapes along the top, visitors at a counter."></a><figcaption>The map wall</figcaption></figure>
+    </div>
+  </article>
+  <article class="x-show" id="x-nas">
+    <div class="x-tx"><p class="x-yr">2013</p><h3>NAS, Naval Advanced Solutions</h3><p>A naval company at NAVDEX, the naval show held with IDEX in Abu Dhabi: two storeys and a planted roof.</p></div>
+    <div class="pics" style="--sum:3.3755">
+      <figure style="--ar:1.6878"><a class="x-pic" href="a/x-nas-tower-800.webp"><img src="a/x-nas-tower-800.webp" width="800" height="474" loading="lazy" decoding="async" alt="The NAS stand: a blue and white two-storey front, plants along the roof, the company’s name on the fascia."></a><figcaption>The front</figcaption></figure>
+      <figure style="--ar:1.6878"><a class="x-pic" href="a/x-nas-lounge-800.webp"><img src="a/x-nas-lounge-800.webp" width="800" height="474" loading="lazy" decoding="async" alt="The NAS stand’s lounge under its blue wings, a meeting table, visitors."></a><figcaption>The lounge</figcaption></figure>
+    </div>
+  </article>
+  <article class="x-show" id="x-cityscape">
+    <div class="x-tx"><p class="x-yr">2015 to 2018</p><h3>Cityscape Abu Dhabi</h3><p>Four years for the same department: the pavilion in 2015, 2016 and 2017, the film in 2018. In 2017: 7,200 sq ft (672 m²), fourteen projects, built in three days.</p><p class="x-win">2016 and 2017: by direct order.</p><p class="x-go"><a href="../cityscape/">Cityscape, on its own page <span aria-hidden="true">→</span></a></p></div>
+    <div class="pics" style="--sum:0.5628">
+      <figure style="--ar:0.5628"><a class="x-pic" href="a/x-city-carpet-1600.webp"><img src="a/x-city-carpet-800.webp" srcset="a/x-city-carpet-800.webp 800w, a/x-city-carpet-1600.webp 1600w" sizes="(max-width:760px) 100vw, 30vw" width="1600" height="2843" loading="lazy" decoding="async" alt="The 2017 pavilion: a red carpet runs to a tall white gate under rows of white spheres hung from a black truss."></a><figcaption>2017 · the carpet under the ceiling of spheres</figcaption></figure>
+    </div>
+  </article>
+  <article class="x-show" id="x-tawdheef">
+    <div class="x-tx"><p class="x-yr">2015 and 2017</p><h3>Tawdheef</h3><p>Abu Dhabi’s national jobs fair, for the same department. In 2017: five job-application kiosks, finished the night before the doors opened.</p><p class="x-win">2017: by direct order.</p></div>
+    <div class="pics" style="--sum:2.6667">
+      <figure style="--ar:1.3333"><a class="x-pic" href="a/x-taw-front-1600.webp"><img src="a/x-taw-front-800.webp" srcset="a/x-taw-front-800.webp 800w, a/x-taw-front-1600.webp 1600w" sizes="(max-width:760px) 100vw, 33vw" width="1600" height="1200" loading="lazy" decoding="async" alt="The Tawdheef 2017 stand finished: a red frame carrying the department’s sign, white counters and touch-screen kiosks in front, a lounge behind."></a><figcaption>29 January 2017 · finished</figcaption></figure>
+      <figure style="--ar:1.3333"><a class="x-pic" href="a/x-taw-kiosks-1600.webp"><img src="a/x-taw-kiosks-800.webp" srcset="a/x-taw-kiosks-800.webp 800w, a/x-taw-kiosks-1600.webp 1600w" sizes="(max-width:760px) 100vw, 33vw" width="1600" height="1200" loading="lazy" decoding="async" alt="The five touch-screen kiosks for job applications in a row on the stand, the red frame behind them."></a><figcaption>The five job kiosks</figcaption></figure>
+    </div>
+  </article>
+  <article class="x-show sm" id="x-bullying">
+    <div class="x-tx"><p class="x-yr">2018</p><h3>National Bullying Prevention Week</h3><p>The Ministry of Education: booths in Dalma Mall, Abu Dhabi, and RAK Mall, Ras Al Khaimah, April 2018.</p><p class="x-go"><a href="../anti-bullying/">The week, on its own page <span aria-hidden="true">→</span></a></p></div>
+  </article>
+  <article class="x-show" id="x-dot">
+    <div class="x-tx"><p class="x-yr">2018</p><h3>Department of Transport, Abu Dhabi</h3><p>Today part of the Department of Municipalities and Transport. Its booth at Gulf Traffic, Dubai World Trade Centre, December 2018, handed over the evening before the show.</p></div>
+    <div class="pics" style="--sum:3.1111">
+      <figure style="--ar:1.3333"><a class="x-pic" href="a/x-dot-booth-1600.webp"><img src="a/x-dot-booth-800.webp" srcset="a/x-dot-booth-800.webp 800w, a/x-dot-booth-1600.webp 1600w" sizes="(max-width:760px) 100vw, 33vw" width="1600" height="1200" loading="lazy" decoding="async" alt="The Department of Transport booth finished: white walls under a white fascia, a carved wooden screen, a counter and a brochure tower; one of the crew stands at the side."></a><figcaption>3 December 2018, 9:05 pm · handed over</figcaption></figure>
+      <figure style="--ar:1.7778"><a class="x-pic" href="a/x-dot-lounge-1600.webp"><img src="a/x-dot-lounge-800.webp" srcset="a/x-dot-lounge-800.webp 800w, a/x-dot-lounge-1600.webp 1600w" sizes="(max-width:760px) 100vw, 33vw" width="1600" height="900" loading="lazy" decoding="async" alt="The booth’s lounge: white armchairs and a sofa in front of a carved wooden screen, a flag at the side."></a><figcaption>The lounge behind the screen</figcaption></figure>
+    </div>
+  </article>
+  <article class="x-show" id="x-shurooq">
+    <div class="x-tx"><p class="x-yr">2018</p><h3>Shurooq</h3><p>Sharjah’s investment and development authority, at its FDI Forum, December 2018: a ballroom of stands, every measure drawn for the builder, Eleco.</p><p class="x-win">Won by letter of award.</p></div>
+    <div class="pics" style="--sum:0.5625">
+      <figure style="--ar:0.5625"><a class="x-pic" href="a/x-shq-rows-1080.webp"><img src="a/x-shq-rows-540.webp" srcset="a/x-shq-rows-540.webp 540w, a/x-shq-rows-1080.webp 1080w" sizes="(max-width:760px) 100vw, 30vw" width="1080" height="1920" loading="lazy" decoding="async" alt="The ballroom during the build: rows of white arched stands going up, cartons on the carpet."></a><figcaption>8 December 2018 · the rows going up, from the build film</figcaption></figure>
+    </div>
+  </article>
+  <article class="x-show" id="x-alain">
+    <div class="x-tx"><p class="x-yr">2024</p><h3>Innovation Month, Al Ain</h3><p>Al Ain City Municipality, February 2024: a gate and forty booths on the municipality’s forecourt.</p><p class="x-win">Won by competitive quotation.</p><p class="x-go"><a href="../al-ain/">Innovation Month, on its own page <span aria-hidden="true">→</span></a></p></div>
+    <div class="pics" style="--sum:4.4446">
+      <figure style="--ar:2.0200"><a class="x-pic" href="a/x-alain-gate-1600.webp"><img src="a/x-alain-gate-800.webp" srcset="a/x-alain-gate-800.webp 800w, a/x-alain-gate-1600.webp 1600w" sizes="(max-width:760px) 100vw, 33vw" width="1600" height="792" loading="lazy" decoding="async" alt="The Innovation Month gate open: stacked boxes in shades of blue frame a long blue-carpeted street of booths, a visitor walking through."></a><figcaption>21 February 2024 · the gate open</figcaption></figure>
+      <figure style="--ar:2.4245"><a class="x-pic" href="a/x-alain-wide-1600.webp"><img src="a/x-alain-wide-800.webp" srcset="a/x-alain-wide-800.webp 800w, a/x-alain-wide-1600.webp 1600w" sizes="(max-width:760px) 100vw, 33vw" width="1600" height="660" loading="lazy" decoding="async" alt="The gate from across the paved forecourt, the street of booths behind it under a clear sky."></a><figcaption>The gate from the forecourt</figcaption></figure>
+    </div>
+  </article>
+  <div class="x-band">
+    <div><h3>Delivered, not photographed.</h3>
+      <ul class="x-list">
+        <li>Tawdheef 2015 · the department’s stand, 39 by 39 ft (12 by 12 m)</li>
+        <li>Cityscape Abu Dhabi 2015 · the department’s pavilion; its renders are on the Cityscape page</li>
+        <li>World Future Energy Summit 2015 · the department and its three municipalities on one stand</li>
+        <li>Cityscape Abu Dhabi 2016 · Al Qudrah Holding’s “Traditional Market” booth, produced for the developer</li>
+        <li>National Housing Exhibition 2018 · Musanada’s stand, a touch screen and two scale models; the client approved our quotation</li>
+      </ul></div>
+    <div><h3>Also built, shown elsewhere.</h3>
+      <ul class="x-list">
+        <li>World Future Energy Summit 2010 and 2011 · on the summit’s page</li>
+        <li>Al Forsan International Sports Resort, about 2011 · on the Al Forsan page</li>
+        <li>Al Fahad at ISNR, the security show, 2012</li>
+        <li>ZOWD Project at the Abu Dhabi International Book Fair, 2012</li>
+        <li>Cityscape Abu Dhabi 2016 · the department’s pavilion, on the Cityscape page</li>
+      </ul></div>
+    <details class="x-steps x-record"><summary>All twenty-two, by year <span aria-hidden="true">→</span></summary>
+      <ol class="x-rec">
+        <li><span class="x-ry">2010</span> World Future Energy Summit · <b>Department of Municipal Affairs</b> · built</li>
+        <li><span class="x-ry">2011</span> World Future Energy Summit · <b>Department of Municipal Affairs, with the three municipalities</b> · built</li>
+        <li><span class="x-ry">about 2011</span> a show at ADNEC · <b>Al Forsan International Sports Resort</b> · built</li>
+        <li><span class="x-ry">2012</span> World Future Energy Summit · <b>ADNOC</b> · built, designed for the builder Marcoms</li>
+        <li><span class="x-ry">2012</span> ISNR, the security show · <b>Al Fahad</b> · built</li>
+        <li><span class="x-ry">2012</span> Abu Dhabi International Book Fair · <b>ZOWD Project</b> · built through the builder Marcoms</li>
+        <li><span class="x-ry">2012</span> Abu Dhabi International Sports Exhibition · <b>Abu Dhabi Sports Channel</b> · built</li>
+        <li><span class="x-ry">2012</span> Arabian Travel Market, Dubai · <b>Nas Air, today flynas</b> · built</li>
+        <li><span class="x-ry">2013</span> NAVDEX · <b>NAS, Naval Advanced Solutions</b> · built</li>
+        <li><span class="x-ry">2013</span> World Future Energy Summit · <b>the department and its three municipalities; Abu Dhabi Chamber</b> · built; won by public tender</li>
+        <li><span class="x-ry">2015</span> Tawdheef · <b>the department and Abu Dhabi City Municipality</b> · delivered, not photographed</li>
+        <li><span class="x-ry">2015</span> Cityscape Abu Dhabi · <b>the department and its three municipalities</b> · delivered, not photographed</li>
+        <li><span class="x-ry">2015</span> World Future Energy Summit · <b>the department and its three municipalities</b> · delivered, not photographed</li>
+        <li><span class="x-ry">2016</span> Cityscape Abu Dhabi · <b>the department and its three municipalities</b> · built; by direct order</li>
+        <li><span class="x-ry">2016</span> Cityscape Abu Dhabi · <b>Al Qudrah Holding: the “Traditional Market” booth</b> · produced, not photographed</li>
+        <li><span class="x-ry">2017</span> Tawdheef · <b>Department of Municipal Affairs and Transport</b> · built; by direct order</li>
+        <li><span class="x-ry">2017</span> Cityscape Abu Dhabi · <b>the department and its three municipalities</b> · built; by direct order</li>
+        <li><span class="x-ry">2018</span> National Bullying Prevention Week · <b>Ministry of Education</b> · built</li>
+        <li><span class="x-ry">2018</span> National Housing Exhibition · <b>Musanada: the stand, a touch screen and two scale models</b> · delivered, not photographed; an approved quotation</li>
+        <li><span class="x-ry">2018</span> Gulf Traffic, Dubai · <b>Department of Transport, Abu Dhabi</b> · built</li>
+        <li><span class="x-ry">2018</span> FDI Forum, Sharjah · <b>Shurooq</b> · built; by letter of award</li>
+        <li><span class="x-ry">2024</span> Innovation Month, Al Ain · <b>Al Ain City Municipality</b> · built; won by competitive quotation</li>
+      </ol></details>
+  </div>
+</section>
+
+<!-- 3 · on paper: the designs drawn for the builder, then the proposals, each labelled (E-EXHIBITIONS) -->
+<section class="x-sec x-paper" data-stop="Designed" aria-labelledby="x3">
+  <div class="hd"><div><p class="lab">On paper</p><h2 id="x3">More than fifty, <b>designed.</b></h2></div>
+    <p class="lead">Designed for the builder, not built by us: most of them in 2011 to 2013, for the Dubai stand builder Marcoms. Each one shown here is a render, and says so.</p></div>
+  <div class="x-grid">
+    <figure style="--ar:1.7021"><a class="x-pic" href="a/x-r-abb-800.webp"><img src="a/x-r-abb-800.webp" width="800" height="470" loading="lazy" decoding="async" alt="Render of ABB’s stand at ADIPEC: a white two-storey stand with the red ABB name on top, display walls and counters around it."></a><figcaption><b>Render</b> · ABB at ADIPEC, 2012</figcaption></figure><figure style="--ar:1.7017"><a class="x-pic" href="a/x-r-asus-800.webp"><img src="a/x-r-asus-800.webp" width="800" height="470" loading="lazy" decoding="async" alt="Render of the ASUS stand at GITEX: a black pavilion outlined in blue light with the ASUS name, a tall red and black sign beside it."></a><figcaption><b>Render</b> · ASUS at GITEX, 2012</figcaption></figure><figure style="--ar:1.7026"><a class="x-pic" href="a/x-r-algaith-800.webp"><img src="a/x-r-algaith-800.webp" width="800" height="470" loading="lazy" decoding="async" alt="Render of Al Gaith’s stand at ADIPEC: a long dark two-storey pavilion with meeting rooms around it."></a><figcaption><b>Render</b> · Al Gaith at ADIPEC, 2013</figcaption></figure><figure style="--ar:1.7021"><a class="x-pic" href="a/x-r-dafz-800.webp"><img src="a/x-r-dafz-800.webp" width="800" height="470" loading="lazy" decoding="async" alt="Render of the Dubai Airport Freezone stand at the Dubai Airshow: a black and yellow frame, screens and a lit lounge."></a><figcaption><b>Render</b> · Dubai Airport Freezone at the Dubai Airshow, 2013</figcaption></figure><figure style="--ar:1.7021"><a class="x-pic" href="a/x-r-adcom-800.webp"><img src="a/x-r-adcom-800.webp" width="800" height="470" loading="lazy" decoding="async" alt="Render of the ADCOM Systems stand: a large white, red and black triangular canopy over model aircraft on a white grid floor."></a><figcaption><b>Render</b> · ADCOM Systems, 2011 to 2013</figcaption></figure><figure style="--ar:1.6860"><a class="x-pic" href="a/x-r-binjabr-800.webp"><img src="a/x-r-binjabr-800.webp" width="800" height="474" loading="lazy" decoding="async" alt="Render of the Bin Jabr Group stand: a red and black tower in the middle of white counters and display pods."></a><figcaption><b>Render</b> · Bin Jabr Group, 2012</figcaption></figure>
+  </div>
+  <h3 class="x-h3">Proposed and not taken up.</h3>
+  <div class="x-grid">
+    <figure style="--ar:1.9048"><a class="x-pic" href="a/x-p-wrc-800.webp"><img src="a/x-p-wrc-800.webp" width="800" height="420" loading="lazy" decoding="async" alt="Render of the proposed UAE Pavilion: a white pavilion edged in blue light, large screens, a car on display, lounges on a white floor."></a><figcaption><b>Proposal</b> · the UAE Pavilion, World Road Congress, Abu Dhabi, 2019</figcaption></figure><figure style="--ar:1.7588"><a class="x-pic" href="a/x-p-legis-800.webp"><img src="a/x-p-legis-800.webp" width="800" height="455" loading="lazy" decoding="async" alt="Render of the proposed legislation exhibition: wooden display tables under a large screen showing a city at dusk."></a><figcaption><b>Proposal</b> · a legislation exhibition, Dubai, 2017</figcaption></figure><figure style="--ar:1.7778"><a class="x-pic" href="a/x-p-alhamra-800.webp"><img src="a/x-p-alhamra-800.webp" width="800" height="450" loading="lazy" decoding="async" alt="Render of the proposed Al Hamra stand at ISNR: a two-storey white building beside a road layout with hexagonal pods, in a dark hall."></a><figcaption><b>Proposal</b> · Al Hamra at ISNR, 2022, 56 by 66 ft (17 by 20 m)</figcaption></figure>
+  </div>
+</section>
+
+<section class="s-more" aria-label="More stands">
+  <p><a href="../archive/#spaces">All 25 stands and pavilions are in the Work archive <span aria-hidden="true">→</span></a></p>
+</section>
+
+<!-- 4 · the method: "How a space is planned" (the former opening, whole), three real pairs, and the seven steps unchanged behind a tap (E-EXHIBITIONS) -->
+<div class="x-method" data-stop="How a space is planned" role="region" aria-label="How a space is planned">
 <section class="s-open" aria-labelledby="s0">
-  <figure class="hero"><img src="a/hero-1920.webp" srcset="a/hero-960.webp 960w, a/hero-1920.webp 1920w" sizes="100vw" width="1920" height="1080" fetchpriority="high" decoding="async" alt="The Cityscape 2017 pavilion’s ceiling of light seen from below: rows of white spheres hung from a black truss under the hall roof, the lower ones glowing red."></figure>
+  <figure class="hero"><img src="a/hero-1920.webp" srcset="a/hero-960.webp 960w, a/hero-1920.webp 1920w" sizes="100vw" width="1920" height="1080" loading="lazy" decoding="async" alt="The Cityscape 2017 pavilion’s ceiling of light seen from below: rows of white spheres hung from a black truss under the hall roof, the lower ones glowing red."></figure>
   <div class="in">
     <p class="lab">Spaces</p>
     <h2 id="s0">How a space <b>is planned.</b></h2>
@@ -119,28 +368,17 @@ body.spaces .foot{background:#0B0C10}
   </div>
 </section>
 
-<!-- what we delivered: the verified scope, item by item (fixes20 E-SCOPE-spaces; research website-review/scope-21oct) -->
-<section class="fp-scope" data-fix="E-SCOPE-spaces" aria-labelledby="scope-h">
-  <span class="fp-lab"><b>The scope</b></span>
-  <h2 id="scope-h">What we <b class="tw">delivered.</b></h2>
-  <p class="scope-lead">For the Department’s stands, the whole job: the stand, the screens and their content, the campaign, the invitations, the gifts, the event on site, the coverage.</p>
-  <div class="scope-grid">
-    <div class="scope-group"><p class="scope-k">Space</p><ul><li>Cityscape 2017: 7,200&nbsp;sq&nbsp;ft (672&nbsp;m²), built in three days</li><li>Cityscape 2015: the same footprint, redesigned in 2016</li><li>World Future Energy Summit 2013: 5,600&nbsp;sq&nbsp;ft (520&nbsp;m²), a mezzanine and a tunnel</li><li>World Future Energy Summit 2015: 3,100&nbsp;sq&nbsp;ft (286&nbsp;m²)</li><li>Tawdheef 2015 and 2017: 1,550&nbsp;sq&nbsp;ft (144&nbsp;m²) each</li><li>Majlis, meeting rooms and VIP areas</li></ul></div>
-    <div class="scope-group"><p class="scope-k">Screens &amp; content</p><ul><li>Interactive presentations on touch screens, 18, in 2014 and 2015</li><li>Informative films and documentaries, 20, in 2014 and 2015</li><li>Touch-screen kiosks for job applications, five, Tawdheef 2017</li><li>LED walls and screens, with IT support on site</li></ul></div>
-    <div class="scope-group"><p class="scope-k">Campaign &amp; print</p><ul><li>Main visuals and campaign artwork, 2013 to 2016</li><li>Wall graphics for the 2014 pavilion, five areas</li><li>Brochures, 4,000, and leaflets, 5,000, in 2015</li><li>E-invitations, three, in 2015</li><li>Gift items, 4,500, and recycled bags, 5,500</li></ul></div>
-    <div class="scope-group"><p class="scope-k">Event</p><ul><li>Event management on site</li><li>Build-up, dismantling, transport and storage</li><li>Catering, flowers and chocolates</li></ul></div>
-    <div class="scope-group"><p class="scope-k">Film &amp; coverage</p><ul><li>Video coverage with an edited report, two shows in 2015</li><li>Show film, Cityscape 2017</li><li>Social film for the stand, Tawdheef 2017</li><li>Corporate documentary, Cityscape 2013</li></ul></div>
-  </div>
-  <ul class="scope-pics" aria-label="Pieces of the scope">
-    <li><figure><img src="a/scope-kiosks-2015.webp" srcset="a/scope-kiosks-2015-perf800.webp 800w, a/scope-kiosks-2015.webp 1200w" sizes="(max-width:760px) 45vw, 35vw" width="1200" height="675" alt="Design render of the Cityscape 2015 stand: coloured touch-screen kiosks on a grey floor, subject icons on poles and a tall screen wall." loading="lazy" decoding="async"><figcaption>Cityscape 2015: the touch-screen kiosks, design render</figcaption></figure></li>
-    <li><figure><img src="a/scope-ceiling-2017.webp" srcset="a/scope-ceiling-2017-perf800.webp 800w, a/scope-ceiling-2017.webp 1200w" sizes="(max-width:760px) 45vw, 35vw" width="1200" height="675" alt="The sphere ceiling lit pink and white over the half-built Cityscape 2017 stand, ladders below." loading="lazy" decoding="async"><figcaption>Cityscape 2017: the kinetic ceiling lit during the build</figcaption></figure></li>
-    <li><figure><img src="a/scope-water-film-2014.webp" width="480" height="270" alt="Two wooden dhows moored at a quay under a pale sky, a frame of the 2014 water documentary." loading="lazy" decoding="async"><figcaption>World Future Energy Summit 2014: a frame of the water film</figcaption></figure></li>
-    <li><figure><img src="a/scope-flowers-2017.webp" srcset="a/scope-flowers-2017-perf800.webp 800w, a/scope-flowers-2017.webp 1200w" sizes="(max-width:760px) 45vw, 35vw" width="1200" height="675" alt="A low vase of white lilies and green leaves beside a glass bowl on the white reception counter of the Tawdheef 2017 stand." loading="lazy" decoding="async"><figcaption>Tawdheef 2017: flowers on the reception counter, three days</figcaption></figure></li>
-  </ul>
-  <p class="scope-src">From the delivery notes, the invoices, the 2017 agreement, the bill of quantities of the 2013 stand and the letters releasing the guarantees.</p>
-  <p class="scope-note">Proposed and not taken up: for Cityscape 2017, a campaign and 11 short project films; for Tawdheef 2016, a stand with five touch-screen panels.</p>
-</section>
-
+<section class="x-sec x-pairs" aria-label="Plan, 3D, built: three real stands">
+  <article class="x-pair" id="x-pair-1">
+    <h3>Cityscape Abu Dhabi, 2017.</h3>
+    <p>The client’s boxes, then one line, then the 3D, then the build.</p>
+    <div class="pics x-four" style="--sum:6.6417">
+      <figure style="--ar:1.8779"><a class="x-pic" href="a/brief-2400.webp"><img src="a/brief-1200.webp" srcset="a/brief-1200.webp 1200w, a/brief-2400.webp 2400w" sizes="(max-width:760px) 100vw, 30vw" width="2400" height="1278" loading="lazy" decoding="async" alt="The client’s block plan: rooms, a store, the souq and boxes for the projects."></a><figcaption>1 · The client’s boxes</figcaption></figure>
+      <figure style="--ar:1.2102"><a class="x-pic" href="a/plan-1048.webp"><img src="a/plan-1048.webp" width="1048" height="866" loading="lazy" decoding="async" alt="The design plan from above: one maroon carpet crosses the floor grid on the diagonal."></a><figcaption>2 · One line</figcaption></figure>
+      <figure style="--ar:1.7778"><a class="x-pic" href="a/render-1920.webp"><img src="a/render-960.webp" srcset="a/render-960.webp 960w, a/render-1920.webp 1920w" sizes="(max-width:760px) 100vw, 30vw" width="1920" height="1080" loading="lazy" decoding="async" alt="The approved 3D: a white and maroon pavilion, a red carpet under a ceiling of blue spheres."></a><figcaption>3 · The 3D</figcaption></figure>
+      <figure style="--ar:1.7758"><a class="x-pic" href="a/b1081-1600.webp"><img src="a/b1081-800.webp" srcset="a/b1081-800.webp 800w, a/b1081-1600.webp 1600w" sizes="(max-width:760px) 100vw, 30vw" width="1600" height="901" loading="lazy" decoding="async" alt="The stand almost finished: the carpet laid, the wings glazed, the spheres lit."></a><figcaption>4 · Built</figcaption></figure>
+    </div>
+    <details class="x-steps"><summary>The seven steps <span aria-hidden="true">→</span></summary>
 <!-- 1 · the brief: the client's block plan, brief of 20 March 2017, p.7 (the English page), cropped to the plan -->
 <section class="st" aria-labelledby="s1">
   <div class="tx">
@@ -234,11 +472,90 @@ body.spaces .foot{background:#0B0C10}
     <figure style="--ar:2.0202"><img src="a/aa3-1200.webp" srcset="a/aa3-600.webp 600w, a/aa3-1200.webp 1200w" sizes="(max-width:760px) 100vw, 35vw" width="1200" height="594" loading="lazy" decoding="async" alt="The gate open: stacked boxes in shades of blue frame the entrance to a long, blue-carpeted street of booths, visitors walking through."><figcaption>21 February 2024 · the gate open.</figcaption></figure>
   </div>
 </section>
+    </details>
+  </article>
+  <article class="x-pair" id="x-pair-2">
+    <h3>Abu Dhabi Sports Channel, 2012.</h3>
+    <p>Drawn as black ribs, built as drawn.</p>
+    <div class="pics" style="--sum:3.3782">
+      <figure style="--ar:1.6892"><a class="x-pic" href="a/x-adsports-3d-1500.webp"><img src="a/x-adsports-3d-800.webp" srcset="a/x-adsports-3d-800.webp 800w, a/x-adsports-3d-1500.webp 1500w" sizes="(max-width:760px) 100vw, 33vw" width="1500" height="888" loading="lazy" decoding="async" alt="The 3D of the Abu Dhabi Sports Channel stand: white shells banded in black ribs, lit from inside, a counter at the front."></a><figcaption>The 3D · black ribs, lit from inside</figcaption></figure>
+      <figure style="--ar:1.6891"><a class="x-pic" href="a/x-adsports-built-1157.webp"><img src="a/x-adsports-built-1157.webp" width="1157" height="685" loading="lazy" decoding="async" alt="The same stand as built: the shells and their black ribs, lit, visitors and screens inside."></a><figcaption>As built · April 2012</figcaption></figure>
+    </div>
+  </article>
+  <article class="x-pair" id="x-pair-3">
+    <h3>Shurooq, Sharjah, 2018.</h3>
+    <p>Every measure drawn for the builder, then a ballroom of stands.</p>
+    <div class="pics" style="--sum:2.3393">
+      <figure style="--ar:1.7768"><a class="x-pic" href="a/x-shq-3d-1600.webp"><img src="a/x-shq-3d-800.webp" srcset="a/x-shq-3d-800.webp 800w, a/x-shq-3d-1600.webp 1600w" sizes="(max-width:760px) 100vw, 33vw" width="1600" height="900" loading="lazy" decoding="async" alt="The 3D of one Shurooq stand with its measures drawn on: an arched white frame with teal edges, a counter and a seat."></a><figcaption>The 3D, with its measures: one stand, 10 by 10 ft (3 by 3 m)</figcaption></figure>
+      <figure style="--ar:0.5625"><a class="x-pic x-vlink" href="a/x-shq-build.mp4" aria-label="Open the build film"><video class="x-loop" muted playsinline loop preload="none" width="540" height="960" data-poster="a/x-shq-build-poster-540.webp"><source src="a/x-shq-build.mp4" type="video/mp4"></video></a><figcaption>8 December 2018 · the stands going up, from the build film</figcaption></figure>
+    </div>
+  </article>
+</section>
+</div>
 
-<!-- 8 · the numbers -->
-<section class="s-nums" aria-label="In numbers">
+<!-- 5 · the hall: sixteen stands rebuilt in 3D from their own floor plans (a/x-hall.js, three.js from vendor/); the still and the list without it (E-EXHIBITIONS) -->
+<section class="x-sec x-hall" id="x-hall" data-stop="The hall" data-stop-quiet data-js="a/x-hall.js" aria-labelledby="x5">
+  <div class="hd"><div><p class="lab">In 3D</p><h2 id="x5">The hall, <b>rebuilt.</b></h2></div>
+    <p class="lead">Sixteen stands, rebuilt from their own floor plans. Scroll: the five built ones rise, in the order they stood. Then tap for the other eleven.</p></div>
+  <div class="xh-pin">
+    <div class="xh-stage"><canvas class="xh-canvas" aria-label="The hall in 3D: the stands rising from their plans" role="img"></canvas><div class="xh-labs"></div>
+      <div class="xh-ui"><p class="xh-cap" aria-live="polite"></p><button class="xh-raise" type="button" aria-pressed="false">Raise the other eleven</button></div></div>
+  </div>
+  <figure class="xh-still"><img src="a/x-hall-top-800.webp" srcset="a/x-hall-top-800.webp 800w, a/x-hall-top-1600.webp 1600w" sizes="(max-width:760px) 100vw, 90vw" width="1600" height="900" loading="lazy" decoding="async" alt="The hall from above: sixteen stands rebuilt in white volumes from their floor plans, each with one colour from its own design, on a dark floor with a grid."><figcaption>The hall from above, the sixteen stands raised</figcaption></figure>
+  <noscript><style>.xh-pin{display:none}.xh-still{display:block!important}</style></noscript>
+  <ol class="xh-list">
+      <li><span class="x-ry">2013</span> <b>World Future Energy Summit</b> · Built · from the plan of its bill of quantities · <a href="a/wfes-2013-built.webp">the photograph</a></li>
+      <li><span class="x-ry">2017</span> <b>Tawdheef</b> · Built · from its photographs, at the size on its invoice · <a href="a/x-taw-front-1600.webp">the photograph</a></li>
+      <li><span class="x-ry">2017</span> <b>Cityscape Abu Dhabi</b> · Built · from the builder’s fabrication plan · <a href="a/x-city-carpet-1600.webp">the photograph</a></li>
+      <li><span class="x-ry">2018</span> <b>Department of Transport, Abu Dhabi</b> · Built · from its photographs, at the size on its quotation · <a href="a/x-dot-booth-1600.webp">the photograph</a></li>
+      <li><span class="x-ry">2018</span> <b>Shurooq</b> · Built · from the measured 3D drawn for the builder · <a href="a/x-shq-rows-1080.webp">the photograph</a></li>
+      <li><span class="x-ry">2012</span> <b>ABB at ADIPEC</b> · Design · from its plan</li>
+      <li><span class="x-ry">2012</span> <b>Ducab at Middle East Electricity</b> · Design · from its dimensioned elevation</li>
+      <li><span class="x-ry">2012</span> <b>Dubai pavilion, Dubai World Trade Centre</b> · Design · from its layout</li>
+      <li><span class="x-ry">2012</span> <b>ACTVET at Najah</b> · Design · from its plan</li>
+      <li><span class="x-ry">2011–13</span> <b>Abu Dhabi Education Council</b> · Design · from its plan</li>
+      <li><span class="x-ry">2011–13</span> <b>ADCOM Systems</b> · Design · from its plan</li>
+      <li><span class="x-ry">2011–13</span> <b>Elm</b> · Design · from its plan</li>
+      <li><span class="x-ry">2011–13</span> <b>Etisalat at GITEX Shopper</b> · Design · from its circulation plan</li>
+      <li><span class="x-ry">2011–13</span> <b>Safia Trading at IDEX</b> · Design · from its plan</li>
+      <li><span class="x-ry">2013</span> <b>Al Gaith at ADIPEC</b> · Design · from its plan</li>
+      <li><span class="x-ry">2022</span> <b>Al Hamra at ISNR</b> · Proposal · from its floor plan and elevation</li>
+  </ol>
+  <p class="x-note">The original work, brought to life: a new 3D presentation built from the original plans and photographs.</p>
+</section>
+
+<!-- 6 · what we delivered (scope-21oct), moved whole -->
+<section class="fp-scope" data-fix="E-SCOPE-spaces" aria-labelledby="scope-h" data-stop="The scope">
+  <span class="fp-lab"><b>The scope</b></span>
+  <h2 id="scope-h">What we <b class="tw">delivered.</b></h2>
+  <p class="scope-lead">For the Department’s stands, the whole job: the stand, the screens and their content, the campaign, the invitations, the gifts, the event on site, the coverage.</p>
+  <div class="scope-grid">
+    <div class="scope-group"><p class="scope-k">Space</p><ul><li>Cityscape 2017: 7,200&nbsp;sq&nbsp;ft (672&nbsp;m²), built in three days</li><li>Cityscape 2015: the same footprint, redesigned in 2016</li><li>World Future Energy Summit 2013: 5,600&nbsp;sq&nbsp;ft (520&nbsp;m²), a mezzanine and a tunnel</li><li>World Future Energy Summit 2015: 3,100&nbsp;sq&nbsp;ft (286&nbsp;m²)</li><li>Tawdheef 2015 and 2017: 1,550&nbsp;sq&nbsp;ft (144&nbsp;m²) each</li><li>Majlis, meeting rooms and VIP areas</li></ul></div>
+    <div class="scope-group"><p class="scope-k">Screens &amp; content</p><ul><li>Interactive presentations on touch screens, 18, in 2014 and 2015</li><li>Informative films and documentaries, 20, in 2014 and 2015</li><li>Touch-screen kiosks for job applications, five, Tawdheef 2017</li><li>LED walls and screens, with IT support on site</li></ul></div>
+    <div class="scope-group"><p class="scope-k">Campaign &amp; print</p><ul><li>Main visuals and campaign artwork, 2013 to 2016</li><li>Wall graphics for the 2014 pavilion, five areas</li><li>Brochures, 4,000, and leaflets, 5,000, in 2015</li><li>E-invitations, three, in 2015</li><li>Gift items, 4,500, and recycled bags, 5,500</li></ul></div>
+    <div class="scope-group"><p class="scope-k">Event</p><ul><li>Event management on site</li><li>Build-up, dismantling, transport and storage</li><li>Catering, flowers and chocolates</li></ul></div>
+    <div class="scope-group"><p class="scope-k">Film &amp; coverage</p><ul><li>Video coverage with an edited report, two shows in 2015</li><li>Show film, Cityscape 2017</li><li>Social film for the stand, Tawdheef 2017</li><li>Corporate documentary, Cityscape 2013</li></ul></div>
+  </div>
+  <ul class="scope-pics" aria-label="Pieces of the scope">
+    <li><figure><img src="a/scope-kiosks-2015.webp" srcset="a/scope-kiosks-2015-perf800.webp 800w, a/scope-kiosks-2015.webp 1200w" sizes="(max-width:760px) 45vw, 35vw" width="1200" height="675" alt="Design render of the Cityscape 2015 stand: coloured touch-screen kiosks on a grey floor, subject icons on poles and a tall screen wall." loading="lazy" decoding="async"><figcaption>Cityscape 2015: the touch-screen kiosks, design render</figcaption></figure></li>
+    <li><figure><img src="a/scope-ceiling-2017.webp" srcset="a/scope-ceiling-2017-perf800.webp 800w, a/scope-ceiling-2017.webp 1200w" sizes="(max-width:760px) 45vw, 35vw" width="1200" height="675" alt="The sphere ceiling lit pink and white over the half-built Cityscape 2017 stand, ladders below." loading="lazy" decoding="async"><figcaption>Cityscape 2017: the kinetic ceiling lit during the build</figcaption></figure></li>
+    <li><figure><img src="a/scope-water-film-2014.webp" width="480" height="270" alt="Two wooden dhows moored at a quay under a pale sky, a frame of the 2014 water documentary." loading="lazy" decoding="async"><figcaption>World Future Energy Summit 2014: a frame of the water film</figcaption></figure></li>
+    <li><figure><img src="a/scope-flowers-2017.webp" srcset="a/scope-flowers-2017-perf800.webp 800w, a/scope-flowers-2017.webp 1200w" sizes="(max-width:760px) 45vw, 35vw" width="1200" height="675" alt="A low vase of white lilies and green leaves beside a glass bowl on the white reception counter of the Tawdheef 2017 stand." loading="lazy" decoding="async"><figcaption>Tawdheef 2017: flowers on the reception counter, three days</figcaption></figure></li>
+  </ul>
+  <p class="scope-src">From the delivery notes, the invoices, the 2017 agreement, the bill of quantities of the 2013 stand and the letters releasing the guarantees.</p>
+  <p class="scope-note">Proposed and not taken up: for Cityscape 2017, a campaign and 11 short project films; for Tawdheef 2016, a stand with five touch-screen panels.</p>
+</section>
+
+<!-- 7 · the result: one department kept coming back (E-EXHIBITIONS), then the numbers (moved whole; 25 -> 22 by the record) -->
+<section class="x-sec x-result" data-stop="The result" aria-labelledby="x7">
+  <p class="lab">The result</p>
+  <h2 id="x7">One department came back <b>for twelve shows.</b></h2>
+  <p class="lead">2011 to 2018: the World Future Energy Summit in 2011, 2013, 2014, 2015 and 2016; Cityscape Abu Dhabi in 2013, 2015, 2016, 2017 and 2018; Tawdheef in 2015 and 2017.</p>
+</section>
+
+<section class="s-nums" aria-label="In numbers" id="x-numbers">
   <div class="nums">
-    <div><b>25</b><span>stands and pavilions, 2011 to 2024</span></div>
+    <div><b>22</b><span>shows built, 2010 to 2024</span></div>
     <div><b>7,200</b><span>sq ft, built in three days (Cityscape 2017)</span></div>
     <div><b>6</b><span>zones on open sand (Liwa)</span></div>
     <div><b>6</b><span>days from confirmation to launch (ZEISS)</span></div>
@@ -246,18 +563,13 @@ body.spaces .foot{background:#0B0C10}
   </div>
 </section>
 
-<!-- 10 · on to the Work page's "Designed, then built" chapter (#spaces) -->
-<section class="s-more" aria-label="More stands">
-  <p><a href="../archive/#spaces">All 25 stands and pavilions are in the Work archive <span aria-hidden="true">→</span></a></p>
-</section>
-
-<!-- 11 · credits, then the next project -->
-<section class="fp-end s-end" aria-label="Credits">
+<!-- 8 · credits, then the next project, moved whole (two lines added) -->
+<section class="fp-end s-end" aria-label="Credits" data-stop="Credits" data-stop-quiet>
   <div class="fp-cred">
     <div><span class="fp-lab">Role</span>Antoni Gerges<br>Creative Director, Brand &amp; Experiential</div>
     <div><span class="fp-lab">Made by</span>AntBrush.</div>
-    <div><span class="fp-lab">Built by</span>Cityscape 2017: Divine Creations, Dubai. Innovation Month: Halwan Advertising and Production.</div>
-    <div><span class="fp-lab">The documents</span>Block plan from the client’s brief, 20 March 2017. Hall plan from the Cityscape 2015 presentation. Flow diagram from the WFES 2013 exhibit story. Photographs taken on site.</div>
+    <div><span class="fp-lab">Built by</span>Cityscape 2017: Divine Creations, Dubai. Innovation Month: Halwan Advertising and Production. The 2012 and 2013 brand stands: Marcoms, Dubai. Shurooq 2018: Eleco. National Housing Exhibition 2018: Divine Creations.</div>
+    <div><span class="fp-lab">The documents</span>Block plan from the client’s brief, 20 March 2017. Hall plan from the Cityscape 2015 presentation. Flow diagram from the WFES 2013 exhibit story. Photographs taken on site. Show photographs of 2012 and 2013 from the AntBrush exhibition presentation of June 2013.</div>
   </div>
   <a class="fp-next" href="../big-grill/"><span class="fp-lab">Next project</span><b class="nx-b">The Big Grill</b><span class="nx-a" aria-hidden="true">→</span><span class="nx-l">A festival starts with a drawing.</span></a>
 </section>
@@ -285,6 +597,41 @@ body.spaces .foot{background:#0B0C10}
   [].forEach.call(hdr.querySelectorAll('.nav a'), function (l) { l.addEventListener('click', function () { menu(false); }); });
   W.addEventListener('scroll', function () { var y = W.scrollY, d = y - ly0; ly0 = y; if (y < 80) { hdr.classList.remove('hide'); acc = 0; return; }
     acc = (d > 0) === (acc > 0) ? acc + d : d; if (acc > 24) hdr.classList.add('hide'); else if (acc < -12) hdr.classList.remove('hide'); }, { passive: true });
+})();
+</script>
+<script>
+/* E-EXHIBITIONS: where you are (the page's stops, data-stop; a quiet stop counts but shows nothing), and the build film that plays muted
+   while it is on screen (a tap opens it whole in the viewer). */
+(function () {
+  var D = document, W = window, stops = [].slice.call(D.querySelectorAll('main [data-stop]'));
+  var rm = W.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var IO = 'IntersectionObserver' in W;
+  [].forEach.call(D.querySelectorAll('video.x-loop'), function (v) {   // the poster when near, the film while on screen
+    var setPoster = function () { if (v.dataset.poster && !v.poster) v.poster = v.dataset.poster; };
+    if (!IO) { setPoster(); return; }
+    new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { setPoster(); o.disconnect(); } }, { rootMargin: '100% 0px' }).observe(v);
+    if (!rm) new IntersectionObserver(function (e) { if (e[0].isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause(); }, { threshold: .25 }).observe(v);
+  });
+  var hall = D.getElementById('x-hall');                 // the hall's 3D script, when the hall is two screens away
+  if (hall) {
+    if (rm) hall.classList.add('xh-off');
+    var load = function () { if (hall.dataset.on) return; hall.dataset.on = '1'; var s = D.createElement('script'); s.src = hall.getAttribute('data-js'); D.body.appendChild(s); };
+    if (IO) new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { o.disconnect(); load(); } }, { rootMargin: '200% 0px' }).observe(hall); else load();
+  }
+  if (stops.length < 2) return;
+  var chip = D.createElement('p'); chip.className = 'x-where'; chip.setAttribute('aria-hidden', 'true'); chip.hidden = true; D.body.appendChild(chip);
+  var foot = D.querySelector('body > footer.foot'), cur = -2;
+  function upd() {
+    var mid = innerHeight * .5, k = -1;
+    stops.forEach(function (s, i) { var r = s.getBoundingClientRect(), nx = stops[i + 1], bot = nx ? nx.getBoundingClientRect().top : r.bottom; if (r.top <= mid && bot > mid) k = i; });
+    var atFoot = foot && foot.getBoundingClientRect().top < innerHeight;
+    if (atFoot) k = -1;
+    if (k === cur) return; cur = k;
+    if (k < 0 || stops[k].hasAttribute('data-stop-quiet')) { chip.hidden = true; return; }
+    chip.innerHTML = '<b>' + stops[k].getAttribute('data-stop') + '</b>' + (k + 1) + ' of ' + stops.length; chip.hidden = false;
+  }
+  var tk = false; W.addEventListener('scroll', function () { if (!tk) { tk = true; requestAnimationFrame(function () { tk = false; upd(); }); } }, { passive: true });
+  W.addEventListener('resize', upd); upd();
 })();
 </script>
 <script src="../../assets/nav.js" defer></script>
