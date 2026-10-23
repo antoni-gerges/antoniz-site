@@ -27,7 +27,7 @@
     ['Campaigns', 'work/archive/#campaigns'], ['Live', 'work/archive/#live'], ['Film', 'work/#film']];
   var TONY = [['About', 'about/'], ['How I work', 'about/#how-i-work'], ['Creative leadership, in practice', 'about/#studio'], ['What I stand for', 'about/#what-i-stand-for'],
     ['In their words', 'about/#in-their-words'], ['Education', 'about/#education-work'], ['Where and for whom', 'about/#where'],
-    ['Contact', 'contact/'], ['Download the CV', 'assets/Antoni-Gerges-CV.pdf', 'download']];
+    ['Contact', 'contact/'], ['Download the CV', 'assets/Antoni-Gerges-CV-f21480b41e.pdf', 'download']];
   var REACH = [['antoni@antbrush.com', 'mailto:antoni@antbrush.com'], ['+1 (571) 278-8950', 'tel:+15712788950']];
   var CLIENTS = [['Dubai Health Authority', 'work/dha/'], ['Department of Municipal Affairs and Transport, Abu Dhabi', 'work/cityscape/'],
     ['UAE Ministry of Education', 'work/anti-bullying/'], ['Al Ain City Municipality', 'work/al-ain/'], ['Abu Dhabi Sports Council', 'work/al-forsan/'],
