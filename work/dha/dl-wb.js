@@ -382,10 +382,10 @@ async function kineticB() {
     const P1 = .36;
     if (p < P1) {
       let n = 0, last = '';
-      titles.forEach((o, i) => { const s = .03 + i * (.29 / 13), u = seg(p, s, s + .029 * 1.6), k = 0; /* WB-FLAT-dha: in place, a hard cut */
+      titles.forEach((o, i) => { const s = i < 5 ? -1 : .03 + (i - 5) * (.29 / 8) /* pol24 E-POL24-DHA-PRESS: the five newspapers on the table from the first frame, the magazines join one by one */, u = seg(p, s, s + .029 * 1.6), k = 0; /* WB-FLAT-dha: in place, a hard cut */
         o.g.visible = u > 0; o.g.position.set(o.home.x, o.home.y + k * .55, o.home.z + k * .25); o.g.rotation.y = o.ang + k * Math.PI / 2; if (u >= 1) { n++; last = o.name; } });
       nt.textContent = String(n); np.textContent = '0'; nm.textContent = last || '​';
-      const ph = phone(), d = ph ? 2.25 : 1.4, el = (ph ? 1.22 : 1.0) - seg(p, 0, P1) * .14;
+      const ph = phone(), d = ph ? 2.7 : 1.4 /* pol24 E-POL24-DHA-PRESS: on a phone the piles stand clear of the count above them */, el = (ph ? 1.22 : 1.0) - seg(p, 0, P1) * .14;
       pcam.position.set(.02, Math.sin(el) * d, Math.cos(el) * d + .02); pcam.lookAt(.02, 0, .01); R.render(press, pcam);
       sec.classList.remove('end');
     } else {
@@ -470,7 +470,7 @@ function teaseReveal() {
   const box = $('.dl-box', sec), ph = $('.dl-ph', sec), news = $('.dl-news', sec);
   pin(sec, p => {
     const lit = p >= .42; sec.classList.toggle('lit', lit);
-    const turn = EO(seg(p, .6, .7)), back = EO(seg(p, .72, .84));
+    const turn = EO(seg(p, .6, .7)), back = EO(seg(p, .7, .8)); /* pol24 E-POL24-DHA-REVEAL: the photograph turns in as the box leaves */
     const ry = lit ? lerp(-6, 90, turn) : lerp(-26, 8, p / .42);
     box.style.visibility = turn >= 1 ? 'hidden' : 'visible'; box.style.transform = `rotateY(${ry}deg)`;
     news.style.visibility = p >= .6 ? 'hidden' : 'visible';

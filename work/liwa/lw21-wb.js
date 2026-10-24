@@ -120,7 +120,8 @@
     try { data = JSON.parse(k4.getAttribute('data-nights') || '[]'); } catch (e) {}
     FP.on(function (H) {
       var s = at(k4, H); if (!s.on) return;
-      var u = RM ? 15 : clamp((s.p - .04) / .9, 0, 1) * 15, i = Math.min(15, Math.round(u)), tw = tiles[1].offsetLeft - tiles[0].offsetLeft;
+      var r4 = k4.getBoundingClientRect(), p4 = r4.height - H > H * .2 ? s.p : clamp((H * .7 - r4.top) / (H * .7), 0, 1);   /* pol24 E-POL24-LIWA-NIGHTS: a stage with no scroll of its own runs the nights on its way up the screen */
+      var u = RM ? 15 : clamp((p4 - .04) / .9, 0, 1) * 15, i = Math.min(15, Math.round(u)), tw = tiles[1].offsetLeft - tiles[0].offsetLeft;
       strip.style.transform = 'translateX(' + (-(tiles[0].offsetWidth / 2 + u * tw)).toFixed(1) + 'px) rotateX(62deg)';
       if (i === cur) return; cur = i;
       tiles.forEach(function (t, k) { t.classList.toggle('on', k === i); t.classList.toggle('past', k < i); });
