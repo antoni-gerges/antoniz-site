@@ -116,6 +116,24 @@ html:not(#_d) body .fp-end button.film>video,html:not(#_d) body .fp-end button.f
 html:not(#_d) body button.film>.go{position:relative;inset:auto;grid-area:1/1;align-self:end;justify-self:end;margin:0 clamp(28px,5vw,84px) clamp(22px,4vw,60px) 0}
 html:not(#_d) body button.film>.t{position:relative;inset:auto;left:auto;right:auto;bottom:auto;grid-area:2/1;display:block;padding-top:14px;text-align:left}
 html:not(#_d):not(#_t) body button.film .t .fp-lab b{font-size:var(--t-text)!important;line-height:var(--lh-text)!important}</style>
+<style data-fix="E-FL26-CSS">/* fl26 (26 Oct): the promo and the after film, at the top. Words under the pictures, never over them; no fades, no autoplay; a film smaller than the screen plays at its own size */
+.f26{padding:clamp(56px,8vw,112px) var(--g,24px) clamp(40px,6vw,88px);color:inherit}
+.f26-in{max-width:1320px;margin:0 auto}
+.f26 h2{margin:0 0 clamp(24px,3vw,40px);font-weight:300}
+.f26 h2 b{font-weight:700}
+.f26-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;align-items:start}
+.f26-one .f26-pair{grid-template-columns:minmax(0,960px)}
+@media (max-width:760px){.f26-pair{grid-template-columns:minmax(0,1fr);gap:36px}}
+.f26-b{-webkit-appearance:none;appearance:none;display:block;width:100%;margin:0;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.f26-b picture{display:block}.f26-b img{display:block;width:auto;max-width:100%;height:auto;max-height:min(72vh,560px);background:#000}
+.f26-c{display:flex;align-items:center;flex-wrap:wrap;gap:4px 12px;min-height:44px;padding-top:10px}
+.f26-c b{font-weight:700}
+.f26-i{width:12px;height:14px;flex:none;fill:currentColor}
+.f26-b:hover .f26-c b{text-decoration:underline;text-underline-offset:4px}
+.f26-m{-webkit-appearance:none;appearance:none;display:inline-flex;align-items:center;min-height:44px;margin-top:6px;padding:8px 16px;border:1px solid currentColor;background:none;color:inherit;font:inherit;cursor:pointer}
+.f26-b:focus-visible,.f26-m:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.fp-player.f26own video{flex:none;width:min(var(--f26w,640px),100%);height:auto;max-height:calc(100% - 64px);margin:auto}
+</style>
 </head>
 <body class="fp capacity">
 <a class="skip" href="#main">Skip to content</a>
@@ -131,6 +149,10 @@ html:not(#_d):not(#_t) body button.film .t .fp-lab b{font-size:var(--t-text)!imp
 <section class="op21" aria-label="A glimpse of Capacity Middle East: the skyline drawn in points of light, the points joining, the city in one line, the Dubai Fountain, the 2019 stage, an aerial act, dancers, the full room, the gala title">
   <figure class="op21-f"><button class="op21-film" type="button" data-film="a/glimpse-d-gl26.mp4" data-film-p="a/glimpse-p-gl26.mp4" data-title="A glimpse · 13 s · sound" aria-label="Play the glimpse with sound"><video class="op21-v" data-fix="E-OPENER-capacity" muted playsinline loop preload="metadata" data-auto width="1280" height="720" poster="a/glimpse-poster.webp" data-src="a/glimpse-d-gl26.mp4" data-src-p="a/glimpse-p-gl26.mp4" data-poster="a/glimpse-poster.webp"></video></button><figcaption class="op21-cap">A glimpse · the stage films, Etisalat UAE’s 2018 film, the 2019 event film, my own film of the night</figcaption><p class="op25-nm" data-fix="E-OPEN25-11">Capacity Middle East</p></figure>
 </section>
+<!-- fl26 · the promo and the after film, right after the first screen (Tony, 26 Oct: "one promotion video and one after event video. Put them") -->
+<section class="f26" data-fix="E-FL26-capacity" aria-labelledby="f26-h"><div class="f26-in"><h2 id="f26-h">Both nights, <b>on film.</b></h2><div class="f26-pair"><div class="f26-t"><button class="f26-b" type="button" data-film="a/night-2018.mp4" data-title="The 2018 dinner, The Pavilion, Armani Hotel · film by Etisalat UAE" aria-label="Play the film of the 2018 dinner, 1 minute 30, with sound"><picture><img src="a/night-2018-poster.webp" width="960" height="540" alt="The Burj Khalifa, from its foot" decoding="async"></picture><span class="f26-c"><svg class="f26-i" viewBox="0 0 12 14" aria-hidden="true" focusable="false"><path d="M0 0L12 7L0 14Z"/></svg><b>The 2018 dinner</b><span>1:30 · film by Etisalat UAE · sound</span></span></button></div><div class="f26-t"><button class="f26-b" type="button" data-film="a/night-2019.mp4" data-title="The 2019 dinner, Nasimi Beach, Atlantis, The Palm · event film made for Etisalat" aria-label="Play the film of the 2019 dinner, 1 minute 45, with sound"><picture><img src="a/night-2019-poster.webp" width="848" height="380" alt="Atlantis, The Palm" decoding="async"></picture><span class="f26-c"><svg class="f26-i" viewBox="0 0 12 14" aria-hidden="true" focusable="false"><path d="M0 0L12 7L0 14Z"/></svg><b>The 2019 dinner</b><span>1:45 · sound</span></span></button></div></div></div></section>
+<script data-fix="E-FL26-JS">(function(){var D=document;D.addEventListener("click",function(e){var b=e.target&&e.target.closest?e.target.closest("[data-film]"):null,pl=D.querySelector(".fp-player");if(!b||!pl)return;var w=b.getAttribute("data-f26-w");pl.classList.toggle("f26own",!!w);if(w)pl.style.setProperty("--f26w",w+"px");},true);})();</script>
+
 
 <!-- fx26 E-FX26-CAPACITY (Tony, 26 Oct: "lead with the one with black background and the dots connecting the logo. This is what matters."): the 2018 invitation, whole, from its own vectors -->
 <section class="fx26-cap-lead" data-fix="E-FX26-CAPACITY" aria-label="The idea of the night: the 2018 invitation, where points of light join into Etisalat’s mark"><figure><a href="a/fx26-invitation-2400.webp" aria-label="Open the invitation full size"><img src="a/fx26-invitation-1600.webp" srcset="a/fx26-invitation-800.webp 800w, a/fx26-invitation-1600.webp 1600w, a/fx26-invitation-2400.webp 2400w" sizes="(max-width:760px) 100vw, min(92vw, 1400px)" width="2400" height="1697" alt="The 2018 invitation on black: points of light joined by lime orbits into Etisalat’s mark above a line drawing of the Dubai skyline, the evening’s details beside it" decoding="async"></a><figcaption class="fp-lab"><b>The invitation, 2018</b> · points of light join into Etisalat’s mark</figcaption></figure></section>

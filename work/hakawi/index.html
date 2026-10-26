@@ -143,6 +143,24 @@ html:not(#_d) body .fp-end button.film>video,html:not(#_d) body .fp-end button.f
 html:not(#_d) body button.film>.go{position:relative;inset:auto;grid-area:1/1;align-self:end;justify-self:end;margin:0 clamp(28px,5vw,84px) clamp(22px,4vw,60px) 0}
 html:not(#_d) body button.film>.t{position:relative;inset:auto;left:auto;right:auto;bottom:auto;grid-area:2/1;display:block;padding-top:14px;text-align:left}
 html:not(#_d):not(#_t) body button.film .t .fp-lab b{font-size:var(--t-text)!important;line-height:var(--lh-text)!important}</style>
+<style data-fix="E-FL26-CSS">/* fl26 (26 Oct): the promo and the after film, at the top. Words under the pictures, never over them; no fades, no autoplay; a film smaller than the screen plays at its own size */
+.f26{padding:clamp(56px,8vw,112px) var(--g,24px) clamp(40px,6vw,88px);color:inherit}
+.f26-in{max-width:1320px;margin:0 auto}
+.f26 h2{margin:0 0 clamp(24px,3vw,40px);font-weight:300}
+.f26 h2 b{font-weight:700}
+.f26-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;align-items:start}
+.f26-one .f26-pair{grid-template-columns:minmax(0,960px)}
+@media (max-width:760px){.f26-pair{grid-template-columns:minmax(0,1fr);gap:36px}}
+.f26-b{-webkit-appearance:none;appearance:none;display:block;width:100%;margin:0;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.f26-b picture{display:block}.f26-b img{display:block;width:auto;max-width:100%;height:auto;max-height:min(72vh,560px);background:#000}
+.f26-c{display:flex;align-items:center;flex-wrap:wrap;gap:4px 12px;min-height:44px;padding-top:10px}
+.f26-c b{font-weight:700}
+.f26-i{width:12px;height:14px;flex:none;fill:currentColor}
+.f26-b:hover .f26-c b{text-decoration:underline;text-underline-offset:4px}
+.f26-m{-webkit-appearance:none;appearance:none;display:inline-flex;align-items:center;min-height:44px;margin-top:6px;padding:8px 16px;border:1px solid currentColor;background:none;color:inherit;font:inherit;cursor:pointer}
+.f26-b:focus-visible,.f26-m:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.fp-player.f26own video{flex:none;width:min(var(--f26w,640px),100%);height:auto;max-height:calc(100% - 64px);margin:auto}
+</style>
 </head>
 <body class="fp ls21 hk">
 <a class="skip" href="#main">Skip to content</a>
@@ -159,7 +177,11 @@ html:not(#_d):not(#_t) body button.film .t .fp-lab b{font-size:var(--t-text)!imp
 <!-- 0 · the glimpse: the tent in 12 s, seven hard cuts from the event film, then the name (build/films.py; the op21 markup of the live openers, one 16:9 film, muted) -->
 <section class="op21" data-stop="The glimpse" aria-label="A glimpse of the tent: the lit marquee across the dark lawn, the pagoda entrance, the fretwork reception counter, dates and lanterns, a lantern close, desserts, the buffet arches with the full hall, then the name Hakawi Sharqia">
   <figure class="op21-f"><button class="op21-film" type="button" aria-label="Pause the glimpse"><video class="op21-v" data-fix="E-OPENER-hakawi" muted playsinline loop preload="none" data-wa-defer width="1280" height="720" poster="a/glimpse-poster.webp"><source data-wa-src="a/glimpse-p.mp4" type="video/mp4" media="(max-width:760px)"><source data-wa-src="a/glimpse.mp4" type="video/mp4"></video></button><figcaption class="op21-cap">A glimpse · cut from the event film by Marc Wassim, 2017</figcaption><p class="op25-nm" data-fix="E-OPEN25-11">Hakawi Sharqia</p><p class="op21-play" data-fix="E-FL23" style="display:flex;flex-wrap:wrap;gap:8px 24px;margin:12px 0 0"><button class="fp-play" type="button" data-film="../../media/films/hakawi-2017-1280.mp4" data-title="Hakawi Sharqia, Ramadan 2017 · the event film, cut · 0:26">Play the event film <small>0:26 · sound</small></button></p></figure>
-</section><nav class="case-index wa-idx" data-wa-ph aria-hidden="true"><div class="case-index-heading"><span>Explore the project</span><strong>Hakawi Sharqia</strong></div><details><summary>Chapters · 15</summary></details></nav>
+</section>
+<!-- fl26 · the promo and the after film, right after the first screen (Tony, 26 Oct: "one promotion video and one after event video. Put them") -->
+<section class="f26 f26-one" data-fix="E-FL26-hakawi" data-stop="The film" aria-labelledby="f26-h"><div class="f26-in"><h2 id="f26-h">The month, <b>on film.</b></h2><div class="f26-pair"><div class="f26-t"><button class="f26-b" type="button" data-film="f26/film-1080.mp4" data-title="Hakawi Sharqia, Ramadan 2017 · the event film, whole · 1:10" aria-label="Play the event film, 1 minute 10, with sound"><picture><img src="f26/film-poster.webp" width="1200" height="676" alt="The tent full of guests under its teal canopies" decoding="async"></picture><span class="f26-c"><svg class="f26-i" viewBox="0 0 12 14" aria-hidden="true" focusable="false"><path d="M0 0L12 7L0 14Z"/></svg><b>The event film, whole</b><span>1:10 · sound</span></span></button></div></div></div></section>
+<script data-fix="E-FL26-JS">(function(){var D=document;D.addEventListener("click",function(e){var b=e.target&&e.target.closest?e.target.closest("[data-film]"):null,pl=D.querySelector(".fp-player");if(!b||!pl)return;var w=b.getAttribute("data-f26-w");pl.classList.toggle("f26own",!!w);if(w)pl.style.setProperty("--f26w",w+"px");},true);})();</script>
+<nav class="case-index wa-idx" data-wa-ph aria-hidden="true"><div class="case-index-heading"><span>Explore the project</span><strong>Hakawi Sharqia</strong></div><details><summary>Chapters · 15</summary></details></nav>
 
 <section class="ls-open" data-stop="The tent" aria-labelledby="s0">
   <p class="lab">Hakawi Sharqia · Ramadan tent · the marquee on the Emirates Golf Club lawn, Dubai · Ramadan 2017 · with MCX</p>
