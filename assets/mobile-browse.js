@@ -5,7 +5,7 @@
  const panel=document.createElement('details');panel.className='mobile-sectors';
  const summary=document.createElement('summary');summary.textContent='Filter by sector · All';
  pick.before(panel);panel.append(summary,pick);
- function state(){panel.open=!mq.matches;}
+ function state(){panel.open=false;}   /* fin26 E-FIN26-PANEL: never opens by itself */
  state();mq.addEventListener('change',state);
  pick.addEventListener('change',()=>{const active=pick.querySelector('input:checked');summary.textContent='Filter by sector · '+(active?.parentElement.querySelector('span')?.textContent||'All');if(mq.matches)panel.open=false;});
  const nav=document.createElement('div');nav.className='mobile-jump';

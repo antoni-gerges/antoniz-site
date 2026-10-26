@@ -104,7 +104,7 @@
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
   </div>
 </header>
-<main id="main">
+<main id="main" data-fin26-name="The Big Grill">
 <!-- 0 · the glimpse: the project in 14 s, hard cuts from its own films (openers-21oct) -->
 <section class="op21" aria-label="A glimpse of The Big Grill: the lawn at Yas Links, the festival flag, skewers over the coals, the food, the drummers, families at dusk, the Big Grill mark">
   <figure class="op21-f"><button class="op21-film" type="button" data-film="a/glimpse-d.mp4" data-film-p="a/glimpse-p.mp4" data-title="A glimpse · 14 s · sound" aria-label="Play the glimpse with sound"><video class="op21-v" data-fix="E-OPENER-big-grill" muted playsinline loop preload="metadata" data-auto width="1280" height="720" poster="a/glimpse-poster.webp" data-src="a/glimpse-d.mp4" data-src-p="a/glimpse-p.mp4" data-poster="a/glimpse-poster.webp"></video></button><figcaption class="op21-cap">A glimpse · from the festival film · MCX</figcaption><p class="op25-nm" data-fix="E-OPEN25-11">The Big Grill</p></figure>
@@ -249,5 +249,6 @@
 <script type="module" src="bg.js?v=10"></script>
 <script src="../../assets/numbers.js" defer></script>
 <script src="../../assets/wavea.js?v=eee87206" defer></script>
+<script data-fix="E-FIN26-LABEL">/* fin26: the chapter index names the project by its short name */(function(){var m=document.querySelector("main[data-fin26-name]");if(!m)return;var n=m.getAttribute("data-fin26-name");function set(){var s=document.querySelector(".case-index-heading strong");if(s&&s.textContent!==n)s.textContent=n;}set();addEventListener("load",set);if("MutationObserver" in window){new MutationObserver(set).observe(m,{childList:true,subtree:false});}})();</script>
 </body>
 </html>

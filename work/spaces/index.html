@@ -212,7 +212,7 @@ a.xh-lab span{text-decoration:underline;text-underline-offset:4px;text-decoratio
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
   </div>
 </header>
-<main id="main">
+<main id="main" data-fin26-name="Exhibitions">
 
 <!-- 0 · the glimpse (openers-21oct), moved whole -->
 <section class="op21" data-stop="Opening" data-stop-quiet aria-label="A glimpse of a build: the crews, the floor laid, the stand nearly done, the sphere ceiling waking up in white, blue, pink and gold">
@@ -659,5 +659,6 @@ a.xh-lab span{text-decoration:underline;text-underline-offset:4px;text-decoratio
 <script src="../../assets/numbers.js" defer></script>
 <script src="../../assets/wavea.js?v=eee87206" defer></script>
 <script data-fix="E-S25-TOG">/* small25 (smalls-25oct/small25.py), 25 Oct */(function(){var D=document,W=window;D.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.s25-tog');if(!b)return;var p=D.getElementById(b.getAttribute('aria-controls'));if(!p)return;var o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',o?'true':'false');p.hidden=!o;var m=b.querySelector('.s25-pm');if(m)m.textContent=o?'\u2212':'+';try{W.dispatchEvent(new Event('resize'))}catch(_){}});})();</script>
+<script data-fix="E-FIN26-LABEL">/* fin26: the chapter index names the project by its short name */(function(){var m=document.querySelector("main[data-fin26-name]");if(!m)return;var n=m.getAttribute("data-fin26-name");function set(){var s=document.querySelector(".case-index-heading strong");if(s&&s.textContent!==n)s.textContent=n;}set();addEventListener("load",set);if("MutationObserver" in window){new MutationObserver(set).observe(m,{childList:true,subtree:false});}})();</script>
 </body>
 </html>

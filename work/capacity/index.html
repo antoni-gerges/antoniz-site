@@ -116,7 +116,7 @@ body.fp.capacity main,.capacity .fp-stick,.capacity .fp-hero,.capacity .fp-built
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
   </div>
 </header>
-<main id="main">
+<main id="main" data-fin26-name="Capacity Middle East">
 <!-- 0 · the glimpse: the project in 13 s, hard cuts from its own films (openers-21oct) -->
 <section class="op21" aria-label="A glimpse of Capacity Middle East: the skyline drawn in points of light, the points joining, the city in one line, the Dubai Fountain, the 2019 stage, an aerial act, dancers, the full room, the gala title">
   <figure class="op21-f"><button class="op21-film" type="button" data-film="a/glimpse-d.mp4" data-film-p="a/glimpse-p.mp4" data-title="A glimpse · 13 s · sound" aria-label="Play the glimpse with sound"><video class="op21-v" data-fix="E-OPENER-capacity" muted playsinline loop preload="metadata" data-auto width="1280" height="720" poster="a/glimpse-poster.webp" data-src="a/glimpse-d.mp4" data-src-p="a/glimpse-p.mp4" data-poster="a/glimpse-poster.webp"></video></button><figcaption class="op21-cap">A glimpse · the stage films, Etisalat UAE’s 2018 film, the 2019 event film, my own film of the night</figcaption><p class="op25-nm" data-fix="E-OPEN25-11">Capacity Middle East</p></figure>
@@ -285,5 +285,6 @@ body.fp.capacity main,.capacity .fp-stick,.capacity .fp-hero,.capacity .fp-built
 <script type="module" src="cp.js?v=5"></script>
 <script src="../../assets/numbers.js" defer></script>
 <script src="../../assets/wavea.js?v=eee87206" defer></script>
+<script data-fix="E-FIN26-LABEL">/* fin26: the chapter index names the project by its short name */(function(){var m=document.querySelector("main[data-fin26-name]");if(!m)return;var n=m.getAttribute("data-fin26-name");function set(){var s=document.querySelector(".case-index-heading strong");if(s&&s.textContent!==n)s.textContent=n;}set();addEventListener("load",set);if("MutationObserver" in window){new MutationObserver(set).observe(m,{childList:true,subtree:false});}})();</script>
 </body>
 </html>
