@@ -43,12 +43,12 @@
     pl.insertAdjacentHTML('afterend', '<div class="route" aria-hidden="true"><svg viewBox="0 0 ' + W + ' ' + Hh + '"><path id="rt" d="' + d + '" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round" opacity=".8"/>' +
       '<circle cx="' + A[0] + '" cy="' + A[1] + '" r="5" fill="currentColor"/><circle id="rmid" r="5" fill="currentColor"/><circle cx="' + Z[0] + '" cy="' + Z[1] + '" r="5" fill="currentColor"/>' +
       '<text x="' + A[0] + '" y="' + (A[1] + dy) + '">Cairo</text><text class="yr" x="' + A[0] + '" y="' + (A[1] + dy2) + '">2003</text><text class="rl" x="' + A[0] + '" y="' + (A[1] + dy3) + '">Graphic designer</text>' +
-      '<text id="rmt" text-anchor="middle">Dubai</text><text id="rmy" class="yr" text-anchor="middle">2006 to 2024</text>' + two(null, null, 'middle', 'Founder of AntBrush ·', 'partner at MCX', 'rml') +
+      '<text id="rmt" text-anchor="middle" data-fix="E-C25-7">Dubai and Abu Dhabi</text><text id="rmy" class="yr" text-anchor="middle">2006 to 2024</text>' + two(null, null, 'middle', 'Founder of AntBrush ·', 'partner at MCX', 'rml') +
       '<text x="' + ZX + '" y="' + (Z[1] + dy) + '" text-anchor="end">Tampa</text><text class="yr" x="' + ZX + '" y="' + (Z[1] + dy2) + '" text-anchor="end">2024</text>' + two(ZX, Z[1] + dy3, 'end', 'Creative direction,', 'with new tools for making') +
       '<g id="rm"><g transform="scale(' + (ph ? .1 : .19) + ') translate(-62 -141)" fill="currentColor"><path d="' + BIRD + '"/><path d="' + SIGS + '"/></g></g></svg></div>');
     var rt = $('#rt'), rm = $('#rm'), L = rt.getTotalLength(), sec = $('.places');
     var mid = rt.getPointAtLength(L * .5); $('#rmid').setAttribute('cx', mid.x); $('#rmid').setAttribute('cy', mid.y);
-    if (!ph) { dy += 8; dy2 += 8; dy3 += 8; }   /* the middle stop only (Cairo and Tampa are already written): on a desktop the dots ran into the top of "The Gulf" (13 Oct) */
+    if (!ph) { dy += 22; dy2 += 22; dy3 += 22; }   /* content25 E-C25-7: "Dubai and Abu Dhabi" is wider than "Dubai"; on a desktop the stop's three lines sit 14 lower, clear of the route */   /* the middle stop only (Cairo and Tampa are already written): on a desktop the dots ran into the top of "The Gulf" (13 Oct) */
     $('#rmt').setAttribute('x', mid.x); $('#rmt').setAttribute('y', mid.y + dy); $('#rmy').setAttribute('x', mid.x); $('#rmy').setAttribute('y', mid.y + dy2); $('#rml').setAttribute('x', mid.x); $('#rml').setAttribute('y', mid.y + dy3); $$('#rml tspan').forEach(function (t) { t.setAttribute('x', mid.x); });
     // the mark's tail sits on the line and its body leads: it flies along the route and stops just short of Tampa
     var setR = function () { var r = sec.getBoundingClientRect(), h = innerHeight, p = Math.min(1, Math.max(0, (h * .85 - r.top) / (h * .75)));
