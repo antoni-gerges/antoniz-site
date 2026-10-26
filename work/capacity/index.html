@@ -309,6 +309,36 @@ html:not(#_e) body section.fp-model .fp-built .fp-lab span:last-child{display:no
 </section>
 
 <!-- 4 · the terrace and the two stage designs, each whole, at once -->
+<!-- mat26:capacity-burj -->
+<section class="m26-place" data-fix="E-MAT26-capacity-burj" aria-label="The Burj Khalifa and Downtown Dubai from the air at sunset: the place of the 2018 dinner (stock film)"><figure class="m26-fig"><video class="m26-v" muted playsinline loop preload="none" width="1600" height="900" poster="m26/burj-place-poster.webp" data-m26-src="m26/burj-place.mp4" style="max-width:1600px" aria-label="The Burj Khalifa and Downtown Dubai from the air at sunset: the place of the 2018 dinner (stock film)"></video><figcaption class="m26-cap"><b>Burj Khalifa</b>, Downtown Dubai · the place of the 2018 dinner, The Pavilion beside the Dubai Fountain · stock film, not the night</figcaption></figure></section>
+<!-- /mat26:capacity-burj -->
+<!-- mat26:assets --><style data-fix="E-MAT26-CSS">/* mat26 (26 Oct): the place films, the arena, the full sets, the Lara teaser, the wall of stands. Words under the pictures, never over them; no fades; nothing above its own size; two text sizes (scale.css) */
+.m26-place{padding:clamp(40px,6vw,88px) var(--g,16px);background:inherit}
+.m26-place.m26-in{padding:clamp(16px,3vw,40px) var(--g,16px) 0}
+.m26-fig{margin:0 auto;max-width:1320px}
+.m26-v{display:block;width:100%;height:auto;margin:0 auto;background:#000}
+.m26-cap,.m26-k,.m26-lara figcaption{margin:10px 0 0;font-size:var(--t-text);line-height:1.45;color:rgba(247,245,241,.72);max-width:68ch}
+.m26-cap b,.m26-k b{color:#F7F5F1;font-weight:600}
+.m26-sets{padding:clamp(24px,4vw,56px) var(--g,16px);max-width:1320px;margin:0 auto}
+.m26-row{display:flex;flex-wrap:wrap;gap:8px 12px;margin-top:12px}
+.m26-set,.m26-open,.m26-x{-webkit-appearance:none;appearance:none;display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:8px 16px;border:1px solid rgba(247,245,241,.4);background:none;color:#F7F5F1;font:inherit;font-size:var(--t-text);cursor:pointer}
+.m26-set span,.m26-open span{color:rgba(247,245,241,.72)}
+.m26-set:hover,.m26-open:hover,.m26-x:hover{border-color:#F7F5F1}
+.m26-set:focus-visible,.m26-open:focus-visible,.m26-x:focus-visible,.m26-film:focus-visible{outline:2px solid #F7F5F1;outline-offset:3px}
+.m26-i{width:12px;height:14px;flex:none;fill:currentColor}
+.m26-film{-webkit-appearance:none;appearance:none;display:block;width:100%;margin:0;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.m26-film picture{display:block}.m26-film img{display:block;width:100%;max-width:1200px;height:auto;background:#000}
+.m26-c{display:flex;align-items:center;flex-wrap:wrap;gap:4px 12px;min-height:44px;padding-top:10px;font-size:var(--t-text)}
+.m26-c b{font-weight:600}.m26-c span{color:rgba(247,245,241,.72)}
+.m26-wall{margin:16px 0 0}
+.m26-dlg{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;margin:0;padding:0;border:0;background:#0B0C10;color:#F7F5F1}
+.m26-dlg::backdrop{background:#0B0C10}
+.m26-dh{position:sticky;top:0;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 16px;background:#0B0C10;border-bottom:1px solid rgba(247,245,241,.18)}
+.m26-dh .m26-k{margin:0}
+.m26-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:32px 24px;padding:24px 16px 48px;max-width:1440px;margin:0 auto}
+.m26-grid figure{margin:0}.m26-grid img{display:block;width:100%;height:auto;max-width:max-content}
+.m26-grid figcaption{margin-top:8px;font-size:var(--t-text);color:rgba(247,245,241,.72)}.m26-grid figcaption b{color:#F7F5F1;font-weight:600}
+</style><script data-fix="E-MAT26-JS">/* mat26 (26 Oct): the place films loop muted while on screen (only the poster when motion is reduced); the wall of stands opens in a dialog with Close and Escape */(function(){function M(){var D=document,W=window,V=[].slice.call(D.querySelectorAll("video[data-m26-src]")),rm=W.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;function arm(v){if(v._m)return;v._m=1;v.muted=true;v.playsInline=true;v.loop=true;v.src=v.getAttribute("data-m26-src");}function go(v){arm(v);if(rm)return;var p=v.play();if(p&&p.catch)p.catch(function(){});}if("IntersectionObserver"in W){var io=new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?go(e.target):(e.target.paused||e.target.pause());});},{rootMargin:"200px 0px",threshold:.2});V.forEach(function(v){io.observe(v);});}else V.forEach(go);[].forEach.call(D.querySelectorAll(".m26-wall"),function(w){var b=w.querySelector(".m26-open"),d=w.querySelector(".m26-dlg"),x=w.querySelector(".m26-x");if(!b||!d)return;b.addEventListener("click",function(){if(d.showModal)d.showModal();else d.setAttribute("open","");D.documentElement.style.overflow="hidden";x.focus();});function shut(){if(d.close)d.close();else d.removeAttribute("open");}x.addEventListener("click",shut);d.addEventListener("close",function(){D.documentElement.style.overflow="";b.focus();});d.addEventListener("keydown",function(e){if(e.key==="Escape"){e.preventDefault();shut();}});});}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",M);else M();})();</script><!-- /mat26:assets -->
 <section class="cp-set" data-rows='[[0, 1], [2, 3]]' data-rows-p='[[0], [1], [2], [3]]' aria-label="The terrace, and two stage designs for it, 2018">
   <div class="hd"><div><span class="fp-lab"><b>02</b> · The stage</span><h2>One terrace,<br><b class="tw">two stages.</b></h2></div><p>The terrace of The Pavilion, beside the Dubai Fountain, nine days before the dinner. Then two stage designs for it: cells of screen in green rims, and towers of light tiles. Renders, 2018.</p></div>
   <div class="grid">
@@ -320,6 +350,9 @@ html:not(#_e) body section.fp-model .fp-built .fp-lab span:last-child{display:no
 </section>
 
 <!-- 5 · 2019: the same words, at the beach -->
+<!-- mat26:capacity-atlantis -->
+<section class="m26-place" data-fix="E-MAT26-capacity-atlantis" aria-label="Atlantis, The Palm from the air: the place of the 2019 dinner (stock film)"><figure class="m26-fig"><video class="m26-v" muted playsinline loop preload="none" width="1600" height="900" poster="m26/atlantis-place-poster.webp" data-m26-src="m26/atlantis-place.mp4" style="max-width:1600px" aria-label="Atlantis, The Palm from the air: the place of the 2019 dinner (stock film)"></video><figcaption class="m26-cap"><b>Atlantis, The Palm</b>, Dubai · the place of the 2019 dinner, Nasimi Beach · stock film, not the night</figcaption></figure></section>
+<!-- /mat26:capacity-atlantis -->
 <section class="cp-set" data-rows='[[0, 1], [2, 3]]' data-rows-p='[[0], [1], [2], [3]]' aria-label="A year later, at Nasimi Beach, Atlantis, The Palm, 2019">
   <div class="hd"><div><span class="fp-lab"><b>03</b> · 2019</span><h2>The same words,<br><b class="tw">at the beach.</b></h2></div><p>A year later the dinner moved to Nasimi Beach, Atlantis, The Palm. The sign at the arrival carried the 2018 line again: an evening to celebrate our partnership.</p><span class="cp-btn"><button class="fp-play" type="button" data-film="../../stories/capacity/assets/floor-film-2019.mp4" data-title="The 2019 dinner, from the floor · my own film of the night · silent">From the floor <small>0:58 · my film</small></button></span></div>
   <div class="grid">
