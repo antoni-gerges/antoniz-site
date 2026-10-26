@@ -145,6 +145,13 @@ html:not(#_d):not(#_t) body button.film .t .fp-lab b{font-size:var(--t-text)!imp
 .f26-b:focus-visible,.f26-m:focus-visible{outline:2px solid currentColor;outline-offset:4px}
 .fp-player.f26own video{flex:none;width:min(var(--f26w,640px),100%);height:auto;max-height:calc(100% - 64px);margin:auto}
 </style>
+<style data-fix="DSG26B-BIG-GRILL">/* dsg26b: a picture reel's chapter label and counter sit above its pictures and the title and caption under them, on the dark ground;
+   each picture whole in the box between them; no shade over the pictures. Hard cuts (the slant wipe) unchanged. */
+@media (min-width:761px){
+html:not(#_e) body .fp-reel .ly{background:#000}
+html:not(#_e) body .fp-reel .ly::after{content:none;display:none}
+html:not(#_e) body .fp-reel .ly video,html:not(#_e) body .fp-reel .ly img.ps{position:absolute;inset:auto;left:var(--g);top:calc(clamp(78px,11vh,112px) + 40px);width:calc(100% - 2 * var(--g));height:calc(100% - clamp(78px,11vh,112px) - 40px - clamp(26px,5vh,56px) - 118px);max-width:none;max-height:none;aspect-ratio:auto;transform:none!important;object-fit:contain!important;object-position:50% 50%!important}
+}</style>
 </head>
 <body class="fp biggrill">
 <a class="skip" href="#main">Skip to content</a>

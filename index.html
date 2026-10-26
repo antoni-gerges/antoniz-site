@@ -69,6 +69,14 @@
   .h2-yrs:not(.yr25-go) .h2-time>li:not(:last-child){border-top-color:#00C8D7}
 }
 </style>
+<style data-fix="DSG26B-HOME">/* dsg26b: "Ideas you can see in the work." leaves the pinned stage on a desktop: it stands on the section's own dark ground above the three
+   windows, so neither a window nor a subject coming out of one ever passes under it; the windows keep their size; no glow on the words */
+@media (min-width:761px){
+html:not(#_e) body #work.stg{--dsg-hb:clamp(150px,21vh,210px);padding-top:var(--dsg-hb);height:calc(var(--vh) * 4 + var(--dsg-hb))}
+html:not(#_e) body #work .stg-pin{overflow-x:clip;overflow-y:visible;clip-path:inset(calc(-1 * var(--dsg-hb)) 0 0 0)}
+html:not(#_e) body #work .stg-hd{top:calc(-1 * var(--dsg-hb) + clamp(24px,3.5vh,40px))}
+html:not(#_e) body #work .stg-hd h2{text-shadow:none!important}
+}</style>
 </head>
 <body class="home home2">
 <a class="skip" href="#main">Skip to content</a>

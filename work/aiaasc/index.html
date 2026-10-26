@@ -192,6 +192,74 @@ html:not(#_am26) body .fp-hero.aa-open .am26-svg{display:block;width:100%;height
 html:not(#_am26) body .fp-hero.aa-open .am26-stub{display:none!important}
 @media (max-width:760px){html:not(#_am26) body .fp-hero.aa-open .am26{width:100%}html:not(#_am26) body .fp-hero.aa-open .am26-svg{aspect-ratio:1/1}}</style>
 <!--gl26 (glimpse-26oct/gl26.py, 26 Oct): the glimpse plays a/glimpse-d-gl26.mp4, a/glimpse-p-gl26.mp4 (Motor City Sirens under it); the tags as they were, kept for the earlier modules' checks: button class="op21-film" type="button" data-film="a/glimpse-d.mp4" data-film-p="a/glimpse-p.mp4" data-title="A glimpse · 12 s · sound" aria-label="Play the glimpse with sound"> ¦ video class="op21-v" data-was-fix="E-OPENER-aiaasc" muted playsinline loop preload="metadata" data-auto width="1280" height="720" poster="a/o25-glimpse-poster.webp" data-src="a/glimpse-d.mp4" data-src-p="a/glimpse-p.mp4" data-poster="a/o25-glimpse-poster.webp" data-o25="23"> -->
+<style data-fix="DSG26B-AIAASC">/* dsg26b: the 3D chapter's stage is the picture's own box; its words sit on the dark ground beside it (desktop) or above it (phone); its
+   labels and captions under it; no veil over it. Hard edges. */
+html:not(#_e) body section.fp-model{background:#000;--dt:clamp(78px,11vh,112px);--db:114px;--dw:30vw;--dg:clamp(32px,4vw,64px)}
+html:not(#_e) body section.fp-model .fp-stick{top:var(--dt);height:calc(100vh - var(--dt) - var(--db));height:calc(100svh - var(--dt) - var(--db));margin:var(--dt) var(--g) 0 calc(var(--g) + var(--dw) + var(--dg));overflow:visible;background:#000}
+html:not(#_e) body section.fp-model .veil{display:none}
+html:not(#_e) body section.fp-model .chap{position:absolute;top:0;bottom:auto;left:auto;right:calc(100% + var(--dg));width:var(--dw);margin:0}
+html:not(#_e) body section.fp-model .intro,html:not(#_e) body section.fp-model .st{position:absolute;top:40px;bottom:0;left:auto;right:calc(100% + var(--dg));width:var(--dw);margin:0;padding:0;transform:none!important;display:flex;flex-direction:column;justify-content:center;text-shadow:none;grid-template-columns:none}
+html:not(#_e) body section.fp-model .st>*{grid-column:auto;grid-row:auto;max-width:none}
+html:not(#_e) body section.fp-model .intro>.fp-lab{display:none}
+html:not(#_e) body section.fp-model .intro h2{margin:0;text-wrap:balance}
+html:not(#_e) body section.fp-model .kind{position:absolute;top:calc(100% + 14px);bottom:auto;left:0;right:auto;text-align:left;margin:0}
+html:not(#_e) body section.fp-model .fp-ticks{position:absolute;top:calc(100% + 20px);bottom:auto;right:0;left:auto}
+html:not(#_e) body section.fp-model .fp-dim{translate:var(--dsg-dx,0px) var(--dsg-dy,0px)}
+html:not(#_e) body section.fp-model .fallback{inset:0;width:100%;height:100%;object-fit:contain}
+html:not(#_e) body section.fp-model .fp-built,html:not(#_e) body section.fp-model .fp-built.on{inset:0;left:0;right:0;top:0;bottom:0;width:auto;transform:none;background:#000}
+html:not(#_e) body section.fp-model .fp-built .fr,html:not(#_e) body section.fp-model .fp-built.whole .fr{position:absolute;inset:0;width:auto;height:auto;aspect-ratio:auto;clip-path:none;box-shadow:none;background:#000}
+html:not(#_e) body section.fp-model .fp-built .fr::after{content:none;display:none}
+html:not(#_e) body section.fp-model .fp-built .fr img,html:not(#_e) body section.fp-model .fp-built .fr video{position:absolute;inset:0;left:0;top:0;width:100%;height:100%;max-width:none;max-height:none;transform:none!important;object-fit:contain!important;object-position:50% 100%!important}
+html:not(#_e) body section.fp-model .fp-built .fp-lab{position:absolute;top:calc(100% + 14px);bottom:auto;left:0;right:auto;text-align:left;margin:0;display:block}
+html:not(#_e) body section.fp-model .fp-built .fp-lab span{display:inline}
+html:not(#_e) body section.fp-model .fp-built .fp-lab span+span::before{content:" · "}
+@media (max-width:760px){
+html:not(#_e) body section.fp-model{--pt:clamp(300px,44svh,400px);--pb:46px}
+html:not(#_e) body section.fp-model .fp-stick{top:var(--pt);height:calc(100vh - var(--pt) - var(--pb));height:calc(100svh - var(--pt) - var(--pb));margin:var(--pt) var(--g) 0}
+html:not(#_e) body section.fp-model .chap{top:calc(64px - var(--pt));right:auto;left:0;width:auto}
+html:not(#_e) body section.fp-model .fp-ticks{top:calc(64px - var(--pt));right:0}
+html:not(#_e) body section.fp-model .intro,html:not(#_e) body section.fp-model .st{top:calc(96px - var(--pt));bottom:calc(100% + 14px);left:0;right:0;width:auto;justify-content:flex-end}
+html:not(#_e) body section.fp-model .st{top:calc(64px - var(--pt))}
+html:not(#_e) body section.fp-model .fp-stick:has(.st.on) .chap{visibility:hidden}
+html:not(#_e) body section.fp-model .kind,html:not(#_e) body section.fp-model .fp-built .fp-lab{top:calc(100% + 10px)}
+html:not(#_e) body section.fp-model .fp-built .fp-lab span:last-child{display:none}
+}
+/* dsg26b: this chapter's stops carry more words (the plan's phases, the system's colours): on a phone they get a taller band */
+@media (max-width:760px){html:not(#_e) body section.fp-model{--pt:clamp(330px,54svh,480px)}}</style>
+<script data-fix="DSG26B-AIAASC-3D">/* dsg26b (26 Oct 2026): this 3D chapter's stage is now the picture's own box, beside its words (CSS); the engine sizes its drawing to that
+   box. It framed each model off-centre to leave room for words laid over it; here each render is centred, and a size label drawn by the
+   engine moves with the model. Only renders of this section's canvas to the screen are touched (never its off-screen passes). */
+(function () {
+  'use strict';
+  var D = document, W = window;
+  if (D.readyState === 'loading') D.addEventListener('DOMContentLoaded', init); else init();
+  function init() {
+  var sec = D.querySelector('section.fp-pin.fp-model');
+  if (!sec) return;
+  var cv = sec.querySelector('canvas'), stick = sec.querySelector('.fp-stick'); if (!cv || !stick) return;
+  var R = W.__dsg26b = W.__dsg26b || { list: [], on: false }, e = { cv: cv, stick: stick, dx: null, dy: null };
+  R.list.push(e);
+  function patch(T) {
+    if (R.on) return; R.on = true;
+    var SP = T.Scene.prototype, prev = SP.onBeforeRender;
+    SP.onBeforeRender = function (r, scene, cam, target) {
+      if (prev) prev.apply(this, arguments);
+      if (!r || target || !cam || !cam.isPerspectiveCamera) return;
+      var e = null, i; for (i = 0; i < R.list.length; i++) if (R.list[i].cv === r.domElement) { e = R.list[i]; break; }
+      if (!e) return;
+      var v = cam.view, dx = 0, dy = 0;
+      if (v && v.enabled) { dx = v.offsetX / v.fullWidth * e.stick.clientWidth; dy = v.offsetY / v.fullHeight * e.stick.clientHeight; v.enabled = false; cam.updateProjectionMatrix(); }
+      dx = Math.round(dx * 10) / 10; dy = Math.round(dy * 10) / 10;
+      if (dx !== e.dx || dy !== e.dy) { e.dx = dx; e.dy = dy; e.stick.style.setProperty('--dsg-dx', dx + 'px'); e.stick.style.setProperty('--dsg-dy', dy + 'px'); }
+    };
+  }
+  function go() { import('../../vendor/three.module.min.js').then(patch).catch(function () {}); }
+  if ('IntersectionObserver' in W) {
+    var io = new IntersectionObserver(function (es) { if (es.some(function (x) { return x.isIntersecting; })) { io.disconnect(); go(); } }, { rootMargin: '150% 0px' });
+    io.observe(sec);
+  } else go();
+  }
+})();</script>
 </head>
 <body class="fp aiaasc">
 <a class="skip" href="#main">Skip to content</a>
