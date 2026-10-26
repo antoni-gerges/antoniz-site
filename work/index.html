@@ -251,6 +251,71 @@
 </div></section>
 <style data-fix="E-WP25-17">/* wp25 E-WP25-17: under card 16, the five concert cards in one row (a fifth each from 1200 px), a scroller below that; names at text size; each face whole, bottom-aligned in a 4:3 frame (16:9 in the scroller), its badge 28 px in the row; hard cuts only */.work-index>.wp25-five{grid-column:1/-1;min-width:0}.wp25-five[hidden]{display:none!important}html:not(#_t) body .wp25-five .wp25-h{font-family:Jost,"Jost fallback",system-ui,sans-serif!important;font-weight:600!important;font-size:var(--t-text)!important;line-height:1.3!important;letter-spacing:normal!important;margin:0 0 22px;padding-top:16px;border-top:1px solid rgba(247,245,241,.18);color:#F7F5F1;max-width:none}.wp25-rail{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px;align-items:start}.wp25-rail>.work-tile{min-width:0}html body .wp25-five .work-tile-media{height:auto;min-height:0;aspect-ratio:4/3;display:flex;align-items:flex-end;justify-content:center;padding:0;border:0}html body .wp25-five .work-tile-media img{display:block;width:100%;height:100%;max-height:none;object-fit:contain;object-position:50% 100%}html:not(#_t) body .wp25-five h3,html:not(#_t) body .wp25-five h3 *{font-family:Jost,"Jost fallback",system-ui,sans-serif!important;font-weight:600!important;font-size:var(--t-text)!important;line-height:1.3!important;letter-spacing:normal!important}.wp25-five h3{display:flex;justify-content:space-between;gap:10px;margin:0;color:#F7F5F1;text-wrap:balance}.wp25-five .work-tile-arrow{font-weight:400!important;flex-shrink:0;color:rgba(247,245,241,.65)}.wp25-five .work-tile-link:hover h3,.wp25-five .work-tile-link:hover .work-tile-arrow{color:#00C8D7}html body .wp25-five .work-tile-meta{margin-top:14px;padding-top:12px}html body .wp25-five .work-tile-desc,html body .wp25-five .work-tile-proof{margin-top:8px}@media (max-width:1199px){.wp25-rail{display:flex;gap:16px;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:10px}.wp25-rail>.work-tile{flex:0 0 min(78%,320px);scroll-snap-align:start}html body .wp25-five .work-tile-media{aspect-ratio:16/9}}@media (min-width:1200px){.wp25-five{--nb-s:28px}}</style><script data-fix="E-WP25-17">/* wp25 E-WP25-17: the five concert tiles of the visual index (work-index.js builds them before this runs, on DOMContentLoaded) go into one row under card 16, in their own order; a filter that hides all five hides the row */(function(){var FIVE=["p-mounir","p-amr-diab","p-angham","p-magida-el-roumi","p-lilly-singh"];function go(){var g=document.getElementById("work-visual-index");if(!g||g.querySelector(".wp25-five"))return;var t=FIVE.map(function(id){return g.querySelector('.work-tile[data-story="'+id+'"]');}).filter(Boolean);if(t.length<2)return;t.sort(function(a,b){return a.compareDocumentPosition(b)&4?-1:1;});var row=document.createElement("section");row.className="wp25-five";row.setAttribute("aria-labelledby","wp25-five-h");var h=document.createElement("h2");h.className="wp25-h";h.id="wp25-five-h";h.textContent="Five nights, one page each";var rail=document.createElement("div");rail.className="wp25-rail";t[0].before(row);row.append(h,rail);t.forEach(function(x){var h2=x.querySelector("h2");if(h2){var h3=document.createElement("h3");while(h2.firstChild)h3.appendChild(h2.firstChild);h2.replaceWith(h3);}var im=x.querySelector(".work-tile-media img");if(im)im.sizes="(max-width:760px) 72vw, (max-width:1199px) 320px, 20vw";rail.append(x);});function sync(){row.hidden=!t.some(function(x){return !x.hidden;});}new MutationObserver(sync).observe(rail,{subtree:true,attributes:true,attributeFilter:["hidden"]});sync();window.dispatchEvent(new Event("resize"));}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);else go();})();</script>
 <style data-fix="E-CRE26-ORDER">/* cre26 E-CRE26-ORDER: the group headings of Work, set at run time between the tiles (visual index) and the cards (Full stories); two sizes only (the heading Big, the door at text size); hard cuts */.cre26-gh{grid-column:1/-1;min-width:0;margin:clamp(48px,6vw,96px) 0 0;padding-top:22px;border-top:1px solid rgba(247,245,241,.18)}.cre26-gh[hidden]{display:none!important}.cre26-gh.cre26-first{margin-top:0;border-top:0;padding-top:0}html:not(#_t) body .cre26-gh h2{font-family:Jost,"Jost fallback",system-ui,sans-serif!important;font-weight:300!important;color:#F7F5F1;margin:0;max-width:none;text-wrap:balance}html:not(#_t) body .cre26-gh h2 b{font-weight:600!important}.cre26-gh p{margin:14px 0 0}.cre26-gh p a{display:inline-flex;align-items:center;gap:10px;min-height:44px;color:#F7F5F1;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}.cre26-gh p a:hover{color:#00C8D7}.cre26-gh p a:focus-visible{outline:2px solid #00C8D7;outline-offset:4px}.plist>.cre26-gh{margin-bottom:8px}</style><script data-fix="E-CRE26-ORDER">/* cre26 E-CRE26-ORDER: one heading before the first card of each group, in the visual index (work-index.js has built it; wp25's row has moved the five nights) and in Full stories; a group whose cards a sector or a search hides all hides its heading; the Education door shows only with no filter */(function(){var G=[["zeiss", "Campaigns, identities <b class=\"tw\">&amp; films.</b>"], ["capacity", "Brand experiences <b class=\"tw\">&amp; spaces.</b>"], ["mazzika", "Live <b class=\"tw\">shows.</b>"]],EH="Education.",EL="Innovation Month, Bullying Week, AIAASC, Children of Light Academy";function mk(h,first){var d=document.createElement("div");d.className="cre26-gh"+(first?" cre26-first":"");var e=document.createElement("h2");e.innerHTML=h;d.appendChild(e);return d;}function go(){var root=document.querySelector(".pj-sel"),list=root&&root.querySelector(".plist"),g=document.getElementById("work-visual-index");if(!list||list.querySelector(".cre26-gh"))return;var cards=[].slice.call(list.querySelectorAll("article.pj")),grp={},k=-1,heads=[];cards.forEach(function(c){G.forEach(function(x,i){if(c.id==="p-"+x[0])k=i;});grp[c.id]=k;});G.forEach(function(x,i){var c=document.getElementById("p-"+x[0]);if(!c)return;var h=mk(x[1],i===0);c.before(h);heads.push([h,i,"card"]);if(g){var t=g.querySelector('.work-tile[data-story="p-'+x[0]+'"]');if(t){var r=t.closest(".wp25-five")||t;var h2=mk(x[1],i===0);r.before(h2);heads.push([h2,i,"tile"]);}}});function door(){var d=mk(EH,false);d.classList.add("cre26-edu");var p=document.createElement("p"),a=document.createElement("a");a.href="?sector=edu";a.innerHTML=EL+' <i aria-hidden="true">\u2192</i>';p.appendChild(a);d.appendChild(p);return d;}var doors=[];var d1=door();list.appendChild(d1);doors.push(d1);if(g){var d2=door();g.appendChild(d2);doors.push(d2);}function sync(){var any=false;heads.forEach(function(e){var sel=e[2]==="tile"?g.querySelectorAll(".work-tile[data-story]"):cards;var vis=false;[].forEach.call(sel,function(x){var id=x.dataset.story||x.id;if(grp[id]===e[1]&&!x.hidden)vis=true;if(x.hidden)any=true;});e[0].hidden=!vis;});doors.forEach(function(d){d.hidden=any;});}var mo=new MutationObserver(sync);cards.forEach(function(c){mo.observe(c,{attributes:true,attributeFilter:["hidden"]});});if(g)[].forEach.call(g.querySelectorAll(".work-tile[data-story]"),function(x){mo.observe(x,{attributes:true,attributeFilter:["hidden"]});});sync();window.dispatchEvent(new Event("resize"));}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);else go();})();</script>
+<!--reel26 E-REEL26-WORK-->
+<style data-fix="E-REEL26-WORK">/* reel26 E-REEL26-WORK: "Play the reel · m:ss" under a group heading of Work (cre26's .cre26-gh, built at run time), in the page's own
+   door style (Jost 600 at text size, underlined, 44 px), never over a picture; on a phone the controls stack. No fades. */
+.cre26-gh .r26w{display:flex;flex-wrap:wrap;gap:0 32px;margin:12px 0 0;padding:0}
+.cre26-gh .r26w-f{margin:0;padding:0}
+html:not(#_t) body .cre26-gh a.r26w-a{display:inline-flex;align-items:center;gap:12px;min-height:44px;min-width:44px;box-sizing:border-box;margin:0;padding:0;
+  color:#F7F5F1;font:600 var(--t-text)/1.3 "Jost","Jost fallback",system-ui,sans-serif !important;letter-spacing:normal !important;
+  text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;cursor:pointer}
+.cre26-gh a.r26w-a::before{content:"";display:block;flex:none;width:.6em;height:.7em;background:currentColor;clip-path:polygon(0 0,100% 50%,0 100%)}
+.cre26-gh a.r26w-a:hover{color:#00C8D7}
+.cre26-gh a.r26w-a:focus-visible{outline:2px solid #00C8D7;outline-offset:4px}
+.cre26-gh .r26w-inl{flex:1 0 100%;margin:16px 0 0}
+.cre26-gh .r26w-inl video{display:block;width:100%;max-width:min(100%,calc((100svh - 200px) * 16 / 9));height:auto;aspect-ratio:16/9;background:#0B0C10}
+html:not(#_t) body .cre26-gh .r26w-x{display:inline-flex;align-items:center;gap:.35em;min-height:44px;min-width:44px;margin:0 0 6px;padding:0;border:0;background:none;
+  color:#F7F5F1;font:600 var(--t-text)/1 "Jost","Jost fallback",system-ui,sans-serif !important;cursor:pointer}
+@media (max-width:760px){.cre26-gh .r26w{flex-direction:column;align-items:flex-start;gap:2px}}</style>
+<script data-fix="E-REEL26-WORK">/* reel26 E-REEL26-WORK: the sector reels under Work's group headings (cre26 builds the headings at run time, in the visual index and in
+   Full stories; this runs after it and puts the controls under each heading of a group that has a live reel). Each control opens its
+   reel in the site's viewer (viewer.js: Close, Escape, sound on since the visitor tapped); the phone gets the 720 copy (chosen
+   at the tap, before the viewer reads the link). If the viewer did not take the tap (its script missing), the reel plays inline under
+   the heading with a Close; a modified click is left to the browser. Nothing loads before the tap. No fades. */
+(function(){
+var R=[{"g":"zeiss","f":"reels/reel-campaigns.mp4","s":"reels/reel-campaigns-720.mp4","p":"reels/reel-campaigns-poster.webp","l":"Play the campaigns reel · 0:36","a":"Play the campaigns reel, 0:36, with sound","c":"Integrated campaigns · the reel · 0:36"},{"g":"capacity","f":"reels/reel-brand-experiences.mp4","s":"reels/reel-brand-experiences-720.mp4","p":"reels/reel-brand-experiences-poster.webp","l":"Play the experiences reel · 0:43","a":"Play the experiences reel, 0:43, with sound","c":"Brand experiences · the reel · 0:43"},{"g":"mazzika","f":"reels/reel-live-shows.mp4","s":"reels/reel-live-shows-720.mp4","p":"reels/reel-live-shows-poster.webp","l":"Play the reel · 0:30","a":"Play the reel, 0:30, with sound","c":"Live shows & festivals · the reel · 0:30"}];
+var D=document,PH=window.matchMedia?matchMedia('(max-width:760px)'):{matches:false},by={};
+R.forEach(function(x){(by[x.g]=by[x.g]||[]).push(x)});
+function heads(g){
+  var out=[],c=D.getElementById('p-'+g),h,ix=D.getElementById('work-visual-index'),t=ix&&ix.querySelector('.work-tile[data-story="p-'+g+'"]');
+  if(c){h=c.previousElementSibling;if(h&&h.classList.contains('cre26-gh'))out.push(h)}
+  if(t){h=(t.closest('.wp25-five')||t).previousElementSibling;if(h&&h.classList.contains('cre26-gh'))out.push(h)}
+  return out;
+}
+function ctl(x){
+  var f=D.createElement('figure'),a=D.createElement('a'),c=D.createElement('figcaption');
+  f.className='r26w-f';a.className='r26w-a';a.href=x.f;a.textContent=x.l;a.setAttribute('aria-label',x.a);
+  a.setAttribute('data-full',x.f);a.setAttribute('data-sm',x.s);a.setAttribute('data-poster',x.p);
+  c.hidden=true;c.textContent=x.c;f.appendChild(a);f.appendChild(c);return f;
+}
+function deco(){
+  Object.keys(by).forEach(function(g){heads(g).forEach(function(h){
+    if(h.querySelector('.r26w'))return;
+    var w=D.createElement('div'),e=h.querySelector('h2');w.className='r26w';
+    by[g].forEach(function(x){w.appendChild(ctl(x))});
+    if(e&&e.nextSibling)h.insertBefore(w,e.nextSibling);else h.appendChild(w);
+  })});
+}
+function go(e){var t=e.target;return t&&t.closest?t.closest('a.r26w-a'):null}
+D.addEventListener('click',function(e){var a=go(e);if(a)a.setAttribute('href',a.getAttribute(PH.matches?'data-sm':'data-full'))},true);
+function inline(a){
+  var w=a.closest('.r26w'),o=w.querySelector('.r26w-inl'),d=D.createElement('div'),v=D.createElement('video'),b=D.createElement('button');
+  if(o){var ov=o.querySelector('video');if(ov){ov.pause();ov.removeAttribute('src');ov.load()}o.parentNode.removeChild(o)}
+  d.className='r26w-inl';b.type='button';b.className='r26w-x';b.innerHTML='Close<span aria-hidden="true">×</span>';
+  v.controls=true;v.playsInline=true;v.setAttribute('playsinline','');v.preload='auto';v.poster=a.getAttribute('data-poster');v.src=a.getAttribute('href');
+  b.addEventListener('click',function(){v.pause();v.removeAttribute('src');v.load();d.parentNode.removeChild(d);a.focus({preventScroll:true})});
+  d.appendChild(b);d.appendChild(v);w.appendChild(d);v.muted=false;var p=v.play();if(p&&p.catch)p.catch(function(){});b.focus({preventScroll:true});
+}
+addEventListener('click',function(e){
+  var a=go(e);if(!a)return;
+  if(e.defaultPrevented){var v=D.querySelector('#v21 video.v21-m');if(v&&!v.getAttribute('poster'))v.setAttribute('poster',a.getAttribute('data-poster'));return}
+  if(e.button||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+  e.preventDefault();inline(a);
+});
+if(D.readyState==='loading')D.addEventListener('DOMContentLoaded',deco);else deco();
+addEventListener('load',deco);
+})();</script>
+<!--/reel26 E-REEL26-WORK-->
 </main>
 <footer class="foot"><div class="wrap row">
   <p style="margin:0">Antoni Gerges · Creative Director, Brand &amp; Experiential<span class="ft-d"> · </span><a href="mailto:antoni@antbrush.com">antoni@antbrush.com</a></p>
