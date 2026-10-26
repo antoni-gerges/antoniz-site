@@ -464,6 +464,37 @@ html:not(#_t) body .lkv26 .lkv-h2c b.tw{font-weight:600;color:#EC3A3F}
 </style>
 <style data-fix="E-FX26-LIWA">/* fx26 (26 Oct): the Liwa Land gate leads as designed; the photograph as built one tap away */#lw-family .lw-pics.lw-pair{grid-template-columns:1fr}#lw-family .fx26-asbuilt-p{margin:0}a.fx26-asbuilt{display:inline-flex;align-items:center;min-height:44px;color:inherit;font-weight:600;text-decoration:underline;text-underline-offset:4px}a.fx26-asbuilt::after{content:"+";margin-left:.45em;display:inline-block;text-decoration:none}</style>
 <!--gl26 (glimpse-26oct/gl26.py, 26 Oct): the glimpse plays a/glimpse-d-gl26.mp4, a/glimpse-p-gl26.mp4 (Motor City Sirens under it); the tags as they were, kept for the earlier modules' checks: video muted playsinline loop preload="none" data-auto width="1280" height="720" data-src="a/glimpse-d.mp4" data-src-p="a/glimpse-p.mp4" data-poster="a/glimpse-poster.webp" aria-label="A glimpse of Liwa: the dunes, a rider and his bike, a 4x4 on the dune, night drift, the horse race, the festival lit at night, the blue gate of the desert café, the LIWA mark in the sand"> ¦ button class="lw-snd" type="button" data-film="a/glimpse-d.mp4" data-film-p="a/glimpse-p.mp4" data-title="A glimpse · 11 s · sound"> -->
+<style data-fix="DSG26-LIWA">/* dsg26: the words on the dark ground, the 3D model whole beside them (desktop: two columns; phone: stacked); hard edges, no veil */
+html:not(#_d) body #lw-map .fp-stick{display:grid;grid-template-columns:minmax(0,35vw) minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto;column-gap:clamp(32px,4vw,72px);row-gap:14px;box-sizing:border-box;padding:clamp(78px,11vh,112px) var(--g) clamp(18px,3vh,30px);background:#000}
+html:not(#_d) body #lw-map .veil,html:not(#_d) body #lw-map .lw-pins{display:none}
+html:not(#_d) body #lw-map .chap{position:static;grid-area:1/1;align-self:start}
+html:not(#_d) body #lw-map .intro,html:not(#_d) body #lw-map .st{position:static;grid-area:2/1;align-self:center;transform:none!important;width:auto;left:auto;right:auto;top:auto;bottom:auto;margin:0;text-shadow:none}
+html:not(#_d) body #lw-map .intro>.fp-lab{display:none}
+html:not(#_d) body #lw-map .intro h2{margin:0;text-wrap:balance}
+html:not(#_d) body #lw-map canvas,html:not(#_d) body #lw-map .fallback{position:relative;inset:auto;grid-area:1/2/3/3;width:100%;height:100%;min-height:0}
+html:not(#_d) body #lw-map .kind{position:static;grid-area:3/2;text-align:left;margin:0;align-self:start}
+html:not(#_d) body #lw-map .fp-ticks{position:static;grid-area:3/2;justify-self:end;align-self:start}
+html:not(#_d) body #lw-map .fp-built,html:not(#_d) body #lw-map .fp-built.on{position:relative;inset:auto;grid-area:1/2/4/3;display:flex;flex-direction:column;justify-content:center;gap:14px;min-height:0;width:auto;transform:none;background:#000}
+html:not(#_d) body #lw-map .fp-built .fr,html:not(#_d) body #lw-map .fp-built.whole .fr{position:relative;inset:auto;flex:0 1 auto;min-height:0;aspect-ratio:auto;clip-path:none;overflow:hidden;background:#000}
+html:not(#_d) body #lw-map .fp-built .fr::after{content:none}
+html:not(#_d) body #lw-map .fp-built .fr img,html:not(#_d) body #lw-map .fp-built .fr video{position:static;display:block;width:100%;height:auto;max-height:100%;object-fit:contain;object-position:0 50%;transform:none}
+html:not(#_d) body #lw-map .fp-built .fp-lab{position:static;text-align:left;margin:0;flex:none}
+@media (max-width:760px){
+html:not(#_d) body #lw-map .fp-stick{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto minmax(0,1fr) auto;padding:64px var(--g) 16px}
+html:not(#_d) body #lw-map .intro,html:not(#_d) body #lw-map .st{grid-area:2/1;align-self:start}
+html:not(#_d) body #lw-map canvas,html:not(#_d) body #lw-map .fallback{grid-area:3/1}
+html:not(#_d) body #lw-map .kind{grid-area:4/1}
+html:not(#_d) body #lw-map .fp-ticks{grid-area:1/1;justify-self:end}
+html:not(#_d) body #lw-map .fp-built,html:not(#_d) body #lw-map .fp-built.on{grid-area:3/1/5/2;justify-content:flex-start}
+}
+/* dsg26: a film's words sit under its picture, on the ground; the play mark stays on the picture; no shade over the picture */
+html:not(#_d) body button.film{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;align-items:start;overflow:visible;clip-path:none;background:transparent;height:auto}
+html:not(#_d) body button.film::after{content:none;display:none}
+html:not(#_d) body button.film>video,html:not(#_d) body button.film>img{position:relative;inset:auto;grid-area:1/1;display:block;width:100%;height:auto;aspect-ratio:inherit;transform:none!important}
+html:not(#_d) body .fp-end button.film>video,html:not(#_d) body .fp-end button.film>img{clip-path:polygon(clamp(24px,4vw,70px) 0,100% 0,100% calc(100% - clamp(48px,8vw,140px)),calc(100% - clamp(24px,4vw,70px)) 100%,0 100%,0 clamp(48px,8vw,140px));background:#111}
+html:not(#_d) body button.film>.go{position:relative;inset:auto;grid-area:1/1;align-self:end;justify-self:end;margin:0 clamp(28px,5vw,84px) clamp(22px,4vw,60px) 0}
+html:not(#_d) body button.film>.t{position:relative;inset:auto;left:auto;right:auto;bottom:auto;grid-area:2/1;display:block;padding-top:14px;text-align:left}
+html:not(#_d):not(#_t) body button.film .t .fp-lab b{font-size:var(--t-text)!important;line-height:var(--lh-text)!important}</style>
 </head>
 <body class="fp liwa">
 <a class="skip" href="#main">Skip to content</a>
@@ -830,6 +861,63 @@ html:not(#_t) body .lkv26 .lkv-h2c b.tw{font-weight:600;color:#EC3A3F}
     <div class="lw-pins" aria-hidden="true"><span class="lw-pin" data-p="0">Liwa Land</span><span class="lw-pin" data-p="1">Layali Moreeb</span><span class="lw-pin" data-p="2">Heritage Village</span></div>
   </div>
 </section>
+<script data-fix="DSG26-LIWA-3D">/* dsg26 (26 Oct 2026): this 3D chapter in its own column, beside its words. The site's 3D engine draws to the size of the whole
+   screen and frames the model off-centre to leave room for words laid over it; here the canvas is the picture's own box, so each
+   render is kept to that box and centred. Only renders into this section's canvas are touched. */
+(function (cfg) {
+  'use strict';
+  var D = document, W = window, s = D.currentScript, sec = (cfg.sel && D.querySelector(cfg.sel)) || (s && s.previousElementSibling);
+  if (!sec || !sec.classList || !sec.classList.contains('fp-pin')) return;
+  var cv = sec.querySelector('canvas'), stick = sec.querySelector('.fp-stick'); if (!cv || !stick) return;
+  var R = W.__dsg26 = W.__dsg26 || { list: [], on: false }, e = { sec: sec, cv: cv, stick: stick, plan: cfg.plan, hk: cfg.hk || 0, hkp: cfg.hkp || 0, key: '', fit: null, base: 0, last: -1 };
+  R.list.push(e);
+  function frame(T, cam, p) {   /* the plan: from the south and high up, the whole map in 90% of the box, centred */
+    var C = new T.Vector3(), Q = new T.Vector3(), el = p.el * Math.PI / 180, d = 3000, cx = p.c[0], cz = p.c[1], tv = Math.tan(cam.fov * Math.PI / 360), k, i, x0, x1, y0, y1, sc;
+    var pts = p.pts.map(function (q) { return new T.Vector3(q[0], 0, q[1]); });
+    for (k = 0; k < 24; k++) {
+      cam.position.set(cx, Math.sin(el) * d, cz + Math.cos(el) * d); C.set(cx, 0, cz); cam.lookAt(C); cam.updateMatrixWorld(); cam.updateProjectionMatrix();
+      x0 = y0 = 9; x1 = y1 = -9;
+      for (i = 0; i < pts.length; i++) { Q.copy(pts[i]).project(cam); x0 = Math.min(x0, Q.x); x1 = Math.max(x1, Q.x); y0 = Math.min(y0, Q.y); y1 = Math.max(y1, Q.y); }
+      sc = Math.max((x1 - x0) / 2, (y1 - y0) / 2) / .9;
+      cx += (x0 + x1) / 2 * d * tv * cam.aspect * .8; cz -= (y0 + y1) / 2 * d * tv / Math.sin(el) * .8; d *= 1 + (sc - 1) * .8;
+    }
+    return { p: cam.position.clone(), t: C.clone() };
+  }
+  function patch(T) {
+    if (R.on) return; R.on = true;
+    var SP = T.Scene.prototype, prev = SP.onBeforeRender;
+    SP.onBeforeRender = function (r, scene, cam) {
+      if (prev) prev.apply(this, arguments);
+      if (!r || !cam || !cam.isPerspectiveCamera) return;
+      var e = null, i; for (i = 0; i < R.list.length; i++) if (R.list[i].cv === r.domElement) { e = R.list[i]; break; }
+      if (!e) return;
+      var w = e.cv.clientWidth, h = e.cv.clientHeight; if (w < 2 || h < 2) return;
+      var pr = r.getPixelRatio(), chg = false;
+      if (e.cv.width !== Math.floor(w * pr) || e.cv.height !== Math.floor(h * pr)) r.setSize(w, h, false);
+      if (Math.abs(cam.aspect - w / h) > 1e-4) { cam.aspect = w / h; chg = true; }
+      if (cam.view && cam.view.enabled) { cam.view.enabled = false; chg = true; }
+      var hk = W.innerWidth <= 760 ? e.hkp : e.hk;
+      if (hk) {   /* the picture keeps this share of the width the whole screen showed */
+        if (cam.fov !== e.last) e.base = cam.fov;
+        var sa = e.stick.clientWidth / Math.max(1, e.stick.clientHeight), hf = 2 * Math.atan(Math.tan(e.base * Math.PI / 360) * sa) * hk,
+            f = Math.min(80, 360 / Math.PI * Math.atan(Math.tan(hf / 2) / (w / h)));
+        if (Math.abs(cam.fov - f) > 1e-3) { cam.fov = f; chg = true; } e.last = cam.fov;
+      }
+      if (chg) cam.updateProjectionMatrix();
+      if (!e.plan) return;
+      var b = e.sec.getBoundingClientRect(), H = W.innerHeight, P = Math.min(1, Math.max(0, -b.top / Math.max(1, b.height - H)));
+      if (P >= e.plan.until) return;   /* the later stops keep the engine's own framing */
+      var k = w + 'x' + h + ':' + cam.fov;
+      if (k !== e.key) { e.key = k; cam.near = e.plan.near; cam.far = e.plan.far; e.fit = frame(T, cam, e.plan); }
+      cam.near = e.plan.near; cam.far = e.plan.far; cam.position.copy(e.fit.p); cam.lookAt(e.fit.t); cam.updateMatrixWorld(); cam.updateProjectionMatrix();
+    };
+  }
+  function go() { import('../../vendor/three.module.min.js').then(patch).catch(function () {}); }
+  if ('IntersectionObserver' in W) {
+    var io = new IntersectionObserver(function (es) { if (es.some(function (x) { return x.isIntersecting; })) { io.disconnect(); go(); } }, { rootMargin: '150% 0px' });
+    io.observe(sec);
+  } else go();
+})({"sel":"#lw-map","plan":{"el":72,"c":[-100,0],"until":0.38,"near":5,"far":14000,"pts":[[-1200,-840],[1000,-840],[1000,840],[-1200,840],[-100,-840],[-100,840],[-1200,0],[1000,0]]}});</script>
 <div class="lw-note"><details class="fp-more"><summary>How the model was made</summary><div class="tx"><div><p>The map is our festival map of 16 December 2019, its Arabic lettering left out and its six logo pins left blank; the dune is drawn at its true height. The gates are modelled from our drawings at their drawn sizes (the Heritage Village gate: towers 700 cm high, a 450 cm opening); the Liwa Land gate’s arch is an estimate, and Layali Moreeb’s gate is shown without its lettering.</p></div></div></details></div>
 
 <!-- beat 11 · the nights: film first (the festival film: a singer on the festival stage, the lit arena, fireworks), my film of opening day,
