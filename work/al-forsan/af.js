@@ -174,7 +174,7 @@ async function boot() {
   /* 2 · the mark */
   /* the English lockup is wide: framed on its whole width, its centre on the station, its foot just above the floor */
   const LC = [0, (LY1 - LDY + LIFT) / 2, 0], LR = (mx(1277.7) - mx(817)) / 2 + .25, LH = (LY1 - LY0) / 2 + .3;
-  const s1 = station(46, Object.assign({}, none, { c: LC, rx: LR, ry: LH, yaw: -.42, pitch: .0, drift: 1.05, w: 1.5, keyK: .55, fx: .58, fy: .74, ox: -.15, oy: .035, rxp: LR, fxp: .88, fyp: .44, oxp: 0, oyp: .13, yawp: -.3 }));
+  const s1 = station(46, Object.assign({}, none, { c: LC, rx: LR, ry: LH, yaw: -.42, pitch: .0, drift: .12, w: 1.5, keyK: .55, fx: .58, fy: .74, ox: -.15, oy: .035, rxp: LR, fxp: .88, fyp: .44, oxp: 0, oyp: .13, yawp: -.3 }));
   const mg = new T.Group(); mg.position.set(-LX, -LDY, 0); s1.g.add(mg);
   const mark = buildMark(kit, rig, mg, M);
 
@@ -205,7 +205,7 @@ async function boot() {
 
   const compose = (i, l, tm) => {
     opening(i === 0 ? seg(l, .02, .42) : 1);
-    mark.set(i === 1 ? seg(l, .03, .86) : i > 1 ? 1 : 0);
+    mark.set(1);   /* af26 E-AF26-MARK: the logo stands whole and still (Tony, 26 Oct) */
     centres(i < 2 ? 0 : i === 2 ? seg(l, .0, .4) : 1);
     rig.sync();
   };
