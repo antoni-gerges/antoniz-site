@@ -145,7 +145,7 @@ async function opening() {
   const DUR = 10.2;
   function at(t) {
     const g0 = EO(seg(t, .35, .75)), g1 = EO(seg(t, .9, 2.2));
-    glow.visible = !PROOF && !FRONT && t >= .35; glow.scale.setScalar(.05 + g0 * .12 + g1 * .5 - seg(t, 5.2, 7.5) * .4);
+    glow.visible = !PROOF && !FRONT && t >= .35 && t < 7.5; glow.scale.setScalar(Math.max(.001, .05 + g0 * .12 + g1 * .5 - seg(t, 5.2, 7.5) * .67)); /* dhafix26 E-D26-GLOW (Tony, 26 Oct: "remove this light dot in the middle"): the point of light closes into the mark as the name arrives; none in the built mark */
     const rl = EO(seg(t, .9, 2.0)) * (1 - E(seg(t, 4.4, 5.4)));
     rays.forEach(r => { r.visible = !PROOF && !FRONT && rl > .002; r.scale.set(rl * .5, 1, 1); });
     pieces.forEach((P, i) => {
