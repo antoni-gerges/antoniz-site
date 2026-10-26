@@ -1,0 +1,37 @@
+/* scrub25 (25 Oct 2026): a Blender camera move stepped by the scroll. A tall box (30 px of scroll a frame, at least 180 vh) holds a
+   sticky stage one screen tall; the picture sits as the page's own films do (16:9 on a desktop, 4:5 on a phone, within one screen with
+   its caption). Hard steps only: no transition, no opacity, no gradient. Without script the box stays hidden (the film block shows). */
+.sc25[hidden],.sc25-hid{display:none!important}
+.sc25{position:relative;width:100%;box-sizing:border-box}
+.sc25-on{height:max(calc(var(--sc25-n,90) * 30px),180vh)}
+.sc25-pin{position:sticky;top:0;height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:74px 0 12px;box-sizing:border-box}
+.sc25-f{margin:0;width:min(100%,calc((100svh - 74px - 84px) * 16 / 9))}
+.sc25-box{position:relative;aspect-ratio:16/9;background:#0B0C10}
+.sc25-box canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+/* a hand-over to a pinned section right after (data-next): the box runs one screen longer and the next section starts where the last
+   frame is reached, so both stages stand still, one over the other, at the hand-over; this stage is on top until then */
+.sc25-on.sc25-tail{height:calc(max(calc(var(--sc25-n,90) * 30px),180vh) + 100svh);margin-bottom:-200svh}
+.sc25-tail .sc25-pin{z-index:2;background:var(--bg,#0B0C10)}
+.sc25-gone .sc25-pin{visibility:hidden}
+.sc25-next{margin-top:0!important}
+/* reduced motion, or no IntersectionObserver: the last frame as a still in the page's flow; the film block follows with its caption */
+.sc25-still{height:auto}
+.sc25-still .sc25-pin{position:static;height:auto;padding:0}
+.sc25-still .sc25-f{width:100%}
+.sc25-still figcaption{display:none}
+/* WFES: the pavilion film's own width (1280 px), its caption spacing */
+.sc25-wfes .sc25-f{max-width:1280px}
+.sc25-wfes figcaption{margin-top:10px}
+.sc25-wfes.sc25-still{margin:0 auto clamp(28px,5vh,48px);max-width:1280px}
+/* MAF: the stage in the event's black, as the speech section that follows it */
+.sc25-maf .sc25-box{background:#070908}
+.sc25-maf.sc25-still{margin:clamp(24px,4vh,48px) 0 0}
+@media (max-width:760px){
+  .sc25-pin{padding-top:68px}
+  .sc25-box{aspect-ratio:4/5}
+  .sc25-f{width:min(100%,calc((100svh - 68px - 96px) * 4 / 5))}
+  .sc25-wfes .sc25-f{width:min(100% - 32px,calc((100svh - 68px - 96px) * 4 / 5))}
+  .sc25-wfes.sc25-still{padding:0 16px}
+  .sc25-maf .s3d-cap{padding:0}
+  .sc25-still .sc25-f,.sc25-wfes.sc25-still .sc25-f{width:100%}
+}

@@ -35,14 +35,14 @@
   var pl = $('.places h2');
   if (pl) {
     /* phone: drawn at phone size (320 wide), taller, with each long role on two lines, so no label crosses another at 320 to 430 px (12 Oct) */
-    var ph = innerWidth <= 760, W = ph ? 320 : 1180, Hh = ph ? 372 : 230, A = [ph ? 12 : 40, ph ? 286 : Hh - 96], M = [W * .48, Hh * (ph ? .5 : .59)], Z = [W - (ph ? 14 : 50), ph ? 44 : 54];
-    var d = 'M ' + A[0] + ' ' + A[1] + ' C ' + (W * (ph ? .16 : .2)) + ' ' + (Hh * (ph ? .1 : .08)) + ' ' + (W * (ph ? .3 : .36)) + ' ' + (ph ? M[1] : Hh * .98) + ' ' + M[0] + ' ' + M[1] + ' S ' + (W * (ph ? .99 : .84)) + ' ' + (Hh * (ph ? .46 : .02)) + ' ' + Z[0] + ' ' + Z[1];   /* phone: the line meets the middle stop level and climbs the right edge, clear of the labels */
+    var ph = innerWidth <= 760, W = ph ? 320 : 1180, Hh = ph ? 372 : 230, A = [ph ? 12 : 40, ph ? 86 : Hh - 96], M = [W * .48, Hh * (ph ? .5 : .59)], Z = [W - (ph ? 14 : 50), ph ? 328 : 54];   /* wp25 E-WP25-J: on a phone the route is drawn mirrored top to bottom, so it reads Cairo, Dubai and Abu Dhabi, Tampa downwards: Cairo top left, Tampa bottom right, each stop's lines above its dot, the mark under the line */
+    var d = 'M ' + A[0] + ' ' + A[1] + ' C ' + (W * (ph ? .16 : .2)) + ' ' + (Hh * (ph ? .9 : .08)) /* wp25 E-WP25-J, mirrored */ + ' ' + (W * (ph ? .3 : .36)) + ' ' + (ph ? M[1] : Hh * .98) + ' ' + M[0] + ' ' + M[1] + ' S ' + (W * (ph ? .99 : .84)) + ' ' + (Hh * (ph ? .54 : .02)) /* wp25 E-WP25-J, mirrored */ + ' ' + Z[0] + ' ' + Z[1];   /* phone: the line meets the middle stop level and climbs the right edge, clear of the labels */
     var ZX = Z[0] - (ph ? 28 : 0);
-    var dy = ph ? 28 : 34, dy2 = ph ? 49 : 56, dy3 = ph ? 68 : 76;
+    var dy = ph ? -77 : 34, dy2 = ph ? -56 : 56, dy3 = ph ? -37 : 76, cq = ph ? 17 : 0;   /* wp25 E-WP25-J: on a phone the three (four) lines stand above the dot; Cairo's role is one line, so its block sits 17 lower */
     var two = function (x, y, anchor, l1, l2, id) { return '<text class="rl"' + (id ? ' id="' + id + '"' : '') + (anchor ? ' text-anchor="' + anchor + '"' : '') + (x != null ? ' x="' + x + '" y="' + y + '"' : '') + '>' + (ph ? '<tspan' + (x != null ? ' x="' + x + '"' : '') + '>' + l1 + '</tspan><tspan' + (x != null ? ' x="' + x + '"' : '') + ' dy="17">' + l2 + '</tspan>' : l1 + ' ' + l2) + '</text>'; };
     pl.insertAdjacentHTML('afterend', '<div class="route" aria-hidden="true"><svg viewBox="0 0 ' + W + ' ' + Hh + '"><path id="rt" d="' + d + '" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round" opacity=".8"/>' +
       '<circle cx="' + A[0] + '" cy="' + A[1] + '" r="5" fill="currentColor"/><circle id="rmid" r="5" fill="currentColor"/><circle cx="' + Z[0] + '" cy="' + Z[1] + '" r="5" fill="currentColor"/>' +
-      '<text x="' + A[0] + '" y="' + (A[1] + dy) + '">Cairo</text><text class="yr" x="' + A[0] + '" y="' + (A[1] + dy2) + '">2003</text><text class="rl" x="' + A[0] + '" y="' + (A[1] + dy3) + '">Graphic designer</text>' +
+      '<text x="' + A[0] + '" y="' + (A[1] + dy + cq) + '">Cairo</text><text class="yr" x="' + A[0] + '" y="' + (A[1] + dy2 + cq) + '">2003</text><text class="rl" x="' + A[0] + '" y="' + (A[1] + dy3 + cq) + '">Graphic designer</text>' +
       '<text id="rmt" text-anchor="middle" data-fix="E-C25-7">Dubai and Abu Dhabi</text><text id="rmy" class="yr" text-anchor="middle">2006 to 2024</text>' + two(null, null, 'middle', 'Founder of AntBrush ·', 'partner at MCX', 'rml') +
       '<text x="' + ZX + '" y="' + (Z[1] + dy) + '" text-anchor="end">Tampa</text><text class="yr" x="' + ZX + '" y="' + (Z[1] + dy2) + '" text-anchor="end">2024</text>' + two(ZX, Z[1] + dy3, 'end', 'Creative direction,', 'with new tools for making') +
       '<g id="rm"><g transform="scale(' + (ph ? .1 : .19) + ') translate(-62 -141)" fill="currentColor"><path d="' + BIRD + '"/><path d="' + SIGS + '"/></g></g></svg></div>');
@@ -53,7 +53,7 @@
     // the mark's tail sits on the line and its body leads: it flies along the route and stops just short of Tampa
     var setR = function () { var r = sec.getBoundingClientRect(), h = innerHeight, p = Math.min(1, Math.max(0, (h * .85 - r.top) / (h * .75)));
       if (matchMedia('(prefers-reduced-motion: reduce)').matches) p = 1;
-      var e = p * p * (3 - 2 * p), pt = rt.getPointAtLength(L * e * .93); rm.setAttribute('transform', 'translate(' + pt.x + ' ' + (pt.y - (ph ? 14 : 26)) + ')'); };
+      var e = p * p * (3 - 2 * p), pt = rt.getPointAtLength(L * e * .93); rm.setAttribute('transform', 'translate(' + pt.x + ' ' + (pt.y - (ph ? -14 : 26)) /* wp25 E-WP25-J: on a phone under the line */ + ')'); };
     addEventListener('scroll', setR, { passive: true }); addEventListener('resize', setR); setR();
   }
 

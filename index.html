@@ -52,6 +52,23 @@
 <style data-fix="E-TR25">/* trust25: the full Trusted by and Venues, calm: sectors in four columns, cities in three, all open on a desktop; on a phone the first of each open and the rest one tap away (hard cuts) */.tr25 .tr25-w{grid-column:2/-1;min-width:0}.tr25-l{margin:0 0 18px;color:rgba(247,245,241,.72)}.tr25-g{margin:0 0 22px}.tr25-b{all:unset;display:flex;gap:10px;align-items:baseline;cursor:default;font-weight:600;color:#F7F5F1;margin:0 0 8px}.tr25-b i{font-style:normal;font-weight:400;color:rgba(247,245,241,.5)}.tr25-n{list-style:none;margin:0;padding:0;columns:4;column-gap:32px}.tr25-n li{break-inside:avoid;padding:3px 0;color:rgba(247,245,241,.72);font-weight:400}.tr25-n a{color:#F7F5F1;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}.tr25-cities{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 32px}.tr25-v .tr25-n{columns:1}.tr25-v .tr25-n li b{font-weight:500;color:#F7F5F1}.tr25-v .tr25-n li span{color:rgba(247,245,241,.5)}.tr25-shows{margin-top:6px}.tr25-sb{cursor:pointer;min-height:44px;align-items:center}.tr25-sb em{font-style:normal;color:#F7F5F1}.tr25-sb:focus-visible,.tr25-b:focus-visible{outline:2px solid #F7F5F1;outline-offset:3px}.tr25-sl{margin:4px 0 0;max-width:none;color:rgba(247,245,241,.72)}@media (max-width:1100px){.tr25-n{columns:3}}@media (max-width:768px){.tr25-n{columns:1}.tr25-cities{display:block}.tr25-b{cursor:pointer;min-height:44px;align-items:center;width:100%;justify-content:space-between;border-top:1px solid rgba(247,245,241,.18)}.tr25-g.shut .tr25-n{display:none}}</style>
 <style data-fix="E-PH25">@media (max-width:760px),(max-width:768px) and (max-aspect-ratio:11/10){html:not(#_t) body .stg .stg-say a.stg-s{display:block}html:not(#_t) body .stg a.stg-s>.mvt{display:inline-flex;vertical-align:middle;margin:0 10px 0 0}html:not(#_t) body .stg a.stg-s .stg-nm{display:inline;margin:0;vertical-align:middle}html:not(#_t) body .stg a.stg-s .stg-nm b,html:not(#_t) body .stg a.stg-s .stg-nm span{display:inline;margin:0;font-size:var(--t-text)!important;line-height:var(--lh-text)!important;letter-spacing:normal!important}html:not(#_t) body .stg a.stg-s .stg-nm span{font-weight:400!important}html:not(#_t) body .stg a.stg-s .stg-ln{margin:6px 0 0;font-family:"Jost",system-ui,sans-serif;font-weight:300!important;color:#F7F5F1;font-size:var(--t-big)!important;line-height:var(--lh-big)!important;letter-spacing:-.015em!important;text-wrap:balance}html:not(#_t) body .stg a.stg-s .stg-ft{margin:8px 0 0}html:not(#_t) body .stg a.stg-s .stg-go{display:inline-block;margin-top:8px}}</style>
 <style data-fix="E-ANS25-NAME">/* ans25: on a phone the name leads the first screen at the Big size (Tony, 25 Oct: "do whatever is right"); scale.css is beaten by specificity */html:not(#_t) body .jr-id .jr-nm{font-size:var(--t-big)!important;line-height:var(--lh-big)!important;letter-spacing:-.02em!important}html:not(#_t) body .jr-id .jr-tt{margin-top:8px!important}</style>
+<style data-fix="E-YRS25">/* years25 (E-YRS25): the mark flies the line, Cairo to Tampa. No transition, no opacity, no glow: hard switches. */
+.h2-yrs{position:relative}
+.yr25{position:absolute;left:0;top:0;width:100%;height:100%;margin:0;padding:0;pointer-events:none}
+.yr25-ln{position:absolute;display:block;left:0;top:0;width:0;height:1px;margin:0;background:#00C8D7;box-shadow:none;transition:none}
+.h2-time .yr25-mk{position:absolute;display:block;z-index:2;left:10.217px;top:-41.738px;width:26.04px;height:28px;margin:0;color:#FFFFFF;fill:#FFFFFF;background:none;pointer-events:none;transition:none;will-change:transform}
+.h2-yrs .h2-time>li>b,.h2-yrs .h2-time>li>span{color:#F7F5F1;transition:none}
+/* the still (reduced motion, or no script): every stop lit, the line Cairo to Tampa in cyan, the mark perched on Tampa */
+.h2-yrs:not(.yr25-go) .yr25-ln:first-child{left:10.161px;width:calc(80% + var(--yg,24px)*.8)}
+/* moving: the stops ahead stay quiet */
+.h2-yrs.yr25-go[data-yr25-n="1"] .h2-time>li:nth-child(n+2)>:is(b,span),.h2-yrs.yr25-go[data-yr25-n="2"] .h2-time>li:nth-child(n+3)>:is(b,span),.h2-yrs.yr25-go[data-yr25-n="3"] .h2-time>li:nth-child(n+4)>:is(b,span),.h2-yrs.yr25-go[data-yr25-n="4"] .h2-time>li:nth-child(n+5)>:is(b,span){color:rgba(247,245,241,.72)}
+@media (max-width:900px){
+  .h2-time .yr25-mk{left:8.028px;top:-32.794px;width:20.46px;height:22px}
+  .yr25-ln{z-index:1}
+  .h2-yrs:not(.yr25-go) .yr25-ln:first-child{width:0}
+  .h2-yrs:not(.yr25-go) .h2-time>li:not(:last-child){border-top-color:#00C8D7}
+}
+</style>
 </head>
 <body class="home home2">
 <a class="skip" href="#main">Skip to content</a>
@@ -426,12 +443,13 @@ document.fonts.ready.then(()=>{ layout(); measure(); TS=sampleT(); MS=sampleMark
   <div class="h2-nrm"><details class="rm"><summary><i class="sg1" aria-hidden="true"></i><span class="rm-o">Read more</span><span class="rm-c">Close</span></summary><div class="rm-b"><dl class="h2-nmore"><div><dt>23</dt><dd>From a first job in Cairo in 2003 to leading the whole assignment in Dubai, Abu Dhabi and now Tampa.</dd><dd class="rl">Creative Director, Brand &amp; Experiential.</dd></div><div><dt>$10M+</dt><dd>Managed a collective $10M+ in delivered projects — accountable for the client and the result, from first brief to final delivery.</dd><dd class="rl">Founder of AntBrush; partner at MCX.</dd></div><div><dt>20</dt><dd>Ministries, municipalities and authorities across the UAE.</dd><dd class="rl">I led the creative, from the idea to the delivery.</dd></div><div><dt>10</dt><dd>National Bullying Prevention Week, across 10 cities.</dd><dd class="rl">I led the campaign brand and its content.</dd></div><div><dt>83%</dt><dd>The DHA launch reached 83% of locals and Arabs in the measured UAE print audience in 2008. The media report excludes outdoor.</dd><dd class="rl">I led the pitch, the identity and the launch.</dd></div><div><dt>3</dt><dd>Cityscape Abu Dhabi, 2017: a 7,200 sq ft pavilion for fourteen government projects, built in the hall in three days.</dd><dd class="rl">I led the concept, the design and the build.</dd></div><div><dt>25</dt><dd>Stands, pavilions and rooms, 2011 to 2024, designed in 3D first.</dd><dd class="rl"><a href="work/spaces/">How a space is planned →</a></dd></div></dl></div></details></div>
   <!-- stage: his years, one line from Cairo to Tampa. Room for a scroll-driven moment later, for example the mark flying the line (data-stage="years"). -->
   <div class="h2-yrs" data-stage="years">
+    <div class="yr25" data-fix="E-YRS25" aria-hidden="true"><i class="yr25-ln"></i><i class="yr25-ln"></i><i class="yr25-ln"></i><i class="yr25-ln"></i></div>
     <ol class="h2-time" aria-label="The years: from Cairo in 2003 to Tampa in 2024">
       <li><b>2003</b><span>Cairo</span><i>Graphic designer</i></li>
       <li><b>2006</b><span>Dubai</span><i>Junior art director</i></li>
       <li><b>2007</b><span>AntBrush</span><i>Founded in Abu Dhabi; Dubai and Cairo followed</i></li>
       <li><b>2017</b><span>MCX</span><i>Partner, Creative Director &amp; Co-producer, Dubai</i></li>
-      <li><b>2024</b><span>Tampa, Florida</span><i>Creative direction, with new tools for making</i></li>
+      <li><b>2024</b><span>Tampa, Florida</span><i>Creative direction, with new tools for making</i><svg class="yr25-mk" data-fix="E-YRS25" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg></li>
     </ol>
   </div>
   <div class="h2-trust tr25" data-fix="E-TR25" data-tr25="v2"><p class="h2-k" id="tr-h">Trusted by</p><div class="tr25-w" aria-labelledby="tr-h"><p class="tr25-l">Clients from 2007 to 2024, by sector.</p><div class="tr25-g"><button class="tr25-b" type="button" aria-expanded="true" data-first><span>Government and public sector</span> <i>20</i></button><ul class="tr25-n"><li><a href="work/dha/">Dubai Health Authority</a></li><li>Department of Municipalities and Transport, Abu Dhabi</li><li>UAE Ministry of Education</li><li>UAE Ministry of Foreign Affairs and International Cooperation</li><li>Abu Dhabi Sports Council</li><li>Abu Dhabi Airports</li><li>Abu Dhabi Media</li><li>Dubai Land Department</li><li>Emirates Post Group</li><li>Khalifa Fund for Enterprise Development</li><li>Abu Dhabi Urban Planning Council</li><li>Department of Urban Planning and Municipalities, Abu Dhabi</li><li>Department of Transport, Abu Dhabi</li><li>Abu Dhabi City Municipality</li><li>Al Ain City Municipality</li><li>Al Dhafra Region Municipality</li><li>Musanada</li><li>Abu Dhabi Projects and Infrastructure Centre</li><li>Shurooq, Sharjah Investment and Development Authority</li><li>Emirates Center for Strategic Studies and Research</li></ul></div><div class="tr25-g"><button class="tr25-b" type="button" aria-expanded="true"><span>Brands and companies</span> <i>14</i></button><ul class="tr25-n"><li><a href="work/zeiss/">ZEISS</a></li><li>Etisalat</li><li><a href="work/pyramids-2021/">MAF</a></li><li>Unilever</li><li>ADNOC</li><li>Deutsche Post DHL</li><li>Technology Innovation Institute</li><li>Miral</li><li>Emirates Steel</li><li>Al Masaood</li><li>Capitala</li><li>Al Qudrah Holding</li><li>MedEuropa Refining</li><li>Saraya Interior Design</li></ul></div><div class="tr25-g"><button class="tr25-b" type="button" aria-expanded="true"><span>Education and culture</span> <i>3</i></button><ul class="tr25-n"><li><a href="work/aiaasc/">American International Accreditation Association of Schools and Colleges (AIAASC)</a></li><li><a href="work/children-of-light-academy/">Children of Light Academy</a></li><li>ZOWD</li></ul></div><div class="tr25-g"><button class="tr25-b" type="button" aria-expanded="true"><span>Exhibition stand design</span> <i>32</i></button><ul class="tr25-n"><li>Abu Dhabi Education Council</li><li>Abu Dhabi Food Control Authority</li><li>Telecommunications Regulatory Authority</li><li>Abu Dhabi Chamber of Commerce and Industry</li><li>Abu Dhabi Centre for Technical and Vocational Education and Training (ACTVET)</li><li>ASUS</li><li>ABB</li><li>JVC</li><li>Emaar Misr</li><li>Ducab</li><li>Dubai Airport Freezone</li><li>Elm</li><li>Tawazun</li><li>Arabsat</li><li>Nas Air</li><li>RAK Porcelain</li><li>DOKA</li><li>Liberty Automobiles (Cadillac and Chevrolet)</li><li>Bin Jabr Group</li><li>Al Hamra Group</li><li>ADCOM Systems</li><li>Emdad</li><li>Suwaidi Engineering Group</li><li>United Broadcast</li><li>PAKSAT</li><li>iMCC Group</li><li>Ceramica Omega</li><li>Ceramica Verdi</li><li>Pal Middle East</li><li>Mazroui Engineering</li><li>NAS (Naval Advanced Solutions)</li><li>Dar Designs</li></ul></div></div></div>
@@ -489,5 +507,41 @@ document.fonts.ready.then(()=>{ layout(); measure(); TS=sampleT(); MS=sampleMark
 <script src="assets/numbers.js" defer></script>
 <script src="assets/wavea.js?v=eee87206" defer></script>
 <script data-fix="E-TR25">/* trust25: on a phone the first sector and the first city stay open, the rest open on a tap; the shows open on a tap on every screen */(function(){var ph=matchMedia("(max-width:768px)");document.querySelectorAll(".tr25-g").forEach(function(g){var b=g.querySelector(".tr25-b");function set(o){g.classList.toggle("shut",!o);b.setAttribute("aria-expanded",o?"true":"false");}if(ph.matches&&!b.hasAttribute("data-first"))set(false);b.addEventListener("click",function(){if(ph.matches)set(g.classList.contains("shut"));});});var s=document.querySelector(".tr25-sb");if(s){var l=document.querySelector(".tr25-sl");s.addEventListener("click",function(){var o=l.hidden;l.hidden=!o;s.setAttribute("aria-expanded",o?"true":"false");s.querySelector("em").textContent=o?"−":"+";});}})();</script>
+<script data-fix="E-YRS25">/* years25 (E-YRS25): the mark flies the line. Scrubbed by the block's progress through the screen, no easing. */
+(function(){var Y=document.querySelector('.h2-yrs[data-stage="years"]');if(!Y)return;
+var ol=Y.querySelector('.h2-time'),mk=Y.querySelector('.yr25-mk'),L=Y.querySelectorAll('.yr25-ln');if(!ol||!mk)return;
+var li=ol.children,n=li.length;if(n<2||L.length<n-1)return;
+var rm=window.matchMedia?matchMedia('(prefers-reduced-motion: reduce)'):null,on=false,G=null,last=-1,raf=0,ro=null;
+var K=11.55/40.77,SA=25.68/51.46,TX=32.71/226,TY=240.72/243;
+function px(v){return(parseFloat(v)||0)}
+function measure(){var y=Y.getBoundingClientRect(),o=ol.getBoundingClientRect(),c=[],i,r,b,w,h,dw,lt,lh,ob=px(getComputedStyle(ol).borderTopWidth);
+for(i=0;i<n;i++){r=li[i].getBoundingClientRect();b=getComputedStyle(li[i],'::before');w=px(b.width);h=px(b.height);dw=Math.min(w,h*SA);
+c.push({x:r.left-y.left+px(b.left)+(w+dw)/2,y:r.top-y.top+px(getComputedStyle(li[i]).borderTopWidth)+px(b.top),lt:r.top-y.top,lh:px(getComputedStyle(li[i]).borderTopWidth),r:r.right-y.left})}
+var row=Math.abs(c[n-1].y-c[0].y)<2;
+for(i=0;i<n;i++){if(row){c[i].lt=o.top-y.top;c[i].lh=ob}lh=c[i].lh||1;c[i].lh=lh;c[i].sr=c[i].x-K*(c[i].lt+lh/2-c[i].y)}
+mk.style.transform='none';var m=mk.getBoundingClientRect();
+G={c:c,row:row,bx:m.left-y.left+m.width*TX,by:m.top-y.top+m.height*TY,lit:0}}
+function put(e,x,t,w,h){e.style.cssText='left:'+x.toFixed(2)+'px;top:'+t.toFixed(2)+'px;width:'+Math.max(0,w).toFixed(2)+'px;height:'+h+'px'}
+function frame(){raf=0;if(!on)return;if(!G){measure();last=-1}
+var y=Y.getBoundingClientRect(),vh=window.innerHeight||document.documentElement.clientHeight,p=(vh-y.top)/(vh+y.height);
+p=p<0?0:p>1?1:p;if(p===last)return;last=p;
+var c=G.c,s=p*(n-1),k,f,tx,ty,lit,i;
+if(G.row){k=Math.min(Math.floor(s),n-2);f=s-k;tx=c[k].x+(c[k+1].x-c[k].x)*f;ty=c[0].y;for(lit=0;lit<n&&c[lit].x<=tx+.5;lit++);
+put(L[0],c[0].sr,c[0].lt,tx-(c[0].x-c[0].sr)-c[0].sr,c[0].lh);for(i=1;i<L.length;i++)put(L[i],0,0,0,1)}
+else{k=Math.min(Math.floor(s+.004),n-1);f=s-k;tx=c[k].x;ty=c[k].y;lit=k+1;
+for(i=0;i<L.length;i++)put(L[i],c[i].sr,c[i].lt,(c[i].r-c[i].sr)*(i<k?1:i===k?f:0),c[i].lh)}
+mk.style.transform='translate3d('+(tx-G.bx).toFixed(2)+'px,'+(ty-G.by).toFixed(2)+'px,0)';
+if(lit!==G.lit){G.lit=lit;Y.setAttribute('data-yr25-n',lit)}}
+function req(){if(!raf)raf=requestAnimationFrame(frame)}
+function again(){G=null;req()}
+function start(){if(on)return;on=true;Y.classList.add('yr25-go');G=null;last=-1;
+addEventListener('scroll',req,{passive:true});addEventListener('resize',again);addEventListener('load',again);
+if(window.ResizeObserver){ro=new ResizeObserver(again);ro.observe(Y)}if(document.fonts&&document.fonts.ready)document.fonts.ready.then(again);req()}
+function stop(){if(!on)return;on=false;removeEventListener('scroll',req);removeEventListener('resize',again);removeEventListener('load',again);
+if(ro){ro.disconnect();ro=null}Y.classList.remove('yr25-go');Y.removeAttribute('data-yr25-n');mk.style.transform='';
+for(var i=0;i<L.length;i++)L[i].style.cssText=''}
+function pick(){if(rm&&rm.matches)stop();else start()}
+if(rm){if(rm.addEventListener)rm.addEventListener('change',pick);else if(rm.addListener)rm.addListener(pick)}pick()})();
+</script>
 </body>
 </html>
