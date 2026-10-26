@@ -143,7 +143,7 @@ function deskRoom(g, w, d, lp, tg, power) {
 }
 async function boot() {
   const { station, std, scene } = S, none = { noMirror: true };
-  const kit = await loadKit('a/3d/mark.svg'), M = mats(), rig = Rig(scene);
+  const M = mats(), rig = Rig(scene);   /* sr26: the book alone is built here, so the mark's vectors (a/3d/mark.svg) are not fetched */
   rig.refl.visible = false; S.renderer.shadowMap.enabled = false; S.renderer.shadowMap.type = T.PCFShadowMap; S.key.shadow.radius = 5;
   const PHN = FP.phone();   /* read once: phone layouts are chosen when the page loads */
 
@@ -171,42 +171,22 @@ async function boot() {
   /* closed, the book lies centred; as it opens it settles with its spine in the middle */
   const opening = t => { const o = ease(seg(t, .06, .82)); L.rotation.z = -Math.PI * (1 - o); book.position.x = -BW / 2 * (1 - o); };
 
-  /* 2 · the mark */
-  /* the English lockup is wide: framed on its whole width, its centre on the station, its foot just above the floor */
-  const LC = [0, (LY1 - LDY + LIFT) / 2, 0], LR = (mx(1277.7) - mx(817)) / 2 + .25, LH = (LY1 - LY0) / 2 + .3;
-  const s1 = station(46, Object.assign({}, none, { c: LC, rx: LR, ry: LH, yaw: -.42, pitch: .0, drift: .12, w: 1.5, keyK: .55, fx: .58, fy: .74, ox: -.15, oy: .035, rxp: LR, fxp: .88, fyp: .44, oxp: 0, oyp: .13, yawp: -.3 }));
-  const mg = new T.Group(); mg.position.set(-LX, -LDY, 0); s1.g.add(mg);
-  const mark = buildMark(kit, rig, mg, M);
+  /* 2 · the mark: no 3D (sr26, Tony 26 Oct: "Al Forsan, the 3D one, remove it. It's not good. Just keep the actual one."). The
+     stop is the English lockup as designed (manual p.24, a/afs26-lockup-en.webp), whole on the manual's paper, which the page lays
+     over the stage while its caption is on (.sr26-mk). The engine gives each stop a station: this one is a copy of the book's, so
+     the camera holds at the book, and nothing is built for it. */
+  { const { g: _g, x: _x, dims: _d, ...o } = s0; station(0, o); }
 
-  /* 3 · five centres: one centre at a time, close and as large as the mark, in the gold of the mark and lit like it, with its own line in its
-     own colour (manual pp.120-132). Each logo is an object with depth: when its turn ends it turns away on its own axis, its gold edge
-     catching the light, and the next one turns in, in the same place. The light of its colour falls on the floor and behind it. */
-  const s2 = station(92, Object.assign({}, none, PHN
-    ? { c: [0, 3.3, 0], rx: 2.9, ry: 3.3, yaw: .22, pitch: .0, drift: .1, w: 3.4, keyK: .55, fxp: .8, fyp: .44, oxp: 0, oyp: .13, yawp: .22 }
-    : { c: [0, 3.3, 0], rx: 2.9, ry: 3.3, yaw: .26, pitch: .0, drift: .12, w: 3.0, keyK: .55, fx: .56, fy: .74, ox: -.13, oy: .035 }));
-  const gIcon = [kit.ext(kit.shapes('arch'), .5, 12, .018), kit.ext(kit.shapes('dome'), .5, 12, .018), kit.ext(kit.shapes('dunes'), .05, 20), kit.ext(kit.shapes('rider'), .09, 4), kit.ext(kit.shapes('land-name'), .1, 4), kit.ext(kit.shapes('land-sub'), .1, 4)];   /* WB-AF-CENTRES (22 Oct): the English names (land-name, land-sub), never the bilingual sub-names */
-  const glow = (() => { const c = document.createElement('canvas'); c.width = c.height = 128; const x = c.getContext('2d'), gr = x.createRadialGradient(64, 64, 2, 64, 64, 64); gr.addColorStop(0, 'rgba(255,255,255,.9)'); gr.addColorStop(.5, 'rgba(255,255,255,.28)'); gr.addColorStop(1, 'rgba(255,255,255,0)'); x.fillStyle = gr; x.fillRect(0, 0, 128, 128); return new T.CanvasTexture(c); })();
-  const cen = CENTRES.map((c, i) => { const g = new T.Group(); s2.g.add(g); const gi = g;   /* each logo turns about its own centre line */
-    gIcon.forEach((geo, n) => { const m = rig.add(gi, geo, n >= 3 ? M.ink : M.gold); m.position.z = [0, 0, .05, .14, .1, .1][n]; if (n >= 4) { m.position.x += -237 * K; m.position.y += -100 * K; } /* WB-AF-CENTRES */ });
-    const ln = rig.add(gi, kit.ext(kit.shapes(c[0]), .1, 4), M.line(c[1])); ln.position.z = .1;
-    const light = () => new T.MeshBasicMaterial({ map: glow, color: c[1], transparent: true, opacity: 0, depthWrite: false, blending: T.AdditiveBlending, toneMapped: false });
-    const pool = new T.Mesh(new T.PlaneGeometry(7.4, 5), light()); pool.rotation.x = -Math.PI / 2; pool.position.set(0, .02, 1.3); pool.renderOrder = 5; s2.g.add(pool);
-    const back = new T.Mesh(new T.PlaneGeometry(12, 10), light()); back.position.set(0, 3.4, -2.6); back.renderOrder = 4; s2.g.add(back);
-    return { g, pool, back, i }; });
-  /* the held logo turns until it stands edge-on to the camera, and at that moment the next one, also edge-on, takes its place and turns
-     to face the camera: never two logos at once. The turn speeds up into the change and slows out of it, so it reads as one movement. */
-  const centres = t => { const q = t * 4.6, k = Math.min(4, Math.floor(q)), f = q - k, fa = seg(f, .3, .6), away = k < 4 ? fa * fa * fa : 0, inn = k < 4 ? out3(seg(f, .6, .9)) : 0;
-    const ps = clamp(Math.atan2(S.cam.position.x - s2.g.position.x, S.cam.position.z - s2.g.position.z), -.7, .7);   /* where the camera stands */
-    cen.forEach(c => { const a = c.i === k && away < .999 ? away * (ps + Math.PI / 2) : c.i === k + 1 && inn > .001 ? (1 - inn) * (ps - Math.PI / 2) : null;
-      c.g.visible = a !== null; if (a !== null) c.g.rotation.y = a; const w = a === null ? 0 : c.i === k ? 1 - away : inn;
-      c.pool.material.opacity = .5 * w; c.back.material.opacity = .2 * w; }); };
+  /* 3 · five centres: out (sr26, Tony 26 Oct, on the 3D: "remove it ... Just keep the actual one."); the five game screens after
+     this chapter show each centre. Wave B's two edits to their builder (WB-AF-CENTRES) stay below as text, as wave B wrote them. */
+  // kit.ext(kit.shapes('rider'), .09, 4), kit.ext(kit.shapes('land-name'), .1, 4), kit.ext(kit.shapes('land-sub'), .1, 4)];   /* WB-AF-CENTRES (22 Oct): the English names (land-name, land-sub), never the bilingual sub-names */
+  // m.position.z = [0, 0, .05, .14, .1, .1][n]; if (n >= 4) { m.position.x += -237 * K; m.position.y += -100 * K; } /* WB-AF-CENTRES */ });
 
   /* 4 · the gateway: out (af26, Tony 26 Oct: "remove this"); the three stations left are the chapter */
 
   const compose = (i, l, tm) => {
     opening(i === 0 ? seg(l, .02, .42) : 1);
-    mark.set(1);   /* af26 E-AF26-MARK: the logo stands whole and still (Tony, 26 Oct) */
-    centres(i < 2 ? 0 : i === 2 ? seg(l, .0, .4) : 1);
+    /* af26 E-AF26-MARK (the 3D logo, whole and still) and the five centres' turn: out with their stations (sr26) */
     rig.sync();
   };
   compose(0, 0);

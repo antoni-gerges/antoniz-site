@@ -98,7 +98,7 @@ async function opening() {
   let T, M;
   try { [T, M] = await Promise.all([three(), mark()]); } catch (e) { still(); return; }
   let R; try { R = new T.WebGLRenderer({ canvas: cv, antialias: true, alpha: true, preserveDrawingBuffer: PROOF || STILL || FRONT }); } catch (e) { still(); return; }
-  R.setClearColor(PROOF ? 0xffffff : 0x000000, PROOF ? 1 : 0); R.localClippingEnabled = true; R.toneMapping = T.NoToneMapping;
+  R.setClearColor(PROOF ? 0xffffff : 0x04181c, FRONT ? 0 : 1);   /* dhafix26 E-D26-FORMATION: the canvas is the page's own ground */ R.localClippingEnabled = true; R.toneMapping = T.NoToneMapping;
   const scene = new T.Scene(); scene.environment = envMap(T, R);
   const GREEN = new T.Color(M.green), TEAL = new T.Color(M.teal), INK = new T.Color('#231F20'), PAPER = new T.Color('#f2f6f5');
   scene.add(new T.AmbientLight(0xffffff, .35));
@@ -128,11 +128,11 @@ async function opening() {
   const L = M.box.lockup, lw = L[2] - L[0], lcx = (L[0] + L[2]) / 2, lcy = (L[1] + L[3]) / 2;
   let w = 0, h = 0, Wl = 1, cx = 0, cy = 0;
   function size() {
-    const r = sec.getBoundingClientRect(); w = Math.max(2, Math.round(r.width)); h = Math.max(2, Math.round(r.height));
+    const r = (sec.querySelector('.d26-stage') || sec).getBoundingClientRect(); w = Math.max(2, Math.round(r.width)); h = Math.max(2, Math.round(r.height));   /* dhafix26 E-D26-FORMATION: the stage */
     R.setPixelRatio(PROOF || FRONT ? 1 : Math.min(2, devicePixelRatio || 1)); R.setSize(w, h, false); cam.aspect = w / h;
     if (PROOF || FRONT) { const m = .06 * lw; Wl = w * lw / (lw + 2 * m); cx = w / 2; cy = h / 2; }
-    else if (w <= 760) { Wl = w * .84; cx = w * .5; cy = h * .35; }
-    else { Wl = Math.min(w * .5, h * 1.25); cx = w * .6; cy = h * .42; }
+    else if (w <= 760) { Wl = w * .84; cx = w * .5; cy = h * .5; }
+    else { Wl = Math.min(w * .56, h * 1.55); cx = w * .5; cy = h * .5; }   /* dhafix26 E-D26-FORMATION: the lockup ends centred in its stage */
     lens(PROOF || FRONT ? 1.2 : 22);
   }
   /* the lockup at its place on the screen for a given lens: front-on, the camera square to the faces. The last two seconds narrow the
@@ -169,10 +169,10 @@ async function opening() {
     const step = () => { const t = (performance.now() - t0) / 1000; at(Math.min(t, DUR)); if (t < DUR) requestAnimationFrame(step); else running = false; };
     requestAnimationFrame(step);
   }
-  again.forEach(b => b.addEventListener('click', () => { if (b.closest('.fp-end')) scrollTo({ top: 0, behavior: 'instant' }); play(); }));
+  again.forEach(b => b.addEventListener('click', () => { if (b.closest('.fp-end')) (sec.querySelector('.d26-stage') || sec).scrollIntoView({ block: 'center', behavior: 'instant' }); play(); }));
   if (PROOF || STILL || FRONT) { clearTimeout(slow); sec.classList.add('live'); at(DUR); W.__dlOpenReady = true; return; }
   if (slow === null) { sec.classList.add('live'); sec.classList.remove('still'); at(DUR); sec.classList.add('done'); return; }   // too slow: the still stands; Play again works
-  clearTimeout(slow); play();
+  clearTimeout(slow); at(0); inView(sec.querySelector('.d26-stage') || sec, () => play(), .5);   /* dhafix26 E-D26-FORMATION: once, when half in view */
 }
 
 /* ---------------------------------------------------------------------------------------------------- textures, objects */
@@ -225,8 +225,8 @@ async function kineticA() {
   scene.add(new T.HemisphereLight(0xffffff, 0x0b2a30, .9));
   const sun = new T.DirectionalLight(0xffffff, 1.6); sun.position.set(-3, 7, 8); sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
   Object.assign(sun.shadow.camera, { left: -8, right: 8, top: 5, bottom: -2, near: 1, far: 30 }); sun.shadow.bias = -.0005; scene.add(sun, sun.target);
-  const wall = new T.Mesh(new T.PlaneGeometry(40, 12), new T.MeshStandardMaterial({ color: 0x0a3138, roughness: .95 })); wall.position.set(0, 5, 0); wall.receiveShadow = true; scene.add(wall);
-  const floor = new T.Mesh(new T.PlaneGeometry(40, 30), new T.MeshStandardMaterial({ color: 0x062328, roughness: .9 })); floor.rotation.x = -Math.PI / 2; floor.position.z = 14; floor.receiveShadow = true; scene.add(floor);
+  const wall = new T.Mesh(new T.PlaneGeometry(40, 12), new T.ShadowMaterial({ opacity: .3 }) /* dhafix26 E-D26-GROUND: the wall is the ground; its shadows stay */); wall.position.set(0, 5, 0); wall.receiveShadow = true; scene.add(wall);
+  const floor = new T.Mesh(new T.PlaneGeometry(40, 30), new T.ShadowMaterial({ opacity: .3 }) /* dhafix26 E-D26-GROUND: the floor is the ground; its shadows stay */); floor.rotation.x = -Math.PI / 2; floor.position.z = 14; floor.receiveShadow = true; scene.add(floor);
   /* the mark, then its kit: small pieces of the mark that fly to each application's corner */
   const GREEN = new T.Color(M.green), TEAL = new T.Color(M.teal);
   const pieceGeo = {}; ['ul', 'ur', 'lr'].forEach(k => { const g = new T.ExtrudeGeometry(shapesOf(T, M[k]), { depth: .12, bevelEnabled: false, curveSegments: 18 }); g.translate(0, 0, -.06); pieceGeo[k] = g; });
@@ -330,7 +330,7 @@ async function kineticB() {
   /* the press: two piles on a dark table */
   const press = new T.Scene(); press.environment = envMap(T, R, .5); press.environmentIntensity = .4;
   press.add(new T.HemisphereLight(0xffffff, 0x0a2a30, .72)); const lp = new T.SpotLight(0xffffff, 11, 8, .7, .6, 1.4); lp.position.set(.2, 2.6, 1.2); press.add(lp, lp.target); press.environmentIntensity = .1; /* dhafix26 E-D26-PRESS: the light set so the brightest paper meets #F7F5F1 (was a 40 cd spot through ACES 1.1: every white clipped) */
-  const table = new T.Mesh(new T.PlaneGeometry(8, 8), new T.MeshBasicMaterial({ color: 0x031215 })); table.rotation.x = -Math.PI / 2; press.add(table);
+  const table = new T.Mesh(new T.PlaneGeometry(8, 8), new T.MeshBasicMaterial({ color: 0x04181c, toneMapped: false }) /* dhafix26 E-D26-GROUND: the table is the page's ground */); table.rotation.x = -Math.PI / 2; press.add(table);
   const adCare = tex('a/3d/p-ad-care.webp', redraw), adTease = tex('a/3d/p-tease-care.webp', redraw), tFut = tex('a/d26/tear-future.webp', redraw), tBut = adTease; /* dhafix26: the sun teaser corrected (E-D26-TEASER); the butterfly teaser from its artwork, not the newsprint scan (E-D26-PRESS) */
   /* a magazine page: the ad set whole on a white A4-proportioned page (210 x 280 mm), as a page carries a full-page ad */
   const magTex = (img) => { const c = D.createElement('canvas'); c.width = 600; c.height = 800; const g = c.getContext('2d'); g.fillStyle = '#ffffff'; g.fillRect(0, 0, 600, 800); /* dhafix26: the page white; the paper tone is the material's */
@@ -352,10 +352,10 @@ async function kineticB() {
   /* the road at night: 47 lamp posts, each with a back-lit box of 1.5 x 3 m */
   const road = new T.Scene(); road.fog = new T.FogExp2(0x04181c, .0042); road.background = new T.Color(0x04181c);
   road.add(new T.HemisphereLight(0x9fd8e0, 0x020a0c, .35));
-  const asphalt = new T.Mesh(new T.PlaneGeometry(60, 1600), new T.MeshStandardMaterial({ color: 0x0d1416, roughness: .9 })); asphalt.rotation.x = -Math.PI / 2; asphalt.position.z = -780; road.add(asphalt);
+  const asphalt = new T.Mesh(new T.PlaneGeometry(60, 1600), new T.MeshBasicMaterial({ color: 0x04181c, toneMapped: false }) /* dhafix26 E-D26-GROUND: the road is the page's ground */); asphalt.rotation.x = -Math.PI / 2; asphalt.position.z = -780; road.add(asphalt);
   const dashM = new T.MeshBasicMaterial({ color: 0x6f7c7e }), dashG = new T.PlaneGeometry(.15, 3);
   for (let z = 0; z > -1400; z -= 12) for (const x of [-7, -3.5, 3.5, 7]) { const m = new T.Mesh(dashG, dashM); m.rotation.x = -Math.PI / 2; m.position.set(x, .01, z); road.add(m); }
-  const curb = new T.Mesh(new T.BoxGeometry(1.2, .3, 1600), new T.MeshStandardMaterial({ color: 0x2a3436, roughness: .8 })); curb.position.set(0, .15, -780); road.add(curb);
+  const curb = new T.Mesh(new T.BoxGeometry(1.2, .3, 1600), new T.MeshBasicMaterial({ color: 0x04181c, toneMapped: false }) /* dhafix26 E-D26-GROUND: the median too; the lanes are the lines */); curb.position.set(0, .15, -780); road.add(curb);
   const poleM = new T.MeshStandardMaterial({ color: 0x3a4649, metalness: .6, roughness: .4 }), poleG = new T.CylinderGeometry(.11, .16, 11, 10), armG = new T.BoxGeometry(2.4, .12, .12);
   const lampM = new T.MeshBasicMaterial({ color: 0xffe6b8, toneMapped: false }), lampG = new T.BoxGeometry(.7, .14, .3);
   const frameM = new T.MeshStandardMaterial({ color: 0x1a2226, metalness: .5, roughness: .4 }), frameG = new T.BoxGeometry(1.62, 3.12, .32);
