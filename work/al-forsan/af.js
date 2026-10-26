@@ -201,15 +201,12 @@ async function boot() {
       c.g.visible = a !== null; if (a !== null) c.g.rotation.y = a; const w = a === null ? 0 : c.i === k ? 1 - away : inn;
       c.pool.material.opacity = .5 * w; c.back.material.opacity = .2 * w; }); };
 
-  /* 4 · the gateway */
-  const s3 = station(138, Object.assign({}, none, { c: [0, 2.3, .8], rx: 4.8, ry: 3.3, yaw: -.34, pitch: -.13, drift: .36, w: 1.5, keyK: .34, fx: .62, fy: .74, ox: -.15, oy: .03, fxp: 1.06, fyp: .42, oxp: 0, oyp: .13, yawp: -.2 }));
-  const gate = buildGate(kit, rig, s3.g, M);
+  /* 4 · the gateway: out (af26, Tony 26 Oct: "remove this"); the three stations left are the chapter */
 
   const compose = (i, l, tm) => {
     opening(i === 0 ? seg(l, .02, .42) : 1);
     mark.set(i === 1 ? seg(l, .03, .86) : i > 1 ? 1 : 0);
     centres(i < 2 ? 0 : i === 2 ? seg(l, .0, .4) : 1);
-    gate.set(i < 3 ? 0 : seg(l, .0, .42), tm || 0);
     rig.sync();
   };
   compose(0, 0);
