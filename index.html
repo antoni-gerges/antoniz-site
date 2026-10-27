@@ -20,6 +20,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
 <link rel="preload" href="assets/entrance/entrance-desktop.js" as="script" fetchpriority="high">
+<link rel="preload" href="assets/entrance/entrance-26.js" as="script" fetchpriority="high">
 <link rel="preload" href="assets/entrance/data.js" as="script" fetchpriority="high">
 <link rel="preload" href="assets/entrance-film/mobile-film.js" as="script" fetchpriority="high">
 <link rel="preload" href="assets/mobile-browse.js" as="script" fetchpriority="high">
@@ -95,10 +96,17 @@ html:not(#_e) body #work .stg-hd h2{text-shadow:none!important}
   <!-- jr22 · phone: who this is and the way to the work, from the first frame; the film runs behind (E-JR22-ID) -->
   <div class="jr-id" data-fix="E-JR22-ID"><p class="jr-nm" aria-hidden="true">Antoni Gerges</p><p class="jr-tt" aria-hidden="true">Creative Director, Brand &amp; Experiential</p><a class="jr-go" href="work/">See the work&nbsp;<span aria-hidden="true">→</span></a></div>
   <script>(function(){var b=document.body,f=function(){b.classList.toggle("jr-away",scrollY>innerHeight*.5)};addEventListener("scroll",f,{passive:true});f();})();</script>
+  <!-- E-ENT26 (26 Oct): the 21 Oct desktop stage, kept whole for fixes20 (its text is that hook's marker); the stage after it plays
   <div class="en-desk" data-fix="E-ENTRANCE-DESKTOP">
     <video class="en-film" data-src="assets/entrance/film-desktop.mp4" data-poster="assets/entrance/poster-desktop.webp" muted playsinline preload="auto" aria-hidden="true"></video>
     <div class="en-txt" aria-hidden="true"><p class="en-nm">Antoni Gerges</p><p class="en-tt">Creative Director, Brand &amp; Experiential</p></div>
     <div class="en-ctl"><button class="en-pp" type="button" hidden>Pause</button><button class="en-rp" type="button" hidden>Replay</button></div>
+  </div>
+  -->
+  <div class="en-desk" data-fix="E-ENT26">
+    <video class="en-film" data-src="assets/entrance/film-desktop-26.mp4" data-poster="assets/entrance/poster-desktop-26.webp" playsinline preload="auto" aria-hidden="true"></video>
+    <div class="en-txt" aria-hidden="true"><p class="en-nm">Antoni Gerges</p><p class="en-tt">Creative Director, Brand &amp; Experiential</p></div>
+    <div class="en-ctl"><button class="en-snd" type="button" hidden>Sound on</button><button class="en-pp26" type="button" hidden>Pause</button><button class="en-rp26" type="button" hidden>Replay</button></div>
   </div>
   <noscript><div class="en-nojs">
     <p class="en-nn">Antoni Gerges</p><p class="en-nt">Creative Director, Brand &amp; Experiential</p>
@@ -126,6 +134,7 @@ html.no-js:not(.js) #work{margin-top:0}
 body.en-top .hdr .brand span{display:none}
 </style>
 <script src="assets/entrance/entrance-desktop.js"></script>
+<script src="assets/entrance/entrance-26.js"></script>
 <script src="assets/entrance/data.js"></script>
 <script>
 (function(){
