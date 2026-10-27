@@ -163,6 +163,45 @@ html:not(#_d):not(#_t) body button.film .t .fp-lab b{font-size:var(--t-text)!imp
 .fp-player.f26own video{flex:none;width:min(var(--f26w,640px),100%);height:auto;max-height:calc(100% - 64px);margin:auto}
 </style>
 <!--mz26 (materials-26oct/mz26.py, 26 Oct): the references moved to the pictures and films without the organiser's name ("MCX", never the long name); the tags as they were, kept for the earlier modules' checks: img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1080' height='1080'/%3E" data-wa-src="a/scope-keyart-1080.webp" data-wa-srcset="a/scope-keyart-800.webp 800w, a/scope-keyart-1080.webp 1080w" sizes="(max-width:760px) 45vw, 35vw" width="1080" height="1080" loading="lazy" decoding="async" alt="The key art in English on black."> ¦ a class="box zm" href="a/keyart-1080.webp" style="--ar:1080/1080;--bg:#000"> ¦ img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1080' height='1080'/%3E" data-wa-src="a/keyart-1080.webp" data-wa-srcset="a/keyart-720.webp 720w, a/keyart-1080.webp 1080w" sizes="(max-width:760px) 100vw, 46vw" width="1080" height="1080" loading="lazy" decoding="async" alt="The square key art on black: MCX presents The Legendary Super Star ANGHAM Live in Dubai, Friday 10th November 2017, Sheikh Rashid Hall at Dubai World Trade Centre, the artist on the right."> -->
+<style data-fix="E-OP27-CSS">/* op27 (27 Oct 2026, openers-27oct/op27.py): the first screen, one frame for every film page */
+[data-o27]{display:contents}
+.o27,section:has(> [data-o27]){position:relative;display:flex;justify-content:center;align-items:center;min-height:100svh;box-sizing:border-box;padding:76px var(--o27-g) 28px;background:#0B0C10;--o27-g:clamp(16px,4vw,64px);--o27-under:150px}
+.o27-w{width:min(100%,calc((100svh - 104px - var(--o27-under)) * var(--ar)))}
+.o27-f{margin:0;width:100%;aspect-ratio:var(--ar);background:#0B0C10;overflow:hidden}
+.o27-f picture{display:block;width:100%;height:100%}
+.o27-v{display:block;width:100%;height:100%;object-fit:cover;background:#0B0C10}
+.o27-t{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:32px;row-gap:4px;align-items:center;margin-top:16px}
+.o27-a{display:contents}
+.o27-t .o27-nm{grid-column:1/-1}
+.o27-t .o27-ln{grid-column:1}
+.o27-t .o27-b{grid-column:2;justify-self:end}
+.o27-t.o27-stack{grid-template-columns:minmax(0,1fr)}
+.o27-t.o27-stack .o27-b{grid-column:1;justify-self:start;margin-top:4px}
+.o27:has(.o27-stack){--o27-under:196px}
+html:not(#_t):not(#_o27) body .o27-nm{display:block;margin:0;font-family:Jost,system-ui,sans-serif!important;font-weight:600!important;font-style:normal!important;font-size:var(--t-big)!important;line-height:var(--lh-big)!important;color:#F7F5F1;letter-spacing:-.01em!important}
+html:not(#_o27) .o27-nm img{display:block;height:calc(var(--t-big) * 1.25);width:auto;max-width:100%}
+html:not(#_o27) .o27-nm .lw-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+html:not(#_t):not(#_o27) body .o27-ln{margin:0;max-width:62em;color:rgba(247,245,241,.72);font-family:Inter,system-ui,sans-serif!important;font-weight:400!important}
+.o27-b{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px}
+.o27-b .fp-play{margin:0}
+html:not(#_t):not(#_o27) body .o27-snd,html:not(#_t):not(#_o27) body .o27-pp{min-height:44px;min-width:44px;box-sizing:border-box;padding:0 4px;background:none;border:0;border-bottom:1px solid rgba(247,245,241,.36);color:#F7F5F1;font-family:Jost,system-ui,sans-serif!important;font-weight:500!important;cursor:pointer}
+.o27-snd:hover,.o27-pp:hover{border-bottom-color:#00C8D7}
+.o27-snd:focus-visible,.o27-pp:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.o27-snd[hidden],.o27-pp[hidden]{display:none}
+.o27-s2{min-height:0;padding:clamp(48px,9vh,96px) var(--o27-g);background:transparent}
+.o27-s2 .o27-w{width:min(100%,calc((100svh - 160px) * var(--ar)))}
+@media (min-width:761px){html:not(#_o27) .o27 .fp-cue{display:none}}
+@media (max-width:760px){
+ .o27,section:has(> [data-o27]){display:block;min-height:0;padding:62px 0 20px}
+ .o27-w{width:100%}
+ .o27-f{aspect-ratio:4/5}
+ .o27-t{grid-template-columns:minmax(0,1fr);padding:0 16px;margin-top:12px;row-gap:2px}
+ .o27-t .o27-nm{order:1}.o27-t .o27-b{order:2;grid-column:1;justify-self:start;gap:0 18px}.o27-t .o27-ln{order:3}
+ html:not(#_o27) .o27-nonm-p{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+ .o27-s2{padding:40px 0}
+ .o27-s2 .o27-w{width:100%}
+}
+</style>
 </head>
 <body class="fp ls21 an">
 <a class="skip" href="#main">Skip to content</a>
@@ -177,9 +216,20 @@ html:not(#_d):not(#_t) body button.film .t .fp-lab b{font-size:var(--t-text)!imp
 <h1 class="sr-only">Angham Live in Dubai, Sheikh Rashid Hall, Dubai World Trade Centre, 10 November 2017</h1>
 
 <!-- 0 · the glimpse: the night in 11 s: the MCX promo’s title, four of his photographs of the hall held whole, our own English title on the last (build/films.py; the op21 markup of the live openers, one 16:9 film, muted) -->
-<section class="op21" data-stop="The glimpse" aria-label="A glimpse: the title builds, The Legendary Super Star Angham; the full hall and the stage; the camera crane over the hall; the seated audience; the stage in white light; Angham, Live in Dubai; and the hall with the title Dubai World Trade Centre, 10 November 2017">
+<section class="o27" data-fix="E-OP27-angham" data-stop="The glimpse" style="--ar:1.7778" aria-label="Angham: the opening"><div class="o27-w"><figure class="o27-f"><video class="o27-v" muted playsinline loop preload="metadata" width="1920" height="1080" data-d="a/op27-d.mp4" data-p="a/op27-p.mp4" data-pd="a/op27-d.webp" data-pp="a/op27-p.webp" aria-label="Angham and the orchestra under gold beams"></video><noscript><img class="o27-v" src="a/op27-d.webp" width="1920" height="1080" alt="Angham and the orchestra under gold beams"></noscript></figure><div class="o27-t"><div class="o27-a"><p class="o27-nm">Angham</p><p class="o27-ln">Live in Dubai · Sheikh Rashid Hall, Dubai World Trade Centre · 10 November 2017 · from the promo</p></div><div class="o27-b"><button class="fp-play" type="button" data-film="../../media/films/angham-2017-promo-1280.mp4" data-title="Angham Live in Dubai · the promo film by MCX · 0:40">Play the promo film <small>0:40 · sound</small></button><button class="o27-snd" type="button" aria-pressed="false" hidden>Sound on</button><button class="o27-pp" type="button" aria-pressed="false" hidden>Pause</button></div></div></div><script data-fix="E-OP27-JS">(function(){var D=document,s=D.currentScript.parentNode,v=s&&s.querySelector('video.o27-v');if(!v)return;
+var P=window.matchMedia&&matchMedia('(max-width:760px)').matches,RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+v.poster=v.getAttribute(P?'data-pp':'data-pd');v.muted=true;v.src=v.getAttribute(P?'data-p':'data-d');
+var snd=s.querySelector('.o27-snd'),pp=s.querySelector('.o27-pp'),user=false,held=false,seen=true;
+function go(){if(held||(RM&&!user))return;var p=v.play();if(p&&p.catch)p.catch(function(){});}
+function lab(){if(pp){pp.textContent=v.paused?'Play':'Pause';pp.setAttribute('aria-pressed',v.paused?'true':'false');}if(snd){snd.textContent=v.muted?'Sound on':'Sound off';snd.setAttribute('aria-pressed',v.muted?'false':'true');}}
+v.addEventListener('play',lab);v.addEventListener('pause',lab);
+if(pp){pp.hidden=false;pp.addEventListener('click',function(){if(v.paused){held=false;user=true;go();}else{held=true;v.pause();}});}
+if(snd){snd.hidden=false;snd.addEventListener('click',function(){v.muted=!v.muted;if(!v.muted){held=false;user=true;go();}lab();});}
+D.addEventListener('click',function(e){var b=e.target&&e.target.closest&&e.target.closest('[data-film]');if(b&&!v.muted){v.muted=true;lab();}},true);
+if('IntersectionObserver'in window)new IntersectionObserver(function(e){seen=e[0].isIntersecting;seen?go():v.pause();},{threshold:.2}).observe(v);else go();
+lab();})();</script></section><template data-fix="E-OP27-WAS"><!-- op27 (27 Oct): the opener this page had, kept inert so the modules that placed it stay quiet --><section class="op21" data-stop="The glimpse" aria-label="A glimpse: the title builds, The Legendary Super Star Angham; the full hall and the stage; the camera crane over the hall; the seated audience; the stage in white light; Angham, Live in Dubai; and the hall with the title Dubai World Trade Centre, 10 November 2017">
   <figure class="op21-f"><button class="op21-film" type="button" aria-label="Pause the glimpse"><video class="op21-v" data-fix="E-OPENER-angham" muted playsinline loop preload="none" data-wa-defer width="1280" height="720" poster="a/glimpse-poster.webp"><source data-wa-src="a/glimpse.mp4" type="video/mp4"></video></button><figcaption class="op21-cap">A glimpse · the MCX promo’s title (over the artist’s footage from other concerts) and photographs of the night</figcaption><p class="op25-nm" data-fix="E-OPEN25-11">Angham</p><p class="op21-play" data-fix="E-FL23" style="display:flex;flex-wrap:wrap;gap:8px 24px;margin:12px 0 0"><button class="fp-play" type="button" data-film="../../media/films/angham-2017-promo-1280.mp4" data-title="Angham Live in Dubai · the promo film by MCX · 0:40">Play the promo film <small>0:40 · sound</small></button></p></figure>
-</section>
+</section></template>
 <!-- fl26 · the promo and the after film, right after the first screen (Tony, 26 Oct: "one promotion video and one after event video. Put them") -->
 <section class="f26 f26-one" data-fix="E-FL26-angham" data-stop="The promo" aria-labelledby="f26-h"><div class="f26-in"><h2 id="f26-h">Before <b>the night.</b></h2><div class="f26-pair"><div class="f26-t"><button class="f26-b" type="button" data-film="f26/promo-1080.mp4" data-title="Angham Live in Dubai · the promo film by MCX · 1:05" aria-label="Play the promo, 1 minute 5, with sound"><picture><img src="f26/promo-poster.webp" width="1200" height="676" alt="The Legendary Super Star Angham, Live in Dubai, over her singing with the orchestra" decoding="async"></picture><span class="f26-c"><svg class="f26-i" viewBox="0 0 12 14" aria-hidden="true" focusable="false"><path d="M0 0L12 7L0 14Z"/></svg><b>The promo</b><span>1:05 · sound</span></span></button><button class="f26-m" type="button" data-film="f26/drop-1080.mp4" data-title="Angham Live in Dubai · her video drop for the night · 0:46" aria-label="Play her video drop, 46 seconds, with sound">Her video drop · 0:46 +</button></div></div></div></section>
 <script data-fix="E-FL26-JS">(function(){var D=document;D.addEventListener("click",function(e){var b=e.target&&e.target.closest?e.target.closest("[data-film]"):null,pl=D.querySelector(".fp-player");if(!b||!pl)return;var w=b.getAttribute("data-f26-w");pl.classList.toggle("f26own",!!w);if(w)pl.style.setProperty("--f26w",w+"px");},true);})();</script>

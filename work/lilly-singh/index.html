@@ -137,6 +137,51 @@ html:not(#_wb) .bset .strip{transform:rotateX(14deg) rotateZ(-2deg)!important;bo
 <script data-fix="E-PH25">(function(){var D=document,H=D.documentElement,W=window;if(!W.matchMedia)return;var q=W.matchMedia('(max-width:768px)'),done=0;function go(){if(done||!q.matches)return;done=1;H.classList.add('ph25');D.addEventListener('click',function(e){var b=e.target&&e.target.closest?e.target.closest('button.ph25-tog'):null;if(!b)return;var s=b.closest('section.fp-scope');if(!s)return;var o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',o?'true':'false');s.classList.toggle('ph25-open',o);var m=b.querySelector('.ph25-pm');if(m)m.textContent=o?'\u2212':'+';try{W.dispatchEvent(new Event('resize'))}catch(x){}});var wide=W.innerWidth>760,ok=0;function tx(e){return(e.innerText||e.textContent||'').replace(/\s+/g,' ').trim()}var mo=new MutationObserver(function(){var d=D.querySelector('#case-chapters>details');if(d){if(wide)d.open=false;mo.disconnect();return}if(ok)return;var s=D.querySelector('nav[data-wa-ph] .case-index-heading strong'),h=D.querySelector('h1');if(!s||!h||!(h.nextSibling||(h.parentNode&&h.parentNode.nextSibling)))return;ok=1;var n=(!h.classList.contains('sr-only')&&tx(h))||(D.title||'').split(' \u00b7 ')[0];if(n&&s.textContent!==n)s.textContent=n});mo.observe(H,{childList:true,subtree:true});setTimeout(function(){mo.disconnect()},20000);}go();if(q.addEventListener)q.addEventListener('change',go)})();</script>
 <style data-fix="E-OPEN25">/* open25 (25 Oct, openers-25oct/open25.py): Fable 25 Oct, fixes 11 22 29 and the final check's regressions */html:not(#_t):not(#_o25) body .op25-nm{display:block;margin:0;max-width:none;font-family:Jost,system-ui,sans-serif!important;font-weight:600!important;font-style:normal!important;font-size:var(--t-big)!important;line-height:var(--lh-big)!important;letter-spacing:-.015em!important;color:inherit;opacity:1;text-wrap:balance}html:not(#_t):not(#_o25) body .kb-head .op25-nm{margin:0 0 12px;color:#fff}@media (min-width:761px){html:not(#_o25) .kb-ly .kb-stage{width:min(100%,calc((100svh - 84px - 120px - calc(var(--t-big) * 1.08 + clamp(8px,1.4vh,14px))) * 828 / 315))}}</style>
 <!--mat26 (materials-26oct/mat26.py, 26 Oct): the references moved to the fixed films and pictures (no "Mission Control X" on the site) and their labels to the new lengths; the tags and labels as they were, kept for the earlier modules' checks:  ¦  ¦  ¦ <a class="strip zm s1" href="a/fb-1-828.webp" style="--k:0"> ¦  ¦ <a class="strip zm s2" href="a/fb-2-828.webp" style="--k:1"> ¦  ¦ <a class="strip zm s3" href="a/fb-3-828.webp" style="--k:2"> ¦  ¦ <a class="strip zm s4" href="a/fb-4-828.webp" style="--k:3"> ¦  ¦ <a class="box zm" href="a/fb-1-828.webp" style="--ar:828/315;--bg:#BF1B1D"> ¦  -->
+<style data-fix="E-OP27-CSS">/* op27 (27 Oct 2026, openers-27oct/op27.py): the first screen, one frame for every film page */
+[data-o27]{display:contents}
+.o27,section:has(> [data-o27]){position:relative;display:flex;justify-content:center;align-items:center;min-height:100svh;box-sizing:border-box;padding:76px var(--o27-g) 28px;background:#0B0C10;--o27-g:clamp(16px,4vw,64px);--o27-under:150px}
+.o27-w{width:min(100%,calc((100svh - 104px - var(--o27-under)) * var(--ar)))}
+.o27-f{margin:0;width:100%;aspect-ratio:var(--ar);background:#0B0C10;overflow:hidden}
+.o27-f picture{display:block;width:100%;height:100%}
+.o27-v{display:block;width:100%;height:100%;object-fit:cover;background:#0B0C10}
+.o27-t{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:32px;row-gap:4px;align-items:center;margin-top:16px}
+.o27-a{display:contents}
+.o27-t .o27-nm{grid-column:1/-1}
+.o27-t .o27-ln{grid-column:1}
+.o27-t .o27-b{grid-column:2;justify-self:end}
+.o27-t.o27-stack{grid-template-columns:minmax(0,1fr)}
+.o27-t.o27-stack .o27-b{grid-column:1;justify-self:start;margin-top:4px}
+.o27:has(.o27-stack){--o27-under:196px}
+html:not(#_t):not(#_o27) body .o27-nm{display:block;margin:0;font-family:Jost,system-ui,sans-serif!important;font-weight:600!important;font-style:normal!important;font-size:var(--t-big)!important;line-height:var(--lh-big)!important;color:#F7F5F1;letter-spacing:-.01em!important}
+html:not(#_o27) .o27-nm img{display:block;height:calc(var(--t-big) * 1.25);width:auto;max-width:100%}
+html:not(#_o27) .o27-nm .lw-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+html:not(#_t):not(#_o27) body .o27-ln{margin:0;max-width:62em;color:rgba(247,245,241,.72);font-family:Inter,system-ui,sans-serif!important;font-weight:400!important}
+.o27-b{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px}
+.o27-b .fp-play{margin:0}
+html:not(#_t):not(#_o27) body .o27-snd,html:not(#_t):not(#_o27) body .o27-pp{min-height:44px;min-width:44px;box-sizing:border-box;padding:0 4px;background:none;border:0;border-bottom:1px solid rgba(247,245,241,.36);color:#F7F5F1;font-family:Jost,system-ui,sans-serif!important;font-weight:500!important;cursor:pointer}
+.o27-snd:hover,.o27-pp:hover{border-bottom-color:#00C8D7}
+.o27-snd:focus-visible,.o27-pp:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.o27-snd[hidden],.o27-pp[hidden]{display:none}
+.o27-s2{min-height:0;padding:clamp(48px,9vh,96px) var(--o27-g);background:transparent}
+.o27-s2 .o27-w{width:min(100%,calc((100svh - 160px) * var(--ar)))}
+@media (min-width:761px){html:not(#_o27) .o27 .fp-cue{display:none}}
+@media (max-width:760px){
+ .o27,section:has(> [data-o27]){display:block;min-height:0;padding:62px 0 20px}
+ .o27-w{width:100%}
+ .o27-f{aspect-ratio:4/5}
+ .o27-t{grid-template-columns:minmax(0,1fr);padding:0 16px;margin-top:12px;row-gap:2px}
+ .o27-t .o27-nm{order:1}.o27-t .o27-b{order:2;grid-column:1;justify-self:start;gap:0 18px}.o27-t .o27-ln{order:3}
+ html:not(#_o27) .o27-nonm-p{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+ .o27-s2{padding:40px 0}
+ .o27-s2 .o27-w{width:100%}
+}
+
+@media (max-width:760px){
+ html:not(#_o27) .op-ly .kb-stage{aspect-ratio:4/5;height:auto;overflow:hidden;position:relative}
+ html:not(#_o27) .op-ly .kb-world{position:absolute;top:0;bottom:0;height:100%;width:auto;aspect-ratio:828/315;left:50%;transform:translateX(-50%)}
+ html:not(#_o27) .op-ly .kb-world .bn{width:100%;height:100%}
+}
+</style>
 </head>
 <body class="fp ls21 ly">
 <a class="skip" href="#main">Skip to content</a>
@@ -150,7 +195,7 @@ html:not(#_wb) .bset .strip{transform:rotateX(14deg) rotateZ(-2deg)!important;bo
 <main id="main">
 <h1 class="sr-only">Lilly Singh Live in Dubai, How To Be A Bawse tour, Habtoor Grand Resort, JBR, 10 May 2017</h1>
 
-<section class="kb kb-ly op-ly" data-fix="E-OPENER-lilly-singh" data-stop="The banner" data-kb-mode="time" data-caps="[&quot;Her red.&quot;, &quot;The figure.&quot;, &quot;The name.&quot;, &quot;Live in Dubai, 10th May.&quot;, &quot;The second look.&quot;, &quot;Her yellow.&quot;, &quot;And one more.&quot;]" style="--n:7" aria-labelledby="kb-ly">
+<section class="kb kb-ly op-ly" data-fix="E-OPENER-lilly-singh" data-op27="E-OP27-lilly-singh" data-stop="The banner" data-kb-mode="time" data-caps="[&quot;Her red.&quot;, &quot;The figure.&quot;, &quot;The name.&quot;, &quot;Live in Dubai, 10th May.&quot;, &quot;The second look.&quot;, &quot;Her yellow.&quot;, &quot;And one more.&quot;]" style="--n:7" aria-labelledby="kb-ly">
   <div class="kb-pin">
     <div class="kb-head"><p class="op25-nm" data-fix="E-OPEN25-11">Lilly Singh</p><p class="kb-lab">The opener: her banner, built from its own layers</p><p class="kb-cap" id="kb-ly" aria-live="polite">Her red.</p></div>
     <div class="kb-stage" role="img" aria-label="Lilly Singh’s banner builds from its own layers: the red ground; her figure in front of a giant gold pocket watch rises into place; LILLY SINGH types in; then LIVE IN DUBAI, 10TH MAY; the second red look with her figure beside a blue ladder; then the two yellow looks"><div class="kb-world"><div class="bn"><img class="ly g1" src="a/L-red.webp" width="828" height="315" decoding="async" alt="" style="left:0.000%;top:0.000%;width:100.000%;height:100.000%"><img class="ly fig1" src="a/L-clock.webp" width="304" height="456" decoding="async" alt="Lilly Singh seated in front of a giant gold pocket watch" style="left:32.005%;top:-17.460%;width:36.715%;height:144.762%"><img class="ly t1 a" src="a/L-w-lilly.webp" width="121" height="58" decoding="async" alt="" style="left:18.961%;top:6.349%;width:14.614%;height:18.413%"><img class="ly t1 b" src="a/L-w-singh.webp" width="121" height="45" decoding="async" alt="" style="left:18.841%;top:26.349%;width:14.614%;height:14.286%"><img class="ly t2 a" src="a/L-w-live.webp" width="96" height="72" decoding="async" alt="" style="left:70.411%;top:63.175%;width:11.594%;height:22.857%"><img class="ly t2 b" src="a/L-w-may.webp" width="98" height="28" decoding="async" alt="" style="left:70.531%;top:86.667%;width:11.836%;height:8.889%"><img class="ly g2" src="a/L-red2.webp" width="828" height="315" decoding="async" alt="" style="left:0.000%;top:0.000%;width:100.000%;height:100.000%"><img class="ly fig2" src="a/L-ladder.webp" width="504" height="731" decoding="async" alt="Lilly Singh in yellow beside a blue ladder" style="left:38.406%;top:7.619%;width:60.870%;height:232.063%"><img class="ly t3" src="a/L-w-type2.webp" width="323" height="193" decoding="async" alt="" style="left:16.063%;top:8.254%;width:39.010%;height:61.270%"><img class="ly flat f3" src="a/fb-3-828.webp" width="828" height="315" decoding="async" alt=""><img class="ly flat f4" src="a/fb-4-828.webp" width="828" height="315" decoding="async" alt=""></div></div><i class="kb-floor" aria-hidden="true"></i></div>

@@ -201,6 +201,45 @@ html:not(#_e) body section.fp-model .fp-built .fp-lab span:last-child{display:no
   }
 })();</script>
 <style data-fix="E-CAP27-CSS">/* cap27 (27 Oct): the editorial screen says what the job was; each dinner has its heading on its own film; words on the ground, never over a picture; no fades; two text sizes (scale.css) */.cp-editorial .cap27-what{font-family:Inter,system-ui,sans-serif;font-weight:400;color:#F7F5F1;max-width:46ch;margin:18px 0 18px}.cp-editorial .cap27-go{display:flex;flex-wrap:wrap;gap:0 28px;margin:6px 0 0}.cp-editorial .cap27-go a{display:inline-flex;align-items:center;gap:.4em;min-height:44px;color:inherit;font-family:Jost,system-ui,sans-serif;font-weight:500;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}.cp-editorial .cap27-go a:hover{color:var(--cp-lime,#b9d956)}.cp-editorial .cap27-go a:focus-visible{outline:2px solid var(--cp-lime,#b9d956);outline-offset:5px}.cp-editorial-idea b{font-weight:600}.cap27-hd{margin:0 auto clamp(14px,2.4vh,24px)}.cap27-hd .fp-lab{margin:0}.cap27-hd .fp-lab b{color:var(--cp-lime,#b9d956)}.cap27-hd h2{margin:8px 0 0;font-family:Jost,system-ui,sans-serif;font-weight:300;text-wrap:balance}.cap27-hd h2 b{font-weight:600;color:var(--cp-lime,#b9d956)}.cap27-place video{background:#000}@media (min-width:761px){.cp-open .cap27-hd{width:min(100%,calc((100svh - 380px) * 1.7778))}.cp-open .cap27-hd~.cp-one figure{width:min(100%,calc((100svh - 380px) * var(--r)))}.cp-second .cap27-hd{width:min(100%,1150px,calc((100svh - 380px) * 2.2316))}.cp-second .cap27-hd~.cp-one .f19{width:min(100%,1150px,calc((100svh - 380px) * var(--r)))}}@media (max-width:760px){.cp-editorial .cap27-what{grid-row:5;margin:0}.cp-editorial .cp-editorial-role{grid-row:6}.cp-editorial .cap27-go{grid-row:7;margin:0}.cp-second .cap27-hd{padding:0 var(--g)}}.fp-end.fin .fp-cred{margin-top:0}</style>
+<style data-fix="E-OP27-CSS">/* op27 (27 Oct 2026, openers-27oct/op27.py): the first screen, one frame for every film page */
+[data-o27]{display:contents}
+.o27,section:has(> [data-o27]){position:relative;display:flex;justify-content:center;align-items:center;min-height:100svh;box-sizing:border-box;padding:76px var(--o27-g) 28px;background:#0B0C10;--o27-g:clamp(16px,4vw,64px);--o27-under:150px}
+.o27-w{width:min(100%,calc((100svh - 104px - var(--o27-under)) * var(--ar)))}
+.o27-f{margin:0;width:100%;aspect-ratio:var(--ar);background:#0B0C10;overflow:hidden}
+.o27-f picture{display:block;width:100%;height:100%}
+.o27-v{display:block;width:100%;height:100%;object-fit:cover;background:#0B0C10}
+.o27-t{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:32px;row-gap:4px;align-items:center;margin-top:16px}
+.o27-a{display:contents}
+.o27-t .o27-nm{grid-column:1/-1}
+.o27-t .o27-ln{grid-column:1}
+.o27-t .o27-b{grid-column:2;justify-self:end}
+.o27-t.o27-stack{grid-template-columns:minmax(0,1fr)}
+.o27-t.o27-stack .o27-b{grid-column:1;justify-self:start;margin-top:4px}
+.o27:has(.o27-stack){--o27-under:196px}
+html:not(#_t):not(#_o27) body .o27-nm{display:block;margin:0;font-family:Jost,system-ui,sans-serif!important;font-weight:600!important;font-style:normal!important;font-size:var(--t-big)!important;line-height:var(--lh-big)!important;color:#F7F5F1;letter-spacing:-.01em!important}
+html:not(#_o27) .o27-nm img{display:block;height:calc(var(--t-big) * 1.25);width:auto;max-width:100%}
+html:not(#_o27) .o27-nm .lw-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+html:not(#_t):not(#_o27) body .o27-ln{margin:0;max-width:62em;color:rgba(247,245,241,.72);font-family:Inter,system-ui,sans-serif!important;font-weight:400!important}
+.o27-b{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px}
+.o27-b .fp-play{margin:0}
+html:not(#_t):not(#_o27) body .o27-snd,html:not(#_t):not(#_o27) body .o27-pp{min-height:44px;min-width:44px;box-sizing:border-box;padding:0 4px;background:none;border:0;border-bottom:1px solid rgba(247,245,241,.36);color:#F7F5F1;font-family:Jost,system-ui,sans-serif!important;font-weight:500!important;cursor:pointer}
+.o27-snd:hover,.o27-pp:hover{border-bottom-color:#00C8D7}
+.o27-snd:focus-visible,.o27-pp:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.o27-snd[hidden],.o27-pp[hidden]{display:none}
+.o27-s2{min-height:0;padding:clamp(48px,9vh,96px) var(--o27-g);background:transparent}
+.o27-s2 .o27-w{width:min(100%,calc((100svh - 160px) * var(--ar)))}
+@media (min-width:761px){html:not(#_o27) .o27 .fp-cue{display:none}}
+@media (max-width:760px){
+ .o27,section:has(> [data-o27]){display:block;min-height:0;padding:62px 0 20px}
+ .o27-w{width:100%}
+ .o27-f{aspect-ratio:4/5}
+ .o27-t{grid-template-columns:minmax(0,1fr);padding:0 16px;margin-top:12px;row-gap:2px}
+ .o27-t .o27-nm{order:1}.o27-t .o27-b{order:2;grid-column:1;justify-self:start;gap:0 18px}.o27-t .o27-ln{order:3}
+ html:not(#_o27) .o27-nonm-p{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+ .o27-s2{padding:40px 0}
+ .o27-s2 .o27-w{width:100%}
+}
+</style>
 </head>
 <body class="fp capacity">
 <a class="skip" href="#main">Skip to content</a>
@@ -213,9 +252,20 @@ html:not(#_e) body section.fp-model .fp-built .fp-lab span:last-child{display:no
 </header>
 <main id="main" data-fin26-name="Capacity Middle East">
 <!-- 0 · the glimpse: the project in 13 s, hard cuts from its own films (openers-21oct) -->
-<section class="op21" aria-label="A glimpse of Capacity Middle East: the skyline drawn in points of light, the points joining, the city in one line, the Dubai Fountain, the 2019 stage, an aerial act, dancers, the full room, the gala title">
+<section class="o27" data-fix="E-OP27-capacity" style="--ar:1.7778" aria-label="Capacity Middle East: the opening"><div class="o27-w"><figure class="o27-f"><video class="o27-v" muted playsinline loop preload="metadata" width="1280" height="720" data-d="a/glimpse-d-gl26b.mp4" data-p="a/op27-p.mp4" data-pd="a/glimpse-poster.webp" data-pp="a/op27-p.webp" aria-label="The skyline drawn in points of light, the Dubai Fountain, the stages, the full room"></video><noscript><img class="o27-v" src="a/glimpse-poster.webp" width="1280" height="720" alt="The skyline drawn in points of light, the Dubai Fountain, the stages, the full room"></noscript></figure><div class="o27-t"><div class="o27-a"><p class="o27-nm">Capacity Middle East</p><p class="o27-ln">e&amp; galas · Armani Hotel, Burj Khalifa, 2018 · Atlantis, The Palm, 2019</p></div><div class="o27-b"><button class="o27-snd" type="button" aria-pressed="false" hidden>Sound on</button><button class="o27-pp" type="button" aria-pressed="false" hidden>Pause</button></div></div></div><script data-fix="E-OP27-JS">(function(){var D=document,s=D.currentScript.parentNode,v=s&&s.querySelector('video.o27-v');if(!v)return;
+var P=window.matchMedia&&matchMedia('(max-width:760px)').matches,RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+v.poster=v.getAttribute(P?'data-pp':'data-pd');v.muted=true;v.src=v.getAttribute(P?'data-p':'data-d');
+var snd=s.querySelector('.o27-snd'),pp=s.querySelector('.o27-pp'),user=false,held=false,seen=true;
+function go(){if(held||(RM&&!user))return;var p=v.play();if(p&&p.catch)p.catch(function(){});}
+function lab(){if(pp){pp.textContent=v.paused?'Play':'Pause';pp.setAttribute('aria-pressed',v.paused?'true':'false');}if(snd){snd.textContent=v.muted?'Sound on':'Sound off';snd.setAttribute('aria-pressed',v.muted?'false':'true');}}
+v.addEventListener('play',lab);v.addEventListener('pause',lab);
+if(pp){pp.hidden=false;pp.addEventListener('click',function(){if(v.paused){held=false;user=true;go();}else{held=true;v.pause();}});}
+if(snd){snd.hidden=false;snd.addEventListener('click',function(){v.muted=!v.muted;if(!v.muted){held=false;user=true;go();}lab();});}
+D.addEventListener('click',function(e){var b=e.target&&e.target.closest&&e.target.closest('[data-film]');if(b&&!v.muted){v.muted=true;lab();}},true);
+if('IntersectionObserver'in window)new IntersectionObserver(function(e){seen=e[0].isIntersecting;seen?go():v.pause();},{threshold:.2}).observe(v);else go();
+lab();})();</script></section><template data-fix="E-OP27-WAS"><!-- op27 (27 Oct): the opener this page had, kept inert so the modules that placed it stay quiet --><section class="op21" aria-label="A glimpse of Capacity Middle East: the skyline drawn in points of light, the points joining, the city in one line, the Dubai Fountain, the 2019 stage, an aerial act, dancers, the full room, the gala title">
   <figure class="op21-f"><button class="op21-film" type="button" data-film="a/glimpse-d-gl26b.mp4" data-film-p="a/glimpse-p-gl26b.mp4" data-title="A glimpse · 13 s · sound" aria-label="Play the glimpse with sound"><video class="op21-v" data-fix="E-OPENER-capacity" muted playsinline loop preload="metadata" data-auto width="1280" height="720" poster="a/glimpse-poster.webp" data-src="a/glimpse-d-gl26b.mp4" data-src-p="a/glimpse-p-gl26b.mp4" data-poster="a/glimpse-poster.webp"></video></button><figcaption class="op21-cap">A glimpse · the stage films, Etisalat UAE’s 2018 film, the 2019 event film, my own film of the night</figcaption><p class="op25-nm" data-fix="E-OPEN25-11">Capacity Middle East</p></figure>
-</section>
+</section></template>
 
 <section class="cp-editorial" aria-labelledby="cp-editorial-h"><div class="cp-editorial-copy"><p class="fp-lab"><b>e&amp; galas</b> at the Armani Hotel, Burj Khalifa, and Atlantis, The Palm</p><h1 id="cp-editorial-h">Capacity<br> <b>Middle East.</b></h1><p class="cp-editorial-idea">A gala dinner for Etisalat’s partners <b>from around the world.</b></p><p class="cap27-what" data-fix="E-CAP27">Capacity Middle East is the telecom carriers’ conference in Dubai. During it, Etisalat, now e&amp;, hosted the carriers and suppliers it works with. Won by tender two years running, with MCX.</p><p class="cp-editorial-role">Creative direction and artwork by Antoni Gerges, through AntBrush, with MCX.</p><p class="cap27-go"><a href="#cp-event-2018">The 2018 dinner <span aria-hidden="true">↓</span></a><a href="#cap27-2019">The 2019 dinner <span aria-hidden="true">↓</span></a></p></div><figure><img src="a/constellation.svg" width="700" height="700" alt="Etisalat constellation drawn from the original invitation vectors" fetchpriority="high"><figcaption>Original invitation vectors · front view</figcaption></figure></section>
 

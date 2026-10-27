@@ -119,6 +119,51 @@ html:not(#_d):not(#_t) body button.film .t .fp-lab b{font-size:var(--t-text)!imp
 <style data-fix="E-SR26-ALFORSAN">/* sr26 E-SR26-ALFORSAN (26 Oct, showreel-comments-26oct/sr26.py; Tony: "Al Forsan, the 3D one, remove it ... Just keep the actual one."): the mark's stop is the English lockup as designed, whole on the manual's paper, while its caption is on; a hard cut, no fade */html:not(#_sr26) body.alforsan .fp-model .sr26-mk{position:absolute;inset:0;z-index:3;margin:0;background:#F7F5F1;visibility:hidden;pointer-events:none}html:not(#_sr26) body.alforsan .fp-model .st[data-s="1"].on~.sr26-mk{visibility:visible}html:not(#_sr26) body.alforsan .fp-model .sr26-fr{position:absolute;inset:13vh var(--g) 13vh 40vw;display:grid;place-items:center;min-width:0;min-height:0}html:not(#_sr26) body.alforsan .fp-model .sr26-fr img{display:block;width:auto;height:auto;max-width:100%;max-height:100%}html:not(#_sr26) body.alforsan .fp-model .sr26-mk .fp-lab{position:absolute;right:var(--g);top:calc(clamp(78px,11vh,112px) + 22px);margin:0;text-align:right;color:#140f06}html:not(#_sr26) body.alforsan .fp-model .sr26-mk .fp-lab span{display:block}html:not(#_sr26) body.alforsan .fp-model .sr26-mk .fp-lab span+span{margin-top:4px}html:not(#_sr26) body.alforsan .fp-model .sr26-mk .fp-lab b{color:#140f06}html:not(#_sr26) body.alforsan .fp-model .fp-stick:has(>.st[data-s="1"].on)>.kind{visibility:hidden}html:not(#_sr26) body.alforsan .fp-model .fp-stick:not(.is-cut) .st[data-s="1"],html:not(#_sr26) body.alforsan .fp-model .fp-stick:not(.is-cut) .st[data-s="1"] h3,html:not(#_sr26) body.alforsan .fp-model .fp-stick:not(.is-cut) .st[data-s="1"] .fp-lab,html:not(#_sr26) body.alforsan .fp-model .fp-stick:not(.is-cut) .st[data-s="1"] .fp-lab b{color:#140f06}html:not(#_sr26) body.alforsan .fp-model .fp-stick:not(.is-cut) .st[data-s="1"] p{color:#28231c}@media (max-width:760px){html:not(#_sr26) body.alforsan .fp-model .sr26-fr{inset:12svh var(--g) 42svh var(--g)}html:not(#_sr26) body.alforsan .fp-model .sr26-mk .fp-lab{top:88px}html:not(#_sr26) body.alforsan .fp-model .sr26-mk .fp-lab span+span{display:none}html:not(#_sr26) body.alforsan .fp-model .fp-stick:not(.is-cut) .st[data-s="1"]{top:auto;bottom:16px}}</style><noscript data-fix="E-SR26-ALFORSAN-NOJS"><style>/* sr26: without JavaScript the lockup stands in the flow, after its caption */html:not(#_sr26) body.alforsan .fp-model .sr26-mk{position:static;visibility:visible;padding:8px var(--g) 24px}html:not(#_sr26) body.alforsan .fp-model .sr26-fr{position:static;display:block}html:not(#_sr26) body.alforsan .fp-model .sr26-fr img{max-width:min(100%,720px)}html:not(#_sr26) body.alforsan .fp-model .sr26-mk .fp-lab{position:static;text-align:left;margin-top:8px}</style></noscript>
 <style data-one27="al-forsan" data-fix="E-ONE27-al-forsan">/* one27 (27 Oct): from the retired Al Forsan story: the research, the helmet page, the kit of parts, the moods, the restaurants */.o27-p{margin:0 0 12px}.o27-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:14px 0 12px;max-width:34em;align-items:start}.o27-g.o27-1{grid-template-columns:minmax(0,1fr)}.o27-f{margin:0;min-width:0}.o27-a{display:block;line-height:0}.o27-f img{display:block;width:100%;height:auto}.o27-f figcaption{margin-top:8px;line-height:1.4}@media (max-width:760px){.o27-g{grid-template-columns:minmax(0,1fr)}}</style>
 <noscript data-one27="E-ONE27-al-forsan"><style>/* one27: without JavaScript each deferred picture is drawn as its background */img[data-wa-src="one27/knights-helmet.webp"]{background:url(one27/knights-helmet.webp) 50% 50%/contain no-repeat}img[data-wa-src="one27/language-1.webp"]{background:url(one27/language-1.webp) 50% 50%/contain no-repeat}</style></noscript>
+<style data-fix="E-OP27-CSS">/* op27 (27 Oct 2026, openers-27oct/op27.py): the first screen, one frame for every film page */
+[data-o27]{display:contents}
+.o27,section:has(> [data-o27]){position:relative;display:flex;justify-content:center;align-items:center;min-height:100svh;box-sizing:border-box;padding:76px var(--o27-g) 28px;background:#0B0C10;--o27-g:clamp(16px,4vw,64px);--o27-under:150px}
+.o27-w{width:min(100%,calc((100svh - 104px - var(--o27-under)) * var(--ar)))}
+.o27-f{margin:0;width:100%;aspect-ratio:var(--ar);background:#0B0C10;overflow:hidden}
+.o27-f picture{display:block;width:100%;height:100%}
+.o27-v{display:block;width:100%;height:100%;object-fit:cover;background:#0B0C10}
+.o27-t{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:32px;row-gap:4px;align-items:center;margin-top:16px}
+.o27-a{display:contents}
+.o27-t .o27-nm{grid-column:1/-1}
+.o27-t .o27-ln{grid-column:1}
+.o27-t .o27-b{grid-column:2;justify-self:end}
+.o27-t.o27-stack{grid-template-columns:minmax(0,1fr)}
+.o27-t.o27-stack .o27-b{grid-column:1;justify-self:start;margin-top:4px}
+.o27:has(.o27-stack){--o27-under:196px}
+html:not(#_t):not(#_o27) body .o27-nm{display:block;margin:0;font-family:Jost,system-ui,sans-serif!important;font-weight:600!important;font-style:normal!important;font-size:var(--t-big)!important;line-height:var(--lh-big)!important;color:#F7F5F1;letter-spacing:-.01em!important}
+html:not(#_o27) .o27-nm img{display:block;height:calc(var(--t-big) * 1.25);width:auto;max-width:100%}
+html:not(#_o27) .o27-nm .lw-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+html:not(#_t):not(#_o27) body .o27-ln{margin:0;max-width:62em;color:rgba(247,245,241,.72);font-family:Inter,system-ui,sans-serif!important;font-weight:400!important}
+.o27-b{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px}
+.o27-b .fp-play{margin:0}
+html:not(#_t):not(#_o27) body .o27-snd,html:not(#_t):not(#_o27) body .o27-pp{min-height:44px;min-width:44px;box-sizing:border-box;padding:0 4px;background:none;border:0;border-bottom:1px solid rgba(247,245,241,.36);color:#F7F5F1;font-family:Jost,system-ui,sans-serif!important;font-weight:500!important;cursor:pointer}
+.o27-snd:hover,.o27-pp:hover{border-bottom-color:#00C8D7}
+.o27-snd:focus-visible,.o27-pp:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.o27-snd[hidden],.o27-pp[hidden]{display:none}
+.o27-s2{min-height:0;padding:clamp(48px,9vh,96px) var(--o27-g);background:transparent}
+.o27-s2 .o27-w{width:min(100%,calc((100svh - 160px) * var(--ar)))}
+@media (min-width:761px){html:not(#_o27) .o27 .fp-cue{display:none}}
+@media (max-width:760px){
+ .o27,section:has(> [data-o27]){display:block;min-height:0;padding:62px 0 20px}
+ .o27-w{width:100%}
+ .o27-f{aspect-ratio:4/5}
+ .o27-t{grid-template-columns:minmax(0,1fr);padding:0 16px;margin-top:12px;row-gap:2px}
+ .o27-t .o27-nm{order:1}.o27-t .o27-b{order:2;grid-column:1;justify-self:start;gap:0 18px}.o27-t .o27-ln{order:3}
+ html:not(#_o27) .o27-nonm-p{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+ .o27-s2{padding:40px 0}
+ .o27-s2 .o27-w{width:100%}
+}
+
+@media (max-width:760px){
+ html:not(#_o27) .af-editorial{display:flex;flex-direction:column;padding-top:64px;gap:16px}
+ html:not(#_o27) .af-editorial figure{order:-1}
+ html:not(#_o27) .af-editorial img{max-height:calc(100svh - 190px);width:auto;max-width:100%;margin:0 auto}
+}
+</style>
 </head>
 <body class="fp alforsan">
 <a class="skip" href="#main">Skip to content</a>
@@ -130,7 +175,7 @@ html:not(#_d):not(#_t) body button.film .t .fp-lab b{font-size:var(--t-text)!imp
   </div>
 </header>
 <main id="main" data-fin26-name="Al Forsan">
-<section class="af-editorial" aria-labelledby="af-editorial-h">
+<section class="af-editorial" data-op27="E-OP27-al-forsan" aria-labelledby="af-editorial-h">
 <div class="af-intro-copy"><p class="fp-lab" data-afs26="lab">Abu Dhabi · 2008–2013</p><h1 id="af-editorial-h"><span class="op25-nm" data-fix="E-OPEN25-11">Al Forsan</span><span class="afs26-nm" data-afs26="name"> International Sports Resort</span> A world of sport.<br><em>One gateway.</em></h1><p>Equestrian at the heart. An identity and campaign connecting five sporting worlds.</p><p class="af-role">Creative direction &amp; design · Antoni Gerges · AntBrush</p><a href="#af-championship">Explore the equestrian story ↓</a></div>
 <figure><a href="a/equestrian.webp" aria-label="Open the complete original equestrian campaign artwork"><img src="a/equestrian.webp" srcset="a/equestrian-perf800.webp 800w, a/equestrian-perf1200.webp 1200w, a/equestrian.webp 1415w" sizes="(max-width:760px) 100vw, 50vw" width="1415" height="2000" alt="Al Forsan original equestrian campaign, complete artwork" fetchpriority="high" decoding="async" data-fix="E-AF26-OPEN"></a><figcaption>Original equestrian campaign · <a href="a/equestrian.webp">View full artwork ↗</a></figcaption></figure>
 </section>

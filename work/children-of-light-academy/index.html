@@ -224,6 +224,49 @@ html.k-js .k-wall .p-signs img{object-position:50% 50%;transform-origin:50% 50%;
 <script data-fix="E-PH25">(function(){var D=document,H=D.documentElement,W=window;if(!W.matchMedia)return;var q=W.matchMedia('(max-width:768px)'),done=0;function go(){if(done||!q.matches)return;done=1;H.classList.add('ph25');D.addEventListener('click',function(e){var b=e.target&&e.target.closest?e.target.closest('button.ph25-tog'):null;if(!b)return;var s=b.closest('section.fp-scope');if(!s)return;var o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',o?'true':'false');s.classList.toggle('ph25-open',o);var m=b.querySelector('.ph25-pm');if(m)m.textContent=o?'\u2212':'+';try{W.dispatchEvent(new Event('resize'))}catch(x){}});var wide=W.innerWidth>760,ok=0;function tx(e){return(e.innerText||e.textContent||'').replace(/\s+/g,' ').trim()}var mo=new MutationObserver(function(){var d=D.querySelector('#case-chapters>details');if(d){if(wide)d.open=false;mo.disconnect();return}if(ok)return;var s=D.querySelector('nav[data-wa-ph] .case-index-heading strong'),h=D.querySelector('h1');if(!s||!h||!(h.nextSibling||(h.parentNode&&h.parentNode.nextSibling)))return;ok=1;var n=(!h.classList.contains('sr-only')&&tx(h))||(D.title||'').split(' \u00b7 ')[0];if(n&&s.textContent!==n)s.textContent=n});mo.observe(H,{childList:true,subtree:true});setTimeout(function(){mo.disconnect()},20000);}go();if(q.addEventListener)q.addEventListener('change',go)})();</script>
 <style data-fix="DSG26-COLA">/* dsg26: the opener's film reaches the foot of the screen, so the scroll cue would sit on the picture; the page scrolls without it */
 html:not(#_d) body a.scroll-cue{display:none!important}</style>
+<style data-fix="E-OP27-CSS">/* op27 (27 Oct 2026, openers-27oct/op27.py): the first screen, one frame for every film page */
+[data-o27]{display:contents}
+.o27,section:has(> [data-o27]){position:relative;display:flex;justify-content:center;align-items:center;min-height:100svh;box-sizing:border-box;padding:76px var(--o27-g) 28px;background:#0B0C10;--o27-g:clamp(16px,4vw,64px);--o27-under:150px}
+.o27-w{width:min(100%,calc((100svh - 104px - var(--o27-under)) * var(--ar)))}
+.o27-f{margin:0;width:100%;aspect-ratio:var(--ar);background:#0B0C10;overflow:hidden}
+.o27-f picture{display:block;width:100%;height:100%}
+.o27-v{display:block;width:100%;height:100%;object-fit:cover;background:#0B0C10}
+.o27-t{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:32px;row-gap:4px;align-items:center;margin-top:16px}
+.o27-a{display:contents}
+.o27-t .o27-nm{grid-column:1/-1}
+.o27-t .o27-ln{grid-column:1}
+.o27-t .o27-b{grid-column:2;justify-self:end}
+.o27-t.o27-stack{grid-template-columns:minmax(0,1fr)}
+.o27-t.o27-stack .o27-b{grid-column:1;justify-self:start;margin-top:4px}
+.o27:has(.o27-stack){--o27-under:196px}
+html:not(#_t):not(#_o27) body .o27-nm{display:block;margin:0;font-family:Jost,system-ui,sans-serif!important;font-weight:600!important;font-style:normal!important;font-size:var(--t-big)!important;line-height:var(--lh-big)!important;color:#F7F5F1;letter-spacing:-.01em!important}
+html:not(#_o27) .o27-nm img{display:block;height:calc(var(--t-big) * 1.25);width:auto;max-width:100%}
+html:not(#_o27) .o27-nm .lw-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+html:not(#_t):not(#_o27) body .o27-ln{margin:0;max-width:62em;color:rgba(247,245,241,.72);font-family:Inter,system-ui,sans-serif!important;font-weight:400!important}
+.o27-b{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px}
+.o27-b .fp-play{margin:0}
+html:not(#_t):not(#_o27) body .o27-snd,html:not(#_t):not(#_o27) body .o27-pp{min-height:44px;min-width:44px;box-sizing:border-box;padding:0 4px;background:none;border:0;border-bottom:1px solid rgba(247,245,241,.36);color:#F7F5F1;font-family:Jost,system-ui,sans-serif!important;font-weight:500!important;cursor:pointer}
+.o27-snd:hover,.o27-pp:hover{border-bottom-color:#00C8D7}
+.o27-snd:focus-visible,.o27-pp:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.o27-snd[hidden],.o27-pp[hidden]{display:none}
+.o27-s2{min-height:0;padding:clamp(48px,9vh,96px) var(--o27-g);background:transparent}
+.o27-s2 .o27-w{width:min(100%,calc((100svh - 160px) * var(--ar)))}
+@media (min-width:761px){html:not(#_o27) .o27 .fp-cue{display:none}}
+@media (max-width:760px){
+ .o27,section:has(> [data-o27]){display:block;min-height:0;padding:62px 0 20px}
+ .o27-w{width:100%}
+ .o27-f{aspect-ratio:4/5}
+ .o27-t{grid-template-columns:minmax(0,1fr);padding:0 16px;margin-top:12px;row-gap:2px}
+ .o27-t .o27-nm{order:1}.o27-t .o27-b{order:2;grid-column:1;justify-self:start;gap:0 18px}.o27-t .o27-ln{order:3}
+ html:not(#_o27) .o27-nonm-p{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+ .o27-s2{padding:40px 0}
+ .o27-s2 .o27-w{width:100%}
+}
+
+html:not(#_o27) .c-film,html:not(#_o27) .k-open .c-film,html:not(#_o27).k-js .k-open .c-film,html:not(#_o27) .c-film video{background:#0C3B4A}
+html:not(#_o27).k-js .k-open{background:#0C3B4A}
+html:not(#_o27).k-js .k-open .k-cut{background:#fff}
+</style>
 </head>
 <body class="fp cola">
 <a class="skip" href="#main">Skip to content</a>
@@ -242,9 +285,9 @@ html:not(#_d) body a.scroll-cue{display:none!important}</style>
 <section class="c-open k-open" data-k="open" data-fix="E-COLA-PAGE" aria-labelledby="c1">
  <div class="k-pin">
   <div class="c-film">
-    <video id="film" muted autoplay loop playsinline preload="auto" poster="a/logo-anim-d.webp" data-poster-p="a/logo-anim-p.webp" aria-label="The Children of Light Academy logo animation: an open book, children jumping up from it, the rising sun behind them, the cross, then the name.">
-      <source src="a/logo-anim-p.mp4" type="video/mp4" media="(max-width: 760px)">
-      <source src="a/logo-anim-d.mp4" type="video/mp4">
+    <video id="film" muted autoplay loop playsinline preload="auto" poster="a/op27-logo-d.webp" data-poster-p="a/op27-logo-p.webp" data-fix="E-OP27-children-of-light-academy" aria-label="The Children of Light Academy logo animation: an open book, children jumping up from it, the rising sun behind them, the cross, then the name.">
+      <source src="a/op27-logo-p.mp4" type="video/mp4" media="(max-width: 760px)">
+      <source src="a/op27-logo-d.mp4" type="video/mp4">
     </video>
   </div>
   <div class="in k-cut">

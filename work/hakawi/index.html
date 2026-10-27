@@ -161,6 +161,45 @@ html:not(#_d):not(#_t) body button.film .t .fp-lab b{font-size:var(--t-text)!imp
 .f26-b:focus-visible,.f26-m:focus-visible{outline:2px solid currentColor;outline-offset:4px}
 .fp-player.f26own video{flex:none;width:min(var(--f26w,640px),100%);height:auto;max-height:calc(100% - 64px);margin:auto}
 </style>
+<style data-fix="E-OP27-CSS">/* op27 (27 Oct 2026, openers-27oct/op27.py): the first screen, one frame for every film page */
+[data-o27]{display:contents}
+.o27,section:has(> [data-o27]){position:relative;display:flex;justify-content:center;align-items:center;min-height:100svh;box-sizing:border-box;padding:76px var(--o27-g) 28px;background:#0B0C10;--o27-g:clamp(16px,4vw,64px);--o27-under:150px}
+.o27-w{width:min(100%,calc((100svh - 104px - var(--o27-under)) * var(--ar)))}
+.o27-f{margin:0;width:100%;aspect-ratio:var(--ar);background:#0B0C10;overflow:hidden}
+.o27-f picture{display:block;width:100%;height:100%}
+.o27-v{display:block;width:100%;height:100%;object-fit:cover;background:#0B0C10}
+.o27-t{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:32px;row-gap:4px;align-items:center;margin-top:16px}
+.o27-a{display:contents}
+.o27-t .o27-nm{grid-column:1/-1}
+.o27-t .o27-ln{grid-column:1}
+.o27-t .o27-b{grid-column:2;justify-self:end}
+.o27-t.o27-stack{grid-template-columns:minmax(0,1fr)}
+.o27-t.o27-stack .o27-b{grid-column:1;justify-self:start;margin-top:4px}
+.o27:has(.o27-stack){--o27-under:196px}
+html:not(#_t):not(#_o27) body .o27-nm{display:block;margin:0;font-family:Jost,system-ui,sans-serif!important;font-weight:600!important;font-style:normal!important;font-size:var(--t-big)!important;line-height:var(--lh-big)!important;color:#F7F5F1;letter-spacing:-.01em!important}
+html:not(#_o27) .o27-nm img{display:block;height:calc(var(--t-big) * 1.25);width:auto;max-width:100%}
+html:not(#_o27) .o27-nm .lw-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+html:not(#_t):not(#_o27) body .o27-ln{margin:0;max-width:62em;color:rgba(247,245,241,.72);font-family:Inter,system-ui,sans-serif!important;font-weight:400!important}
+.o27-b{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px}
+.o27-b .fp-play{margin:0}
+html:not(#_t):not(#_o27) body .o27-snd,html:not(#_t):not(#_o27) body .o27-pp{min-height:44px;min-width:44px;box-sizing:border-box;padding:0 4px;background:none;border:0;border-bottom:1px solid rgba(247,245,241,.36);color:#F7F5F1;font-family:Jost,system-ui,sans-serif!important;font-weight:500!important;cursor:pointer}
+.o27-snd:hover,.o27-pp:hover{border-bottom-color:#00C8D7}
+.o27-snd:focus-visible,.o27-pp:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.o27-snd[hidden],.o27-pp[hidden]{display:none}
+.o27-s2{min-height:0;padding:clamp(48px,9vh,96px) var(--o27-g);background:transparent}
+.o27-s2 .o27-w{width:min(100%,calc((100svh - 160px) * var(--ar)))}
+@media (min-width:761px){html:not(#_o27) .o27 .fp-cue{display:none}}
+@media (max-width:760px){
+ .o27,section:has(> [data-o27]){display:block;min-height:0;padding:62px 0 20px}
+ .o27-w{width:100%}
+ .o27-f{aspect-ratio:4/5}
+ .o27-t{grid-template-columns:minmax(0,1fr);padding:0 16px;margin-top:12px;row-gap:2px}
+ .o27-t .o27-nm{order:1}.o27-t .o27-b{order:2;grid-column:1;justify-self:start;gap:0 18px}.o27-t .o27-ln{order:3}
+ html:not(#_o27) .o27-nonm-p{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+ .o27-s2{padding:40px 0}
+ .o27-s2 .o27-w{width:100%}
+}
+</style>
 </head>
 <body class="fp ls21 hk">
 <a class="skip" href="#main">Skip to content</a>
@@ -175,9 +214,9 @@ html:not(#_d):not(#_t) body button.film .t .fp-lab b{font-size:var(--t-text)!imp
 <h1 class="sr-only">Hakawi Sharqia, the Ramadan tent on the Emirates Golf Club lawn, Dubai, Ramadan 2017</h1>
 
 <!-- 0 · the glimpse: the tent in 12 s, seven hard cuts from the event film, then the name (build/films.py; the op21 markup of the live openers, one 16:9 film, muted) -->
-<section class="op21" data-stop="The glimpse" aria-label="A glimpse of the tent: the lit marquee across the dark lawn, the pagoda entrance, the fretwork reception counter, dates and lanterns, a lantern close, desserts, the buffet arches with the full hall, then the name Hakawi Sharqia">
+<section class="o27" data-fix="E-OP27-hakawi" data-stop="The glimpse" style="--ar:1.5113" aria-label="Hakawi Sharqia: the opening"><div class="o27-w"><figure class="o27-f"><picture><source media="(max-width:760px)" srcset="a/op27-p.webp" width="1080" height="1350"><img class="o27-v" src="a/carpet-2400.webp" srcset="a/carpet-1200.webp 1200w, a/carpet-2400.webp 2400w" sizes="(max-width:760px) 100vw, 86vw" width="2400" height="1588" fetchpriority="high" decoding="async" alt="The red carpet across the golf course at dusk, between lit palm sculptures, to the glass marquee lit blue, towers on the skyline"></picture></figure><div class="o27-t"><div class="o27-a"><p class="o27-nm">Hakawi Sharqia</p><p class="o27-ln">Ramadan tent · Emirates Golf Club lawn, Dubai · 2017</p></div><div class="o27-b"></div></div></div></section><template data-fix="E-OP27-WAS"><!-- op27 (27 Oct): the opener this page had, kept inert so the modules that placed it stay quiet --><section class="op21" data-stop="The glimpse" aria-label="A glimpse of the tent: the lit marquee across the dark lawn, the pagoda entrance, the fretwork reception counter, dates and lanterns, a lantern close, desserts, the buffet arches with the full hall, then the name Hakawi Sharqia">
   <figure class="op21-f"><img class="op21-v" data-fix="E-HK27" src="a/tent-2400.webp" srcset="a/tent-1200.webp 1200w, a/tent-2400.webp 2400w" sizes="100vw" width="2400" height="1602" fetchpriority="high" decoding="async" alt="The white marquee on the green lawn at golden hour: a long glass hall with a curved roof and a pagoda-roofed entrance at its end."><figcaption class="op21-cap">The marquee on the Emirates Golf Club lawn · May 2017</figcaption><p class="op25-nm" data-fix="E-OPEN25-11">Hakawi Sharqia</p></figure>
-</section>
+</section></template>
 <script data-fix="E-MAT26-SWAP-hakawi">/* mat26 (26 Oct): the films above, without the organiser's name: each takes its fixed file and its new length (fl26 rebuilds its block on every run, so the move is made here) */(function(){var s=document.querySelector("section.f26");if(!s)return;var M={"f26/film-1080.mp4": ["m26/film-1080.mp4", "1:10", "1:05", "1 minute 10", "1 minute 5"]};function R(x,m){if(m[1]&&m[2]&&m[1]!==m[2])x=x.split(m[1]).join(m[2]).split(m[3]).join(m[4]);return x;}[].forEach.call(s.querySelectorAll("[data-film]"),function(b){["data-film","data-film-p"].forEach(function(a){var m=M[b.getAttribute(a)];if(!m)return;b.setAttribute(a,m[0]);if(a!=="data-film")return;["data-title","aria-label"].forEach(function(k){var v=b.getAttribute(k);if(v)b.setAttribute(k,R(v,m));});var w=document.createTreeWalker(b,NodeFilter.SHOW_TEXT),n;while((n=w.nextNode()))n.nodeValue=R(n.nodeValue,m);});});})();</script>
 <nav class="case-index wa-idx" data-wa-ph aria-hidden="true"><div class="case-index-heading"><span>Explore the project</span><strong>Hakawi Sharqia</strong></div><details><summary>Chapters · 15</summary></details></nav>
 
