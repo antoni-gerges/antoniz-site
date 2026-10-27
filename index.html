@@ -423,6 +423,65 @@ document.fonts.ready.then(()=>{ layout(); measure(); TS=sampleT(); MS=sampleMark
   </div></div>
 </section>
 
+<!--reel26 E-REEL26-HOME-->
+<style data-fix="E-REEL26-HOME">/* reel26 E-REEL26-HOME: the main reel in the place of Home's "74 feet of screen." (Tony, 26 Oct: "the main showreel to be instead of
+   the first film you've put for ZEISS, the 74 feet screen"). The page's own section (.h2: its padding, its heading); under the heading
+   one 16:9 frame, whole, the wrap's full width, on the dark ground; under it the label line and Play (44 px), stacked on a phone. */
+#the-reel .r26-f{margin:clamp(28px,4vw,48px) 0 0;width:100%}
+#the-reel .r26-pic,#the-reel .r26-v,#the-reel .r26-f video{display:block;width:100%;height:auto;aspect-ratio:16/9;margin:0;background:#0B0C10;border:0}
+#the-reel .r26-pic img{display:block;width:100%;height:100%;margin:0;object-fit:contain}
+#the-reel .r26-pic{cursor:pointer}
+#the-reel .r26-pic:focus-visible{outline:2px solid #00C8D7;outline-offset:4px}
+#the-reel .r26-cap{display:flex;flex-wrap:wrap;align-items:center;gap:0 32px;margin:12px 0 0;padding:0}
+html:not(#_t) body #the-reel .r26-l{margin:0;max-width:none;color:rgba(247,245,241,.72);
+  font:600 var(--t-text)/1.55 "Inter","Inter fallback",system-ui,sans-serif !important;letter-spacing:normal !important;text-transform:none !important}
+html:not(#_t) body #the-reel .r26-play{display:inline-flex;align-items:center;gap:12px;min-height:44px;min-width:44px;box-sizing:border-box;margin:0;padding:0;
+  color:#F7F5F1;font:600 var(--t-text)/1 "Jost","Jost fallback",system-ui,sans-serif !important;letter-spacing:normal !important;
+  text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;cursor:pointer}
+#the-reel .r26-play::before{content:"";display:block;flex:none;width:.6em;height:.7em;background:currentColor;clip-path:polygon(0 0,100% 50%,0 100%)}
+#the-reel .r26-play:hover{color:#00C8D7}
+#the-reel .r26-play:focus-visible{outline:2px solid #00C8D7;outline-offset:4px}
+#the-reel a.r26-go[hidden]{display:none !important}
+html:not(.js) #the-reel a.r26-go{display:none !important}
+@media (max-width:760px){
+  #the-reel .r26-cap{flex-direction:column;align-items:flex-start;gap:2px;margin-top:14px}
+}</style>
+<section class="h2 r26" id="the-reel" data-hdr="#0B0C10,#F7F5F1,#FFFFFF" data-stop="The reel" data-fix="E-REEL26-HOME" aria-labelledby="r26-h">
+  <div class="wrap">
+    <h2 id="r26-h">The <b class="tw">reel.</b></h2>
+    <figure class="r26-f">
+      <a class="r26-pic r26-go" href="assets/entrance/showreel-main.mp4" data-full="assets/entrance/showreel-main.mp4" data-sm="assets/entrance/showreel-main-720.mp4" data-poster="assets/entrance/showreel-poster.webp" data-title="The reel, 1:47" tabindex="-1" aria-hidden="true"><img src="assets/entrance/showreel-poster.webp" width="1920" height="1080" alt="" decoding="async" loading="lazy"></a>
+      <noscript><video controls playsinline preload="none" poster="assets/entrance/showreel-poster.webp" width="1920" height="1080"><source src="assets/entrance/showreel-main-720.mp4" type="video/mp4" media="(max-width:760px)"><source src="assets/entrance/showreel-main.mp4" type="video/mp4"></video></noscript>
+      <figcaption class="r26-cap"><p class="r26-l">The reel · 1:47 · sound</p><a class="r26-play r26-go" href="assets/entrance/showreel-main.mp4" data-full="assets/entrance/showreel-main.mp4" data-sm="assets/entrance/showreel-main-720.mp4" data-poster="assets/entrance/showreel-poster.webp" data-title="The reel, 1:47" aria-label="Play the reel, 1:47, with sound">Play</a></figcaption>
+    </figure>
+  </div>
+</section>
+<script data-fix="E-REEL26-HOME">/* reel26 E-REEL26-HOME: the reel plays in the site's viewer (viewer.js: Close, Escape, sound on since the visitor tapped); the
+   phone gets the 720 copy (the link's file is chosen at the tap, before the viewer reads it). If the viewer did not take the tap
+   (its script missing), the reel plays inline in the frame, with its own controls and sound; a modified click is left to the browser.
+   Nothing loads before the tap but the poster; no autoplay, no fades. */
+(function(){
+var D=document,S=D.getElementById('the-reel'),PH=window.matchMedia?matchMedia('(max-width:760px)'):{matches:false};
+if(!S)return;
+function go(e){var t=e.target;return t&&t.closest?t.closest('#the-reel a.r26-go'):null}
+D.addEventListener('click',function(e){var a=go(e);if(a)a.setAttribute('href',a.getAttribute(PH.matches?'data-sm':'data-full'))},true);
+function inline(a){
+  var pic=S.querySelector('.r26-pic'),v=D.createElement('video');
+  v.className='r26-v';v.controls=true;v.playsInline=true;v.setAttribute('playsinline','');v.preload='auto';
+  v.poster=a.getAttribute('data-poster');v.src=a.getAttribute('href');v.setAttribute('aria-label',a.getAttribute('data-title')||'The reel');
+  if(pic)pic.parentNode.replaceChild(v,pic);else S.querySelector('.r26-f').insertBefore(v,S.querySelector('.r26-cap'));
+  [].forEach.call(S.querySelectorAll('a.r26-go'),function(x){x.hidden=true});
+  v.muted=false;var p=v.play();if(p&&p.catch)p.catch(function(){});v.focus({preventScroll:true});
+}
+addEventListener('click',function(e){
+  var a=go(e);if(!a)return;
+  if(e.defaultPrevented){var v=D.querySelector('#v21 video.v21-m');if(v&&!v.getAttribute('poster'))v.setAttribute('poster',a.getAttribute('data-poster'));return}
+  if(e.button||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+  e.preventDefault();inline(a);
+});
+})();</script>
+<template data-fix="E-REEL26-HOME-WAS">
+<!--/reel26 E-REEL26-HOME-->
 <section class="h2 h2-wall" data-hdr="#0B0C10,#F7F5F1,#FFFFFF" data-stop="ZEISS, 74 feet" data-fix="E-WALL-ROOM" aria-labelledby="wall-h">
   <div class="wrap">
     <p class="h2-k"><span class="mvt" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>ZEISS</p>
@@ -434,7 +493,7 @@ document.fonts.ready.then(()=>{ layout(); measure(); TS=sampleT(); MS=sampleMark
     </button>
     <noscript><p class="wl-nojs"><a href="work/zeiss/a/wall-848.mp4">Play the video</a></p></noscript>
   </div>
-</section>
+</section><!--reel26 E-REEL26-HOME-END--></template><!--/reel26 E-REEL26-HOME-END-->
 <script>/* homeperf21 H1-H2 (21 Oct): on a phone the Selected work pictures and the ZEISS wall poster wait for the load event, then for the phone film's first frame (at most 1.5 s more), or the first scroll if earlier: the stage starts at the bottom of the first screen; on a wider screen they are put back at once, before any layout */(function(){try{var D=document,ims=[].slice.call(D.querySelectorAll('img[data-hp-src]')),vs=[].slice.call(D.querySelectorAll('video[data-hp-poster]'));function go(){ims.forEach(function(i){var u=i.getAttribute('data-hp-src');if(u){i.removeAttribute('data-hp-src');i.src=u;}});vs.forEach(function(v){var u=v.getAttribute('data-hp-poster');if(u){v.removeAttribute('data-hp-poster');v.setAttribute('poster',u);}});}if(!(window.matchMedia&&matchMedia('(max-width:760px)').matches)){go();return;}addEventListener('load',function(){var h=D.getElementById('en-host'),v=h&&h.shadowRoot&&h.shadowRoot.querySelector('video.mobile-film');if(!v||v.readyState>=2||v.error)return go();var t=setTimeout(go,1500);function f(){clearTimeout(t);go();}v.addEventListener('loadeddata',f,{once:true});v.addEventListener('error',f,{once:true});});addEventListener('scroll',function f(){if(scrollY>0){removeEventListener('scroll',f);go();}},{passive:true});}catch(e){[].forEach.call(document.querySelectorAll('img[data-hp-src]'),function(i){i.src=i.getAttribute('data-hp-src');});[].forEach.call(document.querySelectorAll('video[data-hp-poster]'),function(v){v.setAttribute('poster',v.getAttribute('data-hp-poster'));});}})();</script><noscript><style>/* homeperf21 H1-H2: without JavaScript the pictures are drawn as backgrounds at the same size, and the wall video's twin (with its poster) stands in for it */img[data-hp-src="img/zeiss/wall-built-2400.webp"]{background:url(img/zeiss/wall-built-2400.webp) 0 0/100% 100% no-repeat}img[data-hp-src="img/cut/zeiss-subject-flop.webp"]{background:url(img/cut/zeiss-subject-flop.webp) 0 0/100% 100% no-repeat}img[data-hp-src="img/cut/liwa-scene.webp"]{background:url(img/cut/liwa-scene.webp) 0 0/100% 100% no-repeat}img[data-hp-src="img/cut/liwa-subject-2.webp"]{background:url(img/cut/liwa-subject-2.webp) 0 0/100% 100% no-repeat}img[data-hp-src="img/cut/dha-scene-hd.webp"]{background:url(img/cut/dha-scene-hd.webp) 0 0/100% 100% no-repeat}img[data-hp-src="img/cut/dha-subject-hd.webp"]{background:url(img/cut/dha-subject-hd.webp) 0 0/100% 100% no-repeat}video[data-hp-poster]{display:none}</style></noscript>
 
 <section class="h2 h2-all" data-hdr="#0B0C10,#F7F5F1,#FFFFFF" data-stop="Case studies" aria-labelledby="al-h"><div class="wrap">
