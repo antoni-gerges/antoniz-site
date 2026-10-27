@@ -197,6 +197,7 @@ html:not(#_t):not(#_o27) body .o27-snd,html:not(#_t):not(#_o27) body .o27-pp{min
  .o27-s2 .o27-w{width:100%}
 }
 </style>
+<!--mat26b (materials-26oct/mat26b.py, 27 Oct): the films keep their own music: ../../media/films/big-grill-m26-1080.mp4 -&gt; ../../media/films/big-grill-m26b-720.mp4 -->
 </head>
 <body class="fp biggrill">
 <a class="skip" href="#main">Skip to content</a>
@@ -227,6 +228,7 @@ lab();})();</script></section><template data-fix="E-OP27-WAS"><!-- op27 (27 Oct)
 <section class="f26 f26-one" data-fix="E-FL26-big-grill" aria-labelledby="f26-h"><div class="f26-in"><h2 id="f26-h">The festival, <b>on film.</b></h2><div class="f26-pair"><div class="f26-t"><button class="f26-b" type="button" data-film="../../media/films/big-grill-720.mp4" data-title="The festival film · 3:04 · MCX" aria-label="Play the festival film, 3 minutes 4, with sound"><picture><img src="f26/after-poster.webp" width="1200" height="498" alt="The Big Grill Festival flag against the sky, Yas Links" decoding="async"></picture><span class="f26-c"><svg class="f26-i" viewBox="0 0 12 14" aria-hidden="true" focusable="false"><path d="M0 0L12 7L0 14Z"/></svg><b>The festival film</b><span>3:04 · MCX · sound</span></span></button></div></div></div></section>
 <script data-fix="E-FL26-JS">(function(){var D=document;D.addEventListener("click",function(e){var b=e.target&&e.target.closest?e.target.closest("[data-film]"):null,pl=D.querySelector(".fp-player");if(!b||!pl)return;var w=b.getAttribute("data-f26-w");pl.classList.toggle("f26own",!!w);if(w)pl.style.setProperty("--f26w",w+"px");},true);})();</script>
 <script data-fix="E-MAT26-SWAP-big-grill">/* mat26 (26 Oct): the films above, without the organiser's name: each takes its fixed file and its new length (fl26 rebuilds its block on every run, so the move is made here) */(function(){var s=document.querySelector("section.f26");if(!s)return;var M={"../../media/films/big-grill-720.mp4": ["../../media/films/big-grill-m26-1080.mp4", "3:04", "3:00", "3 minutes 4", "3 minutes"]};function R(x,m){if(m[1]&&m[2]&&m[1]!==m[2])x=x.split(m[1]).join(m[2]).split(m[3]).join(m[4]);return x;}[].forEach.call(s.querySelectorAll("[data-film]"),function(b){["data-film","data-film-p"].forEach(function(a){var m=M[b.getAttribute(a)];if(!m)return;b.setAttribute(a,m[0]);if(a!=="data-film")return;["data-title","aria-label"].forEach(function(k){var v=b.getAttribute(k);if(v)b.setAttribute(k,R(v,m));});var w=document.createTreeWalker(b,NodeFilter.SHOW_TEXT),n;while((n=w.nextNode()))n.nodeValue=R(n.nodeValue,m);});});})();</script>
+<script data-fix="E-MAT26B-SWAP-big-grill">/* mat26b (27 Oct): the films above keep their own music: each film mat26 points to takes its rebuilt file (every frame and the whole sound track) and its full length */(function(){var s=document.querySelector("section.f26");if(!s)return;var M={"../../media/films/big-grill-m26-1080.mp4": ["../../media/films/big-grill-m26b-720.mp4", "3:00", "3:04", "3 minutes", "3 minutes 4"]};function R(x,m){if(m[1]&&m[2]&&m[1]!==m[2])x=x.split(m[1]).join(m[2]).split(m[3]).join(m[4]);return x;}[].forEach.call(s.querySelectorAll("[data-film]"),function(b){["data-film","data-film-p"].forEach(function(a){var m=M[b.getAttribute(a)];if(!m)return;b.setAttribute(a,m[0]);if(a!=="data-film")return;["data-title","aria-label"].forEach(function(k){var v=b.getAttribute(k);if(v)b.setAttribute(k,R(v,m));});var w=document.createTreeWalker(b,NodeFilter.SHOW_TEXT),n;while((n=w.nextNode()))n.nodeValue=R(n.nodeValue,m);});});})();</script>
 
 
 <section class="bg-editorial" aria-labelledby="bg-editorial-h"><div class="bg-editorial-copy"><p class="fp-lab">Yas Links · Abu Dhabi · December 2018</p><h1 id="bg-editorial-h">The Big<br> <b>Grill.</b></h1><p class="bg-editorial-idea">Flamin’ grills.<br>Smokin’ tunes.</p><p class="bg-editorial-role">The whole weekend in one drawing. Original festival poster by Antoni Gerges, through AntBrush, with MCX.</p><a href="#bg-event">From the drawing to the festival ↓</a></div><figure data-fix="E-FX26-BIGGRILL"><a href="../../img/big-grill/poster-red-1275.webp"><img src="../../img/big-grill/poster-red-1275.webp" srcset="../../img/big-grill/poster-red-800.webp 800w, ../../img/big-grill/poster-red-1275.webp 1275w" sizes="(max-width:760px) 100vw, 50vw" width="1275" height="1650" alt="Complete original Big Grill festival poster in red" fetchpriority="high" decoding="async"></a><figcaption>Original festival poster · 2018 · <a href="../../img/big-grill/poster-red-1275.webp">View full artwork ↗</a></figcaption></figure></section>
@@ -241,7 +243,7 @@ lab();})();</script></section><template data-fix="E-OP27-WAS"><!-- op27 (27 Oct)
     <h2 class="bg-film-title">The festival film.</h2>
     <div class="row">
       <p class="what"><strong>A family festival. Flamin’ grills + smokin’ tunes.</strong><small>Antoni Gerges, Creative Director, Brand &amp; Experiential · AntBrush, with MCX</small></p>
-      <span class="btns"><button class="fp-play" type="button" data-film="../../media/films/big-grill-m26-1080.mp4" data-title="The festival film · 3:00 · MCX">Play the festival film <small>3:00 · sound</small></button><noscript><span class="fp-nojs"><a class="fp-play" href="../../media/films/big-grill-m26-1080.mp4">Open the festival film <small>3:00 · video file</small></a></span></noscript></span>
+      <span class="btns"><button class="fp-play" type="button" data-film="../../media/films/big-grill-m26b-720.mp4" data-title="The festival film · 3:04 · MCX">Play the festival film <small>3:04 · sound</small></button><noscript><span class="fp-nojs"><a class="fp-play" href="../../media/films/big-grill-m26b-720.mp4">Open the festival film <small>3:04 · video file</small></a></span></noscript></span>
     </div>
   </div>
   <i class="fp-cue" aria-hidden="true"></i>
@@ -398,11 +400,11 @@ lab();})();</script></section><template data-fix="E-OP27-WAS"><!-- op27 (27 Oct)
 
 <!-- 7 · the film, the credits, on -->
 <section class="fp-end fin">
-  <button class="film" type="button" data-film="../../media/films/big-grill-m26-1080.mp4" data-title="The festival film · 3:00 · MCX" aria-label="Play the festival film by MCX, 3 minutes, with sound">
+  <button class="film" type="button" data-film="../../media/films/big-grill-m26b-720.mp4" data-title="The festival film · 3:04 · MCX" aria-label="Play the festival film by MCX, 3 minutes 4, with sound">
     <video muted playsinline loop preload="none" data-auto data-src="a/c-crowd.mp4" data-poster="a/c-crowd.webp"></video>
-    <span class="t"><span class="fp-lab"><b>The festival film</b> · 3:00 · MCX</span><b>Play the festival.</b></span><span class="go" aria-hidden="true"></span>
+    <span class="t"><span class="fp-lab"><b>The festival film</b> · 3:04 · MCX</span><b>Play the festival.</b></span><span class="go" aria-hidden="true"></span>
   </button>
-  <noscript><span class="fp-nojs"><a class="fp-play" href="../../media/films/big-grill-m26-1080.mp4">Open the festival film <small>3:00 · video file</small></a></span></noscript>
+  <noscript><span class="fp-nojs"><a class="fp-play" href="../../media/films/big-grill-m26b-720.mp4">Open the festival film <small>3:04 · video file</small></a></span></noscript>
   <div class="fp-cred">
     <div><span class="fp-lab">Role</span>Antoni Gerges<br>Creative Director, Brand &amp; Experiential</div>
     <div><span class="fp-lab">Made by</span>AntBrush, with MCX.</div>
