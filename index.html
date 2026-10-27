@@ -607,7 +607,7 @@ addEventListener('click',function(e){
 <script src="assets/numbers.js" defer></script>
 <script src="assets/wavea.js?v=b022ad92" defer></script>
 <script data-fix="E-TR25">/* trust25: on a phone the first sector and the first city stay open, the rest open on a tap; the shows open on a tap on every screen */(function(){var ph=matchMedia("(max-width:768px)");document.querySelectorAll(".tr25-g").forEach(function(g){var b=g.querySelector(".tr25-b");function set(o){g.classList.toggle("shut",!o);b.setAttribute("aria-expanded",o?"true":"false");}if(ph.matches&&!b.hasAttribute("data-first"))set(false);b.addEventListener("click",function(){if(ph.matches)set(g.classList.contains("shut"));});});var s=document.querySelector(".tr25-sb");if(s){var l=document.querySelector(".tr25-sl");s.addEventListener("click",function(){var o=l.hidden;l.hidden=!o;s.setAttribute("aria-expanded",o?"true":"false");s.querySelector("em").textContent=o?"−":"+";});}})();</script>
-<script data-fix="E-YRS25">/* years25 (E-YRS25): the mark flies the line. Scrubbed by the block's progress through the screen, no easing. */
+<template data-fix="E-HT27-WAS"><!-- ht27 (27 Oct): the years line stands still on Tony's word; years25's script kept inert so years25 stays quiet --><script data-fix="E-YRS25">/* years25 (E-YRS25): the mark flies the line. Scrubbed by the block's progress through the screen, no easing. */
 (function(){var Y=document.querySelector('.h2-yrs[data-stage="years"]');if(!Y)return;
 var ol=Y.querySelector('.h2-time'),mk=Y.querySelector('.yr25-mk'),L=Y.querySelectorAll('.yr25-ln');if(!ol||!mk)return;
 var li=ol.children,n=li.length;if(n<2||L.length<n-1)return;
@@ -642,6 +642,6 @@ if(ro){ro.disconnect();ro=null}Y.classList.remove('yr25-go');Y.removeAttribute('
 for(var i=0;i<L.length;i++)L[i].style.cssText=''}
 function pick(){if(rm&&rm.matches)stop();else start()}
 if(rm){if(rm.addEventListener)rm.addEventListener('change',pick);else if(rm.addListener)rm.addListener(pick)}pick()})();
-</script>
+</script></template>
 </body>
 </html>
