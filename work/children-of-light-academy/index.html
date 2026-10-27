@@ -267,6 +267,11 @@ html:not(#_o27) .c-film,html:not(#_o27) .k-open .c-film,html:not(#_o27).k-js .k-
 html:not(#_o27).k-js .k-open{background:#0C3B4A}
 html:not(#_o27).k-js .k-open .k-cut{background:#fff}
 </style>
+<style data-fix="E-OP27B-CSS">/* op27b (27 Oct 2026, openers-27oct/op27b.py): the logo film in white on the school's teal. The film's frame is centred on a tall
+   teal canvas and covers its box, so the film's own teal is the only teal on the first screen (no box where the CSS teal meets it);
+   the width sets the scale, so the logo keeps op27's size */
+html:not(#_o27b) #film{background:#0C3B4A;object-fit:cover;object-position:50% 50%}
+</style>
 </head>
 <body class="fp cola">
 <a class="skip" href="#main">Skip to content</a>
@@ -285,9 +290,9 @@ html:not(#_o27).k-js .k-open .k-cut{background:#fff}
 <section class="c-open k-open" data-k="open" data-fix="E-COLA-PAGE" aria-labelledby="c1">
  <div class="k-pin">
   <div class="c-film">
-    <video id="film" muted autoplay loop playsinline preload="auto" poster="a/op27-logo-d.webp" data-poster-p="a/op27-logo-p.webp" data-fix="E-OP27-children-of-light-academy" aria-label="The Children of Light Academy logo animation: an open book, children jumping up from it, the rising sun behind them, the cross, then the name.">
-      <source src="a/op27-logo-p.mp4" type="video/mp4" media="(max-width: 760px)">
-      <source src="a/op27-logo-d.mp4" type="video/mp4">
+    <video id="film" muted autoplay loop playsinline preload="auto" poster="a/op27b-logo-d.webp" data-poster-p="a/op27b-logo-p.webp" data-fix="E-OP27-children-of-light-academy" data-op27b="E-OP27B-children-of-light-academy" aria-label="The Children of Light Academy logo animation: an open book, children jumping up from it, the rising sun behind them, the cross, then the name.">
+      <source src="a/op27b-logo-p.mp4" type="video/mp4" media="(max-width: 760px)">
+      <source src="a/op27b-logo-d.mp4" type="video/mp4">
     </video>
   </div>
   <div class="in k-cut">
