@@ -42,6 +42,110 @@
 <style data-fix="DSG26-MAF">/* dsg26: the speech's counter sits under the slide, on the ground, at the end of its caption line */
 html:not(#_d) body .spk-n{top:calc(100% + 12px);bottom:auto;right:0}
 html:not(#_d) body .spk figcaption{padding-right:5.5em}</style>
+<style data-fix="E-MAF27-CSS">/* maf27 (27 Oct): the MAF page as one story. Words on the black ground, never on a picture; pictures whole and
+never above their own size; no fade, no transition, no gradient; the steps are hard cuts. Two text sizes (scale.css). */
+html body.p-pyramids-2021{--bg:#040706!important;--hdr-bg:#040706!important;background:#040706}
+.m27{--ink:#040706;--gold:#C9A45C;--paper:#F7F5F1;--quiet:rgba(247,245,241,.72);--line:rgba(247,245,241,.18);background:var(--ink);color:var(--paper)}
+.m27 *{box-sizing:border-box}
+.m27-wrap{max-width:1320px;margin:0 auto;padding:0 var(--g,16px)}
+@media (min-width:761px){.m27-wrap{padding:0 clamp(24px,6vw,120px)}}
+.m27-s{padding:clamp(56px,9vh,120px) 0 0}
+.m27-lab{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-family:Inter,system-ui,sans-serif;font-weight:600;color:var(--quiet)}
+.m27-mk{width:16px;height:16px;flex:none;color:var(--paper)}
+.m27 h1,.m27 h2{margin:0;font-family:Jost,system-ui,sans-serif;font-weight:300;color:var(--gold);max-width:22ch;text-wrap:balance}
+.m27 h1 b,.m27 h2 b{font-weight:600}
+.m27-h{margin-bottom:clamp(28px,4vh,48px)!important}
+.m27 figure{margin:0}
+.m27 img{display:block;max-width:100%;height:auto}
+.m27 figcaption,.m27-note{margin:12px 0 0;font-family:Inter,system-ui,sans-serif;color:var(--quiet)}
+.m27 figcaption b{color:var(--paper);font-weight:600}
+/* 1 the key visual, whole, on its own black; the title under it */
+.m27-kv{padding:74px 0 0}
+.m27-kvf{display:flex;justify-content:center;padding:clamp(8px,2vh,24px) 0 0}
+.m27-kvf img{width:min(939px,100%,calc(100svh - 74px - 270px));min-width:min(100%,400px)}
+.m27-head{display:grid;gap:12px 64px;padding-top:clamp(16px,3vh,32px);border-top:1px solid var(--line)}
+.m27-nm{display:block;font-weight:600;color:var(--paper)}
+.m27-t{display:block}
+.m27-lead{margin:0;color:var(--quiet);font-family:Inter,system-ui,sans-serif}
+@media (min-width:1000px){.m27-head{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);align-items:start}.m27 h1{max-width:none}}
+/* 2 the year's words beside the poster */
+.m27-idea-g{display:grid;gap:40px;align-items:start}
+.m27-words{margin:0;padding:0;font-family:Jost,system-ui,sans-serif;color:var(--paper)}
+.m27-words p{margin:0;font-family:Jost,system-ui,sans-serif;font-weight:300;max-width:none}
+.m27-words b{font-family:Jost,system-ui,sans-serif;font-weight:600;color:var(--gold)}
+.m27-poster img{width:100%;max-width:1000px}
+@media (min-width:761px){.m27-idea{padding-top:clamp(40px,6vh,72px)}.m27-idea-g{grid-template-columns:minmax(0,1fr) minmax(0,min(44%,calc((100svh - 190px) * .706)))}}
+/* 3 the place */
+.m27-wide img{width:100%;max-width:1920px}
+/* the steps: a tall box, a held frame in it; the scroll picks the step, hard cuts */
+.m27-steps{position:relative;height:calc(var(--n) * 38svh + 100svh)}
+.m27-pin{position:sticky;top:0;min-height:100svh;display:flex;align-items:center;padding:86px 0 16px}
+.m27-stage,.m27-speech,.m27-days{padding-top:0}
+.m27-pin .m27-h{margin-bottom:20px!important}
+.m27-pin>.m27-wrap{width:100%}
+.m27-box{position:relative;background:var(--ink)}
+.m27-box-stage{aspect-ratio:16/9;width:min(100%,calc((100svh - 380px) * 16 / 9));margin:0}
+.m27-it{position:absolute;inset:0;visibility:hidden}
+.m27-it.on{visibility:visible}
+.m27-it img,img.m27-it{width:100%;height:100%;object-fit:contain}
+.m27-box-stage .m27-it img{max-width:none}
+.m27-rail{list-style:none;margin:14px 0 0;padding:0;font-family:Inter,system-ui,sans-serif;color:var(--quiet)}
+.m27-rail li{border-top:2px solid transparent}
+.m27-rail li.on{color:var(--gold);border-top-color:var(--gold)}
+.m27-rail-row{display:flex;flex-wrap:wrap;gap:4px 28px;border-top:1px solid var(--line)}
+.m27-rail-row li{padding-top:10px;margin-top:-1px}
+.m27-rail-row li span{font-variant-numeric:tabular-nums}
+/* 5 the speech: the pair side by side; on a phone one slide at a time */
+.m27-pairs{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.m27-slide{grid-row:1;visibility:hidden}
+.m27-slide.m27-a{grid-column:1}.m27-slide.m27-b{grid-column:2}
+.m27-slide.on{visibility:visible}
+.m27-sb{aspect-ratio:1.6/1;background:#000;outline:1px solid var(--line)}
+.m27-pairs{max-width:calc((100svh - 400px) * 1.6 * 2 + 24px)}
+.m27-sb img{width:100%;height:100%;object-fit:contain}
+/* 6 two pictures whole, one height */
+.m27-two{display:flex;gap:24px;align-items:flex-start}
+.m27-two .m27-fig{flex:var(--ar) 1 0;min-width:0}
+.m27-two img{width:100%}
+/* 7 the four photographs and the time rail */
+.m27-days-g{display:grid;grid-template-columns:200px minmax(0,1fr);gap:32px;align-items:start}
+.m27-box-days{aspect-ratio:4/3;width:min(100%,calc((100svh - 330px) * 4 / 3));margin:0}
+.m27-rail-time{margin:0;display:grid;gap:18px}
+.m27-rail-time li{border-top:0;border-left:2px solid var(--line);padding-left:14px}
+.m27-rail-time li.on{border-left-color:var(--gold)}
+.m27-rail-time b{display:block;font-weight:600}
+.m27-rail-time li.on b{color:var(--gold)}
+/* 8 the record */
+.m27-record{padding-bottom:clamp(56px,9vh,120px)}
+.m27-dl{display:grid;gap:18px;margin:0}
+.m27-dl>div{display:grid;grid-template-columns:200px minmax(0,1fr);gap:4px 40px;border-top:1px solid var(--line);padding-top:14px}
+.m27-dl dt{color:var(--quiet);font-family:Inter,system-ui,sans-serif}
+.m27-dl dd{margin:0;font-family:Inter,system-ui,sans-serif;max-width:70ch}
+@media (max-width:760px){
+ .m27-kv{padding-top:68px}
+ .m27-kvf{padding:0}
+ .m27-kvf img{width:100%;min-width:0}
+ .m27-steps{height:calc(var(--np,var(--n)) * 30svh + 100svh)}
+ .m27-pin{padding-top:84px;align-items:flex-start}
+ .m27-pairs{max-width:none}
+ .m27-box-stage{aspect-ratio:1/1;width:min(100%,calc(100svh - 380px))}
+ .m27-pairs{display:block}
+ .m27-slide{position:absolute;left:0;right:0;top:0}
+ .m27-slide.m27-a.on{position:relative}
+ .m27-slide.m27-b.on{position:relative}
+ .m27-rail-row li{display:none}
+ .m27-rail-row li.on{display:block;border-top-color:transparent;color:var(--gold)}
+ .m27-two{flex-direction:column;gap:32px}
+ .m27-two .m27-fig{flex:none;width:100%}
+ .m27-days-g{grid-template-columns:1fr;gap:12px}
+ .m27-rail-time{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+ .m27-rail-time li span{display:none}
+ .m27-rail-time li{border-left:0;border-top:2px solid var(--line);padding:8px 0 0}
+ .m27-rail-time li.on{border-top-color:var(--gold)}
+ .m27-box-days{width:min(100%,calc((100svh - 400px) * 4 / 3))}
+ .m27-dl>div{grid-template-columns:1fr}
+}
+</style><noscript data-maf27="ns"><style>.m27-steps{height:auto!important}.m27-pin{position:static;min-height:0}.m27-it,.m27-slide{position:relative!important;visibility:visible!important;inset:auto}.m27-box{aspect-ratio:auto!important;max-height:none!important}.m27-pairs{display:grid}.m27-slide{grid-row:auto!important}.m27-rail li{display:block!important}</style></noscript>
 </head>
 <body class="proj p-pyramids-2021" style="--bg:#EBE1CF;--fg:#1D1912;--sub:rgba(29,25,18,.64);--acc:#A97A22;--sheet:#14161E;--hdr-bg:#EBE1CF;--hdr-fg:#1D1912;--hdr-mk:#A97A22">
 <a class="skip" href="#main">Skip to content</a>
@@ -53,6 +157,104 @@ html:not(#_d) body .spk figcaption{padding-right:5.5em}</style>
   </div>
 </header>
 <main id="main" data-fin26-name="MAF Global Solutions">
+<!-- maf27 (27 Oct 2026): the page as one story, eight screens (website-review/maf-27oct/STORY.md); what was here is kept, inert, in the E-MAF27-WAS template at the foot of the page -->
+<div class="m27" data-fix="E-MAF27">
+<section class="m27-s m27-kv" data-fix="E-MAF27-KV" aria-labelledby="m27-h1"><figure class="m27-kvf"><img src="d24/kv-939.webp" srcset="d24/kv-939.webp 939w" sizes="(max-width:760px) 100vw, 939px" width="939" height="939" fetchpriority="high" decoding="async" alt="The key visual on black: a paper plane carrying four of the team trails a line that loops; below it GS, in gold outline, then is, then a number one made of the year’s words, and the MAF mark at the foot."></figure><div class="m27-wrap m27-head"><h1 id="m27-h1"><span class="m27-nm">MAF Global Solutions</span> <span class="m27-t">GS is <b>One.</b></span></h1><p class="m27-lead">Its first birthday, on the lawn below the Great Pyramid, 27&nbsp;October 2021. The idea, the artwork, the screens and the CEO’s speech: AntBrush, with MCX.</p></div></section>
+<section class="m27-s m27-idea" data-fix="E-MAF27-IDEA" aria-labelledby="m27-h2"><div class="m27-wrap"><div class="m27-idea-g"><div><p class="m27-lab"><svg class="m27-mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>The idea</span></p><h2 id="m27-h2" class="m27-h">The number one, written <b>in the words of its&nbsp;year.</b></h2><blockquote class="m27-words"><p><b>One year,</b><br>counting.</p><p><b>One family,</b><br>growing.</p><p><b>One challenge,</b><br>winning.</p><p><b>We are one.</b></p></blockquote></div><figure class="m27-fig m27-poster"><img src="d24/firsts-1000.webp" srcset="d24/firsts-1000.webp 1000w, d24/firsts-1893.webp 1893w" sizes="(max-width:760px) 100vw, 40vw" width="1000" height="1416" loading="lazy" decoding="async" alt="Celebrating Firsts, We are one: a number one built from the words of the year and small figures at work and at play, a paper plane joining them; the MAF mark below."><figcaption><b>Celebrating Firsts.</b> The hashtag of words, the one of moments, the kite’s line between them.</figcaption></figure></div></div></section>
+<section class="m27-s m27-place" data-fix="E-MAF27-PLACE" aria-labelledby="m27-h3"><div class="m27-wrap"><p class="m27-lab"><svg class="m27-mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>The place</span></p><h2 id="m27-h3" class="m27-h">On the lawn <b>below the Great&nbsp;Pyramid.</b></h2><figure class="m27-fig m27-wide"><img src="m27/place-1920.webp" srcset="m27/place-1280.webp 1280w, m27/place-1920.webp 1920w" sizes="(max-width:760px) 100vw, min(1240px, 92vw)" width="1920" height="1080" loading="lazy" decoding="async" alt="The Great Pyramid over the palms of the Marriott Mena House garden in the late afternoon; truss towers and a lighting bridge going up on the lawn, the pool in front reflecting it all."><figcaption><b>Marriott Mena House, Giza.</b> 26&nbsp;October 2021, the afternoon before. My own photograph.</figcaption></figure></div></section>
+<section class="m27-s m27-stage" data-fix="E-MAF27-STAGE" aria-labelledby="m27-h4"><div class="m27-wrap"></div><div class="m27-steps" data-n="4" data-np="4" style="--n:4"><div class="m27-pin"><div class="m27-wrap"><p class="m27-lab"><svg class="m27-mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>The stage</span></p><h2 id="m27-h4" class="m27-h">Three screens, <b>moving as&nbsp;one.</b></h2><figure class="m27-fig"><div class="m27-box m27-box-stage"><picture class="m27-it on" data-k="0" data-kp="0"><source media="(max-width:760px)" srcset="m27/stage-kite-p.webp"><img src="m27/stage-kite-d.webp" width="1920" height="1080" decoding="async" alt="The stage rebuilt in 3D, cue 1 of 4: the key visual on the centre screen, gold confetti on the towers."></picture><picture class="m27-it" data-k="1" data-kp="1"><source media="(max-width:760px)" srcset="m27/stage-gsone-p.webp"><img src="m27/stage-gsone-d.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="The stage rebuilt in 3D, cue 2 of 4: GS is ONE on the centre screen, the towers dark."></picture><picture class="m27-it" data-k="2" data-kp="2"><source media="(max-width:760px)" srcset="m27/stage-speech-p.webp"><img src="m27/stage-speech-d.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="The stage rebuilt in 3D, cue 3 of 4: Common systems on the centre screen, the slide’s gears on the towers."></picture><picture class="m27-it" data-k="3" data-kp="3"><source media="(max-width:760px)" srcset="m27/stage-thanks-p.webp"><img src="m27/stage-thanks-d.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="The stage rebuilt in 3D, cue 4 of 4: the kite and THANK YOU on the centre screen, gold confetti on the towers."></picture></div><ol class="m27-rail m27-rail-row" aria-label="The show’s cues"><li data-k="0" class="on">The key visual</li><li data-k="1">GS is ONE</li><li data-k="2">The speech</li><li data-k="3">Thank you</li></ol><figcaption><b>The stage, rebuilt in 3D</b> from the show’s files and photographs · a reconstruction.</figcaption></figure></div></div></div></section>
+<section class="m27-s m27-speech" data-fix="E-MAF27-SPEECH" aria-labelledby="m27-h5"><div class="m27-wrap"></div><div class="m27-steps" data-n="6" data-np="12" style="--n:6;--np:12"><div class="m27-pin"><div class="m27-wrap"><p class="m27-lab"><svg class="m27-mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>The speech</span></p><h2 id="m27-h5" class="m27-h">From each problem <b>to its&nbsp;answer.</b></h2><div class="m27-pairs"><figure class="m27-slide m27-a on" data-k="0" data-kp="0"><div class="m27-sb"><img src="d24/final-50-to-go-960.webp" srcset="d24/final-50-to-go-960.webp 960w, d24/final-50-to-go-1918.webp 1918w" sizes="(max-width:760px) 100vw, 46vw" width="960" height="540" decoding="async" alt="The CEO’s deck: 50% transitions completed, 50% to go."></div><figcaption>One year in: halfway</figcaption></figure><figure class="m27-slide m27-b on" data-k="0" data-kp="1"><div class="m27-sb"><img src="d24/final-problem-solution-960.webp" srcset="d24/final-problem-solution-960.webp 960w, d24/final-problem-solution-1920.webp 1920w" sizes="(max-width:760px) 100vw, 46vw" width="960" height="539" decoding="async" alt="The CEO’s deck: A cross, then a tick, over falling dominoes: from the problem to its answer."></div><figcaption>From the problem to its answer</figcaption></figure><figure class="m27-slide m27-a" data-k="1" data-kp="2"><div class="m27-sb"><img src="m27/s-04.webp" srcset="m27/s-04.webp 1280w" sizes="(max-width:760px) 100vw, 46vw" width="1280" height="800" loading="lazy" decoding="async" alt="The CEO’s deck: Fragmented systems."></div><figcaption>The problem</figcaption></figure><figure class="m27-slide m27-b" data-k="1" data-kp="3"><div class="m27-sb"><img src="m27/s-06.webp" srcset="m27/s-06.webp 1280w" sizes="(max-width:760px) 100vw, 46vw" width="1280" height="800" loading="lazy" decoding="async" alt="The CEO’s deck: Common systems."></div><figcaption>The answer</figcaption></figure><figure class="m27-slide m27-a" data-k="2" data-kp="4"><div class="m27-sb"><img src="m27/s-07.webp" srcset="m27/s-07.webp 1280w" sizes="(max-width:760px) 100vw, 46vw" width="1280" height="800" loading="lazy" decoding="async" alt="The CEO’s deck: Inconsistent processes, silo mentality."></div><figcaption>The problem</figcaption></figure><figure class="m27-slide m27-b" data-k="2" data-kp="5"><div class="m27-sb"><img src="m27/s-09.webp" srcset="m27/s-09.webp 1280w" sizes="(max-width:760px) 100vw, 46vw" width="1280" height="800" loading="lazy" decoding="async" alt="The CEO’s deck: Common processes."></div><figcaption>The answer</figcaption></figure><figure class="m27-slide m27-a" data-k="3" data-kp="6"><div class="m27-sb"><img src="m27/s-10.webp" srcset="m27/s-10.webp 1280w" sizes="(max-width:760px) 100vw, 46vw" width="1280" height="800" loading="lazy" decoding="async" alt="The CEO’s deck: Lack of scale."></div><figcaption>The problem</figcaption></figure><figure class="m27-slide m27-b" data-k="3" data-kp="7"><div class="m27-sb"><img src="m27/s-12.webp" srcset="m27/s-12.webp 1280w" sizes="(max-width:760px) 100vw, 46vw" width="1280" height="800" loading="lazy" decoding="async" alt="The CEO’s deck: Economies of scale."></div><figcaption>The answer</figcaption></figure><figure class="m27-slide m27-a" data-k="4" data-kp="8"><div class="m27-sb"><img src="m27/s-13.webp" srcset="m27/s-13.webp 1280w" sizes="(max-width:760px) 100vw, 46vw" width="1280" height="800" loading="lazy" decoding="async" alt="The CEO’s deck: Shortage of resources and talent."></div><figcaption>The problem</figcaption></figure><figure class="m27-slide m27-b" data-k="4" data-kp="9"><div class="m27-sb"><img src="m27/s-15.webp" srcset="m27/s-15.webp 1280w" sizes="(max-width:760px) 100vw, 46vw" width="1280" height="800" loading="lazy" decoding="async" alt="The CEO’s deck: A valuable pool of resources and talent."></div><figcaption>The answer</figcaption></figure><figure class="m27-slide m27-a" data-k="5" data-kp="10"><div class="m27-sb"><img src="m27/s-16.webp" srcset="m27/s-16.webp 1280w" sizes="(max-width:760px) 100vw, 46vw" width="1280" height="800" loading="lazy" decoding="async" alt="The CEO’s deck: Simpler,"></div><figcaption>The problem</figcaption></figure><figure class="m27-slide m27-b" data-k="5" data-kp="11"><div class="m27-sb"><img src="m27/s-19.webp" srcset="m27/s-19.webp 1280w" sizes="(max-width:760px) 100vw, 46vw" width="1280" height="800" loading="lazy" decoding="async" alt="The CEO’s deck: Simpler, better and FASTER."></div><figcaption>The answer</figcaption></figure></div><ol class="m27-rail m27-rail-row" aria-label="The speech, pair by pair"><li data-k="0" class="on"><span>00</span> Halfway</li><li data-k="1"><span>01</span> Systems</li><li data-k="2"><span>02</span> Processes</li><li data-k="3"><span>03</span> Scale</li><li data-k="4"><span>04</span> Talent</li><li data-k="5"><span>05</span> Simpler, better and faster</li></ol><p class="m27-note">The CEO’s deck, designed by AntBrush, gold on black: each problem, then its answer.</p></div></div></div></section>
+<section class="m27-s m27-screens" data-fix="E-MAF27-SCREENS" aria-labelledby="m27-h6"><div class="m27-wrap"><p class="m27-lab"><svg class="m27-mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>On the screens</span></p><h2 id="m27-h6" class="m27-h">Made for <b>the night’s screens.</b></h2><div class="m27-two"><figure class="m27-fig" style="--ar:1.779"><img src="d24/ski-900.webp" srcset="d24/ski-900.webp 900w, d24/ski-1811.webp 1811w" sizes="(max-width:760px) 100vw, 46vw" width="900" height="506" loading="lazy" decoding="async" alt="Ski in desert: a skier carving through snow that runs into golden dunes, golden arches standing in the sand, the Ski Egypt mark under the title."><figcaption><b>Ski in desert.</b> My own design.</figcaption></figure><figure class="m27-fig" style="--ar:1.894"><img src="d24/team-900.webp" srcset="d24/team-900.webp 900w, d24/team-1794.webp 1794w" sizes="(max-width:760px) 100vw, 46vw" width="900" height="475" loading="lazy" decoding="async" alt="One team and winning: a hand on a patterned drum, drawn in gold on black."><figcaption><b>One team and winning.</b> For the drummers.</figcaption></figure></div></div></section>
+<section class="m27-s m27-days" data-fix="E-MAF27-DAYS" aria-labelledby="m27-h7"><div class="m27-wrap"></div><div class="m27-steps" data-n="4" data-np="4" style="--n:4"><div class="m27-pin"><div class="m27-wrap"><p class="m27-lab"><svg class="m27-mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>Two days</span></p><h2 id="m27-h7" class="m27-h">From an empty lawn <b>to a room without&nbsp;walls.</b></h2><div class="m27-days-g"><ol class="m27-rail m27-rail-time" aria-label="The time of each photograph"><li data-k="0" class="on"><b>26 Oct · 12:45</b> <span>The empty lawn</span></li><li data-k="1"><b>26 Oct · 15:21</b> <span>The build</span></li><li data-k="2"><b>26 Oct · 23:24</b> <span>The screens, tested</span></li><li data-k="3"><b>27 Oct · 22:24</b> <span>Then the people</span></li></ol><figure class="m27-fig"><div class="m27-box m27-box-days"><img class="m27-it on" data-k="0" data-kp="0" src="m27/d1245-1600.webp" srcset="m27/d1245-1000.webp 1000w, m27/d1245-1600.webp 1600w" sizes="(max-width:760px) 100vw, 66vw" width="1600" height="900" decoding="async" alt="The empty lawn of the Marriott Mena House at midday, 26 October 2021: grass, a low building, palms beyond."><img class="m27-it" data-k="1" data-kp="1" src="m27/d1521-1600.webp" srcset="m27/d1521-1000.webp 1000w, m27/d1521-1600.webp 1600w" sizes="(max-width:760px) 100vw, 66vw" width="1600" height="1200" loading="lazy" decoding="async" alt="The same lawn at 15:21: the stage deck and the truss going up, crew at work."><img class="m27-it" data-k="2" data-kp="2" src="m27/d2324-1600.webp" srcset="m27/d2324-1000.webp 1000w, m27/d2324-1600.webp 1600w" sizes="(max-width:760px) 100vw, 66vw" width="1600" height="900" loading="lazy" decoding="async" alt="The lawn at 23:24 the night before: the tables and chairs set, the three screens lit for the test."><img class="m27-it" data-k="3" data-kp="3" src="m27/d2224-1600.webp" srcset="m27/d2224-1000.webp 1000w, m27/d2224-1600.webp 1600w" sizes="(max-width:760px) 100vw, 66vw" width="1600" height="1200" loading="lazy" decoding="async" alt="The night of 27 October 2021: the team in black on the lawn, the beams over the palms, the kite and THANK YOU on the centre screen."></div><figcaption><b>26 and 27 October 2021.</b> About 420 guests on the night. My own photographs.</figcaption></figure></div></div></div></div></section>
+<section class="m27-s m27-record" data-fix="E-MAF27-RECORD" aria-labelledby="m27-h8"><div class="m27-wrap"><p class="m27-lab"><svg class="m27-mk" viewBox="28 20 226 243" fill="currentColor" aria-hidden="true" focusable="false"><path d="M 75.246094 115.625 C 68.671875 115.625 62.894531 119.992188 61.101562 126.320312 L 49.550781 167.089844 C 56.128906 167.089844 61.90625 162.726562 63.699219 156.394531 Z M 82.558594 156.394531 L 94.109375 115.625 C 87.53125 115.625 81.753906 119.992188 79.960938 126.320312 L 68.410156 167.089844 C 74.988281 167.089844 80.765625 162.726562 82.558594 156.394531 M 185.890625 116.859375 L 153.070312 116.707031 L 179.902344 21.996094 C 149.394531 21.996094 122.597656 42.253906 114.285156 71.609375 L 101.578125 116.464844 L 87.539062 166.011719 L 60.710938 260.722656 C 91.21875 260.722656 118.011719 240.460938 126.328125 211.109375 L 139.035156 166.253906 L 251.277344 166.777344 C 243.097656 137.386719 216.398438 117.003906 185.890625 116.859375 M 42.242188 126.320312 L 30.691406 167.089844 C 37.269531 167.089844 43.046875 162.726562 44.839844 156.394531 L 56.386719 115.625 C 49.8125 115.625 44.035156 119.992188 42.242188 126.320312"/></svg><span>The record</span></p><h2 id="m27-h8" class="m27-h">Designed in Dubai, <b>built in&nbsp;Giza.</b></h2><dl class="m27-dl"><div><dt>The work</dt><dd>The idea and key visual · the invitation · totems, gate, photo wall and stage branding · the screen content · the CEO’s speech deck</dd></div><div><dt>Role</dt><dd>Creative Director, Brand &amp; Experiential, through AntBrush</dd></div><div><dt>Client</dt><dd>MAF Global Solutions, its first anniversary</dd></div><div><dt>With</dt><dd>MCX, who led the client relationship · Sky Gate Events, who built it in Egypt</dd></div><div><dt>Place and date</dt><dd>The lawn of the Marriott Mena House, Giza · 27&nbsp;October 2021 · about 420 guests</dd></div></dl></div></section>
+</div>
+</main>
+<nav class="pnext" style="--nbg:#0A0E1C;--nfg:#EEF0F6" aria-label="Next project">
+  <a href="../big-grill/" data-fix="E-NX27">
+    <div><p class="label">Next</p><h2>A festival starts with a drawing.</h2><p style="opacity:.72;margin-top:16px">The Big Grill</p></div>
+    <div class="pic"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1280' height='532'/%3E" data-wa-src="a/next-big-grill.webp" width="1280" height="532" alt="" loading="lazy" decoding="async"></div>
+  </a>
+</nav><noscript data-nx27="E-NX27"><style>/* nx27: without JavaScript the picture is drawn as its background */img[data-wa-src="a/next-big-grill.webp"]{background:url(a/next-big-grill.webp) 50% 50%/contain no-repeat}</style></noscript><template data-fix="E-NX27-WAS"><a href="../capacity/">
+    <div><p class="label">Next</p><h2>A city in one line.</h2><p style="opacity:.72;margin-top:16px">Capacity Middle East</p></div>
+    <div class="pic"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'/%3E" data-wa-src="../../img/capacity/title-1600.webp" data-wa-srcset="../../img/capacity/title-800.webp 800w, ../../img/capacity/title-1600.webp 1600w, ../../img/capacity/title-1920.webp 1920w" sizes="(max-width:760px) 100vw, 46vw" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
+  </a></template>
+<footer class="foot"><div class="wrap row">
+  <p style="margin:0">Antoni Gerges · Creative Director, Brand &amp; Experiential · <a href="mailto:antoni@antbrush.com">antoni@antbrush.com</a></p>
+  <nav aria-label="Footer"><a href="../../work/">Work</a><a href="../../about/">Tony</a><a href="../../contact/">Contact</a></nav>
+</div><div class="wrap disc23" data-fix="E-DISC23" style="padding-top:14px;padding-bottom:4px"><small style="display:block;margin:0;max-width:68ch;color:inherit;opacity:.8">The work shown was made with the teams I led, in the roles I held at the time. All brands, logos and artwork belong to their owners.</small></div></footer>
+<script src="../../assets/site.js?v=afd4c1e0" defer></script>
+<script src="../../assets/nav.js" defer></script>
+<link rel="stylesheet" href="../../assets/viewer.css"><script defer src="../../assets/viewer.js"></script>
+<script src="../../assets/wavea.js?v=b022ad92" defer></script>
+<script data-maf24="js">/* maf24: the stage film plays once when half in view (a hard start), holds its last frame, then Play again; the phone file below 761 px; with reduced motion it waits for Play */(function(){var f=document.querySelector(".s3d");if(!f)return;var v=f.querySelector("video"),b=f.querySelector(".s3d-go"),ph=matchMedia("(max-width:760px)").matches,rm=matchMedia("(prefers-reduced-motion: reduce)").matches,ok=false;if(ph)v.poster=v.getAttribute("data-poster-p");function src(){if(!ok){v.src=v.getAttribute(ph?"data-src-p":"data-src-d");ok=true;}}function go(){src();b.hidden=true;v.currentTime=0;var p=v.play();if(p&&p.catch)p.catch(function(){b.hidden=false;b.textContent="Play";});}v.addEventListener("ended",function(){b.textContent="Play again";b.hidden=false;});b.addEventListener("click",go);if(rm||!("IntersectionObserver" in window)){b.textContent="Play";b.hidden=false;return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.disconnect();go();}});},{threshold:.5});io.observe(v);})();</script>
+<script data-mafp24="js">/* mafp24: the year's words, scattered in depth across the panel, collect into the number one (Tony, 24 Oct: "the number one text
+   can appear like on kinetic and collective way"). Plays once when half in view, holds the one, then Play again; with reduced motion
+   the one stands at once. The words are the key visual's and the artwork's own. */
+(function () {
+  var box = document.querySelector('.k1'); if (!box) return;
+  var cv = box.querySelector('canvas'), go = box.querySelector('.k1-go'), cx = cv.getContext('2d');
+  var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ROWS = ['ONE YEAR', 'COUNTING', 'ONE FAMILY', 'GROWING', 'WE ARE ONE', 'WINNING', 'ONE TEAM', 'AND WINNING', 'CELEBRATING',
+    'FIRSTS', 'GREAT MOMENTS', 'FOR EVERYONE', 'EVERYDAY', 'ONE CHALLENGE', 'WE ARE ONE'];
+  var GOLD = [[182, 152, 90], [215, 189, 133], [156, 126, 70]], BG = [7, 9, 8];
+  var CAP = .727, GAP = .05, FLAG_H = 1.0, FLAG_X = .75, TALL = 3.5, DUR = 1.6, LEAD = .15;
+  var P = [], YT = 0, W = 0, H = 0, S = 1, OX = 0, OY = 0, t0 = 0, raf = 0, state = 'wait', END = 0;
+  function F(px) { return '800 ' + px + 'px Inter, system-ui, sans-serif'; }
+  function build() {   // the one at a stem width of 1: each row fills its width exactly; the flag widens to the left as it comes down
+    cx.font = F(100); var y = 0, k = 0, sp = cx.measureText(' ').width / 100;
+    while (y < TALL) {
+      var txt = ROWS[k % ROWS.length], ext = y < FLAG_H ? FLAG_X * Math.min(1, (y + .05) / FLAG_H) : 0;
+      var fs = (1 + ext) / (cx.measureText(txt).width / 100), x = -ext;
+      txt.split(' ').forEach(function (w) { var m = cx.measureText(w).width / 100; P.push({ t: w, m: m, x: x, y: y + fs * CAP, fs: fs, c: GOLD[k % 3] }); x += (m + sp) * fs; });
+      y += fs * CAP + GAP; k++;
+    }
+    YT = y - GAP;
+    var s = 1021; function R() { s = s * 16807 % 2147483647; return (s - 1) / 2147483646; }
+    P.forEach(function (p, i) { p.sx = .04 + R() * .92; p.sy = .06 + R() * .88; p.z = .35 + R() * 1.05; p.sr = (R() - .5) * 1.3;
+      p.d = .6 * (i / P.length) + .4 * R(); p.arc = (R() - .5) * .25; END = Math.max(END, p.d + DUR); });
+  }
+  function fit() {
+    var r = cv.getBoundingClientRect(), d = Math.min(2, window.devicePixelRatio || 1); W = r.width; H = r.height;
+    cv.width = Math.round(W * d); cv.height = Math.round(H * d); cx.setTransform(d, 0, 0, d, 0, 0);
+    S = Math.min(H * .84 / YT, W * .86 / (1 + FLAG_X)); OX = (W - S * (1 + FLAG_X)) / 2 + S * FLAG_X; OY = (H - S * YT) / 2;
+  }
+  function ease(q) { return q < .5 ? 4 * q * q * q : 1 - Math.pow(-2 * q + 2, 3) / 2; }
+  function draw(T) {   // T < 0: scattered; T = Infinity: the one
+    cx.fillStyle = 'rgb(' + BG + ')'; cx.fillRect(0, 0, W, H);
+    var L = P.map(function (p) { var q = T < 0 ? 0 : T === Infinity ? 1 : ease(Math.max(0, Math.min(1, (T - p.d) / DUR))); return [p, q]; });
+    L.sort(function (a, b) { return (a[0].z + (1 - a[0].z) * a[1]) - (b[0].z + (1 - b[0].z) * b[1]); });
+    L.forEach(function (e) {
+      var p = e[0], q = e[1], ffs = p.fs * S, sfs = ffs * p.z, size = sfs + (ffs - sfs) * q, w = p.m * size;
+      var fcx = OX + p.x * S + p.m * ffs / 2, fcy = OY + p.y * S - CAP * ffs / 2;
+      var hw = p.m * sfs / 2 + 8, hh = CAP * sfs / 2 + 8;   // each word starts whole inside the panel
+      var sx = Math.max(hw, Math.min(W - hw, p.sx * W)), sy = Math.max(hh, Math.min(H - hh, p.sy * H));
+      var px = sx + (fcx - sx) * q + p.arc * W * Math.sin(Math.PI * q), py = sy + (fcy - sy) * q;
+      var dim = (1 - Math.min(1, p.z / 1.4)) * .7 * (1 - q), c = p.c.map(function (v, i) { return Math.round(v + (BG[i] - v) * dim); });
+      cx.save(); cx.translate(px, py); if (q < 1) cx.rotate(p.sr * (1 - q));
+      cx.font = F(size); cx.fillStyle = 'rgb(' + c + ')'; cx.fillText(p.t, -w / 2, CAP * size / 2); cx.restore();
+    });
+  }
+  function frame(now) {
+    if (!t0) t0 = now; var T = (now - t0) / 1000 - LEAD;
+    if (T < END) { draw(T); raf = requestAnimationFrame(frame); }
+    else { state = 'done'; draw(Infinity); go.textContent = 'Play again'; go.hidden = false; }
+  }
+  function play() { cancelAnimationFrame(raf); t0 = 0; state = 'run'; go.hidden = true; raf = requestAnimationFrame(frame); }
+  function start() {
+    build(); fit();
+    if (rm) { state = 'done'; draw(Infinity); return; }
+    draw(-1); go.addEventListener('click', play);
+    if (!('IntersectionObserver' in window)) { play(); return; }
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { io.disconnect(); play(); } }); }, { threshold: .5 });
+    io.observe(cv);
+  }
+  var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { if (!P.length) return; fit(); if (state !== 'run') draw(state === 'done' ? Infinity : -1); }, 120); });
+  (document.fonts && document.fonts.load ? document.fonts.load(F(100)).catch(function () {}) : Promise.resolve()).then(start);
+})();</script>
+<script data-mafp24="js5">/* mafp24: the speech steps with the scroll, one slide per step, hard cuts; the phone frames below 761 px; every frame is loaded when the section comes near */(function(){var s=document.querySelector(".spk");if(!s)return;var ims=[].slice.call(s.querySelectorAll(".spk-i")),fl=[].slice.call(s.querySelectorAll(".spk-flat")),num=s.querySelector(".spk-n"),N=ims.length,ph=matchMedia("(max-width:760px)").matches,cur=-1,ld=false;function load(){if(ld)return;ld=true;ims.forEach(function(i){var u=i.getAttribute(ph?"data-src-p":"data-src-d");if(i.getAttribute("src")!==u)i.src=u;});if(!ph)fl.forEach(function(i){i.src=i.getAttribute("data-src-flat");});}function show(k){if(k===cur)return;cur=k;ims.forEach(function(i,j){i.classList.toggle("on",j===k);});fl.forEach(function(i,j){i.classList.toggle("on",j===k);});num.textContent=(k<9?"0":"")+(k+1)+" / "+N;}function step(){var r=s.getBoundingClientRect(),h=s.offsetHeight-innerHeight,p=h>0?Math.min(1,Math.max(0,-r.top/h)):0;show(Math.min(N-1,Math.floor(p*N)));}if(ph)load();if("IntersectionObserver" in window){new IntersectionObserver(function(es){if(es[0].isIntersecting)load();},{rootMargin:"150% 0px"}).observe(s);}else load();addEventListener("scroll",step,{passive:true});addEventListener("resize",step);step();})();</script>
+<script src="../../assets/scrub25.js?v=ae96b17e" defer data-scrub25="js"></script>
+<script data-fix="E-FIN26-LABEL">/* fin26: the chapter index names the project by its short name */(function(){var m=document.querySelector("main[data-fin26-name]");if(!m)return;var n=m.getAttribute("data-fin26-name");function set(){var s=document.querySelector(".case-index-heading strong");if(s&&s.textContent!==n)s.textContent=n;}set();addEventListener("load",set);if("MutationObserver" in window){new MutationObserver(set).observe(m,{childList:true,subtree:false});}})();</script>
+<template data-fix="E-MAF27-WAS"><!-- maf27 (27 Oct): the page as it was before the eight screens, kept inert so the earlier modules find their own text and stay quiet -->
 <!-- 0 · the glimpse: the project in 12 s, hard cuts from its own films (openers-21oct) -->
 <section class="op21" aria-label="A glimpse of the MAF Global Solutions anniversary in Giza: the beams over the lawn at night, the pyramids over the palms, the build, the screens, the room, the screen content, the lawn at night, the pyramid again">
   <figure class="op21-f"><button class="op21-film" type="button" aria-label="Play the glimpse"><video class="op21-v" data-fix="E-OPENER-pyramids-2021" muted playsinline loop preload="none" data-wa-defer width="1280" height="720" poster="d24/glimpse-poster.webp"><source data-wa-src="d24/glimpse25-p-gl26b.mp4" type="video/mp4" media="(max-width:760px)"><source data-wa-src="d24/glimpse25-d-gl26b.mp4" type="video/mp4"></video></button><figcaption class="op21-cap">A glimpse · my own films · Giza, 26 and 27 October 2021</figcaption></figure>
@@ -172,88 +374,18 @@ html:not(#_d) body .spk figcaption{padding-right:5.5em}</style>
     <p class="fp-result">About 420 guests, on the lawn below the Great Pyramid.</p>
   </div>
 </section>
-</main>
-<nav class="pnext" style="--nbg:#0A0E1C;--nfg:#EEF0F6" aria-label="Next project">
-  <a href="../capacity/">
-    <div><p class="label">Next</p><h2>A city in one line.</h2><p style="opacity:.72;margin-top:16px">Capacity Middle East</p></div>
-    <div class="pic"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'/%3E" data-wa-src="../../img/capacity/title-1600.webp" data-wa-srcset="../../img/capacity/title-800.webp 800w, ../../img/capacity/title-1600.webp 1600w, ../../img/capacity/title-1920.webp 1920w" sizes="(max-width:760px) 100vw, 46vw" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
-  </a>
-</nav>
-<footer class="foot"><div class="wrap row">
-  <p style="margin:0">Antoni Gerges · Creative Director, Brand &amp; Experiential · <a href="mailto:antoni@antbrush.com">antoni@antbrush.com</a></p>
-  <nav aria-label="Footer"><a href="../../work/">Work</a><a href="../../about/">Tony</a><a href="../../contact/">Contact</a></nav>
-</div><div class="wrap disc23" data-fix="E-DISC23" style="padding-top:14px;padding-bottom:4px"><small style="display:block;margin:0;max-width:68ch;color:inherit;opacity:.8">The work shown was made with the teams I led, in the roles I held at the time. All brands, logos and artwork belong to their owners.</small></div></footer>
-<script src="../../assets/site.js?v=afd4c1e0" defer></script>
-<script src="../../assets/nav.js" defer></script>
-<link rel="stylesheet" href="../../assets/viewer.css"><script defer src="../../assets/viewer.js"></script>
-<script src="../../assets/wavea.js?v=b022ad92" defer></script>
-<script data-maf24="js">/* maf24: the stage film plays once when half in view (a hard start), holds its last frame, then Play again; the phone file below 761 px; with reduced motion it waits for Play */(function(){var f=document.querySelector(".s3d");if(!f)return;var v=f.querySelector("video"),b=f.querySelector(".s3d-go"),ph=matchMedia("(max-width:760px)").matches,rm=matchMedia("(prefers-reduced-motion: reduce)").matches,ok=false;if(ph)v.poster=v.getAttribute("data-poster-p");function src(){if(!ok){v.src=v.getAttribute(ph?"data-src-p":"data-src-d");ok=true;}}function go(){src();b.hidden=true;v.currentTime=0;var p=v.play();if(p&&p.catch)p.catch(function(){b.hidden=false;b.textContent="Play";});}v.addEventListener("ended",function(){b.textContent="Play again";b.hidden=false;});b.addEventListener("click",go);if(rm||!("IntersectionObserver" in window)){b.textContent="Play";b.hidden=false;return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.disconnect();go();}});},{threshold:.5});io.observe(v);})();</script>
-<script data-mafp24="js">/* mafp24: the year's words, scattered in depth across the panel, collect into the number one (Tony, 24 Oct: "the number one text
-   can appear like on kinetic and collective way"). Plays once when half in view, holds the one, then Play again; with reduced motion
-   the one stands at once. The words are the key visual's and the artwork's own. */
-(function () {
-  var box = document.querySelector('.k1'); if (!box) return;
-  var cv = box.querySelector('canvas'), go = box.querySelector('.k1-go'), cx = cv.getContext('2d');
-  var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var ROWS = ['ONE YEAR', 'COUNTING', 'ONE FAMILY', 'GROWING', 'WE ARE ONE', 'WINNING', 'ONE TEAM', 'AND WINNING', 'CELEBRATING',
-    'FIRSTS', 'GREAT MOMENTS', 'FOR EVERYONE', 'EVERYDAY', 'ONE CHALLENGE', 'WE ARE ONE'];
-  var GOLD = [[182, 152, 90], [215, 189, 133], [156, 126, 70]], BG = [7, 9, 8];
-  var CAP = .727, GAP = .05, FLAG_H = 1.0, FLAG_X = .75, TALL = 3.5, DUR = 1.6, LEAD = .15;
-  var P = [], YT = 0, W = 0, H = 0, S = 1, OX = 0, OY = 0, t0 = 0, raf = 0, state = 'wait', END = 0;
-  function F(px) { return '800 ' + px + 'px Inter, system-ui, sans-serif'; }
-  function build() {   // the one at a stem width of 1: each row fills its width exactly; the flag widens to the left as it comes down
-    cx.font = F(100); var y = 0, k = 0, sp = cx.measureText(' ').width / 100;
-    while (y < TALL) {
-      var txt = ROWS[k % ROWS.length], ext = y < FLAG_H ? FLAG_X * Math.min(1, (y + .05) / FLAG_H) : 0;
-      var fs = (1 + ext) / (cx.measureText(txt).width / 100), x = -ext;
-      txt.split(' ').forEach(function (w) { var m = cx.measureText(w).width / 100; P.push({ t: w, m: m, x: x, y: y + fs * CAP, fs: fs, c: GOLD[k % 3] }); x += (m + sp) * fs; });
-      y += fs * CAP + GAP; k++;
-    }
-    YT = y - GAP;
-    var s = 1021; function R() { s = s * 16807 % 2147483647; return (s - 1) / 2147483646; }
-    P.forEach(function (p, i) { p.sx = .04 + R() * .92; p.sy = .06 + R() * .88; p.z = .35 + R() * 1.05; p.sr = (R() - .5) * 1.3;
-      p.d = .6 * (i / P.length) + .4 * R(); p.arc = (R() - .5) * .25; END = Math.max(END, p.d + DUR); });
-  }
-  function fit() {
-    var r = cv.getBoundingClientRect(), d = Math.min(2, window.devicePixelRatio || 1); W = r.width; H = r.height;
-    cv.width = Math.round(W * d); cv.height = Math.round(H * d); cx.setTransform(d, 0, 0, d, 0, 0);
-    S = Math.min(H * .84 / YT, W * .86 / (1 + FLAG_X)); OX = (W - S * (1 + FLAG_X)) / 2 + S * FLAG_X; OY = (H - S * YT) / 2;
-  }
-  function ease(q) { return q < .5 ? 4 * q * q * q : 1 - Math.pow(-2 * q + 2, 3) / 2; }
-  function draw(T) {   // T < 0: scattered; T = Infinity: the one
-    cx.fillStyle = 'rgb(' + BG + ')'; cx.fillRect(0, 0, W, H);
-    var L = P.map(function (p) { var q = T < 0 ? 0 : T === Infinity ? 1 : ease(Math.max(0, Math.min(1, (T - p.d) / DUR))); return [p, q]; });
-    L.sort(function (a, b) { return (a[0].z + (1 - a[0].z) * a[1]) - (b[0].z + (1 - b[0].z) * b[1]); });
-    L.forEach(function (e) {
-      var p = e[0], q = e[1], ffs = p.fs * S, sfs = ffs * p.z, size = sfs + (ffs - sfs) * q, w = p.m * size;
-      var fcx = OX + p.x * S + p.m * ffs / 2, fcy = OY + p.y * S - CAP * ffs / 2;
-      var hw = p.m * sfs / 2 + 8, hh = CAP * sfs / 2 + 8;   // each word starts whole inside the panel
-      var sx = Math.max(hw, Math.min(W - hw, p.sx * W)), sy = Math.max(hh, Math.min(H - hh, p.sy * H));
-      var px = sx + (fcx - sx) * q + p.arc * W * Math.sin(Math.PI * q), py = sy + (fcy - sy) * q;
-      var dim = (1 - Math.min(1, p.z / 1.4)) * .7 * (1 - q), c = p.c.map(function (v, i) { return Math.round(v + (BG[i] - v) * dim); });
-      cx.save(); cx.translate(px, py); if (q < 1) cx.rotate(p.sr * (1 - q));
-      cx.font = F(size); cx.fillStyle = 'rgb(' + c + ')'; cx.fillText(p.t, -w / 2, CAP * size / 2); cx.restore();
-    });
-  }
-  function frame(now) {
-    if (!t0) t0 = now; var T = (now - t0) / 1000 - LEAD;
-    if (T < END) { draw(T); raf = requestAnimationFrame(frame); }
-    else { state = 'done'; draw(Infinity); go.textContent = 'Play again'; go.hidden = false; }
-  }
-  function play() { cancelAnimationFrame(raf); t0 = 0; state = 'run'; go.hidden = true; raf = requestAnimationFrame(frame); }
-  function start() {
-    build(); fit();
-    if (rm) { state = 'done'; draw(Infinity); return; }
-    draw(-1); go.addEventListener('click', play);
-    if (!('IntersectionObserver' in window)) { play(); return; }
-    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { io.disconnect(); play(); } }); }, { threshold: .5 });
-    io.observe(cv);
-  }
-  var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { if (!P.length) return; fit(); if (state !== 'run') draw(state === 'done' ? Infinity : -1); }, 120); });
-  (document.fonts && document.fonts.load ? document.fonts.load(F(100)).catch(function () {}) : Promise.resolve()).then(start);
-})();</script>
-<script data-mafp24="js5">/* mafp24: the speech steps with the scroll, one slide per step, hard cuts; the phone frames below 761 px; every frame is loaded when the section comes near */(function(){var s=document.querySelector(".spk");if(!s)return;var ims=[].slice.call(s.querySelectorAll(".spk-i")),fl=[].slice.call(s.querySelectorAll(".spk-flat")),num=s.querySelector(".spk-n"),N=ims.length,ph=matchMedia("(max-width:760px)").matches,cur=-1,ld=false;function load(){if(ld)return;ld=true;ims.forEach(function(i){var u=i.getAttribute(ph?"data-src-p":"data-src-d");if(i.getAttribute("src")!==u)i.src=u;});if(!ph)fl.forEach(function(i){i.src=i.getAttribute("data-src-flat");});}function show(k){if(k===cur)return;cur=k;ims.forEach(function(i,j){i.classList.toggle("on",j===k);});fl.forEach(function(i,j){i.classList.toggle("on",j===k);});num.textContent=(k<9?"0":"")+(k+1)+" / "+N;}function step(){var r=s.getBoundingClientRect(),h=s.offsetHeight-innerHeight,p=h>0?Math.min(1,Math.max(0,-r.top/h)):0;show(Math.min(N-1,Math.floor(p*N)));}if(ph)load();if("IntersectionObserver" in window){new IntersectionObserver(function(es){if(es[0].isIntersecting)load();},{rootMargin:"150% 0px"}).observe(s);}else load();addEventListener("scroll",step,{passive:true});addEventListener("resize",step);step();})();</script>
-<script src="../../assets/scrub25.js?v=ae96b17e" defer data-scrub25="js"></script>
-<script data-fix="E-FIN26-LABEL">/* fin26: the chapter index names the project by its short name */(function(){var m=document.querySelector("main[data-fin26-name]");if(!m)return;var n=m.getAttribute("data-fin26-name");function set(){var s=document.querySelector(".case-index-heading strong");if(s&&s.textContent!==n)s.textContent=n;}set();addEventListener("load",set);if("MutationObserver" in window){new MutationObserver(set).observe(m,{childList:true,subtree:false});}})();</script>
+</template>
+<script data-fix="E-MAF27-JS">/* maf27 (27 Oct): the steps. Each .m27-steps box is tall; its held frame sticks; the scroll's place in the box picks the
+step and the step is shown at once (a hard cut, no fade). On a phone the speech shows one slide per step (data-kp), elsewhere the pair (data-k). */
+(function(){var D=document,W=window,boxes=[].slice.call(D.querySelectorAll(".m27-steps"));if(!boxes.length)return;
+var mq=W.matchMedia?W.matchMedia("(max-width:760px)"):{matches:false};
+function set(b){b._ph=mq.matches;b._n=+(b._ph?b.getAttribute("data-np"):b.getAttribute("data-n"))||1;b._cur=-1;if(b._ph)b.style.setProperty("--np",b._n);step(b);}
+function step(b){var r=b.getBoundingClientRect(),h=b.offsetHeight-W.innerHeight,p=h>0?Math.min(1,Math.max(0,-r.top/h)):0,k=Math.min(b._n-1,Math.floor(p*b._n)),kd=k;
+if(k===b._cur)return;b._cur=k;
+if(b._ph){var s=b.querySelector('[data-kp="'+k+'"]');if(s)kd=+s.getAttribute("data-k");}
+[].forEach.call(b.querySelectorAll("[data-k]"),function(e){var on=(b._ph&&e.hasAttribute("data-kp"))?(+e.getAttribute("data-kp")===k):(+e.getAttribute("data-k")===kd);e.classList.toggle("on",on);});}
+function all(){boxes.forEach(step);}
+boxes.forEach(set);W.addEventListener("scroll",all,{passive:true});W.addEventListener("resize",function(){boxes.forEach(set);});
+if(mq.addEventListener)mq.addEventListener("change",function(){boxes.forEach(set);});})();</script>
 </body>
 </html>
