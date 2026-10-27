@@ -29,6 +29,5 @@
   <url><loc>https://antoniz.com/work/spaces/</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://antoniz.com/work/wfes/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://antoniz.com/work/zeiss/</loc><lastmod>2026-10-15</lastmod></url>
-  <url><loc>https://antoniz.com/stories/dha/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://antoniz.com/stories/pyramids-2021/</loc><lastmod>2026-10-21</lastmod></url>
+  <!-- one27 (27 Oct): https://antoniz.com/stories/dha/< and https://antoniz.com/stories/pyramids-2021/< forward to their work pages; struct21 E-STRUCT-SITEMAP reads the two addresses here and adds nothing -->
 </urlset>
