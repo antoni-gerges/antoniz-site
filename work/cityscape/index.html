@@ -234,6 +234,13 @@ html:not(#_t):not(#_o27) body .o27-snd,html:not(#_t):not(#_o27) body .o27-pp{min
  .o27-s2 .o27-w{width:100%}
 }
 </style>
+<style data-fix="E-ROLE27-CSS">/* role27 (27 Oct 2026, roles-27oct/role27.py): one role line under the first film's caption; Inter, at most two lines on a desktop */
+html:not(#_t):not(#_rl27) body .rl27{grid-column:1/-1;order:4;display:block;margin:6px 0 0;max-width:none;font-family:Inter,system-ui,sans-serif!important;
+ font-weight:400!important;font-style:normal!important;color:rgba(247,245,241,.72)}
+.o27:has(.rl27){--o27-under:212px}
+.o27:has(.o27-stack):has(.rl27){--o27-under:258px}
+@media (max-width:760px){html:not(#_t):not(#_rl27) body .o27-t .rl27{margin-top:8px}}
+</style>
 </head>
 <body class="fp cityscape">
 <a class="skip" href="#main">Skip to content</a>
@@ -247,7 +254,7 @@ html:not(#_t):not(#_o27) body .o27-snd,html:not(#_t):not(#_o27) body .o27-pp{min
 <main id="main">
 
 <!-- 1 · the opening: the show film's own shots of the stand, at real speed, whole; the name stands under it -->
-<section class="o27" data-fix="E-OP27-cityscape" style="--ar:1.7778" aria-label="Cityscape Abu Dhabi: the opening"><div class="o27-w"><figure class="o27-f"><video class="o27-v" muted playsinline loop preload="metadata" width="1920" height="1080" data-d="a/op27-d.mp4" data-p="a/op27-p.mp4" data-pd="a/op27-d.webp" data-pp="a/op27-p.webp" aria-label="The ceiling of light over the stand at its brightest, then the delegation at the city model"></video><noscript><img class="o27-v" src="a/op27-d.webp" width="1920" height="1080" alt="The ceiling of light over the stand at its brightest, then the delegation at the city model"></noscript></figure><div class="o27-t"><div class="o27-a"><h1 class="o27-nm">Cityscape Abu Dhabi</h1><p class="o27-ln">Department of Municipal Affairs and Transport · ADNEC, Abu Dhabi · April 2017 · show film by AntBrush</p></div><div class="o27-b"><button class="fp-play" type="button" data-film="../../stories/cityscape/assets/show-film-1280.mp4" data-title="The show film · AntBrush · 2:38 · sound">Play the show film <small>2:38 · sound</small></button><button class="o27-snd" type="button" aria-pressed="false" hidden>Sound on</button><button class="o27-pp" type="button" aria-pressed="false" hidden>Pause</button></div></div></div><script data-fix="E-OP27-JS">(function(){var D=document,s=D.currentScript.parentNode,v=s&&s.querySelector('video.o27-v');if(!v)return;
+<section class="o27" data-fix="E-OP27-cityscape" style="--ar:1.7778" aria-label="Cityscape Abu Dhabi: the opening"><div class="o27-w"><figure class="o27-f"><video class="o27-v" muted playsinline loop preload="metadata" width="1920" height="1080" data-d="a/op27-d.mp4" data-p="a/op27-p.mp4" data-pd="a/op27-d.webp" data-pp="a/op27-p.webp" aria-label="The ceiling of light over the stand at its brightest, then the delegation at the city model"></video><noscript><img class="o27-v" src="a/op27-d.webp" width="1920" height="1080" alt="The ceiling of light over the stand at its brightest, then the delegation at the city model"></noscript></figure><div class="o27-t"><div class="o27-a"><h1 class="o27-nm">Cityscape Abu Dhabi</h1><p class="o27-ln">Department of Municipal Affairs and Transport · ADNEC, Abu Dhabi · April 2017 · show film by AntBrush</p><p class="rl27" data-fix="E-ROLE27-cityscape">Department of Municipal Affairs and Transport, Abu Dhabi · Cityscape Abu Dhabi, April 2017 · Creative direction: the concept, the stand, the build management and the show film, with the AntBrush team · built with Divine Creations.</p></div><div class="o27-b"><button class="fp-play" type="button" data-film="../../stories/cityscape/assets/show-film-1280.mp4" data-title="The show film · AntBrush · 2:38 · sound">Play the show film <small>2:38 · sound</small></button><button class="o27-snd" type="button" aria-pressed="false" hidden>Sound on</button><button class="o27-pp" type="button" aria-pressed="false" hidden>Pause</button></div></div></div><script data-fix="E-OP27-JS">(function(){var D=document,s=D.currentScript.parentNode,v=s&&s.querySelector('video.o27-v');if(!v)return;
 var P=window.matchMedia&&matchMedia('(max-width:760px)').matches,RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 v.poster=v.getAttribute(P?'data-pp':'data-pd');v.muted=true;v.src=v.getAttribute(P?'data-p':'data-d');
 var snd=s.querySelector('.o27-snd'),pp=s.querySelector('.o27-pp'),user=false,held=false,seen=true;

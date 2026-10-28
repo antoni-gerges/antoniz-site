@@ -196,6 +196,34 @@ html:not(#_t):not(#_o27) body .o27-snd,html:not(#_t):not(#_o27) body .o27-pp{min
  .o27-s2 .o27-w{width:100%}
 }
 </style>
+<style data-fix="E-OPB27-CSS">/* opb27 (27 Oct 2026, openers-27oct-b/opb27.py): the first screen leads with the finished film; nothing above its own size */
+.o27[data-opb27] .o27-w,.o27[data-opb27s] .o27-w{max-width:var(--ob27-max,none)}
+.ob27-poster{display:block;width:100%;height:100%;margin:0;padding:0;border:0;background:none;cursor:pointer}
+.ob27-poster:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.ob27-poster img{display:block;width:100%;height:100%;object-fit:contain}
+.o27-ln b{font-weight:600;color:#F7F5F1}
+.fp-player.ob27own video{flex:none;width:min(var(--ob27w,640px),100%);height:auto;max-height:calc(100% - 64px);margin:auto}
+@media (max-width:760px){.o27.ob27-own .o27-f{aspect-ratio:var(--ar)}}
+/* a square film on a desktop: the film at its own size or smaller, its name, line and Play beside it, on the same first screen */
+@media (min-width:761px){
+ .o27.ob27-sq .o27-w{display:grid;grid-template-columns:min(720px,calc(100svh - 150px)) minmax(0,1fr);column-gap:48px;align-items:end;width:min(100%,1320px);max-width:none}
+ .o27.ob27-sq .o27-t{grid-template-columns:minmax(0,1fr);margin-top:0}
+ .o27.ob27-sq .o27-t .o27-b{grid-column:1;justify-self:start;margin-top:12px}
+}
+
+/* the gate and the coverage film side by side, one height; the portrait film at its own size or smaller */
+.o27 .ob27-pairw{width:min(100%,calc((100svh - 104px - var(--o27-under)) * 2.3399 + 16px))}
+.ob27-pair{display:grid;grid-template-columns:minmax(0,1.7778fr) minmax(0,.5621fr);gap:16px;align-items:start}
+.ob27-pair .o27-f{aspect-ratio:1.7778}
+.ob27-port{margin:0;width:100%;max-width:480px;aspect-ratio:480/854;background:#0B0C10}
+@media (max-width:760px){
+ .o27 .ob27-pairw{display:flex;flex-direction:column}
+ .ob27-pair{display:contents}
+ .ob27-pair .o27-f{aspect-ratio:4/5;order:1}
+ .o27 .ob27-pairw .o27-t{order:2}
+ .ob27-port{order:3;width:min(62vw,480px);margin:20px auto 0}
+}
+</style>
 </head>
 <body class="fp alain">
 <a class="skip" href="#main">Skip to content</a>
@@ -209,7 +237,7 @@ html:not(#_t):not(#_o27) body .o27-snd,html:not(#_t):not(#_o27) body .o27-pp{min
 <main id="main">
 
 <!-- 1 · the opening: my own film of the morning it opened, whole -->
-<section class="o27" data-fix="E-OP27-al-ain" style="--ar:1.7778" aria-label="Innovation Month: the opening"><div class="o27-w"><figure class="o27-f"><video class="o27-v" muted playsinline loop preload="metadata" width="1280" height="720" data-d="a/op27-d.mp4" data-p="a/op27-p.mp4" data-pd="a/op27-d.webp" data-pp="a/op27-p.webp" aria-label="The cube gate whole on the opening morning, then under the blue canopy, the forecourt full"></video><noscript><img class="o27-v" src="a/op27-d.webp" width="1280" height="720" alt="The cube gate whole on the opening morning, then under the blue canopy, the forecourt full"></noscript></figure><div class="o27-t"><div class="o27-a"><h1 class="o27-nm">Innovation Month</h1><p class="o27-ln">Al Ain City Municipality · 21 and 22 February 2024 · my own film of the opening, no sound</p></div><div class="o27-b"><button class="fp-play" type="button" data-film="a/coverage-480.mp4" data-title="The coverage film · AntBrush · 1:06 · silent">Play the coverage film <small>1:06 · silent</small></button><button class="o27-pp" type="button" aria-pressed="false" hidden>Pause</button></div></div></div><script data-fix="E-OP27-JS">(function(){var D=document,s=D.currentScript.parentNode,v=s&&s.querySelector('video.o27-v');if(!v)return;
+<section class="o27" data-fix="E-OP27-al-ain" data-opb27="E-OPB27-al-ain" style="--ar:1.7778;--ob27-max:1700px" aria-label="Innovation Month: the opening"><div class="o27-w ob27-pairw"><div class="ob27-pair"><figure class="o27-f"><video class="o27-v" muted playsinline loop preload="metadata" width="1280" height="720" data-d="a/op27-d.mp4" data-p="a/op27-p.mp4" data-pd="a/op27-d.webp" data-pp="a/op27-p.webp" aria-label="The cube gate whole on the opening morning, then under the blue canopy, the forecourt full"></video><noscript><img class="o27-v" src="a/op27-d.webp" width="1280" height="720" alt="The cube gate whole on the opening morning, then under the blue canopy, the forecourt full"></noscript></figure><figure class="ob27-port"><button class="ob27-poster" type="button" data-film="a/coverage-480.mp4" data-title="The coverage film · AntBrush · 1:06 · silent" data-ob27-w="480" aria-label="Play the coverage film, 1 minute 6, silent"><img src="a/ob27-coverage.webp" width="480" height="854" decoding="async" alt="The coverage film at rest on its own frame: a visitor at the cube gate on the opening morning, filmed upright on a phone"></button></figure></div><div class="o27-t"><div class="o27-a"><h1 class="o27-nm">Innovation Month</h1><p class="o27-ln">Al Ain City Municipality · 21 and 22 February 2024 · my own film of the opening, no sound</p></div><div class="o27-b"><button class="fp-play" type="button" data-film="a/coverage-480.mp4" data-title="The coverage film · AntBrush · 1:06 · silent" data-ob27-w="480">Play the coverage film <small>1:06 · silent</small></button><button class="o27-pp" type="button" aria-pressed="false" hidden>Pause</button></div></div></div><script data-fix="E-OPB27-JS">(function(){var D=document,s=D.currentScript.parentNode,v=s&&s.querySelector('video.o27-v');if(!v)return;
 var P=window.matchMedia&&matchMedia('(max-width:760px)').matches,RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 v.poster=v.getAttribute(P?'data-pp':'data-pd');v.muted=true;v.src=v.getAttribute(P?'data-p':'data-d');
 var snd=s.querySelector('.o27-snd'),pp=s.querySelector('.o27-pp'),user=false,held=false,seen=true;
@@ -220,8 +248,19 @@ if(pp){pp.hidden=false;pp.addEventListener('click',function(){if(v.paused){held=
 if(snd){snd.hidden=false;snd.addEventListener('click',function(){v.muted=!v.muted;if(!v.muted){held=false;user=true;go();}lab();});}
 D.addEventListener('click',function(e){var b=e.target&&e.target.closest&&e.target.closest('[data-film]');if(b&&!v.muted){v.muted=true;lab();}},true);
 if('IntersectionObserver'in window)new IntersectionObserver(function(e){seen=e[0].isIntersecting;seen?go():v.pause();},{threshold:.2}).observe(v);else go();
-lab();})();</script></section><template data-fix="E-OP27-WAS"><!-- op27 (27 Oct): the opener this page had, kept inert so the modules that placed it stay quiet --><section class="fp-hero whole op21 al-open" data-marks='[[0,"My own film · opening morning, 21 February 2024"],[3.2,"My own film · the empty plaza, 19 December 2023"],[5.2,"My own film · the build, at night"],[6.7,"My own film · opening morning, 21 February 2024"]]' aria-label="Innovation Month, Al Ain: the opening morning">
-  <video class="v" data-fix="E-OPENER-al-ain" muted playsinline loop preload="metadata" width="1280" height="720" poster="a/wb-glimpse-poster.webp" data-src="a/wb-glimpse-d-gl26b.mp4" data-src-p="a/wb-glimpse-p-gl26b.mp4" data-poster="a/wb-glimpse-poster.webp" data-poster-p="a/wb-glimpse-poster.webp" aria-label="A glimpse of Innovation Month: the gate seen whole on opening day, the empty plaza before, the cube stairs built at night, the cube gate, the ribbon canopy, the street full of visitors"></video><button class="op21-hit" type="button" data-film="a/wb-glimpse-d-gl26b.mp4" data-film-p="a/wb-glimpse-p-gl26b.mp4" data-title="A glimpse · 11 s · no sound" aria-label="Play the glimpse"></button>
+lab();})();</script></section><template data-fix="E-OPB27-WAS"><!-- opb27 (27 Oct): the opener this page had, kept inert so the modules that placed it stay quiet --><section class="o27" data-fix="E-OP27-al-ain" style="--ar:1.7778" aria-label="Innovation Month: the opening"><div class="o27-w"><figure class="o27-f"><video class="o27-v" muted playsinline loop preload="metadata" width="1280" height="720" data-d="a/op27-d.mp4" data-p="a/op27-p.mp4" data-pd="a/op27-d.webp" data-pp="a/op27-p.webp" aria-label="The cube gate whole on the opening morning, then under the blue canopy, the forecourt full"></video><noscript><img class="o27-v" src="a/op27-d.webp" width="1280" height="720" alt="The cube gate whole on the opening morning, then under the blue canopy, the forecourt full"></noscript></figure><div class="o27-t"><div class="o27-a"><h1 class="o27-nm">Innovation Month</h1><p class="o27-ln">Al Ain City Municipality · 21 and 22 February 2024 · my own film of the opening, no sound</p></div><div class="o27-b"><button class="fp-play" type="button" data-film="a/coverage-480.mp4" data-title="The coverage film · AntBrush · 1:06 · silent">Play the coverage film <small>1:06 · silent</small></button><button class="o27-pp" type="button" aria-pressed="false" hidden>Pause</button></div></div></div><script data-fix="E-OP27-JS">(function(){var D=document,s=D.currentScript.parentNode,v=s&&s.querySelector('video.o27-v');if(!v)return;
+var P=window.matchMedia&&matchMedia('(max-width:760px)').matches,RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+v.poster=v.getAttribute(P?'data-pp':'data-pd');v.muted=true;v.src=v.getAttribute(P?'data-p':'data-d');
+var snd=s.querySelector('.o27-snd'),pp=s.querySelector('.o27-pp'),user=false,held=false,seen=true;
+function go(){if(held||(RM&&!user))return;var p=v.play();if(p&&p.catch)p.catch(function(){});}
+function lab(){if(pp){pp.textContent=v.paused?'Play':'Pause';pp.setAttribute('aria-pressed',v.paused?'true':'false');}if(snd){snd.textContent=v.muted?'Sound on':'Sound off';snd.setAttribute('aria-pressed',v.muted?'false':'true');}}
+v.addEventListener('play',lab);v.addEventListener('pause',lab);
+if(pp){pp.hidden=false;pp.addEventListener('click',function(){if(v.paused){held=false;user=true;go();}else{held=true;v.pause();}});}
+if(snd){snd.hidden=false;snd.addEventListener('click',function(){v.muted=!v.muted;if(!v.muted){held=false;user=true;go();}lab();});}
+D.addEventListener('click',function(e){var b=e.target&&e.target.closest&&e.target.closest('[data-film]');if(b&&!v.muted){v.muted=true;lab();}},true);
+if('IntersectionObserver'in window)new IntersectionObserver(function(e){seen=e[0].isIntersecting;seen?go():v.pause();},{threshold:.2}).observe(v);else go();
+lab();})();</script></section></template><template data-fix="E-OP27-WAS"><!-- op27 (27 Oct): the opener this page had, kept inert so the modules that placed it stay quiet --><section class="fp-hero whole op21 al-open" data-marks='[[0,"My own film · opening morning, 21 February 2024"],[3.2,"My own film · the empty plaza, 19 December 2023"],[5.2,"My own film · the build, at night"],[6.7,"My own film · opening morning, 21 February 2024"]]' aria-label="Innovation Month, Al Ain: the opening morning">
+  <video class="v" data-fix="E-OPENER-al-ain" muted playsinline loop preload="metadata" width="1280" height="720" data-src="a/wb-glimpse-d-gl26b.mp4" data-src-p="a/wb-glimpse-p-gl26b.mp4" data-poster="a/wb-glimpse-poster.webp" data-poster-p="a/wb-glimpse-poster.webp" aria-label="A glimpse of Innovation Month: the gate seen whole on opening day, the empty plaza before, the cube stairs built at night, the cube gate, the ribbon canopy, the street full of visitors"></video><button class="op21-hit" type="button" data-film="a/wb-glimpse-d-gl26b.mp4" data-film-p="a/wb-glimpse-p-gl26b.mp4" data-title="A glimpse · 11 s · no sound" aria-label="Play the glimpse"></button>
   <div class="top"><span class="src"><i></i><b>My own film · opening morning, 21 February 2024</b></span><span class="fp-lab r">Al Ain City Municipality · 21 and 22 February 2024</span></div>
   <div class="in">
     <h1>Innovation Month</h1>
@@ -368,5 +407,6 @@ lab();})();</script></section><template data-fix="E-OP27-WAS"><!-- op27 (27 Oct)
 <script type="module" src="al.js?v=21"></script>
 <script src="../../assets/wavea.js?v=b022ad92" defer></script>
 <script data-fix="E-C25-39">/* content25 E-C25-39 (25 Oct): fp.js names every .fp-reel chapter "Films"; on this page the two reels are "Designed, then built" and "The details", their own labels */document.addEventListener('DOMContentLoaded',function(){[].forEach.call(document.querySelectorAll('#case-chapters a[href^="#"]'),function(a){var s=document.getElementById(a.getAttribute('href').slice(1)),l=s&&s.matches('.fp-reel')&&s.getAttribute('aria-label'),n=a.lastChild;if(l&&n&&n.nodeType===3)n.nodeValue=l})});</script>
+<script data-fix="E-OPB27-W">/* opb27 (27 Oct): a film whose button carries data-ob27-w plays at its own size, never larger */(function(){var D=document;D.addEventListener("click",function(e){var b=e.target&&e.target.closest?e.target.closest("[data-film]"):null,pl=D.querySelector(".fp-player");if(!b||!pl)return;var w=b.getAttribute("data-ob27-w");pl.classList.toggle("ob27own",!!w);if(w)pl.style.setProperty("--ob27w",w+"px");},true);})();</script>
 </body>
 </html>

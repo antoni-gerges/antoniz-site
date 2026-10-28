@@ -300,6 +300,32 @@ html:not(#_t):not(#_o27) body .o27-snd,html:not(#_t):not(#_o27) body .o27-pp{min
  .o27-s2 .o27-w{width:100%}
 }
 </style>
+<style data-fix="E-OPB27-CSS">/* opb27 (27 Oct 2026, openers-27oct-b/opb27.py): the first screen leads with the finished film; nothing above its own size */
+.o27[data-opb27] .o27-w,.o27[data-opb27s] .o27-w{max-width:var(--ob27-max,none)}
+.ob27-poster{display:block;width:100%;height:100%;margin:0;padding:0;border:0;background:none;cursor:pointer}
+.ob27-poster:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.ob27-poster img{display:block;width:100%;height:100%;object-fit:contain}
+.o27-ln b{font-weight:600;color:#F7F5F1}
+.fp-player.ob27own video{flex:none;width:min(var(--ob27w,640px),100%);height:auto;max-height:calc(100% - 64px);margin:auto}
+@media (max-width:760px){.o27.ob27-own .o27-f{aspect-ratio:var(--ar)}}
+/* a square film on a desktop: the film at its own size or smaller, its name, line and Play beside it, on the same first screen */
+@media (min-width:761px){
+ .o27.ob27-sq .o27-w{display:grid;grid-template-columns:min(720px,calc(100svh - 150px)) minmax(0,1fr);column-gap:48px;align-items:end;width:min(100%,1320px);max-width:none}
+ .o27.ob27-sq .o27-t{grid-template-columns:minmax(0,1fr);margin-top:0}
+ .o27.ob27-sq .o27-t .o27-b{grid-column:1;justify-self:start;margin-top:12px}
+}
+
+/* the three campaign films, one chooser: the active name white and bold with one signal before it, the others quiet */
+.ob27-ch{display:flex;flex-wrap:wrap;gap:4px 22px;margin:0 0 14px;padding:0}
+.ob27-ch button{appearance:none;-webkit-appearance:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;margin:0;padding:0;
+ background:none;border:0;color:rgba(247,245,241,.72);font-family:Jost,system-ui,sans-serif!important;font-weight:500!important;cursor:pointer}
+.ob27-ch button small{font-family:Inter,system-ui,sans-serif!important;font-weight:600!important;color:rgba(247,245,241,.72)}
+.ob27-ch button[aria-selected="true"]{color:#F7F5F1;font-weight:600!important}
+.ob27-ch button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.ob27-sig{display:inline-block;flex:none;width:10px;height:20.03px;background:#fff;visibility:hidden;
+ clip-path:polygon(100.00% 0.00%,97.61% 0.02%,95.24% 0.10%,92.90% 0.22%,90.58% 0.39%,88.28% 0.60%,86.02% 0.86%,83.78% 1.17%,81.59% 1.52%,79.42% 1.91%,77.30% 2.34%,75.22% 2.82%,73.18% 3.33%,71.19% 3.89%,69.24% 4.48%,67.34% 5.11%,65.50% 5.78%,63.71% 6.48%,61.98% 7.22%,60.30% 8.00%,58.69% 8.80%,57.14% 9.64%,55.66% 10.51%,54.24% 11.42%,52.90% 12.35%,51.63% 13.31%,50.43% 14.30%,49.31% 15.31%,48.27% 16.36%,47.31% 17.43%,46.44% 18.52%,45.65% 19.64%,44.95% 20.78%,0.00% 100.00%,2.39% 99.98%,4.76% 99.90%,7.11% 99.78%,9.43% 99.61%,11.72% 99.40%,13.99% 99.14%,16.22% 98.83%,18.42% 98.48%,20.59% 98.09%,22.71% 97.66%,24.79% 97.18%,26.83% 96.67%,28.83% 96.11%,30.77% 95.52%,32.67% 94.89%,34.51% 94.22%,36.30% 93.52%,38.04% 92.78%,39.71% 92.01%,41.32% 91.20%,42.87% 90.36%,44.36% 89.49%,45.77% 88.59%,47.12% 87.66%,48.39% 86.69%,49.58% 85.70%,50.70% 84.69%,51.74% 83.64%,52.70% 82.57%,53.58% 81.48%,54.36% 80.36%,55.06% 79.22%)}
+.ob27-ch button[aria-selected="true"] .ob27-sig{visibility:visible}
+</style>
 </head>
 <body class="fp aiaasc">
 <a class="skip" href="#main">Skip to content</a>
@@ -335,7 +361,17 @@ lab();})();</script></section>
   <div class="in">
     <div class="row">
       <div class="nm"><h1>AIAASC</h1><p class="line">American education, <b class="tw">to the world.</b></p></div>
-      <div class="side"><div class="cap"><b>For colleges.</b><span>What accreditation gives a college.</span><small class="fp-lab">Our film · September 2021</small><details class="fp-more" data-fix="E-STATEMENT-aiaasc"><summary>Read more</summary><div class="tx"><div><p>It opens and ends on the logo.</p></div></div></details></div>
+      <div class="side"><div class="ob27-ch" role="tablist" aria-label="The three campaign films" data-opb27="E-OPB27-aiaasc"><button type="button" role="tab" aria-selected="false" tabindex="-1" data-k="School" data-src="../../media/films/aiaasc-school-720.mp4" data-poster="../../media/films/aiaasc-school-poster.jpg" data-title="AIAASC · back to school · 0:55" data-len="0:55" data-h="Back to school." data-s="Eight posts and a film, each beginning “It’s time”." data-m="Our film · August and September 2021" data-al="Play the back-to-school film with sound" data-va="Our film for back to school, 2021: eight posts and a film, each beginning “It’s time”"><i class="ob27-sig" aria-hidden="true"></i>School <small>0:55</small></button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-k="K-12" data-src="../../media/films/aiaasc-k12-720.mp4" data-poster="../../media/films/aiaasc-k12-poster.jpg" data-title="AIAASC · the film for schools · 0:49" data-len="0:49" data-h="For schools." data-s="What accreditation gives a school." data-m="Our film · September 2021" data-al="Play the film for schools with sound" data-va="Our film for schools, 2021: what accreditation gives a school"><i class="ob27-sig" aria-hidden="true"></i>K-12 <small>0:49</small></button><button type="button" role="tab" aria-selected="true" tabindex="0" data-k="Higher" data-src="../../media/films/aiaasc-higher-720.mp4" data-poster="../../media/films/aiaasc-higher-poster.jpg" data-title="AIAASC · the film for colleges · 0:45" data-len="0:45" data-h="For colleges." data-s="What accreditation gives a college." data-m="Our film · September 2021" data-al="Play the film for colleges with sound"><i class="ob27-sig" aria-hidden="true"></i>Higher <small>0:45</small></button></div><script data-fix="E-OPB27-AA">(function(){var L=document.currentScript.previousElementSibling,s=L&&L.closest('section');if(!s)return;
+var v=s.querySelector('video.v'),va=v&&v.getAttribute('aria-label'),tabs=[].slice.call(L.querySelectorAll('[role=tab]'));
+function pick(b){var d=b.dataset,fr=s.querySelector('button.aa-frame'),pl=s.querySelector('.btns .fp-play'),c=s.querySelector('.cap'),mo=c&&c.querySelector('.fp-more');tabs.forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false');x.tabIndex=x===b?0:-1;});
+if(v){var was=!v.paused;v.dataset.src=d.src;v.dataset.poster=d.poster;v.poster=d.poster;if(v.getAttribute('src')){v.src=d.src;v.load();if(was){var p=v.play();if(p&&p.catch)p.catch(function(){});}}
+v.setAttribute('aria-label',d.va||va);}
+[fr,pl].forEach(function(e){if(!e)return;e.setAttribute('data-film',d.src);e.setAttribute('data-title',d.title);});
+if(fr)fr.setAttribute('aria-label',d.al);if(pl){var sm=pl.querySelector('small');if(sm)sm.textContent=d.len+' · sound';}
+if(c){c.querySelector('b').textContent=d.h;c.querySelector('span').textContent=d.s;var m=c.querySelector('small.fp-lab');if(m)m.textContent=d.m;}
+if(mo)mo.hidden=d.k!=='Higher';}
+tabs.forEach(function(b,i){b.addEventListener('click',function(){pick(b);});b.addEventListener('keydown',function(e){var k=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;
+if(!k)return;e.preventDefault();var n=tabs[(i+k+tabs.length)%tabs.length];n.focus();pick(n);});});})();</script><div class="cap"><b>For colleges.</b><span>What accreditation gives a college.</span><small class="fp-lab">Our film · September 2021</small><details class="fp-more" data-fix="E-STATEMENT-aiaasc"><summary>Read more</summary><div class="tx"><div><p>It opens and ends on the logo.</p></div></div></details></div>
       <span class="btns"><button class="fp-play" type="button" data-film="../../media/films/aiaasc-higher-720.mp4" data-title="AIAASC · the film for colleges · 0:45">Play the released film <small>0:45 · sound</small></button><noscript><span class="fp-nojs"><a class="fp-play" href="../../media/films/aiaasc-higher-720.mp4">Open the released film <small>0:45 · video file</small></a></span></noscript></span></div>
     </div>
   </div>

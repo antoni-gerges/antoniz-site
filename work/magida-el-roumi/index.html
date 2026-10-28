@@ -196,6 +196,24 @@ html:not(#_t):not(#_o27) body .o27-snd,html:not(#_t):not(#_o27) body .o27-pp{min
  .o27-s2 .o27-w{width:100%}
 }
 </style>
+<style data-fix="E-OPB27-CSS">/* opb27 (27 Oct 2026, openers-27oct-b/opb27.py): the first screen leads with the finished film; nothing above its own size */
+.o27[data-opb27] .o27-w,.o27[data-opb27s] .o27-w{max-width:var(--ob27-max,none)}
+.ob27-poster{display:block;width:100%;height:100%;margin:0;padding:0;border:0;background:none;cursor:pointer}
+.ob27-poster:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.ob27-poster img{display:block;width:100%;height:100%;object-fit:contain}
+.o27-ln b{font-weight:600;color:#F7F5F1}
+.fp-player.ob27own video{flex:none;width:min(var(--ob27w,640px),100%);height:auto;max-height:calc(100% - 64px);margin:auto}
+@media (max-width:760px){.o27.ob27-own .o27-f{aspect-ratio:var(--ar)}}
+/* a square film on a desktop: the film at its own size or smaller, its name, line and Play beside it, on the same first screen */
+@media (min-width:761px){
+ .o27.ob27-sq .o27-w{display:grid;grid-template-columns:min(720px,calc(100svh - 150px)) minmax(0,1fr);column-gap:48px;align-items:end;width:min(100%,1320px);max-width:none}
+ .o27.ob27-sq .o27-t{grid-template-columns:minmax(0,1fr);margin-top:0}
+ .o27.ob27-sq .o27-t .o27-b{grid-column:1;justify-self:start;margin-top:12px}
+}
+
+/* the promo's tile: its own size, 640 wide, never larger */
+.f26-one .f26-pair{grid-template-columns:minmax(0,640px)}
+</style>
 </head>
 <body class="fp ls21 mg">
 <a class="skip" href="#main">Skip to content</a>
@@ -210,7 +228,7 @@ html:not(#_t):not(#_o27) body .o27-snd,html:not(#_t):not(#_o27) body .o27-pp{min
 <h1 class="sr-only">Magida El Roumi Live in Dubai, Dubai Media City Amphitheatre, 26 January 2018</h1>
 
 <!-- 0 · the glimpse: the evening before in 11 s, six of his phone clips of 25 January and our own title card (build/films.py; the op21 markup of the live openers, one 16:9 film, muted) -->
-<section class="o27" data-fix="E-OP27-magida-el-roumi" data-stop="The glimpse" style="--ar:1.9379" aria-label="Magida El Roumi: the opening"><div class="o27-w"><figure class="o27-f"><video class="o27-v" muted playsinline loop preload="metadata" width="562" height="290" data-d="a/op27-d.mp4" data-p="a/op27-p.mp4" data-pd="a/op27-d.webp" data-pp="a/op27-p.webp" aria-label="From the promo: Magida El Roumi singing among the fans, then The Super Star"></video><noscript><img class="o27-v" src="a/op27-d.webp" width="562" height="290" alt="From the promo: Magida El Roumi singing among the fans, then The Super Star"></noscript></figure><div class="o27-t"><div class="o27-a"><p class="o27-nm">Magida El Roumi</p><p class="o27-ln">Live in Dubai · Dubai Media City Amphitheatre · 26 January 2018 · from the promo</p></div><div class="o27-b"><button class="o27-snd" type="button" aria-pressed="false" hidden>Sound on</button><button class="o27-pp" type="button" aria-pressed="false" hidden>Pause</button></div></div></div><script data-fix="E-OP27-JS">(function(){var D=document,s=D.currentScript.parentNode,v=s&&s.querySelector('video.o27-v');if(!v)return;
+<section class="o27" data-fix="E-OP27-magida-el-roumi" data-opb27="E-OPB27-magida-el-roumi" data-stop="The glimpse" style="--ar:1.7778;--ob27-max:1280px" aria-label="Magida El Roumi: the opening"><div class="o27-w"><figure class="o27-f"><video class="o27-v" muted playsinline loop preload="metadata" width="1280" height="720" data-d="a/result-loop.mp4" data-p="a/ob27-result-p.mp4" data-pd="a/ob27-result-d.webp" data-pp="a/ob27-result-p.webp" aria-label="The beams fan out over the orchestra on the stage, set the evening before; his phone"></video><noscript><img class="o27-v" src="a/ob27-result-d.webp" width="1280" height="720" alt="The beams fan out over the orchestra on the stage, set the evening before; his phone"></noscript></figure><div class="o27-t"><div class="o27-a"><p class="o27-nm">Magida El Roumi</p><p class="o27-ln">Live in Dubai · Dubai Media City Amphitheatre · 26 January 2018 · the beams, set the evening before</p></div><div class="o27-b"><button class="fp-play" type="button" data-film="f26/promo-360.mp4" data-title="Magida El Roumi Live in Dubai · the promo · 1:03" data-ob27-w="640">Play the promo <small>1:03 · sound</small></button><button class="o27-pp" type="button" aria-pressed="false" hidden>Pause</button></div></div></div><script data-fix="E-OPB27-JS">(function(){var D=document,s=D.currentScript.parentNode,v=s&&s.querySelector('video.o27-v');if(!v)return;
 var P=window.matchMedia&&matchMedia('(max-width:760px)').matches,RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 v.poster=v.getAttribute(P?'data-pp':'data-pd');v.muted=true;v.src=v.getAttribute(P?'data-p':'data-d');
 var snd=s.querySelector('.o27-snd'),pp=s.querySelector('.o27-pp'),user=false,held=false,seen=true;
@@ -221,7 +239,18 @@ if(pp){pp.hidden=false;pp.addEventListener('click',function(){if(v.paused){held=
 if(snd){snd.hidden=false;snd.addEventListener('click',function(){v.muted=!v.muted;if(!v.muted){held=false;user=true;go();}lab();});}
 D.addEventListener('click',function(e){var b=e.target&&e.target.closest&&e.target.closest('[data-film]');if(b&&!v.muted){v.muted=true;lab();}},true);
 if('IntersectionObserver'in window)new IntersectionObserver(function(e){seen=e[0].isIntersecting;seen?go():v.pause();},{threshold:.2}).observe(v);else go();
-lab();})();</script></section><template data-fix="E-OP27-WAS"><!-- op27 (27 Oct): the opener this page had, kept inert so the modules that placed it stay quiet --><section class="op21" data-stop="The glimpse" aria-label="A glimpse: the orchestra under the beams, the stage in red, beams crossing, teal, beams fanning out, blue, and the title The Super Star, Magida El Roumi, Live in Dubai, 26 January 2018">
+lab();})();</script></section><template data-fix="E-OPB27-WAS"><!-- opb27 (27 Oct): the opener this page had, kept inert so the modules that placed it stay quiet --><section class="o27" data-fix="E-OP27-magida-el-roumi" data-stop="The glimpse" style="--ar:1.9379" aria-label="Magida El Roumi: the opening"><div class="o27-w"><figure class="o27-f"><video class="o27-v" muted playsinline loop preload="metadata" width="562" height="290" data-d="a/op27-d.mp4" data-p="a/op27-p.mp4" data-pd="a/op27-d.webp" data-pp="a/op27-p.webp" aria-label="From the promo: Magida El Roumi singing among the fans, then The Super Star"></video><noscript><img class="o27-v" src="a/op27-d.webp" width="562" height="290" alt="From the promo: Magida El Roumi singing among the fans, then The Super Star"></noscript></figure><div class="o27-t"><div class="o27-a"><p class="o27-nm">Magida El Roumi</p><p class="o27-ln">Live in Dubai · Dubai Media City Amphitheatre · 26 January 2018 · from the promo</p></div><div class="o27-b"><button class="o27-snd" type="button" aria-pressed="false" hidden>Sound on</button><button class="o27-pp" type="button" aria-pressed="false" hidden>Pause</button></div></div></div><script data-fix="E-OP27-JS">(function(){var D=document,s=D.currentScript.parentNode,v=s&&s.querySelector('video.o27-v');if(!v)return;
+var P=window.matchMedia&&matchMedia('(max-width:760px)').matches,RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+v.poster=v.getAttribute(P?'data-pp':'data-pd');v.muted=true;v.src=v.getAttribute(P?'data-p':'data-d');
+var snd=s.querySelector('.o27-snd'),pp=s.querySelector('.o27-pp'),user=false,held=false,seen=true;
+function go(){if(held||(RM&&!user))return;var p=v.play();if(p&&p.catch)p.catch(function(){});}
+function lab(){if(pp){pp.textContent=v.paused?'Play':'Pause';pp.setAttribute('aria-pressed',v.paused?'true':'false');}if(snd){snd.textContent=v.muted?'Sound on':'Sound off';snd.setAttribute('aria-pressed',v.muted?'false':'true');}}
+v.addEventListener('play',lab);v.addEventListener('pause',lab);
+if(pp){pp.hidden=false;pp.addEventListener('click',function(){if(v.paused){held=false;user=true;go();}else{held=true;v.pause();}});}
+if(snd){snd.hidden=false;snd.addEventListener('click',function(){v.muted=!v.muted;if(!v.muted){held=false;user=true;go();}lab();});}
+D.addEventListener('click',function(e){var b=e.target&&e.target.closest&&e.target.closest('[data-film]');if(b&&!v.muted){v.muted=true;lab();}},true);
+if('IntersectionObserver'in window)new IntersectionObserver(function(e){seen=e[0].isIntersecting;seen?go():v.pause();},{threshold:.2}).observe(v);else go();
+lab();})();</script></section></template><template data-fix="E-OP27-WAS"><!-- op27 (27 Oct): the opener this page had, kept inert so the modules that placed it stay quiet --><section class="op21" data-stop="The glimpse" aria-label="A glimpse: the orchestra under the beams, the stage in red, beams crossing, teal, beams fanning out, blue, and the title The Super Star, Magida El Roumi, Live in Dubai, 26 January 2018">
   <figure class="op21-f"><button class="op21-film" type="button" aria-label="Pause the glimpse"><video class="op21-v" data-fix="E-OPENER-magida-el-roumi" muted playsinline loop preload="none" data-wa-defer width="1280" height="720" poster="a/glimpse-poster.webp"><source data-wa-src="a/glimpse.mp4" type="video/mp4"></video></button><figcaption class="op21-cap">A glimpse · his phone, the evening before the show, 25 January 2018</figcaption><p class="op25-nm" data-fix="E-OPEN25-11">Magida El Roumi</p></figure>
 </section></template>
 <!-- fl26 · the promo and the after film, right after the first screen (Tony, 26 Oct: "one promotion video and one after event video. Put them") -->
@@ -401,5 +430,6 @@ lab();})();</script></section><template data-fix="E-OP27-WAS"><!-- op27 (27 Oct)
 <script src="../../assets/nav.js" defer></script>
 <link rel="stylesheet" href="../../assets/viewer.css"><script defer src="../../assets/viewer.js"></script>
 <script src="../../assets/wavea.js?v=b022ad92" defer></script>
+<script data-fix="E-OPB27-W">/* opb27 (27 Oct): a film whose button carries data-ob27-w plays at its own size, never larger */(function(){var D=document;D.addEventListener("click",function(e){var b=e.target&&e.target.closest?e.target.closest("[data-film]"):null,pl=D.querySelector(".fp-player");if(!b||!pl)return;var w=b.getAttribute("data-ob27-w");pl.classList.toggle("ob27own",!!w);if(w)pl.style.setProperty("--ob27w",w+"px");},true);})();</script>
 </body>
 </html>

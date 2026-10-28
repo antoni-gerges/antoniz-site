@@ -261,6 +261,13 @@ html:not(#_t):not(#_o27) body .o27-snd,html:not(#_t):not(#_o27) body .o27-pp{min
  .o27-s2 .o27-w{width:100%}
 }
 </style>
+<style data-fix="E-ROLE27-CSS">/* role27 (27 Oct 2026, roles-27oct/role27.py): one role line under the first film's caption; Inter, at most two lines on a desktop */
+html:not(#_t):not(#_rl27) body .rl27{grid-column:1/-1;order:4;display:block;margin:6px 0 0;max-width:none;font-family:Inter,system-ui,sans-serif!important;
+ font-weight:400!important;font-style:normal!important;color:rgba(247,245,241,.72)}
+.o27:has(.rl27){--o27-under:212px}
+.o27:has(.o27-stack):has(.rl27){--o27-under:258px}
+@media (max-width:760px){html:not(#_t):not(#_rl27) body .o27-t .rl27{margin-top:8px}}
+</style>
 </head>
 <body class="fp">
 <a class="skip" href="#main">Skip to content</a>
@@ -274,7 +281,7 @@ html:not(#_t):not(#_o27) body .o27-snd,html:not(#_t):not(#_o27) body .o27-pp{min
 <main id="main">
 
 <!-- 1 · the film: our own film for the 74-ft wall, whole, then the real wall -->
-<section class="o27" data-fix="E-OP27-zeiss" style="--ar:1.7778" aria-label="ZEISS: the opening"><div class="o27-w"><figure class="o27-f"><video class="o27-v" muted playsinline loop preload="metadata" width="1664" height="936" data-d="a/op27-d.mp4" data-p="a/op27-p.mp4" data-pd="a/op27-d.webp" data-pp="a/op27-p.webp" aria-label="The ZEISS launch night: the shutter lifts on the ZEISS name, the guests walk into The Space, the keynote, Seeing beyond"></video><noscript><img class="o27-v" src="a/op27-d.webp" width="1664" height="936" alt="The ZEISS launch night: the shutter lifts on the ZEISS name, the guests walk into The Space, the keynote, Seeing beyond"></noscript></figure><div class="o27-t"><div class="o27-a"><h1 class="o27-nm">ZEISS</h1><p class="o27-ln">ClearView &amp; PhotoFusion X launch · The Space, Dubai · 27 June 2022 · film by MCX</p></div><div class="o27-b"><button class="fp-play" type="button" data-film="../../media/films/zeiss-1080.mp4" data-film-p="../../media/films/zeiss-720.mp4" data-title="The launch night · 2:34 · film with MCX" data-fix="E-C25-39">Play the film <small>2:34</small></button><button class="o27-snd" type="button" aria-pressed="false" hidden>Sound on</button><button class="o27-pp" type="button" aria-pressed="false" hidden>Pause</button></div></div></div><script data-fix="E-OP27-JS">(function(){var D=document,s=D.currentScript.parentNode,v=s&&s.querySelector('video.o27-v');if(!v)return;
+<section class="o27" data-fix="E-OP27-zeiss" style="--ar:1.7778" aria-label="ZEISS: the opening"><div class="o27-w"><figure class="o27-f"><video class="o27-v" muted playsinline loop preload="metadata" width="1664" height="936" data-d="a/op27-d.mp4" data-p="a/op27-p.mp4" data-pd="a/op27-d.webp" data-pp="a/op27-p.webp" aria-label="The ZEISS launch night: the shutter lifts on the ZEISS name, the guests walk into The Space, the keynote, Seeing beyond"></video><noscript><img class="o27-v" src="a/op27-d.webp" width="1664" height="936" alt="The ZEISS launch night: the shutter lifts on the ZEISS name, the guests walk into The Space, the keynote, Seeing beyond"></noscript></figure><div class="o27-t"><div class="o27-a"><h1 class="o27-nm">ZEISS</h1><p class="o27-ln">ClearView &amp; PhotoFusion X launch · The Space, Dubai · 27 June 2022 · film by MCX</p><p class="rl27" data-fix="E-ROLE27-zeiss">ZEISS Vision Care · The Space, Dubai, 27 June 2022 · Creative direction through AntBrush: the idea, the booth, the invitations, the screens · produced with MCX as co-producer; built by Klontia.</p></div><div class="o27-b"><button class="fp-play" type="button" data-film="../../media/films/zeiss-1080.mp4" data-film-p="../../media/films/zeiss-720.mp4" data-title="The launch night · 2:34 · film with MCX" data-fix="E-C25-39">Play the film <small>2:34</small></button><button class="o27-snd" type="button" aria-pressed="false" hidden>Sound on</button><button class="o27-pp" type="button" aria-pressed="false" hidden>Pause</button></div></div></div><script data-fix="E-OP27-JS">(function(){var D=document,s=D.currentScript.parentNode,v=s&&s.querySelector('video.o27-v');if(!v)return;
 var P=window.matchMedia&&matchMedia('(max-width:760px)').matches,RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 v.poster=v.getAttribute(P?'data-pp':'data-pd');v.muted=true;v.src=v.getAttribute(P?'data-p':'data-d');
 var snd=s.querySelector('.o27-snd'),pp=s.querySelector('.o27-pp'),user=false,held=false,seen=true;
