@@ -525,6 +525,7 @@ html:not(#_t):not(#_o27) body .o27-snd,html:not(#_t):not(#_o27) body .o27-pp{min
  .o27-s2 .o27-w{width:100%}
 }
 </style>
+<link rel="stylesheet" href="../../assets/end27.css?v=0625529a" data-fix="E-P278-BAND">
 </head>
 <body class="fp dha">
 <a class="skip" href="#main">Skip to content</a>
@@ -852,5 +853,6 @@ lab();})();</script></section>
 <script src="../../assets/numbers.js" defer></script>
 <script src="../../assets/wavea.js?v=b022ad92" defer></script>
 <script data-dhac26="js">/* dhac26: the concept film plays once when half in view (a hard start), holds its last frame, then Play again; the 4:5 file below 761 px; with reduced motion it waits for Play */(function(){var f=document.querySelector(".dhac26-f");if(!f)return;var v=f.querySelector("video"),b=f.querySelector(".dhac26-go"),ph=matchMedia("(max-width:760px)").matches,rm=matchMedia("(prefers-reduced-motion: reduce)").matches,ok=false;if(ph)v.poster=v.getAttribute("data-poster-p");function src(){if(!ok){v.src=v.getAttribute(ph?"data-src-p":"data-src-d");ok=true;}}function go(){src();b.hidden=true;v.currentTime=0;var p=v.play();if(p&&p.catch)p.catch(function(){b.hidden=false;b.textContent="Play";});}v.addEventListener("ended",function(){b.textContent="Play again";b.hidden=false;});b.addEventListener("click",go);if(rm||!("IntersectionObserver" in window)){b.textContent="Play";b.hidden=false;return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.disconnect();go();}});},{threshold:.5});io.observe(v);})();</script>
+<script defer src="../../assets/end27.js?v=a1e6b5d5" data-fix="E-P278-BAND"></script>
 </body>
 </html>

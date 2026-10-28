@@ -1,0 +1,56 @@
+/* end27.css (27 Oct 2026, package P8): the end of every project page is one band, two equal halves. Left: the next project (name, its
+   one line, "Open the project"). Right: "Say hello" (the address, Tony's line, "Contact"). Built by end27.js from a table inside it.
+   Design: website-review/astra-27oct/FABLE-REVIEW.md 2c and CUT-AND-SIMPLIFY.md P8. Hard edges only: no fade, no transition, no glow.
+   The page's own next block (a.fp-next, nav.pnext, and the "View all work" link fp.js adds under it) is hidden by class once the band
+   stands, and only then: without JavaScript the old link still works. Its HTML is never removed. */
+
+html.end27-on a.fp-next,
+html.end27-on nav.pnext,
+html.end27-on a.case-all{display:none!important}
+
+.end27{--e27-ink:#F7F5F1;--e27-quiet:rgba(247,245,241,.72);--e27-line:rgba(247,245,241,.18);--e27-ul:rgba(247,245,241,.38);--e27-name:min(40px,4.3vw);
+  box-sizing:border-box;display:block;position:relative;margin:96px 0 0;padding:0 0 24px;color:var(--e27-ink)}
+.end27 *,.end27 *::before,.end27 *::after{box-sizing:border-box}
+
+/* a band on its own (MAF: the old block sat outside <main>, on the project's own navy): it carries that ground and the page's gutters */
+.end27.end27--solo{margin:0;padding:96px var(--g,clamp(18px,3.4vw,56px)) 96px;background:var(--e27-bg,transparent)}
+.end27.end27--solo .end27-in{max-width:var(--max,1680px);margin:0 auto}
+
+/* the line above, then the two halves; rows are shared so both calls to action stand on one line */
+.end27 .end27-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto auto auto;
+  column-gap:clamp(32px,5vw,96px);row-gap:0;border-top:1px solid var(--e27-line);padding-top:56px}
+.end27 .end27-h{display:flex;flex-direction:column;align-items:flex-start;grid-row:span 4;min-width:0;color:inherit;text-decoration:none;background:none;border:0;padding:0;margin:0}
+@supports (grid-template-rows:subgrid){
+  .end27 .end27-h{display:grid;grid-template-rows:subgrid;align-items:start;justify-items:start}
+}
+
+/* type: label Inter 600; name Jost 600 at 40 px; line Inter; call Jost 600, underlined as the site's links are */
+html:not(#_t) body .end27 .end27-k{display:block;margin:0 0 16px;font-family:Inter,system-ui,sans-serif!important;font-weight:600!important;
+  font-size:var(--t-text,18px)!important;line-height:1.3!important;letter-spacing:normal!important;text-transform:none!important;color:var(--e27-quiet)!important}
+html:not(#_t) body .end27 .end27-nm{display:block;margin:0 0 14px;max-width:100%;font-family:Jost,system-ui,sans-serif!important;font-weight:600!important;
+  font-size:var(--e27-name)!important;line-height:1.1!important;letter-spacing:-.02em!important;text-transform:none!important;color:var(--e27-ink)!important;
+  overflow-wrap:anywhere;text-wrap:balance;
+  text-decoration-line:underline!important;text-decoration-style:solid!important;text-decoration-color:var(--e27-ul)!important;
+  text-decoration-thickness:1px!important;text-underline-offset:.2em!important}
+html:not(#_t) body .end27 .end27-ln{display:block;margin:0 0 22px;max-width:34ch;font-family:Inter,system-ui,sans-serif!important;font-weight:400!important;
+  font-size:var(--t-text,18px)!important;line-height:1.5!important;letter-spacing:normal!important;text-transform:none!important;color:var(--e27-quiet)!important}
+html:not(#_t) body .end27 .end27-cta{display:inline-flex;align-items:center;min-height:44px;margin:0;font-family:Jost,system-ui,sans-serif!important;font-weight:600!important;
+  font-size:var(--t-text,18px)!important;line-height:1.3!important;letter-spacing:normal!important;text-transform:none!important;color:var(--e27-ink)!important;
+  text-decoration-line:underline!important;text-decoration-style:solid!important;text-decoration-color:var(--e27-ul)!important;
+  text-decoration-thickness:1px!important;text-underline-offset:.32em!important;cursor:pointer}
+html:not(#_t) body .end27 a.end27-nm{text-decoration-line:underline!important}
+
+/* hover and keyboard focus: the line turns paper at once (the site's own link signal); nothing moves */
+html:not(#_t) body .end27 a.end27-h:is(:hover,:focus-visible) :is(.end27-nm,.end27-cta),
+html:not(#_t) body .end27 a.end27-nm:is(:hover,:focus-visible),
+html:not(#_t) body .end27 a.end27-cta:is(:hover,:focus-visible){text-decoration-color:var(--e27-ink)!important;color:var(--e27-ink)!important}
+html:not(#_t) body .end27 :is(a.end27-h,a.end27-nm,a.end27-cta):focus-visible{outline:2px solid var(--e27-ink)!important;outline-offset:6px!important}
+
+/* a phone: stacked, the next project first, a second line between the two */
+@media (max-width:900px){
+  .end27{--e27-name:min(40px,8.8vw);margin-top:72px;padding-bottom:0}
+  .end27.end27--solo{margin:0;padding:72px var(--g,18px) 72px}
+  .end27 .end27-in{display:block;padding-top:40px}
+  .end27 .end27-h{display:flex;grid-row:auto}
+  .end27 .end27-h + .end27-h{margin-top:48px;padding-top:40px;border-top:1px solid var(--e27-line)}
+}
