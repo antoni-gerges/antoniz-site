@@ -1,0 +1,55 @@
+/* sys27.css (27 Oct 2026, package P9, "system fixes"): four shared rules, one file, linked last on every page of the sitemap.
+   Spec: website-review/astra-27oct/CUT-AND-SIMPLIFY.md, P9; FABLE-REVIEW.md 2d item 5 and section 4 item 10; Web Manager 4's note on the scroll cue.
+   The older shared files (brand.css, fixes.css, viewer.css, scale.css) are copied by bytes by other modules, so none is edited:
+   this file comes after them and wins by specificity (html:not(#_t) body, as scale.css and nav.css do). Hard edges only: no fade,
+   no transition, no gradient, no glow. */
+
+:root{--sys27-band:calc(56px + env(safe-area-inset-bottom,0px))}
+
+/* 1 · the chapter bar ("/// The system 6 of 7 · Next: Results ↓") gets its own band at the foot of every pinned scene.
+   sys27.js marks each pinned scene while it is really pinned (position:sticky, about a screen tall) with data-sys27-pin. A transparent
+   56 px bottom border on a border-box element keeps its total height (so the scroll length and the pin maths do not move), the scene's own
+   ground paints under it, and everything inside (pictures, films, canvases, captions) stops at the padding edge, 56 px above the foot.
+   The bar stands inside that band: 46 px high with 5 px under it on a desktop (it was 52 px high and 16 px up, so its top stood 12 px in the
+   artwork), 12 px + 44 px on a phone (already so). */
+html:not(#_t) body [data-sys27-pin]{box-sizing:border-box!important;border-bottom:var(--sys27-band) solid transparent!important}
+@media (min-width:761px){
+  html:not(#_t) body .where{bottom:calc(5px + env(safe-area-inset-bottom,0px))!important;height:46px!important;min-height:46px!important;box-sizing:border-box!important;align-items:center!important}
+  html:not(#_t) body .where a{align-self:stretch;display:inline-flex!important;align-items:center;padding-top:0!important;padding-bottom:0!important;margin-top:0!important;margin-bottom:0!important}
+}
+
+/* 2 · one link style for "Open the project →", "Explore … ↓" and "Read more +": the site's own link signal (nav.css a.nl): Jost 600 at the
+   text size, paper, a 1 px line under it at .32em that turns paper on hover or focus. "Open the project" on Work and the Archive and
+   "Explore the equestrian story ↓" are already a.nl and are not touched; what differed was the Live shows tile's "Open the project →"
+   (Inter, line at 4 px) and every "Read more" (Inter, a trailing rule or a rule under the word, no line under the type). */
+html:not(#_t) body :is(.t5-go, .fp-more > summary, .rm > summary, .mv-rm){
+  font-family:Jost,"Jost fallback",system-ui,sans-serif!important;font-weight:600!important;font-size:var(--t-text)!important;line-height:1.3!important;
+  letter-spacing:normal!important;text-transform:none!important;
+  text-decoration-line:underline!important;text-decoration-style:solid!important;text-decoration-color:var(--nl-line,rgba(247,245,241,.38))!important;
+  text-decoration-thickness:1px!important;text-underline-offset:.32em!important}
+html:not(#_t) body :is(.fp-more > summary, .rm > summary, .mv-rm){
+  display:inline-flex;align-items:center;gap:0;min-height:44px;white-space:nowrap;color:var(--nl-ink,#F7F5F1)!important;border-bottom:0!important}
+html:not(#_t) body :is(.fp-more > summary, .rm > summary, .mv-rm):is(:hover,:focus-visible),
+html:not(#_t) body .mv > summary:is(:hover,:focus-visible) .mv-rm{
+  color:var(--nl-ink,#F7F5F1)!important;text-decoration-color:var(--nl-ink,#F7F5F1)!important}
+/* the small mark and the growing rule that used to follow the word give way to the plus */
+html:not(#_t) body :is(.rm > summary, .mv-rm) .sg1{display:none!important}
+html:not(#_t) body :is(.fp-more > summary, .rm > summary, .mv-rm)::after{
+  content:"\00a0+"!important;width:auto!important;height:auto!important;background:none!important;opacity:1!important;transition:none!important;
+  font:inherit!important;letter-spacing:normal!important;color:inherit!important}
+html:not(#_t) body .fp-more[open] > summary::after{content:"\00a0\2013"!important}
+html:not(#_t) body :is(.rm[open] > summary, .mv[open] .mv-rm)::after{content:""!important}
+
+/* 3 · a large email never runs off a small screen: it breaks anywhere rather than overflow, and the two big ones (Home "Say hello", Contact)
+   shrink to fit one line below about 357 px (Jost 600 spans 9.4 em; 32 px is the two gutters). Any other large mailto link whose class
+   says mail, or that stands in the project-end band, wraps the same way. */
+html:not(#_t) body a[href^="mailto:"]{overflow-wrap:anywhere;max-width:100%}
+html:not(#_t) body :is(a[href^="mailto:"][class*="mail"], .end27 a[href^="mailto:"]){white-space:normal!important;overflow-wrap:anywhere!important;min-width:0}
+@media (max-width:760px){
+  html:not(#_t) body a:is(.hi-mail, .ct-mail){font-size:min(var(--t-big),calc((100vw - 32px)/9.6))!important}
+  html:not(#_t) body a:is(.hi-mail, .ct-mail) *{font-size:inherit!important}
+}
+
+/* 4 · the "Scroll" cue (nav.js) stands on plain ground: on every screen size sys27.js hides it while a picture, a film or a canvas is under it
+   (About: Tony's portrait; Home: the entrance film) or when it is not whole on the screen. It is hidden, not moved: the first screen there is the picture. */
+html:not(#_t) body a.scroll-cue[data-sys27-nocue]{display:none!important}

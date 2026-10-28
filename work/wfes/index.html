@@ -332,6 +332,7 @@ html:not(#_o27b) #ly-call .o27b-tp{display:none}
 @media (min-width:761px) and (max-height:699px){html:not(#_o27b) #ly-call .o27b-tp{display:none}}
 </style>
 <link rel="stylesheet" href="../../assets/end27.css?v=0625529a" data-fix="E-P278-BAND">
+<link rel="stylesheet" href="../../assets/sys27.css?v=bd3ce92d" data-fix="E-P279-SYS">
 </head>
 <body class="fp wf">
 <a class="skip" href="#main">Skip to content</a>
@@ -703,5 +704,6 @@ html:not(#_o27b) #ly-call .o27b-tp{display:none}
 <script data-pav23="js">/* pav23: the pavilion film plays once when half in view (a hard start), holds its last frame, then Play again; the phone file below 761 px; with reduced motion it waits for Play */(function(){var f=document.querySelector(".p3d");if(!f)return;var v=f.querySelector("video"),b=f.querySelector(".p3d-go"),ph=matchMedia("(max-width:760px)").matches,rm=matchMedia("(prefers-reduced-motion: reduce)").matches,ok=false;if(ph)v.poster=v.getAttribute("data-poster-p");function src(){if(!ok){v.src=v.getAttribute(ph?"data-src-p":"data-src-d");ok=true;}}function go(){src();b.hidden=true;v.currentTime=0;var p=v.play();if(p&&p.catch)p.catch(function(){b.hidden=false;b.textContent="Play";});}v.addEventListener("ended",function(){b.textContent="Play again";b.hidden=false;});b.addEventListener("click",go);if(rm||!("IntersectionObserver" in window)){b.textContent="Play";b.hidden=false;return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.disconnect();go();}});},{threshold:.5});io.observe(v);})();</script>
 <script src="../../assets/scrub25.js?v=ae96b17e" defer data-scrub25="js"></script>
 <script defer src="../../assets/end27.js?v=a1e6b5d5" data-fix="E-P278-BAND"></script>
+<script defer src="../../assets/sys27.js?v=2761a3de" data-fix="E-P279-SYS"></script>
 </body>
 </html>
