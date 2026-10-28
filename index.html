@@ -158,6 +158,7 @@ html.no-js:not(.js) #work{margin-top:0}
 body.en-top .hdr .brand span{display:none}
 </style>
 <script src="assets/entrance/entrance-desktop.js"></script>
+<script data-fix="E-ENT27">/* E-ENT27 (27 Oct 2026; entrance-27oct/ent27.py): the desktop entrance plays film-desktop-27.mp4 (the butterfly without its blinking, the brakes after the car lands) and its poster: set here, before entrance-26.js reads the E-ENT26 stage, whose markup stays as that hook wrote it */(function(){var b=document.querySelector('#entrance .en-desk'),v=b&&b.getAttribute('data-fix')==='E-ENT26'&&b.querySelector('video.en-film');if(!v||v.getAttribute('data-src')!=='assets/entrance/film-desktop-26.mp4')return;v.setAttribute('data-src','assets/entrance/film-desktop-27.mp4');v.setAttribute('data-poster','assets/entrance/poster-desktop-27.webp');})();</script>
 <script src="assets/entrance/entrance-26.js"></script>
 <script src="assets/entrance/data.js"></script>
 <script>
@@ -594,6 +595,7 @@ addEventListener('click',function(e){
 <script src="assets/brand.js" defer></script>
 <script src="assets/entrance-film/mobile-film.js"></script>
 <script src="assets/entrance-film/entrance-phone-26.js"></script>
+<script data-fix="E-ENT27-PHONE">/* E-ENT27 (27 Oct 2026; entrance-27oct/ent27.py): the phone entrance plays film-phone-27.mp4: entrance-phone-26.js has just given the phone film its 26 file (nothing fetched yet: preload none until load); swapped for the 27 file beside it, now and whenever the phone opening is built later */(function(){var h=document.getElementById('en-host'),r=h&&h.shadowRoot;if(!r||!window.matchMedia)return;var q=matchMedia('(max-width:760px)'),A='film-phone-26.mp4',B='film-phone-27.mp4';function sw(){var v=r.querySelector('video.mobile-film'),s=v&&v.getAttribute('src');if(s&&s.slice(-A.length)===A)v.setAttribute('src',s.slice(0,-A.length)+B);}sw();if(q.addEventListener)q.addEventListener('change',sw);else if(q.addListener)q.addListener(sw);})();</script>
 <script src="assets/mobile-browse.js"></script>
 <script>(function(){function go(){var h=document.getElementById('en-host');if(!h||window.__enDesk)return;if(!h.shadowRoot)return setTimeout(go,40);if(h.shadowRoot.getElementById('t2'))return;var s=document.createElement('style');s.id='t2';s.textContent=`*{font-size:var(--t-text) !important;letter-spacing:normal !important;text-transform:none !important}
 .name,.line,.line *,#intro,#intro *,#il,#il *{font-size:var(--t-big) !important;line-height:1.02 !important;letter-spacing:-.02em !important}
